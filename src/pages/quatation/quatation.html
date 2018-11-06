@@ -1,0 +1,25 @@
+<ion-header header></ion-header>
+
+<ion-content>
+    <div id="quatation_page" class="mainContainer">
+        <title-page>ใบเสนอขาย</title-page>
+
+        <div class="boxContentPage">
+            <tabs tabStyle="2" (change)="selectTab($event)">
+                <tab *ngFor="let item of tabsPage;let i = index " id="tabQuatationPage_{{i}}" [tabTitle]="item.title" [disabled]="item.disabled"></tab>
+            </tabs>
+
+            <quatation-form></quatation-form>
+
+            <steps (change)="selectStep($event)" [disabled]="choosePlan == ''">
+                <step *ngFor=" let item of stepsPage;let i = index" id="stepsQuatationPage_{{i}}" [stepTitle]="item.title" [stepIcon]="item.icon" [root]="item.root" [disabled]="item.disabled" [index]="item.id"></step>
+                <ng-template #action>
+                    <button class="btn-style3 btn-style-m" type="button" (click)="fn_open_calTax();" [disabled]="disabledTax || choosePlan == ''"><span><i class="icon-mathematics"></i> คำนวณลดหย่อนภาษี</span></button>
+                    <button class="btn-style3 btn-style-m" type="button" (click)="openPdf();" [disabled]="choosePlan == ''"><span><i class="icon-pdf-file"></i> ดูใบเสนอขาย</span></button>
+                </ng-template>
+            </steps>
+        </div>
+    </div>
+
+    <footer footer></footer>
+</ion-content>

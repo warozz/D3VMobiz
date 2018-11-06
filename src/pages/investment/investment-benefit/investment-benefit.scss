@@ -1,0 +1,176 @@
+page-investment-benefit {
+    #investment-benefit .boxSearchPlanInsurance .boxSelectPlan {
+        height: 38px;
+        .boxDropdownPlan {
+            height: 38px;
+            .txtView {
+                height: 38px;
+                line-height: 38px;
+                font-size: $font-md;
+                padding-left: 12px;
+            }
+            &::after {
+                height: 38px;
+            }
+        }
+    }
+    // z-index
+    .zIndex10 {
+        z-index: 10;
+    }
+    #X4 {
+        // เว้นขอบ header ของกรอบ
+        .bgPaperShadow {
+            .contentPaperShadow2 {
+                margin-top: 50px;
+            }
+        }
+        .hasBgImg {
+            &::before {
+                background: #28abe6 no-repeat center top;
+            }
+        }
+    }
+    // กรณีมี incrementer
+    form .boxPromisesMore {
+        // เพิ่มเส้นกรอบในทุก input
+        ion-item.form-control {
+            border: 1px solid #c8c8c8 !important;
+        }
+        padding: 10px 20px;
+        &:nth-child(even) {
+            background-color: #f4f8fa;
+        }
+        &.bg-reverse {
+            &:nth-child(odd) {
+                background-color: #f4f8fa;
+            }
+            &:nth-child(even) {
+                background-color: #ffffff;
+            }
+        }
+        &:last-child {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+            margin-bottom: 20px;
+        }
+        .col-label {
+            text-align: center;
+            color: $color-primary;
+            &.lh-form-control {
+                line-height: inherit;
+                margin-bottom: 5px;
+            }
+            &.c-red {
+                color: $color-danger;
+            }
+        }
+        .col-input {
+            padding: 0px 15px;
+            @media screen and (max-width: $screen-md-max) {
+                padding: 0px;
+            }
+            &>.form-control,
+            dropdown>.boxSelectPlan {
+                margin: 0px auto;
+                margin-bottom: 15px;
+                &[calculator] {
+                    max-width: 300px;
+                }
+                &[calculator][mini] {
+                    max-width: 120px;
+                }
+                @media screen and (max-width: $screen-md-max) {
+                    max-width: 300px;
+                }
+            }
+            &>.icon-minus2 {
+                font-size: $font-xs;
+                margin: 0px 2px;
+                position: relative;
+                top: -7px;
+                color: $color-primary;
+            }
+            &.form-inline {
+                text-align: center;
+                .form-control {
+                    display: inline-block;
+                    width: auto;
+                    vertical-align: middle;
+                    &[calculator][mini] {
+                        max-width: 65px;
+                        @media screen and (max-width: $screen-lg-max) {
+                            max-width: 45px;
+                        }
+                    }
+                }
+            }
+        }
+        .onePromise {
+            padding-left: 45px;
+            padding-bottom: 0px;
+            max-width: 300px;
+            margin: 0px auto;
+            .btnMinus {
+                left: 7px !important;
+            }
+            input.form-control {
+                border: 1px solid #c8c8c8;
+                box-shadow: inherit;
+            }
+        }
+        .btn-action {
+            text-align: center;
+            margin-top: 31px;
+        }
+        @media screen and (max-width: $screen-md-max) {
+            .btn-action {
+                margin-top: 15px;
+            }
+        }
+    }
+    form {
+        .total {
+            color: $color-primary;
+            text-align: center;
+            margin-top: 0px;
+            span {
+                color: $color-danger;
+                font-size: $font-xl;
+            }
+        }
+        .boxActionForm {
+            text-align: center;
+            padding: 0px;
+            .btnCalculateTax {
+                [class^="icon-"] {
+                    top: 17px;
+                }
+                @media screen and (max-width: $screen-sm-max) {
+                    [class^="icon-"] {
+                        top: 12px;
+                    }
+                    b {
+                        u {
+                            line-height: 20px;
+                            padding: 5px 0px;
+                            height: auto;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    // button
+    .btn-style3 {
+        &.btn-style-warning {
+            &::before {
+                background: #ec971f;
+                border: 1px solid #ecb466;
+            }
+        }
+    }
+    .boxPromisesMore .col-input .dropdown-sm.boxSearchPlanInsurance .boxSelectPlan .boxDropdownPlan {
+        max-width: 120px;
+        margin: 0px auto;
+    }
+}

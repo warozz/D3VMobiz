@@ -1,0 +1,17 @@
+<div class="modal" *ngIf="percent < 99">
+    <i class="sync icon icon-refresh"></i>
+    <h1>ระบบกำลังโหลดข้อมูล<br />กรุณารอสักครู่</h1>
+    <progress-bar [progress]="percent"></progress-bar>
+</div>
+
+<div class="modal" *ngIf="percent > 99">
+    <a class="fancybox-close" href="javascript:void(0)" (click)="close()"></a>
+    <i class="sync success icon icon-refresh"></i>
+    <h1>
+        <i class="icon icon-refresh"></i> ซิงค์ข้อมูลเรียบร้อย
+    </h1>
+
+    <!-- <button (click)="close()" class="btn-style3 btn-style-m btn-close">
+        <span>ปิด</span>
+    </button> -->
+</div>

@@ -1,0 +1,264 @@
+<ion-header header></ion-header>
+<ion-content>
+    <div class="mainContainer">
+        <title-page sub1="เอกสารประกอบใบคำขอ" (click)="navCtrl.popToRoot()">ใบคำขอ</title-page>
+        <app-info></app-info>
+        <div class="boxContentPage bgBlue3 hasBgImg">
+            <div class="container">
+                <div class="bgPaperShadow">
+                    <div class="contentPaperShadow">
+                        <div class="boxHeadInfo pdt10 pdb10 pdlr20">
+                            <ul class="boxLeft lh-form-control">
+                                <li class="txt-left">เอกสารประกอบใบคำขอเอาประกันภัย ยูนิตลิงค์</li>
+                            </ul>
+                        </div>
+                        <div class="boxTableStyle1 boxSearchQuatationTable">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>ลำดับ</th>
+                                        <th>รายละเอียด</th>
+                                        <th>แก้ไขเอกสาร</th>
+                                        <th>ดูเอกสาร</th>
+                                        <th>สถานะ</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="txt-center">
+                                        <td><span class="visible-xs-inline-block">ลำดับที่ &nbsp;</span>1</td>
+                                        <td class="view-only-md view-only-sm txt-left">
+                                            <div>ใบคำขอเอาประกันภัย ยูนิตลิงค์</div>
+                                        </td>
+                                        <td class="hide-only-md hide-only-sm hide-only-xs txt-left">ใบคำขอเอาประกันภัย ยูนิตลิงค์</td>
+
+                                        <!--<td class="xs-w25Left" [ngSwitch]="application.status">
+                                            <span class="visible-xs-block pdb10 c-blue">แก้ไขเอกสาร</span>
+                                            <a href="javascript:void(0);" *ngSwitchCase="'N'" (click)="goToApplictionPage()"><i class="icon-file-add c-red"></i></a>
+                                            <a href="javascript:void(0);" *ngSwitchDefault (click)="goToApplictionPage()"><i class="icon-contact-form"></i></a>
+                                        </td> -->
+                                        <td class="clear-xs-after pdb10-xs" [ngSwitch]="application.status">
+                                            <div class="visible-xs-block float-xs-left c-blue">แก้ไขเอกสาร</div>
+                                            <div class="float-xs-right txt-xs-center">
+                                                <a href="javascript:void(0);" *ngSwitchCase="'N'" (click)="goToPage('AppApplicationPage')"><i class="icon-file-add c-red"></i></a>
+                                                <a href="javascript:void(0);" *ngSwitchDefault [attr.disabled]="documentsStatus.applicationulinkpdf.isSigned ? '' : null" (click)="goToPage('AppApplicationPage')"><i class="icon-contact-form"></i></a>
+                                            </div>
+                                        </td>
+                                        <td class="clear-xs-after pdb10-xs">
+                                            <div class="visible-xs-block float-xs-left c-blue">ดูเอกสาร</div>
+                                            <div class="float-xs-right txt-xs-center" [ngSwitch]="application.status">
+                                                <a class="btnPop" *ngSwitchCase="'S'" href="javascript:void(0);" (click)="openApplicationPDF()"><i class="icon-view-files"></i></a>
+                                                <a class="btnPop" *ngSwitchCase="'P'" href="javascript:void(0);" (click)="openApplicationPDF()"><i class="icon-view-files"></i></a>
+                                                <a class="btnPop" [attr.disabled]="true" *ngSwitchDefault href="javascript:void(0);"><i class="icon-view-files"></i></a>
+                                            </div>
+                                        </td>
+
+                                        <td class="clear-xs-after pdb10-xs">
+                                            <div class="visible-xs-block float-xs-left c-blue">สถานะ</div>
+                                            <div class="float-xs-right txt-xs-center" [ngSwitch]="application.status">
+                                                <span class="c-green" *ngSwitchCase="'P'">เรียบร้อย</span>
+                                                <span *ngSwitchCase="'D'">ดำเนินการ</span>
+                                                <span class="c-red" *ngSwitchDefault>-</span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="txt-center">
+                                        <td><span class="visible-xs-inline-block">ลำดับที่ &nbsp;</span>2</td>
+                                        <td class="view-only-md view-only-sm txt-left">
+                                            <div>แบบประเมินความเสี่ยง</div>
+                                        </td>
+                                        <td class="hide-only-md hide-only-sm hide-only-xs txt-left">แบบประเมินความเสี่ยง</td>
+                                        <!--  <td class="xs-w25Left" [ngSwitch]="riskprofile.status">
+                                            <span class="visible-xs-block pdb10 c-blue">แก้ไขเอกสาร</span>
+                                            <a href="javascript:void(0);" *ngSwitchCase="'P'" (click)="navCtrl.push('AppRiskprofilePage')"><i class="icon-contact-form c-red"></i></a>
+                                            <a href="javascript:void(0);" *ngSwitchCase="'S'" (click)="navCtrl.push('AppRiskprofilePage')"><i class="icon-contact-form"></i></a>
+                                            <a href="javascript:void(0);" [attr.disabled]="application.status == 'N' ? '' : null" *ngSwitchDefault (click)="navCtrl.push('AppRiskprofilePage')"><i class="icon-file-add c-red"></i></a>
+                                        </td> -->
+                                        <td class="clear-xs-after pdb10-xs" [ngSwitch]="riskprofile.status">
+                                            <div class="visible-xs-block float-xs-left c-blue">แก้ไขเอกสาร</div>
+                                            <div class="float-xs-right txt-xs-center">
+                                                <a href="javascript:void(0);" *ngSwitchCase="'P'" (click)="goToPage('AppRiskprofilePage')"><i class="icon-contact-form c-red"></i></a>
+                                                <a href="javascript:void(0);" *ngSwitchCase="'S'" [attr.disabled]="documentsStatus.applicationulinkpdf.isSigned || documentsStatus.riskaccept.isSigned || documentsStatus.allocation.isSigned ? '' : null" (click)="goToPage('AppRiskprofilePage')"><i class="icon-contact-form"></i></a>
+                                                <a href="javascript:void(0);" [attr.disabled]="application.status === 'P' ? null : ''" *ngSwitchDefault (click)="goToPage('AppRiskprofilePage')"><i class="icon-file-add c-red"></i></a>
+                                            </div>
+                                        </td>
+                                        <td class="clear-xs-after pdb10-xs">
+                                            <div class="visible-xs-block float-xs-left c-blue">ดูเอกสาร</div>
+                                            <div class="float-xs-right txt-xs-center" [ngSwitch]="riskprofile.status">
+                                                <a class="btnPop" *ngSwitchCase="'P'" href="javascript:void(0);" (click)="openApplicationPDFRiskProfilePDF()"><i class="icon-view-files"></i></a>
+                                                <a class="btnPop" *ngSwitchCase="'S'" href="javascript:void(0);" (click)="openApplicationPDFRiskProfilePDF()"><i class="icon-view-files"></i></a>
+                                                <a class="btnPop" [attr.disabled]="application.status == 'N' || riskprofile.status == 'N' ? '' : null" *ngSwitchDefault href="javascript:void(0);" (click)="navCtrl.push('AppRiskprofilePage')"><i class="icon-view-files"></i></a>
+                                            </div>
+                                        </td>
+                                        <td class="clear-xs-after pdb10-xs">
+                                            <div class="visible-xs-block float-xs-left c-blue">สถานะ</div>
+                                            <div class="float-xs-right txt-xs-center" [ngSwitch]="riskprofile.status">
+                                                <span class="c-green" *ngSwitchCase="'S'">เรียบร้อย</span>
+                                                <span *ngSwitchCase="'P'">ดำเนินการ</span>
+                                                <span class="c-red" *ngSwitchDefault>-</span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="txt-center">
+                                        <td><span class="visible-xs-inline-block">ลำดับที่ &nbsp;</span>3</td>
+                                        <td class="view-only-md view-only-sm txt-left">
+                                            <div>ใบคำร้องเกี่ยวกับเบี้ยประกันภัย</div>
+                                        </td>
+                                        <td class="hide-only-md hide-only-sm hide-only-xs txt-left">ใบคำร้องเกี่ยวกับเบี้ยประกันภัย</td>
+                                        <!--   <td class="xs-w25Left" [ngSwitch]="allocation.status">
+                                            <span class="visible-xs-block pdb10 c-blue">แก้ไขเอกสาร</span>
+                                            <a href="javascript:void(0);" *ngSwitchCase="'P'" (click)="openLifepremiumUlink()"><i class="icon-contact-form c-red"></i></a>
+                                            <a href="javascript:void(0);" *ngSwitchCase="'S'" (click)="openLifepremiumUlink()"><i class="icon-contact-form"></i></a>
+                                            <a href="javascript:void(0);" [attr.disabled]="application.status == 'N' ? '' : null" *ngSwitchDefault (click)="openLifepremiumUlink()"><i class="icon-file-add c-red"></i></a>
+                                        </td> -->
+                                        <td class="clear-xs-after pdb10-xs" [ngSwitch]="allocation.status">
+                                            <div class="visible-xs-block float-xs-left c-blue">แก้ไขเอกสาร</div>
+                                            <div class="float-xs-right txt-xs-center">
+                                                <a href="javascript:void(0);" *ngSwitchCase="'P'" (click)="openLifepremiumUlink()"><i class="icon-contact-form c-red"></i></a>
+                                                <a href="javascript:void(0);" *ngSwitchCase="'S'" [attr.disabled]="documentsStatus.allocation.isSigned || documentsStatus.riskaccept.isSigned ? '' : null" (click)="openLifepremiumUlink()"><i class="icon-contact-form"></i></a>
+                                                <a href="javascript:void(0);" [attr.disabled]="application.status == 'N' || riskprofile.status != 'S' ? '' : null" *ngSwitchDefault (click)="openLifepremiumUlink()"><i class="icon-file-add c-red"></i></a>
+                                            </div>
+                                        </td>
+                                        <td class="clear-xs-after pdb10-xs">
+                                            <div class="visible-xs-block float-xs-left c-blue">ดูเอกสาร</div>
+                                            <div class="float-xs-right txt-xs-center" [ngSwitch]="allocation.status">
+                                                <a class="btnPop" *ngSwitchCase="'P'" href="javascript:void(0);" (click)="openApplicationUnitlinkPremiumPDF()"><i class="icon-view-files"></i></a>
+                                                <a class="btnPop" *ngSwitchCase="'S'" href="javascript:void(0);" (click)="openApplicationUnitlinkPremiumPDF()"><i class="icon-view-files"></i></a>
+                                                <a class="btnPop" [attr.disabled]="application.status == 'N' || allocation.status == 'N' ? '' : null" *ngSwitchDefault href="javascript:void(0);"><i class="icon-view-files"></i></a>
+                                            </div>
+                                        </td>
+                                        <td class="clear-xs-after pdb10-xs">
+                                            <div class="visible-xs-block float-xs-left c-blue">สถานะ</div>
+                                            <div class="float-xs-right txt-xs-center" [ngSwitch]="allocation.status">
+                                                <span class="c-green" *ngSwitchCase="'S'">เรียบร้อย</span>
+                                                <span *ngSwitchCase="'P'">ดำเนินการ</span>
+                                                <span class="c-red" *ngSwitchDefault>-</span>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr class="txt-center">
+                                        <td><span class="visible-xs-inline-block">ลำดับที่ &nbsp;</span>4</td>
+                                        <td class="view-only-md view-only-sm txt-left">
+                                            <div>แบบฟอร์มการรับทราบความเสี่ยง</div>
+                                        </td>
+                                        <td class="hide-only-md hide-only-sm hide-only-xs txt-left">แบบฟอร์มการรับทราบความเสี่ยง</td>
+                                        <!--<td class="xs-w25Left" [ngSwitch]="riskaccept.status">
+                                            <span class="visible-xs-block pdb10 c-blue">แก้ไขเอกสาร</span>
+                                            <a href="javascript:void(0);" *ngSwitchCase="'P'" (click)="openAcceptriskUlink()"><i class="icon-contact-form  c-red"></i></a>
+                                            <a href="javascript:void(0);" *ngSwitchCase="'S'" (click)="openAcceptriskUlink()"><i class="icon-contact-form"></i></a>
+                                            <a href="javascript:void(0);" [attr.disabled]="application.status == 'N' ? '' : null" *ngSwitchDefault (click)="openAcceptriskUlink()"><i class="icon-file-add c-red"></i></a>
+                                        </td> -->
+                                        <td class="clear-xs-after pdb10-xs" [ngSwitch]="riskaccept.status">
+                                            <div class="visible-xs-block float-xs-left c-blue">แก้ไขเอกสาร</div>
+                                            <div class="float-xs-right txt-xs-center">
+                                                <a href="javascript:void(0);" *ngSwitchCase="'P'" (click)="openAcceptriskUlink()"><i class="icon-contact-form  c-red"></i></a>
+                                                <a href="javascript:void(0);" *ngSwitchCase="'S'" [attr.disabled]="documentsStatus.riskaccept.isSigned ? '' : null" (click)="openAcceptriskUlink()"><i class="icon-contact-form"></i></a>
+                                                <a href="javascript:void(0);" [attr.disabled]="application.status == 'N' || allocation.status != 'S' ? '' : null" *ngSwitchDefault (click)="openAcceptriskUlink()"><i class="icon-file-add c-red"></i></a>
+                                            </div>
+                                        </td>
+                                        <td class="clear-xs-after pdb10-xs">
+                                            <div class="visible-xs-block float-xs-left c-blue">ดูเอกสาร</div>
+                                            <div class="float-xs-right txt-xs-center" [ngSwitch]="riskaccept.status">
+                                                <a class="btnPop" *ngSwitchCase="'P'" href="javascript:void(0);" (click)="openApplicationAcceptriskPDF()"><i class="icon-view-files"></i></a>
+                                                <a class="btnPop" *ngSwitchCase="'S'" href="javascript:void(0);" (click)="openApplicationAcceptriskPDF()"><i class="icon-view-files"></i></a>
+                                                <a class="btnPop" [attr.disabled]="application.status == 'N' || riskaccept.status == 'N' ? '' : null" *ngSwitchDefault href="javascript:void(0);"><i class="icon-view-files"></i></a>
+                                            </div>
+                                        </td>
+                                        <td class="clear-xs-after pdb10-xs">
+                                            <div class="visible-xs-block float-xs-left c-blue">สถานะ</div>
+                                            <div class="float-xs-right txt-xs-center" [ngSwitch]="riskaccept.status">
+                                                <span class="c-green" *ngSwitchCase="'S'">เรียบร้อย</span>
+                                                <span *ngSwitchCase="'P'">ดำเนินการ</span>
+                                                <span class="c-red" *ngSwitchDefault>-</span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="txt-center">
+                                        <td><span class="visible-xs-inline-block">ลำดับที่ &nbsp;</span>5</td>
+                                        <td class="view-only-md view-only-sm txt-left">
+                                            <div>แบบแสดงผู้ถือหน่วยลงทุน</div>
+                                        </td>
+                                        <td class="hide-only-md hide-only-sm hide-only-xs txt-left">แบบแสดงผู้ถือหน่วยลงทุน</td>
+                                        <!--<td class="xs-w25Left" [ngSwitch]="unitlinkholder.status">
+                                            <span class="visible-xs-block pdb10 c-blue">แก้ไขเอกสาร</span>
+                                            <a href="javascript:void(0);" *ngSwitchCase="'P'" (click)="navCtrl.push('AppInvestmentInfoPage')"><i class="icon-contact-form  c-red"></i></a>
+                                            <a href="javascript:void(0);" *ngSwitchCase="'S'" (click)="navCtrl.push('AppInvestmentInfoPage')"><i class="icon-contact-form"></i></a>
+                                            <a href="javascript:void(0);" [attr.disabled]="application.status == 'N' ? '' : null" *ngSwitchDefault (click)="navCtrl.push('AppInvestmentInfoPage')"><i class="icon-file-add c-red"></i></a>
+                                        </td> -->
+                                        <td class="clear-xs-after pdb10-xs" [ngSwitch]="unitlinkholder.status">
+                                            <div class="visible-xs-block float-xs-left c-blue">แก้ไขเอกสาร</div>
+                                            <div class="float-xs-right txt-xs-center">
+                                                <a href="javascript:void(0);" *ngSwitchCase="'P'" (click)="goToPage('AppInvestmentInfoPage')"><i class="icon-contact-form  c-red"></i></a>
+                                                <a href="javascript:void(0);" *ngSwitchCase="'S'" [attr.disabled]="documentsStatus.unitlinkholder.isSigned ? '' : null" (click)="goToPage('AppInvestmentInfoPage')"><i class="icon-contact-form"></i></a>
+                                                <a href="javascript:void(0);" [attr.disabled]="application.status == 'N' || riskaccept.status != 'S' ? '' : null" *ngSwitchDefault (click)="goToPage('AppInvestmentInfoPage')"><i class="icon-file-add c-red"></i></a>
+                                            </div>
+                                        </td>
+                                        <td class="clear-xs-after pdb10-xs">
+                                            <div class="visible-xs-block float-xs-left c-blue">ดูเอกสาร</div>
+                                            <div class="float-xs-right txt-xs-center" [ngSwitch]="unitlinkholder.status">
+                                                <a class="btnPop" *ngSwitchCase="'P'" href="javascript:void(0);" (click)="openApplicationUnitholderPDF()"><i class="icon-view-files"></i></a>
+                                                <a class="btnPop" *ngSwitchCase="'S'" href="javascript:void(0);" (click)="openApplicationUnitholderPDF()"><i class="icon-view-files"></i></a>
+                                                <a class="btnPop" [attr.disabled]="application.status == 'N' || unitlinkholder.status == 'N' ? '' : null" *ngSwitchDefault href="javascript:void(0);" (click)="openApplicationUnitholderPDF()"><i class="icon-view-files"></i></a>
+                                            </div>
+                                        </td>
+                                        <td class="clear-xs-after pdb10-xs">
+                                            <div class="visible-xs-block float-xs-left c-blue">สถานะ</div>
+                                            <div class="float-xs-right txt-xs-center" [ngSwitch]="unitlinkholder.status">
+                                                <span class="c-green" *ngSwitchCase="'S'">เรียบร้อย</span>
+                                                <span *ngSwitchCase="'P'">ดำเนินการ</span>
+                                                <span class="c-red" *ngSwitchDefault>-</span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="txt-center">
+                                        <td><span class="visible-xs-inline-block">ลำดับที่ &nbsp;</span>6</td>
+                                        <td class="view-only-md view-only-sm txt-left">
+                                            <div>ใบเสนอขาย</div>
+                                        </td>
+                                        <td class="hide-only-md hide-only-sm hide-only-xs txt-left">ใบเสนอขาย</td>
+                                        <!--<td class="xs-w25Left">
+                                            <span class="visible-xs-block pdb10 c-blue">แก้ไขเอกสาร</span>
+                                            <a href="javascript:void(0);" *ngIf="false"><i class="icon-file-add"></i></a>
+                                        </td> -->
+                                        <td class="clear-xs-after pdb10-xs">
+                                            <div class="visible-xs-block float-xs-left c-blue">แก้ไขเอกสาร</div>
+                                            <div class="float-xs-right txt-xs-center">
+                                                <a href="javascript:void(0);" *ngIf="false"><i class="icon-file-add"></i></a>
+                                            </div>
+                                        </td>
+
+                                        <td class="clear-xs-after pdb10-xs">
+                                            <div class="visible-xs-block float-xs-left c-blue">ดูเอกสาร</div>
+                                            <div class="float-xs-right txt-xs-center" [ngSwitch]="quotation.status">
+                                                <a class="btnPop" *ngSwitchCase="'S'" href="javascript:void(0);" (click)="openQuotation();"><i class="icon-view-files"></i></a>
+                                                <a class="btnPop" [attr.disabled]="true" *ngSwitchDefault href="javascript:void(0);"><i class="icon-view-files"></i></a>
+                                            </div>
+                                        </td>
+                                        <td class="clear-xs-after pdb10-xs">
+                                            <div class="visible-xs-block float-xs-left c-blue">สถานะ</div>
+                                            <div class="float-xs-right txt-xs-center" [ngSwitch]="quotation.status">
+                                                <span class="c-green" *ngSwitchCase="'S'">เรียบร้อย</span>
+                                                <span *ngSwitchCase="'P'">ดำเนินการ</span>
+                                                <span class="c-red" *ngSwitchDefault>-</span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="boxContentPage bgBlue4">
+            <div class="container">
+                <div class="boxActionForm">
+                    <button class="btn-style3 prev" type="button" disabled="disabled"><span><i class="icon-ios-arrow-back"></i> ย้อนกลับ</span></button>
+                    <button class="btn-style3 next" type="button" [disabled]="!isNext" (click)="navCtrl.push('AppSummaryUlinkPage')"><span>ถัดไป <i class="icon-ios-arrow-forward"></i></span></button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <footer footer></footer>
+</ion-content>

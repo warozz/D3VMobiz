@@ -1,0 +1,25 @@
+{
+    "planCodeSpecialMultiplyCheck" : 
+    [
+        {
+            "planCode" : "NA",
+            "multiplyCheck" : 1.2
+        },
+        {
+            "planCode" : "PG",
+            "multiplyCheck" : 5
+        },
+        {
+            "planCode" : "PH",
+            "multiplyCheck" : 5
+        },
+        {
+            "planCode" : "PJ",
+            "multiplyCheck" : 5
+        },
+        {
+            "planCode" : "PK",
+            "multiplyCheck" : 10
+        }
+    ]
+}

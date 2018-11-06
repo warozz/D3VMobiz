@@ -1,0 +1,136 @@
+<div class="container pdb10">
+    <div class="boxTitleContainer">
+        <h2>ข้อมูลผู้มุ่งหวัง</h2>
+        <ul class="boxQuickLink" *ngIf="roleType == 'agent'">
+            <li><button id="searchProspect" class="btn-style4 btn-style-m pdlr10" type="button" (click)="navCtrl.setRoot('ProspectPage')"><span><i class="icon-man-shape"></i> ค้นหาผู้มุ่งหวัง</span></button></li>
+        </ul>
+    </div>
+    <div class="formInformationLead" *ngIf="tab == 0">
+        <div class="col-sw-1">
+            <div class="col-label txt-md-right lh-form-control ws-nowrap">คำนำหน้า :</div>
+            <div class="col-input">
+                <prefix-name [(ngModel)]="data.preName" (sex)="data.gender = $event" (disabledSex)="disabledSex = $event" (ngModelChange)="onChange('preName')" [birthDate]="data.birthDate"></prefix-name>
+            </div>
+        </div>
+
+        <div class="col-sw-2">
+            <div class="col-label txt-md-right lh-form-control ws-nowrap">
+                <font color="red">*</font>ชื่อ :</div>
+            <div class="col-input">
+                <div class="form-group">
+                    <input id="quatationForm_firstName" class="form-control" type="text" [(ngModel)]="data.firstName" (change)="onChange('firstName')" maxlength="30" CharacterOnly />
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sw-2">
+            <div class="col-label txt-md-right lh-form-control ws-nowrap">
+                <font color="red">*</font>นามสกุล :</div>
+            <div class="col-input">
+                <div class="form-group">
+                    <input id="quatationForm_lastName" class="form-control" type="text" [(ngModel)]="data.lastName" (change)="onChange('lastName')" maxlength="30" CharacterOnly />
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sw-3">
+            <div class="col-label txt-md-right lh-form-control ws-nowrap">เลขประจำตัวประชาชน :</div>
+            <div class="col-input">
+                <div class="form-group">
+                    <input id="quatationForm_idCard" class="form-control" type="tel" [(ngModel)]="data.citizenID" (change)="onChange('citizenID')" maxlength="13" NumberOnly />
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sw-1">
+            <div class="col-label txt-md-right lh-form-control ws-nowrap">เพศ :</div>
+            <div class="col-input">
+                <div class="form-group">
+                    <ion-item class="form-control">
+                        <ion-label>เพศ</ion-label>
+                        <ion-select id="quatationForm_sex" [(ngModel)]="data.gender" cancelText="ยกเลิก" okText="ตกลง" interface="popover" (ngModelChange)="onChange('gender')" [disabled]="disabledSex">
+                            <ion-option value="M">ชาย</ion-option>
+                            <ion-option value="F">หญิง</ion-option>
+                        </ion-select>
+                    </ion-item>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sw-2 calendar-quatation-form">
+            <div class="col-label txt-md-right lh-form-control ws-nowrap">ระบุวันเกิด :</div>
+            <div class="col-input">
+                <calendar [id]="quatationForm_datetimeFormat" placeholder="วัน เดือน ปีเกิด" [min]="minBirthDate" [max]="maxDate" [(date)]="data.birthDate" (dateChange)="onChange('birthDate')"></calendar>
+            </div>
+        </div>
+
+        <div class="col-sw-4">
+            <div class="col-label txt-md-right lh-form-control ws-nowrap">อายุ :</div>
+            <div class="col-input">
+                <div class="form-group">
+                    <input id="quatationForm_birthDate" calculate-age [birthDate]="data.birthDate" class="form-control" type="text" disabled="disabled" [(ngModel)]="data.age" />
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sw-6">
+            <div class="col-label txt-md-right lh-form-control ws-nowrap">
+                <font color="red">*</font>ชั้นอาชีพ :</div>
+            <div class="col-input">
+                <div class="form-group">
+                    <ion-item class="form-control">
+                        <ion-label>ชั้นอาชีพ</ion-label>
+                        <ion-select id="quatationForm_occupationType" [(ngModel)]="data.occupationType" (ngModelChange)="onChange('occupationType')" cancelText="ยกเลิก" okText="ตกลง" interface="popover">
+                            <ion-option value="1">1</ion-option>
+                            <ion-option value="2">2</ion-option>
+                            <ion-option value="3" *ngIf="!(choosePlan == 'TN1' || choosePlan == 'TK1' || choosePlan == 'TQ1'  || choosePlan == 'TM1' || choosePlan == 'TX2' || choosePlan == 'TY')">3</ion-option>
+                        </ion-select>
+                    </ion-item>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sw-5">
+            <div class="col-label txt-md-right lh-form-control ws-nowrap">
+                <font color="red">*</font>เบอร์มือถือ :</div>
+            <div class="col-input">
+                <div class="form-group">
+                    <input id="quatationForm_mobilephone" class="form-control" type="tel" [(ngModel)]="data.mobilephone" (change)="onChange('mobilephone')" maxlength="10" NumberOnly />
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- xxxxx -->
+    <div class="boxContentPage bgBlue1" *ngIf="tab > 0">
+        <div class="container">
+            <div class="boxInformationLead">
+                <div class="boxListField hide-only-md hide-only-sm hide-only-xl">
+                    <div class="oneField">{{data.preName ? data.preName : '' }}<span>{{(data.firstName ? data.firstName : '') +" "+ (data.lastName ? data.lastName : '')}}</span></div>
+                    <div class="oneField">เพศ <span>{{data.gender == 'M' ? 'ชาย' : 'หญิง'}}</span></div>
+                    <div class="oneField">อายุ <span>{{data && data?.age ? data.age : 0}}</span> ปี</div>
+                    <div class="oneField">{{ 'PLAN' | planLabel }} <span>{{planselected && planselected[0]?.planName ? planselected[0].planName : ''}}</span></div>
+                    <div class="oneField" *ngIf="hasPackage">แผน <span>{{package}}</span> </div>
+                    <div class="oneField" *ngIf="hasPackage">ขั้นอาชีพ <span>{{occupationType}}</span></div>
+                    <div class="oneField" *ngIf="!hasPackage">{{ 'SUM2' | planLabel }} <span>{{sum | number}}</span> บาท</div>
+                </div>
+                <div class="boxListField view-only-md hide-only-xs ">
+                    <div class="oneField">{{data.preName ? data.preName : '' }}<span>{{(data.firstName ? data.firstName : '') +" "+ (data.lastName ? data.lastName : '')}}</span></div>
+                    <div class="oneField">เพศ <span>{{data.gender == 'M' ? 'ชาย' : 'หญิง'}}</span></div>
+                    <div class="oneField">อายุ <span>{{data.age ? data.age : 0}}</span> ปี</div>
+                </div>
+                <hr class="hide-only-xs" />
+                <div class="boxListField view-only-md hide-only-xs ">
+                    <div class="oneField">แบบประกัน <span>{{planselected && planselected[0]?.planName ? planselected[0].planName : ''}}</span></div>
+                    <div class="oneField" *ngIf="hasPackage"> แผน <span>{{package}}</span> {{ 'ขั้นอาชีพ '}} <span>{{occupationType}}</span></div>
+                    <div class="oneField" *ngIf="!hasPackage">{{ 'SUM2' | planLabel }} <span>{{sum | number}}</span> บาท</div>
+                </div>
+                <hr class="hide-only-xs" />
+                <div class="boxListField">
+                    <div class="oneField">{{ 'PREMIUM2' | planLabel }} <span>{{premiumMain | number}}</span> บาท</div>
+                    <div class="oneField">{{ 'PAYMENT' | planLabel }} <span *ngIf="payType">ถึงอายุ </span><span>{{pPayYear | number}}</span> ปี</div>
+                    <div class="oneField">{{ 'ENDOWMENT' | planLabel }} <span *ngIf="endowmentType">ถึงอายุ </span><span>{{pEndowmentYear}}</span> ปี</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

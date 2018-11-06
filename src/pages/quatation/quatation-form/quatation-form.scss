@@ -1,0 +1,59 @@
+page-quatation-form {
+    .boxPromisesMore {
+        .onePromise {
+            .label {
+                width: 92px;
+            }
+            &.noBtn {
+                .label {
+                    width: 120px;
+                }
+            }
+            @media (min-width: $screen-md-min) {
+                &.noLabel {
+                    padding-right: 0px;
+                    padding-left: 0px;
+                }
+                &.noBtn {
+                    padding-right: 0px;
+                }
+            }
+        }
+    }
+    .boxSummary {
+        p {
+            color: #ffffff;
+            font-size: $font-md;
+            &.total {
+                font-size: $font-lg;
+            }
+            margin: 0px;
+        }
+    }
+    .boxSearchPlanInsurance .lh-form-control {
+        color: #ffffff;
+        padding-top: 10px !important;
+    }
+    .quatation-dropdown {
+        margin: 25px 15px -15px 15px;
+        h2 {
+            color: #ffffff;
+            padding-right: 0px !important;
+            padding-left: 0px !important;
+            margin-top: 10px;
+            text-align: right;
+        }
+        .dropdownDetail {
+            padding: 0px;
+        }
+    }
+    @media (max-width: $screen-sm-max) {
+        .quatation-dropdown {
+            margin: 25px 0px -15px 0px;
+            h2 {
+                text-align: left;
+                margin-left: 15px;
+            }
+        }
+    }
+}

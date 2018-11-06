@@ -1,0 +1,71 @@
+[
+ {
+    "planCode": ["WN"],
+    "interval": [
+        {
+            "age": 14,        
+            "jobtype": -1,
+            "maxSum": 300000
+        }
+    ]
+ }
+,
+ {
+    "planCode": ["SN"],
+    "interval": [
+        {
+            "age": 0,
+            "jobtype": "-1",
+            "maxSum": 500000
+        }
+    ]            
+ }
+ ,
+ {
+    "planCode": ["EN36","EN37"],
+	"interval": [
+        {
+            "age": -1,        
+            "jobtype": 1,
+            "maxSum": 100000
+        }
+        ,{
+            "age": -1,
+            "jobtype": 2,
+            "maxSum": 200000
+        },{
+            "age": -1,
+            "jobtype": 3,
+            "maxSum": 500000
+        }
+    ]
+}
+]
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+    
+
+
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+			

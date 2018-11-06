@@ -1,0 +1,3 @@
+<autocomplete [(data)]="value" (dataChange)="preNameChange($event)" NumberCharacterOnly maxlength="30">
+    <dropdown-option *ngFor="let item of _dataFilter" [value]="item.title">{{ item.title }}</dropdown-option>
+</autocomplete>

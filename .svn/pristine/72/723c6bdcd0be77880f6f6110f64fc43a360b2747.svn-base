@@ -1,0 +1,33 @@
+quatation-plan-summary {
+    .display-none {
+        display: none;
+    }
+    .sub-item-indent-3 {
+        text-indent: 50px;
+    }
+    .sub-item-indent-2 {
+        text-indent: 30px;
+    }
+    .sub-item-level-2 {
+        font-size: 20px;
+    }
+    .boxBenefit:last-child {
+        border-bottom: none;
+    }
+    .boxBenefit table thead tr td h2.titleBenefit.hide-border {
+        border-bottom: none;
+    }
+    .boxBenefit table thead tr {
+        border-bottom: 2px solid #0080CB;
+    }
+    .size-medium {
+        font-size: medium;
+    }
+    .hidden {
+        display: none;
+    }
+    // remove check icon
+    .oneBenefit.or::before {
+        display: none !important;
+    }
+}

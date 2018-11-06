@@ -1,0 +1,271 @@
+header {}
+
+ion-header[header] {
+    // picture profile
+    @mixin picProfile {
+        p {
+            width: 50px;
+            height: 50px;
+            display: block;
+            border-radius: 50px;
+            border: 2px solid #fff;
+            overflow: hidden;
+            position: relative;
+            margin: 0px;
+            img {
+                position: absolute;
+                top: 60%;
+                left: 50%;
+                width: 105%;
+                height: auto;
+                -webkit-transform: translate(-50%, -50%);
+                -moz-transform: translate(-50%, -50%);
+                -ms-transform: translate(-50%, -50%);
+                -o-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+                vertical-align: middle;
+                border-radius: 0px;
+            }
+        }
+    }
+    // header
+    #header .boxHeaderTop {
+        a {
+            text-decoration: none;
+        }
+        .headerTitle {
+            display: block;
+            float: left;
+            margin: 0px;
+            padding: 4px 0px 0px 0px;
+            list-style: none;
+            li {
+                position: relative;
+                padding: 0px 10px 5px;
+                .boxVersion {
+                    position: relative;
+                    width: 183px;
+                    font: normal 35px/0.3em $font-helvethaica-med;
+                    .txt1 {
+                        position: absolute;
+                        top: 13px;
+                        color: $color-primary;
+                        span {
+                            color: $color-danger;
+                        }
+                    }
+                    .txt2 {
+                        position: absolute;
+                        top: 35px;
+                        color: #999;
+                        font-size: $font-sm;
+                        letter-spacing: 0.3px;
+                    }
+                    .txt3 {
+                        position: absolute;
+                        left: 120px;
+                        top: 8px;
+                        width: 120px;
+                        height: 40px;
+                        border: 1px solid #d8d8d8;
+                        background-color: #fff;
+                        color: $color-primary;
+                        font: normal 40px/40px $font-helvethaica-regular;
+                        font-style: italic;
+                        text-align: center;
+                    }
+                    &.mini {
+                        .txt1,
+                        .txt2 {
+                            left: -8px;
+                            font-size: $font-md;
+                        }
+                        .txt2 {
+                            font-size: $font-xs;
+                        }
+                    }
+                }
+                .btnNewUpdate {
+                    position: absolute;
+                    width: 60px;
+                    left: 260px;
+                    top: -5px;
+                    font-size: $font-sm;
+                    color: $color-primary;
+                    i {
+                        position: relative;
+                        display: block;
+                        top: 2px;
+                        left: 15px;
+                    }
+                }
+                @media (max-width: $screen-md-max) {
+                    .boxVersion {
+                        font: normal 30px/0.7em $font-helvethaica-med;
+                        .txt2 {
+                            top: 30px;
+                            font-size: $font-xs;
+                        }
+                        .txt3 {
+                            left: 100px;
+                            top: 13px;
+                            width: 90px;
+                            height: 30px;
+                            font: normal 28px/30px $font-helvethaica-regular;
+                        }
+                    }
+                    .btnNewUpdate {
+                        left: 210px;
+                        top: -5px;
+                    }
+                }
+                @media (max-width: $screen-sm-max) {
+                    .boxVersion {
+                        .txt3 {
+                            display: none;
+                        }
+                    }
+                    .btnNewUpdate {
+                        left: 100px;
+                        top: -5px;
+                    }
+                }
+            }
+        }
+        .headerTools {
+            position: absolute;
+            right: 0px;
+            .btnHelp {
+                height: 30px;
+                line-height: 12px;
+                display: block;
+                padding: 5px 0px 0px 30px;
+                margin-top: 10px;
+                font-size: $font-sm;
+                color: $color-default;
+                i {
+                    font-size: $font-sm;
+                    position: absolute;
+                    left: 12px;
+                    top: 16px;
+                    color: $color-primary;
+                }
+            }
+            .boxHeaderToolsNetwork {
+                padding: 0px 10px;
+            }
+            .boxThumbUser {
+                @include picProfile;
+            }
+            .boxHeaderToolsVersion {
+                display: none;
+            }
+            @media (max-width: $screen-sm-max) {
+                .boxHeaderToolsVersion {
+                    display: block;
+                    margin-top: 33px;
+                    font-size: $font-sm;
+                    color: $color-primary;
+                    font-style: italic;
+                }
+                .boxHeaderToolsHelp {
+                    display: none;
+                }
+            }
+        }
+    }
+    // main menu
+    #header .boxHeaderMenu .container {
+        .boxListHeaderMenu {
+            a {
+                text-decoration: none;
+                &.action {
+                    cursor: default;
+                }
+            }
+            .boxMobileUser {
+                .boxUserProfile {
+                    @include picProfile;
+                }
+                span {
+                    color: #eee;
+                    display: block;
+                    margin-left: 70px;
+                    font-size: $font-sm;
+                    line-height: 20px;
+                }
+                strong {
+                    color: #fff;
+                    display: block;
+                    margin-left: 70px;
+                }
+                &.agent {
+                    padding-top: 5px;
+                    padding-bottom: 5px;
+                    .boxUserProfile {
+                        margin: 7px 0px;
+                    }
+                }
+                &.employee {
+                    strong {
+                        margin-top: 2px;
+                    }
+                }
+            }
+        }
+    }
+    // tlprompt mini
+    #header .boxHeaderMenu.mini .container,
+    #header .boxHeaderMenu.normal .container {
+        .boxListHeaderMenu {
+            a[disabled=disabled] {
+                background-color: #aaa;
+                opacity: 1;
+            }
+        }
+    }
+    @media (min-width: $screen-md-min) {
+        #header .boxHeaderMenu .container {
+            height: 80px;
+        }
+    }
+    .view-only-mobile {
+        display: none !important;
+    }
+    @media (max-width: $screen-sm-max) {
+        #header .boxHeaderTop .logo {
+            top: 5px;
+            position: relative;
+        }
+        .view-only-mobile {
+            display: block !important;
+        }
+        /*
+        // test
+        .boxHeaderMenu {
+            .boxListHeaderMenu {
+                height: 500px !important;
+                a {
+                    height: 50px !important;
+                }
+            }
+        }*/
+    }
+    @media (max-width: $screen-sm-max) {
+        #header .boxHeaderMenu .container .boxListHeaderMenu a span {
+            padding-left: 90px;
+        }
+    }
+}
+
+ion-header[header] {
+    &:after {
+        background-image: none !important;
+    }
+}
+
+@media (max-width: $screen-sm-max) {
+    ion-header[header] {
+        height: 117px;
+    }
+}

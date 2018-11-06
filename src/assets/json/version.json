@@ -1,0 +1,318 @@
+[{
+        "version": "1.1.0",
+        "build": "007",
+        "date": "2018-11-02",
+        "feature": {
+            "new": [{
+                    "title": "แบบประกันยูนิตลิงค์",
+                    "page": "InvestmentPage",
+                    "mode": "both",
+                    "platform": "all",
+                    "subtitle": [{
+                            "title": "คำนวณเบี้ย ทำใบเสนอขาย ขอเลขที่อ้างอิง และบันทึก"
+                        }
+
+                    ]
+                },
+                {
+                    "title": "ตัวอย่างผลประโยชน์",
+                    "page": "InvestmentPage",
+                    "mode": "both",
+                    "platform": "all",
+                    "subtitle": [{
+                            "title": "กรอกข้อมูลตัวอย่างผลประโยชน์ และบันทึก"
+                        },
+                        {
+                            "title": "คำนวณเพื่อแสดงผลตารางตัวอย่างผลประโยชน์"
+                        }
+
+                    ]
+                },
+                {
+                    "title": "riskprofile",
+                    "page": "InvestmentPage",
+                    "mode": "both",
+                    "platform": "all",
+                    "subtitle": [{
+                            "title": "กรอกข้อมูลแบบสอบถามประเมินความเสี่ยง  และบันทึก"
+                        },
+                        {
+                            "title": "คำนวณประเมินระดับความเสี่ยง"
+                        }
+
+                    ]
+                }, {
+                    "title": "กรอกใบคำขอแบบประกันยูนิตลิงค์",
+                    "page": "AppformPage",
+                    "mode": "both",
+                    "platform": "all",
+                    "subtitle": [{
+                            "title": "กรอกข้อมูลใบคำขอเอาประกันภัย  และบันทึก"
+                        }
+
+                    ]
+                }
+            ],
+            "changed": [],
+            "fixed": [],
+            "cancel": []
+        }
+    },
+    {
+        "version": "1.0.0",
+        "build": "103",
+        "date": "2018-11-02",
+        "feature": {
+            "new": [{
+                    "title": "ค้นหาข้อมูลผู้มุ่งหวัง ลูกค้าเดิม",
+                    "page": "ProspectPage",
+                    "mode": "both",
+                    "platform": "all"
+                },
+                {
+                    "title": "รับข้อมูลฝ่ายขายจากระบบ www.thailife.com/da",
+                    "page": "LoginPage",
+                    "mode": "both",
+                    "platform": "all",
+                    "subtitle": [{
+                            "title": "ตรวจสอบสมาชิกนักขายดิจิทัล"
+                        },
+                        {
+                            "title": "ตรวจสอบสิทธิ์ Q-up, Top-up, Top-up plus"
+                        },
+                        {
+                            "title": "ตรวจสอบสิทธิ์ Unit Link"
+                        },
+                        {
+                            "title": "ตรวจสอบสิทธิ์ Universal Life"
+                        }
+                    ]
+                },
+                {
+                    "title": "เลือกโหมด ทีแอล โปร พลัส / ทีแอล โปร พลัส มินิ",
+                    "page": "TlpromptModePage",
+                    "mode": "both",
+                    "platform": "app"
+                },
+                {
+                    "title": "ตั้งค่าแบบประกัน 10 แบบ",
+                    "page": "SettingPage",
+                    "mode": "mini",
+                    "platform": "app"
+                },
+                {
+                    "title": "บันทึก log การใช้งาน",
+                    "page": "",
+                    "mode": "both",
+                    "platform": "all"
+                },
+                {
+                    "title": "แสดงความเสถียรของสัญญาณอินเตอร์เน็ต",
+                    "page": "",
+                    "mode": "both",
+                    "platform": "all"
+                },
+                {
+                    "title": "ซิงโครไนซ์อัตโนมัติระหว่างโหมด ทีแอล โปร พลัส และ ทีแอล โปร พลัส มินิ",
+                    "page": "",
+                    "mode": "mini",
+                    "platform": "app"
+                },
+                {
+                    "title": "การบันทึกร่าง",
+                    "page": "",
+                    "mode": "both",
+                    "platform": "all"
+                },
+                {
+                    "title": "บันทึกข้อมูลผู้มุ่งหวัง",
+                    "page": "ProspectPage",
+                    "mode": "both",
+                    "platform": "all"
+                },
+                {
+                    "title": "แก้ไขข้อมูลลูกค้าเดิม",
+                    "page": "ProspectPage",
+                    "mode": "both",
+                    "platform": "all"
+                },
+                {
+                    "title": "Pin Code",
+                    "page": "PincodePage",
+                    "mode": "both",
+                    "platform": "app"
+                },
+                {
+                    "title": "Activate Code",
+                    "page": "PincodePage",
+                    "mode": "both",
+                    "platform": "app"
+                },
+                {
+                    "title": "ค้นหาข้อมูลโรงพยาบาล",
+                    "page": "SearchHospitalPage",
+                    "mode": "normal",
+                    "platform": "all"
+                },
+                {
+                    "title": "เชื่อมต่อไปยังฟังก์ชัน “ลืมรหัสผ่าน” ของเว็บไซต์ www.thailife.com/da",
+                    "page": "ForgetPage",
+                    "mode": "normal",
+                    "platform": "all"
+                },
+                {
+                    "title": "กำหนดระยะเวลาทำงานภายในโปรแกรม (Time Out) 30 นาที เมื่อไม่มีการ Interactive",
+                    "page": "",
+                    "mode": "both",
+                    "platform": "all"
+                },
+                {
+                    "title": "แจ้งสิทธิ์ฝ่ายขายโดย pop-up และที่ Header ด้านบน",
+                    "page": "",
+                    "mode": "both",
+                    "platform": "all"
+                },
+                {
+                    "title": "แสดงรูปของฝ่ายขายที่เข้าใช้งานระบบ",
+                    "page": "",
+                    "mode": "both",
+                    "platform": "all"
+                },
+                {
+                    "title": "แสดงเลขเวอร์ชันของระบบ",
+                    "page": "",
+                    "mode": "both",
+                    "platform": "all"
+                },
+                {
+                    "title": "ออกจากระบบจะกลับไปยังหน้า login",
+                    "page": "",
+                    "mode": "both",
+                    "platform": "all"
+                },
+                {
+                    "title": "แสดงวันที่และเวลาปัจจุบัน",
+                    "page": "",
+                    "mode": "both",
+                    "platform": "all"
+                },
+                {
+                    "title": "แสดง Pop up แจ้งเตือนกรณีสัญญาณอินเตอร์เน็ตขาดความเสถียร",
+                    "page": "",
+                    "mode": "normal",
+                    "platform": "all"
+                },
+                {
+                    "title": "แสดงข้อมูลประวัติเวอร์ชันของระบบ",
+                    "page": "",
+                    "mode": "both",
+                    "platform": "all"
+                },
+                {
+                    "title": "ระบบแจ้งเตือน ERROR โดยแสดงเป็นข้อความ รหัสโค้ด พร้อมระบุเวลา",
+                    "page": "",
+                    "mode": "both",
+                    "platform": "all"
+                },
+                {
+                    "title": "CA",
+                    "page": "",
+                    "mode": "both",
+                    "platform": "all"
+                },
+                {
+                    "title": "ระบบ e-signature",
+                    "page": "",
+                    "mode": "normal",
+                    "platform": "all"
+                }
+            ],
+            "changed": [],
+            "fixed": [],
+            "cancel": []
+        }
+    },
+    {
+        "version": "1.0.0",
+        "build": null,
+        "date": "2018-03-05",
+        "feature": {
+            "new": [{
+                    "title": "ใบเสนอขาย",
+                    "page": "QuatataionPage",
+                    "mode": "both",
+                    "platform": "all"
+                },
+                {
+                    "title": "กราฟวงกลมแสดงอัตราส่วนระหว่างลูกค้าและผู้มุ่งหวัง",
+                    "page": "HomePage",
+                    "mode": "both",
+                    "platform": "all"
+                },
+                {
+                    "title": "กราฟแท่งแสดงจำนวนใบคำขอและใบเสนอขายเป็นรายเดือน",
+                    "page": "HomePage",
+                    "mode": "both",
+                    "platform": "all"
+                },
+                {
+                    "title": "แสดงข้อมูลบันทึกร่างใบเสนอขายและใบคำขอ และสามารถเรียกมาแก้ไขได้",
+                    "page": "HomePage",
+                    "mode": "both",
+                    "platform": "all"
+                },
+                {
+                    "title": "แสดงข้อมูลใบเสนอขายและใบคำขอที่บันทึกล่าสุด",
+                    "page": "HomePage",
+                    "mode": "both",
+                    "platform": "all"
+                },
+                {
+                    "title": "คำนวณเบี้ยประกัน",
+                    "page": "QuatationFormPage",
+                    "mode": "both",
+                    "platform": "all"
+                },
+                {
+                    "title": "คำนวณลดหย่อนภาษี",
+                    "page": "QuatationFormPage",
+                    "mode": "both",
+                    "platform": "all"
+                },
+                {
+                    "title": "รายละเอียดแบบประกัน, สัญญาเพิ่มเติม",
+                    "page": "QuatationFormPage",
+                    "mode": "both",
+                    "platform": "all"
+                },
+                {
+                    "title": "ค้นหาแบบประกัน",
+                    "page": "QuatationFormPage",
+                    "mode": "both",
+                    "platform": "all"
+                },
+                {
+                    "title": "แบบประกันที่ใช้บ่อย",
+                    "page": "QuatationFormPage",
+                    "mode": "both",
+                    "platform": "all"
+                },
+                {
+                    "title": "สร้างใบเสนอขาย ไทย-อังกฤษ",
+                    "page": "QuatationPdfPage",
+                    "mode": "normal",
+                    "platform": "all"
+                },
+                {
+                    "title": "บันทึกข้อมูลใบเสนอขายในระบบ",
+                    "page": "QuatationPdfPage",
+                    "mode": "both",
+                    "platform": "all"
+                }
+            ],
+            "changed": [],
+            "fixed": [],
+            "cancel": []
+        }
+    }
+]

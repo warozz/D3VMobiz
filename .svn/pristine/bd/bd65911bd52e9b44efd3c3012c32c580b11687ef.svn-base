@@ -1,0 +1,42 @@
+page-app-lifepremium-ulink {
+    .form-control[readonly][fullname-popup] {
+        background-color: #fff;
+    }
+    .check-style3+label {
+        font-size: $font-md;
+        line-height: 38px;
+        margin-bottom: 0px;
+        &::before,
+        &::after {
+            top: 7px;
+        }
+    }
+    .radio-style3+label {
+        font-size: $font-md;
+    }
+    input[class*=center-block] {
+        text-align: center;
+    }
+    @media screen and (max-width: $screen-sm-max) {
+        #fund {
+            /*&>div:nth-child(even) {
+                // background-color: red;
+                background: #f5f5f5;
+            }
+            &>div:nth-child(odd) {
+                background-color: #ffffff;
+            } */
+            &>[class*=col-]:nth-child(even) {
+                background-color: #ffffff;
+                margin-bottom: 10px;
+            }
+            &>[class*=col-]:nth-child(odd) {
+                background-color: #f5f5f5;
+                margin-bottom: 10px;
+            }
+            input[class*=center-block] {
+                max-width: 150px;
+            }
+        }
+    }
+}

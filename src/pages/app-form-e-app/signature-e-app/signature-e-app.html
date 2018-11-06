@@ -1,0 +1,170 @@
+<form [formGroup]="signature">
+    <div class="boxContentPage bgBlue3 hasBgImg bgImg95">
+        <div class="container">
+            <div class="bgPaperShadow mgt25">
+                <div class="contentPaperShadow pd20">
+                    <div *ngIf="accept == false" class="agreement">
+                        <h1 class="signature-line fs30 mg0 c-blue pdb10">ข้อตกลงการส่งใบคำขอประกันฯ กับทางบริษัท</h1>
+                        <p>ข้อความยืนยันถ้อยแถลงหรือคำตอบในใบคำขอเอาประกันภัยของผู้ขอเอาประกันภัย การให้ถ้อยคำ การมอบอำนาจ และการให้ความยินยอม</p>
+
+                        <p>ก. ข้าพเจ้าขอยืนยันว่าคำตอบทุกข้อในใบคำขอเอาประกันชีวิตนี้ รวมถึงถ้อยแถลงที่ได้ตอบกับแพทย์ผู้ตรวจสุขภาพเป็นความจริงทุกประการ ซึ่งข้าพเจ้าเข้าใจดีว่า หากข้าพเจ้าไม่แถลงข้อความจริง บริษัทอาจจะปฏิเสธการรับประกันภัยและปฏิเสธการจ่ายเงินตามกรมธรรม์ฯ</p>
+
+                        <p>ข. ข้าพเจ้ายินยอมให้แพทย์หรือบริษัทประกันภัยอื่นหรือสถานพยาบาล ซึ่งมีประวัติสุขภาพของข้าพเจ้าที่ผ่านมาหรือจะมีขึ้นต่อไปในอนาคตเปิดเผยข้อเท็จจริงให้แก่บริษัทฯ หรือผู้แทนของบริษัทฯ เพื่อการขอเอาประกันภัยหรือการจ่ายเงินตามกรมธรรม์ได้
+                        </p>
+
+                        <p>ค. ข้าพเจ้ายินยอมให้บริษัทฯ จัดเก็บ ใช้และเปิดเผยข้อเท็จจริงเกี่ยวกับสุขภาพและข้อมูลของข้าพเจ้าต่อบริษัทประกันภัยหรือบริษัทประกันภัยต่อหรือหน่วยงานที่มีอำนาจตามกฎหมายหรือบุคลากร ทางการแพทย์ เพื่อการขอเอาประกันภัยหรือการจ่ายเงินตามกรมธรรม์ฯ
+                            หรือประโยชน์ทางการแพทย์ได้
+                        </p>
+                        <!-- <p>ง.ข้าพเจ้ายินยอมให้บริษัทฯจัดเก็บ ใช้ และเปิดเผยข้อเท็จจริงเกี่ยวกับสุขภาพและข้อมูลของข้าพเจ้าต่อสำนักงานคณะกรรมการกำกับและส่งเสริมการประกอบธุรกิจประกันภัย เพื่อประโยชน์ในการ<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;กำกับดูแลธุรกิจประกันภัยม</p>
+                        <p> -->
+                        <p>ง. ข้าพเจ้ายินยอมให้บริษัทฯ จัดเก็บ ใช้ และเปิดเผยข้อเท็จจริงเกี่ยวกับสุขภาพและข้อมูลของข้าพเจ้าต่อสำนักงานคณะกรรมการกำกับและส่งเสริมการประกอบธุรกิจประกันภัย เพื่อประโยชน์ในการ กำกับดูแลธุรกิจประกันภัย</p>
+                        <p>
+                            <font color="red">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;หากท่านยกเลิกกรมธรรม์ประกันภัยก่อนครบกำหนดสัญญา ผลประโยชน์ที่ท่านจะได้รับจะเป็นไปตามตารางมูลค่าเงินเวนคืนในกรมธรรม์ประกันภัย (ถ้ามี) ซึ่งอาจน้อยกว่าจำนวนเงินเอาประกันภัยที่กำหนดไว้</font>
+                        </p>
+                        <p>
+                            <font color="red">ก่อนลงลายมือชื่อให้ท่านกรุณาตรวจสอบความถูกต้องของคำตอบทุกข้ออีกครั้งหนึ่ง เพื่อความสมบูรณ์ของสัญญาประกันภัย</font>
+                        </p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ข้าพเจ้าขอยืนยันว่าได้ตรวจสอบข้อมูลอย่างถูกต้องและสมบูรณ์แล้วบนใบคำขออิเล็กทรอนิกส์นี้</p>
+
+                        <div class="pdb10 pdt5 fs40" text-center>
+                            <input id="agree" name="agree" class="check-style3" type="checkbox" (change)="acceptAgreement()">
+                            <label for="agree">ยอมรับ</label>
+                        </div>
+                    </div>
+
+                    <div *ngIf="accept" class="e-app-container">
+                        <h1 class="e-app-title">ลงลายมือชื่อ ผู้เอาประกันภัย - พยาน</h1>
+                        <div class="inside-container">
+                            <div class="form-horizontal">
+                                <div class="form-group">
+
+                                    <div class="row">
+                                        <h2 class="col-xs-12 col-sm-offset-4 col-sm-5">ผู้เอาประกันภัย</h2>
+                                    </div>
+                                    <div class="row spec-margin">
+                                        <label for="" class="col-xs-12 col-sm-4 control-label middle">ลายเซ็น :</label>
+                                        <div class="col-xs-12 col-sm-5 signature-height">
+                                            <!-- <div *ngIf="signs['1'] === undefined" class="signature-thumb" (click)="openSignature(signs, 1)" placeholder="ลงลายมือชื่อ"></div> -->
+                                            <input *ngIf="signs['1'] === undefined" type="text" class="signature-thumb fs30" text-center (click)="openSignature(signs, 1)" placeholder="ลงลายมือชื่อ" readonly />
+                                            <div *ngIf="signs['1'] !== undefined" class="signature-thumb" (click)="openSignature(signs, 1)">
+
+
+                                                <img [src]="signs['1']" style="width: 100%;height: 100%" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row underline">
+                                        <label for="" class="col-xs-12 col-sm-4 control-label">ชื่อ-นามสกุล :</label>
+                                        <div class="col-xs-12 col-sm-5">
+                                            <input type="text" class="form-control" id="" placeholder="" disabled formControlName="cusName" disabled>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <h2 class="col-xs-12 col-sm-offset-4 col-sm-5">พยาน</h2>
+                                    </div>
+                                    <div class="row spec-margin">
+                                        <label for="" class="col-xs-12 col-sm-4 control-label middle">ลายเซ็น :</label>
+                                        <div class="col-xs-12 col-sm-5 signature-height">
+                                            <!-- <div *ngIf="signs['2'] === undefined" class="signature-thumb" (click)="openSignature(signs, 2)"></div> -->
+                                            <input *ngIf="signs['2'] === undefined" type="text" class="signature-thumb fs30" text-center (click)="openSignature(signs, 2)" placeholder="ลงลายมือชื่อ" readonly />
+                                            <div *ngIf="signs['2'] !== undefined" class="signature-thumb" (click)="openSignature(signs, 2)">
+                                                <img [src]="signs['2']" style="width: 100%;height: 100%" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--div class="row spec-margin">
+                                        <label for="" class="col-xs-12 col-sm-4 control-label middle">คำนำหน้า :</label>
+                                        <div class="col-xs-12 col-sm-3">
+                                            <!-- <prefix-name></prefix-name> -->
+                                    <!--div class="form-group">
+                                                <ion-item class="form-control">
+                                                    <ion-select formControlName="titleWitness1" interface="popover">
+                                                        <ion-option value="นาย">นาย</ion-option>
+                                                        <ion-option value="นาง">นาง</ion-option>
+                                                        <ion-option value="นางสาว">นางสาว</ion-option>
+                                                        <ion-option value="เด็กชาย">เด็กชาย</ion-option>
+                                                        <ion-option value="เด็กหญิง">เด็กหญิง</ion-option>
+                                                        <ion-option value="อื่นๆ">อื่นๆ</ion-option>
+                                                    </ion-select>
+                                                </ion-item>
+                                            </div>
+                                        </div>
+                                    </div-->
+                                    <div class="row underline">
+                                        <label for="" class="col-xs-12 col-sm-4 control-label">ชื่อ-นามสกุล :</label>
+                                        <div class="col-xs-12 col-sm-5">
+                                            <input type="text" formControlName="witnessName1" class="form-control" id="" placeholder="" disabled>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <h2 class="col-xs-12 col-sm-offset-4 col-sm-5">พยาน/ผู้เขียน</h2>
+                                    </div>
+                                    <div class="row spec-margin">
+                                        <label for="" class="col-xs-12 col-sm-4 control-label middle">ลายเซ็น :</label>
+                                        <div class="col-xs-12 col-sm-5 signature-height">
+                                            <!-- <div *ngIf="signs['3'] === undefined" class="signature-thumb" (click)="openSignature(signs, 3)"></div> -->
+                                            <input *ngIf="signs['3'] === undefined" class="signature-thumb fs30" text-center (click)="openSignature(signs, 3)" type="text" placeholder="ลงลายมือชื่อ" readonly />
+                                            <div *ngIf="signs['3'] !== undefined" class="signature-thumb" (click)="openSignature(signs, 3)">
+                                                <img [src]="signs['3']" style="width: 100%;height: 100%" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--div class="row spec-margin">
+                                        <label for="" class="col-xs-12 col-sm-4 control-label middle">คำนำหน้า :</label>
+                                        <div class="col-xs-12 col-sm-3">
+                                            <ion-item class="form-control">
+                                                <ion-select formControlName="titleWitness2" interface="popover">
+                                                    <ion-option value="นาย">นาย</ion-option>
+                                                    <ion-option value="นาง">นาง</ion-option>
+                                                    <ion-option value="นางสาว">นางสาว</ion-option>
+                                                    <ion-option value="เด็กชาย">เด็กชาย</ion-option>
+                                                    <ion-option value="เด็กหญิง">เด็กหญิง</ion-option>
+                                                    <ion-option value="อื่นๆ">อื่นๆ</ion-option>
+                                                </ion-select>
+                                            </ion-item>
+                                        </div>
+                                    </div-->
+                                    <div class="row underline">
+                                        <label for="" class="col-xs-12 col-sm-4 control-label">ชื่อ-นามสกุล :</label>
+                                        <div class="col-xs-12 col-sm-5">
+                                            <input type="text" formControlName="witnessName2" class="form-control" id="" placeholder="" disabled>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <h2 class="col-xs-12 col-sm-offset-4 col-sm-5">ตัวแทน</h2>
+                                    </div>
+                                    <div class="row spec-margin">
+                                        <label for="" class="col-xs-12 col-sm-4 control-label middle">ลายเซ็น :</label>
+                                        <div class="col-xs-12 col-sm-5 signature-height">
+                                            <!-- <div *ngIf="signs['4'] === undefined" class="signature-thumb" (click)="openSignature(signs, 4)"></div> -->
+                                            <input *ngIf="signs['4'] === undefined" class="signature-thumb fs30" text-center (click)="openSignature(signs, 4)" type="text" placeholder="ลงลายมือชื่อ" readonly />
+                                            <div *ngIf="signs['4'] !== undefined" class="signature-thumb" (click)="openSignature(signs, 4)">
+                                                <img [src]="signs['4']" style="width: 100%;height: 100%" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row underline spec-margin">
+                                        <label for="" class="col-xs-12 col-sm-4 control-label">ชื่อ-นามสกุล :</label>
+                                        <div class="col-xs-12 col-sm-5">
+                                            <input type="text" class="form-control" id="" placeholder="" formControlName="agentName" disabled>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <label for="" class="col-xs-12 col-sm-4 control-label">ทำที่ :</label>
+                                        <div class="col-xs-12 col-sm-5">
+                                            <input type="text" class="form-control" id="" placeholder="" formControlName="place" disabled>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

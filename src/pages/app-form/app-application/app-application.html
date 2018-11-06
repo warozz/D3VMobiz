@@ -1,0 +1,14 @@
+<ion-header header></ion-header>
+<ion-content>
+    <div id="app_form_page" class="mainContainer">
+        <title-page [sub1]="segmentStr">ใบคำขอ</title-page>
+        <app-info></app-info>
+        <steps (change)="saveApp($event)" design="2" [(selectIndex)]="step">
+            <step *ngFor="let item of stepsPage; let i = index" [stepTitle]="item.title " [root]="item.root" [index]="i" [disabled]="item.disabled"></step>
+            <ng-template #action>
+                <button class="btn-style2" log [page]="'savePage'" type="submit" (click)="saveApp()"><span><i class="icon-save-file-option"></i> บันทึก</span></button>
+            </ng-template>
+        </steps>
+    </div>
+    <footer footer></footer>
+</ion-content>

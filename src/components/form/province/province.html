@@ -1,0 +1,6 @@
+<div class="form-group form-style3 hasSelect">
+    <select name="hospital1" class="form-control" [(ngModel)]="data" (change)="selectProvince($event.target.value)">
+        <option value="" >เลือกจังหวัด</option> 
+        <option [attr.value]="item.name" *ngFor="let item of dlprovince" [hidden]="filterRegion != undefined && filterRegion != '' && item.region != filterRegion">{{ item.name }}</option>
+    </select>
+</div>

@@ -1,0 +1,48 @@
+<div class="boxContentPage bgBlue3 hasBgImg">
+    <div class="container">
+        <div class="bgPaperShadow">
+            <div class="contentPaperShadow">
+                <div class="boxListForm pdlr0">
+
+                    <!-- สัญญาเพิ่มเติม -->
+                    <form [formGroup]="ulinkRider">
+                        <div class="boxPromisesMore" style="border: none;">
+                            <div class="col-md-6 pd0">
+                                <div class="col-label lh-form-control">
+                                    ประมาณการมูลค่ารับซื้อคืนหน่วยลงทุน
+                                    <br class="view-only-xs" /> ณ วันที่เริ่มถอน (บาท)
+                                </div>
+                                <div class="col-input">
+                                    <input class="form-control" type="text" formControlName="value" calculator />
+                                </div>
+                            </div>
+                            <div class="col-md-6 pd0">
+                                <div class="col-label lh-form-control">
+                                    รวมเบี้ยสัญญาเพิ่มเติม (ต่อปี)
+                                    <br class="view-only-xs" /> ณ ปีที่เริ่มหยุดพักชำระเบี้ย (บาท)
+                                </div>
+                                <div class="col-input">
+                                    <input class="form-control" type="text" formControlName="premium" calculator />
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </form>
+
+                    <rider2 [(rider)]="rider" [prospect]="ulinkAppDataProvider.prospect" [sum]="sum" [plan]="ulinkAppDataProvider.planCode" [tlplan]="tlplan" [mode]="mode" (premium)="premiumRider($event)"></rider2>
+
+                    <form class="mgt12 pdt20" style="border-top: 1px solid rgba(0, 0, 0, 0.08)">
+                        <div class="boxActionForm">
+                            <button id="btnReset" class="btn-style3 btn-style-warning" type="button" (click)="reset()">
+                                <span><i class="icon-reload"></i> ล้างค่า</span>
+                            </button>
+                            <button id="btnReset" class="btn-style2" type="button">
+                                <span><i class="icon-ion-ios-close-outline fs29"></i> ไม่ซื้อ</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

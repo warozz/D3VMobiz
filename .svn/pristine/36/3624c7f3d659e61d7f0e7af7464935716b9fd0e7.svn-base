@@ -1,0 +1,22 @@
+u-life-saleoffer-10-1 {
+    .onePromise {
+        padding-bottom: 5px!important;
+        //width: 90%;
+    }
+    .label {
+        margin-top: 10px;
+    }
+    .boxSearchPlanInsurance .boxSelectPlan {
+        padding-right: 0px;
+        border: none;
+    }
+    @media screen and (min-width: $screen-md-min) {
+        .boxSearchPlanInsurance .boxSelectPlan {
+            padding-left: 100px;
+        }
+    }
+    .boxSearchPlanInsurance .boxSelectPlan .areaLeft {
+        background: transparent;
+        padding-left: 0px;
+    }
+}

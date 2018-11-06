@@ -1,0 +1,1421 @@
+[
+    {
+        "planCode" : "EN13", 
+        "interval" : [
+            {
+                "minSum":"000200000" ,
+                "maxSum" : "000499999",
+                "discount" : "1",
+                "mode" : []
+            },
+            {
+                "minSum":"001000000" ,
+                "maxSum" : "999999999",
+                "discount" : "2",
+                "mode" : []
+            }
+        ]
+    },
+    {
+        "planCode" : "GI11", 
+        "interval" : [
+            {
+                "minSum":"000200000" ,
+                "maxSum" : "000499999",
+                "discount" : "1",
+                "mode" : []
+            },
+            {
+                "minSum":"001000000" ,
+                "maxSum" : "999999999",
+                "discount" : "2",
+                "mode" : []
+            }
+        ]
+    },
+
+
+
+    {
+        "planCode" : "EN22",
+        "interval" : [
+            {
+                "minSum":"001000000" ,
+                "maxSum" : "999999999",
+                "discount" : "1",
+                "mode" : []
+            },
+            {
+                "minSum":"000500000" ,
+                "maxSum" : "000999999",
+                "discount" : "0.5",
+                "mode" : []
+            }
+        ]
+    },
+    {
+        "planCode" : "EN28",
+        "interval" : [
+            {
+                "minSum":"001000000" ,
+                "maxSum" : "999999999",
+                "discount" : "1",
+                "mode" : []
+            },
+            {
+                "minSum":"000500000" ,
+                "maxSum" : "000999999",
+                "discount" : "0.5",
+                "mode" : []
+            }
+        ]
+    },
+    {
+        "planCode" : "EN33",
+        "interval" : [
+            {
+                "minSum":"001000000" ,
+                "maxSum" : "999999999",
+                "discount" : "1",
+                "mode" : []
+            },
+            {
+                "minSum":"000500000" ,
+                "maxSum" : "000999999",
+                "discount" : "0.5",
+                "mode" : []
+            }
+        ]
+    },
+    {
+        "planCode" : "EN34",
+        "interval" : [
+            {
+                "minSum":"001000000" ,
+                "maxSum" : "999999999",
+                "discount" : "1.4",
+                "mode" : []
+            },
+            {
+                "minSum":"000500000" ,
+                "maxSum" : "000999999",
+                "discount" : "0.8",
+                "mode" : []
+            }
+        ]
+    },
+    {
+        "planCode" : "EN38",
+        "interval" : [  
+            {
+                "minSum":"000200000" ,
+                "maxSum" : "000299999",
+                "discount" : "0.1",
+                "mode" : ["2"]
+            },
+	        {
+                "minSum":"000200000" ,
+                "maxSum" : "000299999",
+                "discount" : "0.016",
+                "mode" : ["0"]
+            },
+	        {
+                "minSum":"000200000" ,
+                "maxSum" : "000299999",
+                "discount" : "0.2",
+                "mode" : ["1"]
+            },
+            {
+                "minSum":"000200000" ,
+                "maxSum" : "000299999",
+                "discount" : "0.05",
+                "mode" : ["4"]
+            },
+	        {
+                "minSum":"000300000" ,
+                "maxSum" : "000499999",
+                "discount" : "0.033",
+                "mode" :["0"]
+            },
+	        {
+                "minSum":"000300000" ,
+                "maxSum" : "000499999",
+                "discount" : "0.1",
+                "mode" : ["4"]
+            },
+	        {
+                "minSum":"000300000" ,
+                "maxSum" : "000499999",
+                "discount" : "0.2",
+                "mode" : ["2"]
+            },
+	        {
+                "minSum":"000300000" ,
+                "maxSum" : "000499999",
+                "discount" : "0.4",
+                "mode" : ["1"]
+            },
+	        {
+                "minSum":"000500000" ,
+                "maxSum" : "999999999",
+                "discount" : "0.041",
+                "mode" : ["0"]
+            },
+            {
+                "minSum":"000500000" ,
+                "maxSum" : "999999999",
+                "discount" : "0.125",
+                "mode" : ["4"]
+            },
+            {
+                "minSum":"000500000" ,
+                "maxSum" : "999999999",
+                "discount" : "0.25",
+                "mode" : ["2"]
+            },
+            {
+                "minSum":"000500000" ,
+                "maxSum" : "999999999",
+                "discount" : "0.5",
+                "mode" : ["1"]
+            }
+            
+	  
+        ]
+    },
+    {
+        "planCode" : "EN20",
+        "interval" : [    
+            {
+                "minSum":"000500000" ,
+                "maxSum" : "000999999",
+                "discount" : "1",
+                "mode" : []
+            },
+	        {
+                "minSum":"001000000" ,
+                "maxSum" : "999999999",
+                "discount" : "2.5",
+                "mode" : []
+            }
+        ]
+    },
+    {
+        "planCode" : "EN26",
+        "interval" : [    
+            {
+                "minSum":"000500000" ,
+                "maxSum" : "000999999",
+                "discount" : "1",
+                "mode" : []
+            },
+	        {
+                "minSum":"001000000" ,
+                "maxSum" : "999999999",
+                "discount" : "2.5",
+                "mode" : []
+            }
+        ]
+    },
+    {
+        "planCode" : "ZW",
+        "interval" : [    
+            {
+                "minSum":"000500000" ,
+                "maxSum" : "000999999",
+                "discount" : "1",
+                "mode" : []
+            },
+	        {
+                "minSum":"001000000" ,
+                "maxSum" : "999999999",
+                "discount" : "1.5",
+                "mode" : []
+            }
+        ]
+    },
+    {
+        "planCode" : "EN30",
+        "interval" : [   
+            {
+                    "minSum":"001000000" ,
+                    "maxSum" : "999999999",
+                    "discount" : "1.5",
+                    "mode" : []
+            }
+        ]
+	},
+ 	{
+        "planCode" : "EN35",
+        "interval" : [   
+            {
+                "minSum":"001000000" ,
+                "maxSum" : "999999999",
+                "discount" : "1.5",
+                "mode" : []
+            }
+        ]
+    },
+    {
+        "planCode" : "EN18",
+        "interval" : [    
+            {
+                "minSum":"000500000" ,
+                "maxSum" : "000999999",
+                "discount" : "1.5",
+                "mode" : []
+            },
+	        {
+                "minSum":"001000000" ,
+                "maxSum" : "999999999",
+                "discount" : "2",
+                "mode" : []
+            }
+        ]
+    },
+    {
+        "planCode" : "EN25",
+        "interval" : [    
+            {
+                "minSum":"000500000" ,
+                "maxSum" : "000999999",
+                "discount" : "1.5",
+                "mode" : []
+            },
+	        {
+                "minSum":"001000000" ,
+                "maxSum" : "999999999",
+                "discount" : "2.5",
+                "mode" : []
+            }
+        ]
+    },
+    {
+        "planCode" : "ZY",
+        "interval" : [    
+            {
+                "minSum":"001000000" ,
+                "maxSum" : "999999999",
+                "discount" : "2.5",
+                "mode" : []
+            }
+        ]
+    },
+    {
+        "planCode" : "EN17",
+        "interval" : [    
+            {
+                "minSum":"000500000" ,
+                "maxSum" : "000999999",
+                "discount" : "2",
+                "mode" : []
+            },
+	    {
+                "minSum":"001000000" ,
+                "maxSum" : "999999999",
+                "discount" : "2.5",
+                "mode" : []
+            }
+        ]
+    },
+    {
+        "planCode" : "EN19",
+        "interval" : [    
+            {
+                "minSum":"000500000" ,
+                "maxSum" : "000999999",
+                "discount" : "2",
+                "mode" : []
+            },
+	    {
+                "minSum":"001000000" ,
+                "maxSum" : "999999999",
+                "discount" : "3.5",
+                "mode" : []
+            }
+        ]
+    },
+    {
+        "planCode" : "WX01",
+        "interval" : [    
+            {
+                "minSum":"000500000" ,
+                "maxSum" : "000999999",
+                "discount" : "0.2",
+                "mode" : ["1","9"]
+
+            },
+	    {
+                "minSum":"001000000" ,
+                "maxSum" : "999999999",
+                "discount" : "0.3",
+                "mode" : ["1","9"]
+            }
+        ]
+    },
+    {
+        "planCode" : "WY01",
+        "interval" : [    
+            {
+                "minSum":"000500000" ,
+                "maxSum" : "000999999",
+                "discount" : "0.2",
+                "mode" : ["1","9"]
+            },
+	    {
+                "minSum":"001000000" ,
+                "maxSum" : "999999999",
+                "discount" : "0.3",
+                "mode" : ["1","9"]
+            }
+        ]
+    },
+    {
+        "planCode" : "WV05",
+        "interval" : [    
+            {
+                "minSum":"000500000" ,
+                "maxSum" : "000999999",
+                "discount" : "0.1",
+                "mode" : ["2"]
+            },
+	    {
+                "minSum":"000500000" ,
+                "maxSum" : "000999999",
+                "discount" : "0.05",
+                "mode" : ["4"]
+            },
+	    {
+                "minSum":"000500000" ,
+                "maxSum" : "000999999",
+                "discount" : "0.2",
+                "mode" : ["1","9"]
+            },
+	    {
+                "minSum":"000500000" ,
+                "maxSum" : "000999999",
+                "discount" : "0.016",
+                "mode" : ["0"]
+            },
+	    {
+                "minSum":"001000000" ,
+                "maxSum" : "999999999",
+                "discount" : "0.3",
+                "mode" : ["1","9"]
+            },
+	    {
+                "minSum":"001000000" ,
+                "maxSum" : "999999999",
+                "discount" : "0.15",
+                "mode" : ["2"]
+            },
+	    {
+                "minSum":"001000000" ,
+                "maxSum" : "999999999",
+                "discount" : "0.075",
+                "mode" : ["4"]
+            },
+	    {
+                "minSum":"001000000" ,
+                "maxSum" : "999999999",
+                "discount" : "0.025",
+                "mode" : ["0"]
+            }
+        ]
+        
+    },
+    {
+        "planCode" : "WX10",
+        "interval" : [    
+            {
+                "minSum":"000500000" ,
+                "maxSum" : "000999999",
+                "discount" : "0.1",
+                "mode" : ["2"]
+            },
+	    {
+                "minSum":"000500000" ,
+                "maxSum" : "000999999",
+                "discount" : "0.05",
+                "mode" : ["4"]
+            },
+	    {
+                "minSum":"000500000" ,
+                "maxSum" : "000999999",
+                "discount" : "0.2",
+                "mode" : ["1","9"]
+            },
+	    {
+                "minSum":"000500000" ,
+                "maxSum" : "000999999",
+                "discount" : "0.016",
+                "mode" : ["0"]
+            },
+	    {
+                "minSum":"001000000" ,
+                "maxSum" : "999999999",
+                "discount" : "0.3",
+                "mode" : ["1","9"]
+            },
+	    {
+                "minSum":"001000000" ,
+                "maxSum" : "999999999",
+                "discount" : "0.15",
+                "mode" : ["2"]
+            },
+	    {
+                "minSum":"001000000" ,
+                "maxSum" : "999999999",
+                "discount" : "0.075",
+                "mode" : ["4"]
+            },
+	    {
+                "minSum":"001000000" ,
+                "maxSum" : "999999999",
+                "discount" : "0.025",
+                "mode" : ["0"]
+            }
+        ]
+    },
+    {
+        "planCode" : "WV20",
+        "interval" : [    
+            {
+                "minSum":"000500000" ,
+                "maxSum" : "000999999",
+                "discount" : "0.15",
+                "mode" : ["1","9"]
+            },
+            {
+                "minSum":"000500000" ,
+                "maxSum" : "000999999",
+                "discount" : "0.075",
+                "mode" : ["2"]
+            },
+	        {
+                "minSum":"000500000" ,
+                "maxSum" : "000999999",
+                "discount" : "0.037",
+                "mode" : ["4"]
+            },
+	        {
+                "minSum":"000500000" ,
+                "maxSum" : "000999999",
+                "discount" : "0.012",
+                "mode" : ["0"]
+            },
+	        {
+                "minSum":"001000000" ,
+                "maxSum" : "999999999",
+                "discount" : "0.25",
+                "mode" : ["1","9"]
+            },
+	        {
+                "minSum":"001000000" ,
+                "maxSum" : "999999999",
+                "discount" : "0.125",
+                "mode" : ["2"]
+            },
+	        {
+                "minSum":"001000000" ,
+                "maxSum" : "999999999",
+                "discount" : "0.062",
+                "mode" : ["4"]
+            },
+	        {
+                "minSum":"001000000" ,
+                "maxSum" : "999999999",
+                "discount" : "0.020",
+                "mode" : ["0"]
+            }
+        ]
+        
+    },
+    {
+        "planCode" : "WX60",
+        "interval" : [    
+            {
+                "minSum":"000500000" ,
+                "maxSum" : "000999999",
+                "discount" : "0.1",
+                "mode" : ["2"]
+            },
+	    {
+                "minSum":"000500000" ,
+                "maxSum" : "000999999",
+                "discount" : "0.05",
+                "mode" : ["4"]
+            },
+	    {
+                "minSum":"000500000" ,
+                "maxSum" : "000999999",
+                "discount" : "0.2",
+                "mode" : ["1","9"]
+            },
+	    {
+                "minSum":"000500000" ,
+                "maxSum" : "000999999",
+                "discount" : "0.016",
+                "mode" : ["0"]
+            },
+	    {
+                "minSum":"001000000" ,
+                "maxSum" : "999999999",
+                "discount" : "0.3",
+                "mode" : ["1","9"]
+            },
+	    {
+                "minSum":"001000000" ,
+                "maxSum" : "999999999",
+                "discount" : "0.15",
+                "mode" : ["2"]
+            },
+	    {
+                "minSum":"001000000" ,
+                "maxSum" : "999999999",
+                "discount" : "0.075",
+                "mode" : ["4"]
+            },
+	    {
+                "minSum":"001000000" ,
+                "maxSum" : "999999999",
+                "discount" : "0.025",
+                "mode" : ["0"]
+            }
+        ]
+        
+    },
+    {
+        "planCode" : "WV99",
+        "interval" : [    
+            {
+                "minSum":"000500000" ,
+                "maxSum" : "000999999",
+                "discount" : "0.15",
+                "mode" : ["1","9"]
+            },
+            {
+                "minSum":"000500000" ,
+                "maxSum" : "000999999",
+                "discount" : "0.075",
+                "mode" : ["2"]
+            },
+	        {
+                "minSum":"000500000" ,
+                "maxSum" : "000999999",
+                "discount" : "0.037",
+                "mode" : ["4"]
+            },
+	        {
+                "minSum":"000500000" ,
+                "maxSum" : "000999999",
+                "discount" : "0.012",
+                "mode" : ["0"]
+            },
+	        {
+                "minSum":"001000000" ,
+                "maxSum" : "999999999",
+                "discount" : "0.25",
+                "mode" : ["1","9"]
+            },
+	        {
+                "minSum":"001000000" ,
+                "maxSum" : "999999999",
+                "discount" : "0.125",
+                "mode" : ["2"]
+            },
+	        {
+                "minSum":"001000000" ,
+                "maxSum" : "999999999",
+                "discount" : "0.062",
+                "mode" : ["4"]
+            },
+	        {
+                "minSum":"001000000" ,
+                "maxSum" : "999999999",
+                "discount" : "0.020",
+                "mode" : ["0"]
+            }
+        ]
+       
+    },
+    {
+        "planCode" : "WY05",
+        "interval" : [    
+            {
+                "minSum":"000500000" ,
+                "maxSum" : "000999999",
+                "discount" : "0.1",
+                "mode" : ["2"]
+            },
+	    {
+                "minSum":"000500000" ,
+                "maxSum" : "000999999",
+                "discount" : "0.05",
+                "mode" : ["4"]
+            },
+	    {
+                "minSum":"000500000" ,
+                "maxSum" : "000999999",
+                "discount" : "0.2",
+                "mode" : ["1","9"]
+            },
+	    {
+                "minSum":"000500000" ,
+                "maxSum" : "000999999",
+                "discount" : "0.016",
+                "mode" : ["0"]
+            },
+	    {
+                "minSum":"001000000" ,
+                "maxSum" : "999999999",
+                "discount" : "0.3",
+                "mode" : ["1","9"]
+            },
+	    {
+                "minSum":"001000000" ,
+                "maxSum" : "999999999",
+                "discount" : "0.15",
+                "mode" : ["2"]
+            },
+	    {
+                "minSum":"001000000" ,
+                "maxSum" : "999999999",
+                "discount" : "0.075",
+                "mode" : ["4"]
+            },
+	    {
+                "minSum":"001000000" ,
+                "maxSum" : "999999999",
+                "discount" : "0.025",
+                "mode" : ["0"]
+            }
+        ]
+        
+    },
+    {
+        "planCode" : "WY10",
+        "interval" : [    
+            {
+                "minSum":"000500000" ,
+                "maxSum" : "000999999",
+                "discount" : "0.1",
+                "mode" : ["2"]
+            },
+	    {
+                "minSum":"000500000" ,
+                "maxSum" : "000999999",
+                "discount" : "0.05",
+                "mode" : ["4"]
+            },
+	    {
+                "minSum":"000500000" ,
+                "maxSum" : "000999999",
+                "discount" : "0.2",
+                "mode" : ["1","9"]
+            },
+	    {
+                "minSum":"000500000" ,
+                "maxSum" : "000999999",
+                "discount" : "0.016",
+                "mode" : ["0"]
+            },
+	    {
+                "minSum":"001000000" ,
+                "maxSum" : "999999999",
+                "discount" : "0.3",
+                "mode" : ["1","9"]
+            },
+	    {
+                "minSum":"001000000" ,
+                "maxSum" : "999999999",
+                "discount" : "0.15",
+                "mode" : ["2"]
+            },
+	    {
+                "minSum":"001000000" ,
+                "maxSum" : "999999999",
+                "discount" : "0.075",
+                "mode" : ["4"]
+            },
+	    {
+                "minSum":"001000000" ,
+                "maxSum" : "999999999",
+                "discount" : "0.025",
+                "mode" : ["0"]
+            }
+        ]
+        
+    },
+    {
+        "planCode" : "WY20",
+        "interval" : [    
+            {
+                "minSum":"000500000" ,
+                "maxSum" : "000999999",
+                "discount" : "0.1",
+                "mode" : ["2"]
+            },
+	    {
+                "minSum":"000500000" ,
+                "maxSum" : "000999999",
+                "discount" : "0.05",
+                "mode" : ["4"]
+            },
+	    {
+                "minSum":"000500000" ,
+                "maxSum" : "000999999",
+                "discount" : "0.2",
+                "mode" : ["1","9"]
+            },
+	    {
+                "minSum":"000500000" ,
+                "maxSum" : "000999999",
+                "discount" : "0.016",
+                "mode" : ["0"]
+            },
+	    {
+                "minSum":"001000000" ,
+                "maxSum" : "999999999",
+                "discount" : "0.3",
+                "mode" : ["1","9"]
+            },
+	    {
+                "minSum":"001000000" ,
+                "maxSum" : "999999999",
+                "discount" : "0.15",
+                "mode" : ["2"]
+            },
+	    {
+                "minSum":"001000000" ,
+                "maxSum" : "999999999",
+                "discount" : "0.075",
+                "mode" : ["4"]
+            },
+	    {
+                "minSum":"001000000" ,
+                "maxSum" : "999999999",
+                "discount" : "0.025",
+                "mode" : ["0"]
+            }
+        ]
+        
+    },
+    {
+        "planCode" : "WY60",
+        "interval" : [    
+            {
+                "minSum":"000500000" ,
+                "maxSum" : "000999999",
+                "discount" : "0.1",
+                "mode" : ["2"]
+            },
+	    {
+                "minSum":"000500000" ,
+                "maxSum" : "000999999",
+                "discount" : "0.05",
+                "mode" : ["4"]
+            },
+	    {
+                "minSum":"000500000" ,
+                "maxSum" : "000999999",
+                "discount" : "0.2",
+                "mode" : ["1","9"]
+            },
+	    {
+                "minSum":"000500000" ,
+                "maxSum" : "000999999",
+                "discount" : "0.016",
+                "mode" : ["0"]
+            },
+	    {
+                "minSum":"001000000" ,
+                "maxSum" : "999999999",
+                "discount" : "0.3",
+                "mode" : ["1","9"]
+            },
+	    {
+                "minSum":"001000000" ,
+                "maxSum" : "999999999",
+                "discount" : "0.15",
+                "mode" : ["2"]
+            },
+	    {
+                "minSum":"001000000" ,
+                "maxSum" : "999999999",
+                "discount" : "0.075",
+                "mode" : ["4"]
+            },
+	    {
+                "minSum":"001000000" ,
+                "maxSum" : "999999999",
+                "discount" : "0.025",
+                "mode" : ["0"]
+            }
+        ]
+       
+    },
+    {
+        "planCode" : "WY99",
+        "interval" : [    
+            {
+                "minSum":"000500000" ,
+                "maxSum" : "000999999",
+                "discount" : "0.1",
+                "mode" : ["2"]
+            },
+	    {
+                "minSum":"000500000" ,
+                "maxSum" : "000999999",
+                "discount" : "0.05",
+                "mode" : ["4"]
+            },
+	    {
+                "minSum":"000500000" ,
+                "maxSum" : "000999999",
+                "discount" : "0.2",
+                "mode" : ["1","9"]
+            },
+	    {
+                "minSum":"000500000" ,
+                "maxSum" : "000999999",
+                "discount" : "0.016",
+                "mode" : ["0"]
+            },
+	    {
+                "minSum":"001000000" ,
+                "maxSum" : "999999999",
+                "discount" : "0.3",
+                "mode" : ["1","9"]
+            },
+	    {
+                "minSum":"001000000" ,
+                "maxSum" : "999999999",
+                "discount" : "0.15",
+                "mode" : ["2"]
+            },
+	    {
+                "minSum":"001000000" ,
+                "maxSum" : "999999999",
+                "discount" : "0.075",
+                "mode" : ["4"]
+            },
+	    {
+                "minSum":"001000000" ,
+                "maxSum" : "999999999",
+                "discount" : "0.025",
+                "mode" : ["0"]
+            }
+        ]
+       
+    },
+    {
+        "planCode" : "WZ",
+        "interval" : [    
+            {
+                "minSum":"000500000" ,
+                "maxSum" : "000999999",
+                "discount" : "0.1",
+                "mode" : ["2"]
+            },
+	    {
+                "minSum":"000500000" ,
+                "maxSum" : "000999999",
+                "discount" : "0.05",
+                "mode" : ["4"]
+            },
+	    {
+                "minSum":"000500000" ,
+                "maxSum" : "000999999",
+                "discount" : "0.2",
+                "mode" : ["1","9"]
+            },
+	    {
+                "minSum":"000500000" ,
+                "maxSum" : "000999999",
+                "discount" : "0.016",
+                "mode" : ["0"]
+            },
+	    {
+                "minSum":"001000000" ,
+                "maxSum" : "999999999",
+                "discount" : "0.3",
+                "mode" : ["1","9"]
+            },
+	    {
+                "minSum":"001000000" ,
+                "maxSum" : "999999999",
+                "discount" : "0.15",
+                "mode" : ["2"]
+            },
+	    {
+                "minSum":"001000000" ,
+                "maxSum" : "999999999",
+                "discount" : "0.075",
+                "mode" : ["4"]
+            },
+	    {
+                "minSum":"001000000" ,
+                "maxSum" : "999999999",
+                "discount" : "0.025",
+                "mode" : ["0"]
+            }
+        ]
+       
+    },
+    {
+        "planCode" : "EN21",
+        "interval" : [    
+            {
+                "minSum":"000500000" ,
+                "maxSum" : "000999999",
+                "discount" : "2.5",
+                "mode" : []
+            },
+	    {
+                "minSum":"001000000" ,
+                "maxSum" : "999999999",
+                "discount" : "3",
+                "mode" : []
+            }
+        ]
+    },
+    {
+        "planCode" : "ZV",
+        "interval" : [    
+            {
+                "minSum":"000500000" ,
+                "maxSum" : "000999999",
+                "discount" : "2.5",
+                "mode" : []
+            },
+	        {
+                "minSum":"001000000" ,
+                "maxSum" : "999999999",
+                "discount" : "3",
+                "mode" : []
+            }
+        ]
+    },
+    {
+        "planCode" : "ZX",
+        "interval" : [    
+            {
+                "minSum":"000500000" ,
+                "maxSum" : "000999999",
+                "discount" : "2.5",
+                "mode" : []
+            },
+	    {
+                "minSum":"001000000" ,
+                "maxSum" : "999999999",
+                "discount" : "3.5",
+                "mode" : []
+            }
+        ]
+    },
+    {
+        "planCode" : "EN16",
+        "interval" : [    
+            {
+                "minSum":"000500000" ,
+                "maxSum" : "000999999",
+                "discount" : "3",
+                "mode" : []
+            },
+	    {
+                "minSum":"001000000" ,
+                "maxSum" : "999999999",
+                "discount" : "3.5",
+                "mode" : []
+            }
+        ]
+    },
+    {
+        "planCode" : "EN24",
+        "interval" : [    
+            {
+                "minSum":"000500000" ,
+                "maxSum" : "000999999",
+                "discount" : "5.5",
+                "mode" : []
+            },
+	    {
+                "minSum":"001000000" ,
+                "maxSum" : "999999999",
+                "discount" : "6",
+                "mode" : []
+            }
+        ]
+    },
+    {
+        "planCode" : "EN23",
+        "interval" : [    
+            {
+                "minSum":"000500000" ,
+                "maxSum" : "000999999",
+                "discount" : "7",
+                "mode" : []
+            },
+	    {
+                "minSum":"001000000" ,
+                "maxSum" : "999999999",
+                "discount" : "7.5",
+                "mode" : []
+            }
+        ]
+    },
+    {
+        "planCode" : "EN31",
+        "interval" : [    
+            {
+                "minSum":"005000000" ,
+                "maxSum" : "999999999",
+                "discount" : "0.3",
+                "mode" : ["1"]
+            },
+	    {
+                "minSum":"003000000" ,
+                "maxSum" : "004999999",
+                "discount" : "0.2",
+                "mode" : ["1"]
+            },
+	    {
+                "minSum":"0003000000" ,
+                "maxSum" : "004999999",
+                "discount" : "0.1",
+                "mode" : ["2"]
+            },
+	    {
+                "minSum":"001000000" ,
+                "maxSum" : "002999999",
+                "discount" : "0.1",
+                "mode" : ["1"]
+            },
+	    {
+                "minSum":"005000000" ,
+                "maxSum" : "999999999",
+                "discount" : "0.15",
+                "mode" : ["2"]
+            },
+	    {
+                "minSum":"003000000" ,
+                "maxSum" : "004999999",
+                "discount" : "0.05",
+                "mode" :["4"]
+            },
+	    {
+                "minSum":"001000000" ,
+                "maxSum" : "002999999",
+                "discount" : "0.05",
+                "mode" : ["2"]
+            },
+	    {
+                "minSum":"005000000" ,
+                "maxSum" : "999999999",
+                "discount" : "0.075",
+                "mode" :["4"]
+            },
+	    {
+                "minSum":"005000000" ,
+                "maxSum" : "999999999",
+                "discount" : "0.025",
+                "mode" :["0"]
+            },
+	    {
+                "minSum":"001000000" ,
+                "maxSum" : "002999999",
+                "discount" : "0.025",
+                "mode" :["4"]
+            },
+	    {
+                "minSum":"003000000" ,
+                "maxSum" : "004999999",
+                "discount" : "0.016",
+                "mode" :["0"]
+            },
+	    {
+                "minSum":"001000000" ,
+                "maxSum" : "002999999",
+                "discount" : "0.008",
+                "mode" :["0"]
+            }
+        ]
+	},
+ 	{
+        "planCode" : "EN32",
+        "interval" : [    
+            {
+                "minSum":"005000000" ,
+                "maxSum" : "999999999",
+                "discount" : "0.3",
+                "mode" : ["1"]
+            },
+	    {
+                "minSum":"003000000" ,
+                "maxSum" : "004999999",
+                "discount" : "0.2",
+                "mode" : ["1"]
+            },
+	    {
+                "minSum":"0003000000" ,
+                "maxSum" : "004999999",
+                "discount" : "0.1",
+                "mode" : ["2"]
+            },
+	    {
+                "minSum":"001000000" ,
+                "maxSum" : "002999999",
+                "discount" : "0.1",
+                "mode" : ["1"]
+            },
+	    {
+                "minSum":"005000000" ,
+                "maxSum" : "999999999",
+                "discount" : "0.15",
+                "mode" : ["2"]
+            },
+	    {
+                "minSum":"003000000" ,
+                "maxSum" : "004999999",
+                "discount" : "0.05",
+                "mode" :["4"]
+            },
+	    {
+                "minSum":"001000000" ,
+                "maxSum" : "002999999",
+                "discount" : "0.05",
+                "mode" : ["2"]
+            },
+	    {
+                "minSum":"005000000" ,
+                "maxSum" : "999999999",
+                "discount" : "0.075",
+                "mode" :["4"]
+            },
+	    {
+                "minSum":"005000000" ,
+                "maxSum" : "999999999",
+                "discount" : "0.025",
+                "mode" :["0"]
+            },
+	    {
+                "minSum":"001000000" ,
+                "maxSum" : "002999999",
+                "discount" : "0.025",
+                "mode" :["4"]
+            },
+	    {
+                "minSum":"003000000" ,
+                "maxSum" : "004999999",
+                "discount" : "0.016",
+                "mode" :["0"]
+            },
+	    {
+                "minSum":"001000000" ,
+                "maxSum" : "002999999",
+                "discount" : "0.008",
+                "mode" :["0"]
+            }
+        ]
+	},{
+        "planCode" : "WN2",
+        "interval" : [    
+            {
+                "minSum":"000500000" ,
+                "maxSum" : "000999999",
+                "discount" : "0.2",
+                "mode" : ["1"]
+            },
+            {
+                "minSum":"000500000" ,
+                "maxSum" : "000999999",
+                "discount" : "0.1",
+                "mode" : ["2"]
+            },
+            {
+                "minSum":"000500000" ,
+                "maxSum" : "000999999",
+                "discount" : "0.05",
+                "mode" : ["4"]
+            },{
+                "minSum":"000500000" ,
+                "maxSum" : "000999999",
+                "discount" : "0.016",
+                "mode" : ["0"]
+            },
+	        {
+                "minSum":"001000000" ,
+                "maxSum" : "999999999",
+                "discount" : "0.4",
+                "mode" : ["1"]
+            },{
+                "minSum":"001000000" ,
+                "maxSum" : "999999999",
+                "discount" : "0.2",
+                "mode" : ["2"]
+            },{
+                "minSum":"001000000" ,
+                "maxSum" : "999999999",
+                "discount" : "0.1",
+                "mode" : ["4"]
+            },{
+                "minSum":"001000000" ,
+                "maxSum" : "999999999",
+                "discount" : "0.033",
+                "mode" : ["0"]
+            }
+        ]
+    },{
+        "planCode" : "AS85",
+        "interval" : [    
+            {
+                "minSum":"000300000" ,
+                "maxSum" : "000499999",
+                "discount" : "8",
+                "mode" : ["9"]
+            },{
+                "minSum":"000500000" ,
+                "maxSum" : "000999999",
+                "discount" : "9",
+                "mode" : ["9"]
+            },{
+                "minSum":"001000000" ,
+                "maxSum" : "999999999",
+                "discount" : "10",
+                "mode" : ["9"]
+            }
+        ]
+    },{
+        "planCode" : "AS90",
+        "interval" : [    
+            {
+                "minSum":"000300000" ,
+                "maxSum" : "000499999",
+                "discount" : "6",
+                "mode" : ["9"]
+            },{
+                "minSum":"000500000" ,
+                "maxSum" : "000999999",
+                "discount" : "7.5",
+                "mode" : ["9"]
+            },{
+                "minSum":"001000000" ,
+                "maxSum" : "999999999",
+                "discount" : "10",
+                "mode" : ["9"]
+            }
+        ]
+    },{
+        "planCode" : "AS99",
+        "interval" : [    
+            {
+                "minSum":"000300000" ,
+                "maxSum" : "000499999",
+                "discount" : "7.5",
+                "mode" : ["9"]
+            },{
+                "minSum":"000500000" ,
+                "maxSum" : "000999999",
+                "discount" : "8",
+                "mode" : ["9"]
+            },{
+                "minSum":"001000000" ,
+                "maxSum" : "999999999",
+                "discount" : "9",
+                "mode" : ["9"]
+            }
+        ]
+    },{
+        "planCode" : "AT85",
+        "interval" : [    
+            {
+                "minSum":"000300000" ,
+                "maxSum" : "000499999",
+                "discount" : "6",
+                "mode" : ["9"]
+            },{
+                "minSum":"000500000" ,
+                "maxSum" : "000999999",
+                "discount" : "7.5",
+                "mode" : ["9"]
+            },{
+                "minSum":"001000000" ,
+                "maxSum" : "999999999",
+                "discount" : "8.5",
+                "mode" : ["9"]
+            }
+        ]
+    },{
+        "planCode" : "AT90",
+        "interval" : [    
+            {
+                "minSum":"000300000" ,
+                "maxSum" : "000499999",
+                "discount" : "6",
+                "mode" : ["9"]
+            },{
+                "minSum":"000500000" ,
+                "maxSum" : "000999999",
+                "discount" : "7.5",
+                "mode" : ["9"]
+            },{
+                "minSum":"001000000" ,
+                "maxSum" : "999999999",
+                "discount" : "8.5",
+                "mode" : ["9"]
+            }
+        ]
+    },{
+        "planCode" : "AT99",
+        "interval" : [    
+            {
+                "minSum":"000500000" ,
+                "maxSum" : "000999999",
+                "discount" : "3",
+                "mode" : ["9"]
+            },{
+                "minSum":"001000000" ,
+                "maxSum" : "999999999",
+                "discount" : "5",
+                "mode" : ["9"]
+            }
+        ]
+    },
+    {
+        "planCode" : "EN39",
+        "interval" : [
+            {
+                "minSum":"001000000" ,
+                "maxSum" : "999999999",
+                "discount" : "0.5",
+                "mode" : []
+            },
+            {
+                "minSum":"000500000" ,
+                "maxSum" : "000999999",
+                "discount" : "0.2",
+                "mode" : []
+            }
+        ]
+    },
+    {
+        "planCode" : "EN40",
+        "interval" : [
+            {
+                "minSum":"001000000" ,
+                "maxSum" : "999999999",
+                "discount" : "0.8",
+                "mode" : []
+            },
+            {
+                "minSum":"000500000" ,
+                "maxSum" : "000999999",
+                "discount" : "0.4",
+                "mode" : []
+            }
+        ]
+    }
+
+]
+   

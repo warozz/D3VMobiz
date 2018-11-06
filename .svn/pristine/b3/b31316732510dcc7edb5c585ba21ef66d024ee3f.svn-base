@@ -1,0 +1,51 @@
+<div class="boxContentPage bgBlue3 hasBgImg bgImg95">
+    <div class="container">
+        <div class="bgPaperShadow mgt25">
+            <div class="contentPaperShadow">
+                <div class="boxHeadInfo">
+                    <h1 class="base-line fs30 mg0 c-blue pdb10 txt-left">แนบเอกสาร</h1>
+                    <div class="txt-center mgt25 mgb10 btn-upload">
+                        <button *ngIf="typeapp=='ULink'" class="btn-style4 btn-style-l pdlr10" (click)="uploadImageUlink()" type="button"><span><i class="icon-ion-ios-camera-outline fs29"></i>ถ่ายรูปผู้เอาประกัน</span></button>
+                        <button class="btn-style4 btn-style-l pdlr10" (click)="uploadImage()" type="button"><span><i class="icon-file-add fs29"></i> แนบเอกสารหลักฐาน</span></button>
+                    </div>
+                </div>
+                <div class="boxTableStyle1 boxAppFormTable1">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th class="txt-left">เอกสาร</th>
+                                <th>ดูเอกสาร</th>
+                                <th>ลบ</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="pdl-sm-7">ปช.60</td>
+                                <td class="clear-xs-after pdt10-xs txt-center">
+                                    <div class="visible-xs-block float-xs-left c-blue">ดูเอกสาร</div>
+                                    <div *ngIf="!hasPcSixty" class="float-xs-right"><a class="btnPop" href="javascript:void(0)" (click)="viewDocPC60()"><i class="icon icon-file-add"></i></a></div>
+                                    <div *ngIf="hasPcSixty" class="float-xs-right"><a class="btnPop" href="javascript:void(0)" (click)="viewDocPC60()"><i class="icon icon-view-files"></i></a></div>
+                                </td>
+                                <td class="clear-xs-after pdt10-xs txt-center">
+                                    <div class="visible-xs-block float-xs-left c-blue">ลบ</div>
+                                    <div class="float-xs-right"><a [attr.disabled]="hasPcSixty ? null : ''" class="btnPop" href="javascript:void(0)" (click)="deleteDocPC60()"><i class="icon icon-rubbish-bin"></i></a></div>
+                                </td>
+                            </tr>
+                            <tr *ngFor="let item of attachFileMs; let i = index" [attr.data-index]="i">
+                                <td class="pdl-sm-7">{{ item.attribute03 }}</td>
+                                <td class="clear-xs-after pdt10-xs txt-center">
+                                    <div class="visible-xs-block float-xs-left c-blue">ดูเอกสาร</div>
+                                    <div class="float-xs-right"><a class="btnPop" href="javascript:void(0)" (click)="viewDoc(item)"><i class="icon icon-view-files"></i></a></div>
+                                </td>
+                                <td class="clear-xs-after pdt10-xs txt-center">
+                                    <div class="visible-xs-block float-xs-left c-blue">ลบ</div>
+                                    <div class="float-xs-right"><a class="btnPop" href="javascript:void(0)" (click)="deleteDoc(i, item)"><i class="icon icon-rubbish-bin"></i></a></div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

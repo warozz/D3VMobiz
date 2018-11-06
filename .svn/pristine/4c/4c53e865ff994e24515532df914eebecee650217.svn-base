@@ -1,0 +1,39 @@
+search {
+    .boxSearch {
+        position: relative;
+        margin-top: 12px;
+        padding-right: 100px;
+        .form-control {
+            height: 46px;
+        }
+        .btnClearSearch {
+            position: absolute;
+            right: 108px;
+            top: 0px;
+            text-decoration: none;
+            cursor: pointer;
+            color: #b1b1b1;
+            background: none;
+            font-size: $font-md;
+            height: 46px;
+        }
+        .btnSearch {
+            display: block;
+            position: absolute;
+            right: 0px;
+            top: 0px;
+            width: 100px;
+            height: 100%;
+            background: $color-primary;
+            color: #fff;
+            text-align: center;
+            overflow: hidden;
+            text-decoration: none;
+            cursor: pointer;
+            i {
+                font-size: $font-lg;
+                line-height: 46px;
+            }
+        }
+    }
+}

@@ -1,0 +1,274 @@
+<!-- Generated template for the ProspectSearchComponent component -->
+<div class="bgBlue4">
+    <div class="boxSearchMember" [ngClass]="{'advance':searchMode=='adv'}">
+        <ul class="boxRight">
+            <li class="normal-search">
+                <a (click)="selectSearchMode('nor')">ค้นหา</a>
+            </li>
+            <li class="advance-search">
+                <a (click)="selectSearchMode('adv')">ค้นหาขั้นสูง</a>
+            </li>
+            <li>
+                <span>|</span>
+            </li>
+            <!--TODO TYPE-->
+            <li>
+                <a name="SearchAll" log [page]="'ProspectPage'" [object]="'SearchAll'" [type]="" (click)="searchProspect('');">ดูรายชื่อทั้งหมด</a>
+            </li>
+        </ul>
+
+        <ul class="boxLeft">
+            <li>
+                <input type="radio" name="filter_member" id="radio-choice-1" class="radio-style2" checked="checked" value="" [(ngModel)]="typeVal" />
+                <label for="radio-choice-1">ค้นหารายชื่อทั้งหมด</label>
+            </li>
+            <li>
+                <input type="radio" name="filter_member" id="radio-choice-2" class="radio-style2" value="P" [(ngModel)]="typeVal" />
+                <label for="radio-choice-2">ค้นหารายชื่อผู้มุ่งหวัง</label>
+            </li>
+            <li>
+                <input type="radio" name="filter_member" id="radio-choice-3" class="radio-style2" value="C" [(ngModel)]="typeVal" />
+                <label for="radio-choice-3">ค้นหารายชื่อลูกค้า</label>
+            </li>
+        </ul>
+        <div class="clearfix"></div>
+        <div class="boxNormalSearch">
+            <input class="form-control fl" type="text" [(ngModel)]="searchProspectVal" />
+            <a class="btnClearSearch">
+                <i class="icon-close-circled"></i>
+            </a>
+            <!--TODO TYPE-->
+            <a name="SearchNormal" log [page]="'ProspectPage'" [object]="'SearchNormal'" [type]="" class="btnSearch" (click)="searchProspect('nor')">
+                <i class="icon-search2"></i>
+            </a>
+        </div>
+
+        <div class="boxAdvanceSearch">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12 fix1200r1">
+                        <div class="col-lg-5 col-md-3  col-sm-3 col-xs-12 txt-xs-right txt-sm-right txt-md-left lh-form-control ws-nowrap">ชื่อ :</div>
+                        <div class="col-lg-7 col-md-9 col-sm-9 col-xs-12">
+                            <div class="form-group">
+                                <input id="dp_name" name="dp_name" class="form-control" type="text" [(ngModel)]="firstNameVal" placeholder="" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
+                        <div class="col-lg-5 col-md-3  col-sm-3 col-xs-12 txt-xs-right txt-sm-right txt-md-left lh-form-control ws-nowrap">นามสกุล :</div>
+                        <div class="col-lg-7 col-md-9 col-sm-9 col-xs-12">
+                            <div class="form-group">
+                                <input id="tx_surname" name="tx_surname" class="form-control" type="text" [(ngModel)]="lastNameVal" placeholder="" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12 fix1200r3">
+                        <div class="col-lg-5 col-md-3  col-sm-3 col-xs-12 txt-xs-right txt-sm-right txt-md-left lh-form-control ws-nowrap">เลขประจำตัวประชาชน :</div>
+                        <div class="col-lg-7 col-md-9 col-sm-9 col-xs-12">
+                            <div class="form-group">
+                                <input id="tx_id" name="tx_id" class="form-control" NumberOnly [(ngModel)]="cIdVal" placeholder="" maxlength="13" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12 fix1200r4">
+                        <div class="col-lg-5 col-md-3  col-sm-3 col-xs-12 txt-xs-right txt-sm-right txt-md-left lh-form-control ws-nowrap">เบอร์มือถือ :</div>
+                        <div class="col-lg-7 col-md-9 col-sm-9 col-xs-12">
+                            <div class="form-group">
+                                <input name="" class="form-control" type="text" NumberOnly [(ngModel)]="mobileNoVal" placeholder="" maxlength="10" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12 fix1200r1">
+                        <div class="col-lg-5 col-md-3  col-sm-3 col-xs-12 txt-xs-right txt-sm-right txt-md-left lh-form-control ws-nowrap">เพศ :</div>
+                        <div class="col-lg-7 col-md-9 col-sm-9 col-xs-12">
+                            <div class="form-group">
+                                <sex [(data)]="genderVal"></sex>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
+                        <div class="col-lg-5 col-md-3  col-sm-3 col-xs-12 txt-xs-right txt-sm-right txt-md-left lh-form-control ws-nowrap">อีเมล :</div>
+                        <div class="col-lg-7 col-md-9 col-sm-9 col-xs-12">
+                            <div class="form-group">
+                                <input id="" name="" class="form-control" type="text" [(ngModel)]="EmailVal" placeholder="" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12 fix1200r3">
+                        <div class="col-lg-5 col-md-3  col-sm-3 col-xs-12 txt-xs-right txt-sm-right txt-md-left lh-form-control ws-nowrap">วันที่บันทึกข้อมูล :</div>
+                        <div class="col-lg-5 col-md-9 col-sm-9 col-xs-12">
+                            <div class="form-group hasIcon">
+                                <calendar id="startDate_id" (dateChange)="dateChange($event)" [max]="endDate" [(date)]="startDate"></calendar>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12 fix1200r4 ">
+                        <div class="col-lg-5 col-md-3  col-sm-3 col-xs-12 txt-xs-right txt-sm-right txt-md-left lh-form-control ws-nowrap">ถึง :</div>
+                        <div class="col-lg-7 col-md-9 col-sm-9 col-xs-12">
+                            <div class="form-group hasIcon">
+                                <calendar id="endDate_id" (dateChange)="dateChange($event)" [min]="startDate" [(date)]="endDate"></calendar>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12 fix1200r1">
+                        <div class="col-lg-5 col-md-3  col-sm-3 col-xs-12 txt-xs-right txt-sm-right txt-md-left lh-form-control ws-nowrap">เขต/อำเภอ :</div>
+                        <div class="col-lg-7 col-md-9 col-sm-9 col-xs-12">
+                            <div class="form-group">
+                                <input name="" class="form-control" type="text" [(ngModel)]="districtVal" placeholder="" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
+                        <div class="col-lg-5 col-md-3  col-sm-3 col-xs-12 txt-xs-right txt-sm-right txt-md-left lh-form-control ws-nowrap">จังหวัด :</div>
+                        <div class="col-lg-7 col-md-9 col-sm-9 col-xs-12">
+                            <div class="form-group">
+                                <input id="tx_id" name="tx_id" class="form-control" type="text" [(ngModel)]="provinceVal" placeholder="" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12  btn-searchProspect">
+                        <a name="SearchAdvance" log [page]="'ProspectPage'" [object]="'SearchNormal'" [type]="" class="btn-style4 btn-style-l" (click)="searchProspect('adv')">
+                            <span>
+                                <i class="icon-search2"></i>ค้นหา</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="bgPaperShadow mgt0">
+    <div class="contentPaperShadow">
+        <div class="boxHeadInfo">
+            <ul class="boxLeft lh-form-control">
+                <li>ผลการค้นหา
+                    <span class="c-blue">{{count | number}}</span> รายการ</li>
+                <li class="xs-underline">|</li>
+                <li class="xs-inline">ประเภทลูกค้า</li>
+                <li class="xs-inline">
+                    <ion-item class="form-control">
+                        <ion-label>...</ion-label>
+                        <ion-select [(ngModel)]="typeMode" cancelText="ยกเลิก" okText="ตกลง" interface="popover" (ionChange)="filterCustomaerType()">
+                            <ion-option value="A" selected>ดูทั้งหมด</ion-option>
+                            <ion-option value="C">ลูกค้า</ion-option>
+                            <ion-option value="P">ผู้มุ่งหวัง</ion-option>
+                        </ion-select>
+                    </ion-item>
+                </li>
+                <li class="xs-underline">|</li>
+                <li class="xs-inline">แสดงข้อมูล</li>
+                <li class="xs-inline">
+                    <ion-item class="form-control">
+                        <ion-select [(ngModel)]="pageSize" cancelText="ยกเลิก" okText="ตกลง" interface="popover" (ionChange)="changePage(1)">
+                            <ion-option value="5" selected>5</ion-option>
+                            <ion-option value="10">10</ion-option>
+                            <ion-option value="15">15</ion-option>
+                            <ion-option value="20">20</ion-option>
+                        </ion-select>
+                    </ion-item>
+                </li>
+                <li class="xs-inline">ต่อหน้า</li>
+            </ul>
+
+            <ul class="boxRight">
+                <li>
+                    <a class="btn-style4 btn-style-l" (click)="showAddMember()">
+                        <span>
+                            <i class="icon-lead -add"></i> เพิ่มรายชื่อผู้มุ่งหวัง</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="boxTableStyle1 boxSearchMemberTable">
+            <table id="table_1" class="dataTable">
+                <thead>
+                    <tr>
+                        <th>ลำดับที่</th>
+                        <th class="view-only-sm txt-left sm-w30p sorting" [ngClass]="{'sorting_asc': sortingFlag === 'asc'  && column === 'citizenID', 'sorting_desc': sortingFlag === 'desc' && column === 'citizenID'}" (click)="sort('citizenID','str')">รายละเอียด</th>
+                        <th class="hide-only-sm hide-only-xs sorting" [ngClass]="{'sorting_asc': sortingFlag === 'asc' && column === 'fullName', 'sorting_desc': sortingFlag === 'desc' && column === 'fullName'}" (click)="sort('fullName','str')">ชื่อ-นามสกุล</th>
+                        <th class="hide-only-sm hide-only-xs sorting" [ngClass]="{'sorting_asc': sortingFlag === 'asc' && column === 'mobilephone', 'sorting_desc': sortingFlag === 'desc' && column === 'mobilephone'}" (click)="sort('mobilephone','str')">เบอร์มือถือ</th>
+                        <th class="hide-only-sm hide-only-xs sorting" [ngClass]="{'sorting_asc': sortingFlag === 'asc' && column === 'customerType', 'sorting_desc': sortingFlag === 'desc' && column === 'customerType'}" (click)="sort('customerType','str')">ประเภท</th>
+                        <th class="hide-only-sm hide-only-xs sorting" [ngClass]="{'sorting_asc': sortingFlag === 'asc' && column === 'programe', 'sorting_desc': sortingFlag === 'desc' && column === 'programe'}" (click)="sort('programe','str')">แหล่งที่มา/โปรแกรม</th>
+                        <th class='sorting' [ngClass]="{'sorting_asc': sortingFlag === 'asc' && column === 'quatationAmt', 'sorting_desc': sortingFlag === 'desc' && column === 'quatationAmt'}" (click)="sort('quatationAmt','')">ใบเสนอขาย</th>
+                        <th class='sorting' [ngClass]="{'sorting_asc': sortingFlag === 'asc' && column === 'applicationAmt', 'sorting_desc': sortingFlag === 'desc' && column === 'applicationAmt'}" (click)="sort('applicationAmt','')">ใบคำขอ</th>
+                        <th>สร้างใบเสนอขาย</th>
+                        <th>ดู/แก้ไขข้อมูล</th>
+                        <th>ลบ</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr align="center" *ngFor="let prospect of prospects | orderBy:{property:column,direction:direction} | pagination:{pageSize:pageSize,currentPage:currentPage,flagSort:flagSort} let i = index;">
+                        <td>
+                            <span class="visible-xs-inline-block">ลำดับที่ &nbsp;</span> {{((i+1)+((currentPage - 1)*pageSize))}}
+                            <span class="visible-sm-block visible-xs-inline-block pdlr10 ws-nowrap">{{statusMap[prospect.customerType]}}</span>
+                        </td>
+                        <td class="view-only-sm txt-left">
+                            <!-- {{prospect.citizenID}} -->
+                            <br> {{prospect.fullName}}
+                            <br> เบอร์มือถือ {{prospect.mobilephone}}
+                        </td>
+                        <!-- <td class="hide-only-sm hide-only-xs">{{prospect.citizenID}}</td> -->
+                        <td class="hide-only-sm hide-only-xs">{{prospect.fullName}}</td>
+                        <td class="hide-only-sm hide-only-xs">{{prospect.mobilephone}}</td>
+                        <td class="hide-only-sm hide-only-xs">
+                            <span>{{statusMap[prospect.customerType]}}</span>
+                        </td>
+                        <td class="hide-only-sm hide-only-xs">
+                            <span>TL Pro Plus</span>
+                        </td>
+                        <td class="xs-w20Left">
+                            <span class="visible-xs-block pdb10 c-blue">ใบเสนอขาย</span>
+                            <span class="c-blue">{{prospect.quatationAmt}}</span>
+                        </td>
+                        <td class="xs-w20Left">
+                            <span class="visible-xs-block pdb10 c-blue">ใบคำขอ</span>
+                            <span class="c-blue">{{prospect.applicationAmt}}</span>
+                        </td>
+                        <!--TODO TYPE-->
+                        <td class="xs-w20Left">
+                            <span class="visible-xs-block pdb10 c-blue">สร้างใบเสนอขาย</span>
+                            <a name="'CreateQuatation_{{prospect.customerID}}" log [page]="'QuatationPage'" [object]="'CreateQuatation_'+prospect.customerID" [type]="" href="javascript:void(0)" (click)="createSellSheet(prospect,'')">
+                                <i class="icon-file-add"></i>
+                            </a>
+                        </td>
+                        <td class="xs-w20Left">
+                            <span class="visible-xs-block pdb10 c-blue">ดู/แก้ไขข้อมูล</span>
+                            <a name="MemberViewDataComponent_{{prospect.customerID}}" log [page]="'ProspectPage'" [object]="'MemberViewDataComponent_'+prospect.customerID" [type]="" class="btnPop" href="javascript:void(0)" (click)="openMemberData(prospect)">
+                                <i class="icon-view-files"></i>
+                            </a>
+                        </td>
+                        <td class="xs-w20Left">
+                            <span class="visible-xs-block pdb10 c-blue">ลบ</span>
+                            <a name="DeleteProspect_{{prospect.customerID}}" log [page]="'ProspectPage'" [object]="'DeleteProspect_'+prospect.customerID" [type]="" class="btnPop" href="javascript:void(0)" (click)="confirmDelete(prospect.customerID,i,prospect.fullName)">
+                                <i class="icon-rubbish-bin"></i>
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <br/>
+            <div *ngIf="prospects.length < 1" class="txt-center c-red">ไม่พบข้อมูลที่ค้นหา</div>
+            <br/>
+            <div class="right">
+                <a class="btn-style4 btn-style-m txt-center pdlr10" (click)="changePage(currentPage - 1)">
+                    <span>
+                        <i class="icon-android-arrow-back"></i> ย้อนกลับ</span>
+                </a>
+                <a class="btn-style5 btn-style-m txt-center pdlr10">
+                    <span>{{currentPage}}/{{totalPage}}</span>
+                </a>
+                <a class="btn-style4 btn-style-m txt-center pos-icon-right pdlr10" (click)="changePage(currentPage + 1)">
+                    <span>ถัดไป
+                        <i class="icon-android-arrow-forward"></i>
+                    </span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

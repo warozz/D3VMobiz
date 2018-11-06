@@ -1,0 +1,40 @@
+ <div class="modal">
+    <a class="fancybox-close" href="javascript:void(0)" (click)="close()"></a>
+    <h1 *ngIf="data.title != null" class="modal-title">
+        <i [ngClass]="data.icon"></i>
+        <span [innerHtml]="data.title"></span>
+    </h1>
+
+    <!-- <ion-item class="form-control" style="border: 1px solid #C8C8C8;">
+            <ion-select [(ngModel)]="radioSelectAddress" cancelText="ยกเลิก" okText="ตกลง">
+                <ion-option [value]="item.itemValue" *ngFor="let item of data.paragraph;let index = index" selected="{{(index==0).toString()}}">{{item.name}}</ion-option>
+            </ion-select>
+        </ion-item> -->
+    <div class="popup popup-style1">
+        <div class="boxNewUpdate">
+            <div class="scrollbar-inner">
+                <form [formGroup]="prospectPopup">
+                    <div class="container-fluid">
+                        <div class="pdt20 txt-center" *ngIf="data?.paragraph.length <= 0" style="font-size: 50px;line-height: 66px;">
+                            {{data?.content}}
+                        </div>
+                        <div class="form-group pdt20" *ngIf="data?.paragraph.length > 0"> 
+                            <div class="pdlr10 pdb10" *ngFor="let item of data.paragraph;let index = index">
+                                <input id="change-{{index}}" formControlName="isChange" name="isChange" class="radio-style3" type="radio" value="{{item.itemValue}}"/>
+                                <label for="change-{{index}}" style="font-size: 30px;">{{item.name}}</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="txt-center pdt20" *ngIf="data?.paragraph?.length > 0">
+                        <button id="bt_save" class="btnSaveLeadRegister btn-style4"  type="submit"
+                        (click)="submitAddress(radioSelectAddress)">
+                        <span> ตกลง </span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    
+</div>

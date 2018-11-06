@@ -1,0 +1,28 @@
+page-app-form-ulink {
+    .boxActionForm {
+        text-align: center;
+        .prev {
+            float: left;
+            &[disabled] {
+                visibility: hidden;
+            }
+        }
+        .next {
+            float: right;
+        }
+        @media (max-width: $screen-sm-max) {
+            button {
+                width: 100%;
+                margin: 5px 0px;
+            }
+            .prev {
+                width: 48%;
+                margin-bottom: 20px;
+            }
+            .next {
+                width: 48%;
+                margin-bottom: 20px;
+            }
+        }
+    }
+}

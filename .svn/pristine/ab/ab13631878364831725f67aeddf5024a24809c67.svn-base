@@ -1,0 +1,859 @@
+<div class="boxContentPage bgBlue3 hasBgImg bgImg95">
+    <div class="container">
+        <div class="bgPaperShadow mgt25">
+            <div class="contentPaperShadow">
+
+                <!-- start boxFixTopJumpMenu -->
+                <div class="boxFixTopJumpMenu">
+                    <div id="boxFixJumpMenu" class="boxContentFixJumpMenu">
+                        <div class="boxListFixJumpMenu sm-a-mgr0 sm-a-action-fsnormal">
+                            <a class="action" (click)="scrollToTop()">แบบประกันชีวิต</a>
+                            <a class="down" (click)="scrollToCenter()">ความคุ้มครอง</a>
+                            <a class="down" (click)="scrollToBot()">ผู้ชำระเบี้ย</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- end boxFixTopJumpMenu -->
+
+                <div id="boxListJumpContent" class="boxListJumpContent">
+                    <!-- start oneJumpContent -->
+                    <div id="link1" class="oneJumpContent">
+                        <h2 class="view-only-xs c-blue boxTitleFixJumpMenu">แบบประกันชีวิต</h2>
+
+                        <div class="boxListForm pdlr0 pdb10 xs-pdt0">
+                            <!-- หัวข้อ -->
+                            <div class="boxInsuranceType">
+                                <div class="pdlr0" [ngClass]="{'col-lg-6': appData.isUlink(), 'col-lg-9': !appData.isUlink()}">
+                                    <div class="col-md-3 pdr-md-7 lh-form-control txt-md-right">แบบประกัน</div>
+                                    <div class="pdl-md-7" [ngClass]="{'col-md-9': appData.isUlink(), 'col-md-6': !appData.isUlink()}">
+                                        <div class="form-group">
+                                            <input [(ngModel)]="appTypeForShow.insuranceType" class="form-control" type="text" placeholder="" disabled/>
+                                        </div>
+                                    </div>
+                                    <div *ngIf="appTypeForShow.insurancePlan !== ''" class="col-lg-3 col-md-3 pdl-md-0">
+                                        <div class="form-group">
+                                            <input [(ngModel)]="appTypeForShow.insurancePlan" class="form-control" type="text" placeholder="" disabled/>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3 col-md-6 pdlr0" *ngIf="appData.isUlink()">
+                                    <div class="col-lg-6 col-md-6 pdr-md-7 lh-form-control txt-md-right">รหัสแบบ</div>
+                                    <div class="col-lg-6 col-md-6 pdl-md-7">
+                                        <div class="form-group">
+                                            <input [(ngModel)]="quatation.plancode" class="form-control" type="text" disabled />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3 col-md-6 pdlr0" *ngIf="appTypeForShow.insurancePaymentType !== ''">
+                                    <div class="col-lg-6 col-md-6 pdr-md-7 lh-form-control txt-md-right">ชำระเบี้ยประกัน</div>
+                                    <div class="col-lg-6 col-md-6 pdl-md-7">
+                                        <div class="form-group">
+                                            <input [(ngModel)]="appTypeForShow.insurancePaymentType" class="form-control" type="text" placeholder="" disabled/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- รายละเอียดแบบ -->
+                            <div class="col-lg-4 col-md-6 pd0" *ngIf="!appData.isUlink()">
+                                <div class="col-lg-4 col-md-5 col-sm-7 txt-sm-right pdr-sm-7 lh-form-control">
+                                    รหัสแบบ :
+                                </div>
+                                <div class="col-lg-8 col-md-6 col-sm-4 pdl-sm-7 col-xs-8">
+                                    <div class="form-group">
+                                        <input name="" class="form-control" [(ngModel)]="appTypeForShow.idType" type="text" placeholder="" disabled />
+                                    </div>
+                                </div>
+                                <div class="clearfix view-only-xs"></div>
+                            </div>
+
+                            <div class="col-lg-4 col-md-6 pd0 view-only-md" *ngIf="!appData.isUlink()">
+                                <div class="col-lg-4 col-md-5 col-sm-7 txt-sm-right pdr-sm-7 lh-form-control">
+                                    ทุนประกัน :
+                                </div>
+                                <div class="col-lg-8 col-md-6 col-sm-4 pdl-sm-7">
+                                    <div class="form-group">
+                                        <input name="" class="form-control" [(ngModel)]="appTypeForShow.insuranceAmount" type="text" placeholder="" disabled />
+                                    </div>
+                                </div>
+                                <div class="clearfix view-only-xs"></div>
+                            </div>
+
+                            <div class="col-lg-4 col-md-6 pd0">
+                                <div class="col-lg-8 col-md-7 col-sm-7 txt-sm-right pdr-sm-7 lh-form-control">
+                                    ระยะเวลาเอาประกันภัย<span *ngIf="quatation.endowmenttype  === '1' && !appData.isUlink()">ถึงอายุ</span> :
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-sm-4 pdl-sm-7 col-xs-8">
+                                    <div class="form-group">
+                                        <input name="" class="form-control" [(ngModel)]="appTypeForShow.insuranceLifeTime" type="text" placeholder="" disabled />
+                                    </div>
+                                </div>
+                                <div class="col-xs-4 col-sm-1 pdl0 ws-nowrap lh-form-control">ปี</div>
+                                <div class="clearfix view-only-xs"></div>
+                            </div>
+
+                            <div class="col-lg-4 col-md-6 pd0">
+                                <div class="col-lg-8 col-md-7 col-sm-7 txt-sm-right pdr-sm-7 lh-form-control">
+                                    ระยะเวลาชำระเบี้ยประกันภัย :
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-sm-4 pdl-sm-7 col-xs-8">
+                                    <div class="form-group">
+                                        <input name="" class="form-control" [(ngModel)]="appTypeForShow.insurancePaymentTime" type="text" placeholder="" disabled />
+                                    </div>
+                                </div>
+                                <div class="col-xs-4 col-sm-1 pdl0 ws-nowrap lh-form-control">ปี</div>
+                                <div class="clearfix view-only-xs"></div>
+                            </div>
+
+                            <div class="col-lg-4 col-md-6 pd0 hidden-md" *ngIf="!appData.isUlink()">
+                                <div class="col-md-4 col-sm-7 txt-sm-right pdr-sm-7 lh-form-control">
+                                    ทุนประกัน :
+                                </div>
+                                <div class="col-md-8 col-sm-4 pdl-sm-7 col-xs-8">
+                                    <div class="form-group">
+                                        <input name="" class="form-control" [(ngModel)]="appTypeForShow.insuranceAmount" type="text" placeholder="" disabled />
+                                    </div>
+                                </div>
+                                <div class="clearfix view-only-xs"></div>
+                            </div>
+
+                            <div class="col-lg-4 col-md-6 pd0" *ngIf="!appData.isUlink()">
+                                <div class="col-lg-6 col-md-7 col-sm-7 txt-sm-right pdr-sm-7 lh-form-control">
+                                    เบี้ยประกันภัยหลัก :
+                                </div>
+                                <div class="col-lg-5 col-md-4 col-sm-4 pdl-sm-7 col-xs-8">
+                                    <div class="form-group">
+                                        <input name="" class="form-control" [(ngModel)]="appTypeForShow.insureMain" type="text" placeholder="" disabled />
+                                    </div>
+                                </div>
+                                <div class="col-xs-4 col-sm-1 pdl0 ws-nowrap lh-form-control">บาท</div>
+                                <div class="clearfix view-only-xs"></div>
+                            </div>
+
+                            <div class="col-lg-4 pd0" [ngClass]="{'col-md-6': !appData.isUlink()}">
+                                <div class="col-lg-6 col-md-7 col-sm-7 txt-sm-right pdr-sm-7 lh-form-control">
+                                    เบี้ยประกันภัยรวม :
+                                </div>
+                                <div class="col-lg-5 col-md-4 col-sm-4 pdl-sm-7 col-xs-8">
+                                    <div class="form-group">
+                                        <input name="" class="form-control" [(ngModel)]="appTypeForShow.insureTotal" type="text" placeholder="" disabled />
+                                    </div>
+                                </div>
+                                <div class="col-xs-4 col-sm-1 pdl0 ws-nowrap lh-form-control">บาท</div>
+                                <div class="clearfix view-only-xs"></div>
+                            </div>
+
+                            <div class="pd0" *ngIf="appData.isUlink()" [ngClass]="{'col-lg-7': quatation.plancode === 'UA01', 'col-lg-6': quatation.plancode === 'UA02'}">
+                                <div class="col-lg-7 col-md-7 col-sm-7 txt-sm-right pdr-sm-7 lh-form-control">
+                                    เบี้ยประกันภัย<span *ngIf="quatation.plancode === 'UA01'">ชำระครั้งเดียว (Single Premium)</span><span *ngIf="quatation.plancode === 'UA02'">หลักเพื่อความคุ้มครอง (RPP)</span> :
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 pdl-sm-7 col-xs-8">
+                                    <div class="form-group">
+                                        <input class="form-control" [(ngModel)]="appTypeForShow.insureMain" type="text" disabled />
+                                    </div>
+                                </div>
+                                <div class="col-xs-4 col-sm-1 pdl0 ws-nowrap lh-form-control">บาท</div>
+                                <div class="clearfix view-only-xs"></div>
+                            </div>
+
+                            <div class="pd0" *ngIf="appData.isUlink()" [ngClass]="{'col-lg-4 col-lg-offset-1': quatation.plancode === 'UA01', 'col-lg-6': quatation.plancode === 'UA02'}">
+                                <div class="txt-sm-right col-md-7 col-sm-7 pdr-sm-7 pdl-sm-7 lh-form-control" [ngClass]="{'col-lg-6': quatation.plancode === 'UA01'}">
+                                    จำนวนเงินเอาประกันภัย<span *ngIf="quatation.plancode === 'UA02'"> เพื่อความคุ้มครอง</span> :
+                                </div>
+                                <div class="col-md-4 col-sm-4 pdl-sm-7 col-xs-8" [ngClass]="{'col-lg-5 col-sm-6': quatation.plancode === 'UA01', 'col-sm-5': quatation.plancode === 'UA02'}">
+                                    <div class="form-group">
+                                        <input class="form-control" [(ngModel)]="appTypeForShow.insuranceAmount" type="text" disabled />
+                                    </div>
+                                </div>
+                                <div class="col-xs-4 col-sm-1 pdl0 ws-nowrap lh-form-control">บาท</div>
+                                <div class="clearfix view-only-xs"></div>
+                            </div>
+
+                            <div class="col-lg-6 pd0" *ngIf="appData.isUlink() && quatation.plancode === 'UA02'">
+                                <div class="col-md-7 col-sm-7 txt-sm-right pdr-sm-7 pdl-sm-7 lh-form-control">
+                                    เบี้ยประกันหลักเพื่อการออม (RSP) :
+                                </div>
+                                <div class="col-md-4 col-sm-4 pdl-sm-7 col-xs-8">
+                                    <div class="form-group">
+                                        <input class="form-control" [(ngModel)]="appTypeForShow.savingpremium" type="text" disabled />
+                                    </div>
+                                </div>
+                                <div class="col-xs-4 col-sm-1 pdl0 ws-nowrap lh-form-control">บาท</div>
+                                <div class="clearfix view-only-xs"></div>
+                            </div>
+
+                            <div class="col-lg-6 pd0" *ngIf="appData.isUlink() && quatation.plancode === 'UA02'">
+                                <div class="col-md-7 col-sm-7 txt-sm-right pdr-sm-7 pdl-sm-7 lh-form-control">
+                                    จำนวนเงินเอาประกันภัย เพื่อการออม :
+                                </div>
+                                <div class="col-md-4 col-sm-4 pdl-sm-7 col-xs-8">
+                                    <div class="form-group">
+                                        <input class="form-control" [(ngModel)]="appTypeForShow.savingsum" type="text" disabled />
+                                    </div>
+                                </div>
+                                <div class="col-xs-4 col-sm-1 pdl0 ws-nowrap lh-form-control">บาท</div>
+                                <div class="clearfix view-only-xs"></div>
+                            </div>
+
+                            <div class="col-lg-7 pd0" *ngIf="appData.isUlink()">
+                                <div class="col-md-7 col-sm-7 txt-sm-right pdr-sm-7 pdl-sm-0 lh-form-control">
+                                    เบี้ยประกันเพิ่มเติมพิเศษ (TOP UP Premium) :
+                                </div>
+                                <div class="col-md-4 col-sm-4 pdl-sm-7 col-xs-8">
+                                    <div class="form-group">
+                                        <input class="form-control" type="text" [(ngModel)]="appTypeForShow.topuppremium" disabled />
+                                    </div>
+                                </div>
+                                <div class="col-xs-4 col-sm-1 pdl0 ws-nowrap lh-form-control">บาท</div>
+                                <div class="clearfix view-only-xs"></div>
+                            </div>
+                        </div>
+                        <hr />
+                    </div>
+                    <!-- end oneJumpContent -->
+
+                    <!-- start oneJumpContent -->
+                    <div *ngIf="!checkUlinkCoverage(quatation)" id="link2" class="oneJumpContent">
+                        <h2 class="view-only-xs c-blue boxTitleFixJumpMenu">ความคุ้มครอง</h2>
+
+                        <div class="boxProtection xs-pdt0">
+                            <div class="col-md-6 pdlr-md-0 xs-pdlr0">
+                                <div class="col-sm-4 pdb10">สัญญาประกันชีวิต</div>
+                                <div class="col-sm-4 pdb10 hide-only-xs">เงินเอาประกัน</div>
+                                <div class="col-sm-4 pdb10 hide-only-xs">เบี้ยประกัน</div>
+                                <div class="clearfix"></div>
+                                <hr class="mgl15 mgr15 view-only-xs" />
+
+                                <div *ngIf="!isUlink(quatation)">
+                                    <div class="col-sm-4">
+                                        <div class="inline_block pdb10 pdt5">
+                                            <input id="TP" name="protection_1" class="check-style3" type="checkbox" [checked]="rider.tpCheck" disabled />
+                                            <label for="TP">ทพ.</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-4 view-only-xs lh-form-control pdr0">เงินเอาประกัน :</div>
+                                    <div class="col-sm-4 col-xs-8">
+                                        <div class="form-group">
+                                            <input class="form-control" [(ngModel)]="rider.tpAmount" type="text" disabled />
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-4 view-only-xs lh-form-control pdr0">เบี้ยประกัน :</div>
+                                    <div class="col-sm-4 col-xs-8">
+                                        <div class="form-group">
+                                            <input class="form-control" [(ngModel)]="rider.tpInsure" type="text" disabled />
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <hr class="mgl15 mgr15 view-only-xs" />
+                                </div>
+
+                                <div>
+                                    <div class="col-sm-4">
+                                        <div class="inline_block pdb10 pdt5">
+                                            <input id="AC01" name="protection_2" class="check-style3" type="checkbox" [checked]="rider.a1Check" disabled />
+                                            <label for="AC01" name="ridertype">อ.1</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-4 view-only-xs lh-form-control pdr0">เงินเอาประกัน :</div>
+                                    <div class="col-sm-4 col-xs-8">
+                                        <div class="form-group">
+                                            <input class="form-control" [(ngModel)]="rider.a1Amount" type="text" disabled />
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-4 view-only-xs lh-form-control pdr0">เบี้ยประกัน :</div>
+                                    <div class="col-sm-4 col-xs-8">
+                                        <div class="form-group">
+                                            <input class="form-control" type="text" [(ngModel)]="rider.a1Insure" disabled />
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <hr class="mgl15 mgr15 view-only-xs" />
+                                </div>
+
+                                <div>
+                                    <div class="col-sm-4">
+                                        <div class="inline_block pdb10 pdt5">
+                                            <input id="KG1" name="protection_3" class="check-style3" type="checkbox" [checked]="rider.kjCheck" disabled />
+                                            <label for="KG1">ฆจ.1</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-4 view-only-xs lh-form-control pdr0">เงินเอาประกัน :</div>
+                                    <div class="col-sm-4 col-xs-8">
+                                        <div class="form-group">
+                                            <input class="form-control" [(ngModel)]="rider.kjAmount" type="text" disabled />
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-4 view-only-xs lh-form-control pdr0">เบี้ยประกัน :</div>
+                                    <div class="col-sm-4 col-xs-8">
+                                        <div class="form-group">
+                                            <input class="form-control" [(ngModel)]="rider.kjInsure" type="text" disabled />
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <hr class="mgl15 mgr15 view-only-xs" />
+                                </div>
+
+                                <div>
+                                    <div class="col-sm-4">
+                                        <div class="inline_block pdb10 pdt5">
+                                            <input id="AC02" name="protection_4" class="check-style3" type="checkbox" [checked]="rider.a2Check" disabled />
+                                            <label for="AC02">อ.2</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-4 view-only-xs lh-form-control pdr0">เงินเอาประกัน :</div>
+                                    <div class="col-sm-4 col-xs-8">
+                                        <div class="form-group">
+                                            <input class="form-control" type="text" [(ngModel)]="rider.a2Amount" disabled />
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-4 view-only-xs lh-form-control pdr0">เบี้ยประกัน :</div>
+                                    <div class="col-sm-4 col-xs-8">
+                                        <div class="form-group">
+                                            <input class="form-control" type="text" [(ngModel)]="rider.a2Insure" disabled />
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <hr class="mgl15 mgr15 view-only-xs" />
+                                </div>
+
+                                <div>
+                                    <div class="col-sm-4">
+                                        <div class="inline_block pdb10 pdt5">
+                                            <input id="KG2" name="protection_5" class="check-style3" type="checkbox" [checked]="rider.kj2Check" disabled />
+                                            <label for="KG2">ฆจ.2</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-4 view-only-xs lh-form-control pdr0">เงินเอาประกัน :</div>
+                                    <div class="col-sm-4 col-xs-8">
+                                        <div class="form-group">
+                                            <input class="form-control" type="text" [(ngModel)]="rider.kj2Amount" disabled />
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-4 view-only-xs lh-form-control pdr0">เบี้ยประกัน :</div>
+                                    <div class="col-sm-4 col-xs-8">
+                                        <div class="form-group">
+                                            <input class="form-control" type="text" [(ngModel)]="rider.kj2Insure" disabled />
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <hr class="mgl15 mgr15 view-only-xs" />
+                                </div>
+
+                                <div>
+                                    <div class="col-sm-4">
+                                        <div class="inline_block pdb10 pdt5">
+                                            <input id="AC03" name="protection_6" class="check-style3" type="checkbox" [checked]="rider.a3Check" disabled />
+                                            <label for="AC03">อ.3</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-4 view-only-xs lh-form-control pdr0">เงินเอาประกัน :</div>
+                                    <div class="col-sm-4 col-xs-8">
+                                        <div class="form-group">
+                                            <input class="form-control" type="text" [(ngModel)]="rider.a3Amount" disabled />
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-4 view-only-xs lh-form-control pdr0">เบี้ยประกัน :</div>
+                                    <div class="col-sm-4 col-xs-8">
+                                        <div class="form-group">
+                                            <input class="form-control" type="text" [(ngModel)]="rider.a3Insure" disabled />
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <hr class="mgl15 mgr15 view-only-xs" />
+                                </div>
+
+                                <div *ngIf="!isUlink(quatation)">
+                                    <div class="col-sm-4">
+                                        <div class="inline_block pdb10 pdt5">
+                                            <input id="D03" name="protection_7" class="check-style3" type="checkbox" [checked]="rider.trLtCheck" disabled />
+                                            <label for="D03">ทร.ตลอดชีพ</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-4 view-only-xs lh-form-control pdr0">เงินเอาประกัน :</div>
+                                    <div class="col-sm-4 col-xs-8">
+                                        <div class="form-group">
+                                            <input class="form-control" type="text" [(ngModel)]="rider.trLtAmount" disabled />
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-4 view-only-xs lh-form-control pdr0">เบี้ยประกัน :</div>
+                                    <div class="col-sm-4 col-xs-8">
+                                        <div class="form-group">
+                                            <input class="form-control" [(ngModel)]="rider.trLtInsure" type="text" disabled />
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <hr class="mgl15 mgr15 view-only-xs" />
+                                </div>
+
+                                <div *ngIf="!isUlink(quatation)">
+                                    <div class="col-sm-4">
+                                        <div class="inline_block pdb10 pdt5">
+                                            <input id="D01" name="protection_8" class="check-style3" type="checkbox" [checked]="rider.trCheck" disabled />
+                                            <label for="D01">ทร.</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-4 view-only-xs lh-form-control pdr0">เงินเอาประกัน :</div>
+                                    <div class="col-sm-4 col-xs-8">
+                                        <div class="form-group">
+                                            <input class="form-control" type="text" [(ngModel)]="rider.trAmount" disabled />
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-4 view-only-xs lh-form-control pdr0">เบี้ยประกัน :</div>
+                                    <div class="col-sm-4 col-xs-8">
+                                        <div class="form-group">
+                                            <input class="form-control" [(ngModel)]="rider.trInsure" type="text" disabled />
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <hr class="mgl15 mgr15 view-only-xs" />
+                                </div>
+
+                                <div *ngIf="!isUlink(quatation)">
+                                    <div class="col-sm-4">
+                                        <div class="inline_block pdb10 pdt5">
+                                            <input id="D02" name="protection_9" class="check-style3" type="checkbox" [checked]="rider.tr44Check" disabled />
+                                            <label for="D02">ทร.44</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-4 view-only-xs lh-form-control pdr0">เงินเอาประกัน :</div>
+                                    <div class="col-sm-4 col-xs-8">
+                                        <div class="form-group">
+                                            <input class="form-control" [(ngModel)]="rider.tr44Amount" type="text" disabled />
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-4 view-only-xs lh-form-control pdr0">เบี้ยประกัน :</div>
+                                    <div class="col-sm-4 col-xs-8">
+                                        <div class="form-group">
+                                            <input class="form-control" [(ngModel)]="rider.tr44Insure" type="text" disabled />
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <hr class="mgl15 mgr15 view-only-xs" />
+                                </div>
+
+                                <div *ngIf="!isUlink(quatation)">
+                                    <div class="col-sm-4">
+                                        <div class="inline_block pdb10 pdt5">
+                                            <input id="H" name="protection_1" class="check-style3" type="checkbox" [checked]="rider.hCheck" disabled />
+                                            <label for="H">สพ.เด็ก</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-4 view-only-xs lh-form-control pdr0">เงินเอาประกัน :</div>
+                                    <div class="col-sm-4 col-xs-8">
+                                        <div class="form-group">
+                                            <input class="form-control" [(ngModel)]="rider.hAmount" type="text" disabled />
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-4 view-only-xs lh-form-control pdr0">เบี้ยประกัน :</div>
+                                    <div class="col-sm-4 col-xs-8">
+                                        <div class="form-group">
+                                            <input class="form-control" [(ngModel)]="rider.hInsure" type="text" disabled />
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <hr class="mgl15 mgr15 view-only-xs" />
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 pdlr-md-0 xs-pdlr0">
+                                <div class="col-xs-4 pdb10 visible-md visible-lg">สัญญาประกันชีวิต</div>
+                                <div class="col-xs-4 pdb10 visible-md visible-lg">เงินเอาประกัน</div>
+                                <div class="col-xs-4 pdb10 visible-md visible-lg">เบี้ยประกัน</div>
+                                <div class="clearfix visible-md visible-lg"></div>
+
+                                <div *ngIf="!isUlink(quatation)">
+                                    <div class="col-sm-4">
+                                        <div class="inline_block pdb10 pdt5">
+                                            <input id="V" name="protection_1" class="check-style3" type="checkbox" [checked]="rider.smartVipCheck" disabled />
+                                            <label for="V">สมาร์ทวีไอพี</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-4 view-only-xs lh-form-control pdr0">เงินเอาประกัน :</div>
+                                    <div class="col-sm-4 col-xs-8">
+                                        <div class="form-group">
+                                            <input class="form-control" [(ngModel)]="rider.smartVipAmount" type="text" disabled />
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-4 view-only-xs lh-form-control pdr0">เบี้ยประกัน :</div>
+                                    <div class="col-sm-4 col-xs-8">
+                                        <div class="form-group">
+                                            <input class="form-control" [(ngModel)]="rider.smartVipInsure" type="text" disabled />
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <hr class="mgl15 mgr15 view-only-xs" />
+                                </div>
+
+                                <div *ngIf="!isUlink(quatation)">
+                                    <div class="col-sm-4">
+                                        <div class="inline_block pdb10 pdt5">
+                                            <input id="VP" name="protection_2" class="check-style3" type="checkbox" [checked]="rider.vpCheck" disabled />
+                                            <label for="VP">วพ.</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-4 view-only-xs lh-form-control pdr0">เงินเอาประกัน :</div>
+                                    <div class="col-sm-4 col-xs-8">
+                                        <div class="form-group ">
+                                            <input class="form-control" [(ngModel)]="rider.vpAmount" type="text" disabled />
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-4 view-only-xs lh-form-control pdr0">เบี้ยประกัน :</div>
+                                    <div class="col-sm-4 col-xs-8">
+                                        <div class="form-group">
+                                            <input class="form-control" [(ngModel)]="rider.vpInsure" type="text" disabled />
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <hr class="mgl15 mgr15 view-only-xs" />
+                                </div>
+
+                                <div *ngIf="!isUlink(quatation)">
+                                    <div class="col-sm-4">
+                                        <div class="inline_block pdb10 pdt5">
+                                            <input id="VP5" name="protection_3" class="check-style3" type="checkbox" [checked]=" rider.vp5Check" disabled />
+                                            <label for="VP5">วพ.5</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-4 view-only-xs lh-form-control pdr0"></div>
+                                    <div class="col-sm-4 col-xs-8">
+
+                                    </div>
+                                    <div class="col-xs-4 view-only-xs lh-form-control pdr0">เบี้ยประกัน :</div>
+                                    <div class="col-sm-4 col-xs-8">
+                                        <div class="form-group">
+                                            <input class="form-control" [(ngModel)]="rider.vp5Insure" type="text" disabled />
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <hr class="mgl15 mgr15 view-only-xs" />
+                                </div>
+
+                                <div>
+                                    <div class="col-sm-4">
+                                        <div class="inline_block pdb10 pdt5">
+                                            <input id="SR2" name="protection_4" class="check-style3" type="checkbox" [checked]="rider.sr2Check" disabled />
+                                            <label for="SR2">สร.2</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-4 view-only-xs lh-form-control pdr0">เงินเอาประกัน :</div>
+                                    <div class="col-sm-4 col-xs-8">
+                                        <div class="form-group">
+                                            <input class="form-control" [(ngModel)]="rider.sr2Amount" type="text" disabled />
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-4 view-only-xs lh-form-control pdr0">เบี้ยประกัน :</div>
+                                    <div class="col-sm-4 col-xs-8">
+                                        <div class="form-group">
+                                            <input class="form-control" [(ngModel)]="rider.sr2Insure" type="text" disabled />
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <hr class="mgl15 mgr15 view-only-xs" />
+                                </div>
+
+                                <div>
+                                    <div class="col-sm-4">
+                                        <div class="inline_block pdb10 pdt5">
+                                            <input id="H" name="protection_5" class="check-style3" type="checkbox" [checked]="rider.spCheck" disabled />
+                                            <label for="H">สพ.{{ isUlink(quatation) ? '80' : '' }}</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-4 view-only-xs lh-form-control pdr0">เงินเอาประกัน :</div>
+                                    <div class="col-sm-4 col-xs-8">
+                                        <div class="form-group">
+                                            <input class="form-control" [(ngModel)]="rider.spAmount" type="text" disabled />
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-4 view-only-xs lh-form-control pdr0">เบี้ยประกัน :</div>
+                                    <div class="col-sm-4 col-xs-8">
+                                        <div class="form-group">
+                                            <input class="form-control" type="text" [(ngModel)]="rider.spInsure" disabled />
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <hr class="mgl15 mgr15 view-only-xs" />
+                                </div>
+
+                                <div>
+                                    <div class="col-sm-4">
+                                        <div class="inline_block pdb10 pdt5">
+                                            <input id="G" name="protection_6" class="check-style3" type="checkbox" [checked]="rider.spgCheck" disabled />
+                                            <label for="G">สพ.โกลด์</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-4 view-only-xs lh-form-control pdr0">เงินเอาประกัน :</div>
+                                    <div class="col-sm-4 col-xs-8">
+                                        <div class="form-group">
+                                            <input class="form-control" [(ngModel)]="rider.spgAmount" type="text" disabled />
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-4 view-only-xs lh-form-control pdr0">เบี้ยประกัน :</div>
+                                    <div class="col-sm-4 col-xs-8">
+                                        <div class="form-group">
+                                            <input class="form-control" type="text" [(ngModel)]="rider.spgInsure" disabled />
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <hr class="mgl15 mgr15 view-only-xs" />
+                                </div>
+
+                                <div *ngIf="isUlink(quatation)">
+                                    <div class="col-sm-4">
+                                        <div class="inline_block pdb10 pdt5">
+                                            <input id="H" name="protection_1" class="check-style3" type="checkbox" [checked]="rider.hCheck" disabled />
+                                            <label for="H">สพ.เด็ก</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-4 view-only-xs lh-form-control pdr0">เงินเอาประกัน :</div>
+                                    <div class="col-sm-4 col-xs-8">
+                                        <div class="form-group">
+                                            <input class="form-control" [(ngModel)]="rider.hAmount" type="text" disabled />
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-4 view-only-xs lh-form-control pdr0">เบี้ยประกัน :</div>
+                                    <div class="col-sm-4 col-xs-8">
+                                        <div class="form-group">
+                                            <input class="form-control" [(ngModel)]="rider.hInsure" type="text" disabled />
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <hr class="mgl15 mgr15 view-only-xs" />
+                                </div>
+
+                                <div>
+                                    <div class="col-sm-4">
+                                        <div class="inline_block pdb10 pdt5">
+                                            <input id="RP" name="protection_7" class="check-style3" type="checkbox" [checked]="rider.rpCheck" disabled>
+                                            <label for="RP">รพ.</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-4 view-only-xs lh-form-control pdr0">เงินเอาประกัน :</div>
+                                    <div class="col-sm-4 col-xs-8">
+                                        <div class="form-group">
+                                            <input class="form-control" [(ngModel)]="rider.rpAmount" type="text" disabled />
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-4 view-only-xs lh-form-control pdr0">เบี้ยประกัน :</div>
+                                    <div class="col-sm-4 col-xs-8">
+                                        <div class="form-group">
+                                            <input [(ngModel)]="rider.rpInsure" class="form-control" type="text" disabled />
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <hr class="mgl15 mgr15 view-only-xs" />
+                                </div>
+
+                                <div>
+                                    <div class="col-sm-4">
+                                        <div class="inline_block pdb10 pdt5">
+                                            <input id="RPG" name="protection_8" class="check-style3" type="checkbox" [checked]="rider.rpgCheck" disabled />
+                                            <label for="RPG">รพ.โกลด์</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-4 view-only-xs lh-form-control pdr0">เงินเอาประกัน :</div>
+                                    <div class="col-sm-4 col-xs-8">
+                                        <div class="form-group">
+                                            <input [(ngModel)]="rider.rpgAmount" class="form-control" type="text" disabled />
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-4 view-only-xs lh-form-control pdr0">เบี้ยประกัน :</div>
+                                    <div class="col-sm-4 col-xs-8">
+                                        <div class="form-group">
+                                            <input [(ngModel)]="rider.rpgInsure" class="form-control" type="text" disabled />
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <hr class="mgl15 mgr15 view-only-xs" />
+                                </div>
+
+                                <div *ngIf="!isUlink(quatation)">
+                                    <div class="col-sm-4">
+                                        <div class="inline_block pdb10 pdt5">
+                                            <input id="JP" name="protection_9" class="check-style3" type="checkbox" [checked]="rider.jpCheck" disabled />
+                                            <label for="JP">ฉพ.</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-4 view-only-xs lh-form-control pdr0">เงินเอาประกัน :</div>
+                                    <div class="col-sm-4 col-xs-8">
+                                        <div class="form-group">
+                                            <input class="form-control" [(ngModel)]="rider.jpAmount" type="text" disabled />
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-4 view-only-xs lh-form-control pdr0">เบี้ยประกัน :</div>
+                                    <div class="col-sm-4 col-xs-8">
+                                        <div class="form-group">
+                                            <input class="form-control" [(ngModel)]="rider.jpInsure" type="text" disabled />
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <hr class="mgl15 mgr15 view-only-xs" />
+                                </div>
+
+                                <div *ngIf="!isUlink(quatation)">
+                                    <div class="col-lg-4 col-md-5 col-sm-4 pdr0">
+                                        <div class="pdb10 pdt5">
+                                            <input id="kb" name="protection_9" class="check-style3" type="checkbox" [checked]="rider.KbCheck" disabled />
+                                            <label for="kb">คบ. <span class="pull-right hidden-xs">อายุผู้ปกครอง</span></label>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-4 view-only-xs lh-form-control pdr0">อายุผู้ปกครอง (ปี) :</div>
+                                    <div class="col-lg-3 col-md-2 col-sm-3 col-xs-8">
+                                        <div class="form-group">
+                                            <input class="form-control" [(ngModel)]="appTypeForShow.KbAge" type="text" disabled />
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-1 hide-only-xs pdl0 ws-nowrap">
+                                        <div class="pdb10 pdt5">ปี</div>
+                                    </div>
+
+                                    <div class="col-xs-4 view-only-xs lh-form-control pdr0">เบี้ยประกัน :</div>
+                                    <div class="col-sm-4  col-xs-8">
+                                        <div class="form-group">
+                                            <input class="form-control" [(ngModel)]="rider.KbInsure" type="text" disabled />
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr />
+                    </div>
+
+                    <!-- start oneJumpContent -->
+                    <form [formGroup]="paymentForSave">
+                        <div class="pd20" id="link3">
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <h2 class="view-only-xs c-blue boxTitleFixJumpMenu">ผู้ชำระเบี้ย</h2>
+                                </div>
+                                <div class="col-xs-12 lh-form-control">
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <label><font color="red"> * </font> ผู้ขอเอาประกันภัยประสงค์ใช้สิทธิขอยกเว้นภาษีเงินได้ตามกฏหมายว่าด้วยเรื่องภาษีอากรหรือไม่</label>
+                                        </div>
+                                        <div class="col-xs-12">
+                                            <input id="taxreduceflag1" formControlName="taxreduceflag" value="Y" class="radio-style3" type="radio" (change)="taxreduceflag(true)" />
+                                            <label for="taxreduceflag1">มีความประสงค์ และยินยอมให้บริษัทประกันชีวิตส่งและเปิดเผยข้อมูลเกี่ยวกับเบี้ยประกันชีวิตต่อกรมสรรพากร</label>
+                                            <div class="row">
+                                                <div class="col-xs-12 pdl35">
+                                                    <!-- <input id="intertax" formControlName="intertax" class="check-style3" type="checkbox" (change)="personidtaxChange()" /> -->
+                                                    <input id="intertax" formControlName="intertax" class="check-style3" type="checkbox" (change)="personidtaxChange()" />
+                                                    <!-- <input id="intertax" formControlName="intertax" class="check-style3" type="checkbox" [attr.disabled]="paymentForSave.value.taxreduceflag == 'Y' ? null : ''" (change)="personidtaxChange()" /> -->
+                                                    <label for="intertax" class="fl cursor-hand mgt5 mgr7">
+                                                        ผู้เอาประกันภัยเป็นชาวต่างชาติ โปรดระบุเลขประจำตัวผู้เสียภาษีที่ได้รับจากกรมสรรพากร
+                                                    </label>
+                                                    <div class="inline_block">
+                                                        <input formControlName="personidtax" class="form-control" type="text" NumberOnly maxlength="20" />
+                                                        <!-- <input formControlName="personidtax" class="form-control" type="text" [attr.disabled]="paymentForSave.value.intertax ? null : ''" NumberOnly /> -->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12">
+                                            <input id="taxreduceflag2" formControlName="taxreduceflag" value="N" class="radio-style3" type="radio" (change)="taxreduceflag(false)" />
+                                            <label for="taxreduceflag2">ไม่มีความประสงค์</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <hr />
+                            <div class="row">
+                                <!-- <div class="boxListForm pdlr0 xs-pdt0"> -->
+                                <div class="col-lg-3 col-md-4 col-xs-12 pdr-md-7 txt-md-right lh-form-control">
+                                    <!-- <font *ngIf="paymentname.invalid" color="red"> * </font> -->
+                                    <font color="red">*</font>
+                                    ผู้ชำระเบี้ยประกันภัย :
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-xs-12 pdl-md-7">
+                                    <div class="form-group">
+                                        <!-- <input class="form-control" type="text" [ngModel]="paymentname" (ngModelChange)="onChangePaymentMds($event,'paymentname')" /> -->
+
+                                        <input id="paymentname" readonly [info]="fullnameInfo" fullname-popup (fullnameChange)="fullnameChange($event)" formControlName="paymentname" class="form-control" type="text" />
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-2 col-xs-12 pdr-md-7 txt-md-right lh-form-control">
+                                    <!-- <font *ngIf="paymentrelation.invalid" color="red"> * </font> -->
+                                    <font color="red">*</font>
+                                    ความสัมพันธ์ :</div>
+                                <div class="col-lg-3 col-md-3 col-xs-12 pdl-md-7">
+                                    <!--
+                                    <div class="form-group">
+                                        <ion-item class="form-control">
+                                            <ion-select formControlName="paymentrelation" id="paymentrelation" interface="popover">
+                                                <ion-option [value]="rel.key" *ngFor="let rel of relationDropdown">{{rel.value}} </ion-option>
+                                            </ion-select>
+                                        </ion-item>
+                                    </div>
+                                    -->
+                                    <dropdown id="paymentrelation" formControlName="paymentrelation">
+                                        <dropdown-option [value]="rel.key" *ngFor="let rel of relationDropdown">{{rel.value}}</dropdown-option>
+                                    </dropdown>
+                                </div>
+                                <div class="clearfix"></div>
+
+                                <div class="col-lg-3 col-md-4 col-xs-12 pdr-md-7 txt-md-right lh-form-control">
+                                    <font color="red"> * </font>
+                                    ใบรับเงินชั่วคราวเลขที่ :
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-xs-12 pdl-md-7">
+                                    <div class="form-group formSlipNo">
+                                        <!-- <input class="form-control" type="text" [ngModel]="paymentslipno" (ngModelChange)="onChangePaymentMds($event,'paymentslipno')" /> -->
+                                        <input class="form-control" formControlName="paymentslipno" type="text" maxlength="12" minlength="12" NumberOnly />
+                                    </div>
+                                    <p class="c-red" style="margin: 6px 0px;">* กรณีส่งใบคำขออิเล็กทรอนิกส์ (E-App) ระบบจะสร้างใบรับเงินชั่วคราวให้อัตโนมัติ</p>
+                                </div>
+                                <!-- <div class="col-md-3 pdr-md-7 txt-md-right lh-form-control"></div>
+                                    <div class="col-xs-8 col-md-2 pdl-md-0">
+
+                                    </div>
+                                    <div class="col-xs-4 col-md-1 pdl-md-0 lh-form-control"></div> -->
+                                <!-- <div class="clearfix"></div> -->
+
+                                <div class="col-md-5 view-only-md"></div>
+                                <div class="col-lg-3 col-md-4 col-xs-12 pdr-md-7 txt-md-right lh-form-control">
+                                    <!-- <font *ngIf="amount.invalid" color="red"> * </font> -->
+                                    จำนวนเงินที่ชำระพร้อมใบคำขอฯ :
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-xs-12 pdl-md-7">
+                                    <div class="form-group">
+                                        <!-- <input class="form-control" type="text" [ngModel]="amount" (ngModelChange)="onChangePaymentMds($event,'amount')" /> -->
+                                        <!-- <input class="form-control" formControlName="amount" type="text" NumberOnly/> -->
+                                        <input class="form-control" formControlName="amountForShow" type="text" />
+                                    </div>
+                                </div>
+
+                                <div class="col-xs-12">
+                                    <div class="row">
+                                        <div class="col-lg-3 col-md-4 col-xs-12 pdr-md-7 txt-md-right lh-form-control">
+                                            <!-- <font *ngIf="paymenttype.invalid" color="red"> * </font> -->
+                                            <font color="red"> * </font>
+                                            ชำระเป็น :</div>
+                                        <div class="col-lg-9 col-md-8 col-xs-12 pdl-md-0">
+                                            <div class="inline_block pdlr10 pdb10 lh-form-control">
+                                                <input id="paymenttype1" formControlName="paymenttype" value="1" class="radio-style3" type="radio">
+                                                <label for="paymenttype1">เงินสด</label>
+                                            </div>
+                                            <div class="inline_block pdlr10 pdb10 lh-form-control">
+                                                <input #paymenttype2 id="paymenttype2" formControlName="paymenttype" value="2" class="radio-style3" type="radio">
+                                                <label for="paymenttype2">อื่นๆ ระบุ</label>
+                                                <div class="inline_block w270 pdl10">
+                                                    <input class="form-control" type="text" placeholder="" formControlName="paymenttypedesc" [attr.disabled]="paymenttype2.checked ? null : '' " maxlength="60" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- </div> -->
+                            </div>
+                        </div>
+                    </form>
+                    <!-- end oneJumpContent -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,46 @@
+<!-- Generated template for the AttachFileEAppModalComponent component -->
+<div class="modal">
+    <a class="fancybox-close" href="javascript:void(0)" (click)="close()"></a>
+
+    <h1 class="modal-title">แบบเอกสาร - <span> ระบุเอกสารที่ต้องการ พร้อมแสดงเอกสาร </span></h1>
+
+
+    <div class="col-md-12 mgt22" align="center">
+
+        <div class="col-md-4">
+            <div class="form-group">
+                <ion-item class="form-control ion-item-border">
+                    <ion-label>ระบุเอกสารที่ต้องการ</ion-label>
+                    <ion-select okText="ตกลง" [(ngModel)]="dataDocType" (change)="select()" cancelText="ยกเลิก">
+                        <ion-option value="01;บัตรประจำตัวประชาชน" selected>บัตรประจำตัวประชาชน</ion-option>
+                        <ion-option value="02;ทะเบียนบ้าน (ทร.14)">ทะเบียนบ้าน (ทร.14)</ion-option>
+                        <ion-option value="03;บัตรประจำตัวข้าราชการ">บัตรประจำตัวข้าราชการ</ion-option>
+                        <ion-option value="04;ใบสำคัญต่างด้าว">ใบสำคัญต่างด้าว</ion-option>
+                        <ion-option value="05;หนังสือเดินทาง">หนังสือเดินทาง</ion-option>
+                        <ion-option value="06;ใบสุทธิพระ">ใบสุทธิพระ</ion-option>
+                        <ion-option value="07;ใบขับขี่">ใบขับขี่</ion-option>
+                        <ion-option value="08;สูติบัตร">สูติบัตร</ion-option>
+                        <ion-option value="09;ใบรายการจากฐานข้อมูลทะเบียนบัตรประจำตัวประชาชน">ใบรายการจากฐานข้อมูลทะเบียนบัตรประจำตัวประชาชน</ion-option>
+                        <ion-option value="10;สมุดประจำตัวคนพิการ">สมุดประจำตัวคนพิการ</ion-option>
+                        <ion-option value="11;บัตรประจำตัวผู้หลบหนีเข้าเมือง">บัตรประจำตัวผู้หลบหนีเข้าเมือง</ion-option>
+                        <ion-option value="12;หนังสือรับรองแทนบัตรประจำตัวบุคคลผู้มิได้สัญชาติไทย">หนังสือรับรองแทนบัตรประจำตัวบุคคลผู้มิได้สัญชาติไทย</ion-option>
+                    </ion-select>
+                </ion-item>
+            </div>
+        </div>
+
+        <div class="col-md-8">
+            <button class="btn-style3 btn-style-m" type="button" (click)="presentAction()"><span><i class="icon-ion-camera"></i> ถ่ายภาพ </span></button>
+        </div>
+
+    </div>
+
+    <div class="clearfix"></div>
+
+    <div class="div-btn mgt25" align="center">
+        <button class="btn-style2 btn-style-m" type="button" (click)="close()"><span> ยกเลิก </span></button>
+        <button class="btn-style3 btn-style-m" type="button" (click)="saveEAppPhotoModal()"><span> ตกลง </span></button>
+    </div>
+
+
+</div>

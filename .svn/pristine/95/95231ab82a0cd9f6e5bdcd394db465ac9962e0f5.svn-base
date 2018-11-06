@@ -1,0 +1,16 @@
+<div class="modal">
+    <a class="fancybox-close" href="javascript:void(0)" (click)="close()"></a>
+
+    <h1 class="modal-title">
+        <i class="icon-alert-circled c-red"></i> ไม่พบสัญญาณเครือข่าย <br class="visible-xs" />(Lost Connection)
+    </h1>
+    <div class="popup popup-style1">
+        <p>ขออภัยในความไม่สะดวก ขณะนี้</p>
+        <ol>
+            <li>อาจเกิดจากแพ็คเก็จ 3G/4G ของท่านหมดหรือสัญญาณต่ำ</li>
+            <li>อาจเกิดจากระดับสัญญาณ WIFI ต่ำ หรือ ท่านอยู่ห่างจากจุดกระจายสัญญาณ</li>
+            <li>เกิดปัญหาระหว่างการเชื่อมต่ออินเทอร์เน็ตไปยังเซอร์เวอร์ของบริษัทฯ</li>
+        </ol>
+        <p>โปรดตรวจเช็คสัญญาณอินเทอร์เน็ตของท่านและทำการเชื่อมต่อใหม่อีกครั้ง</p>
+    </div>
+</div>

@@ -1,0 +1,33 @@
+<div id="boxFixedSubMenu" class="boxContentPage bgWhite bgShadow zIndex3" data-spaceclass="boxFixedSubMenuSpace">
+    <div class="container">
+        <div class="boxStatusStep">
+            <div #oneStep class="oneStep" *ngFor="let item of stepArray; let i = index" [ngClass]="{'icon': item.icon != null}" (click)="step(i)" [attr.area-selected]="i == index">
+                <a>
+                    <i id="me_{{i+1}}" [ngClass]="item.icon">{{ item.icon == null ? i + 1 : '' }}</i>
+                    <span>{{ item.titleArray[0] }}<br class="view-only-md view-only-sm" />{{ item.titleArray[1] }}</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="view-only-xs boxDetailStatusStep">
+        <a *ngIf="index > 0" (click)="step(index - 1)" class="btnBackStep" href="javascript:void(0)"><i class="icon-ios-arrow-back"></i></a>
+        <div>{{ selectTitle }}</div>
+        <a *ngIf="index < total - 1" (click)="step(index + 1)" class="btnNextStep" href="javascript:void(0)"><i class="icon-ios-arrow-forward"></i></a>
+    </div>
+</div>
+
+<ng-content></ng-content>
+
+<div class="boxContentPage bgBlue4" *ngIf="showAction == 1">
+    <div class="container xs-pdlr0">
+        <div class="boxActionForm">
+                <div class="boxBlue txt-center">
+                <button [disabled]="!(index > 0)" style="float:left;;" (click)="step(index - 1)" class="btn-style3" type="button"><span><i class="icon-ios-arrow-back"></i> ย้อนกลับ</span></button>
+         <button  id="bt_save" class="btn-style2"  log [page]="'savePage'"  type="submit"(click)="save();"> <span>  <i class="icon-save-file-option"></i> บันทึก</span></button>
+                <button [disabled]="!(index < total - 1)" style="float:right" (click)="step(index + 1)" class="btn-style3 pos-icon-right" type="button"><span>ถัดไป <i class="icon-ios-arrow-forward"></i></span></button>
+         
+        </div>
+    </div>
+    </div>
+</div>

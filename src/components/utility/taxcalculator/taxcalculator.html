@@ -1,0 +1,49 @@
+<div class="popup popup-calculate-tax scrollbar-y">
+    <a class="fancybox-close" href="javascript:void(0)" (click)="close()"></a>
+    <h1 class="title">คำนวณลดหย่อนภาษี</h1>
+    <div class="bgBlue3">
+        <div class="boxContentCalculateTax">
+            <table>
+                <tbody>
+                    <tr>
+                        <td><b>ฐานภาษีที่ใช้ในการคำนวณ</b></td>
+                        <td class="xs-floatL xs-w70p">
+                            <dropdown [(ngModel)]="taxrate" (ngModelChange)="changeRate(taxrate)" interface="popover" cancelText="ยกเลิก" okText="ตกลง">
+                                <dropdown-option value="5">5</dropdown-option>
+                                <dropdown-option value="10">10</dropdown-option>
+                                <dropdown-option value="15">15</dropdown-option>
+                                <dropdown-option value="20">20</dropdown-option>
+                                <dropdown-option value="25">25</dropdown-option>
+                                <dropdown-option value="30">30</dropdown-option>
+                                <dropdown-option value="35">35</dropdown-option>
+                            </dropdown>
+                        </td>
+                        <td class="xs-floatL xs-w30p xs-lh-form-control"><b>%</b></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="boxContentCalculateTax">
+        <table>
+            <tbody>
+                <tr>
+                    <td>{{ 'PREMIUM' | planLabel }}ที่สามารถหักลดหย่อนภาษี</td>
+                    <td class="xs-inline-block">
+                        <h3>{{ premiumTax | number }}</h3>
+                    </td>
+                    <td class="xs-inline-block">บาทต่อปี</td>
+                </tr>
+                <tr>
+                    <td class="xs-pdt10">มูลค่าสุทธิที่สามารถลดหย่อนภาษีได้สูงสุด</td>
+                    <td class="xs-inline-block">
+                        <h3>{{ premiumNet | number }}</h3>
+                    </td>
+                    <td class="xs-inline-block">บาทต่อปี</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <p class="mgt0 txt-center c-blue">** มูลค่าสุทธิ = {{ 'PREMIUM' | planLabel }}ที่สามารถหักลดหย่อนภาษีต่อปี x ฐานภาษีที่ใช้ในการคำนวณ</p>
+</div>

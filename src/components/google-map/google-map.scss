@@ -1,0 +1,69 @@
+        google-map {
+            // @media only screen and (min-width: 768px) and (min-height: 600px) {
+            //   @at-root .memberView {
+            //     .modal-wrapper{
+            //       left: calc(50% - (765px/2));
+            //       top: calc(50% - (500px/2));
+            //       position: absolute;
+            //       width: 765px;
+            //       height: 500px;
+            //     }
+            //   }
+            // }
+            // @media only screen and (min-width: 992px) and (min-height: 600px) {
+            //   @at-root .memberView {
+            //     .modal-wrapper{
+            //       left: calc(50% - (850px/2));
+            //       top: calc(50% - (500px/2));
+            //       position: absolute;
+            //       width: 850px;
+            //       height: 500px;
+            //     }
+            //   }
+            // }
+            // .scroll {
+            //   height: 100%
+            // }
+            // #map {
+            //   width: 100%;
+            //   height: 100%;
+            // }
+            // ._gmaps_cdv_ .nav-decor{
+            //   background-color: transparent!important;
+            //   display:none!important;
+            // }
+            .modal {
+                p {
+                    color: #cc0000 !important;
+                    text-align: center !important;
+                    font-size: 26px;
+                }
+                .btn-footer {
+                    margin-top: 0px;
+                }
+                .modal-title {
+                    padding-right: 0px;
+                }
+            }
+            #map {
+                width: 100%;
+                // height: calc(100% - 63px);
+                height: calc(100% - 190px);
+            }
+            #map.fixed-pin:after {
+                content: '';
+                background: url('https://maps.gstatic.com/mapfiles/api-3/images/spotlight-poi.png');
+                position: absolute;
+                width: 22px;
+                height: 40px;
+                top: calc(50% - 40px);
+                left: calc(50% - 11px);
+            }
+            @media screen and (max-width: $screen-sm-max) {
+                #map {
+                    width: 100%;
+                    // height: calc(100% - 63px);
+                    height: calc(100% - 220px);
+                }
+            }
+        }

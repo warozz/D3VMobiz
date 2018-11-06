@@ -1,0 +1,196 @@
+<ion-header header>
+
+</ion-header>
+
+<ion-content>
+    <div id="app_form_page" class="mainContainer">
+        <title-page>ใบคำขอ</title-page>
+
+        <div class="boxContentPage">
+            <div class="container">
+                <div class="boxSearchMember">
+                    <ul class="boxRight">
+                        <li><a (click)="defaultSearchAll()">ดูรายชื่อทั้งหมด</a></li>
+                    </ul>
+                    <div class="clearfix"></div>
+                    <search [text]="keyvalue" (value)="search($event)"></search>
+                </div>
+
+                <div class="bgPaperShadow mgt0">
+                    <div class="contentPaperShadow">
+                        <div class="boxHeadInfo">
+                            <ul class="boxLeft lh-form-control">
+                                <li>ผลการค้นหา <span class="c-blue">{{ totalRecord | number }}</span> รายการ</li>
+                                <li class="xs-underline">|</li>
+                                <li class="xs-inline">ใบคำขอ</li>
+                                <li class="xs-inline">
+                                    <div class="form-group">
+                                        <ion-item class="form-control">
+                                            <ion-label></ion-label>
+                                            <ion-select id="" [(ngModel)]="filterBy" name="filter" interface="popover" (ionChange)="changeFilter($event)" cancelText="ยกเลิก" okText="ตกลง">
+                                                <ion-option value="00" selected>ดูทั้งหมด</ion-option>
+                                                <ion-option value="01">มี Ref ID</ion-option>
+                                                <ion-option value="02">ไม่มี Ref ID</ion-option>
+                                                <ion-option value="03">มีเลขที่ใบคำขอ</ion-option>
+                                                <ion-option value="04">ไม่มีเลขที่ใบคำขอ</ion-option>
+                                                <ion-option value="05">ใบคำขอหมดอายุ</ion-option>
+                                                <ion-option value="06">สถานะ รอชำระเงิน</ion-option>
+                                                <ion-option value="07">สถานะ ชำระเงินสำเร็จ</ion-option>
+                                                <ion-option value="08">สถานะ กำลังดำเนินการ</ion-option>
+                                                <ion-option value="09">สถานะ รอเอกสาร/ลายเซ็น</ion-option>
+                                                <ion-option value="10">สถานะ ส่งข้อมูลไปยังสาขาเรียบร้อย</ion-option>
+                                                <ion-option value="14">สถานะ ส่งใบคำขอไปยังสาขา</ion-option>
+                                                <ion-option value="11">ประเภท ปกติ</ion-option>
+                                                <ion-option value="12">ประเภท E-App</ion-option>
+                                                <ion-option value="13">E-App หมดอายุ</ion-option>
+                                            </ion-select>
+                                        </ion-item>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="boxTableStyle1 boxSearchQuatationTable">
+                            <table id="table_1" class="dataTable">
+                                <thead>
+                                    <tr>
+                                        <th>ลำดับ</th>
+                                        <th class="view-only-sm txt-left sm-w30p sorting">รายละเอียด</th>
+                                        <th class="hide-only-sm hide-only-xs sorting" [ngClass]="{'sorting_asc': sortFlag !== 'ASC'  && selectProperty === 'NAME', 'sorting_desc': sortFlag !== 'DESC' && selectProperty === 'NAME'}" (click)="sort('NAME')">ชื่อ นามสกุล</th>
+                                        <th class="hide-only-sm hide-only-xs sorting" [ngClass]="{'sorting_asc': sortFlag !== 'ASC'  && selectProperty === 'PLAN', 'sorting_desc': sortFlag !== 'DESC' && selectProperty === 'PLAN'}" (click)="sort('PLAN')">แบบประกัน</th>
+                                        <th class="hide-only-sm hide-only-xs sorting" [ngClass]="{'sorting_asc': sortFlag !== 'ASC'  && selectProperty === 'LIFESUM', 'sorting_desc': sortFlag !== 'DESC' && selectProperty === 'LIFESUM'}" (click)="sort('LIFESUM')">ทุนประกัน</th>
+                                        <th class="sorting" [ngClass]="{'sorting_asc': sortFlag !== 'ASC'  && selectProperty === 'REFID', 'sorting_desc': sortFlag !== 'DESC' && selectProperty === 'REFID'}" (click)="sort('REFID')">Ref. ID <i class="icon-speech-bubble-with-text-lines fs14 "></i></th>
+                                        <th class="sorting" [ngClass]="{'sorting_asc': sortFlag !== 'ASC'  && selectProperty === 'APPID', 'sorting_desc': sortFlag !== 'DESC' && selectProperty === 'APPID'}" (click)="sort('APPID')">เลขที่ใบคำขอ</th>
+                                        <th class="sorting" [ngClass]="{'sorting_asc': sortFlag !== 'ASC'  && selectProperty === 'STATUS', 'sorting_desc': sortFlag !== 'DESC' && selectProperty === 'STATUS'}" (click)="sort('STATUS')">สถานะ</th>
+                                        <th class="sorting" [ngClass]="{'sorting_asc': sortFlag !== 'ASC'  && selectProperty === 'TYPE', 'sorting_desc': sortFlag !== 'DESC' && selectProperty === 'TYPE'}" (click)="sort('TYPE')">ประเภท</th>
+                                        <th>ดูรายละเอียด</th>
+                                        <th>ลบข้อมูล</th>
+                                        <th class="hide-only-sm hide-only-xs sorting" [ngClass]="{'sorting_asc': sortFlag !== 'ASC'  && selectProperty === 'DATE', 'sorting_desc': sortFlag !== 'DESC' && selectProperty === 'DATE'}" (click)="sort('DATE')">วันที่บันทึกล่าสุด</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let item of quotation; let i = index; ">
+                                        <td class="xs-txt-left"><span class="visible-xs-inline-block">ลำดับ &nbsp;</span>{{(pageNo*pageSize)-(pageSize-(i+1))}}</td>
+                                        <td class="view-only-sm txt-left" *ngIf="item.packageno?.length <= 0 ">
+                                            {{item.fname}} {{item.lname}}<br />แบบประกัน {{item.planname}}<br />ทุนประกัน {{item.lifesum | number}}<br />วันที่บันทึกล่าสุด {{ dateFormatProvider.dateFormatShotTh2(item.mcaapplicationMs[0] ? item.mcaapplicationMs[0].updatedate
+                                            : item.lastmodify) }}
+                                        </td>
+                                        <td class="view-only-sm txt-left" *ngIf="item.packageno?.length > 0 ">
+                                            {{item.fname}} {{item.lname}}<br />แบบประกัน {{item.planname}}<br />ทุนประกัน {{'แผน '+item.packageno}}<br />วันที่บันทึกล่าสุด {{ dateFormatProvider.dateFormatShotTh2(item.mcaapplicationMs[0] ? item.mcaapplicationMs[0].updatedate
+                                            : item.lastmodify) }}
+                                        </td>
+                                        <td class="hide-only-sm hide-only-xs">{{item.fname}} {{item.lname}}</td>
+                                        <td class="hide-only-sm hide-only-xs">{{item.planname}}</td>
+                                        <td class="hide-only-sm hide-only-xs" *ngIf="item.packageno?.length <= 0 ">{{item.lifesum | number}}</td>
+                                        <td class="hide-only-sm hide-only-xs" *ngIf="item.packageno?.length > 0 ">{{'แผน '+item.packageno}}</td>
+                                        <!--
+                                        <td [ngClass]="{'c-green': item?.referenceno}">
+                                            <div class="float-xs-center txt-xs-center" *ngIf="item?.referenceno"><span class="lh-xs-15 c-green"><i class="icon-checkmark3"></i><br>เลขที่ {{item.referenceno}}</span></div>
+                                        </td>
+                                    -->
+                                        <td class="clear-xs-after pdtb10-xs">
+                                            <div class="visible-xs-block float-xs-left pdt10-xs c-blue">Ref. ID <i class="icon-speech-bubble-with-text-lines fs14"></i></div>
+                                            <div *ngIf="item?.referenceno" class="float-xs-right txt-xs-center">
+                                                <span class="lh-xs-15 c-green"><i class="icon-checkmark3"></i><br />เลขที่ {{item.referenceno}}</span>
+                                            </div>
+                                            <div *ngIf="!item?.referenceno" class="float-xs-right txt-xs-center">
+                                                <span><i></i><br />-</span>
+                                            </div>
+                                        </td>
+                                        <td class="clear-xs-after pdb10-xs">
+                                            <div class="visible-xs-block float-xs-left pdt10-xs c-blue">เลขที่ใบคำขอ</div>
+                                            <div class="float-xs-right txt-xs-center">
+                                                <div *ngIf="item.mcaapplicationMs[0]?.applicationidDisplay" class="lh-xs-15 c-green"><i class="icon-checkmark3"></i><br />เลขที่ {{item.mcaapplicationMs[0]?.applicationidDisplay}}</div>
+                                                <a href="javascript:void(0)" (click)="createApplication(item)" *ngIf="!item?.applicationid 
+                                                    && item?.referenceno 
+                                                    && (item?.typeapp=='PER' ||   item?.typeapp=='ULink')
+                                                    && !this.QuatationValueCal.isIslam(item.plancode) 
+                                                    && item?.expire==false"><i class="icon-file-add"></i></a>
+                                            </div>
+                                        </td>
+                                        <td class="clear-xs-after pdtb10-xs">
+                                            <div class="visible-xs-block float-xs-left pdt10-xs c-blue">สถานะ</div>
+                                            <div class="float-xs-right txt-xs-center" *ngIf="item.mcaapplicationMs[0]?.applicationstatus == '09'"><span class="lh-xs-15 c-black"><br />รอส่งใบคำขอ</span></div>
+                                            <div class="float-xs-right txt-xs-center" *ngIf="item.mcaapplicationMs[0]?.applicationstatus == '01'"><span class="lh-xs-15 c-black"><br />กำลังดำเนินการ</span></div>
+                                            <div class="float-xs-right txt-xs-center" *ngIf="item.mcaapplicationMs[0]?.applicationstatus == '02'"><span class="lh-xs-15 c-black"><br />รอชำระเงิน</span></div>
+                                            <div class="float-xs-right txt-xs-center" *ngIf="item.mcaapplicationMs[0]?.applicationstatus == '03'"><span class="lh-xs-15 c-black"><br />ชำระเงินสำเร็จ</span></div>
+                                            <div class="float-xs-right txt-xs-center" *ngIf="item.mcaapplicationMs[0]?.applicationstatus == '04'"><span class="lh-xs-15 c-black"><br />ส่งข้อมูลไปยังสาขา</span></div>
+                                            <div class="float-xs-right txt-xs-center" *ngIf="item.mcaapplicationMs[0]?.applicationstatus == '08'"><span class="lh-xs-15 c-black"><br />ส่งใบคำขอไปยังสาขา</span></div>
+                                            <div class="float-xs-right txt-xs-center" *ngIf="item.mcaapplicationMs[0]?.applicationstatus == '05'"><span class="lh-xs-15 c-black"><br />ยกเลิก</span></div>
+                                            <div class="float-xs-right txt-xs-center" *ngIf="item.mcaapplicationMs[0]?.applicationstatus == '06'"><span class="lh-xs-15 c-black"><br />รอเอกสาร/ลายเซ็น</span></div>
+                                            <div class="float-xs-right txt-xs-center" *ngIf="item.mcaapplicationMs[0]?.applicationstatus == '07' && item.mcaapplicationMs[0]?.formtype != 'EAPP'">
+                                                <span class="lh-xs-15 c-red"><br />ใบคำขอหมดอายุ</span></div>
+                                            <div class="float-xs-right txt-xs-center" *ngIf="item.mcaapplicationMs[0]?.applicationstatus == '07' && item.mcaapplicationMs[0]?.formtype == 'EAPP'">
+                                                <span class="lh-xs-15 c-red"><br />E-App หมดอายุ</span></div>
+
+                                            <div class="float-xs-right txt-xs-center" *ngIf="!item.mcaapplicationMs[0]"><span class="lh-xs-15 c-black"><br />-</span></div>
+                                        </td>
+                                        <td class="clear-xs-after pdb10-xs">
+                                            <div class="visible-xs-block float-xs-left pdt10-xs c-blue">ประเภท</div>
+                                            <div class="float-xs-right txt-xs-center" *ngIf="item.mcaapplicationMs[0]?.formtype == 'EAPP'"><span class="lh-xs-15 c-black"><br />E-App</span></div>
+                                            <div class="float-xs-right txt-xs-center" *ngIf="item.mcaapplicationMs[0]?.formtype == 'NORMAL'"><span class="lh-xs-15 c-black"><br />ปกติ</span></div>
+                                            <div class="float-xs-right txt-xs-center" *ngIf="item.mcaapplicationMs[0]?.formtype == ''"><span class="lh-xs-15 c-black"><br />-</span></div>
+                                            <div class="float-xs-right txt-xs-center" *ngIf="!item.mcaapplicationMs[0]"><span class="lh-xs-15 c-black"><br />-</span></div>
+                                        </td>
+                                        <td class="clear-xs-after pdb10-xs">
+                                            <div class="visible-xs-block float-xs-left pdt10-xs c-blue">ดูใบคำขอ</div>
+                                            <div class="float-xs-right txt-xs-center">
+                                                <a href="javascript:void(0)" (click)="viewApplication(item)" *ngIf="item?.applicationid && item?.referenceno">
+                                                    <i class="icon icon-view-files"></i>
+                                                </a>
+                                            </div>
+                                        </td>
+                                        <td class="clear-xs-after pdb10-xs">
+                                            <div class="visible-xs-block float-xs-left pdt10-xs c-blue">ลบ</div>
+                                            <div class="float-xs-right txt-xs-center">
+                                                <a href="javascript:void(0)" (click)="deleteApplication(item)">
+                                                    <i class="icon icon-rubbish-bin"></i>
+                                                </a>
+                                            </div>
+                                        </td>
+                                        <td class="hide-only-sm hide-only-xs">{{ dateFormatProvider.dateFormatShotTh2(item.mcaapplicationMs[0] ? item.mcaapplicationMs[0].updatedate : item.lastmodify) }}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div *ngIf="quotation?.length < 1">
+                                <br/>
+                                <div class="txt-center c-red">ไม่พบข้อมูลที่ค้นหา</div>
+                                <br/>
+                            </div>
+
+                            <div class="divPage" *ngIf="quotation.length > 0">
+                                <div class="col-md-11 col-xs-10 page-container">
+                                    <a class="btn-style4 btn-style-m txt-center pdlr10" (click)="changePage('decrease')">
+                                        <span><i class="tp0 icon-android-arrow-back "></i> ย้อนกลับ</span>
+                                    </a>
+                                    <a class="btn-style5 btn-style-m txt-center pdlr10">
+                                        <span>{{pageNo}}/{{totalPage}}</span>
+                                    </a>
+                                    <a class="btn-style4 btn-style-m txt-center pos-icon-right pdlr10" (click)="changePage('increase')">
+                                        <span>ถัดไป<i class="tp0 icon-android-arrow-forward "></i> </span>
+                                    </a>
+
+                                </div>
+
+                                <div class="col-md-1 col-xs-2 page-container2 ">
+                                    <ion-select [(ngModel)]="pageSize" interface="popover" (ngModelChange)="changeSize($event)">
+                                        <ion-option value=5>5</ion-option>
+                                        <ion-option value=10>10</ion-option>
+                                        <ion-option value=15>15</ion-option>
+                                        <ion-option value=20>20</ion-option>
+                                    </ion-select>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <footer footer></footer>
+</ion-content>

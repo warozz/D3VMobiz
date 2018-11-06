@@ -1,0 +1,48 @@
+<!-- text filter -->
+<!-- <ion-input (keyup)="applyFilter($event.target.value)" placeholder="Text Input Filter "></ion-input> -->
+
+<div class="table-responsive">
+    <mat-table #table [dataSource]="dataSource" matSort>
+
+        <ng-container *ngFor="let column of columns" [matColumnDef]="column.columnDef">
+            <mat-header-cell *matHeaderCellDef mat-sort-header [disabled]="column.sortable? false : true ">{{ column.header }}</mat-header-cell>
+            <mat-cell *matCellDef="let row">
+                <div [innerHTML]="column.cell(row)"></div>
+            </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+
+    </mat-table>
+</div>
+
+
+
+<div>
+    <div class="col-md-11 col-xs-10 page-container">
+        <a class="btn-style4 btn-style-m txt-center pdlr10" (click)="previousPage()">
+            <span><i class="icon-android-arrow-back"></i> ย้อนกลับ</span>
+        </a>
+        <a class="btn-style5 btn-style-m txt-center pdlr10">
+            <span>{{currentPage}}/{{totalPage}}</span>
+        </a>
+        <a class="btn-style4 btn-style-m txt-center pos-icon-right pdlr10" (click)="nextPage()">
+            <span>ถัดไป<i class="icon-android-arrow-forward"></i> </span>
+        </a>
+
+    </div>
+
+    <div class="col-md-1 col-xs-2 page-container2 ">
+        <ion-select [(ngModel)]="pageSize" interface="popover" (ngModelChange)="changePageSize(pageSize)">
+            <ion-option value=5>5</ion-option>
+            <ion-option value=10>10</ion-option>
+            <ion-option value=15>15</ion-option>
+            <ion-option value=20>20</ion-option>
+        </ion-select>
+    </div>
+
+    <!-- ต้องมี tag นี้เสมอ เพราะว่าเราใช้ tag mat-table ซึ่งdatasource จะมีการใช้งาน class  MatPaginator -->
+    <mat-paginator #paginator [hidePageSize]="true" [showFirstLastButtons]="false" class="hide-content-mat-paginator">
+    </mat-paginator>
+</div>

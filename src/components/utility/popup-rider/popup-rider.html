@@ -1,0 +1,23 @@
+<div class="modal">
+  <i class="close" (click)="close()"></i>
+
+  <h1 class="modal-title">
+    คุ้มครองการเสียชีวิต ทุพพลภาพ และโรคร้ายแรง({{riderTH}}) 
+  </h1>
+
+  <div class="popup popup-style1">
+      <div class="boxNewUpdate">
+          <div class="scrollbar-inner">
+              <div class="oneNew">
+                  <ion-grid>
+                      <ion-col col-12>
+                        <div [innerHtml]="text"></div>
+                      </ion-col>
+                      <ion-col col-12 class="totals" [innerHtml]="annotation">
+                      </ion-col>
+                  </ion-grid>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

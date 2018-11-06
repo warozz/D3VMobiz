@@ -1,0 +1,80 @@
+<div class="boxContentPage bgBlue1">
+    <div class="container xs-pdlr0">
+        <form [formGroup]="appApplication">
+            <div class="boxStatusStep">
+                <br>
+                <div class="col-sw-2">
+                    <div class="col-label txt-left txt-md-right lh-form-control ws-nowrap">Ref ID :</div>
+                    <div class="col-input">
+                        <div class="form-group">
+                            <input id="referenceno" class="form-control" type="text" formControlName="referenceno" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sw-1">
+                    <div class="col-label txt-left txt-md-right lh-form-control ws-nowrap">รหัสสาขา :</div>
+                    <div class="col-input">
+                        <div class="form-group">
+                            <input id="branchId" class="form-control" type="text" formControlName="branchId" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sw-1">
+                    <div class="col-label txt-left txt-md-right lh-form-control ws-nowrap">ฝากค้ำ :</div>
+                    <div class="col-input">
+                        <div class="form-group">
+                            <input id="dopositno" class="form-control" type="text" formControlName="dopositno" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sw-3" id="style3">
+                    <div class="col-label txt-left txt-md-right lh-form-control ws-nowrap">การตรวจสุขภาพ :</div>
+                    <div class="col-input">
+                        <div class="form-group">
+                            <ion-item class="form-control">
+                                <ion-label>การตรวจสุขภาพ</ion-label>
+                                <ion-select id="healthcheckflag" formControlName="healthcheckflag" disabled>
+                                    <ion-option value="ตรวจสุขภาพ">ตรวจสุขภาพ</ion-option>
+                                    <ion-option value="ไม่ตรวจสุขภาพ">ไม่ตรวจสุขภาพ</ion-option>
+                                </ion-select>
+                            </ion-item>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sw-2">
+                    <div class="col-label txt-left txt-md-right lh-form-control ws-nowrap">หน่วย :</div>
+                    <div class="col-input">
+                        <div class="form-group">
+                            <input id="bname" class="form-control" type="text" formControlName="bname" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sw-1">
+                    <div class="col-label txt-left txt-md-right lh-form-control ws-nowrap">รหัส :</div>
+                    <div class="col-input">
+                        <div class="form-group">
+                            <input id="bperid" class="form-control" type="text" formControlName="bperid" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sw-2" id="style1">
+                    <div class="col-label txt-left txt-md-right lh-form-control ws-nowrap">ศูนย์ :</div>
+                    <div class="col-input">
+                        <div class="form-group">
+                            <input id="dname" class="form-control" type="text" formControlName="dname" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sw-1" id="style2">
+                    <div class="col-label txt-left txt-md-right lh-form-control ws-nowrap">รหัส :</div>
+                    <div class="col-input">
+                        <div class="form-group">
+                            <input id="dperid" class="form-control" type="text" formControlName="dperid" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

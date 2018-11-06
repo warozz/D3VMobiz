@@ -1,0 +1,6 @@
+<ion-item class="form-control">
+    <ion-label>ชั้นอาชีพ</ion-label>
+    <ion-select [(ngModel)]="data" (change)="select()" cancelText="ยกเลิก" okText="ตกลง" interface="popover">
+        <ion-option [value]="item" *ngFor="let item of type">{{ item }}</ion-option>
+    </ion-select>
+</ion-item>

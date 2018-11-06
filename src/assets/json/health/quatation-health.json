@@ -1,0 +1,265 @@
+
+[      
+    {
+        "permissionUser" : "Normal",
+        "sum" : [
+            {
+                "minSum"   : 0 ,
+                "maxSum"   : 1000000,
+                "value"     : 0
+            },
+            {
+                "minSum"   : 1000001 ,
+                "maxSum"   : 2500000,
+                "value"     : 1
+            },
+            {
+                "minSum"   : 2500001 ,
+                "maxSum"   : 3000000,
+                "value"     : 2
+            },
+            {
+                "minSum"   : 3000001 ,
+                "maxSum"   : 4000000,
+                "value"     : 3
+            },
+            {
+                "minSum"   : 4000001 ,
+                "maxSum"   : 5000000,
+                "value"     : 4
+            },
+            {
+                "minSum"   : 5000001 ,
+                "maxSum"   : 7000000,
+                "value"     : 5
+            },
+            {
+                "minSum"   : 7000001 ,
+                "maxSum"   : 10000000,
+                "value"     : 6
+            },
+            {
+                "minSum"   : 10000001 ,
+                "maxSum"   : 25000000,
+                "value"     : 7
+            },
+            {
+                "minSum"   : 25000001 ,
+                "maxSum"   : 999900000,
+                "value"     : 8
+            }
+            
+        ]
+    },
+    {
+        "permissionUser" : "Top UP", 
+        "sum" : [
+            {
+                "minSum"   : 0 ,
+                "maxSum"   : 1000000,
+                "value"     : 0
+            },
+            {
+                "minSum"   : 1000001 ,
+                "maxSum"   : 3000000,
+                "value"     : 1
+            },
+            {
+                "minSum"   : 3000001 ,
+                "maxSum"   : 3500000,
+                "value"     : 2
+            },
+            {
+                "minSum"   : 3500001 ,
+                "maxSum"   : 5000000,
+                "value"     : 3
+            },
+            {
+                "minSum"   : 5000001 ,
+                "maxSum"   : 7000000,
+                "value"     : 4
+            },
+            {
+                "minSum"   : 7000001 ,
+                "maxSum"   : 10000000,
+                "value"     : 5
+            },
+            {
+                "minSum"   : 10000001 ,
+                "maxSum"   : 25000000,
+                "value"     : 6
+            },
+            {
+                "minSum"   : 25000001 ,
+                "maxSum"   : 999900000,
+                "value"     : 7
+            }
+            
+        ]
+    },
+    {
+        "permissionUser" : "Top UP plus",
+        "age" : 
+        [
+            {
+            "phase1" : 
+                [
+                    {
+                        "minAge"   : 0 ,
+                        "maxAge"   : 15,
+                        "value"     : 0
+                    },
+                    {
+                        "minAge"   : 16 ,
+                        "maxAge"   : 45,
+                        "value"     : 1
+                    },
+                    {
+                        "minAge"   : 46 ,
+                        "maxAge"   : 55,
+                        "value"     : 2
+                    },
+                    {
+                        "minAge"   : 56 ,
+                        "maxAge"   : 60,
+                        "value"     : 3
+                    },
+                    {
+                        "minAge"   : 61 ,
+                        "maxAge"   : 990,
+                        "value"     : 4
+                    }
+                ]
+            },
+            {
+            "default" : 
+                [
+                    {
+                        "minAge"   : 0 ,
+                        "maxAge"   : 15,
+                        "value"     : 0
+                    },
+                    {
+                        "minAge"   : 16 ,
+                        "maxAge"   : 45,
+                        "value"     : 1
+                    },
+                    {
+                        "minAge"   : 46 ,
+                        "maxAge"   : 55,
+                        "value"     : 2
+                    },
+                    {
+                        "minAge"   : 56 ,
+                        "maxAge"   : 999,
+                        "value"     : 3
+                    }
+                ]      
+            }
+        ],
+        "sum" : [
+            {
+            "phase1" : 
+                [
+                    {
+                        "minSum"   : 0 ,
+                        "maxSum"   : 1000000,
+                        "value"     : 0
+                    },
+                    {
+                        "minSum"   : 1000001 ,
+                        "maxSum"   : 1500000,
+                        "value"     : 1
+                    },
+                    {
+                        "minSum"   : 1500001 ,
+                        "maxSum"   : 3000000,
+                        "value"     : 2
+                    },
+                    {
+                        "minSum"   : 3000001 ,
+                        "maxSum"   : 3500000,
+                        "value"     : 3
+                    },
+                    {
+                        "minSum"   : 3500001 ,
+                        "maxSum"   : 5000000,
+                        "value"     : 4
+                    },
+                    {
+                        "minSum"   : 5000001 ,
+                        "maxSum"   : 5500000,
+                        "value"     : 5
+                    },
+                    {
+                        "minSum"   : 5500001 ,
+                        "maxSum"   : 7000000,
+                        "value"     : 6
+                    },
+                    {
+                        "minSum"   : 7000001 ,
+                        "maxSum"   : 10000000,
+                        "value"     : 7
+                    },
+                    {
+                        "minSum"   : 10000001 ,
+                        "maxSum"   : 25000000,
+                        "value"     : 8
+                    },
+                    {
+                        "minSum"   : 25000001 ,
+                        "maxSum"   : 999900000,
+                        "value"     : 9
+                    }
+                ]
+            },
+            {
+            "default" : 
+                [
+                    {
+                        "minSum"   : 0 ,
+                        "maxSum"   : 1000000,
+                        "value"     : 0
+                    },
+                    {
+                        "minSum"   : 1000001 ,
+                        "maxSum"   : 3000000,
+                        "value"     : 1
+                    },
+                    {
+                        "minSum"   : 3000001 ,
+                        "maxSum"   : 3500000,
+                        "value"     : 2
+                    },
+                    {
+                        "minSum"   : 3500001 ,
+                        "maxSum"   : 5000000,
+                        "value"     : 3
+                    },
+                    {
+                        
+                        "minSum"   : 5000001 ,
+                        "maxSum"   : 7000000,
+                        "value"     : 4
+                        
+                    }
+                    ,{
+                        "minSum"   : 7000001 ,
+                        "maxSum"   : 10000000,
+                        "value"     : 5
+                    },
+                    {
+                        "minSum"   : 10000001 ,
+                        "maxSum"   : 25000000,
+                        "value"     : 6
+                    },
+                    {
+                        "minSum"   : 25000001 ,
+                        "maxSum"   : 999900000,
+                        "value"     : 7
+                    }
+                ]      
+            }
+        ]
+    }
+]

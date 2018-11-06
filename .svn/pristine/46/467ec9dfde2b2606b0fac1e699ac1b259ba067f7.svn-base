@@ -1,0 +1,33 @@
+popup-fatca {
+    .popup-style1 {
+        height: 100%;
+        width: 100%;
+        border-radius: 0px;
+        .boxNewUpdate {
+            margin: 0px;
+            height: calc(100% - 10px);
+            padding-bottom: 50px;
+            .scrollbar-inner {
+                height: 100%;
+                position: relative;
+            }
+        }
+    }
+    .tab {
+        margin-left: 2em;
+    }
+    .center {
+        text-align: center;
+    }
+    .btn-style3 span {
+        color: white !important;
+    }
+    .close {
+        position: absolute;
+        right: 20px;
+        top: 22px;
+        cursor: pointer;
+        font-size: $font-lg;
+        color: $color-primary;
+    }
+}

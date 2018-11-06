@@ -1,0 +1,15 @@
+signature {
+    .signature{
+        canvas{
+            border: 5px solid #ddd;
+            background: #eee;
+        }
+    }
+    @media only screen and (min-width: 768px){
+        @at-root .signModel{
+            .modal-wrapper{
+                height: 420px;
+            }
+        }
+    }
+}

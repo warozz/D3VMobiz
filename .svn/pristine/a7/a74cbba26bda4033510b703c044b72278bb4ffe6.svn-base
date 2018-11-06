@@ -1,0 +1,48 @@
+<div class="boxContentPage bgBlue2 zIndex1">
+    <div class="container">
+        <div class="boxSearchPlanInsurance">
+            <div style="max-width: 400px;margin: 0 auto;">
+                <div class="boxSelectPlan">
+                    <a class="areaLeft">
+                                ชำระเบี้ย
+                            </a>
+                    <div class="boxDropdownPlan nonIcon pdr0">
+
+                        <input class="form-control c-blue" text-center type="text" value="ครั้งเดียว" disabled>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="X3" class="row">
+    <div class="col">
+        <div class="boxContentPage">
+            <div class="container xs-pdlr0">
+                <div class="boxPromisesMore2">
+                    <div class="boxListForm">
+                        <div class="row">
+                            <div class="col">
+                                <div class="col-md-6 col-sm-8">
+                                    <div class="label"><span>เบี้ยประกันภัย</span></div>
+                                    <div class="onePromise">
+                                        <incrementer [(value)]="baseIncrementer" (valueChange)="getSum($event)" [step]=10000 [min]="minUlPlanOne" [max]="maxUlPlanOne" [maxAlert]="maxAlertOne" [minAlert]="minAlertOne"></incrementer>
+                                        <span>50,000 - 999,990,000</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-8">
+                                    <div class="label"><span>ทุนประกัน</span></div>
+                                    <div class="onePromise">
+                                        <input class="form-control c-blue" type="text" [ngModel]=" amount |number: '1.0-0' " disabled/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+incrementer {
+    button {
+        i {
+            font-size: 10px;
+        }
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+    .btnMinus,
+    .btnPlus {
+        padding: 0px;
+    }
+    .txt-remark {
+        text-align: center;
+        margin-top: 5px;
+    }
+}

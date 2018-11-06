@@ -1,0 +1,19 @@
+<div class="modal">
+    <!-- <i class="close" (click)="close()"></i> -->
+
+    <h1 class="modal-title">พิกัดปัจจุบัน</h1>
+    <!-- <h1 class="modal-title">ข้อมูลลูกค้า/ผู้มุ่งหวัง</h1> -->
+
+    <div #map id="map" [ngClass]="{'fixed-pin': fixedPin}"></div>
+
+
+    <p>*การแสดงจุดพิกัดปัจจุบันขึ้นอยู่กับพิกัดบนเครื่องที่ใช้งาน</p>
+
+
+    <!-- <div class="clearfix"></div> -->
+    <div class="div-btn mgt25 btn-footer" align="center">
+        <button class="btn-style2 btn-style-m" type="button" (click)="close()"><span> ยกเลิก </span></button>
+        <button class="btn-style3 btn-style-m" type="button" (click)="saveMapModal()"><span> ตกลง </span></button>
+    </div>
+
+</div>

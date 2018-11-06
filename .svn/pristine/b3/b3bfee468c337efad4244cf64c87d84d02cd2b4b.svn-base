@@ -1,0 +1,35 @@
+<div class="boxGraphBlueRed">
+    <div class="card tooltip">
+        <div class="donut-chart chart-{{ percent }}">
+            <div class="slice one"></div>
+            <div class="slice two"></div>
+            <div class="chart-center">
+                <span></span>
+            </div>
+        </div>
+        <!--<span class="tooltiptext tooltip-bottom" style="top: 102%; text-align: left; padding-left: 10px;">
+            <span class="icon-red"></span> ลูกค้า: {{ customer | number }}<br />
+        <span class="icon-blue"></span> ผู้มุ่งหวัง: {{ prospect | number}}
+        </span> -->
+        <span class="tooltiptext tooltip-bottom" style="top: 102%; text-align: left; padding: 5px 10px;">
+            <span class="icon-red"></span> ลูกค้า: {{ percentCustomer }}%<br />
+        <span class="icon-blue"></span> ผู้มุ่งหวัง: {{ percentProspect }}%
+        </span>
+    </div>
+
+    <div class="boxType1 tooltip">
+        <i class="bull"></i>
+        <div class="boxTypeLabel">ลูกค้า</div>
+        <div class="boxTypePercent"><span>{{ customer | number}} <span>คน</span></span>
+        </div>
+        <span class="tooltiptext tooltip-left"><span class="icon-red"></span> ลูกค้า: {{ percentCustomer }}% </span>
+    </div>
+
+    <div class="boxType2 tooltip">
+        <i class="bull"></i>
+        <div class="boxTypeLabel">ผู้มุ่งหวัง</div>
+        <div class="boxTypePercent"><span>{{ prospect | number }} <span>คน</span></span>
+        </div>
+        <span class="tooltiptext tooltip-right"><span class="icon-blue"></span> ผู้มุ่งหวัง: {{ percentProspect }}% </span>
+    </div>
+</div>

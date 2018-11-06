@@ -1,0 +1,222 @@
+<!--
+  Generated template for the QuatationAllocationPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<div class="boxContentPage bgBlue2" style="z-index: 5;">
+    <div class="container">
+
+        <div class="boxSearchPlanInsurance2">
+          <div style="max-width: 450px; margin: 0 auto;">
+          <div class="label">
+            <span>กำหนดสัดส่วนการลงทุน</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="boxSearchPlanInsurance2">
+          <div style="max-width: 450px; margin: 0 auto;">
+            <div class="boxSelectPlan">
+              <div class="boxDropdownPlan nonIcon">
+                <!--
+                            <ion-item class="form-control">
+                                <ion-select cancelText="ยกเลิก" okText="ตกลง" interface="alert">
+                                    <ion-option value="เบี้ยประกันหลักเพื่อความคุ้มครอง (RPP)" selected="true">เบี้ยประกันหลักเพื่อความคุ้มครอง (RPP)</ion-option>
+                                    <ion-option value="เบี้ยประกันภัยหลักเพื่อการออม (RSP)">เบี้ยประกันภัยหลักเพื่อการออม (RSP)</ion-option>
+                                </ion-select>
+                            </ion-item>
+                            -->
+                <dropdown [(data)]="premiumTypeSelected" (dataChange)="premiumTypeChange($event,choiceType)">
+                  <dropdown-option *ngFor="let item of displayPremiumType(premiumtypeList,planCode);let i = index" [value]="item" [selected]="item.selected">{{item.title}}</dropdown-option>
+                </dropdown>
+                <!-- <input id="stock" class="check-style2" type="checkbox"  [(ngModel)]="ulinkCheckbox.stock" (change)="onChange($event)" [checked]="ulinkCheckbox.stock"/>
+                <label for="stock" [ngClass]="[unitlinkData.flagValidUlinkExpreiene ? 'border-red' : '']"> หุ้นสามัญ หรือกองทุนรวมหุ้น หรือสินทรัพย์อื่นที่มีความเสี่ยงสูง</label> -->
+              </div>
+            </div>
+            <ng-container *ngFor="let item of displayCheckBoxPremiumType(premiumtypeList,planCode,premiumTypeSelected.value);let i = index" >
+
+
+              <input *ngIf="planCode==='UA01' && item.value === 'top'" [(ngModel)]="ulinkAllocateData.topDefalutChoice" [checked]="ulinkAllocateData.topDefalutChoice"  id="premiumtype" class="check-style2" type="checkbox"  />
+              <label *ngIf="planCode==='UA01'" for="premiumtype"  [innerHtml]="'เลือกตาม'+premiumtypeList[2].title"></label>
+
+              <input *ngIf="planCode==='UA02' && item.value === 'rsp'" [(ngModel)]="ulinkAllocateData.rspDefalutChoice" [checked]="ulinkAllocateData.rspDefalutChoice" id="premiumtype" class="check-style2" type="checkbox" />
+              <input *ngIf="planCode==='UA02' && item.value === 'top'" [(ngModel)]="ulinkAllocateData.topDefalutChoice" [checked]="ulinkAllocateData.topDefalutChoice"  id="premiumtype" class="check-style2" type="checkbox" />
+              <label *ngIf="planCode==='UA02'" for="premiumtype" [innerHtml]="'เลือกตาม'+premiumtypeList[0].title"></label>
+            </ng-container>
+          </div>
+        </div>
+    </div>
+  </div>
+
+
+  <!-- ส่วนเนื้อหาของหน้า allcation -->
+  <div class="boxContentPage bgBlue3 hasBgImg">
+    <div *ngIf="displayContainer(ulinkAllocateData.rspDefalutChoice,ulinkAllocateData.topDefalutChoice,premiumTypeSelected.value)" class="container">
+      <div class="bgPaperShadow mgt0">
+        <div class="contentPaperShadow2">
+          <div class="boxActionForm boxActionForm-xs_1 pdt10">
+            <tabs tabStyle="2" (change)="changeTabsRiskLevel($event)" [(selectIndex)]="showTab">
+              <tab *ngFor="let item of tabsRiskLevel;let i = index" id="quatationTab_plan{{i}}" [tabTitle]="item.title" [disabled]="item.disabled"></tab>
+            </tabs>
+            <div class="boxTotalRisk">
+              <h1 class="totalRiskText">ความเสี่ยงรวม&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{totalRisk}} %</h1>
+            </div>
+            <div class="riskLevel">
+              <ion-grid>
+                <ion-row>
+                  <ion-col>ความเสี่ยงต่ำ</ion-col>
+                  <ion-col class="col-risk-01">1</ion-col>
+                  <ion-col class="col-risk-02">2</ion-col>
+                  <ion-col class="col-risk-03">3</ion-col>
+                  <ion-col class="col-risk-04">4</ion-col>
+                  <ion-col class="col-risk-05">5</ion-col>
+                  <ion-col class="col-risk-06">6</ion-col>
+                  <ion-col class="col-risk-07">7</ion-col>
+                  <ion-col class="col-risk-08">8</ion-col>
+                  <ion-col>ความเสี่ยงสูง</ion-col>
+                </ion-row>
+              </ion-grid>
+            </div>
+
+            <div class="divTable">
+              <table matSort [matSortDisableClear]="true" (matSortChange)="sortData($event)">
+                <thead>
+                  <tr>
+                    <th class="headrisk" mat-sort-header="riskLevel">
+                      <div>ระดับความเสี่ยงภัย</div>
+                    </th>
+                    <th mat-sort-header="name" class="hdTitle">กองทุน</th>
+                    <th>Fund Fact Sheet</th>
+                    <th mat-sort-header="riskInput" class="headInputRisk">สัดส่วนการลงทุน</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let data of sortedData; let i = index;">
+                    <td>
+                      <div [ngClass]="'rowRisk col-risk-'+ data.riskLevel">{{data.riskLevel.charAt(1)}}</div>
+                    </td>
+                    <td>
+                      <div>
+                        <p class="fundCode">{{data.fundCode}}</p>
+                        <p class="fundThName">({{data.fundThaiName}})</p>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="dataCenter"><i class="icon-pdf-file" style="cursor: pointer;" (click)="openPdf(data)"></i></div>
+                    </td>
+                    <td>
+                      <div class="dataCenter">
+                        <!-- <input class="fundInput" type="text" placeholder="0" [disabled]="totalRisk == '100'"
+                          [ngModel]="data.riskInput" (change)="calculateRisk($event, data, i)" NumberOnly/> -->
+                          <input class="fundInput" type="text" placeholder="0"
+                          [ngModel]="data.riskInput" (change)="calculateRisk($event, data, i)" NumberOnly/>
+                          %
+                        </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="div-btn">
+              <ion-grid text-center>
+                <ion-row>
+                  <ion-col>
+
+                    <button class="btn-style3 btn-style-m btnCalRisk" type="button" [disabled]="false" (click)="openFundData()">
+                      <i class="icon-pdf-file pdfBtn"></i>
+                      <span class="pdftxt">ข้อมูลกองทุน</span>
+                    </button>
+                    <button class="btn-style3 btn-style-m btnCalRisk" type="button" [disabled]="totalRisk != 100" (click)="calculatePieChart()">
+                      <i class="icon-ion-pie-graph pieBtn"></i>
+                      <span class="txt1">ประมาณการ</span>
+                      <span class="txt2">ผลตอบแทนย้อนหลัง</span>
+                    </button>
+
+
+                    <!-- <button class="btn-style3 btn-style-m btnCalRisk" type="button" (click)="saveDataAllocation()">
+                        <i class="icon-pdf-file pdfBtn"></i>
+                        <span class="pdftxt">ทดสอบเรียกข้อมูล</span>
+                      </button> -->
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+
+            </div>
+            <div *ngIf="showPieData">
+              <div class="result-title">ประมาณการผลตอบแทนย้อนหลังตามสัดส่วนที่เลือก</div>
+              <div>
+                <pie-chart [data]="pieChartData" [label]="pieChartLabels" [option]="pieChartOption">
+                </pie-chart>
+              </div>
+              <div class="data-date">ข้อมูล ณ เดือนเมษายน 2561</div>
+              <div class="boxTableStyle1 tbResult">
+                <table>
+                  <thead>
+                    <tr class="header-fund1">
+                      <td rowspan="2" colspan="2">กองทุนเปิด</td>
+                      <td colspan="7">ผลตอบแทนย้อนหลัง</td>
+                    </tr>
+                    <tr class="fund-period-head">
+                      <td>3 เดือน</td>
+                      <td>6 เดือน</td>
+                      <td>1 ปี</td>
+                      <td>3 ปี</td>
+                      <td>5 ปี</td>
+                      <td>10 ปี</td>
+                      <td class="stTitle">ตั้งแต่จัดตั้งกองทุน</td>
+                    </tr>
+                  </thead>
+                  <tbody id="tblPie">
+                    <tr *ngFor="let data of fundDataList; let i = index;" class="data-percent">
+                      <td *ngIf=" i%2 == 0 " rowspan="2">
+                        <div>
+                          <p class="fundCode">{{data.fund}}</p>
+                          <p class="fundThName">({{data.title}})</p>
+
+                        </div>
+                      </td>
+                      <td>{{i%2 == 0? 'Return' : 'SD'}}</td>
+                      <td>{{i%2 == 0? data['3M'] == 'N/A'? 'N/A' : data['3M']+'%' : data['3MSD'] == 'N/A'? 'N/A' : data['3MSD']+'%'}}</td>
+                      <td>{{i%2 == 0? data['6M'] == 'N/A'? 'N/A' : data['6M']+'%' : data['6MSD'] == 'N/A'? 'N/A' : data['6MSD']+'%'}}</td>
+                      <td>{{i%2 == 0? data['1Y'] == 'N/A'? 'N/A' : data['1Y']+'%' : data['1YSD'] == 'N/A'? 'N/A' : data['1YSD']+'%'}}</td>
+                      <td>{{i%2 == 0? data['3Y'] == 'N/A'? 'N/A' : data['3Y']+'%' : data['3YSD'] == 'N/A'? 'N/A' : data['3YSD']+'%'}}</td>
+                      <td>{{i%2 == 0? data['5Y'] == 'N/A'? 'N/A' : data['5Y']+'%' : data['5YSD'] == 'N/A'? 'N/A' : data['5YSD']+'%'}}</td>
+                      <td>{{i%2 == 0? data['10Y'] == 'N/A'? 'N/A' : data['10Y']+'%' : data['10YSD'] == 'N/A'? 'N/A' : data['10YSD']+'%'}}</td>
+                      <td>{{i%2 == 0? data['total'] == 'N/A'? 'N/A' : data['total']+'%' : data['totalSD'] == 'N/A'? 'N/A' :
+                        data['totalSD']+'%'}}</td>
+                    </tr>
+                    <tr class="totalCalFund">
+                      <td colspan="2" class="totalTd">ประมาณอัตราผลตอบแทน</td>
+                      <td class="totalTd">{{cal3M}}</td>
+                      <td class="totalTd">{{cal6M}}</td>
+                      <td class="totalTd">{{cal1Y}}</td>
+                      <td class="totalTd">{{cal3Y}}</td>
+                      <td class="totalTd">{{cal5Y}}</td>
+                      <td class="totalTd">{{cal10Y}}</td>
+                      <td class="totalTd">{{calST}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div *ngIf="toggle_footer" class="boxBlue txt-center">
+    <div>
+      <button class="btn-style2 btn-style-m" type="button" (click)="saveDataAllocation()" [disabled]="disableSaveButton">
+        <span><i class="icon-save-file-option"></i>บันทึก</span>
+        </button>
+      <button class="btn-style3 btn-style-m" type="button"><span><i class="icon-reload"></i> เริ่มใหม่ </span></button>
+    </div>
+  </div>
+  <!-- end -->

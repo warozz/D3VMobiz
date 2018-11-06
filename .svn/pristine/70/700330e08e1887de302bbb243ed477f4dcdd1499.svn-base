@@ -1,0 +1,8 @@
+page-ulink-payment {
+    .disabled{
+        background: #eeeeee !important;
+    }
+    dropdown.ng-dirty.ng-invalid .txtView:not(.disabled){
+        border: 1px solid #c8c8c8 !important;
+    }
+}

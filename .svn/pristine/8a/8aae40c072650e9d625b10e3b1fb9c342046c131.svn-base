@@ -1,0 +1,16 @@
+select-option {
+    ion-select {
+        max-width: 100%
+    }
+    .select-icon {
+		visibility: hidden;
+	}
+}
+
+@media screen and (max-width: 389px) {
+    .select-md {
+        .select-icon{
+            top: 3px;
+        }
+    }
+}

@@ -1,0 +1,65 @@
+quatation-plan-info {
+    img {
+        position: absolute;
+        max-width: none;
+    }
+    label {
+        position: absolute;
+    }
+    .width100{
+        width: 100%;
+    }
+
+    .margin-bottom20{
+        margin-bottom: 20px;
+    }
+
+    .protection-txt {
+        margin-top: 15px;
+        margin-left: 5px;
+        width: 175px;
+        font-size: 25px;
+        z-index: 2;
+    }
+    
+    .policy-year-text {
+        background-color: #0973ba;
+        margin-top: 75px;
+        margin-left: 5px;
+        width: 85px;
+        text-align: center;
+        color: #FFFFFF;
+        line-height: 15px;
+        font-size: 18px;
+        padding: 5px;
+        white-space: normal !important;
+    }
+    
+    .section2-graph {
+        margin-top: 5px;
+        margin-left: 117px;
+    }
+
+    .section3-table {
+        margin-left: 3px;
+    }
+
+    .section3-table-data {
+        font-size: 20px;
+        //width: 75px;
+    }
+
+    .money-bag-data {
+        font-size: 36px;
+        margin-top: 36px;
+        color: #c41a1c;
+    }
+
+    #section2 label {
+        white-space: nowrap;
+    }
+    
+    #section2 .text-inbox {
+        white-space: normal;
+    }
+}

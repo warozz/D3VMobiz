@@ -1,0 +1,418 @@
+<form [formGroup]="appMedicalHistory">
+    <div class="boxContentPage bgBlue3 hasBgImg bgImg95">
+        <div class="container">
+            <div class="bgPaperShadow mgt25">
+                <div class="contentPaperShadow">
+
+                    <!-- start boxFixTopJumpMenu -->
+                    <div class="boxFixTopJumpMenu">
+                        <div id="boxFixJumpMenu" class="boxContentFixJumpMenu">
+                            <div class="boxListFixJumpMenu sm-a-mgr0 sm-a-action-fsnormal">
+                                <a class="action" (click)="scrollToCenter()">ประวัติการแพทย์</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end boxFixTopJumpMenu -->
+
+                    <div id="boxListJumpContent" class="boxListJumpContent xs-pdlr15">
+                        <!-- start oneJumpContent -->
+                        <div id="link1" class="oneJumpContent">
+                            <h2 class="view-only-xs c-blue boxTitleFixJumpMenu">ประวัติการแพทย์</h2>
+
+                            <div class="pdt10 pdb10 lh-form-control">
+                                <font color="red">*</font> ท่านมีสุขภาพร่างกายและจิตใจสมบูรณ์ดีไม่มีอวัยวะส่วนใดของร่างกายพิการและ/หรือทุพพลภาพ
+                            </div>
+
+                            <div class="pdl20 pdr20">
+                                <div class="inline_block pdb10 pdr20 lh-form-control">
+                                    <input id="physician-1" name="physician" value="Y" (click)="changePhysician('Y')" formControlName="physician" class="radio-style3" type="radio">
+                                    <label for="physician-1">ใช่</label>
+                                </div>
+
+                                <div class="inline_block pdb10 pdr20 lh-form-control">
+                                    <input #physicianN id="physician-2" value="N" (click)="changePhysician('N')" formControlName="physician" name="physician" class="radio-style3" type="radio">
+                                    <label for="physician-2">ไม่ใช่ (โปรดระบุ)</label>
+                                </div>
+
+                                <div class="inline_block pdb10 pdr20">
+                                    <input *ngIf="physicianN.checked" name="" formControlName="physician_desc" class="form-control" type="text" value="" placeholder="" />
+                                </div>
+                            </div>
+
+                            <div class="pdt10 pdb10 lh-form-control">
+                                <font color="red">*</font> ในระหว่าง 3 ปีที่แล้วท่านเคยให้แพทย์ตรวจหรือเข้าสถานพยาบาลทำการรักษาตัว ตรวจโลหิตความดันโลหิต ปัสสาวะ เอกซเรย์ ตรวจหัวใจหรือตรวจอย่างอื่นหรือไม่
+                            </div>
+
+                            <div class="boxChkAndInfo">
+                                <div class="boxTopChk">
+                                    <div class="inline_block pdb10 pdr20 lh-form-control">
+                                        <input id="yearphysician_1" name="yearphysician" value="N" (click)="changeYearphysician('N')" formControlName="yearphysician" class="radio-style3" type="radio">
+                                        <label for="yearphysician_1">ไม่เคย</label>
+                                    </div>
+
+                                    <div class="inline_block pdb10 pdr20 lh-form-control">
+                                        <input #physician3Y id="yearphysician_2" value="Y" name="yearphysician" (click)="changeYearphysician('Y')" formControlName="yearphysician" class="radio-style3" type="radio">
+                                        <label for="yearphysician_2">เคย</label>
+                                    </div>
+                                </div>
+
+                                <div *ngIf="physician3Y.checked" class="boxInfoForm">
+                                    <div class="col-md-6 pdlr0">
+                                        <div class="col-sm-5 pdr-sm-7 txt-sm-right lh-form-control">
+                                            <font color="red">*</font> ชื่อสถานพยาบาล :
+                                        </div>
+                                        <div class="col-sm-7 pdl-sm-7">
+                                            <div class="form-group">
+                                                <input name="" formControlName="hospitalName" class="form-control" type="text" value="" placeholder="" maxlength="40" NumberCharacterOnly />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6 pdlr0">
+                                        <div class="col-sm-5 pdr-sm-7 txt-sm-right lh-form-control">
+                                            <font color="red">*</font> ชื่อนายแพทย์ :
+                                        </div>
+                                        <div class="col-sm-7 pdl-sm-7">
+                                            <div class="form-group">
+                                                <input name="" formControlName="physicianName" class="form-control" type="text" value="" placeholder="" maxlength="50" CharacterOnly />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+
+                                    <div class="col-md-6 pdlr0">
+                                        <div class="col-sm-5 pdr-sm-7 txt-sm-right lh-form-control">
+                                            <font color="red">*</font> ชื่อโรค :
+                                        </div>
+                                        <div class="col-sm-7 pdl-sm-7">
+                                            <div class="form-group">
+                                                <input name="" formControlName="diseaseName" class="form-control" type="text" value="" placeholder="" maxlength="30" NumberCharacterOnly />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6 pdlr0">
+                                        <div class="col-sm-5 pdr-sm-7 txt-sm-right lh-form-control">
+                                            <font color="red">*</font> ผลการตรวจ :
+                                        </div>
+                                        <div class="col-sm-7 pdl-sm-7">
+                                            <div class="form-group">
+                                                <input name="" class="form-control" formControlName="result" type="text" value="" placeholder="" maxlength="30" NumberCharacterOnly />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+
+                                    <div class="col-md-6 pdlr0">
+                                        <div class="col-sm-5 pdr-sm-7 txt-sm-right lh-form-control">
+                                            <font color="red">*</font> ผลการรักษา :
+                                        </div>
+                                        <div class="col-sm-7 pdl-sm-7">
+                                            <div class="form-group">
+                                                <input name="" class="form-control" formControlName="treatmentResult" type="text" value="" placeholder="" maxlength="30" NumberCharacterOnly />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6 pdlr0">
+                                        <div class="col-sm-5 pdr-sm-7 txt-sm-right lh-form-control">
+                                            <font color="red">*</font> วดป. :
+                                        </div>
+                                        <div class="col-sm-7 pdl-sm-7">
+                                            <div class="form-group hasIcon">
+                                                <calendar [id]="medical_date" [max]="maxDate" formControlName="medicalDate" (ngModelChange)="dateMedicalChange($event,'medicalDate')"></calendar>
+                                                <!-- <calendar [id]="medical_date" [(date)]="this.appMedicalHistory.get('medicalDate').value" (dateChange)="dateMedicalChange($event,'medicalDate')"></calendar> -->
+                                                <!-- <calendar [id]="medical_date" [(date)]="this.appMedicalHistory.get('medicalDate').value" (dateChange)="dateMedicalChange($event,'medicalDate')"></calendar> -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+
+                                </div>
+
+                            </div>
+
+
+                            <div id="boxListJumpContent" class="boxListJumpContent">
+                                <!-- start oneJumpContent -->
+                                <h2 class="view-only-xs c-blue boxTitleFixJumpMenu">ประวัติการรักษา</h2>
+
+                                <div class="pdt10 pdb10 lh-form-control">
+                                    <font color="red">*</font> ท่านเคยได้รับการวินิจฉัย รับการรักษา ตั้งข้อสงสัยว่าป่วยเป็นโรคตามรายการนี้หรือไม่
+                                </div>
+
+                                <div class="boxChkAndInfo">
+                                    <div class="boxTopChk">
+                                        <div class="inline_block pdb10 pdr20 lh-form-control">
+                                            <input id="treatmentPhysician_1" name="treatmentPhysician" value="N" (change)="changeTreatmentPhysician('N')" formControlName="treatmentPhysician" class="radio-style3" type="radio">
+                                            <label for="treatmentPhysician_1">ไม่เคย</label>
+                                        </div>
+
+                                        <div class="inline_block pdb10 pdr20 lh-form-control">
+                                            <input #physician2Y id="treatmentPhysician_2" name="treatmentPhysician" value="Y" (change)="changeTreatmentPhysician('Y')" formControlName="treatmentPhysician" class="radio-style3" type="radio">
+                                            <label for="treatmentPhysician_2">เคย (โปรดแถลงรายละเอียดการเจ็บป่วยให้ครบถ้วน)</label>
+                                        </div>
+                                    </div>
+
+                                    <div *ngIf="physician2Y.checked" class="boxInfoForm">
+
+                                        <div class="col-lg-3 col-md-4 col-sm-6 lh-form-control">
+                                            <input id="checkbox-5" name="disease_5" value="ต่อมทอนซิลอักเสบเรื้อรัง" (change)="diseaseCheck($event)" formControlName="disease_5" class="check-style3" type="checkbox">
+                                            <label for="checkbox-5">ต่อมทอนซิลอักเสบเรื้อรัง</label>
+                                        </div>
+
+                                        <div class="col-lg-3 col-md-4 col-sm-6 lh-form-control">
+                                            <input id="checkbox-6" name="disease_6" value="กรดไหลย้อน" (change)="diseaseCheck($event)" formControlName="disease_6" class="check-style3" type="checkbox">
+                                            <label for="checkbox-6">กรดไหลย้อน</label>
+                                        </div>
+
+                                        <div class="col-lg-3 col-md-4 col-sm-6 lh-form-control">
+                                            <input id="checkbox-7" name="disease_7" value="กระดูกสันหลังเคลื่อน" (change)="diseaseCheck($event)" formControlName="disease_7" class="check-style3" type="checkbox">
+                                            <label for="checkbox-7">กระดูกสันหลังเคลื่อน</label>
+                                        </div>
+
+                                        <div class="col-lg-3 col-md-4 col-sm-6 lh-form-control">
+                                            <input id="checkbox-8" name="disease_8" value="ออทิสติก" (change)="diseaseCheck($event)" formControlName="disease_8" class="check-style3" type="checkbox">
+                                            <label for="checkbox-8">ออทิสติก</label>
+                                        </div>
+
+                                        <div class="col-lg-3 col-md-4 col-sm-6 lh-form-control">
+                                            <input id="checkbox-9" name="disease_9" value="ไซนัสอักเสบ" (change)="diseaseCheck($event)" formControlName="disease_9" class="check-style3" type="checkbox">
+                                            <label for="checkbox-9">ไซนัสอักเสบ</label>
+                                        </div>
+
+                                        <div class="col-lg-3 col-md-4 col-sm-6 lh-form-control">
+                                            <input id="checkbox-10" name="disease_10" value="ถุงน้ำดีอักเสบ" (change)="diseaseCheck($event)" formControlName="disease_10" class="check-style3" type="checkbox">
+                                            <label for="checkbox-10">ถุงน้ำดีอักเสบ</label>
+                                        </div>
+
+                                        <div class="col-lg-3 col-md-4 col-sm-6 lh-form-control">
+                                            <input id="checkbox-11" name="disease_11" value="หมอนรองกระดูกเคลื่อน" (change)="diseaseCheck($event)" formControlName="disease_11" class="check-style3" type="checkbox">
+                                            <label for="checkbox-11">หมอนรองกระดูกเคลื่อน</label>
+                                        </div>
+
+                                        <div class="col-lg-3 col-md-4 col-sm-6 lh-form-control">
+                                            <input id="checkbox-12" name="disease_12" value="สมาธิสั้น" (change)="diseaseCheck($event)" formControlName="disease_12" class="check-style3" type="checkbox">
+                                            <label for="checkbox-12">สมาธิสั้น</label>
+                                        </div>
+
+                                        <div class="col-lg-3 col-md-4 col-sm-6 lh-form-control">
+                                            <input id="checkbox-13" name="disease_13" value="ปวดศีรษะไมเกรน" (change)="diseaseCheck($event)" formControlName="disease_13" class="check-style3" type="checkbox">
+                                            <label for="checkbox-13">ปวดศีรษะไมเกรน</label>
+                                        </div>
+
+                                        <div class="col-lg-3 col-md-4 col-sm-6 lh-form-control">
+                                            <input id="checkbox-14" name="disease_14" value="ไส้เลื่อน" (change)="diseaseCheck($event)" formControlName="disease_14" class="check-style3" type="checkbox">
+                                            <label for="checkbox-14">ไส้เลื่อน</label>
+                                        </div>
+
+                                        <div class="col-lg-3 col-md-4 col-sm-6 lh-form-control">
+                                            <input id="checkbox-15" name="disease_15" value="ข้อเสื่อม" (change)="diseaseCheck($event)" formControlName="disease_15" class="check-style3" type="checkbox">
+                                            <label for="checkbox-15">ข้อเสื่อม</label>
+                                        </div>
+
+                                        <div class="col-lg-3 col-md-4 col-sm-6 lh-form-control">
+                                            <input id="checkbox-16" name="disease_16" value="ภูมิแพ้" (change)="diseaseCheck($event)" formControlName="disease_16" class="check-style3" type="checkbox">
+                                            <label for="checkbox-16">ภูมิแพ้</label>
+                                        </div>
+
+                                        <div class="col-lg-3 col-md-4 col-sm-6 lh-form-control">
+                                            <input id="checkbox-17" name="disease_17" value="ริดสีดวงทวาร" (change)="diseaseCheck($event)" formControlName="disease_17" class="check-style3" type="checkbox">
+                                            <label for="checkbox-17">ริดสีดวงทวาร</label>
+                                        </div>
+
+                                        <div class="col-lg-3 col-md-4 col-sm-6 lh-form-control">
+                                            <input id="checkbox-18" name="disease_18" value="เส้นเอ็นอักเสบเรื้อรัง" (change)="diseaseCheck($event)" formControlName="disease_18" class="check-style3" type="checkbox">
+                                            <label for="checkbox-18">เส้นเอ็นอักเสบเรื้อรัง</label>
+                                        </div>
+
+                                        <div class="col-lg-3 col-md-4 col-sm-6 lh-form-control">
+                                            <input id="checkbox-19" name="disease_19" value="ฝีคัณฑศูตร" (change)="diseaseCheck($event)" formControlName="disease_19" class="check-style3" type="checkbox">
+                                            <label for="checkbox-19">ฝีคัณฑศูตร</label>
+                                        </div>
+                                        <div class="col-lg-3 col-md-4 col-sm-6 lh-form-control">
+                                            <input id="checkbox-20" name="disease_20" value="นิ่ว" (change)="diseaseCheck($event)" formControlName="disease_20" class="check-style3" type="checkbox">
+                                            <label for="checkbox-20">นิ่ว</label>
+                                        </div>
+                                        <div class="col-lg-3 col-md-4 col-sm-6 lh-form-control">
+                                            <input id="checkbox-21" name="disease_21" value="ติดเชื้อในหูชั้นกลาง" (change)="diseaseCheck($event)" formControlName="disease_21" class="check-style3" type="checkbox">
+                                            <label for="checkbox-21">ติดเชื้อในหูชั้นกลาง</label>
+                                        </div>
+                                        <div class="col-lg-3 col-md-4 col-sm-6 lh-form-control">
+                                            <input id="checkbox-22" name="disease_22" value="หลอดลมอักเสบเรื้อรัง" (change)="diseaseCheck($event)" formControlName="disease_22" class="check-style3" type="checkbox">
+                                            <label for="checkbox-22">หลอดลมอักเสบเรื้อรัง</label>
+                                        </div>
+                                        <div class="col-lg-3 col-md-4 col-sm-6 lh-form-control">
+                                            <input id="checkbox-23" name="disease_23" value="เยื่อบุโพรงมดลูกเจริญผิดที่" (change)="diseaseCheck($event)" formControlName="disease_23" class="check-style3" type="checkbox">
+                                            <label for="checkbox-23">เยื่อบุโพรงมดลูกเจริญผิดที่</label>
+                                        </div>
+                                        <div class="col-lg-3 col-md-8 col-sm-6 lh-form-control">
+                                            <input id="checkbox-24" name="disease_24" value="เส้นประสาทอักเสบ หรือถูกเบียดทับ" (change)="diseaseCheck($event)" formControlName="disease_24" class="check-style3" type="checkbox">
+                                            <label for="checkbox-24">เส้นประสาทอักเสบ หรือถูกเบียดทับ</label>
+                                        </div>
+                                        <!-- <div class="col-lg-3 col-md-4 col-sm-6">
+                                                    <input id="checkbox-25" name="disease_25" value="หมอนรองกระดูกเคลื่อน หรือทับเส้นประสาท" 
+                                                    (change)="diseaseCheck($event) " 
+                                                        formControlName="disease_25" class="check-style3" type="checkbox">
+                                                    <label for="checkbox-25">หมอนรองกระดูกเคลื่อน หรือทับเส้นประสาท</label>
+                                                </div> -->
+                                        <div class="clearfix"></div>
+
+                                        <h2 class="titleDiseaseInfo">โปรดกรอกรายละเอียดโรคที่ทำการรักษา</h2>
+                                        <div class="boxListDiseaseInfo">
+                                            <!-- start 1DiseaseInfo -->
+                                            <div class="oneDiseaseInfo">
+                                                <div class="col-lg-6 pdlr0">
+                                                    <div class="col-lg-5 col-md-4 col-sm-5 pdr-sm-7 txt-sm-right lh-form-control">
+                                                        <font color="red">*</font> ชื่อโรคหรืออาการที่เป็น :
+                                                    </div>
+                                                    <div class="col-lg-7 col-md-8 col-sm-7 pdl-sm-7">
+                                                        <dropdown formControlName="disease_name1" (dataChange)="diseaseChange('disease_name1')" (click)="checkSelection($event, diseaseInList_1)">
+                                                            <dropdown-option [value]="disease" *ngFor="let disease of diseaseInList_1">{{disease}}</dropdown-option>
+                                                        </dropdown>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-6 pdlr0">
+                                                    <div class="col-lg-5 col-md-4 col-sm-5 pdr-sm-7 txt-sm-right lh-form-control">
+                                                        <font color="red">*</font> วัน/เดือน/ปีที่รักษา :
+                                                    </div>
+                                                    <div class="col-lg-7 col-md-8 col-sm-7 pdl-sm-7">
+                                                        <div class="form-group hasIcon">
+                                                            <!-- <calendar [id]="treatment_date1" [(date)]="this.appMedicalHistory.get('treatmentDate1').value" (dateChange)="dateMedicalChange($event,'treatmentDate1')"></calendar> -->
+                                                            <calendar [id]="treatment_date1" [max]="maxDate" formControlName="treatmentDate1" (ngModelChange)="dateMedicalChange($event,'treatmentDate1')"></calendar>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="clearfix"></div>
+
+                                                <div class="col-lg-6 pdlr0">
+                                                    <div class="col-lg-5 col-md-4 col-sm-5 pdr-sm-7 txt-sm-right lh-form-control">
+                                                        <font color="red">*</font> การรักษาและอาการปัจจุบัน :
+                                                    </div>
+                                                    <div class="col-lg-7 col-md-8 col-sm-7 pdl-sm-7">
+                                                        <div class="form-group">
+                                                            <input name="" class="form-control" formControlName="treatment_result1" type="text" value="" placeholder="" maxlength="90" NumberCharacterOnly />
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-6 pdlr0">
+                                                    <div class="col-lg-5 col-md-4 col-sm-5 pdr-sm-7 txt-sm-right lh-form-control">
+                                                        <font color="red">*</font> ชื่อและสถานที่/ติดต่อแพทย์ :
+                                                    </div>
+                                                    <div class="col-lg-7 col-md-8 col-sm-7 pdl-sm-7">
+                                                        <div class="form-group">
+                                                            <input name="" class="form-control" formControlName="medical_contact1" type="text" value="" placeholder="" maxlength="90" NumberCharacterOnly />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="clearfix"></div>
+                                            </div>
+                                            <!-- end 1DiseaseInfo -->
+
+                                            <!-- start 2DiseaseInfo -->
+                                            <div class="oneDiseaseInfo">
+                                                <div class="col-lg-6 pdlr0">
+                                                    <div class="col-lg-5 col-md-4 col-sm-5 pdr-sm-7 txt-sm-right lh-form-control">ชื่อโรคหรืออาการที่เป็น :</div>
+                                                    <div class="col-lg-7 col-md-8 col-sm-7 pdl-sm-7">
+                                                        <dropdown formControlName="disease_name2" (dataChange)="diseaseChange('disease_name2')" (click)="checkSelection($event, diseaseInList_2)">
+                                                            <dropdown-option [value]="disease" *ngFor="let disease of diseaseInList_2 ">{{disease}}</dropdown-option>
+                                                        </dropdown>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-6 pdlr0">
+                                                    <div class="col-lg-5 col-md-4 col-sm-5 pdr-sm-7 txt-sm-right lh-form-control">วัน/เดือน/ปีที่รักษา :</div>
+                                                    <div class="col-lg-7 col-md-8 col-sm-7 pdl-sm-7">
+                                                        <div class="form-group hasIcon">
+                                                            <calendar [id]="treatment_date2" [max]="maxDate" [(date)]="this.appMedicalHistory.get('treatmentDate2').value" (dateChange)="dateMedicalChange($event,'treatmentDate2')"></calendar>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="clearfix"></div>
+
+                                                <div class="col-lg-6 pdlr0">
+                                                    <div class="col-lg-5 col-md-4 col-sm-5 pdr-sm-7 txt-sm-right lh-form-control">การรักษาและอาการปัจจุบัน :</div>
+                                                    <div class="col-lg-7 col-md-8 col-sm-7 pdl-sm-7">
+                                                        <div class="form-group">
+                                                            <input name="" class="form-control" type="text" value="" formControlName="treatment_result2" maxlength="90" NumberCharacterOnly />
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-6 pdlr0">
+                                                    <div class="col-lg-5 col-md-4 col-sm-5 pdr-sm-7 txt-sm-right lh-form-control">ชื่อและสถานที่/ติดต่อแพทย์ :</div>
+                                                    <div class="col-lg-7 col-md-8 col-sm-7 pdl-sm-7">
+                                                        <div class="form-group">
+                                                            <input name="" class="form-control" type="text" value="" formControlName="medical_contact2" maxlength="90" NumberCharacterOnly />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="clearfix"></div>
+                                            </div>
+                                            <!-- end 2DiseaseInfo -->
+
+
+                                            <!-- start oneDiseaseInfo -->
+                                            <div class="oneDiseaseInfo">
+                                                <div class="col-lg-6 pdlr0">
+                                                    <div class="col-lg-5 col-md-4 col-sm-5 pdr-sm-7 txt-sm-right lh-form-control">ชื่อโรคหรืออาการที่เป็น :</div>
+                                                    <div class="col-lg-7 col-md-8 col-sm-7 pdl-sm-7">
+                                                        <dropdown formControlName="disease_name3" (ngModelChange)="diseaseChange('disease_name3')" (click)="checkSelection($event, diseaseInList_3)">
+                                                            <dropdown-option [value]='disease' *ngFor="let disease of diseaseInList_3 ">{{disease}}</dropdown-option>
+                                                        </dropdown>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-6 pdlr0">
+                                                    <div class="col-lg-5 col-md-4 col-sm-5 pdr-sm-7 txt-sm-right lh-form-control">วัน/เดือน/ปีที่รักษา :</div>
+                                                    <div class="col-lg-7 col-md-8 col-sm-7 pdl-sm-7">
+                                                        <div class="form-group hasIcon">
+                                                            <calendar [id]="treatment_date3" [max]="maxDate" [(date)]="this.appMedicalHistory.get('treatmentDate3').value" (dateChange)="dateMedicalChange($event,'treatmentDate3')"></calendar>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="clearfix"></div>
+
+                                                <div class="col-lg-6 pdlr0">
+                                                    <div class="col-lg-5 col-md-4 col-sm-5 pdr-sm-7 txt-sm-right lh-form-control">การรักษาและอาการปัจจุบัน :</div>
+                                                    <div class="col-lg-7 col-md-8 col-sm-7 pdl-sm-7">
+                                                        <div class="form-group">
+                                                            <input name="" class="form-control" type="text" value="" formControlName="treatment_result3" maxlength="90" NumberCharacterOnly />
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-6 pdlr0">
+                                                    <div class="col-lg-5 col-md-4 col-sm-5 pdr-sm-7 txt-sm-right lh-form-control">ชื่อและสถานที่/ติดต่อแพทย์ :</div>
+                                                    <div class="col-lg-7 col-md-8 col-sm-7 pdl-sm-7">
+                                                        <div class="form-group">
+                                                            <input name="" class="form-control" type="text" value="" formControlName="medical_contact3" maxlength="90" NumberCharacterOnly />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="clearfix"></div>
+                                            </div>
+                                            <!-- end 3DiseaseInfo -->
+
+
+
+                                            <!-- <div class="boxAddRow txt-center">
+                                                <a class="btnTxtIconRight" href="javascript:;">เพิ่มรายละเอียดการรักษา <span><i class="icon-plus"></i></span></a>
+                                            </div> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- end oneJumpContent -->
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</form>

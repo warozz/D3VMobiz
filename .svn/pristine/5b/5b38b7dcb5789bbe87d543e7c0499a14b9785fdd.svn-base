@@ -1,0 +1,116 @@
+<!--
+  Generated template for the QuatationEAppPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<div class="boxContentPage bgBlue3 hasBgImg">
+  <div class="container">
+    <div class="e-app-container">
+      <h1 class="e-app-title">ลงลายมือชื่อ ผู้เอาประกันภัย - พยาน</h1>
+      <div class="inside-container">
+        <div class="form-horizontal">
+          <div class="form-group">
+
+            <div class="row">
+              <h2 class="col-xs-12 col-sm-offset-4 col-sm-5">ผู้เอาประกันภัย</h2>
+            </div>
+            <div class="row spec-margin">
+              <label for="" class="col-xs-12 col-sm-4 control-label middle">ลายเซ็น :</label>
+              <div class="col-xs-12 col-sm-5 signature-height">
+                <div *ngIf="signs['1'] === undefined" class="signature-thumb" (click)="openSignature(signs, 1)"></div>
+                <div *ngIf="signs['1'] !== undefined" class="signature-thumb" (click)="openSignature(signs, 1)">
+                  <img [src]="signs['1']" style="width: 100%;height: 100%" />
+                </div>
+              </div>
+            </div>
+            <div class="row underline">
+              <label for="" class="col-xs-12 col-sm-4 control-label">ชื่อ-นามสกุล :</label>
+              <div class="col-xs-12 col-sm-5">
+                <input type="text" class="form-control" id="" placeholder="" disabled>
+              </div>
+            </div>
+
+            <div class="row">
+              <h2 class="col-xs-12 col-sm-offset-4 col-sm-5">พยาน</h2>
+            </div>
+            <div class="row spec-margin">
+              <label for="" class="col-xs-12 col-sm-4 control-label middle">ลายเซ็น :</label>
+              <div class="col-xs-12 col-sm-5 signature-height">
+                <div *ngIf="signs['2'] === undefined" class="signature-thumb" (click)="openSignature(signs, 2)"></div>
+                <div *ngIf="signs['2'] !== undefined" class="signature-thumb" (click)="openSignature(signs, 2)">
+                  <img [src]="signs['2']" style="width: 100%;height: 100%" />
+                </div>
+              </div>
+            </div>
+            <div class="row spec-margin">
+              <label for="" class="col-xs-12 col-sm-4 control-label middle">คำนำหน้า :</label>
+              <div class="col-xs-12 col-sm-3">
+                <prefix-name></prefix-name>
+              </div>
+            </div>
+            <div class="row underline">
+              <label for="" class="col-xs-12 col-sm-4 control-label">ชื่อ-นามสกุล :</label>
+              <div class="col-xs-12 col-sm-5">
+                <input type="text" class="form-control" id="" placeholder="">
+              </div>
+            </div>
+
+            <div class="row">
+              <h2 class="col-xs-12 col-sm-offset-4 col-sm-5">พยาน/ผู้เขียน</h2>
+            </div>
+            <div class="row spec-margin">
+              <label for="" class="col-xs-12 col-sm-4 control-label middle">ลายเซ็น :</label>
+              <div class="col-xs-12 col-sm-5 signature-height">
+                <div *ngIf="signs['3'] === undefined" class="signature-thumb" (click)="openSignature(signs, 3)"></div>
+                <div *ngIf="signs['3'] !== undefined" class="signature-thumb" (click)="openSignature(signs, 3)">
+                  <img [src]="signs['3']" style="width: 100%;height: 100%" />
+                </div>
+              </div>
+            </div>
+            <div class="row spec-margin">
+              <label for="" class="col-xs-12 col-sm-4 control-label middle">คำนำหน้า :</label>
+              <div class="col-xs-12 col-sm-3">
+                <prefix-name></prefix-name>
+              </div>
+            </div>
+            <div class="row underline">
+              <label for="" class="col-xs-12 col-sm-4 control-label">ชื่อ-นามสกุล :</label>
+              <div class="col-xs-12 col-sm-5">
+                <input type="text" class="form-control" id="" placeholder="">
+              </div>
+            </div>
+
+            <div class="row">
+              <h2 class="col-xs-12 col-sm-offset-4 col-sm-5">ตัวแทน</h2>
+            </div>
+            <div class="row spec-margin">
+              <label for="" class="col-xs-12 col-sm-4 control-label middle">ลายเซ็น :</label>
+              <div class="col-xs-12 col-sm-5 signature-height">
+                <div *ngIf="signs['4'] === undefined" class="signature-thumb" (click)="openSignature(signs, 4)"></div>
+                <div *ngIf="signs['4'] !== undefined" class="signature-thumb" (click)="openSignature(signs, 4)">
+                  <img [src]="signs['4']" style="width: 100%;height: 100%" />
+                </div>
+              </div>
+            </div>
+            <div class="row underline spec-margin">
+              <label for="" class="col-xs-12 col-sm-4 control-label">ชื่อ-นามสกุล :</label>
+              <div class="col-xs-12 col-sm-5">
+                <input type="text" class="form-control" id="" placeholder="" disabled>
+              </div>
+            </div>
+
+            <div class="row">
+              <label for="" class="col-xs-12 col-sm-4 control-label">ทำที่ :</label>
+              <div class="col-xs-12 col-sm-5">
+                <input type="text" class="form-control" id="" placeholder="">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <signature-pad class="signature" [options]="signaturePadOptions" (onBeginEvent)="drawStart()" (onEndEvent)="drawComplete()"></signature-pad> -->

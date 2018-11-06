@@ -1,0 +1,195 @@
+{
+    "rider": "ค่าห้องสูงสุด",
+    "age": {
+        "min": "6y",
+        "max": "70y"
+    },
+    "steps": [{
+        "value": 500,
+        "step": 500
+    }],
+    "agent": [{
+            "permission": "Normal",
+            "sum": {
+                "min": 0,
+                "max": [{
+                        "age": "1m",
+                        "rider": ["H", "VP", "V"],
+                        "steps": [{
+                            "step": 100000,
+                            "value": 2500
+                        }]
+                    },
+                    {
+                        "age": "6y",
+                        "rider": ["H", "VP", "V"],
+                        "steps": [{
+                                "step": 100000,
+                                "value": 2500
+                            },
+                            {
+                                "step": 300000,
+                                "value": 4000
+                            },
+                            {
+                                "step": 500000,
+                                "value": 5000
+                            }
+                        ]
+                    },
+                    {
+                        "age": "16y",
+                        "rider": ["H", "VP", "V"],
+                        "steps": [{
+                                "step": 100000,
+                                "value": 3000
+                            },
+                            {
+                                "step": 300000,
+                                "value": 4000
+                            },
+                            {
+                                "step": 500000,
+                                "value": 7000
+                            },
+                            {
+                                "step": 1000000,
+                                "value": 10000
+                            },
+                            {
+                                "step": 1500000,
+                                "value": 12000
+                            },
+                            {
+                                "step": 5000000,
+                                "value": 25000
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "permission": "Q UP",
+            "sum": {
+                "min": 0,
+                "max": [{
+                        "age": "1m",
+                        "rider": ["H", "VP", "V"],
+                        "steps": [{
+                            "step": 100000,
+                            "value": 2500
+                        }]
+                    },
+                    {
+                        "age": "6y",
+                        "rider": ["H", "VP", "V"],
+                        "steps": [{
+                                "step": 100000,
+                                "value": 2500
+                            },
+                            {
+                                "step": 300000,
+                                "value": 4000
+                            },
+                            {
+                                "step": 500000,
+                                "value": 5000
+                            }
+                        ]
+                    },
+                    {
+                        "age": "16y",
+                        "rider": ["H", "VP", "V"],
+                        "steps": [{
+                                "step": 100000,
+                                "value": 3000
+                            },
+                            {
+                                "step": 300000,
+                                "value": 4000
+                            },
+                            {
+                                "step": 500000,
+                                "value": 7000
+                            },
+                            {
+                                "step": 1000000,
+                                "value": 12000
+                            },
+                            {
+                                "step": 1500000,
+                                "value": 14000
+                            },
+                            {
+                                "step": 5000000,
+                                "value": 25000
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "permission": "Top UP",
+            "sum": {
+                "min": 0,
+                "max": [{
+                        "age": "1m",
+                        "rider": ["H", "VP", "V"],
+                        "steps": [{
+                            "step": 100000,
+                            "value": 2500
+                        }]
+                    },
+                    {
+                        "age": "6y",
+                        "rider": ["H", "VP", "V"],
+                        "steps": [{
+                                "step": 100000,
+                                "value": 3000
+                            },
+                            {
+                                "step": 300000,
+                                "value": 5000
+                            },
+                            {
+                                "step": 500000,
+                                "value": 5000
+                            }
+                        ]
+                    },
+                    {
+                        "age": "16y",
+                        "rider": ["H", "VP", "V"],
+                        "steps": [{
+                                "step": 100000,
+                                "value": 4000
+                            },
+                            {
+                                "step": 300000,
+                                "value": 5000
+                            },
+                            {
+                                "step": 500000,
+                                "value": 8000
+                            },
+                            {
+                                "step": 1000000,
+                                "value": 14000
+                            },
+                            {
+                                "step": 1500000,
+                                "value": 16000
+                            },
+                            {
+                                "step": 5000000,
+                                "value": 25000
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ]
+}

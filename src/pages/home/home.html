@@ -1,0 +1,131 @@
+<ion-header header></ion-header>
+
+<ion-content>
+    <div id="home_page" class="mainContainer">
+        <div class="container">
+            <div class="boxContentDashBoard_1">
+                <div class="boxLeft">
+                    <!--
+                    <div class="boxGraphBlueRed">
+                        <div class="boxTitleChart">กลุ่มลูกค้า</div>
+                        <doughnut-chart [data]="doughnutChartData" [label]="doughnutChartLabels" [color]="doughnutChartColor" [option]="doughnutChartOption"></doughnut-chart>
+                    </div>
+                    -->
+                    <circle-graph [data]="doughnutChartData"></circle-graph>
+                </div>
+                <div class="boxRight">
+                    <div class="boxGraphBlueDarkBlue">
+                        <div class="boxTitleChart">จำนวน/เดือน</div>
+                        <bar-chart [data]="barChartData" [label]="barChartLabels" [color]="barChartColor"></bar-chart>
+                        <!-- <div class="scrollbar-inner">
+                            <div class="boxListGraph">
+                            </div>
+                        </div>
+
+                        <div class="boxBarLeft">
+                            <div class="titleBar">จำนวนใบ</div>
+
+                            <div class="boxPercent_100"></div>
+                            <div class="boxPercent_80"></div>
+                            <div class="boxPercent_60"></div>
+                            <div class="boxPercent_40"></div>
+                            <div class="boxPercent_20"></div>
+                            <div class="boxPercent_0"></div>
+                        </div>
+                        <div class="boxBarCommentTop">
+                        </div>
+                        <div class="boxBarRight">
+                            <div class="titleBar">เดือน</div>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+            <div class="boxContentDashBoard_2">
+                <div class="col-md-12">
+                    <h3 class="titleContentDashBoard_2">บันทึกร่าง</h3>
+                </div>
+                <div class="col-sm-6">
+                    <a class="oneListItem" [ngClass]="{'disabled': quotationDraftM?.disabled ? true : false}" *ngIf="fullName?.length > 0" (click)="saveDrafQuotation(quotationDraftM)">
+                        <i class="iconLeft icon-file-add"></i>
+                        <span class="title">ใบเสนอขาย</span>
+                        <span class="des">{{fullName}} อายุ {{age}} เพศ {{gender}} <i class="iconRight icon-edit-interface-symbol"></i></span>
+                    </a>
+                    <a class="oneListItem" [ngClass]="{'disabled': true}" *ngIf="fullName?.length <= 0">
+                        <i class="iconLeft icon-file-add"></i>
+                        <span class="title">ใบเสนอขาย</span>
+                        <span class="des"> - </span>
+                    </a>
+                </div>
+                <div class="col-sm-6" *ngIf="isMiniMode == false">
+                    <a class="oneListItem" [ngClass]="{'disabled': applicationDraftM?.isexpire ? true : false}" *ngIf="appFullName?.length > 0" (click)="saveDrafApplication(applicationDraftM)">
+                        <i class="iconLeft icon-paper-search"></i>
+                        <span class="title">ใบคำขอ</span>
+                        <span class="des">{{appFullName}} อายุ {{appAge}} เพศ {{appGender}}<i class="iconRight icon-edit-interface-symbol"></i></span>
+                    </a>
+                    <a class="oneListItem" [ngClass]="{'disabled': true}" *ngIf="appFullName?.length <= 0">
+                        <i class="iconLeft icon-paper-search"></i>
+                        <span class="title">ใบคำขอ</span>
+                        <span class="des">-</span>
+                    </a>
+                </div>
+            </div>
+            <div class="boxContentDashBoard_3">
+                <h3 class="titleContentDashBoard_3">ใบบันทึกล่าสุด</h3>
+
+                <h4 class="subTitleContentDashBoard_3">ใบเสนอขาย</h4>
+                <div class="boxTableStyle5">
+                    <table class="visible-xs visible-md visible-lg">
+                        <tbody>
+                            <tr class="trRow" [ngClass]="{'disabled': item.disabled}" *ngFor="let item of quotationMs; let i = index" (click)="openLatestSaveQuotation(item)">
+                                <td>{{ i+1 }}. {{ item.name }}</td>
+                                <td>{{ item.planname }}</td>
+                                <td *ngIf="item.packageno != ''">{{ "แผน "+item.packageno }}</td>
+                                <td *ngIf="item.packageno == ''">ทุนประกัน <br class="visible-md" />{{ item.lifesum }}</td>
+                                <td>Ref. ID <br class="visible-md" />{{ item.referenceno }}<span *ngIf="item.referenceno !== '-'" class="icon-checkmark3 icon-checkmark"></span></td>
+                                <td>วันที่บันทึก <br class="visible-md" />{{ item.date }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="trRow row hidden-xs hidden-md hidden-lg pdb20" [ngClass]="{'disabled': item.disabled}" *ngFor="let item of quotationMs; let i = index" (click)="openLatestSaveQuotation(item)">
+                        <div class="col-sm-5 col-xs-12">{{ i+1 }}. {{ item.name }}</div>
+                        <div class="col-sm-7 col-xs-12">{{ item.planname }}</div>
+                        <div class="col-sm-4 col-xs-12" *ngIf="item.packageno != ''">{{ "แผน "+item.packageno }}</div>
+                        <div class="col-sm-5 col-xs-12" *ngIf="item.packageno == ''">ทุนประกัน <br class="visible-md" />{{ item.lifesum }}</div>
+                        <div class="col-sm-3 col-xs-12">Ref. ID {{ item.referenceno }}<span *ngIf="item.referenceno !== '-'" class="icon-checkmark3 icon-checkmark"></span></div>
+                        <div class="col-sm-4 col-xs-12">วันที่บันทึก {{ item.date }}</div>
+                    </div>
+                </div>
+
+                <h4 class="subTitleContentDashBoard_3" *ngIf="isMiniMode == false">ใบคำขอ</h4>
+                <div class="boxTableStyle5" *ngIf="isMiniMode == false">
+                    <table class="visible-xs visible-md visible-lg">
+                        <tbody>
+                            <tr class="trRow" [ngClass]="{'disabled': item.isexpire}" *ngFor="let item of applicationMs; let i = index" (click)="openLatestSaveApplication(item)">
+                                <td>{{ i+1 }}. {{ item.appid}}</td>
+                                <td>{{ item.name }}</td>
+                                <td>{{ item.planname }}</td>
+                                <td *ngIf="item.packageno != ''"> {{"แผน "+item.packageno}}</td>
+                                <td *ngIf="item.packageno == ''">ทุนประกัน <br class="visible-md" />{{ item.lifesum }}</td>
+                                <td *ngIf="item.smartcaseflag == ''">สมาร์ทเคส: -</td>
+                                <td *ngIf="item.smartcaseflag == 'Y'">สมาร์ทเคส: <span class="lh-xs-15 c-green">ผ่าน</span></td>
+                                <td *ngIf="item.smartcaseflag == 'N'">สมาร์ทเคส: <span class="lh-xs-15 c-red">ไม่ผ่าน</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="trRow row hidden-xs hidden-md hidden-lg pdb20" [ngClass]="{'disabled': item.isexpire}" *ngFor="let item of applicationMs; let i = index" (click)="openLatestSaveApplication(item)">
+                        <div class="col-sm-6 col-xs-12">{{ i+1 }}. {{ item.appid + ' ' + item.name}}</div>
+                        <div class="col-sm-6 col-xs-12">{{ item.planname }}</div>
+                        <div class="col-sm-6 col-xs-12" *ngIf="item.packageno != ''">{{ "แผน "+item.packageno }}</div>
+                        <div class="col-sm-6 col-xs-12" *ngIf="item.packageno == ''">ทุนประกัน <br class="visible-md" />{{ item.lifesum }}</div>
+                        <div *ngIf="item.smartcaseflag == ''" class="col-sm-6 col-xs-12">สมาร์ทเคส: -</div>
+                        <div *ngIf="item.smartcaseflag == 'Y'" class="col-sm-6 col-xs-12">สมาร์ทเคส: <span class="lh-xs-15 c-green">ผ่าน</span></div>
+                        <div *ngIf="item.smartcaseflag == 'N'" class="col-sm-6 col-xs-12">สมาร์ทเคส: <span class="lh-xs-15 c-red">ไม่ผ่าน</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer footer></footer>
+</ion-content>

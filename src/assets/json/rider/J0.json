@@ -1,0 +1,29 @@
+{
+    "rider": "สพ.เด็ก",
+    "age": {
+        "min": "0y",
+        "max": "5y"
+    },
+    "rule": [{
+        "deny": ["H", "G"]
+    }],
+    "agent": [{
+        "permission": "Normal",
+        "select": [{
+                "option": 1,
+                "value": 3000,
+                "sum": 100000
+            },
+            {
+                "option": 2,
+                "value": 4000,
+                "sum": 100000
+            },
+            {
+                "option": 3,
+                "value": 5000,
+                "sum": 100000
+            }
+        ]
+    }]
+}

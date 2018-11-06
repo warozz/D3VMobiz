@@ -1,0 +1,222 @@
+<div class="boxContentPage bgBlue3 hasBgImg">
+    <div class="container">
+        <h1 class="titleContentPage1">{{ 'PLAN' | planLabel }} {{ planName }}</h1>
+
+        <div class="bgPaperShadow mgt0">
+            <div class="contentPaperShadow2">
+                <div class="boxActionForm boxActionForm-xs_1 pdt10">
+                    <ul class="boxActionRight">
+                        <li>
+                            <div class="pdlr20 lh-form-control">ทุนประกัน <span class="c-blue fs30">{{quatationSum | number}}</span> บาท</div>
+                        </li>
+                        <li>
+                            <div class="lh-form-control">เบี้ยประกันรวม <span class="c-blue fs30">{{premiumFooter | number}}</span> บาท</div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="boxTableStyle3 boxQuatationTable1 hasAccTable table-bdb0 ">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th rowspan="2" class="view-only-xs">
+                                    <!-- for xs -->
+                                </th>
+
+                                <th rowspan="2">วันครบรอบ<br>ปีกรมธรรม์ที่</th>
+                                <th rowspan="2">เงินคืน</th>
+                                <th colspan="2">กรณีคงเงินคืนสะสมไว้กับบริษัทฯ *</th>
+                                <th rowspan="2">{{table1_header2}}</th>
+                                <th rowspan="2">เงินค่าเวนคืน<br>กรมธรรม์</th>
+                                <th rowspan="2">ความคุ้มครอง<br>กรณีเสียชีวิต</th>
+                            </tr>
+                            <tr>
+                                <th>อัตราดอกเบี้ย<br>ขั้นต่ำ {{min_rate}}%</th>
+                                <th>อัตราดอกเบี้ย<br>ปัจจุบัน {{current_rate}}%</th>
+                               
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item_row of table1_show; let i = index">
+                                <td class="view-only-xs">
+                                    <div *ngIf="!table1Show[i]" class="oneAccTable" (click)="changeTable1Show(i)">
+                                        <div class="oneTitleAccTable">
+                                            <div class="boxLeft">วันครบรอบปีกรมธรรม์ที่</div>
+                                            <div class="boxRight">{{item_row[0]}}</div>
+                                        </div>
+                                    </div>
+                                    <div *ngIf="table1Show[i]" class="oneAccTable action" (click)="changeTable1Show(i)">
+                                        <div class="oneTitleAccTable">
+                                            <div class="boxLeft">วันครบรอบปีกรมธรรม์ที่</div>
+                                            <div class="boxRight">{{item_row[0]}}</div>
+                                        </div>
+                                        <div class="oneDetailAccTable">
+                                            <div class="rowDetailAccTable">
+                                                <div class="boxLeft">
+                                                    <div class="c-blue pdt10">เงินคืน</div>
+                                                </div>
+                                                <div class="boxRight">{{item_row[1] == '' || item_row[1] == '-' ? item_row[1] : (item_row[1] | number)}}</div>
+                                            </div>
+
+                                            <div class="rowDetailAccTable">
+                                                <div class="boxLeft">
+                                                    <div class="c-blue pdt10">กรณีคงเงินคืนสะสมไว้กับบริษัทฯ *</div>
+                                                </div>
+                                                <div class="boxRight"></div>
+                                            </div>
+                                            <div class="rowDetailAccTable">
+                                                <div class="boxLeft">อัตราดอกเบี้ยขั้นต่ำ 2%</div>
+                                                <div class="boxRight">{{item_row[2] == '' || item_row[2] == '-' ? item_row[2] : (item_row[2] | number)}}</div>
+                                            </div>
+                                            <div class="rowDetailAccTable">
+                                                <div class="boxLeft">อัตราดอกเบี้ยปัจจุบัน 2.5%</div>
+                                                <div class="boxRight">{{item_row[3] == '' || item_row[3] == '-' ? item_row[3] : (item_row[3] | number)}}</div>
+                                            </div>
+
+                                            <div class="rowDetailAccTable">
+                                                <div class="c-blue boxLeft">ครบสัญญา</div>
+                                                <div class="boxRight">{{item_row[4] == '' || item_row[4] == '-' ? item_row[4] : (item_row[4] | number)}}</div>
+                                            </div>
+                                            <div *ngIf="item_row[5] == 'ครบกำหนด'" class="rowDetailAccTable">
+                                                <div class="boxLeft"></div>
+                                                <div class="boxRight">{{item_row[5]}}</div>
+                                            </div>
+                                            <div *ngIf="item_row[5] != 'ครบกำหนด'" class="rowDetailAccTable">
+                                                <div class="c-blue boxLeft">เงินค่าเวนคืนกรมธรรม์</div>
+                                                <div class="boxRight">{{item_row[5] == '' || item_row[5] == '-' ? item_row[5] : (item_row[5] | number)}}</div>
+                                            </div>
+                                            <div *ngIf="item_row[5] != 'ครบกำหนด'" class="rowDetailAccTable">
+                                                <div class="c-blue boxLeft">ความคุ้มครองกรณีเสียชีวิต</div>
+                                                <div class="boxRight">{{item_row[6] == '' || item_row[6] == '-' ? item_row[6] : (item_row[6] | number)}}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+
+                                <td class="txt-center hide-only-xs">{{item_row[0]}}</td>
+                                <td class="txt-center hide-only-xs">{{item_row[1] == '' || item_row[1] == '-' ? item_row[1] : (item_row[1] | number)}}</td>
+                                <td class="txt-center hide-only-xs">{{item_row[2] == '' || item_row[2] == '-' ? item_row[2] : (item_row[2] | number)}}</td>
+                                <td class="txt-center hide-only-xs">{{item_row[3] == '' || item_row[3] == '-' ? item_row[3] : (item_row[3] | number)}}</td>
+                                <td class="txt-center hide-only-xs">{{item_row[4] == '' || item_row[4] == '-' ? item_row[4] : (item_row[4] | number)}}</td>
+                                <td *ngIf="item_row[5] == 'ครบกำหนด'" colspan="2" class="txt-center hide-only-xs">{{item_row[5]}}</td>
+                                <td *ngIf="item_row[5] != 'ครบกำหนด'" class="txt-center hide-only-xs">{{item_row[5] == '' || item_row[5] == '-' ? item_row[5] : (item_row[5] | number)}}</td>
+                                <td *ngIf="item_row[5] != 'ครบกำหนด'" class="txt-center hide-only-xs">{{item_row[6] == '' || item_row[6] == '-' ? item_row[6] : (item_row[6] | number)}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div *ngIf="table1.length < 1">
+                        <br/>
+                        <div class="txt-center c-red">แบบประกันนี้ไม่มีหน้าเงินคืนสะสม</div>
+                    </div>
+                    <div *ngIf="table1.length >= 1">
+                        <br/>
+                        <div class="right" align="right">
+                            <a class="btn-style4 btn-style-m txt-center pdlr10" (click)="changePage(currentPage - 1)">
+                                <span>
+                                    <i class="icon-android-arrow-back"></i> ย้อนกลับ</span>
+                            </a>
+                            <a class="btn-style5 btn-style-m txt-center pdlr10">
+                                <span>{{currentPage}}/{{totalPage}}</span>
+                            </a>
+                            <a class="btn-style4 btn-style-m txt-center pos-icon-right pdlr10" (click)="changePage(currentPage + 1)">
+                                <span>ถัดไป
+                                    <i class="icon-android-arrow-forward"></i>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                    <div *ngIf="coupon_returnCash == '1'">
+                        <br/>
+                        <div class="txt-left">
+                            ** บริษัทฯ จะแจ้งอัตราการจ่ายเงินปันผล (ถ้ามี) ให้ทราบล่วงหน้าก่อนวันครบกำหนดสัญญา
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bgPaperShadow nonShadow">
+            <div class="contentPaper">
+                <div class="boxTableStyle3 boxQuatationTable1 xs-td-pdtb0 table-bdb0">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th class="txt-left">สรุปผลประโยชน์</th>
+                                <th>รวมผลประโยชน์ตลอดสัญญา</th>
+                                <th *ngIf="table2_size == 3">ผลประโยชน์มากกว่าเบี้ยประกันที่ชำระ</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td *ngIf="table2_size == 2" colspan="2" class="view-only-xs">
+                                    <div class="c-blue pdt10">สรุปผลประโยชน์</div>
+                                </td>
+                                <td *ngIf="table2_size == 3" colspan="3" class="view-only-xs">
+                                    <div class="c-blue pdt10">สรุปผลประโยชน์</div>
+                                </td>
+                            </tr>
+                            <tr class="bg2n-1">
+                                <td>
+                                    <div class="xs-c-blue xs-pdt10">กรณีรับเงินคืน</div>
+                                </td>
+                                <td class="txt-center xs-after-clear xs-fs23">
+                                    <div class="view-only-xs xs-floatL xs-w70p xs-txt-left">รวมผลประโยชน์ตลอดสัญญา</div>
+                                    <div class="xs-floatL xs-w30p xs-txt-right">{{table2[0][0] == '' || table2[0][0] == '-' ? table2[0][0] : (table2[0][0] | number)}}</div>
+                                </td>
+                                <td *ngIf="table2_size == 3" class="txt-center xs-after-clear xs-fs23">
+                                    <div class="view-only-xs xs-floatL xs-w70p xs-txt-left">ผลประโยชน์มากกว่าเบี้ยประกันที่ชำระ</div>
+                                    <div class="xs-floatL xs-w30p xs-txt-right">{{table2[0][1] == '' || table2[0][1] == '-' ? table2[0][1] : (table2[0][1] | number)}}</div>
+                                </td>
+                            </tr>
+                            <tr class="bg2n">
+                                <td *ngIf="table2_size == 2" colspan="2">
+                                    <div class="xs-c-blue xs-pdt30">กรณีคงเงินคืนสะสมไว้กับบริษัทฯ *</div>
+                                </td>
+                                <td *ngIf="table2_size == 3" colspan="3">
+                                    <div class="xs-c-blue xs-pdt30">กรณีคงเงินคืนสะสมไว้กับบริษัทฯ *</div>
+                                </td>
+                            </tr>
+                            <tr class="bg2n">
+                                <td>
+                                    <div class="xs-c-blue xs-pdt10"><span class="hide-only-xs">- </span>อัตราดอกเบี้ยขั้นต่ำ {{min_rate}}%</div>
+                                </td>
+                                <td class="txt-center xs-after-clear xs-fs23">
+                                    <div class="view-only-xs xs-floatL xs-w70p xs-txt-left">รวมผลประโยชน์ตลอดสัญญา</div>
+                                    <div class="xs-floatL xs-w30p xs-txt-right">{{table2[1][0] == '' || table2[1][0] == '-' ? table2[1][0] : (table2[1][0] | number)}}</div>
+                                </td>
+                                <td *ngIf="table2_size == 3" class="txt-center xs-after-clear xs-fs23">
+                                    <div class="view-only-xs xs-floatL xs-w70p xs-txt-left">ผลประโยชน์มากกว่าเบี้ยประกันที่ชำระ</div>
+                                    <div class="xs-floatL xs-w30p xs-txt-right">{{table2[1][1] == '' || table2[1][1] == '-' ? table2[1][1] : (table2[1][1] | number)}}</div>
+                                </td>
+                            </tr>
+                            <tr class="bg2n">
+                                <td>
+                                    <div class="xs-c-blue xs-pdt15"><span class="hide-only-xs">- </span>อัตราดอกเบี้ยปัจจุบัน {{current_rate}}%</div>
+                                </td>
+                                <td class="txt-center xs-after-clear xs-fs23">
+                                    <div class="view-only-xs xs-floatL xs-w70p xs-txt-left">รวมผลประโยชน์ตลอดสัญญา</div>
+                                    <div class="xs-floatL xs-w30p xs-txt-right">{{table2[2][0] == '' || table2[2][0] == '-' ? table2[2][0] : (table2[2][0] | number)}}</div>
+                                </td>
+                                <td *ngIf="table2_size == 3" class="txt-center xs-after-clear xs-fs23">
+                                    <div class="view-only-xs xs-floatL xs-w70p xs-txt-left">ผลประโยชน์มากกว่าเบี้ยประกันที่ชำระ</div>
+                                    <div class="xs-floatL xs-w30p xs-txt-right">{{table2[2][1] == '' || table2[2][1] == '-' ? table2[2][1] : (table2[2][1] | number)}}</div>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                    <div>
+                        <br/>
+                        <div class="txt-left">
+                            * กรณีคงเงินคืนสะสมไว้กับบริษัทฯ ปัจจุบันบริษัทฯ กำหนดให้อัตราดอกเบี้ยร้อยละ {{current_rate}} ต่อปี ซึ่งอัตราดังกล่าวอาจเปลี่ยนแปลงได้ตามประกาศของบริษัทฯ โดยไม่ต้องแจ้งให้ทราบล่วงหน้า ทั้งนี้ ไม่น้อยกว่าร้อยละ {{min_rate}} ต่อปี
+                        </div>
+                    </div>
+                    <quatation-annotation></quatation-annotation>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,16 @@
+page-app-medical-history {
+    .ion-item-border {
+        border: 1px solid #C8C8C8;
+    }
+    .txtView,
+    calendar>.form-group {
+        // border: 1px solid #C8C8C8 !important;
+        h1 {
+            height: 36px;
+            padding: 3px 12px;
+        }
+        .mat-button-wrapper::before {
+            margin-top: -4px;
+        }
+    }
+}

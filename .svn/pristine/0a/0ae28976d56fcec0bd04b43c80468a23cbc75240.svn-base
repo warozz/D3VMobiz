@@ -1,0 +1,82 @@
+popup-calendar {
+    @media only screen and (min-height: 600px) and (min-width: 768px) {
+        @at-root .calendar {
+            .modal-wrapper {
+                left: calc(50% - (500px/2));
+                top: calc(50% - (380px/2));
+                width: 500px;
+                height: 380px;
+            }
+        }
+    }
+    .modal {
+        padding-left: 0px;
+        padding-right: 0px;
+        .modal-title {
+            border-bottom: none;
+            text-align: left;
+            margin-left: 20px;
+            padding-bottom: 0px;
+        }
+        .modal-body {
+            text-align: center;
+            margin: 0px;
+        }
+        .modal-footer {
+            position: absolute;
+            bottom: 0px;
+            width: 100%;
+            background-color: #ddf1ff;
+            text-align: center;
+            padding: 15px 0px
+        }
+    }
+    .display {
+        background-color: $color-primary;
+        margin: 0px 0px 10px 0px;
+        font-size: $font-xxl !important;
+        line-height: 50px;
+        color: #fff;
+    }
+    .row:before {
+        display: inherit;
+    }
+    // 575 $screen-xs-max
+    @media (max-height: 499px) {
+        ion-grid.full {
+            max-width: 650px;
+            left: calc(50% - (650px/2));
+            top: calc(50% - (110px/2));
+            .portrait {
+                display: none;
+            }
+            .landscape {
+                display: block;
+            }
+        }
+        ion-grid.mini {
+            max-width: 500px;
+            left: calc(50% - (500px/2));
+            top: calc(50% - (110px/2));
+            .portrait {
+                display: none;
+            }
+            .landscape {
+                display: block;
+            }
+        }
+    }
+    .boxSearchPlanInsurance .boxSelectPlan .boxDropdownPlan .txtView {
+        font-size: $font-md;
+        color: #666666;
+        white-space: normal;
+        padding-right: 20px;
+    }
+    .boxSearchPlanInsurance .boxSelectPlan .boxDropdownPlan .listOption .oneOption {
+        padding-right: 20px;
+    }
+}
+
+.form-control[calendar][readonly] {
+    background-color: #ffffff;
+}

@@ -1,0 +1,300 @@
+<ion-header header></ion-header>
+
+<ion-content>
+    <div class="mainContainer">
+        <title-page sub1="เอกสารประกอบใบคำขอ" (click)="navCtrl.popToRoot()">ใบคำขอ</title-page>
+        <!-- <app-info></app-info> -->
+
+        <div class="boxContentPage bgBlue3 hasBgImg">
+            <div class="container" id="app_form_page">
+                <div class="bgPaperShadow">
+                    <div class="contentPaperShadow">
+                        <div class="boxHeadInfo pdt10 pdb10 pdlr20" style="border-bottom: 1px solid #e4e4e4">
+                            <ul class="boxLeft lh-form-control">
+                                <li class="txt-left">สรุปข้อมูลคำขอเอาประกันภัย ยูนิตลิงค์</li>
+                            </ul>
+                        </div>
+
+                        <div id="boxListJumpContent" class="boxListJumpContent">
+                            <div class="oneJumpContent pd0">
+                                <div class="boxListForm pdlr0 pdt20 pdb0">
+                                    <div class="col-md-2 col-sm-4 txt-sm-right pdr-sm-7 lh-form-control ws-nowrap">ผู้เอาประกัน :</div>
+                                    <div class="col-lg-5 col-md-4 col-sm-8 pdl-sm-7">
+                                        <div class="form-group">
+                                            <input class="form-control" type="text" disabled="disabled" [value]="application.insured" />
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-2 col-md-3 col-sm-4 txt-sm-right pdr-sm-7 lh-form-control ws-nowrap">เลขประจำตัวประชาชน :</div>
+                                    <div class="col-md-3 col-sm-4 pdl-sm-7">
+                                        <div class="form-group">
+                                            <input class="form-control" type="text" disabled="disabled" [value]="application.citizenID" />
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-2 col-sm-1 txt-sm-right pdr-sm-7 lh-form-control ws-nowrap">เพศ :</div>
+                                    <div class="col-md-2 col-sm-2 pdl-sm-7">
+                                        <div class="form-group">
+                                            <input class="form-control" type="text" disabled="disabled" [value]="application.gender" />
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-2 col-sm-4 txt-sm-right pdr-sm-7 lh-form-control ws-nowrap">วันเดือนปี เกิด :</div>
+                                    <div class="col-md-3 col-sm-4 pdl-sm-7">
+                                        <div class="form-group">
+                                            <input class="form-control" type="text" disabled="disabled" [value]="application.birthDate" />
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-1 txt-sm-right pdr-sm-7 lh-form-control ws-nowrap">อายุ :</div>
+                                    <div class="col-md-1 col-sm-2 col-xs-8 pdl-sm-7">
+                                        <div class="form-group">
+                                            <input class="form-control" type="text" disabled="disabled" [value]="application.age" />
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-1 pdl0 ws-nowrap lh-form-control">ปี</div>
+                                </div>
+                            </div>
+
+                            <div class="oneJumpContent pd0">
+                                <hr />
+                                <div class="boxListForm pdlr0 pdt20 pdb0">
+                                    <div class="col-md-2 col-sm-4 txt-sm-right pdr-sm-7 lh-form-control ws-nowrap">แบบประกัน :</div>
+                                    <div class="col-lg-5 col-md-4 col-sm-8 pdl-sm-7">
+                                        <div class="form-group">
+                                            <input class="form-control" type="text" disabled="disabled" [value]="application.planname" />
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-2 col-md-3 col-sm-4 txt-sm-right pdr-sm-7 lh-form-control ws-nowrap">วิธีชำระเบี้ย :</div>
+                                    <div class="col-md-3 col-sm-4 pdl-sm-7">
+                                        <div class="form-group">
+                                            <input class="form-control" type="text" disabled="disabled" [value]="application.mode" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="oneJumpContent pd0">
+                                <div class="boxTableStyle1 boxSearchQuatationTable mgt22">
+                                    <h2 class="view-only-xs c-blue boxTitleFixJumpMenu">สัญญา</h2>
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th class="txt-left">สัญญา</th>
+                                                <th>ทุนประกัน</th>
+                                                <th>เบี้ยประกัน</th>
+                                            </tr>
+                                        </thead>
+
+                                        <tbody>
+                                            <ng-container *ngIf="application.planCode == 'UA01'">
+                                                <tr>
+                                                    <td><span class="visible-xs-inline-block">สัญญา &nbsp;</span>{{ ridersABD.name }}</td>
+                                                    <td class="clear-xs-after">
+                                                        <div class="visible-xs-block float-xs-left c-blue">ทุนประกัน</div>
+                                                        <div class="float-xs-right txt-right">{{ ridersABD.sum | number }}</div>
+                                                    </td>
+                                                    <td class="clear-xs-after">
+                                                        <div class="visible-xs-block float-xs-left c-blue">เบี้ยประกัน</div>
+                                                        <div class="float-xs-right txt-right">{{ ridersABD.premium | number }}</div>
+                                                    </td>
+                                                </tr>
+                                            </ng-container>
+                                            <ng-container *ngIf="application.planCode == 'UA02'">
+                                                <tr *ngFor="let item of riders">
+                                                    <td><span class="visible-xs-inline-block">สัญญา &nbsp;</span>{{ item.riderName }}</td>
+                                                    <td class="clear-xs-after">
+                                                        <div class="visible-xs-block float-xs-left c-blue">ทุนประกัน</div>
+                                                        <div class="float-xs-right txt-right">{{ item.sum | number }} {{ item.ridertype == 'SR2' ? 'หน่วย' : '' }}</div>
+                                                    </td>
+                                                    <td class="clear-xs-after">
+                                                        <div class="visible-xs-block float-xs-left c-blue">เบี้ยประกัน</div>
+                                                        <div class="float-xs-right txt-right">{{ item.premium | number }}</div>
+                                                    </td>
+                                                </tr>
+                                            </ng-container>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <!-- fund UA01 -->
+                            <ng-container *ngIf="application.planCode == 'UA01'">
+                                <div class="oneJumpContent pd0">
+                                    <div class="boxTableStyle1 boxSearchQuatationTable mgt22">
+                                        <h2 class="view-only-xs c-blue boxTitleFixJumpMenu">การลงทุน SP</h2>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <th class="width-130">ความเสี่ยง</th>
+                                                    <th class="txt-left">การลงทุน SP</th>
+                                                    <th class="width-130">%</th>
+                                                </tr>
+                                            </thead>
+
+                                            <tbody>
+                                                <ng-container *ngFor="let item of mapAllocation">
+                                                    <tr *ngIf="item.premiumtype == 'RPP'">
+                                                        <td class="risk risk-{{item.risklevel}} width-130">
+                                                            <span>{{item.risklevel}}</span>
+                                                        </td>
+                                                        <td class="clear-xs-after">
+                                                            <div class="visible-xs-block float-xs-right txt-right">{{item.percent}} %</div>
+                                                            {{item.fundthainame}}
+                                                        </td>
+                                                        <td class="txt-center hide-only-xs width-130">{{item.percent}}</td>
+                                                    </tr>
+                                                </ng-container>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                                <div class="oneJumpContent pd0">
+                                    <div class="boxTableStyle1 boxSearchQuatationTable mgt22">
+                                        <h2 class="view-only-xs c-blue boxTitleFixJumpMenu">การลงทุน Top-Up Premium</h2>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <th class="width-130">ความเสี่ยง</th>
+                                                    <th class="txt-left">การลงทุน Top-Up Premium</th>
+                                                    <th class="width-130">%</th>
+                                                </tr>
+                                            </thead>
+
+                                            <tbody>
+                                                <ng-container *ngFor="let item of mapAllocation">
+                                                    <tr *ngIf="item.premiumtype == 'TOP'">
+                                                        <td class="risk risk-{{item.risklevel}} width-130">
+                                                            <span>{{item.risklevel}}</span>
+                                                        </td>
+                                                        <td class="clear-xs-after">
+                                                            <div class="visible-xs-block float-xs-right txt-right">{{item.percent}} %</div>
+                                                            {{item.fundthainame}}
+                                                        </td>
+                                                        <td class="txt-center hide-only-xs width-130">{{item.percent}}</td>
+                                                    </tr>
+                                                </ng-container>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </ng-container>
+
+                            <!-- fund UA02 -->
+                            <ng-container *ngIf="application.planCode == 'UA02'">
+                                <div class="oneJumpContent pd0">
+                                    <div class="boxTableStyle1 boxSearchQuatationTable mgt22">
+                                        <h2 class="view-only-xs c-blue boxTitleFixJumpMenu">การลงทุน RPP</h2>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <th class="width-130">ความเสี่ยง</th>
+                                                    <th class="txt-left">การลงทุน RPP</th>
+                                                    <th class="width-130">%</th>
+                                                </tr>
+                                            </thead>
+
+                                            <tbody>
+                                                <ng-container *ngFor="let item of mapAllocation">
+                                                    <tr *ngIf="item.premiumtype == 'RPP'">
+                                                        <td class="risk risk-{{item.risklevel}} width-130">
+                                                            <span>{{item.risklevel}}</span>
+                                                        </td>
+                                                        <td class="clear-xs-after">
+                                                            <div class="visible-xs-block float-xs-right txt-right">{{item.percent}} %</div>
+                                                            {{item.fundthainame}}
+                                                        </td>
+                                                        <td class="txt-center hide-only-xs width-130">{{item.percent}}</td>
+                                                    </tr>
+                                                </ng-container>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                                <div class="oneJumpContent pd0">
+                                    <div class="boxTableStyle1 boxSearchQuatationTable mgt22">
+                                        <h2 class="view-only-xs c-blue boxTitleFixJumpMenu">การลงทุน RSP</h2>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <th class="width-130">ความเสี่ยง</th>
+                                                    <th class="txt-left">การลงทุน RSP</th>
+                                                    <th class="width-130">%</th>
+                                                </tr>
+                                            </thead>
+
+                                            <tbody>
+                                                <ng-container *ngFor="let item of mapAllocation">
+                                                    <tr *ngIf="item.premiumtype == 'RSP'">
+                                                        <td class="risk risk-{{item.risklevel}} width-130">
+                                                            <span>{{item.risklevel}}</span>
+                                                        </td>
+                                                        <td class="clear-xs-after">
+                                                            <div class="visible-xs-block float-xs-right txt-right">{{item.percent}} %</div>
+                                                            {{item.fundthainame}}
+                                                        </td>
+                                                        <td class="txt-center hide-only-xs width-130">{{item.percent}}</td>
+                                                    </tr>
+                                                </ng-container>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                                <div class="oneJumpContent pd0">
+                                    <div class="boxTableStyle1 boxSearchQuatationTable mgt22">
+                                        <h2 class="view-only-xs c-blue boxTitleFixJumpMenu">การลงทุน Top-Up Premium</h2>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <th class="width-130">ความเสี่ยง</th>
+                                                    <th class="txt-left">การลงทุน Top-Up Premium</th>
+                                                    <th class="width-130">%</th>
+                                                </tr>
+                                            </thead>
+
+                                            <tbody>
+                                                <ng-container *ngFor="let item of mapAllocation">
+                                                    <tr *ngIf="item.premiumtype == 'TOP'">
+                                                        <td class="risk risk-{{item.risklevel}} width-130">
+                                                            <span>{{item.risklevel}}</span>
+                                                        </td>
+                                                        <td class="clear-xs-after">
+                                                            <div class="visible-xs-block float-xs-right txt-right">{{item.percent}} %</div>
+                                                            {{item.fundthainame}}
+                                                        </td>
+                                                        <td class="txt-center hide-only-xs width-130">{{item.percent}}</td>
+                                                    </tr>
+                                                </ng-container>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </ng-container>
+
+                            <div class="oneJumpContent">
+                                <h2 class="c-blue txt-center xs-pdlr15">หากข้อมูลถูกต้อง กรุณากดปุ่มถัดไป เพื่อทำการเลือกช่องทางการส่งข้อมูล</h2>
+                                <br />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="boxContentPage bgBlue4">
+            <div class="container">
+                <div class="boxActionForm">
+                    <button class="btn-style3 prev" type="button" (click)="navCtrl.pop()"><span><i class="icon-ios-arrow-back"></i> ย้อนกลับ</span></button>
+                    <button class="btn-style3 next" type="button" disabled="disabled"><span>ถัดไป <i class="icon-ios-arrow-forward"></i></span></button>
+                    <button class="btn-style3" type="button" (click)="navCtrl.push('AppDocsUlinkPage')"><span><i class="icon-printer2"></i> พิมพ์เอกสาร</span></button>
+                    <button class="btn-style3" type="button" *ngIf="isMobile" [disabled]="!isShowEappBtn" (click)="navCtrl.push('AppFormEAppPage')"><span><i class="icon-export-file"></i> ใบคำขอออนไลน์ E-App</span></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer footer></footer>
+</ion-content>

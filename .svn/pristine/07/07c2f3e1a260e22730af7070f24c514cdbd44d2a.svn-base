@@ -1,0 +1,38 @@
+popup-occupation {
+    .popup-style1 {
+        height: 100%;
+        width: 100%;
+        border-radius: 0px;
+        .boxNewUpdate {
+            margin: 0px;
+            height: calc(100% - 100px);
+            .scrollbar-inner {
+                height: 100%;
+            }
+            .label {
+                margin-top: 20px;
+                margin-bottom: 0px;
+            }
+            .label,
+            label {
+                font-size: $font-md;
+            }
+        }
+        .scrollbar-inner {
+            overflow-x: hidden;
+        }
+        @media (max-width: $screen-xs-max) {
+            .boxNewUpdate {
+                height: calc(100% - 185px);
+            }
+        }
+    }
+    .view-only-mb {
+        display: none;
+    }
+    @media (max-width: $screen-xs-max) {
+        .view-only-mb {
+            display: block;
+        }
+    }
+}

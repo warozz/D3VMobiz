@@ -1,0 +1,142 @@
+<ion-header header></ion-header>
+<ion-content>
+    <form [formGroup]="appApplication">
+        <div id="app_form_page" class="mainContainer">
+            <title-page sub1="แนบเอกสารหลักฐาน" (click)="navCtrl.pop()">ใบคำขอออนไลน์</title-page>
+            <div class="boxContentPage bgBlue1">
+                <div class="container xs-pdlr0">
+                    <div class="boxStatusStep">
+                        <br>
+                        <!-- row 1 -->
+                        <div class="col-lg-3 col-md-4 pd0">
+                            <div class="col-sm-4 col-md-5 pdr-sm-7 txt-sm-right txt-left lh-form-control ws-nowrap">Ref ID :</div>
+                            <div class="col-sm-8 col-md-7 pdl-sm-7">
+                                <div class="form-group">
+                                    <input id="referenceno" class="form-control" type="text" formControlName="referenceno" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 pd0">
+                            <div class="col-sm-4 col-md-5 pdr-sm-7 txt-sm-right txt-left lh-form-control ws-nowrap">รหัสสาขา :</div>
+                            <div class="col-sm-8 col-md-7 pdl-sm-7">
+                                <div class="form-group">
+                                    <input id="branchId" class="form-control" type="text" formControlName="branchId" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 pd0">
+                            <div class="col-sm-4 col-md-5 pdr-sm-7 txt-sm-right txt-left lh-form-control ws-nowrap">ฝากค้ำ :</div>
+                            <div class="col-sm-8 col-md-7 pdl-sm-7">
+                                <div class="form-group">
+                                    <input id="dopositno" class="form-control" type="text" formControlName="dopositno" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 pd0">
+                            <div class="col-sm-4 col-md-5 pdr-sm-7 txt-sm-right txt-left lh-form-control ws-nowrap">ตรวจสุขภาพ :</div>
+                            <div class="col-sm-8 col-md-7 pdl-sm-7">
+                                <div class="form-group">
+                                    <input id="healthcheckflag" class="form-control" type="text" formControlName="healthcheckflag" />
+                                </div>
+                            </div>
+                        </div>
+                        <!-- row 2 -->
+                        <div class="col-lg-3 col-md-4 pd0">
+                            <div class="col-sm-4 col-md-5 pdr-sm-7 txt-sm-right txt-left lh-form-control ws-nowrap">หน่วย :</div>
+                            <div class="col-sm-8 col-md-7 pdl-sm-7">
+                                <div class="form-group">
+                                    <input id="bname" class="form-control" type="text" formControlName="bname" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 pd0">
+                            <div class="col-sm-4 col-md-5 pdr-sm-7 txt-sm-right txt-left lh-form-control ws-nowrap">รหัส :</div>
+                            <div class="col-sm-8 col-md-7 pdl-sm-7">
+                                <div class="form-group">
+                                    <input id="bperid" class="form-control" type="text" formControlName="bperid" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 pd0">
+                            <div class="col-sm-4 col-md-5 pdr-sm-7 txt-sm-right txt-left lh-form-control ws-nowrap">ศูนย์ :</div>
+                            <div class="col-sm-8 col-md-7 pdl-sm-7">
+                                <div class="form-group">
+                                    <input id="dname" class="form-control" type="text" formControlName="dname" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 pd0">
+                            <div class="col-sm-4 col-md-5 pdr-sm-7 txt-sm-right txt-left lh-form-control ws-nowrap">รหัส :</div>
+                            <div class="col-sm-8 col-md-7 pdl-sm-7">
+                                <div class="form-group">
+                                    <input id="dperid" class="form-control" type="text" formControlName="dperid" />
+                                </div>
+                            </div>
+                        </div>
+                        <!-- row 3 -->
+                        <div class="col-lg-4 col-md-6 pd0">
+                            <div class="col-sm-4 col-lg-5 pdr-sm-7 txt-sm-right  txt-left lh-form-control ws-nowrap">ใบคำขอเลขที่ :</div>
+                            <div class="col-sm-8 col-lg-7 pdl-sm-7">
+                                <div class="form-group">
+                                    <input id="applicationid" class="form-control" type="text" formControlName="applicationid" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 pd0">
+                            <div class="col-sm-4 col-lg-5 pdr-sm-7 txt-sm-right  txt-left lh-form-control ws-nowrap">วันที่สร้างใบคำขอ :</div>
+                            <div class="col-sm-8 col-lg-7 pdl-sm-7">
+                                <div class="form-group">
+                                    <input id="createdate" class="form-control" type="text" formControlName="createdate" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 pd0">
+                            <div class="col-sm-4 col-lg-5 pdr-sm-7 txt-sm-right  txt-left lh-form-control ws-nowrap">ผู้ขอเอาประกันภัย :</div>
+                            <div class="col-sm-8 col-lg-7 pdl-sm-7">
+                                <div class="form-group">
+                                    <input id="customername" class="form-control" type="text" formControlName="customername" />
+                                </div>
+                            </div>
+                        </div>
+                        <!-- row 4 -->
+                        <div class="col-lg-4 col-md-6 pd0">
+                            <div class="col-sm-4 col-lg-5 pdr-sm-7 txt-sm-right  txt-left lh-form-control ws-nowrap">แบบ :</div>
+                            <div class="col-sm-8 col-md-7 pdl-sm-7">
+                                <div class="form-group">
+                                    <input id="planname" class="form-control" type="text" formControlName="planname" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 pd0">
+                            <div class="col-sm-4 col-lg-5 pdr-sm-7 txt-sm-right  txt-left lh-form-control ws-nowrap">ทุนประกันภัย :</div>
+                            <div class="col-sm-8 col-md-7 pdl-sm-7">
+                                <div class="form-group">
+                                    <input id="lifesum" class="form-control" type="text" formControlName="lifesum" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 pd0">
+                            <div class="col-sm-4 col-lg-5 pdr-sm-7 txt-sm-right  txt-left lh-form-control ws-nowrap">เบี้ยประกันภัยรวม :</div>
+                            <div class="col-sm-8 col-md-7 pdl-sm-7">
+                                <div class="form-group">
+                                    <input id="totalpremium" class="form-control" type="text" formControlName="totalpremium" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="col-lg-12 btn-back">
+                            <button *ngIf="typeapp=='PER'" class="btn-style3 btn-style-m" type="button" (click)="goToCreateApp()"><span><i class="icon-contact-form"></i> แก้ไขใบคำขอ</span></button>
+                            <button *ngIf="typeapp=='ULink'" class="btn-style3 btn-style-m" type="button" (click)="goToCreateApp()"><span><i class="icon-contact-form"></i> แก้ไขเอกสารประกอบใบคำขอ</span></button>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+                <!--steps design="2" (change)="selectStep($event)" [(selectIndex)]="step"-->
+                <steps design="2" [(selectIndex)]="step">
+                    <step *ngFor="let item of stepsPage; let i = index" [stepTitle]="item.title " [root]="item.root" [index]="i" [disabled]="item.disabled"></step>
+                </steps>
+            </div>
+        </div>
+    </form>
+    <footer footer></footer>
+</ion-content>

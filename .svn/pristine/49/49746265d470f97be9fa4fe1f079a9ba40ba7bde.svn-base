@@ -1,0 +1,7 @@
+page-quatation {
+    @media(min-width: 768px) {
+        tabs .boxListTabStyle2 .oneTab, tabs .boxListTabStyle2 .oneTab.action, tabs .boxListTabStyle2 .oneTab:hover {
+            width: 32%!important;
+        }
+    }
+}

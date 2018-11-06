@@ -1,0 +1,304 @@
+<ion-header header>
+</ion-header>
+<ion-content>
+    <div id="app_form_page" class="mainContainer">
+        <title-page sub1="แบบรับทราบความเสี่ยง">ใบคำขอ</title-page>
+        <div class="boxContentPage bgBlue1">
+            <div class="container xs-pdlr0">
+                <form [formGroup]="appInfo">
+                    <div class="boxListForm pd0 pdt15">
+                        <div class="col-lg-6 col-md-6 pd0">
+                            <div class="col-lg-4 col-md-4 col-sm-3 txt-sm-right pdr-sm-7 lh-form-control">
+                                ผู้ขอเอาประกันภัย :
+                            </div>
+                            <div class="col-lg-8 col-md-8 col-sm-9 pdl-sm-7">
+                                <div class="form-group">
+                                    <input id="customername" formControlName="customername" class="form-control" type="text" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-6 pd0">
+                            <div class="col-lg-5 col-md-5 col-sm-6 txt-sm-right pdr-sm-7 lh-form-control">
+                                เพศ :
+                            </div>
+                            <div class="col-lg-7 col-md-7 col-sm-6 pdl-sm-7">
+                                <div class="form-group">
+                                    <input id="gender" formControlName="gender" class="form-control" type="text" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-6 pd0">
+                            <div class="col-lg-5 col-md-5 col-sm-6 txt-sm-right pdr-sm-7 lh-form-control">
+                                อายุ :
+                            </div>
+                            <div class="col-lg-7 col-md-7 col-sm-6 pdl-sm-7">
+                                <div class="form-group">
+                                    <input id="age" formControlName="age" class="form-control" type="text" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 pd0">
+                            <div class="col-lg-4 col-md-4 col-sm-3 txt-sm-right pdr-sm-7 lh-form-control">
+                                แบบประกัน :
+                            </div>
+                            <div class="col-lg-8 col-md-8 col-sm-9 pdl-sm-7">
+                                <div class="form-group">
+                                    <input id="planname" formControlName="planname" class="form-control" type="text" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-6 pd0">
+                            <div class="col-lg-5 col-md-5 col-sm-6 txt-sm-right pdr-sm-7 lh-form-control">
+                                ชำระเบี้ย :
+                            </div>
+                            <div class="col-lg-7 col-md-7 col-sm-6 pdl-sm-7">
+                                <div class="form-group">
+                                    <input id="payment" formControlName="payment" class="form-control" type="text" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-6 pd0">
+                            <div class="col-lg-5 col-md-5 col-sm-6 txt-sm-right pdr-sm-7 lh-form-control">
+                                ชั้นอาชีพ :
+                            </div>
+                            <div class="col-lg-7 col-md-7 col-sm-6 pdl-sm-7">
+                                <div class="form-group">
+                                    <input id="occupationtype" formControlName="occupationtype" class="form-control" type="text" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="boxContentPage">
+            <steps design="2" (changeIndex)="changeIndex($event)" [(selectIndex)]="selectedStep">
+                <!-- STEP 1 -->
+                <step index="0" stepTitle="การรับทราบควาเสี่ยง">
+                    <form [formGroup]="appForm1">
+                        <div class="boxContentPage bgBlue3 hasBgImg bgImg95">
+                            <div class="container">
+                                <div class="bgPaperShadow mgt25">
+                                    <div class="contentPaperShadow">
+                                        <!-- start boxFixTopJumpMenu -->
+                                        <div class="boxFixTopJumpMenu">
+                                            <div id="boxFixJumpMenu" class="boxContentFixJumpMenu">
+                                                <div class="boxListFixJumpMenu">
+                                                    <a class="action">การรับทราบความเสี่ยงจากการประเมินความเสี่ยง</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- end boxFixTopJumpMenu -->
+                                        <!--boxListJumpContent-->
+                                        <div id="boxListJumpContent" class="boxListJumpContent">
+                                            <!-- start oneJumpContent -->
+                                            <div class="oneJumpContent">
+                                                <div class="boxListForm pdlr0 pdb0">
+                                                    <div class="pdb10 xs-pdlr15 lh-form-control">ระดับผลการประเมินของผู้ลงทุน</div>
+                                                    <div class="col-md-offset-1 col-md-12 pd0">
+                                                        <div class="col-lg-4 col-md-5 col-sm-6 pd0 xs-pdlr15">
+                                                            <div class="form-group">
+                                                                <input id="radio-choice-1-1" formControlName="rate" value="low" class="radio-style3" type="radio" disabled/>
+                                                                <label for="radio-choice-1-1">กลุ่มผู้รับความเสี่ยงได้ต่ำ</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-4 col-md-7 col-sm-6 pd0 xs-pdlr15">
+                                                            <div class="form-group">
+                                                                <input id="radio-choice-1-2" formControlName="rate" value="medium" class="radio-style3" type="radio" disabled/>
+                                                                <label for="radio-choice-1-2">กลุ่มผู้รับความเสี่ยงได้ปานกลาง</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-4 col-md-5 col-sm-6 pd0 xs-pdlr15">
+                                                            <div class="form-group">
+                                                                <input id="radio-choice-1-3" formControlName="rate" value="hight" class="radio-style3" type="radio" disabled/>
+                                                                <label for="radio-choice-1-3">กลุ่มผู้รับความเสี่ยงได้สูง</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="clearfix"></div>
+
+                                                    <hr>
+                                                    <div class="pdb10 xs-pdlr15 lh-form-control">ข้าพเจ้ารับทราบผลการประเมินและระดับความเสี่ยงที่แนะนำแล้ว</div>
+                                                    <div class="col-md-offset-1 col-md-12 pd0">
+                                                        <div class="col-lg-4 col-md-5 col-sm-6 pd0 xs-pdlr15">
+                                                            <div class="form-group">
+                                                                <input id="radio-choice-2-1" formControlName="riskchoice" value="1" class="radio-style3" type="radio" disabled />
+                                                                <label for="radio-choice-2-1">ประสงค์ที่จะเลือกลงทุนตามกองทุนแนะนำ</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-4 col-md-5 col-sm-6 pd0 xs-pdlr15">
+                                                            <div class="form-group">
+                                                                <input id="radio-choice-2-2" formControlName="riskchoice" value="2" class="radio-style3" type="radio" disabled />
+                                                                <label for="radio-choice-2-2">ประสงค์ที่จะเลือกเป็นรายกองทุน</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="clearfix"></div>
+
+                                                <hr>
+                                                <div class="pdb10 xs-pdlr15 lh-form-control">กองทุนที่เลือก</div>
+                                                <div class="col-md-12 pd0">
+                                                    <div class="col-lg-4 col-md-4 col-sm-6 pdr-sm-7 pdl-sm-7 col-xs-12" *ngFor="let fund of fundSelected">
+                                                        <div class="form-group">
+                                                            <input class="form-control" [value]="fund" type="text" disabled />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="clearfix"></div>
+
+                                                <div class="pdb10 xs-pdlr15 lh-form-control">
+                                                    <font color="red">*</font> กองทุนดังกล่าวไม่ได้มีนโยบายป้องกันความเสี่ยงจากอัตราแลกเปลี่ยนทั้งจํานวนหรือมีนโยบายป้องกันความเสี่ยงตํ่ากว่าร้อยละ 89 ของเงินลงทุนในสกุลเงินต่างประเทศ</div>
+                                                <div class="clearfix"></div>
+                                                <hr>
+                                                <div class="pdb10 xs-pdlr15 lh-form-control c-red">
+                                                    ข้าพเจ้าขอรับรองว่าข้อมูลต่างๆ ตามที่ข้าพเจ้าได้ระบุไว้ดังกล่าวข้างต้นเป็นข้อมูลที่ถูกต้องครบถ้วนทุกประการโดยข้าพเจ้าได้รับหนังสือชี้ชวนแล้ว
+                                                </div>
+                                                <div class="col-sm-12 pd0">
+                                                    <div class="col-sm-12 pd0 xs-pdlr15">
+                                                        <div class="form-group">
+                                                            <input id="check-choice-1-1" name="overrisk" formControlName="overrisk" (change)="onChecked($event)" [checked]="validateoverrisk" class="check-style3" type="checkbox" />
+                                                            <label for="check-choice-1-1" [ngClass]="{'c-blue': overrisk, 'c-666': true }">กรณีเลือกกองทุนรวมที่มีระดับความเสี่ยงสูงกว่าระดับความเสี่ยงที่ข้าพเจ้ารับได้ ข้าพเจ้าได้เข้าใจเกี่ยวกับระดับความเสี่ยงของกองทุน และยอมรับความเสี่ยงของกองทุนนั้นๆ แล้ว</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-12 pd0">
+                                                    <div class="col-sm-12 pd0 xs-pdlr15">
+                                                        <div class="form-group">
+                                                            <input id="check-choice-1-2" name="preventexchange" formControlName="preventexchange" (change)="onChecked($event)" [checked]="validatepreventexchange" class="check-style3" type="checkbox" />
+                                                            <label for="check-choice-1-2">
+                                                                <font [ngClass]="{'c-blue': preventexchange, 'c-666': true }">กรณีเลือกลงทุนในกองทุนรวมที่มีนโยบายลงทุนในต่างประเทศ ข้าพเจ้ารับทราบและยอมรับแล้วว่ากองทุนดังกล่าวไม่ได้มีนโยบายป้องกันความเสี่ยงจากอัตราแลกเปลี่ยนทั้งจำนวน</font><font [ngClass]="{'c-red': preventexchange, 'c-666': true }"> หรือมีนโยบายป้องกันความเสี่ยงต่ำกว่าร้อยละ 89 ของเงินลงทุนในสกุลเงินต่างประเทศ</font> <font [ngClass]="{'c-blue': preventexchange, 'c-666': true }"> ซึ่งหมายถึง ข้าพเจ้าอาจจะขาดทุนหรือได้รับกำไรจากอัตราแลกเปลี่ยน/หรือได้รับเงินคืนต่ำกว่าเงินลงทุนเริ่มแรกได้</font></label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="clearfix"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </step>
+                <!--STEP 2-->
+                <step index="1" stepTitle="ลงชื่อผู้เอาประกัน">
+                    <form [formGroup]="appForm2">
+                        <div class="boxContentPage bgBlue3 hasBgImg bgImg95">
+                            <div class="container">
+                                <div class="bgPaperShadow mgt25">
+                                    <div class="contentPaperShadow">
+                                        <!-- start boxFixTopJumpMenu -->
+                                        <div class="boxFixTopJumpMenu">
+                                            <div id="boxFixJumpMenu" class="boxContentFixJumpMenu">
+                                                <div class="boxListFixJumpMenu">
+                                                    <a class="action">ลงชื่อผู้เอาประกัน</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- end boxFixTopJumpMenu -->
+                                        <!--boxListJumpContent-->
+                                        <div id="boxListJumpContent" class="boxListJumpContent">
+                                            <!-- start oneJumpContent -->
+                                            <div class="oneJumpContent">
+                                                <div class="boxListForm pdlr0 pdb10 xs-pdt0">
+                                                </div>
+                                                <div class="boxChkAndInfo">
+                                                    <div class="boxInfoForm">
+                                                        <div class="col-md-6 pdlr0">
+                                                            <div class="col-sm-5 pdr-sm-7 txt-sm-right lh-form-control">ชื่อผู้ขอเอาประกันภัย :</div>
+                                                            <div class="col-sm-7 pdl-sm-7">
+                                                                <div class="form-group">
+                                                                    <input class="form-control" formControlName="customername" type="text" disabled/>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6 pdlr0">
+                                                            <div class="col-sm-5 pdr-sm-7 txt-sm-right lh-form-control">วันที่ :</div>
+                                                            <div class="col-sm-7 pdl-sm-7">
+                                                                <calendar></calendar>
+                                                            </div>
+                                                        </div>
+                                                        <div class="clearfix"></div>
+                                                        <div class="col-md-6 pdlr0">
+                                                            <div class="col-sm-5 pdr-sm-7 txt-sm-right lh-form-control">ชื่อผู้แทนโดยชอบธรรม :</div>
+                                                            <div class="col-sm-7 pdl-sm-7">
+                                                                <div class="form-group">
+                                                                    <input id="txtname" [info]="fullnameInfo" readonly fullname-popup (fullnameChange)="fullnameChange($event)" formControlName="txtname" class="form-control" type="text" placeholder="" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="clearfix"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="boxChkAndInfo">
+                                                    <div class="boxTopChk">
+                                                        <div class="pdb10 pdr20">
+                                                            สำหรับตัวแทนประกันชีวิต
+                                                        </div>
+                                                    </div>
+                                                    <div class="boxInfoForm">
+                                                        <div class="col-md-12">
+                                                            <div class="col-sm-12 lh-form-control">บันทึกความเห็นของตัวแทน และข้อสังเกตต่างๆ</div>
+                                                        </div>
+                                                        <div class="col-md-12">
+                                                            <div class="col-sm-12">
+                                                                <div class="form-group">
+                                                                    <textarea class="form-control" formControlName="agentopinion" row="2"></textarea>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="clearfix"></div>
+                                                        <div class="lh-form-control indent80 pdlr20 mgb10 c-red">ข้าพเจ้าขอรับรองว่าในการติดต่อลูกค้า ข้าพเจ้าได้ตรวจสอบรายชื่อลูกค้าแล้วว่าไม่ได้อยู่ในบัญชีรายชื่อของลูกค้าที่ไม่ได้อยู่ในบัญชีรายชื่อของลูกค้าที่ไม่ต้องการถูกติดต่อ (Do not call list)</div>
+                                                        <div class="col-md-6 pdlr0">
+                                                            <div class="col-sm-5 pdr-sm-7 txt-sm-right lh-form-control">ชื่อผู้แทน :</div>
+                                                            <div class="col-sm-7 pdl-sm-7">
+                                                                <div class="form-group">
+                                                                    <input class="form-control" formControlName="agentfullname" type="text" disabled/>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6 pdlr0">
+                                                            <div class="col-sm-5 pdr-sm-7 txt-sm-right lh-form-control">รหัสตัวแทน :</div>
+                                                            <div class="col-sm-7 pdl-sm-7">
+                                                                <div class="form-group">
+                                                                    <input class="form-control" formControlName="agentid" type="text" disabled/>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="clearfix"></div>
+                                                        <div class="col-md-6 pdlr0">
+                                                            <div class="col-sm-5 pdr-sm-7 txt-sm-right lh-form-control">เบอร์มือถือ :</div>
+                                                            <div class="col-sm-7 pdl-sm-7">
+                                                                <div class="form-group">
+                                                                    <input class="form-control" formControlName="agentmobileno" type="text" maxlength="10" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6 pdlr0">
+                                                            <div class="col-sm-5 pdr-sm-7 txt-sm-right lh-form-control">รหัสผู้ติดต่อกับผู้ลงทุน :</div>
+                                                            <div class="col-sm-7 pdl-sm-7">
+                                                                <div class="form-group">
+                                                                    <input class="form-control" formControlName="licensesic" type="text" disabled />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- end oneJumpContent -->
+                                        </div>
+                                        <!-- end boxListJumpContent -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </step>
+                <ng-template #action>
+                    <button class="btn-style2" log [page]="'savePage'" type="submit" (click)="saveForm()"><span><i class="icon-save-file-option"></i> บันทึก</span></button>
+                </ng-template>
+            </steps>
+        </div>
+    </div>
+</ion-content>

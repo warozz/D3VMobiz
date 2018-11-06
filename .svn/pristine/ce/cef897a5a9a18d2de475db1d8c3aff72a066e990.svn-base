@@ -1,0 +1,55 @@
+page-app-beneficiary {
+    div.solid {
+        border-style: solid, 1px border-width;
+    }
+
+    .item-close-right{
+        text-align: right;
+        span{
+            margin-bottom: 0px;
+            margin-left: 0px;
+            margin-right: 10px;
+        }
+    }
+
+    .btnTxtIconCloseRight span {
+        display: inline-block;
+        margin-bottom: -3px;
+        margin-left: 7px;
+        width: 18px;
+        height: 18px;
+        font-size: 10px;
+        line-height: 23px;
+        overflow: hidden;
+        background: #cc0000;
+        border-radius: 100%;
+        color: #fff;
+        text-align: center;
+        font-weight: bold;
+    }
+    .form-control {
+        border: 1px solid #BDCBD3;
+    }
+    .check-style3+label {
+        cursor: not-allowed;
+    }
+    .formSlipNo {
+        margin-bottom: 0px;
+    }
+    .paymentType {
+        top: 7px;
+    }
+    @media screen and (max-width: 507px) {
+        .s-mini {
+            width: 63%;
+        }
+        .age-mini {
+            width: 65%;
+        }
+    }
+    // @media screen and (max-width: 489px) {
+    //     .age-mini {
+    //         width: 17%;
+    //     }
+    // }
+}

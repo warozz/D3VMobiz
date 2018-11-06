@@ -1,0 +1,11 @@
+<div [ngClass]="{'boxListTabStyle1': tabStyle == 1, 'boxListTabStyle2': tabStyle == 2, 'xs-has-select': hasSelect == 1, 'showSelect': showSelect}">
+    <a #oneTab class="oneTab" *ngFor="let item of tabArray; let i = index" (click)="tab(i)" [ngClass]="{'action': i == index}" [attr.disabled]="item.disabledTab ? 'disabled' : null">
+        <i id="ta_{{i+1}}" [ngClass]="item.icon"></i> {{ item.title }}
+    </a>
+
+    <a class="btnShowSelect" [ngClass]="{'emptySelectIcon': tabArrayLength <= 1}" *ngIf="hasSelect == 1" (click)="tabDropdown()">
+        <i [ngClass]="selectIcon"></i> {{ selectTitle }}
+    </a>
+</div>
+
+<ng-content></ng-content>

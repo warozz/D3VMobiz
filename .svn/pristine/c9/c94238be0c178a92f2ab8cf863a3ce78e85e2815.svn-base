@@ -1,0 +1,8 @@
+<!-- Generated template for the PopoverComponent component -->
+<div class="text-center">
+  <strong class="pop-header block">{{content.name}}</strong>
+  <span class="block">{{content.agentid}}</span>
+  <span class="block">{{content.position}}</span>
+  <span class="block">{{content.branch}}</span>
+  <span class="pop-header block">{{content.license}}</span>
+</div>

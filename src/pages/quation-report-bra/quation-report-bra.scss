@@ -1,0 +1,24 @@
+page-quation-report-bra {
+    .back{
+        text-align: right;
+    }
+    @media screen and (max-width: 991px) {
+        .search{
+            text-align: center !important;
+        }
+        //.back{
+        //    text-align: right !important;
+        //}
+        .col-sw-2 {
+            width: 100% !important;
+        }
+    }
+    @media only screen and (max-width: 1199px) {
+        .col-sw-2 {
+            width: 246px;
+            .col-sw-2 .col-input {
+                width: 151px;
+            }
+        }
+    }
+}

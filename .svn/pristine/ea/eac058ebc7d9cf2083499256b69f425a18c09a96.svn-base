@@ -1,0 +1,83 @@
+<ion-content>
+  <div class="modal">
+    <i class="close" (click)="close()"></i>
+    <h1 class="modal-title">ลงลายมือชื่อ</h1>
+    <div class="popup popup-style1">
+      <div class="boxNewUpdate">
+        <div class="scrollbar-inner">
+          <div class="form-horizontal">
+            <div class="form-group">
+              <div class="row col-xs-12">
+                <h2 class="col-xs-12 col-sm-offset-4 col-sm-5 txt-center">ลายมือชื่อผู้ขอเอาประกันภัย</h2>
+              </div>
+              <div class="row spec-margin10 col-xs-12">
+                <label class="col-xs-12 col-sm-4 control-label middle">ลายเซ็น :</label>
+                <div class="col-xs-12 col-sm-5 signature-height">
+                  <div *ngIf="signs['1'] === undefined" class="signature-thumb" (click)="openSignature(signs, '1')">
+                    <span class="lineHeight100">ลงลายมือชื่อ</span>
+                  </div>
+                  <div *ngIf="signs['1'] !== undefined" class="signature-thumb" (click)="openSignature(signs, '1')">
+                    <img [src]="signs['1']" style="width: 100%;height: 100%" />
+                  </div>
+                </div>
+              </div>
+              <div class="row underline col-xs-12">
+                <label for="" class="col-xs-12 col-sm-4 control-label">ชื่อผู้เอาประกันภัย :</label>
+                <div class="col-xs-12 col-sm-5">
+                  <input type="text" class="form-control" id="" placeholder="" disabled value="{{cusName}}">
+                </div>
+              </div>
+
+              <div class="row col-xs-12">
+                <h2 class="col-xs-12 col-sm-offset-4 col-sm-5 txt-center">ลายมือชื่อตัวแทนประกันชีวิต/นายหน้าประกันชีวิต</h2>
+              </div>
+              <div class="row spec-margin10 col-xs-12">
+                <label class="col-xs-12 col-sm-4 control-label middle">ลายเซ็น :</label>
+                <div class="col-xs-12 col-sm-5 signature-height">
+                  <div *ngIf="signs['2'] === undefined" class="signature-thumb" (click)="openSignature(signs, '2')">
+                    <span class="lineHeight100">ลงลายมือชื่อ</span>
+                  </div>
+                  <div *ngIf="signs['2'] !== undefined" class="signature-thumb" (click)="openSignature(signs, '2')">
+                    <img [src]="signs['2']" style="width: 100%;height: 100%" />
+                  </div>
+                </div>
+              </div>
+              <div class="row spec-margin5 col-xs-12">
+                <label for="" class="col-xs-12 col-sm-4 control-label">เสนอโดย:</label>
+                <div class="col-xs-12 col-sm-5">
+                  <input type="text" class="form-control" id="" placeholder="" disabled value="{{agentName}}">
+                </div>
+              </div>
+              <div class="row spec-margin5 col-xs-12">
+                <label for="" class="col-xs-12 col-sm-4 control-label">สาขา :</label>
+                <div class="col-xs-12 col-sm-5">
+                  <input type="text" class="form-control" id="" placeholder="" disabled value="{{agentBranch}}">
+                </div>
+              </div>
+              <div class="row spec-margin10 col-xs-12">
+                <label for="" class="col-xs-12 col-sm-4 control-label">ว/ด/ป :</label>
+                <div class="col-xs-12 col-sm-5">
+                  <input type="text" class="form-control" id="" placeholder="" disabled value="{{date}}">
+                </div>
+              </div>
+              <div class="col-12 txt-center spec-margin10">
+                <button class="btnSaveLeadRegister btn-style2" type="button" (click)="save()">
+                  <span>
+                    <i class="icon-save-file-option"></i> บันทึก</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>
+<ion-footer>
+  <div id="footer">
+    <div id="Footer_la_address">
+      สงวนสิทธิ์โดย บริษัท ไทยประกันชีวิต จำกัด &#40;มหาชน&#41;
+      <br> 123 ถนนรัชดาภิเษก ดินแดง กรุงเทพฯ 10400 โทร. 02 247 0247
+    </div>
+  </div>
+</ion-footer>

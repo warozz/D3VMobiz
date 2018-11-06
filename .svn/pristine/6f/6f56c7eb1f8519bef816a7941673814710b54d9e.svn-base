@@ -1,0 +1,77 @@
+prospect-add {
+    .boxTitleContainer h2 {
+        padding-left: 15px;
+    }
+    ion-select button {
+        border: 1px solid rgb(200, 200, 200);
+        border-radius: 0px;
+    }
+    .mydp {
+        border: 1px solid rgb(200, 200, 200);
+        border-radius: 0px;
+    }
+    .txtView,
+    calendar>.form-group {
+        border: 1px solid #C8C8C8 !important;
+        h1 {
+            height: 36px;
+            padding: 3px 12px;
+        }
+        .mat-button-wrapper::before {
+            margin-top: -4px;
+        }
+    }
+    .boxSearch {
+        position: relative;
+        margin-top: 12px;
+        padding-right: 100px;
+        .form-control {
+            height: 46px;
+        }
+        .btnClearSearch {
+            position: absolute;
+            right: 108px;
+            top: 0px;
+            text-decoration: none;
+            cursor: pointer;
+            color: #b1b1b1;
+            background: none;
+            font-size: $font-md;
+            height: 46px;
+        }
+        .btnSearch {
+            display: block;
+            position: absolute;
+            right: 0px;
+            top: 0px;
+            width: 100px;
+            height: 100%;
+            background: $color-primary;
+            color: #fff;
+            text-align: center;
+            overflow: hidden;
+            text-decoration: none;
+            cursor: pointer;
+            i {
+                font-size: $font-lg;
+                line-height: 46px;
+            }
+        }
+    }
+    @media (min-width: 992px) {
+        .txt-md-right {
+            text-align: right !important;
+        }
+        .txt-md-left {
+            text-align: left !important;
+        }
+    }
+    @media (min-width: $screen-lg-min) {
+        .label-remark {
+            width: 106.94px;
+        }
+        .txt-remark {
+            width: calc(100% - 106.94px);
+        }
+    }
+}

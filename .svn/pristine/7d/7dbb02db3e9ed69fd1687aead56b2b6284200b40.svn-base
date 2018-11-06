@@ -1,0 +1,59 @@
+dropdown {
+    .txtView {
+        border: 1px solid #c8c8c8;
+    }
+    &.ng-dirty.ng-invalid .txtView:not(.disabled) {
+        -webkit-transition-duration: 1s;
+        transition-duration: 1s;
+        border-color: #cc0000;
+    }
+    &:focus .txtView:not(.disabled) {
+        border-color: #66afe9;
+        outline: 0;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, 0.6);
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, 0.6);
+    }
+    .oneOption::after {
+        display: none !important;
+    }
+    .boxSelectPlan,
+    .boxDropdownPlan {
+        padding-right: 0px !important;
+        .txtView.no-selected {
+            color: #999;
+        }
+    }
+    .btnFavorite {
+        display: none !important;
+        .icon- {
+            line-height: 40px !important;
+        }
+    }
+    &.favorite {
+        .oneOption::after {
+            display: block !important;
+        }
+        .btnFavorite {
+            display: block !important;
+        }
+        @media (max-screen: $screen-sm-max) {
+            .boxSelectPlan {
+                padding-right: 40px !important;
+            }
+        }
+    }
+    .listOption {
+        z-index: 5;
+        .oneOption {
+            padding-right: 20px !important;
+        }
+    }
+    .boxSelectPlan {
+        .boxDropdownPlan {
+            .txtView.disabled {
+                background-color: #eeeeee !important;
+                cursor: not-allowed;
+            }
+        }
+    }
+}

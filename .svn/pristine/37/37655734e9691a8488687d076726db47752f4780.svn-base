@@ -1,0 +1,165 @@
+<div class="boxContentPage bgBlue3 hasBgImg">
+    <div class="container">
+        <div class="bgPaperShadow">
+            <div class="contentPaperShadow">
+                <div class="boxListForm pdlr0">
+
+                    <!-- ถอน -->
+                    <form [formGroup]="ulinkWithdraw">
+                        <div class="boxPromisesMore">
+                            <div class="col-md-6 pd0">
+                                <div class="col-label lh-form-control">ประมาณการมูลค่ารับซื้อคืนหน่วยลงทุน ณ วันที่เริ่มถอน (บาท)</div>
+                                <div class="col-input">
+                                    <input class="form-control" type="text" formControlName="av" calculator />
+                                </div>
+                            </div>
+                            <div class="col-md-6 pd0">
+                                <div class="col-label lh-form-control">อัตราเงินเฟ้อ ปีละ (%)</div>
+                                <div class="col-input">
+                                    <dropdown class="dropdown-sm" formControlName="inflationrate">
+                                        <dropdown-option value="1">1</dropdown-option>
+                                        <dropdown-option value="2">2</dropdown-option>
+                                        <dropdown-option value="3">3</dropdown-option>
+                                        <dropdown-option value="4">4</dropdown-option>
+                                        <dropdown-option value="5">5</dropdown-option>
+                                        <dropdown-option value="6">6</dropdown-option>
+                                        <dropdown-option value="7">7</dropdown-option>
+                                        <dropdown-option value="8">8</dropdown-option>
+                                        <dropdown-option value="9">9</dropdown-option>
+                                        <dropdown-option value="10">10</dropdown-option>
+                                    </dropdown>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+
+                        <!-- ป.ตรี, ป.โท, บำเหน็จ, บำนาญ -->
+                        <div formArrayName="ulinkWithdrawArray">
+                            <div *ngFor="let item of ulinkWithdraw.get('ulinkWithdrawArray').controls; let i = index;" [formGroupName]="i" class="boxPromisesMore bg-reverse">
+
+                                <div *ngIf="ulinkData.chooseType == 'educate' || ulinkData.chooseType == 'retire'">
+                                    <div *ngIf="ulinkData.chooseType == 'educate'" class="txt-center">
+                                        <span *ngIf="i == 0 && bachelorDegrees == false ">อายุบุตรไม่อยู่ในช่วงปริญญาตรี</span>
+                                        <span *ngIf="i == 1 && masterDegrees == false ">อายุบุตรไม่อยู่ในช่วงปริญญาโท</span>
+
+                                        <div *ngIf="i == 0 && bachelorDegrees">
+                                            <a href="javascript:void(0)" class="toggle" [ngClass]="{'closed': !open[i]}" (click)="toggle(i)">
+                                                <span *ngIf="i == 0">ปริญญาตรี</span>
+                                                <span class="icon"></span>
+                                            </a>
+                                        </div>
+                                        <div *ngIf="i == 1 && masterDegrees">
+                                            <a href="javascript:void(0)" class="toggle" [ngClass]="{'closed': !open[i]}" (click)="toggle(i)">
+                                                <span *ngIf="i == 1">ปริญญาโท</span>
+                                                <span class="icon"></span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div *ngIf="ulinkData.chooseType == 'retire'">
+                                        <a href="javascript:void(0)" class="toggle" [ngClass]="{'closed': !open[i]}" (click)="toggle(i)">
+                                            <span *ngIf="i == 0 && ulinkData.chooseType == 'retire'">บำเหน็จ</span>
+                                            <span *ngIf="i == 1 && ulinkData.chooseType == 'retire'">บำนาญ</span>
+                                            <span class="icon"></span>
+                                        </a>
+                                    </div>
+
+                                </div>
+
+                                <div *ngIf="open[i] || ulinkData.chooseType =='self'">
+                                    <div class="col-md-2 pd0" *ngIf="ulinkData.chooseType =='self'">
+                                        <div class="col-label lh-form-control">ประมาณการถอน</div>
+                                        <div class="col-input">
+                                            <dropdown class="dropdown-sm" formControlName="formatwithdraw" (ngModelChange)="changeFormatWithdraw($event, i)">
+                                                <!-- <dropdown-option value="M">ประจำ</dropdown-option>
+                                                <dropdown-option value="O">ครั้งเดียว</dropdown-option> -->
+                                                <dropdown-option value="1">ประจำ</dropdown-option>
+                                                <dropdown-option value="2">ครั้งเดียว</dropdown-option>
+                                            </dropdown>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-{{ ulinkData.chooseType == 'self' ? '2' : ulinkData.chooseType == 'educate' ? '3' : '4' }} pd0" [ngClass]="{'col-md-offset-1': ulinkData.chooseType == 'retire'}">
+                                        <div class="col-label lh-form-control">ถอนเงินครั้งละ (บาท)</div>
+                                        <div class="col-input">
+                                            <input class="form-control" type="text" caption="ระบุจำนวนเงิน" calculator [min]="10000" formControlName="sumwithdraw" />
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-{{ ulinkData.chooseType == 'self' ? '2' : '3' }} pd0">
+                                        <div class="col-label lh-form-control">อายุที่เริ่มถอน (ปี)</div>
+                                        <div class="col-input" [ngClass]="{'form-inline': ulinkWithdraw.value.ulinkWithdrawArray[i].formatwithdraw != '2' && (i > 0 || ulinkData.chooseType != 'retire')}">
+                                            <input class="form-control" type="text" [(value)]="item.get('agestart').value" calculator max="99" formControlName="agestart" (calculatorChange)="chkAgeStart(item, $event,i)" *ngIf="i > 0 || ulinkData.chooseType != 'retire'" />
+
+                                            <dropdown class="dropdown-sm" formControlName="agestart" (ngModelChange)="ageReword($event)" *ngIf="i == 0 && ulinkData.chooseType == 'retire'">
+                                                <dropdown-option value="55">55</dropdown-option>
+                                                <dropdown-option value="60">60</dropdown-option>
+                                                <dropdown-option value="65">65</dropdown-option>
+                                            </dropdown>
+
+                                            <i class="icon-minus2" *ngIf="ulinkWithdraw.value.ulinkWithdrawArray[i].formatwithdraw != '2' && (i > 0 || ulinkData.chooseType != 'retire')"></i>
+                                            <input class="form-control" *ngIf="ulinkWithdraw.value.ulinkWithdrawArray[i].formatwithdraw != '2' && (i > 0 || ulinkData.chooseType != 'retire')" type="text" [(value)]="item.get('agestop').value" calculator max="99" (calculatorChange)="chkAgeEnd(item, $event,i)"
+                                                formControlName="agestop" />
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-{{ ulinkData.chooseType == 'self' ? '2' : '3' }} pd0">
+                                        <div class="col-label lh-form-control">ปีกรมธรรม์ (ปี)</div>
+                                        <div class="col-input" [ngClass]="{'form-inline': ulinkWithdraw.value.ulinkWithdrawArray[i].formatwithdraw != '2' && (i > 0 || ulinkData.chooseType != 'retire')}">
+                                            <input class="form-control" type="text" calculator max="99" [(value)]="item.get('policyyearstart').value" formControlName="policyyearstart" />
+                                            <i class="icon-minus2" *ngIf="ulinkWithdraw.value.ulinkWithdrawArray[i].formatwithdraw != '2' && (i > 0 || ulinkData.chooseType != 'retire')"></i>
+                                            <input class="form-control" *ngIf="ulinkWithdraw.value.ulinkWithdrawArray[i].formatwithdraw != '2' && (i > 0 || ulinkData.chooseType != 'retire')" type="text" [(value)]="item.get('policyyearend').value" calculator max="99" formControlName="policyyearend"
+                                            />
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-{{ ulinkData.chooseType == 'self' ? '2' : '3' }} pd0" *ngIf="ulinkData.chooseType == 'educate'">
+                                        <div class="col-label lh-form-control">อายุบุตร (ปี)</div>
+                                        <div class="col-input form-inline ">
+                                            <input class="form-control" type="text" calculator max="99" formControlName="childagestart" />
+                                            <i class="icon-minus2 "></i>
+                                            <input class="form-control" type="text" calculator max="99" formControlName="childageend" />
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-2 pd0 ">
+                                        <div class="col-label lh-form-control" *ngIf="ulinkData.chooseType =='self' && ulinkWithdraw.value.ulinkWithdrawArray[i].formatwithdraw == '1'">ถอนทุกๆ (ปี)</div>
+                                        <div class="col-input " *ngIf="ulinkData.chooseType == 'self' && ulinkWithdraw.value.ulinkWithdrawArray[i].formatwithdraw == '1' ">
+                                            <dropdown class="dropdown-sm" formControlName="withdrawper">
+                                                <dropdown-option value="1">1</dropdown-option>
+                                                <dropdown-option value="2">2</dropdown-option>
+                                                <dropdown-option value="3">3</dropdown-option>
+                                                <dropdown-option value="4">4</dropdown-option>
+                                                <dropdown-option value="5">5</dropdown-option>
+                                            </dropdown>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-2 pd0" *ngIf="i> 0 && ulinkData.chooseType != 'educate' && ulinkData.chooseType != 'retire'">
+                                        <div class="btn-action">
+                                            <button class="btn-style2 btn-style-m pdlr20" type="submit" (click)="remove(i)">
+                                        <span> <i class="icon-rubbish-bin"></i> ลบ </span>
+                                        </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+
+                        <div class="boxActionForm" *ngIf="ulinkData.chooseType =='self'">
+                            <button id="btnAdd" class="btn-style3" type="button" (click)="add()" [disabled]="disabledAddTopup">
+                                <span><i class="icon-ion-ios-plus-outline fs29"></i> ปรับการถอน</span>
+                            </button>
+                            <button id="btnReset" class="btn-style3 btn-style-warning" type="button" (click)="reset()">
+                                <span><i class="icon-reload"></i> ล้างค่า</span>
+                            </button>
+                            <button id="btnReset" class="btn-style2" type="button" (click)="remove()">
+                                <span><i class="icon-ion-ios-close-outline fs29"></i> ไม่ถอน</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

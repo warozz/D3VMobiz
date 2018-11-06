@@ -1,0 +1,102 @@
+page-signature-ulink-acceptrisk {
+    .modal-title {
+        h1 {
+            text-align: left !important;
+        }
+    }
+    .popup-style1 {
+        height: 100%;
+        width: 100%;
+        border-radius: 0px;
+        .boxNewUpdate {
+            margin: 0px;
+            height: 100%;
+            padding-bottom: 50px;
+            .scrollbar-inner {
+                overflow-x: hidden;
+                overflow-y: auto;
+                height: 100%;
+                .check-style3+label {
+                    font-size: $font-lg;
+                }
+                .submit {
+                    margin-top: 20px;
+                    text-align: center;
+                }
+            }
+        }
+        @media (max-width: $screen-xs-max) {
+            .boxNewUpdate {
+                height: calc(100% - 43px);
+            }
+        }
+    }
+    .inside-container {
+        margin: auto;
+    }
+    @media (min-width: $screen-md-min) {
+        .inside-container {
+            padding-right: 10px;
+            padding-left: 10px;
+            width: 100%;
+        }
+        .lh100 {
+            line-height: 100px;
+        }
+    }
+    @media (max-width: $screen-sm-max) {
+        .inside-container {
+            padding-right: 10px;
+            width: 100%;
+        }
+    }
+    .signature-height {
+        height: 100px;
+        .form-group {
+            height: 100%;
+            .signature-thumb {
+                height: 100%;
+                border: 1.5px solid #d5d5d5;
+                background: #fff;
+                width: 100%;
+            }
+        }
+        margin-bottom: 15px;
+    }
+    .signature-thumb-disable {
+        height: 100%;
+        border: 1.5px solid #d5d5d5;
+        background: #eee;
+        width: 100%;
+    }
+    .underline {
+        border-bottom: 1px solid #aaa;
+        padding-bottom: 20px;
+    }
+    .form-horizontal .form-group {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+     ::placeholder {
+        /* Chrome, Firefox, Opera, Safari 10.1+ */
+        color: #a7a4a4d1 !important;
+        opacity: 1;
+        /* Firefox */
+    }
+     :-ms-input-placeholder {
+        /* Internet Explorer 10-11 */
+        color: #a7a4a4d1 !important;
+    }
+     ::-ms-input-placeholder {
+        /* Microsoft Edge */
+        color: #a7a4a4d1 !important;
+    }
+    .view-only-mb {
+        display: none;
+    }
+    @media (max-width: $screen-xs-max) {
+        .view-only-mb {
+            display: block;
+        }
+    }
+}

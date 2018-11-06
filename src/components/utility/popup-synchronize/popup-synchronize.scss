@@ -1,0 +1,33 @@
+popup-synchronize {
+    @at-root .synchronize {
+        .modal-wrapper {
+            left: calc(50% - (350px/2));
+            top: calc(50% - (250px/2));
+            width: 350px;
+            height: 250px;
+            position: absolute;
+        }
+        ion-backdrop {
+            visibility: visible;
+        }
+    }
+    .modal {
+        position: relative;
+        text-align: center;
+        .sync.icon {
+            font-size: 50px;
+            color: $color-primary;
+            -webkit-animation: spinner-rotate 1s linear infinite;
+            animation: spinner-rotate 1s linear infinite;
+            display: block;
+        }
+        .sync.success.icon {
+            visibility: hidden;
+        }
+        .btn-close {
+            position: absolute;
+            bottom: 20px;
+            left: calc(50% - 40px);
+        }
+    }
+}

@@ -1,0 +1,105 @@
+<!-- Generated template for the AttachFileEAppModalComponent component -->
+<div id="ClassClose" class="modal">
+    <a class="fancybox-close" href="javascript:void(0)" (click)="close()"></a>
+    <h1 class="modal-title">
+        <div style=" text-align: left; vertical-align: middle;">
+            <span> ข้อมูลกองทุน </span>
+        </div>
+    </h1>
+
+
+
+    <div class="boxContentPage bgBlue2" style="z-index: 5;">
+        <div class="">
+            <div class="boxSearchPlanInsurance2">
+                <div style="max-width: 450px; margin: 0 auto;">
+                    <span style="color: rgb(40, 171, 230)">-</span>
+                    <div class="boxSelectPlan">
+                        <div class="boxDropdownPlan nonIcon">
+                            <dropdown [(data)]="dataTL" (dataChange)="dropdownChange($event)">
+                                <dropdown-option value="1" selected="true">1. หนังสือชี้ชวนส่วนสรุปข้อมูลสำคัญ (Fund Fact Sheet)</dropdown-option>
+                                <dropdown-option value="2">2. รายงานเปรียบเทียบผลการดำเนินงานกองทุนรวมแต่ละประเภท (Fund Performance)</dropdown-option>
+                                <dropdown-option value="3">3. เหตุการณ์ที่อาจมีผลกระทบต่อกองทุนรวม (Materal Event)</dropdown-option>
+                                <dropdown-option value="4">4. หนังสือชี้ชวนแบบเต็ม (Fund Prospectus)</dropdown-option>
+                            </dropdown>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="boxContentPage ">
+        <div class="bgPaperShadow mgt0">
+            <div class="contentPaperShadow2">
+                <div class="boxActionForm boxActionForm-xs_1 pdt10" style="margin-top: -100px;">
+                   
+                    <div class="divTable">
+
+                        <table matSort [matSortDisableClear]="true" (matSortChange)="sortData($event)">
+                            <thead>
+                                <tr>
+                                    <th class="th-top">
+                                        <div>แสดงข้อมูล {{allocationArray.length}} รายการ</div>
+                                    </th>
+                                    <th class="th-top"></th>
+                                    <th class="th-top"></th>
+                                    <th class="th-top"></th>
+                                </tr>
+                                <tr>
+                                    <th class="headrisk" mat-sort-header="riskLevel">
+                                        <div>ระดับความเสี่ยงภัย</div>
+                                    </th>
+                                    <th mat-sort-header="name">กองทุน</th>
+                                    <th>ข้อมูลวันที่</th>
+                                    <th>Fund Fact Sheet</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let data of allocationArray; let i = index;">
+                                    <td>
+                                        <div [ngClass]="'rowRisk col-risk-'+ data.riskLevel">{{data.riskLevel.charAt(1)}}</div>
+                                    </td>
+                                    <td>
+                                        <div>
+                                            <p class="fundCode">{{data.fundCode}}</p>
+                                            <p class="fundThName">({{data.fundThaiName}})</p>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="dataCenter">{{data.monthTh  }}</div>
+                                    </td>
+                                    <td>
+                                        <div class="dataCenter">
+                                            <i class="icon-pdf-file" style="cursor: pointer;" (click)="openPdf(data)"></i>
+                                        </div>
+                                    </td>
+                                    <!-- <td>
+                                        <div class="dataCenter"><input class="fundInput" type="text" placeholder="0" [disabled]="totalRisk == '100'"
+                                             [ngModel]="data.riskInput" (change)="calculateRisk($event, data, i)" NumberOnly/>%</div>
+                                    </td> -->
+
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+
+
+
+                </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+</div>

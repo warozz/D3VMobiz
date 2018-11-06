@@ -1,0 +1,134 @@
+page-quatation-unexpected {
+    .boxComment2 {
+        padding-right: unset !important;
+        padding-left: unset !important;
+        padding-top: 20px !important;
+        padding-bottom: 20px !important;
+    }
+    .flex-container {
+        display: -webkit-box;
+        /* OLD - iOS 6-, Safari 3.1-6 */
+        display: -moz-box;
+        /* OLD - Firefox 19- (buggy but mostly works) */
+        display: -ms-flexbox;
+        /* TWEENER - IE 10 */
+        display: -webkit-flex;
+        /* NEW - Chrome */
+        display: flex;
+        /* NEW, Spec - Opera 12.1, Firefox 20+ */
+        .sum {
+            -webkit-box-flex: 1;
+            /* OLD - iOS 6-, Safari 3.1-6 */
+            -moz-box-flex: 1;
+            /* OLD - Firefox 19- */
+            -webkit-flex: 1;
+            /* Chrome */
+            -ms-flex: 1;
+            /* IE 10 */
+            flex: 1;
+            /* NEW, Spec - Opera 12.1, Firefox 20+ */
+            text-align: left;
+        }
+        .values {
+            -webkit-box-flex: 1;
+            /* OLD - iOS 6-, Safari 3.1-6 */
+            -moz-box-flex: 1;
+            /* OLD - Firefox 19- */
+            -webkit-flex: 1;
+            /* Chrome */
+            -ms-flex: 1;
+            /* IE 10 */
+            flex: 1;
+            /* NEW, Spec - Opera 12.1, Firefox 20+ */
+            text-align: center;
+        }
+        .star {
+            -webkit-box-flex: 1;
+            /* OLD - iOS 6-, Safari 3.1-6 */
+            -moz-box-flex: 1;
+            /* OLD - Firefox 19- */
+            -webkit-flex: 1;
+            /* Chrome */
+            -ms-flex: 1;
+            /* IE 10 */
+            flex: 1;
+            /* NEW, Spec - Opera 12.1, Firefox 20+ */
+            text-align: right;
+        }
+        .text {
+            -webkit-box-flex: 15;
+            /* OLD - iOS 6-, Safari 3.1-6 */
+            -moz-box-flex: 15;
+            /* OLD - Firefox 19- */
+            -webkit-flex: 15;
+            /* Chrome */
+            -ms-flex: 15;
+            /* IE 10 */
+            flex: 15;
+            /* NEW, Spec - Opera 12.1, Firefox 20+ */
+            text-align: left;
+            padding-left: 5px;
+        }
+    }
+    .padding-row {
+        padding-bottom: 10px;
+    }
+    .boxTableStyle4 table tbody.vTop tr td.vertical-align-bottom {
+        vertical-align: bottom;
+    }
+    .text-indent-30 {
+        text-indent: 30px;
+    }
+    .boxTableStyle4.td_pd-2-15 table tbody tr td.padding-right-0 {
+        padding-right: 0px;
+    }
+    .hasNum .olNum.e {
+        width: 45px;
+    }
+    .list {
+        list-style-type: none;
+        li {
+            text-indent: -20px;
+            &::before {
+                content: '-';
+                margin-right: 10px;
+            }
+        }
+    }
+    @media only screen and (max-width: 991px) {
+        .view-only-sm {
+            display: inherit;
+        }
+        .hide-only-sm {
+            display: none;
+        }
+    }
+    @media only screen and (min-width: 992px) {
+        .hide-only-md {
+            display: none;
+        }
+        .view-only-md {
+            display: inherit;
+        }
+    }
+    @media (max-width: 479px) {
+        .boxTableStyle4 table tbody tr td {
+            padding: 7px 10px !important;
+        }
+    }
+    .boxTableStyle4 {
+        .row.thead {
+            background: #29abe7;
+            color: #fff;
+            padding: 15px;
+        }
+        .row.tbody,
+        .row.footer {
+            padding: 7px 15px;
+        }
+        .row.footer {
+            color: #0082c8;
+            border-top: 1px solid #d5d5d5;
+        }
+    }
+}

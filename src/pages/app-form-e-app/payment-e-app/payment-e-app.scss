@@ -1,0 +1,51 @@
+page-payment-e-app {
+    .btnPayment {
+        text-align: center;
+        padding: 50px;
+    }
+    .boxActionForm {
+        padding: 0px;
+        h1 {
+            display: inline-block;
+        }
+        label {
+            padding-right: 20px;
+        }
+    }
+    ion-item {
+        background-color: white !important;
+        text-align: center !important;
+    }
+    div.example {
+        display: -webkit-box;
+        justify-items: center;
+    }
+    .label {
+        text-align: right;
+        label {
+            font-size: 25px;
+        }
+    }
+    .base-line {
+        border-bottom: 1px solid #dedede;
+    }
+    .alertCustomCss .alert-message {
+        font-size: 22px;
+        .alert-message {
+            font-size: 22px;
+        }
+        .alert-wrapper {
+            background-color: color($colors, dark, base);
+        }
+    }
+}
+
+.alertCustomCss .alert-message {
+    font-size: 22px;
+    .alert-message {
+        font-size: 22px;
+    }
+    .alert-wrapper {
+        background-color: color($colors, dark, base);
+    }
+}

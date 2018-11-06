@@ -1,0 +1,206 @@
+circle-graph {
+    .boxGraphBlueRed {
+        background: none !important;
+    }
+    .card {
+        float: left;
+        padding: 10px;
+        margin: 0 20px 0 0;
+    }
+    // Donut Chart Mixin
+    .donut-chart {
+        position: relative;
+        border-radius: 50%;
+        overflow: hidden;
+        .slice {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .chart-center {
+            position: absolute;
+            border-radius: 50%;
+            span {
+                display: block;
+                text-align: center;
+            }
+        }
+    }
+    @mixin donut-chart($perc, $size, $width, $border, $font-size, $base: #dd3333, $color: #1683c4) {
+        $color2: $color;
+        $base2: $base;
+        $deg: ($perc/100*360)+deg;
+        $deg1: 90deg;
+        $deg2: $deg;
+        // If percentage is less than 50%
+        @if $perc < 50 {
+            $base: $color;
+            $color: $base2;
+            $color2: $base2;
+            $deg1: ($perc/100*360+90)+deg;
+            $deg2: 0deg;
+        }
+        .donut-chart {
+            &.chart-#{$perc} {
+                width: $size;
+                height: $size;
+                background: $base;
+                .slice {
+                    &.one {
+                        clip: rect(0 $size $size/2 0);
+                        -webkit-transform: rotate($deg1);
+                        transform: rotate($deg1);
+                        background: $color;
+                    }
+                    &.two {
+                        clip: rect(0 $size/2 $size 0);
+                        -webkit-transform: rotate($deg2);
+                        transform: rotate($deg2);
+                        background: $color2;
+                    }
+                }
+                .chart-center {
+                    top: $width;
+                    left: $width;
+                    width: $size - ($width * 2);
+                    height: $size - ($width * 2);
+                    background: #fff;
+                    span {
+                        font-size: $font-size;
+                        line-height: $size - ($width * 2) - ($border * 2);
+                        color: #fff;
+                        background-color: #1baaea;
+                        border-radius: 50%;
+                        border: $border solid #fff;
+                        width: 100%;
+                        height: 100%;
+                        &:after {
+                            content: 'กลุ่มลูกค้า';
+                        }
+                    }
+                }
+            }
+        }
+    } // mixin
+    // Charts
+    @mixin donut-chart-percent($perc) {
+        @include donut-chart($perc, 220px, 25px, 20px, $font-lg);
+        @media screen and (max-width: $screen-sm-max) {
+            @include donut-chart($perc, 160px, 18px, 12px, $font-md);
+        }
+    }
+    @for $i from 0 through 100 {
+        @include donut-chart-percent($i);
+    }
+    .tooltip {
+        position: relative;
+        display: inline-block;
+        //border-bottom: 1px dotted black;
+        .tooltiptext {
+            visibility: hidden;
+            position: absolute;
+            width: 160px;
+            background-color: #555;
+            color: #fff;
+            text-align: center;
+            padding: 5px 0;
+            border-radius: 6px;
+            z-index: 1;
+            opacity: 0;
+            transition: opacity .6s;
+            &.tooltip-top {
+                bottom: 125%;
+                left: 50%;
+                margin-left: -60px;
+                &::after {
+                    content: "";
+                    position: absolute;
+                    top: 100%;
+                    left: 50%;
+                    margin-left: -5px;
+                    border-width: 5px;
+                    border-style: solid;
+                    border-color: #555 transparent transparent transparent;
+                }
+            }
+            &.tooltip-right {
+                top: -5px;
+                left: 120%;
+                &::after {
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    right: 100%;
+                    margin-top: -5px;
+                    border-width: 5px;
+                    border-style: solid;
+                    border-color: transparent #555 transparent transparent;
+                }
+            }
+            &.tooltip-bottom {
+                top: 135%;
+                left: 50%;
+                margin-left: -80px;
+                &::after {
+                    content: "";
+                    position: absolute;
+                    bottom: 100%;
+                    left: 50%;
+                    margin-left: -5px;
+                    border-width: 5px;
+                    border-style: solid;
+                    border-color: transparent transparent #555 transparent;
+                }
+            }
+            &.tooltip-left {
+                top: -5px;
+                bottom: auto;
+                right: 120%;
+                &::after {
+                    content: "";
+                    position: absolute;
+                    top: 42%;
+                    left: 100%;
+                    margin-top: -5px;
+                    border-width: 5px;
+                    border-style: solid;
+                    border-color: transparent transparent transparent #555;
+                }
+            }
+        }
+        &:hover {
+            .tooltiptext {
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+    }
+    @mixin icon {
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        border: 1px solid #fff;
+        margin-right: 3px;
+    }
+    .icon-red {
+        background-color: #dd3333;
+        @include icon;
+    }
+    .icon-blue {
+        background-color: #1683c4;
+        @include icon;
+    }
+    .boxTypePercent {
+        white-space: nowrap;
+        span>span {
+            font-size: $font-xl !important;
+        }
+        @media screen and (max-width: $screen-sm-max) {
+            span>span {
+                font-size: $font-lg !important;
+            }
+        }
+    }
+}

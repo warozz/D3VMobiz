@@ -1,0 +1,8 @@
+attach-file-e-app-modal {
+
+    .ion-item-border{
+        border: 1px solid #C8C8C8;
+    }
+
+    
+}

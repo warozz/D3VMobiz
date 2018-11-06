@@ -1,0 +1,87 @@
+page-app-investment-info {
+    .check-style3+label {
+        font-size: $font-md;
+        line-height: 38px;
+        margin-bottom: 0px;
+        &::before,
+        &::after {
+            top: 7px;
+        }
+    }
+    .radio-style3+label {
+        font-size: $font-md;
+    }
+    dropdown {
+        &.boxSearchPlanInsurance {
+            .boxSelectPlan {
+                height: 38px;
+                .boxDropdownPlan {
+                    height: 38px;
+                    .txtView {
+                        height: 38px;
+                        line-height: 38px;
+                        padding-left: 12px;
+                        padding-right: 12px;
+                        font-size: $font-md;
+                    }
+                    &::after {
+                        height: 38px;
+                    }
+                }
+            }
+        }
+    }
+    .doc04-label {
+        width: 150px;
+        @media screen and (max-width: $screen-sm-max) {
+            width: 100%;
+        }
+    }
+    .doc04-input {
+        width: calc(100% - 169px);
+        @media screen and (min-width: $screen-xl-min) {
+            width: 491px;
+        }
+        @media screen and (max-width: $screen-sm-max) {
+            width: 100%;
+        }
+    }
+    .doc11-input {
+        .form-control {
+            @media screen and (max-width: $screen-sm-max) {
+                width: 100%;
+            }
+        }
+    }
+    tabs {
+        .boxListTabStyle1 {
+            .oneTab {
+                font-size: $font-md;
+            }
+        }
+    }
+    @media screen and (min-width: $screen-xl-min) {
+        .col-lg-21p {
+            width: 21%;
+        }
+        .col-lg-79p {
+            width: 79%;
+        }
+    }
+    .w150 {
+        width: 150px;
+    }
+    .w200 {
+        width: 200px;
+    }
+    // .check-style3+label {
+    //     cursor: not-allowed;
+    // }
+    //    .disable-bd {
+    //     }
+    calendar .form-group mat-datepicker-toggle {
+        // background-color: #eeeeee !important;
+        // cursor: not-allowed;
+        // color: black;
+    }
+}

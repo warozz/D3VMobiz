@@ -1,0 +1,5 @@
+<div class="progress">
+    <div class="progress-bar progress-bar-wave" [style.width]="progress + '%'">
+        <span *ngIf="progress > 20">{{ progress | number:'1.1-1' }} %</span>
+    </div>
+</div>

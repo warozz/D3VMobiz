@@ -1,0 +1,32 @@
+taxcalculator {
+    @media only screen and (min-height: 600px) and (min-width: 768px) {
+        @at-root .taxcalculator {
+            .modal-wrapper {
+                left: calc(50% - (740px/2));
+                top: calc(50% - (360px/2));
+                width: 740px;
+                height: 360px;
+            }
+        }
+    }
+    @media (max-height:400px) {
+        .scrollbar-y {
+            overflow-y: auto;
+            padding-bottom: 0px;
+        }
+    }
+    .popup-calculate-tax {
+        width: 100%;
+        height: 100%;
+    }
+    p {
+        font-size: $font-md;
+    }
+    .boxSearchPlanInsurance .boxSelectPlan {
+        margin-bottom: 0px;
+    }
+    dropdown .txtView {
+        border: none;
+        font-size: $font-md;
+    }
+}

@@ -1,0 +1,94 @@
+<div class="modal">
+    <i class="close" (click)="close()"></i>
+
+    <h1 class="modal-title">
+        ระบุ{{title}}
+    </h1>
+
+    <div class="popup popup-style1">
+        <div class="boxNewUpdate">
+            <div class="box-detail">
+                <form [formGroup]="fullnamePopupForm">
+                    <div class="col-md-12">
+                        <div class="col-md-3 col-sm-3 pdl0 txt-sm-right  lh-form-control ws-nowrap">คำนำหน้า :</div>
+                        <div class="col-md-9 col-sm-9 pdlr0">
+                            <div class="form-group mgb0">
+                                <prefix-name id="pros_preName" formControlName="prefix" [birthDate]="birthDate"></prefix-name>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+
+                    <div class="col-md-12">
+                        <div class="col-md-3 col-sm-3 pdl0 txt-sm-right  lh-form-control ws-nowrap">ชื่อ :</div>
+                        <div class="col-md-9 col-sm-9 pdlr0">
+                            <div class="form-group">
+                                <input id="paymentname" class="form-control" formControlName="firstName" type="text" placeholder="" maxlength="30" CharacterOnly/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+
+                    <div class="col-md-12">
+                        <div class="col-md-3 col-sm-3 pdl0 txt-sm-right  lh-form-control ws-nowrap">นามสกุล :</div>
+                        <div class="col-md-9 col-sm-9 pdlr0">
+                            <div class="form-group">
+                                <input id="paymentname" class="form-control" formControlName="lastName" type="text" placeholder="" maxlength="30" CharacterOnly/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </form>
+            </div>
+            <div class="div-btn">
+                <button class="btn-style2 btn-style-m" type="button" (click)="close()"><span> ยกเลิก</span></button>
+                <button class="btn-style3 btn-style-m" type="button" (click)="submit()"><span> ตกลง</span></button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+<!-- <div class="">
+                <div class="box-detail">
+                    <form [formGroup]="fullnamePopupForm">
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6">
+                                <div class="col-md-4 col-sm-4 txt-sm-right pdl0  lh-form-control ws-nowrap">
+                                    คำนำหน้า :</div>
+                                <div class="col-md-7 form-group  col-sm-7 pdlr0">
+                                    <prefix-name id="pros_preName" formControlName="prefix" [birthDate]="birthDate"></prefix-name>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6">
+                                <div class="col-md-4 col-sm-4 txt-sm-right pdl0  lh-form-control ws-nowrap">
+                                    ชื่อ :</div>
+                                <div class="form-group col-md-7 col-sm-7 pdlr0">
+                                    <input id="paymentname" class="form-control" formControlName="firstName" type="text" placeholder="" maxlength="30" CharacterOnly/>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6">
+                                <div class="col-md-4 col-sm-4 pdl0 txt-sm-right lh-form-control ws-nowrap">
+                                    นามสกุล :</div>
+                                <div class="form-group col-md-7 col-sm-7 pdlr0">
+                                    <input id="paymentname" class="form-control" formControlName="lastName" type="text" placeholder="" maxlength="30" CharacterOnly/>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="div-btn">
+                    <button class="btn-style2 btn-style-m" type="button" (click)="close()"><span> ยกเลิก</span></button>
+                    <button class="btn-style3 btn-style-m" type="button" (click)="submit()"><span> ตกลง</span></button>
+                </div>
+            </div> -->

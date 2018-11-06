@@ -1,0 +1,1595 @@
+<div class="boxContentPage bgBlue3 hasBgImg bgImg115">
+    <div class="container">
+        <h1 class="titleContentPage1">{{ 'PLAN' | planLabel }} {{ planName }}</h1>
+
+        <collapse-group [(selectIndex)]="selectIndex" collapseTitle="เลือกสัญญาเพิ่มเติม">
+            <collapse collapseTab="อุบัติเหตุ" collapseTitle="อุบัติเหตุ และแนบท้ายฆาตกรรมและจลาจล {{tkf ? '(ตอ. และ ตฆจ.)' : '(อ. และ ฆจ.)'}}" collapseSubtitle="เงินทดแทนกรณีประสบอุบัติเหตุ ทำให้เสียชีวิต สูญเสียอวัยวะ หรือ ทุพพลภาพ {{tkf ? '(ตอ.)' : '(อ.)'}}" [disabled]="!rider || (rider[conf.rider('AC01')].sum == 0 && rider[conf.rider('AC02')].sum == 0 && rider[conf.rider('AC03')].sum == 0)">
+                <div class="boxTableStyle4 c-666">
+                    <table>
+                        <tbody class="vTop">
+                            <tr>
+                                <td class="hasNum">
+                                    <span class="olNum">1. </span>สูญเสียมือ เท้า สายตา ทั้งสองข้างหรืออย่างใดอย่างหนึ่งรวมกันตั้งแต่สองข้างขึ้นไป</td>
+                                <td class="txt-right ws-nowrap">
+                                    <span class="c-blue">{{rider ? ((rider[conf.rider('AC01')].sum+rider[conf.rider('AC02')].sum)|number) : 0 }}</span> บาท</td>
+                            </tr>
+                            <tr>
+                                <td class="hasNum">
+                                    <span class="olNum">2. </span>สูญเสียมือ เท้า สายตา อย่างใดอย่างหนึ่งเพียงข้างเดียว</td>
+                                <td class="txt-right ws-nowrap">
+                                    <span class="c-blue">{{rider ? (((rider[conf.rider('AC01')].sum+rider[conf.rider('AC02')].sum)*0.6)|number) : 0}}</span> บาท</td>
+                            </tr>
+                            <tr>
+                                <td class="hasNum">
+                                    <span class="olNum">3. </span>สูญเสียนิ้วหัวแม่มือและนิ้วชี้ของมือข้างเดียวกัน โดยการตัดออกไปหรือเหนือโคนนิ้ว</td>
+                                <td class="txt-right ws-nowrap">
+                                    <span class="c-blue">{{rider ? (((rider[conf.rider('AC01')].sum+rider[conf.rider('AC02')].sum)*0.25)|number) : 0}}</span> บาท</td>
+                            </tr>
+                            <tr>
+                                <td class="hasNum">
+                                    <span class="olNum">4. </span>ค่าชดเชยค่ารักษาพยาบาลในฐานะผู้ป่วยในของโรงพยาบาลรายสัปดาห์ไม่เกิน 20 สัปดาห์ สัปดาห์ละ
+                                </td>
+                                <td class="txt-right ws-nowrap">
+                                    <span class="c-blue">{{rider ? ((rider[conf.rider('AC02')].sum*0.003)|number) : 0}}</span> บาท</td>
+                            </tr>
+                            <tr>
+                                <td class="hasNum">
+                                    <span class="olNum">5. </span>ทุพพลภาพจนยังประกอบอาชีพไม่ได้สิ้นเชิง ชั่วระยะเวลาหนึ่ง รับค่าชดเชยรายสัปดาห์ไม่เกิน 52 สัปดาห์ สัปดาห์ละ</td>
+                                <td class="txt-right ws-nowrap">
+                                    <span class="c-blue">{{rider ? ((rider[conf.rider('AC02')].sum*0.006)|number) : 0}}</span> บาท</td>
+                            </tr>
+                            <tr>
+                                <td class="hasNum">
+                                    <span class="olNum">6. </span>ทุพพลภาพโดยยังประกอบอาชีพได้บางส่วน รับเงินทดแทนรายสัปดาห์ไม่เกิน 52 สัปดาห์ สัปดาห์ละ
+                                </td>
+                                <td class="txt-right ws-nowrap">
+                                    <span class="c-blue">{{rider ? ((rider[conf.rider('AC02')].sum*0.002)|number) : 0}}</span> บาท</td>
+                            </tr>
+                            <tr>
+                                <td class="hasNum">
+                                    <span class="olNum">7. </span>ทุพพลภาพถาวรสิ้นเชิงจากอุบัติเหตุจ่ายเบี้ยเลี้ยงชีพ เป็นระยะเวลา 10 ปี ปีละ {{rider ? ((rider[conf.rider('AC02')].sum/10)|number) : 0}} บาท สูงสุด</td>
+                                <td class="txt-right ws-nowrap">
+                                    <span class="c-blue">{{rider ? ((rider[conf.rider('AC02')].sum)|number) : 0}}</span> บาท</td>
+                            </tr>
+                            <tr>
+                                <td class="hasNum">
+                                    <span class="olNum">8. </span>ต้องเข้ารับการผ่าตัด ดังรายการที่กำหนดในตารางผลประโยชน์ ค่าผ่าตัดท้ายสัญญา
+                                </td>
+                                <td class="txt-right ws-nowrap"></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" class="hasNum txt-highlight">กรณี เกิดอุบัติเหตุพิเศษ* รับค่าชดเชย 2 เท่า</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="boxTableStyle4 pdt10 pdb10 bgBlue1 c-666" *ngIf="!tkf">
+                    <table>
+                        <tbody class="vTop">
+                            <tr>
+                                <td colspan="2" class="c-blue">ค่ารักษาพยาบาลเนื่องจากอุบัติเหตุ (อ.3)</td>
+                            </tr>
+                            <tr>
+                                <td>ให้ความคุ้มครองทันที ทั้งในกรณีคนไข้ในและนอกโดยจ่ายตามค่าใช้จ่ายจริงสูงสุดไม่เกินครั้งละ</td>
+                                <td class="txt-right ws-nowrap">
+                                    <span class="c-blue">{{rider ? ((rider[conf.rider('AC03')].sum)|number) : 0}}</span> บาท</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="boxTableStyle4 pdt10 pdb10 bgBlue1 c-666">
+                    <table>
+                        <tbody class="vTop">
+                            <tr>
+                                <td>คุ้มครองการเสียชีวิตด้วยอุบัติเหตุ</td>
+                                <td class="txt-right ws-nowrap">
+                                    <span class="c-blue">{{rider ? ((rider[conf.rider('AC01')].sum+rider[conf.rider('AC02')].sum)|number) : 0}}</span> บาท</td>
+                            </tr>
+                            <tr>
+                                <td>คุ้มครองการเสียชีวิตด้วยอุบัติเหตุพิเศษ*</td>
+                                <td class="txt-right ws-nowrap">
+                                    <span class="c-blue">{{rider ? (((rider[conf.rider('AC01')].sum+rider[conf.rider('AC02')].sum)*2)|number) : 0}}</span> บาท</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="boxComment4">
+                    * หมายเหตุ : กรณีเป็นอุบัติเหตุไฟไหม้โรงแรม โรงมหรสพ อาคารสาธารณะ หรืออุบัติเหตุจากรถไฟ รถโดยสารประจำทาง ลิฟท์
+                </div>
+            </collapse>
+
+            <collapse collapseTab="ทุพพลภาพถาวรสิ้นเชิง" collapseTitle="ทุพพลภาพถาวรสิ้นเชิง {{tkf ? '(ตทพ.)' : '(ทพ.)'}}" collapseSubtitle="" [disabled]="prospectAge > 59">
+                <div class="contentStyle1" *ngIf="tkf">
+                    กรณีสมาชิกตะกาฟุลตกเป็นบุคคลทุพพลภาพถาวรสิ้นเชิงบริษัทฯ จะยกเว้นเงินสมทบตะกาฟุลจนถึงวันครบรอบปีของสัญญาตะกาฟุลที่มีสมาชิกตะกาฟุล มีอายุครบ 60 ปีบริบูรณ์ไม่รวมเงินสมทบของสัญญาเพิ่มเติมตะกาฟุล
+                </div>
+                <div class="contentStyle1" *ngIf="!tkf">
+                    กรณีผู้เอาประกันภัย (เฉพาะภัยมาตรฐาน) ตกเป็นบุคคลทุพพลภาพถาวรสิ้นเชิงก่อนมีอายุครบ 60 ปีบริบูรณ์ บริษัทฯ จะยกเว้นเบี้ยประกันภัยที่ครบกำหนดชำระทันทีหลังจากวันที่เริ่มทุพพลภาพจนถึงวันครบระยะเวลาชำระเบี้ยประกันภัย ทั้งนี้ไม่รวมเบี้ยประกันอุบัติเหตุ และเบี้ยสัญญาพิเศษเพิ่มเติมอื่นๆ
+                </div>
+            </collapse>
+
+            <collapse collapseTab="โรคร้ายแรง" collapseTitle="คุ้มครองการเสียชีวิต ทุพพลภาพ และโรคร้ายแรง ({{ rider && rider[conf.rider('D02')].sum != 0 ? 'ทร.44' : rider && rider[conf.rider('D03')].sum != 0 ? 'ทร.ตลอดชีพ' : 'ทร.' }})" collapseSubtitle="" [disabled]="!rider || (rider[conf.rider('D01')].sum == 0 && rider[conf.rider('D02')].sum == 0 && rider[conf.rider('D03')].sum == 0)">
+                <div *ngIf="rider && rider[conf.rider('D01')].sum != 0">
+                    <div class="boxTableStyle4 c-666">
+                        <table>
+                            <tbody class="vTop">
+                                <tr>
+                                    <td>กรณีแพทย์ตรวจพบโรคร้ายแรงตามที่ระบุ จ่ายทันที</td>
+                                    <td class="txt-right ws-nowrap">
+                                        <span class="c-blue">{{rider ? (rider[conf.rider('D01')].sum|number) : 0}}</span> บาท</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="boxListForm bgBlue1 pdt20 pdb20 c-666">
+                        <div class="col-xs-6 pdl0">
+                            <div class="hasNum pdb5">
+                                <span class="olNum">1.</span>โรคกล้ามเนื้อหัวใจตายชนิดเฉียบพลัน</div>
+                            <div class="hasNum pdb5">
+                                <span class="olNum">2.</span>การผ่าตัดเปลี่ยนลิ้นหัวใจ</div>
+                            <div class="hasNum pdb5">
+                                <span class="olNum">3.</span>อัมพาตจากโรคเส้นเลือดสมอง</div>
+                            <div class="hasNum pdb5">
+                                <span class="olNum">4.</span>โรคอัลไซม์เมอร์</div>
+                            <div class="hasNum pdb5">
+                                <span class="olNum">5.</span>โรคมะเร็ง</div>
+                            <div class="hasNum pdb5">
+                                <span class="olNum">6.</span>การผ่าตัดเส้นเลือดแดงใหญ่</div>
+                        </div>
+                        <div class="col-xs-6 pdl0">
+                            <div class="hasNum pdb5">
+                                <span class="olNum">7.</span>ความดันเลือดสูงของเส้นเลือดแดงในปอด ชนิดปฐมภูมิ</div>
+                            <div class="hasNum pdb5">
+                                <span class="olNum">8.</span>ไตวายเรื้อรังระยะสุดท้าย</div>
+                            <div class="hasNum pdb5">
+                                <span class="olNum">9.</span>การผ่าตัดเปลี่ยนอวัยวะ</div>
+                            <div class="hasNum pdb5">
+                                <span class="olNum">10.</span>โรคไวรัสตับอักเสบชนิดรุนแรง</div>
+                            <div class="hasNum pdb5">
+                                <span class="olNum">11.</span>การผ่าตัดเส้นเลือดเลี้ยงกล้ามเนื้อหัวใจ</div>
+                        </div>
+                    </div>
+
+                    <div class="boxTableStyle4 c-666">
+                        <table>
+                            <tbody class="vTop">
+                                <tr>
+                                    <td colspan="2" class="c-blue">ชดเชยกรณีทุพพลภาพถาวรสิ้นเชิง ประกอบอาชีพไม่ได้ตลอดชีวิต</td>
+                                </tr>
+                                <tr>
+                                    <td>ได้รับเงินสดชดเชยทันที</td>
+                                    <td class="txt-right ws-nowrap">
+                                        <span class="c-blue">{{rider ? (rider[conf.rider('D01')].sum|number) : 0}}</span> บาท</td>
+                                </tr>
+                                <tr>
+                                    <td>คุ้มครองการเสียชีวิตทุกกรณีจ่าย</td>
+                                    <td class="txt-right ws-nowrap">
+                                        <span class="c-blue">{{rider ? (rider[conf.rider('D01')].sum|number) : 0}}</span> บาท</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="boxComment2 ">
+                        เมื่อบริษัทฯ จ่ายเงินทดแทนกรณีหนึ่งไปแล้ว สัญญา {{ rider && rider[conf.rider('D02')].sum != 0 ? 'ทร.44' : rider && rider[conf.rider('D03')].sum != 0 ? 'ทร.ตลอดชีพ' : 'ทร.' }} ถือเป็นสิ้นสุด
+                    </div>
+                </div>
+
+                <div *ngIf="rider && rider[conf.rider('D02')].sum != 0">
+                    <div class="boxTableStyle4 c-666">
+                        <div class="row">
+                            <div class="col-xs-4 c-blue">
+                                ผลประโยชน์ความคุ้มครอง
+                            </div>
+                            <div class="col-xs-8 txt-right">
+                                <a class="btn-style4 btn-style-m pdlr20" (click)="deadlyDisease('D02')"><span>โรคร้ายแรง 44 โรค >></span></a>
+                            </div>
+                        </div>
+
+                        <br />
+                        <div class="row">
+                            <div class="col-xs-6 col-xs-6 col-md-6 col-lg-7">
+                                <span class="olNum">1.</span> ความคุ้มครองกรณีเสียชีวิตทุกกรณี
+                            </div>
+                            <div class="col-xs-6 col-xs-4 col-md-4 col-lg-4 txt-right">
+                                เท่ากับ
+                                <span class="c-blue">{{rider ? (rider[conf.rider('D02')].sum|number) : 0}}</span> บาท
+                                <span class="visible-xs">หรือ</span>
+                            </div>
+                            <div class="col-xs-2 col-md-2 col-lg-1 hidden-xs">
+                                หรือ
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-6 col-xs-6 col-md-6 col-lg-7">
+                                <span class="olNum">2.</span> เงินชดเชยกรณีทุพพลภาพถาวรสิ้นเชิง
+                            </div>
+                            <div class="col-xs-6 col-xs-4 col-md-4 col-lg-4 txt-right">
+                                เท่ากับ
+                                <span class="c-blue">{{rider ? (rider[conf.rider('D02')].sum|number) : 0}}</span> บาท
+                                <span class="visible-xs">หรือ</span>
+                            </div>
+                            <div class="col-xs-2 col-md-2 col-lg-1 hidden-xs">
+                                หรือ
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-6 col-xs-6 col-md-6 col-lg-7">
+                                <span class="olNum">3.</span> เงินชดเชยกรณีเจ็บป่วยด้วยโรคร้ายแรง
+                            </div>
+                            <div class="col-xs-6 col-xs-4 col-md-4 col-lg-4 txt-right">
+                                เท่ากับ
+                                <span class="c-blue">{{rider ? (rider[conf.rider('D02')].sum|number) : 0}}</span> บาท
+                            </div>
+                        </div>
+
+                        <br />
+                        <div class="row">
+                            <div class="col-xs-12 visible-xs visible-xs visible-md">
+                                <strong class="c-blue">ยกเว้น</strong>
+                            </div>
+                            <div class="col-xs-6 col-xs-6 col-md-6 col-lg-7">
+                                <strong class="c-blue inline_block w100 hidden-xs hidden-xs hidden-md">ยกเว้น</strong>โรคร้ายแรงในข้อ 17, 26, 27 และ 35 ความคุ้มครอง
+                            </div>
+                            <div class="col-xs-6 col-xs-4 col-md-4 col-lg-4 txt-right">
+                                เท่ากับ
+                                <span class="c-blue">{{rider ? ((rider[conf.rider('D02')].sum/2)|number) : 0}}</span> บาท
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-6 col-xs-6 col-md-6 col-lg-7">
+                                <strong class="c-blue inline_block w100 hidden-xs hidden-xs hidden-md"></strong>โรคร้ายแรงในข้อ 22 ความคุ้มครอง
+                            </div>
+                            <div class="col-xs-6 col-xs-4 col-md-4 col-lg-4 txt-right">
+                                เท่ากับ
+                                <span class="c-blue">{{riderD02 ? (riderD02|number) : 0}}</span> บาท
+                            </div>
+                        </div>
+                        <br />
+
+                        <!--
+                        <table>
+                            <tbody class="vTop">
+                                <tr>
+                                    <td colspan="2" class="c-blue">ผลประโยชน์ความคุ้มครอง</td>
+                                    <td class="txt-right ws-nowrap" style="display: inline-block; padding: 5px;">
+                                        <a class="btn-style4 btn-style-m pdlr20" (click)="deadlyDisease('D02')"><span>โรคร้ายแรง 44 โรค >></span></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <span class="olNum">1.</span>ความคุ้มครองกรณีเสียชีวิตทุกกรณี</td>
+                                    <td class="txt-right ws-nowrap" style="display: inline-block; padding: 5px;">
+                                        เท่ากับ
+                                        <span class="c-blue">{{rider ? (rider[conf.rider('D02')].sum|number) : 0}}</span> บาท <span><br />หรือ</span> </td>
+                                    <td class="hidden-xs hidden-md">หรือ</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <span class="olNum">2.</span>เงินชดเชยกรณีทุพพลภาพถาวรสิ้นเชิง</td>
+                                    <td class="txt-right ws-nowrap" style="display: inline-block; padding: 5px;">
+                                        เท่ากับ
+                                        <span class="c-blue">{{rider ? (rider[conf.rider('D02')].sum|number) : 0}}</span> บาท </td>
+                                    <td style="display: inline-block; padding: 5px;">หรือ</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <span class="olNum">3.</span>เงินชดเชยกรณีเจ็บป่วยด้วยโรคร้ายแรง</td>
+                                    <td class="txt-right ws-nowrap" style="display: inline-block; padding: 5px;">
+                                        เท่ากับ
+                                        <span class="c-blue">{{rider ? (rider[conf.rider('D02')].sum|number) : 0}}</span> บาท </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="c-blue">
+                                                <b>ยกเว้น</b>
+                                            </span>
+                                    </td>
+                                    <td>โรคร้ายแรงในข้อ 17, 26, 27 และ 35 ความคุ้มครอง</td>
+                                    <td class="txt-right ws-nowrap" style="display: inline-block; padding: 5px;">
+                                        เท่ากับ
+                                        <span class="c-blue">{{rider ? ((rider[conf.rider('D02')].sum/2)|number) : 0}}</span> บาท</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>โรคร้ายแรงในข้อ 22 ความคุ้มครอง</td>
+                                    <td class="txt-right ws-nowrap" style="display: inline-block; padding: 5px;">เท่ากับ
+                                        <span class="c-blue">{{riderD02 ? (riderD02|number) : 0}}</span> บาท</td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    -->
+                    </div>
+
+                    <div class="boxTableStyle4 c-666">
+                        - การเจ็บป่วยด้วยโรคร้ายแรง หรือ การผ่าตัดครั้งแรกจากโรคร้ายแรง จะต้องเกิดขึ้นภายหลัง 60 วัน (หรือ 90 วัน สำหรับการผ่าตัดเส้นเลือดเลี้ยงกล้ามเนื้อหัวใจ การผ่าตัดเส้นเลือดแดงใหญ่) นับจากวันเริ่มสัญญา หรือ วันต่ออายุครั้งสุดท้าย
+                        <br> - ผู้เอาประกันภัยจะต้องมีชีวิตอยู่จนพ้นระยะเวลา 30 วัน นับจากวันที่วินิจฉัยครั้งแรก ว่าป่วยด้วยโรคร้ายแรง หรือได้รับการผ่าตัด
+                    </div>
+
+                    <div class="boxComment4">
+                        หมายเหตุ : เมื่อบริษัทฯ จ่ายผลประโยชน์ กรณีใดกรณีหนึ่งใน 3 กรณีดังกล่าวข้างต้นแล้ว ให้ถือว่า สัญญาฉบับนี้สิ้นสุดลงทันที
+                    </div>
+                </div>
+
+                <div *ngIf="rider && rider[conf.rider('D03')].sum != 0">
+                    <div class="boxTableStyle4 c-666">
+                        <table>
+                            <tbody class="vTop">
+                                <tr>
+                                    <td colspan="3" class="c-blue">ผลประโยชน์ความคุ้มครอง (เมื่อมีการจ่ายกรณีใดกรณีหนึ่งต่อไปนี้ ให้ถือว่าสัญญาสิ้นสุดลง)</td>
+                                    <td class="txt-right ws-nowrap">
+                                        <a class="btn-style4 btn-style-m pdlr20" (click)="deadlyDisease('D03')"><span>โรคร้าย 3 กรณี >></span></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3">
+                                        <span class="olNum">1.</span>การเสียชีวิตทุกกรณี</td>
+                                    <td class="txt-right ws-nowrap">
+                                        เท่ากับ
+                                        <span class="c-blue">{{rider ? (rider[conf.rider('D03')].sum|number) : 0}}</span> บาท </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3">
+                                        <span class="olNum">2.</span>กรณีทุพพลภาพถาวรสิ้นเชิง (คุ้มครองถึงอายุ 70 ปี)</td>
+                                    <td class="txt-right ws-nowrap">
+                                        เท่ากับ
+                                        <span class="c-blue">{{rider ? (rider[conf.rider('D03')].sum|number) : 0}}</span> บาท </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3">
+                                        <span class="olNum">3.</span>กรณีเจ็บป่วยจากโรคร้ายแรง 3 กรณี</td>
+                                    <td class="txt-right ws-nowrap">
+                                        เท่ากับ
+                                        <span class="c-blue">{{rider ? (rider[conf.rider('D03')].sum|number) : 0}}</span> บาท </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="c-blue">
+                                                <b>ยกเว้น</b>
+                                            </span>
+                                    </td>
+                                    <td colspan="2"> โรคร้ายแรงในข้อ 3 และ 8 ความคุ้มครอง</td>
+                                    <td class="txt-right ws-nowrap">
+                                        เท่ากับ
+                                        <span class="c-blue">{{rider ? ((rider[conf.rider('D03')].sum*0.15)|number) : 0}}</span> บาท</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td colspan="2">โรคร้ายแรงในข้อ 10 ความคุ้มครอง</td>
+                                    <td class="txt-right ws-nowrap">เท่ากับ
+                                        <span class="c-blue">{{rider ? ((rider[conf.rider('D03')].sum < 500000 ? rider[conf.rider('D03')].sum * 0.5 : 500000)|number) : 0}}</span> บาท</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <br>
+                        <table>
+                            <tbody class="vTop">
+                                <tr>
+                                    <td colspan="2" class="c-blue">ผลประโยชน์เงินคืน</td>
+                                </tr>
+                                <tr>
+                                    <td>กรณีมีชีวิตอยู่จนครบสัญญา รับเงินครบสัญญา เท่ากับ</td>
+                                    <td class="txt-right ws-nowrap">
+                                        <span class="c-blue">{{rider ? (rider[conf.rider('D03')].sum|number) : 0}}</span> บาท </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </collapse>
+
+            <collapse collapseTab="ค่ารักษาพยาบาล" collapseTitle="ค่ารักษาพยาบาลรายวัน {{tkf ? '(ตรพ.)' : '(รพ.)'}}" collapseSubtitle="" [disabled]="!rider || rider[conf.rider('RP')].sum == 0">
+                <div class="contentStyle1">
+                    ชดเชยรายได้กรณีนอนโรงพยาบาลในฐานะผู้ป่วยในเป็นเวลาติดต่อกันไม่น้อยกว่า {{tkf ? '6' : '12'}} ชั่วโมง
+                </div>
+
+                <div class="boxListForm bgBlue1 pdt20 pdb20 c-666">
+                    <div class="col-sm-6 pdb5">
+                        <div class="col-xs-6 pdlr0">เข้าพักรักษาตัววันละ</div>
+                        <div class="col-xs-6 pdlr0">
+                            <div class="txt-right ws-nowrap">
+                                <span class="c-blue">{{rider ? (rider[conf.rider('RP')].sum|number) : 0}}</span> บาท</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 pdb5">
+                        <div class="col-xs-6 pdlr0">หรือเดือนละ</div>
+                        <div class="col-xs-6 pdlr0">
+                            <div class="txt-right ws-nowrap">
+                                <span class="c-blue">{{rider ? ((rider[conf.rider('RP')].sum*30)|number) : 0}}</span> บาท</div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+
+                    <div class="col-sm-12 pdb5">
+                        <div class="col-xs-12 pdlr0" *ngIf="tkf">
+                            (สูงสุด 365 วัน ต่อการบาดเจ็บหรือเจ็บป่วย 1 ครั้ง
+                            <span class="c-black pdl10 pdr10"> รวม</span>
+                            <span class="c-blue baht" *ngIf="tkf">{{rider ? ((rider[conf.rider('RP')].sum*365)|number) : 0}} <span class="c-666">บาท)</span></span>
+                            <span class="c-blue baht" *ngIf="!tkf">{{rider ? ((rider[conf.rider('RP')].sum*1250)|number) : 0}} <span class="c-666">บาท)</span></span>
+                        </div>
+                        <div class="col-xs-12 pdlr0" *ngIf="!tkf">
+                            (สูงสุด 1,250 วัน ต่อการบาดเจ็บหรือเจ็บป่วย 1 ครั้ง
+                            <span class="c-black pdl10 pdr10"> รวม</span>
+                            <span class="c-blue baht" *ngIf="tkf">{{rider ? ((rider[conf.rider('RP')].sum*365)|number) : 0}} <span class="c-666">บาท)</span></span>
+                            <span class="c-blue baht" *ngIf="!tkf">{{rider ? ((rider[conf.rider('RP')].sum*1250)|number) : 0}} <span class="c-666">บาท)</span></span>
+
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+
+                <div class="boxTableStyle4 c-666" [hidden]="tkf">
+                    <table>
+                        <tbody class="vTop">
+                            <tr>
+                                <td>กรณีแพทย์ตรวจพบโรคร้ายแรงตามที่ระบุจ่ายทันที</td>
+                                <td class="txt-right ws-nowrap">
+                                    <span class="c-blue">{{rider ? ((rider[conf.rider('RP')].sum*20)|number) : 0}}</span> บาท</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="boxListForm bgBlue1 pdt20 pdb20 c-666" [hidden]="tkf">
+                    <div class="col-sm-6 pdl0">
+                        <div class="hasNum pdb5">
+                            <span class="olNum">1.</span>โรคเอดส์</div>
+                        <div class="hasNum pdb5">
+                            <span class="olNum">2.</span>โรคถุงลมปอดโป่งพอง</div>
+                        <div class="hasNum pdb5">
+                            <span class="olNum">3.</span>โรคการแข็งตัวของเนื้อเยื่อโดยทั่วไป</div>
+                        <div class="hasNum pdb5">
+                            <span class="olNum">4.</span>โรคโปลิโอ</div>
+                    </div>
+                    <div class="col-sm-6 pdl0">
+                        <div class="hasNum pdb5">
+                            <span class="olNum">5.</span>โรคตับแข็ง</div>
+                        <div class="hasNum pdb5">
+                            <span class="olNum">6.</span>โรคมะเร็ง</div>
+                        <div class="hasNum pdb5">
+                            <span class="olNum">7.</span>โรคกล้ามเนื้อเสื่อม</div>
+                    </div>
+                </div>
+
+                <div class="boxTableStyle4 c-666" [hidden]="tkf">
+                    <table>
+                        <tbody class="vTop">
+                            <tr>
+                                <td>ความคุ้มครองกรณีเสียชีวิตด้วยโรคร้ายแรง ตามที่ระบุ</td>
+                                <td class="txt-right ws-nowrap">
+                                    <span class="c-blue">{{rider ? ((rider[conf.rider('RP')].sum*200)|number) : 0}}</span> บาท</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </collapse>
+
+            <collapse collapseTab="{{rider && rider[conf.rider('J0')].sum == 0 ? 'ประกันสุขภาพ' : 'ประกันสุขภาพเด็ก'}}" collapseTitle="การประกันสุขภาพ{{rider && rider[conf.rider('J0')].sum == 0 ? ' 80' : 'เด็ก'}} {{tkf ? ' (ตสพ.80)' : rider && rider[conf.rider('J0')].sum == 0 ? '( สพ.80)' : ''}}"
+                collapseSubtitle="สวัสดิการค่ารักษาพยาบาลในโรงพยาบาล ({{rider && rider[conf.rider('J0')].sum == 0 ? 'กรณีเกิน 6 ชั่วโมง' : 'กรณีต้องรักษาตัวเป็นผู้ป่วยในของโรงพยาบาลเกิน 6 ชั่วโมง'}})" [disabled]="!rider || (rider[conf.rider('H')].sum == 0 && rider[conf.rider('J0')].sum == 0)">
+                <div class="boxTableStyle4 contentStyle1 td_pd-2-15 bgBlue1 pdt20 pdb20 c-666" *ngIf="rider && rider[conf.rider('H')].sum != 0">
+                    <div class="col-sm-8 pdb5 hasNum">
+                        <span class="olNum">1.</span>ค่ารักษาพยาบาลในโรงพยาบาล
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="col-sm-8 pdb5 hasNumSub">
+                        <span class="olNum">1.1 </span>ค่าห้อง, ค่าอาหาร, ค่าบริการพยาบาลต่อวัน (สูงสุดไม่เกิน 150 วัน)
+                    </div>
+                    <div class="col-sm-4 pdb5">
+                        <div class="col-xs-6 pdlr0">(วันละ)</div>
+                        <div class="col-xs-6 pdlr0">
+                            <div class="txt-right ws-nowrap">
+                                <span class="c-blue">{{riderH ? (riderH[0]|number) : 0}}</span> บาท
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="col-sm-8 pdb5 hasNumSub">
+                        <span class="olNum">1.2 </span>ค่าห้อง, ค่าอาหารในห้องผู้ป่วยหนัก (ไอซียู) สูงสุดไม่เกิน 7 วัน
+                    </div>
+                    <div class="col-sm-4 pdb5">
+                        <div class="col-xs-6 pdlr0">(วันละ)</div>
+                        <div class="col-xs-6 pdlr0">
+                            <div class="txt-right ws-nowrap">
+                                <span class="c-blue">{{riderH ? (riderH[1]|number) : 0}}</span> บาท
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+
+                    <div class="col-sm-8 pdb5 hasNum">
+                        <span class="olNum">2.</span>ค่ารักษาพยาบาลอื่นๆ
+                    </div>
+                    <div class="col-sm-4 pdb5">
+                        <div class="col-xs-6 pdlr0">(ต่อครั้ง)</div>
+                        <div class="col-xs-6 pdlr0">
+                            <div class="txt-right ws-nowrap">
+                                <span class="c-blue">{{riderH ? (riderH[2]|number) : 0}}</span> บาท
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+
+                    <div class="col-sm-8 pdb5 hasNum">
+                        <span class="olNum">3.</span>ค่าธรรมเนียมแพทย์ผ่าตัด
+                    </div>
+                    <div class="col-sm-4 pdb5">
+                        <div class="col-xs-6 pdlr0">(ต่อครั้ง)</div>
+                        <div class="col-xs-6 pdlr0">
+                            <div class="txt-right ws-nowrap">
+                                <span class="c-blue">{{riderH ? (riderH[3]|number) : 0}}</span> บาท
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+
+                    <div class="col-sm-8 pdb5 hasNum">
+                        <span class="olNum">4.</span>ค่าห้องผ่าตัด
+                    </div>
+                    <div class="col-sm-4 pdb5">
+                        <div class="col-xs-6 pdlr0">(ต่อครั้ง)</div>
+                        <div class="col-xs-6 pdlr0">
+                            <div class="txt-right ws-nowrap">
+                                <span class="c-blue">{{riderH ? (riderH[4]|number) : 0}}</span> บาท
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+
+                    <div class="col-sm-8 pdb5 hasNum">
+                        <span class="olNum">5.</span>ค่าวางยาสลบ
+                    </div>
+                    <div class="col-sm-4 pdb5">
+                        <div class="col-xs-6 pdlr0">(ต่อครั้ง)</div>
+                        <div class="col-xs-6 pdlr0">
+                            <div class="txt-right ws-nowrap">
+                                <span class="c-blue">{{riderH ? (riderH[5]|number) : 0}}</span> บาท
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+
+                    <div class="col-sm-8 pdb5 hasNum">
+                        <span class="olNum">6.</span>ค่ารักษาพยาบาลฉุกเฉิน (เนื่องจากอุบัติเหตุและรักษาที่โรงพยาบาลภายใน 24 ชม.)
+                    </div>
+                    <div class="col-sm-4 pdb5">
+                        <div class="col-xs-6 pdlr0">(ต่อครั้ง)</div>
+                        <div class="col-xs-6 pdlr0">
+                            <div class="txt-right ws-nowrap">
+                                <span class="c-blue">{{riderH ? (riderH[6]|number) : 0}}</span> บาท
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+
+                    <div class="col-sm-8 pdb5 hasNum">
+                        <span class="olNum">7.</span>ค่าเอ็กซ์เรย์ แล็ป
+                    </div>
+                    <div class="col-sm-4 pdb5">
+                        <div class="col-xs-6 pdlr0">(ต่อครั้ง)</div>
+                        <div class="col-xs-6 pdlr0">
+                            <div class="txt-right ws-nowrap">
+                                <span class="c-blue">{{riderH ? (riderH[7]|number) : 0}}</span> บาท
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+
+                    <div class="col-sm-8 pdb5 hasNum">
+                        <span class="olNum">8.</span>ค่าธรรมเนียมแพทย์ (สูงสุดไม่เกิน 150 วัน)
+                    </div>
+                    <div class="col-sm-4 pdb5">
+                        <div class="col-xs-6 pdlr0">(วันละ)</div>
+                        <div class="col-xs-6 pdlr0">
+                            <div class="txt-right ws-nowrap">
+                                <span class="c-blue">{{riderH ? (riderH[8]|number) : 0}}</span> บาท
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+
+                    <div class="col-sm-8 col-xs-6 pdb5 hasNum">
+                        <span class="olNum">9.</span>ค่ารักษาด้วยวิธี Stem Cell
+                    </div>
+                    <div class="col-sm-4 col-xs-6 pdb5">
+                        <div class="txt-right ws-nowrap">
+                            <span class="c-blue">{{riderH ? (riderH[9]|number) : 0}}</span> บาท
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+
+                    <div class="col-sm-8 pdb5">
+                        <span class="txt-highlight">รวมเบิกได้สูงสุดตามใบเสร็จจริงถึง</span>
+                    </div>
+                    <div class="col-sm-4 pdb5">
+                        <div class="col-xs-6 pdlr0">(ต่อครั้ง)</div>
+                        <div class="col-xs-6 pdlr0">
+                            <div class="txt-right ws-nowrap">
+                                <span class="c-blue">{{riderH ? (riderH[10]|number) : 0}}</span> บาท
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+
+                <div class="c-red" *ngIf="rider && rider[conf.rider('H')].sum != 0 && !tkf">กรณีที่ผู้เอาประกันภัยเจ็บป่วย บริษัทฯ จะจ่ายผลประโยชน์ให้เมื่อพ้นกำหนด 30 วัน นับแต่วันทำสัญญา หรือต่ออายุสัญญาครั้งสุดท้าย</div>
+                <div class="" *ngIf="rider && rider[conf.rider('H')].sum != 0 && !tkf">ยกเว้น โรคเนื้องอก ถุงน้ำ มะเร็ง ริดสีดวง ไส้เลื่อน ต้อเนื้อ ต้อกระจก การตัดทอนซิล หรืออดีนอยด์ นิ่ว เส้นเลือดขอดที่ขา เยื่อบุโพรงมดลูกเจริญผิดที่ จะได้รับผลประโยชน์ เมื่อพ้นกำหนด 120 วัน นับแต่วันเริ่มสัญญา หรือวันต่ออายุสัญญาครั้งสุดท้าย</div>
+                <div class="c-red" *ngIf="tkf">กรณีสมาชิกตากะฟูลเจ็บป่วย บริษัทฯ จะจ่ายผลประโยชน์ให้เมื่อพ้นกำหนด 30 วัน นับแต่วันทำสัญญา หรือต่ออายุสัญญาครั้งสุดท้าย</div>
+                <div class="" *ngIf="tkf">ยกเว้น โรคเนื้องอก ถุงน้ำ มะเร็ง ริดสีดวง ไส้เลื่อน ต้อเนื้อ ต้อกระจก การตัดทอนซิล หรืออดีนอยด์ นิ่ว เส้นเลือดขอดที่ขา เยื่อบุโพรงมดลูกเจริญผิดที่ จะได้รับผลประโยชน์ เมื่อพ้นกำหนด 120 วัน นับแต่วันเริ่มสัญญา หรือวันต่ออายุสัญญาครั้งสุดท้าย</div>
+
+                <div class="boxComment4" *ngIf="rider && rider[conf.rider('H')].sum != 0">
+                    หมายเหตุ : การจ่ายผลประโยชน์ตามข้อ 1.1 และ 1.2 รวมกันแล้วไม่เกิน 150 วัน
+                </div>
+
+                <div class="contentAcc j0" *ngIf="rider && rider[conf.rider('J0')].sum != 0">
+                    <div class="c-blue boxTableStyle4">
+                        แสดงผลประโยชน์สำหรับผู้ป่วยใน
+                        <input name="radio-choice-j0" id="radio-choice-j0-1" class="radio-style" type="radio" [checked]="!choiceJ0" (change)="choiceJ0 = false" />
+                        <label for="radio-choice-j0-1">กรณีที่<u>ไม่มี</u>การผ่าตัด</label>
+                        <input name="radio-choice-j0" id="radio-choice-j0-2" class="radio-style" type="radio" [checked]="choiceJ0" (change)="choiceJ0 = true" />
+                        <label for="radio-choice-j0-2">กรณีมีการผ่าตัด</label>
+                    </div>
+
+                    <div class="row tableStyle">
+                        <div class="col-xs-6 txt-center">ความคุ้มครอง</div>
+                        <div class="col-xs-3 txt-center" *ngIf="!choiceJ0">ปีคุ้มครองที่</div>
+                        <div class="txt-center" [ngClass]="{'col-xs-3': !choiceJ0, 'col-xs-6': choiceJ0}">ผลประโยชน์</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6" *ngIf="choiceJ0">
+                            <p class="hasNum">
+                                <b>
+                                    <span class="olNum">1.</span>
+                                    ค่ารักษาพยาบาลเหมาจ่ายกรณีเจ็บป่วยหรือบาดเจ็บจากอุบัติเหตุ
+                                </b>
+                            </p>
+                        </div>
+                        <div class="col-xs-6" *ngIf="choiceJ0"></div>
+
+                        <div class="col-xs-6" *ngIf="choiceJ0">
+                            <p class="hasNumSub">
+                                <span class="olNum">1.1</span> ค่าห้อง ค่าอาหาร ค่าบริการพยาบาลประจำวันต่อวัน
+                            </p>
+                        </div>
+                        <div class="col-xs-6" *ngIf="choiceJ0">
+                            <p class="pdb10">{{(rider && rider[conf.rider('J0')].sum * 1000) + 2000 | number }} x (ICU จ่าย 2 เท่า สูงสุด 7 วัน) รวมสูงสุดไม่เกิน 150 วัน</p>
+                            <div class="row tableStyle">
+                                <div class="col-xs-6 txt-center">ปีคุ้มครองที่</div>
+                                <div class="col-xs-6 txt-center">ผลประโยชน์</div>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-6">
+                            <p class="hasNum" *ngIf="!choiceJ0">
+                                <b>
+                                    <span class="olNum">1.</span>
+                                    ค่ารักษาพยาบาลเหมาจ่ายกรณีเจ็บป่วยหรือบาดเจ็บจากอุบัติเหตุ
+                                </b>
+                            </p>
+                            <p class="hasNumSub" *ngIf="!choiceJ0">
+                                <span class="olNum">1.1</span> ค่าห้อง ค่าอาหาร ค่าบริการพยาบาลประจำวันต่อวัน
+                            </p>
+                            <p class="hasNumSub">
+                                <span class="olNum">1.2</span> ค่ายากลับบ้าน (สูงสุดไม่เกิน 7 วันและไม่เกิน 1,000 บาทต่อการเข้าพัก รักษาตัวในโรงพยาบาลแต่ละครั้ง)
+                            </p>
+                            <p class="hasNumSub">
+                                <span class="olNum">1.3</span> ค่าแพทย์ตรวจรักษาในโรงพยาบาลประจำวันต่อวัน
+                            </p>
+                            <p class="hasNumSub">
+                                <span class="olNum">1.4</span> ค่ารถพยาบาลฉุกเฉิน
+                            </p>
+                            <p class="hasNumSub">
+                                <span class="olNum">1.5</span> ค่ารักษาพยาบาลโดยการผ่าตัด
+                            </p>
+                            <p class="hasNumSub">
+                                <span class="olNum">1.6</span> ค่ารักษาพยาบาลอื่นๆ ในโรงพยาบาล
+                            </p>
+                            <p class="hasNumSub">
+                                <span class="olNum">1.7</span> ค่าตรวจวินิจฉัยทางรังสีวิทยา และการตรวจทางห้องปฏิบัติการสำหรับผู้ป่วยนอก ซึ่งเกิดขึ้นภายใน 30 วันก่อนหรือหลังการเข้าพักรักษาตัวในโรงพยาบาล ต่อการเข้าพักรักษาตัวครั้งใดครั้งหนึ่ง
+                            </p>
+                        </div>
+
+                        <div class="col-xs-6 sumJ0PlanH">
+                            <div class="row" *ngFor="let item of sumJ0PlanH; let i = index; let last = last;">
+                                <div class="col-xs-6 txt-center">{{ i + 1 }}<span *ngIf="last"><br />เป็นต้นไป</span></div>
+                                <div class="col-xs-6 txt-center" *ngIf="!choiceJ0">{{ item.num | number }}</div>
+                                <div class="col-xs-6 txt-center" *ngIf="choiceJ0">{{ item.num2 | number }}</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row pdt10 pdb10">
+                        <div class="col-xs-12">
+                            <p>ผลประโยชน์ตามข้อ 1 ข้างต้น จะเพิ่มเป็น 3 เท่า ในกรณีที่วันแรกของการเข้าพักรักษาตัวเป็นผู้ป่วยในอยู่ในรอบปีกรมธรรม์ที่ผู้เอาประกันภัยมีอายุไม่เกิน 16 ปี และ การเข้าพักรักษาตัวเป็นผู้ป่วยในครั้งนั้น ได้รับการวินิจฉัย และเป็นผลโดยตรงจากโรคใดโรคหนึ่ง
+                                ดังต่อไปนี้
+                            </p>
+                            <ul class="mgt0 mgb0 list">
+                                <li>โรคไข้รูห์มาติกที่ทำให้หัวใจผิดปกติ (Rheumatic Fever With Heart Involvement)</li>
+                                <li>โรคคาวาซากิที่ทำให้เกิดโรคแทรกซ้อนของหัวใจ (Kawasaki Disease With Heart Complications)</li>
+                                <li>โรคเบาหวานในเด็ก (Diabetes)</li>
+                                <li>โรคน้ำไขสันหลังในสมองมาก ซึ่งเกิดภายหลังและต้องใส่ท่อระบายน้ำ (Acquired Hydrocephalus Requiring An External Shunt) (เนื่องจากอุบัติเหตุภายใน 24 ชั่วโมง) ต่อการบาดเจ็บแต่ละครั้ง</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="row bgBlue1 pdt10 pdb10">
+                        <div class="col-xs-6">
+                            <p class="hasNum">
+                                <b>
+                                    <span class="olNum">2.</span>
+                                    ค่ารักษาพยาบาลฉุกเฉินขณะเป็นผู้ป่วยนอก
+                                </b> (เนื่องจากอุบัติเหตุภายใน 24 ชั่วโมง) ต่อการบาดเจ็บแต่ละครั้ง
+                            </p>
+                        </div>
+                        <div class="col-xs-6">
+                            <p class="txt-center" *ngIf="rider && rider[conf.rider('J0')].sum == '1'">{{20000 | number}}</p>
+                            <p class="txt-center" *ngIf="rider && rider[conf.rider('J0')].sum == '2'">{{30000 | number}}</p>
+                            <p class="txt-center" *ngIf="rider && rider[conf.rider('J0')].sum == '3'">{{40000 | number}}</p>
+                        </div>
+                    </div>
+
+                    <div class="row pdt10 pdb10">
+                        <div class="col-xs-6">
+                            <p class="hasNum">
+                                <b>
+                                    <span class="olNum">3.</span>
+                                    ผลประโยชน์กรณีเสียชีวิต
+                                </b>
+                            </p>
+                        </div>
+                        <div class="col-xs-6">
+                            <p class="txt-center" *ngIf="rider && rider[conf.rider('J0')].sum == '1' || rider && rider[conf.rider('J0')].sum == '2' || rider && rider[conf.rider('J0')].sum == '3'">
+                                {{ 50000 | number }}
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="row bgBlue1 pdt10 pdb10">
+                        <div class="col-xs-12">
+                            <p><b>กรณีผู้เอาประกันภัยไม่ได้ใช้สิทธิเรียกร้องสินไหมทดแทนตามข้อ 1 บริษัทจะจ่ายผลประโยชน์ ดังต่อไปนี้</b></p>
+                        </div>
+                    </div>
+
+                    <div class="row pdt10 pdb10">
+                        <div class="col-xs-6">
+                            <p class="hasNum">
+                                <b>
+                                    <span class="olNum">1.</span>
+                                    ผลประโยชน์ค่าชดเชยรายวัน
+                                </b> เมื่อผู้เอาประกันภัยเข้ารับการรักษาตัวเป็นผู้ป่วยในของโรงพยาบาล (สูงสุดไม่เกิน 15 วันต่อการเข้าพักรักษาตัวครั้งใดครั้งหนึ่ง)
+                            </p>
+                        </div>
+                        <div class="col-xs-6">
+                            <p class="txt-center" *ngIf="rider && rider[conf.rider('J0')].sum == '1'" style="text-align: center;">{{1000 | number}}</p>
+                            <p class="txt-center" *ngIf="rider && rider[conf.rider('J0')].sum == '2'" style="text-align: center;">{{1500 | number}}</p>
+                            <p class="txt-center" *ngIf="rider && rider[conf.rider('J0')].sum == '3'" style="text-align: center;">{{2000 | number}}</p>
+                        </div>
+                    </div>
+
+                    <div class="row bgBlue1 pdt10 pdb10">
+                        <div class="col-xs-6">
+                            <p class="hasNum">
+                                <b>
+                                    <span class="olNum">2.</span>
+                                    ผลประโยชน์ค่าชดเชยรายวัน กรณีผู้ป่วยในที่ไม่ต้องเข้าพักรักษาตัวในโรงพยาบาล (Day Case)
+                                </b> (สูงสุดไม่เกิน 1 วันต่อการเข้าพักรักษาตัวครั้งใดครั้งหนึ่ง)
+                            </p>
+                        </div>
+                        <div class="col-xs-6">
+                            <p class="txt-center" *ngIf="rider && rider[conf.rider('J0')].sum == '1'" style="text-align: center;">{{1000 | number}}</p>
+                            <p class="txt-center" *ngIf="rider && rider[conf.rider('J0')].sum == '2'" style="text-align: center;">{{1500 | number}}</p>
+                            <p class="txt-center" *ngIf="rider && rider[conf.rider('J0')].sum == '3'" style="text-align: center;">{{2000 | number}}</p>
+                        </div>
+                    </div>
+
+                    <div class="row pdt10 pdb10">
+                        <div class="col-xs-6">
+                            <p class="hasNum">
+                                <b>
+                                    <span class="olNum">3.</span>
+                                    ผลประโยชน์การผ่าตัดสำหรับผู้ป่วยใน
+                                </b> คือ การผ่าตัดที่มีการวางยาสลบแบบทั่วไป (general anesthesia) หรือฉีดยาชาเข้าไขสันหลัง (spinal block) หรือนอกไขสันหลัง (epidural block) โดยวิสัญญีแพทย์ และจำเป็นต้องเข้าพักรักษาตัวเป็นผู้ป่วยในของโรงพยาบาล
+                                (สูงสุดไม่เกิน 1 ครั้งต่อการเข้าพักรักษาตัวครั้งใดครั้งหนึ่ง)
+                            </p>
+                        </div>
+                        <div class="col-xs-6">
+                            <p class="txt-center" *ngIf="rider && rider[conf.rider('J0')].sum == '1'" style="text-align: center;">{{5000 | number}}</p>
+                            <p class="txt-center" *ngIf="rider && rider[conf.rider('J0')].sum == '2'" style="text-align: center;">{{7500 | number}}</p>
+                            <p class="txt-center" *ngIf="rider && rider[conf.rider('J0')].sum == '3'" style="text-align: center;">{{10000 | number}}</p>
+                        </div>
+                    </div>
+
+                    <div class="row bgBlue1 pdt10 pdb10">
+                        <div class="col-xs-12">
+                            <p>การจ่ายผลประโยชน์ค่าชดเชยรายวัน ในข้อ 1 และข้อ 2 รวมกันแล้ว สูงสุดไม่เกิน 15 วันต่อการเข้าพักรักษาตัวครั้งใดครั้งหนึ่ง</p>
+                        </div>
+                    </div>
+
+                    <!--
+                    <table class="dataTable riderJ0">
+                        <thead>
+                            <tr>
+                                <th class="txt-center">สำหรับผู้ป่วยใน</th>
+                                <th class="txt-left">กรณีที่<u>ไม่มี</u>การผ่าตัดสำหรับผู้ป่วยใน</th>
+                                <th class="txt-left">กรณีที่<u>มี</u>การผ่าตัดสำหรับผู้ป่วยใน</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <b>1. ค่ารักษาพยาบาลเหมาจ่ายกรณีเจ็บป่วยหรือบาดเจ็บจากอุบัติเหตุ</b> <br>
+                                    <label style="margin-left:10px">1.1 ค่าห้อง ค่าอาหาร ค่าบริการพยาบาลประจำวันต่อวัน</label>
+                                </td>
+                                <td rowspan="2">
+                                    <table class='dataTable'>
+                                        <thead>
+                                            <tr>
+                                                <th style="text-align: center;">ปีคุ้มครองที่</th>
+                                                <th style="text-align: center;">
+                                                    {{(rider && rider[conf.rider('J0')].sum) * 5000 + 5000 | number}}
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr *ngFor="let item of sumJ0PlanH; let i = index;let last = last;">
+                                                <td style="text-align: center;">
+                                                    {{i + 1}}
+                                                    <br>{{last ? 'เป็นต้นไป' : ''}}
+                                                </td>
+                                                <td style="text-align: center;">{{item.num | number}}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                                <td>
+                                    {{(rider && rider[conf.rider('J0')].sum * 1000) + 2000 }}*(ICU จ่าย 2 เท่า สูงสุด 7 วัน) <br> รวมสูงสุดไม่เกิน 150 วัน
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="vertical-align: top;">
+                                    <br>
+                                    <label style="margin-left:10px">1.2 ค่ายากลับบ้าน (สูงสุดไม่เกิน 7 วันและไม่เกิน 1,000 บาทต่อการเข้าพัก
+										รักษาตัวในโรงพยาบาลแต่ละครั้ง)<br></label>
+                                    <label style="margin-left:10px">1.3 ค่าแพทย์ตรวจรักษาในโรงพยาบาลประจำวันต่อวัน<br></label>
+                                    <label style="margin-left:10px">1.4 ค่ารถพยาบาลฉุกเฉิน<br></label>
+                                    <label style="margin-left:10px">1.5 ค่ารักษาพยาบาลโดยการผ่าตัด<br></label>
+                                    <label style="margin-left:10px">1.6 ค่ารักษาพยาบาลอื่นๆ ในโรงพยาบาล<br></label>
+                                    <label style="margin-left:10px">1.7 ค่าตรวจวินิจฉัยทางรังสีวิทยา และการตรวจทางห้องปฏิบัติการ สำหรับผู้ป่วย
+										นอกซึ่งเกิดขึ้นภายใน 30 วันก่อนหรือหลังการเข้าพักรักษาตัวในโรงพยาบาล 
+										ต่อการเข้าพักรักษาตัวครั้งใดครั้งหนึ่ง </label>
+                                </td>
+                                <td>
+                                    <table class='dataTable'>
+                                        <thead>
+                                            <tr>
+                                                <th style="text-align: center;">ปีคุ้มครองที่</th>
+                                                <th style="text-align: center;">
+                                                    {{(rider && rider[conf.rider('J0')].sum) * 5000 + 5000 | number}}
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr *ngFor="let item of sumJ0PlanH; let i = index;let last = last;">
+                                                <td style="text-align: center;">
+                                                    {{i + 1}}
+                                                    <br>{{last ? 'เป็นต้นไป' : ''}}
+                                                </td>
+                                                <td style="text-align: center;">{{item.num2 | number}}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="3" class='left'><label class="">
+                                    ผลประโยชน์ตามข้อ 1 ข้างต้น จะเพิ่มเป็น 3 เท่า ในกรณีที่วันแรกของการเข้าพักรักษาตัวเป็นผู้ป่วยในอยู่ในรอบปีกรมธรรม์ที่ผู้เอาประกันภัยมีอายุไม่เกิน 16 ปี และ
+                                    การเข้าพักรักษาตัวเป็นผู้ป่วยในครั้งนั้น ได้รับการวินิจฉัย และเป็นผลโดยตรงจากโรคใดโรคหนึ่ง ดังต่อไปนี้  <br>
+                                    - โรคไข้รูห์มาติกที่ทำให้หัวใจผิดปกติ (Rheumatic Fever With Heart Involvement) <br>
+                                    - โรคคาวาซากิที่ทำให้เกิดโรคแทรกซ้อนของหัวใจ (Kawasaki  Disease  With Heart Complications)<br>
+                                    - โรคเบาหวานในเด็ก(Diabetes)<br>
+                                    - โรคน้ำไขสันหลังในสมองมาก ซึ่งเกิดภายหลังและต้องใส่ท่อระบายน้ำ (Acquired Hydrocephalus Requiring An External Shunt)(เนื่องจากอุบัติเหตุภายใน 24 ชั่วโมง) ต่อการบาดเจ็บแต่ละครั้ง</label> </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 50%">
+                                    <b>2. ค่ารักษาพยาบาลฉุกเฉินขณะเป็นผู้ป่วยนอก</b> (เนื่องจากอุบัติเหตุภายใน 24 ชั่วโมง) ต่อการบาดเจ็บแต่ละครั้ง
+                                </td>
+                                <td colspan="2" *ngIf="rider && rider[conf.rider('J0')].sum == '1'" style="text-align: center;">{{20000 | number}}</td>
+                                <td colspan="2" *ngIf="rider && rider[conf.rider('J0')].sum == '2'" style="text-align: center;">{{30000 | number}}</td>
+                                <td colspan="2" *ngIf="rider && rider[conf.rider('J0')].sum == '3'" style="text-align: center;">{{40000 | number}}</td>
+                            </tr>
+                            <tr>
+                                <td style="width: 50%">
+                                    <b>3. ผลประโยชน์กรณีเสียชีวิต</b>
+                                </td>
+                                <td colspan="2" *ngIf="rider && rider[conf.rider('J0')].sum == '1' || rider && rider[conf.rider('J0')].sum == '2' || rider && rider[conf.rider('J0')].sum == '3'" style="text-align: center;">{{50000 | number}}</td>
+                            </tr>
+                            <tr>
+                                <td colspan="3"><b>กรณีผู้เอาประกันภัยไม่ได้ใช้สิทธิเรียกร้องสินไหมทดแทนตามข้อ 1 บริษัทจะจ่ายผลประโยชน์ ดังต่อไปนี้</b></td>
+                            </tr>
+                            <tr>
+                                <td style="width: 50%">
+                                    <b>1. ผลประโยชน์ค่าชดเชยรายวัน</b> เมื่อผู้เอาประกันภัยเข้ารับการรักษาตัวเป็นผู้ป่วยในของโรงพยาบาล (สูงสุดไม่เกิน 15 วันต่อการเข้าพักรักษาตัวครั้งใดครั้งหนึ่ง)
+                                </td>
+                                <td colspan="2" *ngIf="rider && rider[conf.rider('J0')].sum == '1'" style="text-align: center;">{{1000 | number}}</td>
+                                <td colspan="2" *ngIf="rider && rider[conf.rider('J0')].sum == '2'" style="text-align: center;">{{1500 | number}}</td>
+                                <td colspan="2" *ngIf="rider && rider[conf.rider('J0')].sum == '3'" style="text-align: center;">{{2000 | number}}</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b>2. ผลประโยชน์ค่าชดเชยรายวัน กรณีผู้ป่วยในที่ไม่ต้องเข้าพักรักษาตัวในโรงพยาบาล (Day Case)</b>
+                                    <br>(สูงสุดไม่เกิน 1 วันต่อการเข้าพักรักษาตัวครั้งใดครั้งหนึ่ง)
+                                </td>
+                                <td *ngIf="rider && rider[conf.rider('J0')].sum == '1'" style="text-align: center;">{{1000 | number}}</td>
+                                <td *ngIf="rider && rider[conf.rider('J0')].sum == '2'" style="text-align: center;">{{1500 | number}}</td>
+                                <td *ngIf="rider && rider[conf.rider('J0')].sum == '3'" style="text-align: center;">{{2000 | number}}</td>
+                                <td style="text-align: center;">
+                                    -<br>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 50%">
+                                    <label class="font_title"><b>3. ผลประโยชน์การผ่าตัดสำหรับผู้ป่วยใน</b></label> คือ การผ่าตัดที่มีการวางยาสลบแบบทั่วไป (general anesthesia) หรือฉีดยาชาเข้าไขสันหลัง(spinal block) หรือนอกไขสันหลัง (epidural block) โดยวิสัญญีแพทย์
+                                    และจำเป็นต้องเข้าพักรักษาตัวเป็นผู้ป่วยในของโรงพยาบาล (สูงสุดไม่เกิน 1 ครั้งต่อการเข้าพักรักษาตัวครั้งใดครั้งหนึ่ง)
+                                </td>
+                                <td style="text-align: center;">
+                                    -<br>
+                                </td>
+                                <td *ngIf="rider && rider[conf.rider('J0')].sum == '1'" style="text-align: center;">{{5000 | number}}</td>
+                                <td *ngIf="rider && rider[conf.rider('J0')].sum == '2'" style="text-align: center;">{{7500 | number}}</td>
+                                <td *ngIf="rider && rider[conf.rider('J0')].sum == '3'" style="text-align: center;">{{10000 | number}}</td>
+                            </tr>
+                            <tr>
+                                <td colspan="3" style="width: 50%">
+                                    การจ่ายผลประโยชน์ค่าชดเชยรายวัน ในข้อ 1 และข้อ 2 รวมกันแล้ว สูงสุดไม่เกิน 15 วันต่อการเข้าพักรักษาตัวครั้งใดครั้งหนึ่ง
+                                </td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+                -->
+                    <div class="boxComment4">
+                        <label style="text-decoration: underline">หมายเหตุ</label><br>
+                        <label style="text-align: justify">
+                            - การเข้าพักรักษาตัวครั้งใดครั้งหนึ่ง หมายถึง การต้องอยู่ในโรงพยาบาลเพื่อการรักษาในฐานะผู้ป่วยในครั้งใดครั้งหนึ่ง และให้รวมถึงการต้องอยู่ในโรงพยาบาลสองครั้งหรือมากกว่าด้วยสาเหตุ หรือโรคหรือ
+                            ภาวะแทรกซ้อนจากโรคเดียวกัน โดยที่ระยะเวลาของการต้องอยู่ในโรงพยาบาล แต่ละครั้งห่างกันไม่เกิน 90 วันนับแต่จากวันที่ออกจากโรงพยาบาลครั้งสุดท้าย ก็ให้ถือว่าเป็นการเข้าพักรักษาตัวครั้งเดียวกันด้วย<br>
+                            - สัญญาเพิ่มเติมนี้มีระยะเวลาเอาประกันภัย 1 ปี และบริษัทจะต่ออายุสัญญาเพิ่มเติมนี้โดยอัตโนมัติภายใต้ข้อกำหนดทั่วไปของสัญญาเพิ่มเติมนี้ โดยผู้เอาประกันภัยต้องชำระเบี้ยประกันภัยภายในระยะเวลาผ่อนผัน
+                            และอัตราเบี้ยประกันภัยจะถูกปรับเปลี่ยนตามอายุ และปีคุ้มครอง ตามอัตราเบี้ยประกันภัยที่ได้รับความเห็นชอบจากนายทะเบียน<br>
+                            * ค่าห้อง ค่าอาหาร ค่าบริการพยาบาลประจำวัน ICU จ่าย 2 เท่า สูงสุด 7 วัน รวมสูงสุดไม่เกิน 150 วัน
+                        </label>
+                    </div>
+                </div>
+
+            </collapse>
+
+            <collapse collapseTab="เฉพาะกาล" collapseTitle="เฉพาะกาล (ฉพ.)" collapseSubtitle="" [disabled]="!rider || rider[conf.rider('JP')].sum == 0">
+                <div class="contentStyle1">
+                    <div class="pd20 c-666">
+                        กรณีเสียชีวิตภายในกำหนดระยะเวลาเอาประกันภัยของสัญญาเพิ่มเติมแบบเฉพาะกาล (ฉพ.)
+                        <br> จ่ายทันที
+                        <span class="c-blue">{{rider ? (rider[conf.rider('JP')].sum|number) : 0}}</span> บาท
+                    </div>
+                    <div class="pd20 bgBlue1 c-666">
+                        บริษัทฯ จะจ่ายเงินทดแทนในกรณีการเสียชีวิตของผู้เอาประกันภัย ก่อนวันสิ้นสุดกำหนดระยะเวลาเอาประกันภัย ตามสัญญาพิเศษเพิ่มเติมเฉพาะกาล (ฉพ.) เท่านั้น
+                    </div>
+                    <div class="pd20 c-666">
+                        ความคุ้มครองการเสียชีวิตทุกกรณี
+                        <span class="c-blue">{{rider ? (rider[conf.rider('JP')].sum|number) : 0}}</span> บาท
+                    </div>
+                </div>
+            </collapse>
+
+            <collapse collapseTab="รักษาพยาบาลโรคร้ายแรง" collapseTitle="รักษาพยาบาลโรคร้ายแรง" collapseSubtitle="ความคุ้มครองการเสียชีวิต และค่ารักษาพยาบาลรายวันจากโรคร้ายแรง 2 (สร.2)" [disabled]="!rider || rider[conf.rider('SR2')].sum == 0">
+                <div class="boxTableStyle4 contentStyle1 td_pd-2-15 bgBlue1 pdt20 pdb20 c-666">
+                    <table>
+                        <tbody class="vTop">
+                            <tr>
+                                <td class="hasNum" colspan="3">
+                                    <span class="olNum">1.</span>ผลประโยชน์ค่ารักษาพยาบาลรายวันจากโรคร้ายแรง</td>
+                            </tr>
+                            <tr>
+                                <td class="hasNumSub" colspan="2">
+                                    <span class="olNum">1.1 </span>กรณีเข้าพักรักษาตัวเป็นผู้ป่วยใน (วันละ)</td>
+                                <td class="txt-right ws-nowrap">
+                                    <span class="c-blue">{{rider ? ((rider[conf.rider('SR2')].sum*1000)|number) : 0}}</span> บาท</td>
+                            </tr>
+                            <tr>
+                                <!-- <td class="hasNumSub padding-right-0">
+                                    <span class="olNum">-</span>
+                                </td> -->
+                                <td class="hasNumSub padding-right-0" colspan="2"><span class="olNum">-</span>ในกรณีที่วันแรกของการเข้าพักรักษาตัวครั้งใดครั้งหนึ่ง อยู่ในรอบปีกรมธรรม์ที่ผู้เอาประกันภัยมีอายุ 20 ถึง 59 ปี ผลประโยชน์ดังกล่าวจะจ่าย วันละ</td>
+                                <td class="txt-right ws-nowrap vertical-align-bottom">
+                                    <span class="c-blue">{{rider ? ((rider[conf.rider('SR2')].sum*2000)|number) : 0}}</span> บาท</td>
+                            </tr>
+                            <tr>
+                                <!-- <td class="hasNumSub padding-right-0">
+                                    <span class="olNum">-</span>
+                                </td> -->
+                                <td class="hasNumSub padding-right-0" colspan="2"><span class="olNum">-</span>ในกรณีที่วันแรกของการเข้าพักรักษาตัวครั้งใดครั้งหนึ่งอยู่ในรอบปีกรมธรรม์ที่ผู้เอาประกันภัยมีอายุตั้งแต่ 60 ปีขึ้นไป ผลประโยชน์ดังกล่าวจะจ่าย วันละ</td>
+                                <td class="txt-right ws-nowrap vertical-align-bottom">
+                                    <span class="c-blue">{{rider ? ((rider[conf.rider('SR2')].sum*1000)|number) : 0}}</span> บาท</td>
+                            </tr>
+                            <tr>
+                                <!-- <td class="hasNumSub padding-right-0">
+                                    <span class="olNum">-</span>
+                                </td> -->
+                                <td class="hasNumSub padding-right-0" colspan="2"><span class="olNum">-</span>ในกรณีที่ผู้เอาประกันภัยเข้าพักรักษาตัวในห้องผู้ป่วยหนัก (ไอ.ซี.ยู) (ตามจำนวนวันที่ผู้เอาประกันภัยเข้ารับการรักษาตัวในห้อง ผู้ป่วยหนัก (ไอ.ซี.ยู)) ผลประโยชน์ดังกล่าวจะจ่าย วันละ</td>
+                                <td class="txt-right ws-nowrap vertical-align-bottom">
+                                    <span class="c-blue">{{rider ? ((rider[conf.rider('SR2')].sum*3000)|number) : 0}}</span> บาท</td>
+                            </tr>
+                            <tr>
+                                <td class="hasNumSub" colspan="2">
+                                    <span class="olNum">1.2 </span>ผลประโยชน์ค่ารักษาพยาบาลรายวัน กรณีผู้ป่วยใน ที่ไม่ต้องพักรักษาตัวในโรงพยาบาล (Day Case) จะได้รับค่ารักษาพยาบาลรายวันจำนวน 1 วัน</td>
+                                <td class="txt-right ws-nowrap">
+                                    <span class="c-blue">{{rider ? ((rider[conf.rider('SR2')].sum*1000)|number) : 0}}</span> บาท</td>
+                            </tr>
+                            <tr>
+                                <!-- <td class="hasNumSub padding-right-0">
+                                    <span class="olNum">-</span>
+                                </td> -->
+                                <td class="hasNumSub padding-right-0" colspan="2"><span class="olNum">-</span>ในกรณีที่วันแรกของการเข้าพักรักษาตัวครั้งใดครั้งหนึ่ง อยู่ในรอบปีกรมธรรม์ที่ผู้เอาประกันภัยมีอายุ 20 ถึง 59 ปี ผลประโยชน์ดังกล่าวจะจ่าย</td>
+                                <td class="txt-right ws-nowrap vertical-align-bottom">
+                                    <span class="c-blue">{{rider ? ((rider[conf.rider('SR2')].sum*2000)|number) : 0}}</span> บาท</td>
+                            </tr>
+                            <tr>
+                                <!-- <td class="hasNumSub padding-right-0">
+                                    <span class="olNum">-</span>
+                                </td> -->
+                                <td class="hasNumSub padding-right-0" colspan="2"><span class="olNum">-</span>ในกรณีที่วันแรกของการเข้าพักรักษาตัวครั้งใดครั้งหนึ่ง อยู่ในรอบปีกรมธรรม์ที่ผู้เอาประกันภัยมีอายุตั้งแต่ 60 ปีขึ้นไป ผลประโยชน์ดังกล่าวจะจ่าย</td>
+                                <td class="txt-right ws-nowrap vertical-align-bottom">
+                                    <span class="c-blue">{{rider ? ((rider[conf.rider('SR2')].sum*1000)|number) : 0}}</span> บาท</td>
+                            </tr>
+                            <tr>
+                                <td class="hasNum" colspan="2">
+                                    <span class="olNum">2.</span>ผลประโยชน์กรณีเสียชีวิตจากโรคร้ายแรง</td>
+                                <td class="txt-right ws-nowrap">
+                                    <span class="c-blue">{{rider ? ((rider[conf.rider('SR2')].sum*200000)|number) : 0}}</span> บาท</td>
+                            </tr>
+                            <tr>
+                                <td class="hasNum" colspan="3">
+                                    <div class="boxListForm bgBlue1 pdt20 pdb20 c-666">
+                                        <div class="col-xs-6 pdl0">
+                                            <div class="hasNum pdb5">
+                                                <span class="olNum txt-left">2.1  </span>โรคมะเร็ง</div>
+                                            <div class="hasNum pdb5">
+                                                <span class="olNum txt-left">2.2  </span>โรคกล้ามเนื้อหัวใจตายเฉียบพลันจากการขาดเลือด</div>
+                                            <div class="hasNum pdb5">
+                                                <span class="olNum txt-left">2.3  </span>โรคหลอดเลือดสมองแตกหรืออุดตัน</div>
+                                            <div class="hasNum pdb5">
+                                                <span class="olNum txt-left">2.4  </span>โรคกล้ามเนื้อเสื่อม</div>
+                                            <div class="hasNum pdb5">
+                                                <span class="olNum txt-left">2.5  </span>โรคสมองเสื่อมชนิดอัลไซเมอร์</div>
+                                        </div>
+                                        <div class="col-xs-6 pdl0">
+                                            <div class="hasNum pdb5">
+                                                <span class="olNum txt-left">2.6  </span>โรคโปลิโอ</div>
+                                            <div class="hasNum pdb5">
+                                                <span class="olNum txt-left">2.7  </span>โรคพาร์กินสัน</div>
+                                            <div class="hasNum pdb5">
+                                                <span class="olNum txt-left">2.8  </span>โรคระบบประสาทมัลติเพิล สะเคลอโรสิส</div>
+                                            <div class="hasNum pdb5">
+                                                <span class="olNum txt-left">2.9  </span>ตับวาย</div>
+                                            <div class="hasNum pdb5">
+                                                <span class="olNum txt-left e">2.10 </span>โรคหลอดลมปอดอุดกั้นเรื้อรัง ขั้นรุนแรง/โรคปอดระยะสุดท้าย</div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="boxComment4">
+                    หมายเหตุ :
+                    <ul class="mgt0 mgb0 list">
+                        <li>บริษัทจะจ่ายผลประโยชน์ตามข้อ 1.1 สูงสุดไม่เกิน 3 เท่าต่อวัน</li>
+                        <li>การจ่ายผลประโยชน์ในข้อ 1.1 และข้อ 1.2 รวมกันแล้วสูงสุดไม่เกิน 750 วัน ต่อการเข้าพักรักษาตัวครั้งใดครั้งหนึ่ง</li>
+                        <li>การเข้าพักรักษาตัวครั้งใดครั้งหนึ่ง หมายถึง การต้องอยู่ในโรงพยาบาลเพื่อการรักษาในฐานะผู้ป่วยในครั้งใดครั้งหนึ่ง ด้วยโรคร้ายแรงที่ให้ความคุ้มครองและให้รวมถึงการต้องอยู่ในโรงพยาบาลสองครั้งหรือมากกว่าด้วยสาเหตุ หรือโรค หรือภาวะแทรกซ้อนจากโรคเดียวกัน
+                            โดยที่ระยะเวลาของการต้องอยู่ในโรงพยาบาล แต่ละครั้งห่างกันไม่เกิน 90 วัน นับแต่จากวันที่ออกจากโรงพยาบาลครั้งสุดท้าย ก็ให้ถือว่าเป็นการเข้าพักรักษาตัวครั้งเดียวกันด้วย</li>
+                    </ul>
+                </div>
+            </collapse>
+
+            <collapse collapseTab="สุขภาพพิเศษ" collapseTitle="การประกันสุขภาพ" collapseSubtitle="" [disabled]="!rider || (rider[conf.rider('G')].sum == 0 && rider[conf.rider('VP')].sum == 0 && rider[conf.rider('V')].sum == 0 && !rider[conf.rider('VP5')].sum)">
+                <div *ngIf="rider && rider[conf.rider('G')].sum != 0">
+                    <div class="boxTableStyle5 boxAdvanceSearchtd_pd-2-15 pdt20 pdb20 c-666">
+                        <table>
+                            <tbody class="vTop">
+                                <tr>
+                                    <td colspan="2">
+                                        <div class="c-blue pdb10">ประกันสุขภาพ สพ.โกลด์ {{riderG[0]|number}}</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <div class="pdb10">
+                                            เป็นการประกันสุขภาพในรูปแบบของการคุ้มครองค่าใช้จ่ายการรักษาพยาบาลแบบเหมาจ่าย โดยให้ความคุ้มครองการเข้ารับการรักษาในฐานะคนไข้ใน และคนไข้นอก
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="hasNum">
+                                        <span class="olNum">1.</span>ค่ารักษาพยาบาลเหมาจ่ายกรณีเจ็บป่วยหรือบาดเจ็บจากอุบัติเหตุต่อรอบปีกรมธรรม์
+                                    </td>
+                                    <td class="txt-right ws-nowrap">
+                                        <span class="c-blue">{{riderG[1]|number}}</span> บาท</td>
+                                </tr>
+                                <tr>
+                                    <td class="hasNumSub">
+                                        <span class="olNum">1.1</span>ค่ารักษาพยาบาลเหมาจ่ายกรณีเจ็บป่วยหรือบาดเจ็บจากอุบัติเหตุต่อการเข้าพักรักษาตัวครั้งใดครั้งหนึ่ง
+                                    </td>
+                                    <td class="txt-right ws-nowrap">
+                                        <span class="c-blue">{{riderG[2]|number}}</span> บาท</td>
+                                </tr>
+                                <tr>
+                                    <td class="hasNumSub">
+                                        <span class="olNum">1.2</span>ค่ารักษาพยาบาลเหมาจ่ายกรณีบาดเจ็บ เนื่องจากอุบัติเหตุร้ายแรงต่อการเข้าพักรักษาตัวครั้งใดครั้งหนึ่ง
+                                    </td>
+                                    <td class="txt-right ws-nowrap">
+                                        <span class="c-blue">{{riderG[3]|number}}</span> บาท</td>
+                                </tr>
+                                <tr>
+                                    <td class="hasNum" colspan="2">
+                                        <span class="olNum">2.</span>ค่าห้อง ค่าอาหาร ค่าบริการพยาบาลประจำวันต่อวัน
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="hasNumSub">
+                                        <span class="olNum">2.1</span>ค่าห้อง ค่าอาหาร ค่าบริการพยาบาลประจำวันต่อวัน (สูงสุดไม่เกิน 150 วัน)
+                                    </td>
+                                    <td class="txt-right ws-nowrap">
+                                        <span class="c-blue">{{riderG[4]|number}}</span> บาท</td>
+                                </tr>
+                                <tr>
+                                    <td class="hasNumSub">
+                                        <span class="olNum">2.2</span>ค่าห้อง ไอ.ซี.ยู. ประจำวันต่อวัน (สูงสุดไม่เกิน 30 วัน)
+                                    </td>
+                                    <td class="txt-right ws-nowrap">
+                                        <span class="c-blue">{{riderG[5]|number}}</span> บาท</td>
+                                </tr>
+                                <tr>
+                                    <td class="hasNum" colspan="2">
+                                        <span class="olNum">3.</span>ค่าใช้จ่ายสำหรับผลประโยชน์อื่นๆ (ต่อการเข้าพักรักษาตัวครั้งใดครั้งหนึ่ง)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="hasNumSub">
+                                        <span class="olNum">3.1</span>ค่ารถพยาบาลฉุกเฉิน
+                                    </td>
+                                    <td class="txt-right ws-nowrap">
+                                        <span class="c-blue">ไม่เกินจำนวนเงินที่ต้องจ่ายจริง</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="hasNumSub">
+                                        <span class="olNum">3.2</span>ค่าตรวจวินิจฉัยทางรังสีวิทยาและการตรวจทางห้องปฏิบัติการผู้ป่วยนอก
+                                    </td>
+                                    <td class="txt-right ws-nowrap">
+                                        <span class="c-blue">ไม่เกินจำนวนเงินที่ต้องจ่ายจริง</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="hasNumSub">
+                                        <span class="olNum">3.3</span>ค่ารักษาพยาบาลอื่นๆในโรงพยาบาล
+                                    </td>
+                                    <td class="txt-right ws-nowrap">
+                                        <span class="c-blue">ไม่เกินจำนวนเงินที่ต้องจ่ายจริง</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="hasNumSub">
+                                        <span class="olNum">3.4</span>ค่ารักษาพยาบาลโดยการผ่าตัด
+                                    </td>
+                                    <td class="txt-right ws-nowrap">
+                                        <span class="c-blue">ไม่เกินจำนวนเงินที่ต้องจ่ายจริง</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="hasNumSub">
+                                        <span class="olNum">3.5</span>ค่ายากลับบ้าน
+                                    </td>
+                                    <td class="txt-right ws-nowrap">
+                                        <span class="c-blue">{{riderG[6]|number}}</span> บาท</td>
+                                </tr>
+                                <tr>
+                                    <td class="hasNumSub">
+                                        <span class="olNum">3.6</span>ค่าแพทย์ตรวจรักษาในโรงพยาบาลประจำต่อวัน (สูงสุดไม่เกิน 150 วันต่อการเข้าพักรักษาตัวครั้งใดครั้งหนึ่ง)
+                                    </td>
+                                    <td class="txt-right ws-nowrap">
+                                        <span class="c-blue">{{riderG[7]|number}}</span> บาท</td>
+                                </tr>
+                                <tr>
+                                    <td class="hasNum" colspan="2">
+                                        <span class="olNum">4.</span>ค่ารักษาพยาบาลผู้ป่วยนอก
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="hasNumSub">
+                                        <span class="olNum">4.1</span>ค่ารักษาพยาบาลฉุกเฉินเนื่องจากอุบัติเหตุต่อการบาดเจ็บแต่ละครั้ง
+                                    </td>
+                                    <td class="txt-right ws-nowrap">
+                                        <span class="c-blue">{{riderG[8]|number}}</span> บาท</td>
+                                </tr>
+                                <tr>
+                                    <td class="hasNumSub">
+                                        <span class="olNum">4.2</span>ค่าล้างไต ค่าเคมีบำบัด ค่ารังสีบำบัด ผลประโยชน์สูงสุดต่อรอบปีกรมธรรม์
+                                    </td>
+                                    <td class="txt-right ws-nowrap">
+                                        <span class="c-blue">{{riderG[9]|number}}</span> บาท</td>
+                                </tr>
+                                <tr>
+                                    <td class="hasNumSub">
+                                        <span class="olNum">4.3</span>ค่ารักษาพยาบาลต่อเนื่อง หลังการเข้าพักรักษาตัวครั้งใดครั้งหนึ่ง (สูงสุดไม่เกิน 2 ครั้งต่อการเข้าพักรักษาตัวครั้งใดครั้งหนึ่ง)
+                                    </td>
+                                    <td class="txt-right ws-nowrap">
+                                        <span class="c-blue">{{riderG[10]|number}}</span> บาท</td>
+                                </tr>
+                                <tr>
+                                    <td class="hasNum">
+                                        <span class="olNum">5.</span>ผลประโยชน์เงินช่วยเหลือกรณีเสียชีวิต
+                                    </td>
+                                    <td class="txt-right ws-nowrap">
+                                        <span class="c-blue">{{riderG[11]|number}}</span> บาท</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="boxComment4">
+                        หมายเหตุ :
+                        <ul class="mgt0 mgb0 list">
+                            <li>การจ่ายผลประโยชน์ ตามข้อ 2.1 และข้อ 2.2 รวมกันแล้วไม่เกิน 150 วัน ต่อการเข้าพักรักษาตัวครั้งใดครั้งหนึ่ง</li>
+                            <li>ทั้งนี้ผลประโยชน์ตามที่ระบุไว้ข้างต้น ในข้อ 2 ข้อ 3 และข้อ 4 ที่บริษัทจะจ่ายให้รวมกันไม่เกินผลประโยชน์ข้อ 1.1 หรือ 1.2 (แล้วแต่กรณี) ต่อการเข้าพักรักษาตัวครั้งใดครั้งหนึ่ง และสูงสุดต่อรอบปีกรมธรรม์ไม่เกินผลประโยชน์ข้อ 1</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div *ngIf="rider && rider[conf.rider('VP')].sum != 0">
+                    <div class="boxTableStyle5 td_pd-2-15 pdt20 pdb20 c-666">
+                        <table>
+                            <tbody class="vTop">
+                                <tr>
+                                    <td colspan="2">
+                                        <div class="c-blue pdb10">ประกันสุขภาพ วีไอพี พิเศษ {{riderVP[0]}} ({{riderVP[1]}})</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <div class="pdb10">
+                                            เป็นการประกันสุขภาพในรูปแบบของการคุ้มครองค่าใช้จ่ายการรักษาพยาบาลแบบเหมาจ่าย
+                                            <br> โดยให้ความคุ้มครองการเข้ารับการรักษาในฐานะคนไข้ใน และคนไข้นอก
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="hasNum">
+                                        <span class="olNum">1.</span>ค่าห้อง ค่าอาหาร ค่าบริการพยาบาลประจำวันต่อวัน (สูงสุดไม่เกิน 90 วัน ต่อการเข้าพักรักษาตัวครั้งใดครั้งหนึ่ง) และเป็นส่วนหนึ่งของผลประโยชน์ค่ารักษาพยาบาลเหมาจ่ายในข้อ 1.1 และ 1.2
+                                    </td>
+                                    <td class="txt-right ws-nowrap">
+                                        วันละ
+                                        <span class="c-blue">{{riderVP[2]|number}}</span> บาท</td>
+                                </tr>
+                                <tr>
+                                    <td class="hasNumSub">
+                                        <span class="olNum">1.1.</span>ค่ารักษาพยาบาลเหมาจ่ายกรณีการเจ็บป่วยต่อการเข้าพักรักษาตัวครั้งใดครั้งหนึ่ง (สูงสุดไม่เกิน 6 เท่า ของผลประโยชน์ ต่อปีกรมธรรม์)
+                                    </td>
+                                    <td class="txt-right ws-nowrap">
+                                        ครั้งละ
+                                        <span class="c-blue">{{riderVP[3]|number}}</span> บาท</td>
+                                </tr>
+                                <tr>
+                                    <td class="hasNumSub">
+                                        <span class="olNum">1.2.</span>ค่ารักษาพยาบาลเหมาจ่ายกรณีการบาดเจ็บเนื่องจากอุบัติเหตุต่อการเข้าพักรักษาตัวครั้งใดครั้งหนึ่ง
+                                    </td>
+                                    <td class="txt-right ws-nowrap">
+                                        ครั้งละ
+                                        <span class="c-blue">{{riderVP[4]|number}}</span> บาท</td>
+                                </tr>
+                                <tr>
+                                    <td class="hasNum" colspan="2">
+                                        <span class="olNum">2.</span>การรักษาพยาบาลผู้ป่วยนอก
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="hasNumSub">
+                                        <span class="olNum">2.1.</span>ค่ารักษาพยาบาลผู้ป่วยนอกต่อการบาดเจ็บและเจ็บป่วยแต่ละครั้ง (สูงสุดไม่เกิน 30 ครั้งต่อปี และ 3 ครั้งต่อการบาดเจ็บและเจ็บป่วยแต่ละครั้ง)
+                                    </td>
+                                    <td class="txt-right ws-nowrap">
+                                        ครั้งละ
+                                        <span class="c-blue">{{riderVP[5]|number}}</span> บาท</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div *ngIf="rider && rider[conf.rider('V')].sum != 0">
+                    <div class="boxTableStyle5 contentStyle1 td_pd-2-15 pdt20 pdb20 c-666">
+                        <table>
+                            <tbody class="vTop">
+                                <tr>
+                                    <td colspan="2">
+                                        <div class="c-blue pdb10">ประกันสุขภาพ สมาร์ท วีไอพี แผน {{rider[conf.rider('V')].sum}}</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <div class="pdb10">
+                                            เป็นการประกันสุขภาพในรูปแบบของการคุ้มครองค่าใช้จ่ายการรักษาพยาบาลแบบเหมาจ่าย
+                                            <br> โดยให้ความคุ้มครองการเข้ารับการรักษาในฐานะคนไข้ในและคนไข้นอก
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="hasNum">
+                                        <span class="olNum">1.</span>ค่ารักษาพยาบาลเหมาจ่ายกรณีเจ็บป่วยหรือบาดเจ็บจากอุบัติเหตุ ต่อการเข้าพักรักษาตัวครั้งใดครั้งหนึ่งและต่อปีกรมธรรม์
+                                    </td>
+                                    <td class="txt-right ws-nowrap">
+                                        <span class="c-blue">{{riderV[0]|number}}</span> บาท</td>
+                                </tr>
+                                <tr>
+                                    <td class="hasNum">
+                                        <span class="olNum">2.</span>ค่าห้อง ค่าอาหาร ค่าบริการพยาบาล ประจำต่อวัน (สูงสุดไม่เกิน 150 วันต่อการเข้าพักรักษาตัวครั้งใดครั้งหนึ่ง)
+                                    </td>
+                                    <td class="txt-right ws-nowrap">
+                                        <span class="c-blue">{{riderV[1]|number}}</span> บาท</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="hasNum">
+                                        <span class="olNum">3.</span>ค่ารักษาสำหรับผลประโยชน์อื่นๆ (ผลประโยชน์สูงสุดต่อปีกรมธรรม์)</td>
+                                </tr>
+                                <tr>
+                                    <td class="hasNumSub">
+                                        <span class="olNum">3.1 </span>ค่าตรวจสุขภาพทั่วไปประจำปี</td>
+                                    <td class="txt-right ws-nowrap">
+                                        <span class="c-blue">{{riderV[2]|number}}</span> บาท</td>
+                                </tr>
+                                <tr>
+                                    <td class="hasNumSub">
+                                        <span class="olNum">3.2 </span>ค่าตรวจรักษาความผิดปกติเกี่ยวกับสายตา</td>
+                                    <td class="txt-right ws-nowrap">
+                                        <span class="c-blue">{{riderV[3]|number}}</span> บาท</td>
+                                </tr>
+                                <tr>
+                                    <td class="hasNumSub">
+                                        <span class="olNum">3.3 </span>ค่าตรวจรักษาทางทันตกรรม</td>
+                                    <td class="txt-right ws-nowrap">
+                                        <span class="c-blue">{{riderV[4]|number}}</span> บาท</td>
+                                </tr>
+                                <tr>
+                                    <td class="hasNumSub">
+                                        <span class="olNum">3.4 </span>ค่าฉีดวัคซีนป้องกันโรค</td>
+                                    <td class="txt-right ws-nowrap">
+                                        <span class="c-blue">{{riderV[5]|number}}</span> บาท</td>
+                                </tr>
+                                <tr>
+                                    <td class="hasNumSub">
+                                        <span class="olNum">3.5 </span>ค่าตรวจรักษาโดยการแพทย์ทางเลือก</td>
+                                    <td class="txt-right ws-nowrap">
+                                        <span class="c-blue">{{riderV[6]|number}}</span> บาท</td>
+                                </tr>
+                                <tr>
+                                    <td class="hasNum">
+                                        <span class="olNum">4.</span>ค่ารักษาพยาบาลผู้ป่วยนอกต่อการเจ็บป่วยหรือบาดเจ็บแต่ละครั้ง
+                                        <br>(สูงสุดไม่เกิน 30 ครั้งต่อปีและ 3 ครั้งต่อการเจ็บป่วยหรือบาดเจ็บแต่ละครั้ง)</td>
+                                    <td class="txt-right ws-nowrap">
+                                        <span class="c-blue">{{riderV[7]|number}}</span> บาท</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="boxComment4">
+                        หมายเหตุ : ทั้งนี้ ผลประโยชน์ตามที่ระบุไว้ในตารางข้างต้น ใน ข้อ 2 และข้อ 3 ที่บริษัทฯ จะจ่ายให้ถือเป็นส่วนหนึ่งของผลประโยชน์ในข้อ 1 ค่ารักษาพยาบาลเหมาจ่ายกรณีเจ็บป่วยหรือบาดเจ็บจากอุบัติเหตุ
+                    </div>
+                </div>
+
+                <div *ngIf="rider && rider[conf.rider('VP5')].sum">
+                    <div class="boxTableStyle4 contentStyle1 td_pd-2-15 pdt20 pdb20 c-666">
+                        <table>
+                            <tbody class="vTop">
+                                <tr>
+                                    <td colspan="2" class="c-blue">ประกันสุขภาพ วีไอพี แบบมีความรับผิดชอบส่วนแรก (วพ.5)</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">เป็นการประกันสุขภาพในรูปแบบของการคุ้มครองค่าใช้จ่ายการรักษาพยาบาลแบบเหมาจ่าย โดยให้ความคุ้มครองการเข้ารับการรักษาในฐานะคนไข้ใน</td>
+                                </tr>
+                                <tr>
+                                    <td class="hasNum">
+                                        <span class="olNum">1.</span>ค่าห้อง ค่าอาหาร ค่าบริการพยาบาลประจำวันต่อวัน
+                                        <br>(สูงสุดไม่เกิน 90 วันต่อการเข้าพักรักษาตัวครั้งใดครั้งหนึ่ง) </td>
+                                    <td class="txt-right ws-nowrap">
+                                        <span class="c-blue">วันละ 4,000</span> บาท</td>
+                                </tr>
+                                <tr>
+                                    <td class="hasNum">
+                                        <span class="olNum">2.</span>ค่ารักษาพยาบาลเหมาจ่ายกรณีบาดเจ็บหรือเจ็บป่วย ต่อการเข้าพักรักษาตัวครั้งใดครั้งหนึ่ง
+                                        <br>(สูงสุดไม่เกิน 1,000,000 บาท ต่อปีกรมธรรม์)</td>
+                                    <td class="txt-right ws-nowrap">
+                                        <span class="c-blue">ครั้งละ 200,000</span> บาท *</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="boxComment4">
+                        * หมายเหตุ :
+                        <ul class="mgt0 mgb0 list">
+                            <li>บริษัทจะจ่ายผลประโยชน์ค่ารักษาพยาบาลเหมาจ่ายกรณีการบาดเจ็บหรือเจ็บป่วย ต่อการเข้าพักรักษาตัวครั้งใดครั้งหนึ่ง ไม่เกินจำนวนเงินที่ต้องจ่ายจริงและสูงสุดไม่เกินผลประโยชน์ที่ระบุไว้หักด้วย ความรับผิดชอบส่วนแรกที่ผู้เอาประกันภัยต้องรับผิดชอบเองจำนวน
+                                20,000 บาท ต่อการเข้าพักรักษาตัวครั้งใดครั้งหนึ่ง โดยแต่ละรอบปีกรมธรรม์บริษัทจะจ่ายผลประโยชน์ให้สูงสุดไม่เกิน 1,000,000 บาท</li>
+                            <li>บริษัทจะจ่ายผลประโยชน์ค่ารักษาพยาบาลเหมาจ่าย ในส่วนของค่ายากลับบ้าน ตามความจำเป็นทางการแพทย์ไม่เกินกว่า 7 วัน และไม่เกินกว่า 1,000 บาท ต่อการเข้าพักรักษาตัวในโรงพยาบาลแต่ละครั้ง ทั้งนี้ไม่ว่าผู้เอาประกันภัยจะมีสัญญาคุ้มครองค่ารักษาพยาบาลมากกว่าหนึ่งฉบับก็ตาม</li>
+                        </ul>
+                    </div>
+                </div>
+            </collapse>
+
+            <collapse collapseTab="คุ้มครองผู้ชำระเบี้ย" collapseTitle="คุ้มครองการชำระเบี้ยประกันภัย (คบ.)" collapseSubtitle="" [disabled]="!rider || !rider[conf.rider('KB2')].age">
+                <div class="pd20 c-666">
+                    กรณีผู้ปกครองที่เป็นผู้ชำระเบี้ยประกันภัยเสียชีวิต หรือตกเป็นบุคคลทุพพลภาพถาวรสิ้นเชิง
+                </div>
+                <div class="bgBlue1 pd20 c-666 txt-center">
+                    <div class="c-blue pdb20">
+                        บริษัทฯ จะยกเว้นเบี้ยประกันภัยรวมตลอดสัญญา
+                        <br> ตามระยะเวลาคุ้มครองผู้ชำระเบี้ยประกันภัย
+                    </div>
+                    <div>
+                        คุ้มครองการชำระเบี้ยประกันภัย {{ endowmentYear }} ปี
+                        <!-- คุ้มครองการชำระเบี้ยประกันภัย {{ prospectAge }} ปี -->
+                        <br /> (ผู้ปกครองอายุขณะเริ่มทำประกัน {{rider ? rider[conf.rider('KB2')].age : 0}} ปี)
+                    </div>
+                </div>
+            </collapse>
+
+            <collapse collapseTab="ค่ารักษาพยาบาลพิเศษ" collapseTitle="ค่ารักษาพยาบาลรายวันโกลด์ (รพ.โกลด์)" collapseSubtitle="ชดเชยรายได้กรณีนอนโรงพยาบาลในฐานะผู้ป่วยในเป็นเวลาติดต่อกันไม่น้อยกว่า 6 ชั่วโมง" [disabled]="!rider || rider[conf.rider('RPG')].sum == 0">
+                <div class="boxTableStyle5 contentStyle1 td_pd-2-15 pdt20 pdb20 c-666">
+                    <table>
+                        <tbody class="vTop">
+                            <tr>
+                                <td class="hasNum" colspan="4">
+                                    <span class="olNum">1.</span>ค่าชดเชยรายวัน กรณีเข้าพักรักษาตัวในโรงพยาบาลในฐานะผู้ป่วยใน บริษัทจะจ่ายผลประโยชน์สูงสุดกรณีใดกรณีหนึ่งดังต่อไปนี้
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="hasNumSub" colspan="2">
+                                    <span class="olNum">1.1 </span>กรณีเข้าพักรักษาตัวเป็นผู้ป่วยใน
+                                </td>
+                                <td class="txt-right ws-nowrap"> (วันละ) </td>
+                                <td class="txt-right ws-nowrap">
+                                    <span class="c-blue">{{rider ? (rider[conf.rider('RPG')].sum|number) : 0}}</span> บาท</td>
+                            </tr>
+                            <tr>
+                                <!-- <td class="hasNumSub padding-right-0">
+                                    <span class="olNum">-</span>
+                                </td> -->
+                                <td class="hasNumSub padding-right-0" colspan="2">- หากวันแรกของการเข้าพักรักษาตัวเป็นผู้ป่วยในอยู่ในรอบปีกรมธรรม์ที่ผู้เอาประกันภัยมีอายุ 21 ถึง 59 ปี ผลประโยชน์ดังกล่าวจะจ่าย</td>
+                                <td class="txt-right ws-nowrap"> (วันละ) </td>
+                                <td class="txt-right ws-nowrap">
+                                    <span class="c-blue">{{rider ? ((rider[conf.rider('RPG')].sum*2)|number) : 0}}</span> บาท</td>
+                            </tr>
+                            <tr>
+                                <!-- <td class="hasNumSub padding-right-0">
+                                    <span class="olNum">-</span>
+                                </td> -->
+                                <td class="hasNumSub padding-right-0" colspan="2">- ในกรณีที่ผู้เอาประกันภัยเข้าพักรักษาตัวในห้องผู้ป่วยหนัก (ไอ.ซี.ยู) (ตามจำนวนวันที่ผู้เอาประกันภัยเข้ารับการรักษาตัวในห้องผู้ป่วยหนัก (ไอ.ซี.ยู)) ผลประโยชน์ดังกล่าวจะจ่าย
+                                </td>
+                                <td class="txt-right ws-nowrap"> (วันละ) </td>
+                                <td class="txt-right ws-nowrap">
+                                    <span class="c-blue">{{rider ? ((rider[conf.rider('RPG')].sum*4)|number) : 0}}</span> บาท</td>
+                            </tr>
+                            <tr>
+                                <td class="hasNumSub" colspan="2">
+                                    <span class="olNum">1.2 </span>กรณีเข้าพักรักษาตัวเป็นผู้ป่วยใน โดยมีการผ่าตัดสำหรับผู้ป่วยใน
+                                </td>
+                                <td class="txt-right ws-nowrap"> (วันละ) </td>
+                                <td class="txt-right ws-nowrap">
+                                    <span class="c-blue">{{rider ? ((rider[conf.rider('RPG')].sum*4)|number) : 0}}</span> บาท</td>
+                            </tr>
+                            <tr>
+                                <td class="hasNumSub" colspan="2">
+                                    <span class="olNum">1.3 </span>กรณีเข้าพักรักษาตัวเป็นผู้ป่วยในเนื่องจากโรคร้ายแรง
+                                </td>
+                                <td class="txt-right ws-nowrap"> (วันละ) </td>
+                                <td class="txt-right ws-nowrap">
+                                    <span class="c-blue">{{rider ? ((rider[conf.rider('RPG')].sum*4)|number) : 0}}</span> บาท</td>
+                            </tr>
+                            <tr>
+                                <td class="hasNum" colspan="2">
+                                    <span class="olNum">2.</span>ค่าชดเชยรายวัน กรณีผู้ป่วยในที่ไม่ต้องพักรักษาตัวในโรงพยาบาล (Day Case) จะได้รับค่าชดเชยรายวัน
+                                </td>
+                                <td class="txt-right ws-nowrap"> (จำนวน 1 วัน) </td>
+                                <td class="txt-right ws-nowrap">
+                                    <span class="c-blue">{{rider ? (rider[conf.rider('RPG')].sum|number) : 0}}</span> บาท</td>
+                            </tr>
+                            <tr>
+                                <!-- <td class="hasNumSub padding-right-0">
+                                    <span class="olNum">-</span>
+                                </td> -->
+                                <td class="hasNumSub padding-right-0" colspan="2">- ในกรณีที่เข้ารับการรักษาตัวอยู่ในรอบปีกรมธรรม์ที่ผู้เอาประกันภัยมีอายุ 21 ถึง 59 ปี จะได้รับค่าชดเชยรายวัน</td>
+                                <td class="txt-right ws-nowrap"> (จำนวน 1 วัน) </td>
+                                <td class="txt-right ws-nowrap">
+                                    <span class="c-blue">{{rider ? ((rider[conf.rider('RPG')].sum*2)|number) : 0}}</span> บาท</td>
+                            </tr>
+                            <tr>
+                                <td class="hasNum" colspan="2">
+                                    <span class="olNum">3.</span>ค่าชดเชยกรณีที่มียากลับบ้าน หลังจากการเข้าพักรักษาตัวในโรงพยาบาลเป็นผู้ป่วยใน รวมถึงกรณีผู้ป่วยในที่ไม่ต้องรักษาตัวในโรงพยาบาล (Day Case) ต่อการเข้ารับการรักษาตัวในโรงพยาบาล</td>
+                                <td class="txt-right ws-nowrap"> (แต่ละครั้ง) </td>
+                                <td class="txt-right ws-nowrap">
+                                    <span class="c-blue">{{rider ? (rider[conf.rider('RPG')].sum|number) : 0}}</span> บาท</td>
+                            </tr>
+                            <tr>
+                                <td class="hasNum" colspan="3">
+                                    <span class="olNum">4.</span>ผลประโยชน์กรณีเสียชีวิตเนื่องจากโรคร้ายแรง</td>
+                                <td class="txt-right ws-nowrap">
+                                    <span class="c-blue">{{rider ? ((rider[conf.rider('RPG')].sum*200)|number) : 0}}</span> บาท</td>
+                            </tr>
+                            <tr>
+                                <td colspan="4">
+                                    <div class="boxListForm bgBlue1 pdt20 pdb20 c-666">
+                                        <div class="col-xs-6 pdl0">
+                                            <div class="hasNumSub pdb5">
+                                                <span class="olNum">4.1 </span>โรคมะเร็ง</div>
+                                            <div class="hasNumSub pdb5">
+                                                <span class="olNum">4.2 </span>โรคกล้ามเนื้อหัวใจตายเฉียบพลันจากการขาดเลือด</div>
+                                            <div class="hasNumSub pdb5">
+                                                <span class="olNum">4.3 </span>การผ่าตัดเส้นเลือดเลี้ยงกล้ามเนื้อหัวใจ</div>
+                                            <div class="hasNumSub pdb5">
+                                                <span class="olNum">4.4 </span>โรคหลอดเลือดสมองแตกหรืออุดตัน</div>
+                                            <div class="hasNumSub pdb5">
+                                                <span class="olNum">4.5 </span>การผ่าตัดลิ้นหัวใจโดยวิธีการเปิดหัวใจ</div>
+                                        </div>
+                                        <div class="col-xs-6 pdl0">
+                                            <div class="hasNumSub pdb5">
+                                                <span class="olNum">4.6 </span>การผ่าตัดเส้นเลือดแดงใหญ่เอออร์ต้า</div>
+                                            <div class="hasNumSub pdb5">
+                                                <span class="olNum">4.7 </span>การผ่าตัดเปลี่ยนอวัยวะหรือปลูกถ่ายไขกระดูก</div>
+                                            <div class="hasNumSub pdb5">
+                                                <span class="olNum">4.8 </span>โรคไวรัสตับอักเสบขั้นรุนแรง</div>
+                                            <div class="hasNumSub pdb5">
+                                                <span class="olNum">4.9 </span>โรคหลอดเลือดสมองโป่งพองที่ต้องรักษาโดยการผ่าตัด</div>
+                                            <div class="hasNumSub pdb5">
+                                                <span class="olNum">4.10 </span>สมองอักเสบจากเชื้อไวรัส</div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="hasNum" colspan="3">
+                                    <span class="olNum">5.</span>ผลประโยชน์กรณีเสียชีวิต</td>
+                                <td class="txt-right ws-nowrap">
+                                    <span class="c-blue">{{rider ? ((rider[conf.rider('RPG')].sum*10)|number) : 0}}</span> บาท</td>
+                            </tr>
+                            <tr>
+                                <td class="hasNum" colspan="3">
+                                    <span class="olNum">6.</span>ผลประโยชน์กรณีทุพพลภาพถาวรสิ้นเชิง</td>
+                                <td class="txt-right ws-nowrap">
+                                    <span class="c-blue">{{rider ? ((rider[conf.rider('RPG')].sum*200)|number) : 0}}</span> บาท</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="c-red">
+                    กรณีที่ผู้เอาประกันภัยเจ็บป่วย บริษัทฯ จะจ่ายผลประโยชน์ให้เมื่อพ้นกำหนด 30 วัน นับแต่วันทำสัญญา หรือต่ออายุสัญญาครั้งสุดท้าย
+                </div>
+                <div class="">
+                    ยกเว้น ไส้เลื่อนทุกชนิด ต้อเนื้อ หรือต้อกระจก การตัดทอนซิล หรืออดีนอยด์ เยื่อบุโพรงมดลูกเจริญผิดที่ จะได้รับผลประโยชน์ เมื่อพ้นกำหนด 120 วัน นับแต่วันเริ่มสัญญา หรือวันต่ออายุสัญญาครั้งสุดท้าย
+                </div>
+                <div class="c-red">
+                    กรณีที่ผู้เอาประกันภัยเสียชีวิต หรือทุพพลภาพถาวรสิ้นเชิง อันมีสาเหตุจากการเจ็บป่วยด้วยโรคร้ายแรง ตามคำนิยามที่กำหนดไว้ในสัญญาพิเศษเพิ่มเติมนี้ บริษัทฯ จะจ่ายผลประโยชน์ให้ เมื่อได้รับวินิจฉัยเป็นครั้งแรกโดยแพทย์ภายหลังระยะเวลา 30 วัน นับแต่วันทำสัญญา หรือต่ออายุสัญญาครั้งสุดท้าย
+                </div>
+                <div class="boxComment4">
+                    หมายเหตุ :
+                    <ul class="mgt0 mgb0 list">
+                        <li>บริษัทจะจ่ายผลประโยชน์ตามข้อ 1.1 สูงสุดต่อวัน ไม่เกิน 4 เท่าของค่ารักษาพยาบาลรายวัน</li>
+                        <li>สำหรับผลประโยชน์ในกรณีที่ผู้เอาประกันภัยเข้าพักรักษาตัวในห้องผู้ป่วยหนัก (ไอ.ซี.ยู) ข้อ 1.1 และกรณีเข้าพักรักษาตัวเป็นผู้ป่วยในเนื่องจากโรคร้ายแรง ข้อ 1.3 บริษัทจะจำกัดการจ่ายผลประโยชน์ให้รวมกันไม่เกิน 365 วันต่อการเข้าพักรักษาตัวครั้งใดครั้งหนึ่ง</li>
+                        <li>การจ่ายผลประโยชน์ในข้อ 1 และข้อ 2 รวมกันแล้ว สูงสุดไม่เกิน 1,250 วันต่อการเข้าพักรักษาตัวครั้งใดครั้งหนึ่ง</li>
+                        <li>การเข้าพักรักษาตัวครั้งใดครั้งหนึ่ง หมายถึง การต้องอยู่ในโรงพยาบาลเพื่อการรักษา ในฐานะผู้ป่วยในครั้งใดครั้งหนึ่ง และให้รวมถึงการต้องอยู่ในโรงพยาบาลสองครั้งหรือมากกว่าด้วยสาเหตุหรือโรคหรือภาวะแทรกซ้อนจากโรคเดียวกัน โดยที่ระยะเวลาของการต้องอยู่ในโรงพยาบาล
+                            แต่ละครั้งห่างกันไม่เกิน 90 วันนับแต่จากวันที่ออกจากโรงพยาบาลครั้งสุดท้ายก็ให้ถือว่าเป็นการเข้าพักรักษาตัวครั้งเดียวกันด้วย</li>
+                        <li>บริษัทจะจ่ายผลประโยชน์ตามข้อ 4 ข้อ 5 และข้อ 6 โดยจำกัดการจ่ายผลประโยชน์สำหรับกรณีใดกรณีหนึ่งเท่านั้นและสัญญาเพิ่มเติมนี้จะสิ้นผลบังคับทันที</li>
+                        <li>การผ่าตัดสำหรับผู้ป่วยใน หมายถึง การผ่าตัดที่มีการวางยาสลบแบบทั่วไป (general anesthesia) หรือการฉีดยาชาเข้าไขสันหลัง (spinal anesthesia) โดยวิสัญญีแพทย์</li>
+                    </ul>
+                </div>
+
+            </collapse>
+            <quatation-annotation></quatation-annotation>
+        </collapse-group>
+    </div>
+</div>

@@ -1,0 +1,927 @@
+<form [formGroup]="appKb">
+    <div class="boxContentPage bgBlue3 hasBgImg bgImg95">
+        <div class="container">
+            <div class="bgPaperShadow mgt25 sm-hide-shadow">
+                <div class="contentPaperShadow">
+
+                    <!-- start boxFixTopJumpMenu -->
+                    <div class="boxFixTopJumpMenu">
+                        <div id="boxFixJumpMenu" class="boxContentFixJumpMenu">
+                            <div class="boxListFixJumpMenu sm-a-mgr0 sm-a-action-fsnormal">
+                                <a class="action" (click)="scrollToTop()">ประวัติ คบ</a>
+                                <a class="down" (click)="scrollToAddress()">ที่อยู่</a>
+                                <a class="down" (click)="scrollToInsurance()">ประวัติการทำประกัน</a>
+                                <a class="down" (click)="scrollToTreatment()">ประวัติการรักษา</a>
+                                <a class="down" (click)="scrollToBot()">ยอมรับเงื่อนไขข้อตกลง</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end boxFixTopJumpMenu -->
+
+                    <div id="boxListJumpContent" class="boxListJumpContent">
+                        <!-- start oneJumpContent -->
+                        <div id="link1" class="oneJumpContent">
+                            <h2 class="view-only-xs c-blue boxTitleFixJumpMenu">ประวัติ คบ</h2>
+
+                            <div class="boxListForm pdlr0 pdb10 xs-pdt0">
+                                <div class="col-lg-4 col-md-6 pdlr0">
+                                    <div class="col-lg-5 col-md-4 col-sm-3 txt-sm-right pdr-sm-7 lh-form-control">
+                                        <font color="red">*</font> คำนำหน้า :
+                                    </div>
+                                    <div id="appKb" class="col-lg-7 col-md-8 col-sm-9 pdl-sm-7">
+                                        <prefix-name formControlName="title" [selectedSex]="check_gender == 'ชาย' ? 'M' : 'F'" [birthDate]="appKb.value.birthDate"></prefix-name>
+                                    </div>
+                                </div>
+                                <div class="clearfix view-only-md"></div>
+
+                                <div class="col-lg-4 col-md-6 pdlr0">
+                                    <div class="col-lg-5 col-md-4 col-sm-3 txt-sm-right pdr-sm-7 lh-form-control">
+                                        <font color="red">*</font> ชื่อ :
+                                    </div>
+                                    <div class="col-lg-7 col-md-8 col-sm-9 pdl-sm-7">
+                                        <div class="form-group">
+                                            <input id="name" name="" class="form-control" formControlName="name" type="text" value="" placeholder="" CharacterOnly maxlength="30" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-4 col-md-6 pdlr0">
+                                    <div class="col-lg-5 col-md-4 col-sm-3 txt-sm-right pdr-sm-7 lh-form-control">
+                                        <font color="red">*</font> นามสกุล :
+                                    </div>
+                                    <div class="col-lg-7 col-md-8 col-sm-9 pdl-sm-7">
+                                        <div class="form-group">
+                                            <input id="lastname" name="" class="form-control" formControlName="lname" type="text" value="" placeholder="" CharacterOnly maxlength="30" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="clearfix hide-only-sm"></div>
+
+                                <div class="col-lg-4 col-md-6 pdlr0">
+                                    <div class="col-lg-5 col-md-4 col-sm-3 txt-sm-right pdr-sm-7 lh-form-control">
+                                        <font color="red">*</font> เพศ :
+                                    </div>
+                                    <div class="col-lg-7 col-md-8 col-sm-9 pdl-sm-7">
+                                        <div class="form-group">
+                                            <input id="gender" name="" class="form-control" formControlName="gender" type="text" value="" placeholder="" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-4 col-md-6 pdlr0">
+                                    <div class="col-lg-5 col-md-4 col-sm-3 txt-sm-right pdr-sm-7 lh-form-control">
+                                        <font color="red">*</font> ระบุวันเกิด :
+                                    </div>
+                                    <div class="col-lg-7 col-md-8 col-sm-9 pdl-sm-7">
+                                        <div class="form-group hasIcon">
+                                            <input type="text" [ngModel]="appKb.value.birthDate | date | dateFormatTHYeartoENYear" [ngModelOptions]="{standalone: true}" class="form-control" disabled />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-4 col-md-6 pdlr0">
+                                    <div class="col-lg-5 col-md-4 col-sm-3 txt-sm-right pdr-sm-7 lh-form-control">
+                                        <font color="red">*</font> อายุ :
+                                    </div>
+                                    <div class="col-md-5 col-sm-7 pdl-sm-7 col-xs-7">
+                                        <div class="form-group">
+                                            <input id="age" name="" class="form-control" [birthDate]="appKb.value.birthDate" disabled calculate-age type="text" value="" placeholder="" NumberOnly maxlength="3" />
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-1 col-xs-5 pdl0 lh-form-control">
+                                        ปี
+                                    </div>
+                                </div>
+
+                                <div class="clearfix view-only-sm view-only-xs"></div>
+                                <div class="col-lg-4 col-md-6 pdlr0">
+                                    <div class="col-lg-5 col-md-4 col-sm-3 txt-sm-right pdr-sm-7 lh-form-control">
+                                        <font color="red">*</font> เกี่ยวข้องเป็น :
+                                    </div>
+                                    <div class="col-lg-7 col-md-5 col-sm-7 pdl-sm-7 col-xs-7">
+                                        <dropdown formControlName="parentrelation">
+                                            <dropdown-option *ngFor="let index of relationDropdown" [value]="index.value"> {{index.value}}</dropdown-option>
+                                        </dropdown>
+                                    </div>
+                                    <div class="col-md-3 col-sm-2 col-xs-5 pdl0 pdr0 view-only-md view-only-sm view-only-xs lh-form-control">
+                                        กับผู้เอาประกัน
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-8 pdl-sm-0 hide-only-md hide-only-sm hide-only-xs lh-form-control">
+                                    กับผู้เอาประกัน
+                                </div>
+                            </div>
+
+                            <div class="boxChkAndInfo">
+                                <div class="boxTopChk">
+                                    <div class="inline_block pdb10 pdr20 lh-form-control">
+                                        <input id="identify_type-1-1" formControlName="identifyOption" value="01" name="identifyOption" class="radio-style3" type="radio" (change)="identifyOptionChange('Y')" />
+                                        <label for="identify_type-1-1">บัตรประชาชน</label>
+                                    </div>
+                                    <div class="inline_block pdb10 pdr20 lh-form-control">
+                                        <input id="identify_type-1-2" value="N" formControlName="identifyOption" name="identifyOption" class="radio-style3" type="radio" (change)="identifyOptionChange('N')" />
+                                        <label for="identify_type-1-2">อื่นๆ โปรดระบุ</label>
+                                    </div>
+                                    <div class="inline_block pdb10 select-id pdl0" *ngIf="appKb.value.identifyOption == 'N'">
+                                        <dropdown formControlName="identify_type">
+                                            <dropdown-option value="02">บัตรประจำตัวข้าราชการ</dropdown-option>
+                                            <dropdown-option value="03">ใบสำคัญต่างด้าว</dropdown-option>
+                                            <dropdown-option value="04">หนังสือเดินทาง</dropdown-option>
+                                            <dropdown-option value="06">ใบสุทธิพระ</dropdown-option>
+                                            <dropdown-option value="07">ใบขับขี่</dropdown-option>
+                                            <dropdown-option value="08">สูติบัตร</dropdown-option>
+                                            <dropdown-option value="09">ใบรายการจากฐานข้อมูลทะเบียนบัตรประจำตัวประชาชน</dropdown-option>
+                                            <dropdown-option value="10">สมุดประจำตัวคนพิการ</dropdown-option>
+                                            <dropdown-option value="11">ทะเบียนบ้าน (ทร.14)</dropdown-option>
+                                            <dropdown-option value="12">บัตรประจำตัวผู้หลบหนีเข้าเมือง</dropdown-option>
+                                            <dropdown-option value="13">หนังสือรับรองแทนบัตรประจำตัวบุคคลผู้มิได้สัญชาติไทย</dropdown-option>
+                                        </dropdown>
+                                    </div>
+                                </div>
+                                <div class="boxInfoForm">
+                                    <div class="col-lg-4 col-md-6 pdlr0">
+                                        <div class="col-lg-5 col-md-4 col-sm-3 txt-sm-right pdr-sm-7 lh-form-control">
+                                            <font color="red">*</font> เลขที่ :
+                                        </div>
+                                        <div class="col-lg-7 col-md-8 col-sm-9 pdl-sm-7">
+                                            <div class="form-group">
+                                                <input *ngIf="appKb.value.identifyOption == '01' || appKb.value.identifyOption == '' " id="identify_id" name="" class="form-control" formControlName="identifyid" type="text" value="" placeholder="" maxlength="13" NumberOnly />
+                                                <input *ngIf="appKb.value.identifyOption == 'N'" id="identify_id2" name="" class="form-control" formControlName="identifyid" type="text" value="" placeholder="" maxlength="13" NumberCharacterOnly />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-4 col-md-6 pdlr0">
+                                        <div class="col-lg-5 col-md-4 col-sm-3 txt-sm-right pdr-sm-7 pdl-md-0 lh-form-control">
+                                            <font color="red">*</font> ออกให้ ณ อำเภอ :
+                                        </div>
+                                        <div class="col-lg-7 col-md-8 col-sm-9 pdl-sm-7">
+                                            <div class="form-group">
+                                                <input id="identify_issue_district" name="" class="form-control" formControlName="identify_issue_district" type="text" value="" placeholder="" />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-4 col-md-6 pdlr0">
+                                        <div class="col-lg-5 col-md-4 col-sm-3 txt-sm-right pdr-sm-7 lh-form-control">
+                                            <font color="red">*</font> ลงวันที่ :
+                                        </div>
+                                        <div class="col-lg-7 col-md-8 col-sm-9 pdl-sm-7">
+                                            <calendar id="kb_sign_date" formControlName="insertDate"></calendar>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-4 col-md-6 pdlr0">
+                                        <div class="col-lg-5 col-md-4 col-sm-3 txt-sm-right pdr-sm-7 lh-form-control">
+                                            <font color="red">*</font> จังหวัด :
+                                        </div>
+                                        <div class="col-lg-7 col-md-8 col-sm-9 pdl-sm-7">
+                                            <dropdown formControlName="identifyissueprovince">
+                                                <dropdown-option [value]="oc.name" *ngFor="let oc of cardProvince "> {{oc.name}}</dropdown-option>
+                                            </dropdown>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="boxChkAndInfo">
+                                <div class="boxTopChk pdl0">
+                                    <div class="col-lg-4 col-md-6 pdlr0">
+                                        <div class="col-lg-5 col-md-4 col-sm-3 txt-sm-right pdr-sm-7 lh-form-control">
+                                            <font color="red">*</font> อาชีพ :
+                                        </div>
+                                        <div class="col-lg-7 col-md-8 col-sm-9 pdl-sm-7">
+                                            <dropdown id="otherOccupation" formControlName="occupationcd" (dataChange)="occupationChage($event)">
+                                                <!-- <dropdown-option value="00">ไม่มี</dropdown-option> -->
+                                                <dropdown-option [value]="oc.key" *ngFor="let oc of occupationDropdown">{{ oc.value }}</dropdown-option>
+                                            </dropdown>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-6 pdlr0" *ngIf="appKb.value.occupationcd == '25'">
+                                        <div class="col-sm-3 txt-sm-right pdr-sm-7 lh-form-control view-only-sm">&nbsp;</div>
+                                        <div class="col-md-12 pdl-md-0 pdl-sm-7 col-sm-9">
+                                            <input id="description" name="" formControlName="description" class="form-control" type="text" value="" placeholder="" />
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+
+                                <div class="boxInfoForm">
+                                    <div class="col-lg-4 col-md-6 pdlr0">
+                                        <div class="col-lg-5 col-md-4 col-sm-3 txt-sm-right pdr-sm-7 lh-form-control">
+                                            <font color="red">*</font> ตำแหน่ง :
+                                        </div>
+                                        <div class="col-lg-7 col-md-8 col-sm-9 pdl-sm-7">
+                                            <div class="form-group">
+                                                <input id="position" name="" class="form-control" formControlName="position" type="text" value="" placeholder="" />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-4 col-md-6 pdlr0">
+                                        <div class="col-lg-5 col-md-4 col-sm-3 txt-sm-right pdr-sm-7 lh-form-control">
+                                            <font color="red">*</font> ลักษณะงาน :
+                                        </div>
+                                        <div class="col-lg-7 col-md-8 col-sm-9 pdl-sm-7">
+                                            <div class="form-group">
+                                                <input id="businessdesc" name="" class="form-control" formControlName="businessdesc" type="text" value="" placeholder="" />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-4 col-md-6 pdlr0">
+                                        <div class="col-lg-5 col-md-4 col-sm-3 txt-sm-right pdr-sm-7 lh-form-control">
+                                            <font color="red">*</font> สถานที่ทำงาน :
+                                        </div>
+                                        <div class="col-lg-7 col-md-8 col-sm-9 pdl-sm-7">
+                                            <div class="form-group">
+                                                <input id="place" name="" class="form-control" formControlName="place" type="text" value="" placeholder="" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+
+                            <div class="boxChkAndInfo">
+                                <div class="boxTopChk">
+                                    <div class="inline_block pdb10 pdr10 lh-form-control">
+                                        <font color="red">*</font> สถานภาพ :</div>
+                                    <div class="inline_block pdb10 pdr20 lh-form-control">
+                                        <input id="martial-1" value="S" formControlName="status" name="status" class="radio-style3" type="radio" (change)="statusMarry()">
+                                        <label for="martial-1">โสด</label>
+                                    </div>
+                                    <div class="inline_block pdb10 pdr20 lh-form-control">
+                                        <input #married id="martial-2" value="M" formControlName="status" name="status" class="radio-style3" type="radio" (change)="statusMarry()">
+                                        <label for="martial-2">สมรส</label>
+                                    </div>
+                                    <div class="inline_block pdb10 pdr20 lh-form-control">
+                                        <input id="martial-3" name="status" formControlName="status" value="D" class="radio-style3" type="radio" (change)="statusMarry()">
+                                        <label for="martial-3">หย่า</label>
+                                    </div>
+                                    <div class="inline_block pdb10 pdr20 lh-form-control">
+                                        <input id="martial-4" name="status" formControlName="status" value="G" class="radio-style3" type="radio" (change)="statusMarry()">
+                                        <label for="martial-4">หม้าย</label>
+                                    </div>
+                                </div>
+                                <div *ngIf="married.checked" class="boxInfoForm">
+                                    <div class="col-lg-4 col-md-6 pdlr0">
+                                        <div class="col-lg-5 col-md-4 col-sm-3 txt-sm-right pdr-sm-7 lh-form-control">
+                                            <font color="red">*</font> คำนำหน้า :
+                                        </div>
+                                        <div id="appKb" class="col-lg-7 col-md-8 col-sm-9 pdl-sm-7">
+                                            <prefix-name formControlName="spousetitle"></prefix-name>
+                                        </div>
+                                    </div>
+                                    <div class="clearfix view-only-md"></div>
+
+                                    <div class="col-lg-4 col-md-6 pdlr0">
+                                        <div class="col-lg-5 col-md-4 col-sm-3 txt-sm-right pdr-sm-7 lh-form-control">
+                                            <font color="red">*</font> ชื่อคู่สมรส :
+                                        </div>
+                                        <div class="col-lg-7 col-md-8 col-sm-9 pdl-sm-7">
+                                            <div class="form-group">
+                                                <input id="spouse_name" name="spouse_name" class="form-control" formControlName="spousename" type="text" value="" placeholder="" />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-4 col-md-6 pdlr0">
+                                        <div class="col-lg-5 col-md-4 col-sm-3 txt-sm-right pdr-sm-7 lh-form-control">
+                                            <font color="red">*</font> นามสกุล :
+                                        </div>
+                                        <div class="col-lg-7 col-md-8 col-sm-9 pdl-sm-7">
+                                            <div class="form-group">
+                                                <input id="spouse_lastname" name="spouse_lastname" class="form-control" formControlName="spouselastname" type="text" value="" placeholder="" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+
+                                    <div class="col-lg-4 col-md-6 pdlr0">
+                                        <div class="col-lg-5 col-md-4 col-sm-3 txt-sm-right pdr-sm-7 lh-form-control">
+                                            <font color="red">*</font> อาชีพคู่สมรส :
+                                        </div>
+                                        <div class="col-lg-7 col-md-8 col-sm-9 pdl-sm-7">
+                                            <dropdown id="otherOccupation" formControlName="spouseoccupationcd" (dataChange)="spouseoccupationcdChange($event)">
+                                                <!-- <dropdown-option value="00">ไม่มี</dropdown-option> -->
+                                                <dropdown-option [value]="oc.key" *ngFor="let oc of occupationDropdown">{{ oc.value }}</dropdown-option>
+                                            </dropdown>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-6 pdlr0" *ngIf="appKb.value.spouseoccupationcd=='25'">
+                                        <div class="col-sm-3 txt-sm-right pdr-sm-7 lh-form-control view-only-sm">&nbsp;</div>
+                                        <div class="col-md-12 pdl-md-0 pdl-sm-7 col-sm-9">
+                                            <div class="form-group">
+                                                <input id="spouse_occupation_desc" formControlName="spouseoccupationdesc" name="spouse_occupation_desc" class="form-control" type="text" value="" placeholder="" />
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <hr />
+                        </div>
+                        <!-- end oneJumpContent -->
+                        <!-- start oneJumpContent -->
+                        <div class="oneJumpContent" id="link2">
+                            <h2 class="view-only-xs c-blue boxTitleFixJumpMenu">ที่อยู่</h2>
+
+                            <div class="c-blue pdt20 xs-pdlr15 xs-pdt0 lh-form-control">ที่อยู่ตามทะเบียนบ้าน</div>
+                            <div class="boxListForm pdlr0 pdb10 pdt10">
+
+                                <div class="clearfix hide-only-sm"></div>
+
+                                <div class="col-lg-4 col-md-6 pdlr0">
+                                    <div class="col-lg-5 col-md-4 col-sm-3 txt-sm-right pdr-sm-7 lh-form-control">
+                                        <font color="red">*</font> เลขที่ :
+                                    </div>
+                                    <div class="col-lg-7 col-md-8 col-sm-9 pdl-sm-7">
+                                        <div class="form-group">
+                                            <input id="address_no" name="" class="form-control" formControlName="address_no" maxlength="10" type="text" value="" placeholder="" NumberCharacterOnly (change)="copyaddress('P')" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-4 col-md-6 pdlr0">
+                                    <div class="col-lg-5 col-md-4 col-sm-3 txt-sm-right pdr-sm-7 lh-form-control">
+                                        หมู่บ้าน/อาคาร :
+                                    </div>
+                                    <div class="col-lg-7 col-md-8 col-sm-9 pdl-sm-7">
+                                        <div class="form-group">
+                                            <input id="" name="" class="form-control" formControlName="building" maxlength="30" type="text" value="" placeholder="" (change)="copyaddress('P')" NumberCharacterOnly />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-4 col-md-6 pdlr0">
+                                    <div class="col-lg-5 col-md-4 col-sm-3 txt-sm-right pdr-sm-7 lh-form-control">
+                                        หมู่ที่ :
+                                    </div>
+                                    <div class="col-lg-7 col-md-8 col-sm-9 pdl-sm-7">
+                                        <div class="form-group">
+                                            <input id="moo" name="" class="form-control" formControlName="moo" maxlength="2" type="text" value="" placeholder="" NumberOnly (change)="copyaddress('P')" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-4 col-md-6 pdlr0">
+                                    <div class="col-lg-5 col-md-4 col-sm-3 txt-sm-right pdr-sm-7 lh-form-control">
+                                        ตรอก/ซอย :
+                                    </div>
+                                    <div class="col-lg-7 col-md-8 col-sm-9 pdl-sm-7">
+                                        <div class="form-group">
+                                            <input id="soi" name="" class="form-control" formControlName="soi" maxlength="20" type="text" value="" placeholder="" (change)="copyaddress('P')" NumberCharacterOnly />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-4 col-md-6 pdlr0">
+                                    <div class="col-lg-5 col-md-4 col-sm-3 txt-sm-right pdr-sm-7 lh-form-control">
+                                        ถนน :
+                                    </div>
+                                    <div class="col-lg-7 col-md-8 col-sm-9 pdl-sm-7">
+                                        <div class="form-group">
+                                            <input id="road" name="" class="form-control" formControlName="road" maxlength="20" type="text" value="" placeholder="" (change)="copyaddress('P')" NumberCharacterOnly />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-4 col-md-6 pdlr0">
+                                    <div class="col-lg-5 col-md-4 col-sm-3 txt-sm-right pdr-sm-7 lh-form-control">
+                                        <font color="red">*</font> ตำบล/แขวง :
+                                    </div>
+                                    <div class="col-lg-7 col-md-8 col-sm-9 pdl-sm-7">
+                                        <div class="form-group hasSelect">
+                                            <address id="subdistrict" name="subdistrict" formControlName="subdistrict" addressType="tambon_name" [(address)]="appKb.value.address.addressSelected"></address>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-4 col-md-6 pdlr0">
+                                    <div class="col-lg-5 col-md-4 col-sm-3 txt-sm-right pdr-sm-7 lh-form-control">
+                                        <font color="red">*</font> อำเภอ/เขต :
+                                    </div>
+                                    <div class="col-lg-7 col-md-8 col-sm-9 pdl-sm-7">
+                                        <div class="form-group hasSelect">
+                                            <address id="district" name="district" formControlName="district" addressType="amphur_name" [(address)]="appKb.value.address.addressSelected"></address>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-4 col-md-6 pdlr0">
+                                    <div class="col-lg-5 col-md-4 col-sm-3 txt-sm-right pdr-sm-7 lh-form-control">
+                                        <font color="red">*</font> จังหวัด :
+                                    </div>
+                                    <div class="col-lg-7 col-md-8 col-sm-9 pdl-sm-7">
+                                        <div class="form-group hasSelect">
+                                            <address id="province" name="province" formControlName="province" addressType="province_name" [(address)]="appKb.value.address.addressSelected"></address>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-4 col-md-6 pdlr0">
+                                    <div class="col-lg-5 col-md-4 col-sm-3 txt-sm-right pdr-sm-7 lh-form-control">
+                                        <font color="red">*</font> รหัสไปรษณีย์ :
+                                    </div>
+                                    <div class="col-lg-7 col-md-8 col-sm-9 pdl-sm-7">
+                                        <div class="form-group hasSelect">
+                                            <address id="postcode" name="postcode" formControlName="postcode" addressType="zip" [(address)]="appKb.value.address.addressSelected"></address>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+
+                            <div class="boxChkAndInfo">
+                                <div class="boxTopChk">
+                                    <div class="inline_block pdb10 pdr10 lh-form-control">
+                                        <font color="red">*</font> สถานที่ติดต่อได้สะดวก :</div>
+
+                                    <div class="inline_block pdb10 pdr20 lh-form-control">
+                                        <input id="radio-3-1" name="caddress" formControlName="caddress" value="C" class="radio-style3" type="radio" (change)="copyaddress('C')">
+                                        <label for="radio-3-1">ที่อยู่ปัจจุบัน</label>
+                                    </div>
+
+                                    <div class="inline_block pdb10 pdr20 lh-form-control">
+                                        <input id="radio-3-2" name="caddress" formControlName="caddress" value="W" class="radio-style3" type="radio" (change)="copyaddress('W')">
+                                        <label for="radio-3-2">สถานที่ทำงาน</label>
+                                    </div>
+
+                                    <div class="inline_block pdb10 pdr20 lh-form-control">
+                                        <input id="radio-3-3" name="caddress" formControlName="caddress" value="P" class="radio-style3" type="radio" (change)="copyaddress('P')">
+                                        <label for="radio-3-3">ทะเบียนบ้าน (ทร.14)</label>
+                                    </div>
+                                </div>
+
+                                <div class="boxInfoForm">
+                                    <div class="clearfix hide-only-sm"></div>
+
+                                    <div class="col-lg-4 col-md-6 pdlr0">
+                                        <div class="col-lg-5 col-md-4 col-sm-3 txt-sm-right pdr-sm-7 lh-form-control">
+                                            <font color="red">*</font> เลขที่ :
+                                        </div>
+                                        <div class="col-lg-7 col-md-8 col-sm-9 pdl-sm-7">
+                                            <div class="form-group">
+                                                <input id="address_no2" name="" class="form-control" formControlName="address_no2" maxlength="10" type="text" value="" placeholder="" NumberCharacterOnly />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-4 col-md-6 pdlr0">
+                                        <div class="col-lg-5 col-md-4 col-sm-3 txt-sm-right pdr-sm-7 lh-form-control">
+                                            หมู่บ้าน/อาคาร :
+                                        </div>
+                                        <div class="col-lg-7 col-md-8 col-sm-9 pdl-sm-7">
+                                            <div class="form-group">
+                                                <input name="" class="form-control" formControlName="building2" maxlength="30" type="text" value="" placeholder="" NumberCharacterOnly />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-4 col-md-6 pdlr0">
+                                        <div class="col-lg-5 col-md-4 col-sm-3 txt-sm-right pdr-sm-7 lh-form-control">
+                                            หมู่ที่ :
+                                        </div>
+                                        <div class="col-lg-7 col-md-8 col-sm-9 pdl-sm-7">
+                                            <div class="form-group">
+                                                <input id="moo2" name="" class="form-control" formControlName="moo2" maxlength="2" type="text" value="" placeholder="" NumberOnly/>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-4 col-md-6 pdlr0">
+                                        <div class="col-lg-5 col-md-4 col-sm-3 txt-sm-right pdr-sm-7 lh-form-control">
+                                            ตรอก/ซอย :
+                                        </div>
+                                        <div class="col-lg-7 col-md-8 col-sm-9 pdl-sm-7">
+                                            <div class="form-group">
+                                                <input id="soi2" name="" class="form-control" formControlName="soi2" maxlength="20" type="text" value="" placeholder="" NumberCharacterOnly />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-4 col-md-6 pdlr0">
+                                        <div class="col-lg-5 col-md-4 col-sm-3 txt-sm-right pdr-sm-7 lh-form-control">
+                                            ถนน :
+                                        </div>
+                                        <div class="col-lg-7 col-md-8 col-sm-9 pdl-sm-7">
+                                            <div class="form-group">
+                                                <input id="road2" name="" class="form-control" formControlName="road2" maxlength="20" type="text" value="" placeholder="" NumberCharacterOnly />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-4 col-md-6 pdlr0">
+                                        <div class="col-lg-5 col-md-4 col-sm-3 txt-sm-right pdr-sm-7 lh-form-control">
+                                            <font color="red">*</font> ตำบล/แขวง :
+                                        </div>
+                                        <div class="col-lg-7 col-md-8 col-sm-9 pdl-sm-7">
+                                            <div class="form-group hasSelect">
+                                                <address id="subdistrict2" formControlName="contactSubdistrict" addressType="tambon_name" [(address)]="appKb.value.contactAddresscd.addressSelected"></address>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-4 col-md-6 pdlr0">
+                                        <div class="col-lg-5 col-md-4 col-sm-3 txt-sm-right pdr-sm-7 lh-form-control">
+                                            <font color="red">*</font> อำเภอ/เขต :
+                                        </div>
+                                        <div class="col-lg-7 col-md-8 col-sm-9 pdl-sm-7">
+                                            <div class="form-group hasSelect">
+                                                <address id="district2" formControlName="contactDistrict" addressType="amphur_name" [(address)]="appKb.value.contactAddresscd.addressSelected"></address>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-4 col-md-6 pdlr0">
+                                        <div class="col-lg-5 col-md-4 col-sm-3 txt-sm-right pdr-sm-7 lh-form-control">
+                                            <font color="red">*</font> จังหวัด :
+                                        </div>
+                                        <div class="col-lg-7 col-md-8 col-sm-9 pdl-sm-7">
+                                            <div class="form-group hasSelect">
+                                                <address id="province2" formControlName="contactProvince" addressType="province_name" [(address)]="appKb.value.contactAddresscd.addressSelected"></address>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-4 col-md-6 pdlr0">
+                                        <div class="col-lg-5 col-md-4 col-sm-3 txt-sm-right pdr-sm-7 lh-form-control">
+                                            <font color="red">*</font> รหัสไปรษณีย์ :
+                                        </div>
+                                        <div class="col-lg-7 col-md-8 col-sm-9 pdl-sm-7">
+                                            <div class="form-group hasSelect">
+                                                <address id="postcode2" formControlName="contactPostcode" addressType="zip" [(address)]="appKb.value.contactAddresscd.addressSelected"></address>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-4 col-md-6 pdlr0">
+                                        <div class="col-lg-5 col-md-4 col-sm-3 txt-sm-right pdr-sm-7 lh-form-control">
+                                            โทรศัพท์ :
+                                        </div>
+                                        <div class="col-lg-7 col-md-8 col-sm-9 pdl-sm-7">
+                                            <div class="form-group">
+                                                <input id="tel_no" name="" class="form-control" formControlName="tel_no" type="text" value="" placeholder="" maxlength="10" NumberOnly/>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <hr />
+                        </div>
+                        <!-- end oneJumpContent -->
+
+                        <!-- start oneJumpContent -->
+                        <div class="oneJumpContent" id="link3">
+                            <h2 class="view-only-xs c-blue boxTitleFixJumpMenu">ประวัติการทำประกัน</h2>
+
+                            <div class="pdb10 pdt20 xs-pdlr15 lh-form-control">
+                                ท่านเคยทำประกันชีวิตไว้กับบริษัทนี้หรือบริษัทประกันภัยอื่นหรือไม่
+                            </div>
+
+                            <div class="boxChkAndInfo">
+                                <div class="boxTopChk xs-pdlr15">
+                                    <div class="inline_block pdb10 pdr20 lh-form-control">
+                                        <input id="other_insurance_yn-1-1" name="other_insurance_yn" value="N" formControlName="other_insurance_yn" class="radio-style3" type="radio" (click)="removeCompany()">
+                                        <label for="other_insurance_yn-1-1">ไม่เคย</label>
+                                    </div>
+
+                                    <div class="inline_block pdb10 pdr20 lh-form-control">
+                                        <input #other_insuranceY id="other_insurance_yn-1-2" name="other_insurance_yn" formControlName="other_insurance_yn" value="Y" class="radio-style3" type="radio" (click)="addCompany()">
+                                        <label for="other_insurance_yn-1-2">เคย (โปรดแจ้งรายละเอียด)</label>
+                                    </div>
+                                </div>
+
+                                <div *ngIf="other_insuranceY.checked" class="boxInfoForm" formArrayName="otherinsuranceRows">
+                                    <!-- start one business -->
+                                    <div class="oneBusiness" *ngFor="let itemrow of appKb.get('otherinsuranceRows').controls; let i=index" [formGroupName]="i">
+                                        <div class="boxRemoveRow" *ngIf="appKb.value.otherinsuranceRows.length > 1">
+                                            <a class="btnTxtIconRight" href="javascript:;" (click)="removeCompany(i)">ลบบริษัท <span><i class="icon-close"></i></span></a>
+                                        </div>
+
+                                        <div class="col-md-6 pdlr0">
+                                            <div class="col-md-5 col-sm-4 txt-sm-right pdr-sm-7 lh-form-control">
+                                                <font color="red">*</font> ชื่อบริษัทประกันภัย :
+                                            </div>
+                                            <div class="col-md-7 col-sm-8 pdl-sm-7">
+                                                <dropdown formControlName="company">
+                                                    <!-- <dropdown-option value="00">ไม่มี</dropdown-option> -->
+                                                    <dropdown-option [value]="oc.value" *ngFor="let oc of companyDropDown">{{oc.value}}</dropdown-option>
+                                                </dropdown>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6 pdlr0">
+                                            <div class="col-md-5 col-sm-4 txt-sm-right pdr-sm-7 lh-form-control">
+                                                แบบประกันภัย :
+                                            </div>
+                                            <div class="col-md-7 col-sm-8 pdl-sm-7">
+                                                <div class="form-group">
+                                                    <input id="insured_type" name="" class="form-control" formControlName="insuranceplan" type="text" value="" placeholder="" />
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6 pdlr0">
+                                            <div class="col-md-5 col-sm-4 txt-sm-right pdr-sm-7 lh-form-control">
+                                                เลขที่กรมธรรม์ :
+                                            </div>
+                                            <div class="col-md-7 col-sm-8 pdl-sm-7">
+                                                <div class="form-group">
+                                                    <input id="" name="" class="form-control" formControlName="insuranceno" type="text" value="" placeholder="" NumberOnly/>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6 pdlr0">
+                                            <div class="col-md-5 col-sm-4 txt-sm-right pdr-sm-7 pdl-md-0 lh-form-control">
+                                                จำนวนเงินเอาประกันภัย :
+                                            </div>
+                                            <div class="col-md-5 col-sm-7 col-xs-8 pdl-sm-7 pdr7">
+                                                <div class="form-group">
+                                                    <input id="sum_insured" name="" class="form-control" formControlName="totalinsurance" type="text" value="" placeholder="" NumberOnly/>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2 col-sm-1 col-xs-4 pdl7 lh-form-control">
+                                                บาท
+                                            </div>
+                                        </div>
+                                        <div class="clearfix view-only-xs"></div>
+
+                                        <div class="col-md-6 pdlr0">
+                                            <div class="col-md-5 col-sm-4 txt-sm-right pdr-sm-7 lh-form-control">
+                                                วันเริ่มสัญญา :
+                                            </div>
+                                            <div class="col-md-7 col-sm-8 pdl-sm-7">
+                                                <calendar [max]="maxDate" [id]="kb_start_date" [(date)]="appKb.get('otherinsuranceRows').at(i).get('issueDate').value" (dateChange)="changeKbStartDate($event,i)"></calendar>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6 pdlr0">
+                                            <div class="col-md-5 col-sm-4 txt-sm-right pdr-sm-7 lh-form-control">
+                                                <font color="red">*</font> ผลบังคับของสัญญา :
+                                            </div>
+                                            <div class="col-md-7 col-sm-8 pdl-sm-7">
+                                                <div class="inline_block pdb10 pdr20 lh-form-control">
+                                                    <input id="contract_effective_flag-1{{i}}" value="Y" formControlName="contractflag" class="radio-style3" type="radio">
+                                                    <label for="contract_effective_flag-1{{i}}">มีผล</label>
+                                                </div>
+                                                <div class="inline_block pdb10 pdr20 lh-form-control">
+                                                    <input id="contract_effective_flag-2{{i}}" value="N" formControlName="contractflag" class="radio-style3" type="radio">
+                                                    <label for="contract_effective_flag-2{{i}}">ไม่มีผล</label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <!-- end one business -->
+
+                                    <div *ngIf="appKb.value.otherinsuranceRows.length < 2" class="boxAddRow txt-center">
+                                        <a class="btnTxtIconRight" href="javascript:;" (click)="addCompany()">เพิ่มบริษัท <span><i class="icon-plus2"></i></span></a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="link4" class="pdb10 pdt10 xs-pdlr15 lh-form-control">
+                                <font color="red">*</font> ท่านเคยถูกบริษัทประกันภัยปฏิเสธการรับประกันภัย หรือยกเลิกการรับประกันภัย หรือรับโดยการรับจำนวนเงินเอาประกันหรือเพิ่มเบี้ยประกันภัยหรือไม่
+                            </div>
+                            <div class="boxChkAndInfo">
+                                <div class="boxTopChk xs-pdlr15">
+                                    <div class="inline_block pdb10 pdr20 lh-form-control">
+                                        <input id="reject-1" name="insurerejectionflag" value="N" formControlName="insurerejectionflag" class="radio-style3" type="radio" (click)="insurerejectionflag('N')">
+                                        <label for="reject-1">ไม่เคย</label>
+                                    </div>
+
+                                    <div class="inline_block pdb10 pdr20 lh-form-control">
+                                        <input #rejectY id="reject-2" name="insurerejectionflag" value="Y" formControlName="insurerejectionflag" class="radio-style3" type="radio" (click)="insurerejectionflag('Y')">
+                                        <label for="reject-2">เคย (โปรดแจ้งร้ายละเอียด)</label>
+                                    </div>
+                                </div>
+                                <div *ngIf="rejectY.checked" class="boxInfoForm">
+                                    <div class="form-group mgb0">
+                                        <div class="col-md-6 pdlr0">
+                                            <div class="col-md-5 col-sm-4 txt-sm-right pdr-sm-7 lh-form-control">
+                                                <font color="red">*</font> ชื่อบริษัทประกันภัย :
+                                            </div>
+                                            <div class="col-md-7 col-sm-8 pdl-sm-7">
+                                                <dropdown id="otherOccupation" formControlName="company">
+                                                    <!-- <dropdown-option value="00">ไม่มี</dropdown-option> -->
+                                                    <dropdown-option [value]="oc.value" *ngFor="let oc of companyDropDown">{{oc.value}}</dropdown-option>
+                                                </dropdown>
+                                            </div>
+                                        </div>
+
+                                        <!-- <div class="col-md-6 pdlr0">
+                                            <div class="col-md-5 col-sm-4 txt-sm-right pdr-sm-7 lh-form-control" *ngIf="appKb.value.company == 'อื่นๆ'">
+                                                <font color="red">*</font> ระบุ (ชื่อบริษัท) :
+                                            </div>
+                                            <div class="col-md-7 col-sm-8 pdl-sm-7" *ngIf="appKb.value.company == 'อื่นๆ'">
+                                                <div class="form-group">
+                                                    <input id="insured_type" name="" class="form-control" formControlName="companydesc" type="text" value="" placeholder="" />
+                                                </div>
+                                            </div>
+                                        </div> -->
+                                        <div class="clearfix"></div>
+
+                                        <div class="col-md-6 pdlr0">
+                                            <div class="col-md-5 col-sm-4 txt-sm-right pdr-sm-7 lh-form-control">
+                                                สาเหตุ :
+                                            </div>
+                                            <div class="col-md-7 col-sm-8 pdl-sm-7">
+                                                <div class="form-group">
+                                                    <input id="" name="" class="form-control" formControlName="rejectreason" type="text" value="" placeholder="" />
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6 pdlr0">
+                                            <div class="col-md-5 col-sm-4 txt-sm-right pdr-sm-7 lh-form-control">
+                                                เมื่อวันที่ :
+                                            </div>
+                                            <div class="col-md-7 col-sm-8 pdl-sm-7">
+                                                <calendar [max]="maxDate" [id]="kb_rejectdate" formControlName="rejectdate"></calendar>
+                                            </div>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="pdb10 pdt10 xs-pdlr15 lh-form-control">
+                                <font color="red">*</font> ขณะนี้ท่านมีสุขภาพร่างกายและจิตใจสมบูรณ์ดีหรือไม่
+                            </div>
+                            <div class="pdb10">
+                                <div class="inline_block pdb10 pdlr20 lh-form-control">
+                                    <input id="health-1" name="health" formControlName="health" value="Y" class="radio-style3" type="radio" (change)="healthChange()">
+                                    <label for="health-1">สมบูรณ์ดี</label>
+                                </div>
+
+                                <div class="inline_block pdb10 pdlr20 lh-form-control">
+                                    <input #healthN id="health-2" name="health" formControlName="health" value="N" class="radio-style3" type="radio" (change)="healthChange()">
+                                    <label for="health-2">ไม่สมบูรณ์ (โปรดแจ้งรายละเอียด)</label>
+
+                                    <div *ngIf="healthN.checked" class="inline_block pdl7 pdr7">
+                                        <div class="form-group mgb0">
+                                            <input name="healthdesc" class="form-control" formControlName="healthdesc" type="text" value="" placeholder="" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+
+                            <div class="pdb10 pdt10 xs-pdlr15 lh-form-control">
+                                <font color="red">*</font> ท่านมีร่างกายส่วนหนึ่งส่วนใดพิการหรือไม่
+                            </div>
+                            <div class="pdb10">
+                                <div class="inline_block pdb10 pdlr20 lh-form-control">
+                                    <input id="disabled-1" name="disabled" value="Y" formControlName="disabled" class="radio-style3" type="radio" (change)="disabledChange()">
+                                    <label for="disabled-1">ไม่พิการ</label>
+                                </div>
+
+                                <div class="inline_block pdb10 pdlr20 lh-form-control">
+                                    <input #disabledY id="disabled-2" name="disabled" value="N" formControlName="disabled" class="radio-style3" type="radio" (change)="disabledChange()">
+                                    <label for="disabled-2">พิการ (โปรดแจ้งรายละเอียด)</label>
+
+                                    <div *ngIf="disabledY.checked" class="inline_block pdl7 pdr7">
+                                        <div class="form-group mgb0">
+                                            <input name="disabledDesc" class="form-control" formControlName="disabledDesc" type="text" value="" placeholder="" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+
+                            <div class="pdb10 pdt10 xs-pdlr15 lh-form-control">
+                                <font color="red">*</font> เป็นคนปัญญาอ่อนหรือไม่
+                            </div>
+                            <div class="pdb10">
+                                <div class="inline_block pdb10 pdlr20 lh-form-control">
+                                    <input id="retarded-1" name="retarded" value="N" formControlName="retarded" class="radio-style3" type="radio" (change)="retardedChange()">
+                                    <label for="retarded-1">ไม่เป็น</label>
+                                </div>
+
+                                <div class="inline_block pdb10 pdlr20 lh-form-control">
+                                    <input #retardedY id="retarded-2" value="Y" name="retarded" formControlName="retarded" class="radio-style3" type="radio" (change)="retardedChange()">
+                                    <label for="retarded-2">เป็น (โปรดแจ้งรายละเอียด)</label>
+
+                                    <div *ngIf="retardedY.checked" class="inline_block pdl7 pdr7">
+                                        <div class="form-group mgb0">
+                                            <input name="retardedDesc" class="form-control" formControlName="retardedDesc" type="text" value="" placeholder="" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                        <!-- end oneJumpContent -->
+
+                        <!-- start oneJumpContent -->
+                        <div class="oneJumpContent">
+                            <h2 class="view-only-xs c-blue boxTitleFixJumpMenu">ประวัติการรักษา</h2>
+
+                            <div class="pdb10 pdt10 xs-pdlr15 lh-form-control">
+                                <font color="red">*</font> ในระหว่าง 2 ปีที่แล้ว ท่านเคยให้แพทย์ตรวจ หรือเข้าสถานพยาบาลทำการรักษาตัว ตรวจโลหิต ความดันโลหิต ปัสสาวะ เอกซเรย์ ตรวจหัวใจ หรือตรวจอย่างอื่นหรือไม่
+                            </div>
+                            <div>
+                                <div class="inline_block pdb10 pdlr20 lh-form-control">
+                                    <input id="hospital_last_2years-1" name="hospital_last_2years" formControlName="hospital_last_2years" value="N" class="radio-style3" type="radio" (change)="hospitalLast2yearsChange()">
+                                    <label for="hospital_last_2years-1">ไม่เคย</label>
+                                </div>
+
+                                <div class="inline_block pdb10 pdlr20 lh-form-control">
+                                    <input #hospitalY id="hospital_last_2years-2" name="hospital_last_2years" formControlName="hospital_last_2years" value="Y" class="radio-style3" type="radio" (change)="hospitalLast2yearsChange()">
+                                    <label for="hospital_last_2years-2">เคย (โปรดแจ้งรายละเอียด)</label>
+
+                                    <div *ngIf="hospitalY.checked" class="inline_block pdl7 pdr7">
+                                        <div class="form-group mgb0">
+                                            <input name="" class="form-control" type="text" formControlName="hospital_last_2years_desc" value="" placeholder="" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+
+                            <hr />
+                        </div>
+                        <!-- end oneJumpContent -->
+
+                        <!-- start oneJumpContent -->
+                        <div id="link5" class="oneJumpContent">
+                            <h2 class="view-only-xs c-blue boxTitleFixJumpMenu">ยอมรับเงื่อนไขข้อตกลง</h2>
+
+                            <div class="pdb10 pdt10 xs-pdlr15 lh-form-control">ข้าพเจ้าขอรับรองว่าคำแถลงตามรายการข้างบนเป็นความจริงและให้ถือเป็นส่วนหนึ่งของสัญญาระหว่าง</div>
+
+                            <div class="boxListForm pdt0 pdlr0">
+                                <div class="col-lg-4 col-md-6 pdlr0">
+                                    <div class="col-lg-5 col-md-4 col-sm-3 txt-sm-right pdr-sm-7 lh-form-control">
+                                        <font color="red">*</font> ทำที่ :</div>
+                                    <div class="col-lg-7 col-md-8 col-sm-9 pdl-sm-7">
+                                        <div class="form-group">
+                                            <input name="" class="form-control" formControlName="work_place" type="text" value="" placeholder="" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-4 col-md-6 pdlr0">
+                                    <div class="col-lg-5 col-md-4 col-sm-3 txt-sm-right pdr-sm-7 lh-form-control">วันที่ :</div>
+                                    <div class="col-lg-7 col-md-8 col-sm-9 pdl-sm-7">
+                                        <calendar [max]="maxDate" [id]="kb_submit_date" formControlName="submitdate"></calendar>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-4 col-md-6 pdlr0">
+                                    <div class="col-lg-5 col-md-4 col-sm-3 txt-sm-right pdr-sm-7 lh-form-control">ใบอนุญาตเลขที่ :</div>
+                                    <div class="col-lg-7 col-md-8 col-sm-9 pdl-sm-7">
+                                        <div class="form-group">
+                                            <input id="license" name="" class="form-control" formControlName="license" type="text" value="" placeholder="" NumberOnly/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="clearfix hide-only-sm hide-only-md"></div>
+
+                                <div class="col-lg-4 col-md-6 pdlr0">
+                                    <div class="col-lg-5 col-md-4 col-sm-3 txt-sm-right pdr-sm-7 lh-form-control">
+                                        <font color="red">*</font> ชื่อผู้ปกครอง :</div>
+                                    <div class="col-lg-7 col-md-8 col-sm-9 pdl-sm-7">
+                                        <div class="form-group">
+                                            <input id="parent_name" name="" class="form-control" formControlName="parent_name" type="text" value="" placeholder="" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-4 col-md-6 pdlr0">
+                                    <div class="col-lg-5 col-md-4 col-sm-3 txt-sm-right pdr-sm-7 lh-form-control">
+                                        <font color="red">*</font> ชื่อพยาน :</div>
+                                    <div class="col-lg-7 col-md-8 col-sm-9 pdl-sm-7">
+                                        <div class="form-group">
+                                            <input id="witness1_fname" name="" class="form-control" formControlName="witness1_fname" type="text" value="" placeholder="" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-4 col-md-6 pdlr0">
+                                    <div class="col-lg-5 col-md-4 col-sm-3 txt-sm-right pdr-sm-7 lh-form-control">
+                                        <font color="red">*</font> ชื่อพยาน :</div>
+                                    <div class="col-lg-7 col-md-8 col-sm-9 pdl-sm-7">
+                                        <div class="form-group">
+                                            <input id=witness2_fname name="" class="form-control" formControlName="witness2_fname" type="text" value="" placeholder="" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="c-blue txt-right xs-pdlr15">* หากผู้ปกครองพิมพ์ลายนิ้วมือ จะต้องมีพยานรับรอง 2 ท่าน</div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                        <!-- end oneJumpContent -->
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</form>

@@ -1,0 +1,132 @@
+<div [ngClass]="{'boxBenefit': summary?.type!=='table'}" *ngFor="let summary of data">
+    <div *ngIf="summary?.type==='item'">
+        <h2 class="titleBenefit">
+            {{ summary?.title }}
+        </h2>
+        <div class="boxContentBenefit">
+            <div *ngFor="let item of summary.items">
+                <div class="oneBenefit" [ngClass]="{'or': item.name.trim() == 'หรือ'}" *ngIf="!(tlplanService.bindingData(item.isHidden, calculate)==='true')">
+                    <div class="col-md-6 pdb5">{{ item.name | quatationPlanBinding:calculate }}</div>
+                    <div class="col-md-6 col-sm-12 txt-md-right" *ngIf="(item.income | quatationPlanBinding:calculate)?.length > 0">
+                        <div class="row hidden-xs">
+                            <div class="col-md-5 col-sm-3 col-xs-12 txt-right">
+                                <b>{{ item.percentIncome | quatationPlanBinding:calculate }}</b>
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-xs-12 txt-right"> เป็นจำนวนเงิน </div>
+                            <div class="col-md-4 col-sm-6 col-xs-12 txt-right">
+                                <b>{{ item.income | quatationPlanBinding:calculate }}</b> บาท
+                            </div>
+                        </div>
+                        <!-- vertical design -->
+                        <div class="visible-xs">
+                            <span>
+                                <b>{{ item.percentIncome | quatationPlanBinding:calculate }}</b>
+                            </span>
+                            <span class="pdr10" *ngIf="item.income"> เป็นจำนวนเงิน
+                            <span style="float: right;">
+                                <b>{{ item.income | quatationPlanBinding:calculate }}</b>
+                                บาท
+                            </span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="sub-item-level-{{ subItem.indentLevel }}" *ngFor="let subItem of item.subItems">
+                        <div class="clearfix"></div>
+                        <div class="col-md-6 col-sm-12 pdb5 indent-md-15 sub-item-indent-{{ subItem.indentLevel }}">{{ subItem.name | quatationPlanBinding:calculate }}</div>
+                        <div class="col-md-6 col-sm-12 txt-md-right">
+                            <!-- horizontal design -->
+                            <div class="row hidden-xs">
+                                <div class="col-md-5 col-sm-3 col-xs-12 txt-right">
+                                    <b>{{ subItem.percentIncome | quatationPlanBinding:calculate }}</b>
+                                </div>
+                                <div class="col-md-3 col-sm-3 col-xs-12 txt-right" *ngIf="subItem.income">
+                                    เป็นจำนวนเงิน
+                                </div>
+                                <div class="col-md-4 col-sm-6 col-xs-12 txt-right" *ngIf="subItem.income">
+                                    <b>{{ subItem.income | quatationPlanBinding:calculate }}</b> บาท
+                                </div>
+                            </div>
+
+                            <!-- vertical design -->
+                            <div class="visible-xs">
+                                <span>
+                                <b>{{ subItem.percentIncome | quatationPlanBinding:calculate }}</b>
+                              </span>
+                                <span class="pdr10" *ngIf="subItem.income"> เป็นจำนวนเงิน
+                                <span style="float: right;" *ngIf="subItem.income">
+                                  <b>{{ subItem.income | quatationPlanBinding:calculate }}</b>
+                                  บาท
+                                </span>
+                                </span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="summary?.type==='table'">
+        <!-- <table style="width: 100%;">
+            <thead>
+                <tr>
+                    <td *ngFor="let title of summary.titles; let summaryIndex = index;">
+                        <h2 class="titleBenefit hide-border" *ngIf="summaryIndex==0">{{ title }}</h2>
+                        <span *ngIf="summaryIndex!=0">{{ title }}</span>
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let row of summary.rows">
+                    <td *ngFor="let column of row" style="padding-top: 5px;">
+                        <span *ngIf="column.type=='title'" style="margin-left: 45px;">• {{ column.message | quatationPlanBinding:calculate }}</span>
+                        <span *ngIf="column.type=='checkbox' && column.message" style="font-size: 15px; color: #0082c8;">✔</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table> -->
+        <div class="boxTableStyle1">
+
+            <table style="width: 100%;">
+                <thead>
+                    <tr>
+                        <th *ngFor="let header of summary.headers; ">
+                            {{header.name}}
+
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let row of summary.body">
+                        <td [class]="column.class" *ngFor="let column of row.row">
+                            {{ column.name | quatationPlanBinding:calculate }}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div *ngIf="summary?.type==='note'">
+        <ul class="boxComment">
+            <li *ngFor="let item of summary?.items">
+                <div *ngIf="!(tlplanService.bindingData(item.isHidden, calculate)==='true')">
+                    <span class="listStyle {{ item.color }}">
+            <i class="icon-chevron-up mgr-5" *ngIf="item.icon==='up'"></i>
+            <span *ngIf="item.iconText" class="{{item.iconCss}}">{{ item.iconText }}</span>
+                    </span>
+                    <span class="{{item.messageCSS}}">
+            {{ item.message | quatationPlanBinding:calculate }}
+          </span>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div *ngIf="summary?.type==='condition'">
+        <ul class="boxComment2">
+            <li *ngFor="let item of summary?.items" [ngClass]="{hidden: (item | quatationPlanBinding:calculate) ==''}">
+                {{ item | quatationPlanBinding:calculate }}
+            </li>
+        </ul>
+    </div>
+    <div *ngIf="summary?.type==='plain_text'" style="white-space: pre-wrap; padding: 10px;">{{summary.text}}</div>
+</div>

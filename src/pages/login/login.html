@@ -1,0 +1,54 @@
+<ion-header hidden></ion-header>
+
+<ion-content>
+    <div id="login_page" class="mainContainer">
+        <div class="container">
+            <!-- start loginHeader -->
+            <div class="loginHeader">
+                <h1 class="logoThailife hide-only-xs"><a id="login_pic_logoTL" href="#">ไทยประกันชีวิต</a></h1>
+                <div class="boxVersion">
+                    <div class="txt1">ทีแอล <span>โปร<sup>+</sup></span></div>
+                    <div id="login_lb_tlprompt" class="txt2">TL PRO PLUS</div>
+                    <div id="login_lb_version" class="txt3">{{ tlpromptVersion }}</div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <!-- end loginHeader -->
+
+            <div class="ct">
+                <div class="cc">
+                    <!-- start boxFormLogin -->
+                    <div class="boxFormLogin">
+                        <h1 id="login_lb_memberLogin">เข้าสู่ระบบ</h1>
+                        <div class="formLogin">
+                            <form id="formLogin">
+                                <ul class="bg-style">
+                                    <li><i class="icon-ion-android-person"></i><input name="username" type="text" class="intxt-style" placeholder="รหัสตัวแทนหรือเลขประจำตัวประชาชน" [(ngModel)]="username" /></li>
+                                    <li><i class="icon-ion-locked"></i><input name="password" type="password" class="intxt-style" placeholder="รหัสผ่านนักขายดิจิทัล" [(ngModel)]="password" /></li>
+                                </ul>
+
+                                <ul>
+                                    <li>
+                                        <ion-grid>
+                                            <ion-row>
+                                                <ion-col col-6 text-center>
+                                                    <a class="c-666" href="javascript:void(0)" (click)="forget()">ลืมรหัสผ่าน ?</a>
+                                                </ion-col>
+                                                <ion-col col-5 text-center>
+                                                    <a class="c-666" href="javascript:void(0)" (click)="register()">สมัครสมาชิก ?</a>
+                                                </ion-col>
+                                            </ion-row>
+                                        </ion-grid>
+                                    </li>
+                                    <li><button id="login_bt_login" class="btn-style mgt22" type="submit" (click)="login()"><span>เข้าสู่ระบบ</span></button></li>
+                                </ul>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- end boxFormLogin -->
+                </div>
+            </div>
+
+        </div>
+    </div>
+</ion-content>

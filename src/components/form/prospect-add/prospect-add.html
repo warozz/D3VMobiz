@@ -1,0 +1,345 @@
+<form [formGroup]="prospectAddForm">
+    <div class="bgBlue4">
+        <div class="boxFilterSearch">
+            <div class="contentPaperShadow">
+                <div class="boxListForm">
+                    <div class="boxTitleContainer">
+                        <h2>ข้อมูลผู้มุ่งหวัง</h2>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-md-3 col-sm-5 pdl0 txt-sm-right lh-form-control ws-nowrap">แหล่งที่มา/โปรแกรม :</div>
+                        <div class="col-md-9 col-sm-7 pdlr0">
+                            <div class="form-group">
+                                <input class="form-control" type="text" value="TL Pro Plus" disabled/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+
+                    <!-- citizenID -->
+                    <div class="col-md-12">
+                        <div class="col-md-3 pdl0 col-sm-5 txt-sm-right lh-form-control ws-nowrap" style="padding-top:13px;padding-top:13px;">เลขประจำตัวประชาชน :</div>
+                        <div class="col-md-4 col-sm-7 pdlr0">
+                            <div class="form-group boxSearch">
+                                <input formControlName="citizenID" [(ngModel)]="prospectData.citizenID" type="tel" (keyup)="keyupdata()" class="form-control" type="text" maxlength="13" placeholder="ค้นหา" NumberOnly ng-paste="$event.preventDefault();" ng-init="paste=false" />
+                                <button class="btnSearch" type="button" (click)="searchId()" *ngIf="buttonsearchId != '0'"><i class="icon-search2"></i></button>
+                            </div>
+                        </div>
+                        <div class="col-md-5 col-sm-12 txt-sm-right lh-form-control ws-nowrap c-red" style="padding-top:13px;">
+                            * กดค้นหาเพื่อดึงข้อมูลลูกค้าจากกรมธรรม์เดิม
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+
+                    <!-- birthDate -->
+                    <div class="col-md-4">
+                        <div class="col-sm-5 pdl0 txt-sm-right lh-form-control ws-nowrap"><span class="c-red">*</span> ระบุวันเกิด :</div>
+                        <div class="col-sm-7 pdlr0">
+                            <calendar [id]="'pros_birthdate'" [max]="maxBirthDate" [(date)]="prospectData.birthDate"></calendar>
+                        </div>
+                    </div>
+
+
+                    <!-- age -->
+                    <div class="col-md-4">
+                        <div class="col-sm-5 pdl0 txt-sm-right lh-form-control ws-nowrap">อายุ :</div>
+                        <div class="col-sm-7 pdlr0">
+                            <div class="form-group">
+                                <input id="pros_age" formControlName="age" class="form-control" calculate-age [birthDate]="prospectData.birthDate" readonly [(ngModel)]="prospectData.age" (ngModelChange)="checkMaxDate($event)" />
+                            </div>
+                        </div>
+                    </div>
+                    <!-- gender -->
+                    <div class="col-md-4">
+                        <div class="col-sm-5 pdl0 txt-sm-right lh-form-control ws-nowrap">
+                            <span class="c-red">*</span> ชั้นอาชีพ :</div>
+                        <div class="col-sm-7 pdlr0">
+                            <div class="form-group">
+                                <!-- <sex [id]="'pros_gender'" [(data)]="prospectData.gender"></sex> -->
+                                <ion-item class="form-control">
+                                    <ion-select id="pros_occupationType" [(ngModel)]="prospectData.occupationType" formControlName="occupationType" cancelText="ยกเลิก" okText="ตกลง" interface="popover">
+                                        <!-- <ion-option value=""></ion-option> -->
+                                        <ion-option value="1">1</ion-option>
+                                        <ion-option value="2">2</ion-option>
+                                        <ion-option value="3">3</ion-option>
+                                    </ion-select>
+                                </ion-item>
+                                <!-- -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- preName -->
+                    <div class="col-md-4">
+                        <div class="col-sm-5 pdl0 txt-sm-right lh-form-control ws-nowrap">
+                            <span class="c-red">*</span> คำนำหน้า :</div>
+                        <div class="col-sm-7 pdlr0">
+                            <prefix-name id="pros_preName" formControlName="preName" [(ngModel)]="prospectData.preName" [birthDate]="prospectData.birthDate" (sex)="prospectData.gender = $event" (disabledSex)="disabledSex = $event"></prefix-name>
+                        </div>
+                    </div>
+                    <!-- firstName -->
+                    <div class="col-md-4">
+                        <div class="col-sm-5 pdl0 txt-sm-right lh-form-control ws-nowrap">
+                            <span class="c-red">*</span> ชื่อ :</div>
+                        <div class="col-sm-7 pdlr0">
+                            <div class="form-group">
+                                <input id="pros_firstName" class="form-control" formControlName="firstName" type="text" placeholder="ชื่อ" [(ngModel)]="prospectData.firstName" CharacterOnly maxlength="30" />
+                            </div>
+                        </div>
+                    </div>
+                    <!-- lastName -->
+                    <div class="col-md-4">
+                        <div class="col-sm-5 pdl0 txt-sm-right lh-form-control ws-nowrap">
+                            <span class="c-red">*</span> นามสกุล :</div>
+                        <div class="col-sm-7 pdlr0">
+                            <div class="form-group">
+                                <input id="pros_lastName" formControlName="lastName" class="form-control" type="text" placeholder="นามสกุล" [(ngModel)]="prospectData.lastName" CharacterOnly maxlength="30" />
+                            </div>
+                        </div>
+                    </div>
+                    <!-- occupationType -->
+                    <div class="col-md-4">
+                        <div class="col-sm-5 pdl0 txt-sm-right lh-form-control ws-nowrap">
+                            <span class="c-red">*</span> เพศ :</div>
+                        <div class="col-sm-7 pdlr0">
+                            <ion-item class="form-control">
+                                <ion-label>เพศ</ion-label>
+                                <ion-select id="pros_gender" formControlName="gender" [(ngModel)]="prospectData.gender" (ngModelChange)="sexChange($event)" [ngModelOptions]="{standalone: true}" cancelText="ยกเลิก" okText="ตกลง" interface="popover" [disabled]="disabledSex">
+                                    <ion-option value="M">ชาย</ion-option>
+                                    <ion-option value="F">หญิง</ion-option>
+                                </ion-select>
+                            </ion-item>
+                        </div>
+                    </div>
+
+                    <!-- maritalstatus -->
+                    <div class="col-md-4">
+                        <div class="col-sm-5 pdl0 txt-sm-right lh-form-control ws-nowrap">สถานะ :</div>
+                        <div class="col-sm-7 pdlr0">
+                            <div class="form-group">
+                                <ion-item class="form-control">
+                                    <ion-select id="pros_maritalstatus" [(ngModel)]="prospectData.maritalstatus" formControlName="maritalstatus" cancelText="ยกเลิก" okText="ตกลง" interface="popover">
+                                        <!-- <ion-option value=""></ion-option> -->
+                                        <ion-option value="S">โสด</ion-option>
+                                        <ion-option value="M">สมรส</ion-option>
+                                        <ion-option value="D">หย่า</ion-option>
+                                        <ion-option value="G">หม้าย</ion-option>
+                                    </ion-select>
+                                </ion-item>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- mobilephone -->
+                    <div class="col-md-4">
+                        <div class="col-sm-5 pdl0 txt-sm-right lh-form-control ws-nowrap">
+                            <span class="c-red">*</span> เบอร์มือถือ :</div>
+                        <div class="col-sm-7 pdlr0">
+                            <div class="form-group">
+                                <input id="pros_mobilephone" formControlName="mobilephone" class="form-control" maxlength="10" type="tel" placeholder="0000000000" [(ngModel)]="prospectData.mobilephone" NumberOnly/>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- telephone -->
+                    <div class="col-md-4">
+                        <div class="col-sm-5 pdl0 txt-sm-right lh-form-control ws-nowrap">เบอร์บ้าน :</div>
+                        <div class="col-sm-7 pdlr0">
+                            <div class="form-group">
+                                <input id="pros_telephone" formControlName="telephone" class="form-control" maxlength="9" type="tel" value="" placeholder="0000000000" [(ngModel)]="prospectData.telephone" NumberOnly />
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- fax -->
+                    <div class="col-md-4">
+                        <div class="col-sm-5 pdl0 txt-sm-right lh-form-control ws-nowrap">แฟกซ์ :</div>
+                        <div class="col-sm-7 pdlr0">
+                            <div class="form-group">
+                                <input id="pros_fax" formControlName="fax" class="form-control" type="text" placeholder="0000000000" maxlength="9" [(ngModel)]="prospectData.fax" NumberOnly />
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- passport -->
+                    <div class="col-md-4">
+                        <div class="col-sm-5 pdl0 txt-sm-right lh-form-control ws-nowrap">พาสปอร์ต :</div>
+                        <div class="col-sm-7 pdlr0">
+                            <div class="form-group">
+                                <input id="pros_passport" formControlName="passport" class="form-control" type="text" maxlength="25" [(ngModel)]="prospectData.passport" NumberCharacterOnly />
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- email -->
+                    <div class="col-md-4">
+                        <div class="col-sm-5 pdl0 txt-sm-right lh-form-control ws-nowrap">อีเมล :</div>
+                        <div class="col-sm-7 pdlr0">
+                            <div class="form-group">
+                                <input id="pros_email" formControlName="email" class="form-control" type="text" maxlength="50" placeholder="example@example.com" [(ngModel)]="prospectData.email" NumberCharacterOnly />
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- linkFacebook -->
+                    <div class="col-md-4">
+                        <div class="col-sm-5 pdl0 txt-sm-right lh-form-control ws-nowrap">Facebook :</div>
+                        <div class="col-sm-7 pdlr0">
+                            <div class="form-group">
+                                <input id="pros_linkFacebook" formControlName="linkFacebook" class="form-control" maxlength="100" type="text" placeholder="http://www.facebook.com/username" [(ngModel)]="prospectData.linkFacebook" NumberCharacterOnly />
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- lineID -->
+                    <div class="col-md-4">
+                        <div class="col-sm-5 pdl0 txt-sm-right lh-form-control ws-nowrap">Line ID :</div>
+                        <div class="col-sm-7 pdlr0">
+                            <div class="form-group">
+                                <input id="pros_lineID" formControlName="lineID" class="form-control" type="text" value="" maxlength="50" placeholder="ID000000" [(ngModel)]="prospectData.lineID" NumberCharacterOnly />
+                            </div>
+                        </div>
+                    </div>
+                    <!-- address -->
+                    <!-- <div class="col-md-4">
+                        <div class="col-sm-5 pdl0 txt-sm-right lh-form-control ws-nowrap">ที่อยู่ :</div>
+                        <div class="col-sm-7 pdlr0">
+                            <div class="form-group">
+                                <input id="pros_address" formControlName="address" class="form-control" type="text" [(ngModel)]="prospectData.address" maxlength="100" NumberCharacterOnly />
+                            </div>
+                        </div>
+                    </div> -->
+                    <!-- เลขที่บ้าน -->
+                    <div class="col-md-4">
+                        <div class="col-sm-5 pdl0 txt-sm-right lh-form-control ws-nowrap">เลขที่ :</div>
+                        <div class="col-sm-7 pdlr0">
+                            <div class="form-group">
+                                <input id="pros_addressno" formControlName="addressno" class="form-control" type="text" [(ngModel)]="prospectData.addressno" maxlength="10" NumberCharacterOnly />
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- หมู่บ้าน/อาคาร -->
+                    <div class="col-md-4">
+                        <div class="col-sm-5 pdl0 txt-sm-right lh-form-control ws-nowrap">หมู่บ้าน/อาคาร :</div>
+                        <div class="col-sm-7 pdlr0">
+                            <div class="form-group">
+                                <input id="pros_buildingname" formControlName="buildingname" class="form-control" type="text" [(ngModel)]="prospectData.buildingname" maxlength="32" NumberCharacterOnly />
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- หมู่ที่ -->
+                    <div class="col-md-4">
+                        <div class="col-sm-5 pdl0 txt-sm-right lh-form-control ws-nowrap">หมู่ที่ :</div>
+                        <div class="col-sm-7 pdlr0">
+                            <div class="form-group">
+                                <input id="pros_moo" formControlName="moo" class="form-control" type="text" [(ngModel)]="prospectData.moo" maxlength="2" NumberOnly />
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ตรอกซอย -->
+                    <div class="col-md-4">
+                        <div class="col-sm-5 pdl0 txt-sm-right lh-form-control ws-nowrap">ตรอก/ซอย :</div>
+                        <div class="col-sm-7 pdlr0">
+                            <div class="form-group">
+                                <input id="pros_soi" formControlName="soi" class="form-control" type="text" [(ngModel)]="prospectData.soi" maxlength="20" NumberCharacterOnly />
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ถนน -->
+                    <div class="col-md-4">
+                        <div class="col-sm-5 pdl0 txt-sm-right lh-form-control ws-nowrap">ถนน :</div>
+                        <div class="col-sm-7 pdlr0">
+                            <div class="form-group">
+                                <input id="pros_road" formControlName="road" class="form-control" type="text" [(ngModel)]="prospectData.road" maxlength="20" NumberCharacterOnly />
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- subdistrict -->
+                    <div class="col-md-4">
+                        <div class="col-sm-5 pdl0 txt-sm-right lh-form-control ws-nowrap">ตำบล/แขวง :</div>
+                        <div class="col-sm-7 pdlr0">
+                            <div class="form-group hasSelect">
+                                <address id="pros_subdistrict" addressType="tambon_name" [(address)]="prospectData.addressSelected"></address>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- district -->
+                    <div class="col-md-4">
+                        <div class="col-sm-5 pdl0 txt-sm-right lh-form-control ws-nowrap">อำเภอ/เขต :</div>
+                        <div class="col-sm-7 pdlr0">
+                            <div class="form-group hasSelect">
+                                <address id="pros_district" addressType="amphur_name" [(address)]="prospectData.addressSelected"></address>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- province -->
+                    <div class="col-md-4">
+                        <div class="col-sm-5 pdl0 txt-sm-right lh-form-control ws-nowrap">จังหวัด :</div>
+                        <div class="col-sm-7 pdlr0">
+                            <div class="form-group hasSelect">
+                                <address id="pros_province" addressType="province_name" [(address)]="prospectData.addressSelected"></address>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- postcode -->
+                    <div class="col-md-4">
+                        <div class="col-sm-5 pdl0 txt-sm-right lh-form-control ws-nowrap">รหัสไปรษณีย์ :</div>
+                        <div class="col-sm-7 pdlr0">
+                            <div class="form-group hasSelect">
+                                <address id="pros_postcode" addressType="zip" [(address)]="prospectData.addressSelected"></address>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- geolocation -->
+                    <div class="col-md-4">
+                        <div class="col-sm-5 pdl0 txt-sm-right lh-form-control ws-nowrap">
+                            <i class="icon-pin"></i> พิกัด :</div>
+                        <div class="col-sm-7 pdlr0">
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <input id="pros_geolocation" formControlName="geolocation" class="form-control" type="text" [(ngModel)]="prospectData.geolocation" NumberCharacterOnly />
+                                    <div class="input-group-addon" (click)="openGoogleMap();"><i class="icon-pin"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- remark -->
+                    <div class="col-md-12">
+                        <div class="col-sm-5 pdl0 txt-sm-right lh-form-control ws-nowrap label-remark">หมายเหตุ :</div>
+                        <div class="col-sm-7 pdlr0 txt-remark">
+                            <div class="form-group">
+                                <textarea id="pros_remark" formControlName="remark" class="form-control" rows="2" [(ngModel)]="prospectData.remark" maxlength="400" NumberCharacterOnly></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <div class="boxBlue txt-center">
+        <div class="container">
+            <button id="bt_save" class="btnSaveLeadRegister btn-style2" log [page]="'ProspectPage'" [object]="'AddProspect'" [disabled]="disableSaveButton" type="button" (click)="submitPospect();">
+        <span>
+          <i class="icon-save-file-option"></i> บันทึก</span> 
+      </button>
+            <button id="bt_restart" class="btn-style3" type="button" (click)="reset()">
+        <span>
+          <i class="icon-reload"></i> เริ่มใหม่</span>
+      </button>
+        </div>
+    </div>
+    <!-- <div><button (click)="checkJson();">check json</button></div> -->
+</form>

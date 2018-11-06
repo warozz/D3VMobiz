@@ -1,0 +1,78 @@
+{
+    "rider": "วพ.",
+    "age": {
+        "min": "6y",
+        "max": "70y"
+    },
+    "rule": [{
+            "deny": ["G", "V"]
+        },
+        {
+            "config": "UW"
+        }
+    ],
+    "agent": [{
+        "permission": "Normal",
+        "select": [{
+                "option": 3,
+                "value": 2000,
+                "age": {
+                    "min": "6y",
+                    "max": "70y"
+                },
+                "sum": {
+                    "newcase": 500000,
+                    "wholelife": 1000000
+                }
+            },
+            {
+                "option": 4,
+                "value": 4000,
+                "age": {
+                    "min": "16y",
+                    "max": "70y"
+                },
+                "sum": {
+                    "newcase": 1000000,
+                    "wholelife": 2000000
+                }
+            },
+            {
+                "option": 6,
+                "value": 6000,
+                "age": {
+                    "min": "16y",
+                    "max": "70y"
+                },
+                "sum": {
+                    "newcase": 1000000,
+                    "wholelife": 2000000
+                }
+            },
+            {
+                "option": 7,
+                "value": 8000,
+                "age": {
+                    "min": "16y",
+                    "max": "70y"
+                },
+                "sum": {
+                    "newcase": 1500000,
+                    "wholelife": 3000000
+                }
+            },
+            {
+                "option": 8,
+                "value": 10000,
+                "age": {
+                    "min": "16y",
+                    "max": "70y"
+                },
+                "sum": {
+                    "newcase": 1500000,
+                    "wholelife": 3000000
+                }
+            }
+        ]
+    }]
+}

@@ -1,0 +1,27 @@
+#!/bin/bash
+
+if [[ ! -f /usr/libexec/PlistBuddy ]]; then
+    exit 0
+fi
+
+PLIST=platforms/ios/*/*-Info.plist
+
+# Bypass ATS for test servers
+cat << EOF |
+Delete :LSApplicationQueriesSchemes
+Add :LSApplicationQueriesSchemes array
+Add :LSApplicationQueriesSchemes:0 string 'googlechromes'
+Add :LSApplicationQueriesSchemes:1 string 'comgooglemaps'
+Add :LSApplicationQueriesSchemes:2 string 'goswiff-bay'
+
+Delete :CFBundleURLTypes
+Add :CFBundleURLTypes array
+Add :CFBundleURLTypes:0:CFBundleTypeRole string 'Editor'
+Add :CFBundleURLTypes:0:CFBundleURLName string 'com.thailife.tlproplus'
+Add :CFBundleURLTypes:0:CFBundleURLSchemes array
+Add :CFBundleURLTypes:0:CFBundleURLSchemes:0 string 'TLProPlus'
+EOF
+while read line
+do
+    /usr/libexec/PlistBuddy -c "$line" $PLIST
+done

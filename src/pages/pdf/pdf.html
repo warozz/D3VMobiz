@@ -1,0 +1,98 @@
+<ion-header>
+    <div id="header" permission>
+        <div class="boxHeaderTop boxPdfView" #boxHeaderTop>
+            <div class="container">
+                <ul class="headerTitle hide-logo-smallest-device">
+                    <li class="boxHeaderToolsVersion">
+                        <div class="boxVersion" [ngClass]="{'mini': tlpromptMode == 'mini'}">
+                            <div class="txt1">ทีแอล
+                                <span>โปร<sup>+</sup></span>
+                                <span *ngIf="tlpromptMode == 'mini'"> มินิ</span>
+                            </div>
+                            <div id="menu_lb_tlprompt" class="txt2">TL PRO PLUS
+                                <span *ngIf="tlpromptMode == 'mini'"></span>
+                            </div>
+                            <div id="menu_lb_version" class="txt3">{{ version }}</div>
+                        </div>
+                    </li>
+                </ul>
+
+                <div class="boxRight">
+                    <a class="btn-style4 btn-style-m pdlr10" (click)="sendEmail()" [attr.disabled]="((fromAppDetail == false) || (fromAppDetail && fromBasicVerify)) ? null : '' " *ngIf="roleType">
+                        <div class="hide-only-xs hide-only-sm hide-only-md"><span><i class="icon-message-closed-envelope"></i> ส่งอีเมล</span></div>
+                        <div class="view-only-xs view-only-sm view-only-md"><span><i class="icon-message-closed-envelope"></i></span></div>
+                    </a>
+
+                    <!-- use on browser-->
+                    <a [href]="pdfUrlDownload" (click)="downloadFile()" download="{{downloadpdfFilename}}" class="btn-style4 btn-style-m pdlr10" [attr.disabled]="((fromAppDetail == false) || (fromAppDetail && fromBasicVerify)) ? null : '' " *ngIf="roleType && modeCheck == 2">
+                        <div class="hide-only-xs hide-only-sm hide-only-md"><span><i class="icon-download4"></i> ดาวน์โหลด</span></div>
+                        <div class="view-only-xs view-only-sm view-only-md"><span><i class="icon-download4"></i></span></div>
+                    </a>
+                    <!-- use on mobile app-->
+                    <a (click)="downloadFile()" class="btn-style4 btn-style-m pdlr10" [attr.disabled]="((fromAppDetail == false) || (fromAppDetail && fromBasicVerify)) ? null : '' " *ngIf="roleType && ((platform.is('android') || platform.is('ios')) && (modeCheck == 1 || modeCheck == 0))">
+                        <div class="hide-only-xs hide-only-sm hide-only-md"><span><i class="icon-download4"></i> ดาวน์โหลด</span></div>
+                        <div class="view-only-xs view-only-sm view-only-md"><span><i class="icon-download4"></i></span></div>
+                    </a>
+                    <a [hidden]="modeCheck == '0' || modeCheck == '1'" (click)="print()" class="btn-style4 btn-style-m pdlr10" [attr.disabled]="((fromAppDetail == false) || (fromAppDetail && fromBasicVerify)) ? null : '' " *ngIf="!refFlag">
+                        <div class="hide-only-xs hide-only-sm hide-only-md"><span><i class="icon-printer2"></i> พิมพ์</span></div>
+                        <div class="view-only-xs view-only-sm view-only-md"><span><i class="icon-printer2"></i></span></div>
+                    </a>
+                    <a [hidden]="modeCheck == '0' || modeCheck == '1'" (click)="print()" class="btn-style4 btn-style-m pdlr10" *ngIf="refFlag && roleType">
+                        <div class="hide-only-xs hide-only-sm hide-only-md"><span><i class="icon-printer2"></i> พิมพ์เพื่อแนบกรมธรรม์ (Ref.)</span></div>
+                        <div class="view-only-xs view-only-sm view-only-md"><span><i class="icon-printer2"></i></span></div>
+                    </a>
+                    <a class="btn-style4 btn-style-m pdlr10" (click)="reqRef()" *ngIf="!refFlag && !signFlag && !viewPdfOnly && roleType">
+                        <div class="hide-only-xs hide-only-sm hide-only-md"><span><i class="icon-new-document"></i> ขอเลขอ้างอิงแบบกรมธรรม์ (Ref.)</span></div>
+                        <div class="view-only-xs view-only-sm view-only-md"><span><i class="icon-new-document"></i></span></div>
+                    </a>
+                    <a class="btn-style4 btn-style-m pdlr10" (click)="signature()" *ngIf="refFlag && !signFlag && !viewPdfOnly && roleType">
+                        <div class="hide-only-xs hide-only-sm hide-only-md"><span><i class="icon-edit-interface-symbol"></i> ลงลายมือชื่อ</span></div>
+                        <div class="view-only-xs view-only-sm view-only-md"><span><i class="icon-edit-interface-symbol"></i></span></div>
+                    </a>
+                    <a class="btn-style4 btn-style-m pdlr10" [attr.disabled]="tlpromptMode != 'mini' ? null : '' " *ngIf="refFlag && signFlag && !viewPdfOnly && roleType && !isHasAppForm" (click)="createApplication()">
+                        <div class="hide-only-xs hide-only-sm hide-only-md"><span><i class="icon-new-file"></i> สร้างใบคำขอ</span></div>
+                        <div class="view-only-xs view-only-sm view-only-md"><span><i class="icon-new-file"></i></span></div>
+                    </a>
+                    <a class="btn-style4 btn-style-m pdlr10" [attr.disabled]="disabledBasicVerify ? null : '' " *ngIf="fromAppDetail" (click)="basicVerifyApp()">
+                        <div class="hide-only-xs hide-only-sm hide-only-md"><span><i class="icon-check-form"></i> ตรวจสอบรับประกันเบื้องต้น</span></div>
+                        <div class="view-only-xs view-only-sm view-only-md"><span><i class="icon-check-form"></i></span></div>
+                    </a>
+                    <div class="btn-lang" *ngIf="!viewPdfOnly">
+                        <a class="hide-only-xs btnSelectLang btn-style6 btn-style-m" (click)="showLang = !showLang">
+                            <span>{{ pdfLanguage == 'T' ? 'ไทย' : 'English' }}</span>
+                        </a>
+                        <a class="view-only-xs btnSelectLang btn-style6 btn-style-m" (click)="showLang = !showLang">
+                            <span>{{ pdfLanguage == 'T' ? 'ไทย' : 'EN' }}</span>
+                        </a>
+                        <div class="boxSelectLang" *ngIf="showLang">
+                            <a *ngIf="!hideThaiSelect" (click)="showLang = false; pdfLanguage = 'T'; changeLanguage();">ไทย</a>
+                            <a *ngIf="!hideEngSelect" (click)="showLang = false; pdfLanguage = 'E'; changeLanguage();">English</a>
+                        </div>
+                    </div>
+
+                    <a class="btn-style7 btn-style-m pdlr10" (click)="close()">
+                        <span>ปิด</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</ion-header>
+
+<ion-content>
+    <pdf-viewer [src]="pdfSrc" [show-all]="true" class="pdf" [zoom]="pdfZoom" [fit-to-page]="true" [original-size]="false">
+
+    </pdf-viewer>
+    <ion-fab bottom right>
+        <button ion-fab mini (click)="zoomIn()">
+                      <ion-icon name="add"></ion-icon>
+                  </button>
+        <button ion-fab mini (click)="zoomOut()">
+                      <ion-icon name="remove"></ion-icon>
+                  </button>
+        <button ion-fab mini (click)="resetZoom()">
+                      <ion-icon name="refresh"></ion-icon>
+                  </button>
+    </ion-fab>
+    <!-- <iframe [src]="pdfSrcBase64" frameborder="0" style="border:0; display:none;" width="0" height="0" id="test"></iframe> -->
+</ion-content>

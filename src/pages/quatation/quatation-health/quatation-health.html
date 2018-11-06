@@ -1,0 +1,81 @@
+<div class="boxContentPage bgBlue3 hasBgImg">
+    <div class="container">
+        <h1 class="titleContentPage1">{{ 'PLAN' | planLabel }} {{ planName }}</h1>
+
+        <div class="bgPaperShadow mgt0">
+            <div class="contentPaperShadow2">
+                <div class="boxActionForm boxActionForm-xs_1">
+                    <form class="form-inline txt-sm-right">
+                        <div class="form-group">
+                            <label class="lh-form-control" for="quatation_health_age">อายุ</label>
+                            <ion-item class="form-control">
+                                <ion-label></ion-label>
+                                <ion-select id="quatation_health_age" name="quatation_health_age" interface="popover" (ngModelChange)="changeDetailAge($event)" [(ngModel)]="chooseAge" cancelText="ยกเลิก" okText="ตกลง">
+                                    <ion-option [value]="item.value" *ngFor="let item of ageDD; let first = first; let last = last;">{{ first ? "ไม่เกิน " + item.maxAge + " ปี" : last ? item.minAge + " ปีขึ้นไป" : item.minAge +" - "+ item.maxAge +" ปี" }}</ion-option>
+                                </ion-select>
+                            </ion-item>
+                        </div>
+                        <div class="form-group">
+                                <label class="lh-form-control" for="quatation_health_sum">ทุนคุ้มครอง</label>
+                                <ion-item class="form-control">
+                                    <ion-label></ion-label>
+                                    <ion-select id="quatation_health_sum" name="quatation_health_sum" interface="popover" (ngModelChange)="changeDetailSum($event)" [(ngModel)]="chooseSum" cancelText="ยกเลิก" okText="ตกลง">
+                                        <ion-option [value]="item.value" *ngFor="let item of sumDD; let first = first; let last = last;">{{ first ? "ไม่เกิน " + (item.maxSum | number) : last ? "ตั้งแต่ " + (item.minSum | number) + " บาทขึ้นไป" : (item.minSum | number) + " - " + (item.maxSum | number) }}</ion-option>
+                                    </ion-select>
+                                </ion-item>
+                            </div>
+                    </form>
+                    <!-- <ul class="boxActionRight">
+                        <li>
+                            <div class="pdlr20 lh-form-control xs-txt-left xs-pdlr0">อายุ</div>
+                        </li>
+                        <li class="child">
+                            <div class="form-group mgb0  xs-mgb15">
+                                <ion-item class="form-control">
+                                    <ion-label></ion-label>
+                                    <ion-select id="quatation_health_age" name="quatation_health_age" interface="popover" (ngModelChange)="changeDetailAge($event)" [(ngModel)]="chooseAge" cancelText="ยกเลิก" okText="ตกลง">
+                                        <ion-option [value]="item.value" *ngFor="let item of ageDD; let first = first; let last = last;">{{ first ? "ไม่เกิน " + item.maxAge + " ปี" : last ? item.minAge + " ปีขึ้นไป" : item.minAge +" - "+ item.maxAge +" ปี" }}</ion-option>
+                                    </ion-select>
+                                </ion-item>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="pdlr20 lh-form-control xs-txt-left xs-pdlr0">ทุนคุ้มครอง</div>
+                        </li>
+                        <li class="child">
+                            <div class="form-group mgb0  xs-mgb15">
+                                <div class="form-group mgb0  xs-mgb15">
+                                    <ion-item class="form-control">
+                                        <ion-label></ion-label>
+                                        <ion-select id="quatation_health_sum" name="quatation_health_sum" interface="popover" (ngModelChange)="changeDetailSum($event)" [(ngModel)]="chooseSum" cancelText="ยกเลิก" okText="ตกลง">
+                                            <ion-option [value]="item.value" *ngFor="let item of sumDD; let first = first; let last = last;">{{ first ? "ไม่เกิน " + (item.maxSum | number) : last ? "ตั้งแต่ " + (item.minSum | number) + " บาทขึ้นไป" : (item.minSum | number) + " - " + (item.maxSum | number) }}</ion-option>
+                                        </ion-select>
+                                    </ion-item>
+                                </div>
+                            </div>
+                        </li>
+                    </ul> -->
+                </div>
+                <div class="boxTableStyle3">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>รายการตรวจสอบ</th>
+                                <th class="txt-left">รายละเอียด</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let items of healthResDetail">
+                                <td class="txt-center" [innerHtml]="items.healthname"></td>
+                                <td [innerHtml]="items.detailhealth"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <quatation-annotation></quatation-annotation>
+
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,27 @@
+<div class="modal">
+    <i class="close" (click)="close()"></i>
+
+    <h1 class="modal-title">
+        ส่งข้อมูลไปยังสาขาเรียบร้อย
+    </h1>
+
+    <div class="popup popup-style1">
+        <div class="boxNewUpdate">
+            <div class="scrollbar-inner">
+
+                <div class="box-detail">
+                    <br>
+                    <p class="mgt0 txt-center c-blue">
+                        การส่งข้อมูลไปยังสาขาจะช่วยลดขั้นตอนการทำงานของสาขา ท่านจำเป็นต้องพิมพ์ใบคำขอฉบับนี้ เพื่อนำไปให้ผู้มุ่งหวังทำการลงลายมือชื่อ และ นำใบคำขอฉบับนี้ พร้อมเอกสารแนบ และหลักฐานการชำระเงิน ส่งสาขาต้นสังกัดของท่าน
+                    </p>
+                </div>
+
+                <div class="div-btn">
+                    <button class="btn-style3 btn-style-m" type="button" (click)="openPDF()"><span><i class="icon-pdf-file"></i> ดูใบคำขอ</span></button>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+{
+  "name": "tlproplus",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular",
+  "proxies": [
+    {
+      "path": "/tokendev",
+      "proxyUrl": "http://13.228.150.198:8280/token"
+    },
+    {
+      "path": "/tokensit",
+      "proxyUrl": "http://52.221.75.255:8280/token"
+    }
+  ],
+  "pro_id": "53e2e8b4"
+}

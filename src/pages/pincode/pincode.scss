@@ -1,0 +1,182 @@
+page-pincode {
+    ion-header {
+        background-color: $color-primary;
+        color: #ffffff;
+        transition: background-color 2s;
+    }
+    ion-header.danger {
+        background-color: $color-danger;
+    }
+    ion-header:after {
+        background-image: none !important;
+    }
+    ion-content .scroll-content {
+        background: url('../assets/img/login/bg.jpg') no-repeat center center;
+        background-size: cover;
+    }
+    h1 {
+        font-size: $font-lg;
+        line-height: 30px;
+        margin: 15px;
+        height: 60px;
+        span {
+            display: block;
+        }
+        &.middle {
+            line-height: 60px;
+        }
+    }
+    p {
+        font-size: $font-md;
+        color: $color-primary;
+        width: 100%;
+        margin: 10px 0px;
+        span {
+            display: block;
+            text-align: center;
+            &:last-child {
+                color: $color-danger;
+            }
+        }
+    }
+    .pin-group {
+        .pin {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            border: 1px solid #888;
+            margin: 20px 10px 10px 10px;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 10px;
+        }
+        .pin.active {
+            position: relative;
+            span.point {
+                display: block;
+                width: 20px;
+                height: 20px;
+                background-color: $color-primary;
+                -webkit-border-radius: 50%;
+                -moz-border-radius: 50%;
+                border-radius: 50%;
+                position: absolute;
+                top: 30%;
+                left: 30%;
+            }
+            span.pwd {
+                position: absolute;
+                top: 25%;
+                left: 35%;
+                font-size: $font-xxl;
+                color: $color-primary;
+            }
+        }
+        .activate {
+            display: block;
+            height: 50px;
+            width: 250px;
+            border: 1px solid #888;
+            margin: 20px auto 10px auto;
+            span.pwd {
+                line-height: 50px;
+                font-size: $font-xxl;
+                color: $color-primary;
+            }
+            .actBox {
+                display: inline-block;
+                width: 20px;
+                height: 50px;
+            }
+            .actBox.active {
+                position: relative;
+                span.point {
+                    display: block;
+                    width: 15px;
+                    height: 15px;
+                    background-color: $color-primary;
+                    -webkit-border-radius: 50%;
+                    -moz-border-radius: 50%;
+                    border-radius: 50%;
+                    position: absolute;
+                    top: 34%;
+                }
+            }
+        }
+        .reference {
+            margin-top: 20px;
+            color: $color-primary;
+            span {
+                font-size: $font-lg;
+            }
+        }
+    }
+    .showpin {
+        display: block;
+        text-align: center;
+        color: $color-default;
+        font-size: $font-md;
+        div {
+            display: inline-block;
+        }
+    }
+    ion-grid {
+        max-width: 245px;
+        button {
+            font-size: $font-xxl !important;
+            background-color: rgba(255, 255, 255, 0.7) !important;
+            max-width: 75px !important;
+            width: 100% !important;
+            height: 75px !important;
+            border-radius: 50% !important;
+            border: 1px solid rgba(0, 122, 194, 0.7) !important;
+            color: $color-primary !important;
+        }
+        .button-md,
+        .button-ios,
+        .button-wp {
+            text-transform: none;
+            -webkit-box-shadow: inherit;
+            box-shadow: inherit;
+            margin: 6px auto;
+            padding: inherit;
+        }
+        .portrait {
+            display: block;
+        }
+        .landscape {
+            display: none;
+        }
+        .icon-ion-backspace-outline {
+            color: $color-danger;
+        }
+    }
+    /*@media (max-height: $screen-xs-max) {
+        button {
+            height: 60px !important;
+        }
+        ion-grid {
+            max-width: 515px;
+            .portrait {
+                display: none;
+            }
+            .landscape {
+                display: block;
+            }
+        }
+    }*/
+    @media (max-height: 500px) {
+        button {
+            height: 60px !important;
+        }
+        ion-grid {
+            max-width: 515px;
+            .portrait {
+                display: none;
+            }
+            .landscape {
+                display: block;
+            }
+        }
+    }
+}

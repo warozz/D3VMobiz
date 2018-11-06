@@ -1,0 +1,267 @@
+page-investment {
+    .btn-style8 {
+        display: inline-block;
+        cursor: pointer;
+        position: relative;
+        margin: 0px 1px;
+        left: 0px;
+        font-size: 25px;
+        outline: none;
+        border: none;
+        background: transparent;
+        color: #fff;
+        min-width: 180px;
+        padding: 2px 30px 13px;
+    }
+    .btn-style8 [class^=icon-] {
+        font-size: 30px;
+        margin-right: 7px;
+        position: relative;
+        top: 9px;
+    }
+    .btn-style8:before {
+        display: block;
+        content: '';
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+        background: #1379b7;
+        border: none;
+        transform: matrix(1, 0, -0.17364, 0.9848, 0, 0);
+    }
+    .btn-style8:hover::after {
+        display: block;
+        content: '';
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.1);
+        transform: matrix(1, 0, -0.17364, 0.9848, 0, 0);
+    }
+    .btn-style8 span {
+        display: block;
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        color: #fff;
+    }
+    .btn-style8 {
+        line-height: 25px;
+    }
+    .btn-style8 span {
+        top: 6px;
+    }
+    .form-control.item-block {
+        min-height: auto;
+        //height: 44px;
+    }
+    #padding-top {
+        padding-left: 340px;
+    }
+    #X1 {
+        display: block;
+        position: relative;
+        padding: 0px 0px 0px 150px;
+        /* margin-bottom: 15px; */
+        height: 48px;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        .boxSearchPlanInsurance .boxSelectPlan .areaLeft {
+            display: block;
+            cursor: pointer;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            width: 150px;
+            height: 46px;
+            padding-left: 24px;
+            background: #1484C6;
+            color: #fff;
+            line-height: 44px;
+            font-size: 25px;
+        }
+    }
+    .boxIconCheckStyle1 {
+        padding: 0;
+        float: left;
+        width: 30%;
+        left: 30%;
+    }
+    .boxIconCheckStyle2 {
+        padding: 0;
+        float: left;
+        width: 20%;
+        left: 25%;
+        top: 10px;
+        img {
+            width: 50px;
+        }
+    }
+    .prev {
+        // min-width: 40px;
+        // height: 40px;
+        // line-height: 40px;
+        // font-size: 25px;
+    }
+    .next {
+        // min-width: 40px;
+        // height: 40px;
+        // line-height: 40px;
+        // font-size: 25px;
+    }
+    .max-480 {
+        max-width: 480px;
+    }
+    .hide {
+        display: none;
+    }
+    @media(max-width:767px) {
+        #choosePlan .boxSearchPlanInsurance .boxSelectPlan .boxDropdownPlan {
+            padding-right: 0px;
+        }
+        .btn-style8 {
+            width: 75%;
+            font-size: 25px;
+            line-height: 20px;
+            font-size: 20px;
+        }
+        #padding-top {
+            padding-left: 0px;
+        }
+        #X1 {
+            display: block;
+            position: relative;
+            padding: 0px 0px 80px 0px;
+            /* margin-bottom: 15px; */
+            height: 46px;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+        #X2 .boxSelectPlan {
+            padding-left: 0px !important;
+            padding-right: 0px;
+            height: auto;
+        }
+        #X2 .boxSelectPlan .boxDropdownPlan {
+            padding-right: 0px;
+        }
+        .boxIconCheckStyle1 img {
+            margin-left: 10px;
+            margin-top: 30px;
+            width: 50px;
+            display: inline-block;
+        }
+        .boxIconCheckStyle1 {
+            padding: 0;
+            float: left;
+            width: 80%;
+            left: 0%;
+            letter-spacing: -1px;
+        }
+        .boxIconCheckStyle2 {
+            padding: 0;
+            float: left;
+            width: 20%;
+            left: -10%;
+            top: 10px;
+            img {
+                width: 50px;
+            }
+        }
+        .adjust-content {
+            width: 24% !important;
+            display: inline-flex !important;
+            align-items: center !important;
+            img {
+                order: 0;
+                flex: 0 1 auto;
+                align-self: auto;
+            }
+        }
+    }
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
+        #X1 {
+            //padding-left: 0px;
+        }
+        .boxIconCheckStyle1 {
+            padding: 0;
+            float: left;
+            width: 58%;
+            left: 20%;
+            letter-spacing: -1px;
+        }
+        .boxIconCheckStyle2 {
+            padding: 0;
+            float: left;
+            width: 20%;
+            left: 10%;
+            top: 10px;
+        }
+        .adjust-content {
+            width: 24%;
+            display: inline-flex !important;
+            align-items: center !important;
+            img {
+                order: 0;
+                flex: 0 1 auto;
+                align-self: auto;
+            }
+        }
+        #padding-top {
+            padding-left: 0px;
+        }
+    }
+    @media only screen and (min-width: 1024px) and (max-width: 1200px) {
+        .boxIconCheckStyle1 {
+            padding: 0;
+            float: left;
+            width: 35%;
+            left: 30%;
+        }
+        .boxIconCheckStyle2 {
+            padding: 0;
+            float: left;
+            width: 20%;
+            left: 25%;
+            top: 10px;
+            img {
+                width: 50px;
+            }
+        }
+        #padding-top {
+            padding-left: 226px;
+        }
+    }
+    /** 
+    จัด Button ให้อยู่ตำแหน่งเดียวกับ img
+    */
+    .adjust-position {
+        justify-content: center;
+        flex-flow: nowrap;
+        overflow: hidden;
+        display: inline-flex;
+    }
+    .adjust-content {
+        width: 10%;
+        display: inline-flex !important;
+        align-items: center !important;
+        img {
+            order: 0;
+            flex: 0 1 auto;
+            align-self: auto;
+        }
+    }
+    @media(min-width:768px) {
+        tabs .boxListTabStyle2 .oneTab,
+        tabs .boxListTabStyle2 .oneTab.action,
+        tabs .boxListTabStyle2 .oneTab:hover {
+            width: 32%!important;
+        }
+    }
+    #firstStep>.boxContentPage:last-child {
+        display: none;
+    }
+}

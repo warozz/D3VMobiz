@@ -1,0 +1,42 @@
+page-send-all-file-e-app {
+    .modal h1 {
+        text-align: left;
+    }
+    .sendAllFiles {
+        text-align: center;
+        padding: 50px;
+    }
+    .detail-header {
+        height: auto;
+        background-color: #28ABE6;
+        color: #fff;
+        div {
+            top: 12px;
+        }
+    }
+    .detail {
+        border-top: 2px solid #28ABE6;
+        height: 100%;
+        width: 100%;
+        padding-top: 50px;
+        //padding-left: 85px;
+        div {
+            font-size: 30px;
+            padding-top: 30px;
+            .centertext {
+                text-align: center;
+                .btn-style4 {
+                    text-align: center;
+                }
+            }
+        }
+        .buttonshow {
+            font {
+                font-size: 30px;
+            }
+        }
+    }
+    .base-line {
+        border-bottom: 1px solid #dedede;
+    }
+}

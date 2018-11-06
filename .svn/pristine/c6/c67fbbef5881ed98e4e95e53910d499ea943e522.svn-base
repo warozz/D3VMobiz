@@ -1,0 +1,19 @@
+calendar-age {
+    .form-control[readonly][calculator-mini] {
+        padding-right: 36px;
+    }
+    calendar {
+        position: absolute;
+        top: 0px;
+        right: 54px;
+        mat-datepicker-toggle {}
+        .form-group {
+            h1 {
+                display: none;
+            }
+            .mat-datepicker-toggle {
+                width: 38px;
+            }
+        }
+    }
+}

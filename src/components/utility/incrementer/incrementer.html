@@ -1,0 +1,7 @@
+<button class="btnMinus" (click)="stepDown()"><i class="icon-minus2"></i></button>
+<div class="form-group mgb0">
+    <input calculator-incrementer [(data)]="value" caption="ระบุจำนวนเงิน" [ngModel]="value | number" (dataChange)="change($event)" class="form-control" type="text" />
+</div>
+<button class="btnPlus" (click)="stepUp()"><i class="icon-plus2"></i></button>
+
+<div *ngIf="showMinMax" class="txt-remark">{{ min | number }} ถึง {{ max | number }}</div>

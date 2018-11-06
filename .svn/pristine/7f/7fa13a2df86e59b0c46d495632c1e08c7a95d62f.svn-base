@@ -1,0 +1,121 @@
+    page-app-type {
+        .container {
+            .row {
+                hr {
+                    border: 0;
+                    clear: both;
+                    // display:block;
+                    width: 96%;
+                    height: 1px;
+                    background-color: rgb(220, 220, 220);
+                    // background-color: rgba(0, 0, 0, 0.13);
+                }
+            }
+        }
+        .form-control {
+            border: 1px solid #BDCBD3;
+        }
+        .check-style3+label {
+            cursor: not-allowed;
+        }
+        .formSlipNo {
+            margin-bottom: 0px;
+        }
+        .paymentType {
+            top: 7px;
+        }
+        .age {
+            margin-top: 5px!important;
+        }
+        .ageParent {
+            display: inline-block;
+            width: 25%
+        }
+        .pdl35 {
+            padding-left: 35px;
+        }
+        label.fl {
+            float: left;
+        }
+        .cursor-hand {
+            cursor: pointer !important;
+        }
+        .mgt5 {
+            margin-top: 5px;
+        }
+        @media screen and (max-width: 767px) {
+            .ageParent {
+                width: 22%
+            }
+        }
+        @media screen and (max-width: 991px) and (min-width: 768px) {
+            .ageParentTxt {
+                width: 108px;
+                font-size: 22px;
+            }
+        }
+        @media screen and (min-width: 992px) {
+            .ageParent {
+                width: 42%;
+            }
+            .ageParent .form-control {
+                padding-left: 0px!important;
+                padding-right: 0px!important;
+            }
+            .ageParentTxt {
+                width: 110px;
+                font-size: 22px;
+            }
+            .ageInput {
+                padding-left: 0px;
+                width: 115px;
+            }
+        }
+        @media screen and (min-width: 1200px) {
+            .ageInput {
+                width: 172px;
+            }
+        }
+        @media screen and (max-width: 375px) {
+            .s-mini {
+                width: 64%;
+            }
+        }
+        // @media screen and (min-width: 376px) {
+        //     .ageInput {
+        //         width: 63%;
+        //     }
+        // }
+        @media screen and (min-width: 376px) {
+            .s-mini {
+                width: 65%;
+            }
+        }
+        // .boxProtection {
+        //     .col-xs-4 {
+        //         text-align: right;
+        //     }
+        // }
+        @media screen and (max-width: 500px) {
+            .boxProtection {
+                .col-xs-4,
+                .col-xs-8 {
+                    width: 100%;
+                }
+                .col-xs-4 {
+                    text-align: left;
+                }
+            }
+        }
+        .boxListFixJumpMenu {
+            .icon-type {
+                font-size: 16px;
+                position: absolute;
+                top: 5px;
+                right: 0;
+            }
+            .active {
+                color: #0081C7;
+            }
+        }
+    }

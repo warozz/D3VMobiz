@@ -1,0 +1,35 @@
+page-sales-media {
+    .boxFilterSearch {
+        position: relative;
+        display: block;
+        padding-left: 140px;
+        .areaLeft {
+            color: #ffffff;
+            font-size: $font-md;
+            line-height: 44px;
+            position: absolute;
+            left: 0px;
+            margin: 0px;
+        }
+        dropdown {
+            &.boxSearchPlanInsurance {
+                .boxSelectPlan {
+                    border: none;
+                }
+            }
+        }
+        @media screen and (max-width: $screen-xs-max) {
+            padding-left: 0px;
+            .areaLeft {
+                position: relative;
+            }
+        }
+    }
+    @media screen and (max-width: $screen-md-max) {
+        .bgBlue4 {
+            &.search {
+                padding: 0px 20px;
+            }
+        }
+    }
+}

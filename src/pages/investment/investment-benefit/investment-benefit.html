@@ -1,0 +1,29 @@
+<div id="X4">
+    <div class="boxContentPage bgBlue2 zIndex10">
+        <div class="container xs-pdlr0">
+            <div class="boxSearchPlanInsurance">
+                <div class="col-lg-4 col-lg-offset-4 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 zIndex3">
+                    <dropdown [(data)]="chooseType" (dataChange)="changeChooseType($event)">
+                        <dropdown-option *ngIf="choosePlan == 2" value="protect">สร้างหลักประกันที่ปรับเปลี่ยนตามช่วงชีวิต</dropdown-option>
+                        <dropdown-option value="educate">ทุนการศึกษาให้กับบุตรหลาน</dropdown-option>
+                        <dropdown-option value="retire">เพื่อชีวิตหลังเกษียณอายุ</dropdown-option>
+                        <dropdown-option *ngIf="choosePlan == 2" value="health">ค่ารักษาพยาบาล</dropdown-option>
+                        <dropdown-option value="self">ออกแบบยูนิตลิงค์ด้วยตัวเอง</dropdown-option>
+                    </dropdown>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="boxContentPage">
+        <steps id="investment-benefit" design="2" stepStyle="2" [(selectIndex)]="selectedStep" (changeIndex)="changeSelectedStep($event)">
+            <step *ngFor="let item of stepsPage; let i = index;" [stepTitle]="item.title" [root]="item.root" [index]="i" [disabled]="item.disabled"></step>
+            <ng-template #action>
+                <div>
+                    <button class="btn-style2" type="button" (click)="saveDataUlink()" [disabled]="disableSaveButton"><span><i class="icon-save-file-option"></i> บันทึก</span></button>
+                    <!-- <button class="btn-style3" type="button"><span><i class="icon-reload"></i> เริ่มใหม่ </span></button> -->
+                </div>
+            </ng-template>
+        </steps>
+    </div>
+</div>

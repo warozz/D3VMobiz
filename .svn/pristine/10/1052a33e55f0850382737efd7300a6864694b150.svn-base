@@ -1,0 +1,39 @@
+popup-reset-data {
+    @media only screen and (min-height: 600px) and (min-width: 768px) {
+        @at-root .popup-reset-data {
+            .modal-wrapper {
+                left: calc(50% - (550px/2));
+                top: calc(50% - (275px/2));
+                width: 550px;
+                height: 275px;
+            }
+        }
+    }
+    .popup-style {
+        height: 100%;
+        width: 100%;
+        border-radius: 0px;
+        margin-top: 15px;
+        p,
+        ol {
+            margin: 10px 0px;
+        }
+        .box-reset-container {
+            font-size: 24px;
+        }
+        .box-reset-footer {
+            margin-top: 25px;
+            .cancel-btn::before {
+                background: #CE0000 !important;
+            }
+        }
+    }
+    .modal {
+        padding: 35px !important;
+        .modal-title {
+            .icon-alert-circled {
+                color: #CE0000;
+            }
+        }
+    }
+}

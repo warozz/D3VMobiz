@@ -1,0 +1,19 @@
+<div class="boxSelectPlan" [ngClass]="{'pdl0': label == ''}">
+    <a class="areaLeft" (click)="popup()" *ngIf="label != ''">
+        <i [ngClass]="icon"></i> {{ label }}
+    </a>
+    <div class="boxDropdownPlan nonIcon">
+        <div>
+            <input class="txtView" type="text" [attr.placeholder]="placeholder" [(ngModel)]="text" (keydown)="onTyping()" (focus)="onFocus(true)" (blur)="onFocus(false)" [disabled]="disabled" (change)="onKeyup()" (keyup)="onKeyup()" (input)="onKeyup()" [maxlength]="maxlength"
+                NumberCharacterOnly />
+            <button (click)="clear()" class="btnClearSearch" [ngClass]="{'no-favorite': !showFavorite}" type="button" *ngIf="showClear" [disabled]="disabled"><i class="icon-close-circled"></i></button>
+        </div>
+        <div class="listOption" *ngIf="showListOption">
+            <div *ngFor="let item of optionArray" class="oneOptionList" [hidden]="text.length != 0 && item.text.toUpperCase().indexOf(text.trim().toUpperCase()) < 0">
+                <a class="oneOption" (click)="select(item.text)">{{ item.text }}</a>
+                <button *ngIf="showFavorite" class="btn-icon-favorites" href="javascript:void(0)" [ngClass]="{ 'mark' : item.favorite }" (click)="markList(item)"><i class="icon-"></i></button>
+            </div>
+        </div>
+    </div>
+    <a class="btnFavorite" [ngClass]="{'mark': btnMarkFavorite, 'disabled': disabled}" (click)="mark()"><i class="icon-"></i></a>
+</div>

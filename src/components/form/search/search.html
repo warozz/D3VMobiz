@@ -1,0 +1,5 @@
+<form #form="ngForm" class="boxSearch" (submit)="submit(form)" novalidate [ngClass]="status">
+    <input [(ngModel)]="text" (keydown)="typing()" class="form-control" type="text" name="text" placeholder="ค้นหา" maxlength="30" NumberCharacterOnly />
+    <button (click)="clear()" class="btnClearSearch" type="button" *ngIf="showClear"><i class="icon-close-circled"></i></button>
+    <button class="btnSearch" type="submit"><i class="icon-search2"></i></button>
+</form>

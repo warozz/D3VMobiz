@@ -1,0 +1,185 @@
+<form [formGroup]="appGeneral">
+    <!-- start oneContentTab -->
+    <div class="oneContentTab">
+        <h2 class="view-only-xs c-blue boxTitleFixJumpMenu">ที่อยู่</h2>
+        <div class="boxListForm pdlr0" style="overflow-y: auto;">
+            <div class="col-md-12 mgt-20 nav-tabs">
+                <div class="inline_block pdlr10 pdb5 lh-form-control">
+                    <input id="contactaddresscd_copy" formControlName="contactaddresscd_copy" value="P" class="radio-style3" type="radio" (change)="copyaddress('P')" />
+                    <label for="contactaddresscd_copy">ตามที่อยู่ทะเบียนบ้าน</label>
+                </div>
+
+                <div class="inline_block pdlr10 pdb5 lh-form-control">
+                    <input id="contactaddresscd_copy_1" formControlName="contactaddresscd_copy" value="O" class="radio-style3" type="radio" (change)="copyaddress('O')" />
+                    <label for="contactaddresscd_copy_1">ที่อยู่อื่น</label>
+                </div>
+            </div>
+            <div class="col-xs-12 mgt22"></div>
+            <div class="col-lg-4 col-md-6 col-xs-12">
+                <div class="row">
+                    <div class="col-md-4 col-sm-3 col-xs-12 txt-sm-right pdr-sm-7 lh-form-control ws-nowrap">
+                        <font color="red">*</font> เลขที่ :
+                    </div>
+                    <div class="col-md-8 col-sm-9 col-xs-12 pdl-sm-7">
+                        <div class="form-group">
+                            <input id="address" formControlName="currentAddressNo" class="form-control" maxlength="10" type="text" NumberCharacterOnly />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-xs-12">
+                <div class="row">
+                    <div class="col-md-4 col-sm-3 col-xs-12 txt-sm-right pdr-sm-7 lh-form-control ws-nowrap">หมู่บ้าน/อาคาร :</div>
+                    <div class="col-md-8 col-sm-9 col-xs-12 pdl-sm-7">
+                        <div class="form-group">
+                            <input name="" formControlName="currentVillage" class="form-control" maxlength="32" type="text" value="" placeholder="" NumberCharacterOnly />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-xs-12">
+                <div class="row">
+                    <div class="col-md-4 col-sm-3 col-xs-12 txt-sm-right pdr-sm-7 lh-form-control ws-nowrap">หมู่ที่ :</div>
+                    <div class="col-md-8 col-sm-9 col-xs-12 pdl-sm-7">
+                        <div class="form-group">
+                            <input id="moo" name="" formControlName="currentMoo" class="form-control" maxlength="2" type="text" value="" placeholder="" NumberCharacterOnly />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-xs-12">
+                <div class="row">
+                    <div class="col-md-4 col-sm-3 col-xs-12 txt-sm-right pdr-sm-7 lh-form-control ws-nowrap">ตรอก/ซอย :</div>
+                    <div class="col-md-8 col-sm-9 col-xs-12 pdl-sm-7">
+                        <div class="form-group">
+                            <input id="soi" name="" class="form-control" formControlName="currentSoi" maxlength="20" type="text" value="" placeholder="" NumberCharacterOnly />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-xs-12">
+                <div class="row">
+                    <div class="col-md-4 col-sm-3 col-xs-12 txt-sm-right pdr-sm-7 lh-form-control ws-nowrap">ถนน :</div>
+                    <div class="col-md-8 col-sm-9 col-xs-12 pdl-sm-7">
+                        <div class="form-group">
+                            <input id="road" name="" formControlName="currentRoad" class="form-control" maxlength="20" type="text" value="" placeholder="" NumberCharacterOnly />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-xs-12">
+                <div class="row">
+                    <div class="col-md-4 col-sm-3 col-xs-12 txt-sm-right pdr-sm-7 lh-form-control ws-nowrap">
+                        <font color="red">*</font> ตำบล/แขวง :
+                    </div>
+                    <div class="col-md-8 col-sm-9 col-xs-12 pdl-sm-7">
+                        <div class="form-group hasSelect">
+                            <address id="subdistrict2" name="subdistrict2" formControlName="subdistrict" addressType="tambon_name" [(address)]="appGeneral.value.currentAddress.addressSelected"></address>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-xs-12">
+                <div class="row">
+                    <div class="col-md-4 col-sm-3 col-xs-12 txt-sm-right pdr-sm-7 lh-form-control ws-nowrap">
+                        <font color="red">*</font> อำเภอ/เขต :
+                    </div>
+                    <div class="col-md-8 col-sm-9 col-xs-12 pdl-sm-7">
+                        <div class="form-group hasSelect">
+                            <address id="district1" name="district1" formControlName="district" addressType="amphur_name" [(address)]="appGeneral.value.currentAddress.addressSelected"></address>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-xs-12">
+                <div class="row">
+                    <div class="col-md-4 col-sm-3 col-xs-12 txt-sm-right pdr-sm-7 lh-form-control ws-nowrap">
+                        <font color="red">*</font> จังหวัด :
+                    </div>
+                    <div class="col-md-8 col-sm-9 col-xs-12 pdl-sm-7">
+                        <div class="form-group hasSelect">
+                            <address id="province1" name="province1" formControlName="province" addressType="province_name" [(address)]="appGeneral.value.currentAddress.addressSelected"></address>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-xs-12">
+                <div class="row">
+                    <div class="col-md-4 col-sm-3 col-xs-12 txt-sm-right pdr-sm-7 lh-form-control ws-nowrap">
+                        <font color="red">*</font> รหัสไปรษณีย์ :
+                    </div>
+                    <div class="col-md-8 col-sm-9 col-xs-12 pdl-sm-7">
+                        <div class="form-group hasSelect">
+                            <address [disabled]="editAddr=='P'" id="postcode1" name="postcode1" formControlName="postcode" addressType="zip" [(address)]="appGeneral.value.currentAddress.addressSelected"></address>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-xs-12">
+                <div class="row">
+                    <div class="col-md-4 col-sm-3 col-xs-12 txt-sm-right pdr-sm-7 lh-form-control ws-nowrap">
+                        <font color="red">*</font> ประเทศ :</div>
+                    <div class="col-md-8 col-sm-9 col-xs-12 pdl-sm-7">
+                        <!--       <ion-item class="form-control">
+                            <ion-select id="currentCountry" formControlName="currentCountry" interface="popover">
+                                <ion-option [value]="re.key2" *ngFor="let re of countryDropdown ">{{re.th}} </ion-option>
+                            </ion-select>
+                        </ion-item> -->
+                        <dropdown id="currentCountry" formControlName="currentCountry">
+                            <dropdown-option [value]="re.key2" *ngFor="let re of countryDropdown ">{{re.th}}</dropdown-option>
+                        </dropdown>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-xs-12">
+                <div class="row">
+                    <div class="col-md-4 col-sm-3 col-xs-12 txt-sm-right pdr-sm-7 lh-form-control ws-nowrap">โทรศัพท์บ้าน :</div>
+                    <div class="col-md-8 col-sm-9 col-xs-12 pdl-sm-7">
+                        <div class="form-group">
+                            <input name="tel_no" formControlName="currentTelNo" class="form-control" maxlength="10" type="text" value="" placeholder="" NumberOnly />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="col-lg-4 col-md-6 col-xs-12">
+                <div class="row">
+                    <div class="col-md-4 col-sm-3 col-xs-12 txt-sm-right pdr-sm-7 lh-form-control ws-nowrap">
+                        <font color="red">*</font> โทรศัพท์มือถือ :
+                    </div>
+                    <div class="col-md-8 col-sm-9 col-xs-12 pdl-sm-7">
+                        <div class="form-group">
+                            <input id="mobile_no" formControlName="currentMobileNo" class="form-control" maxlength="10" type="text" value="" placeholder="" NumberOnly />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-xs-12">
+                <div class="row">
+                    <div class="col-md-4 col-sm-3 col-xs-12 txt-sm-right pdr-sm-7 lh-form-control ws-nowrap">
+                        <font color="red">*</font> อีเมล :
+                    </div>
+                    <div class="col-md-8 col-sm-9 col-xs-12 pdl-sm-7">
+                        <div class="form-group">
+                            <input name="currentEmail" formControlName="currentEmail" class="form-control" maxlength="30" type="email" value="" placeholder="" NumberCharacterOnly />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- end oneContentTab -->
+</form>

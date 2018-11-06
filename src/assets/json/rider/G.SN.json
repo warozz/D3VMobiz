@@ -1,0 +1,72 @@
+{
+    "rider": "สพ.โกลด์",
+    "age": {
+        "min": "0y",
+        "max": "70y"
+    },
+    "rule": [{
+            "deny": ["VP", "V", "J0"]
+        },
+        {
+            "age": {
+                "min": "0y",
+                "max": "5y"
+            },
+            "deny": ["H"]
+        }
+    ],
+    "agent": [{
+        "permission": "Normal",
+        "select": [{
+                "option": 2000,
+                "age": {
+                    "min": "20y",
+                    "max": "70y"
+                },
+                "sum": 100000
+            },
+            {
+                "option": 4000,
+                "condition": [{
+                        "age": {
+                            "min": "0y",
+                            "max": "5y"
+                        },
+                        "sum": 300000
+                    },
+                    {
+                        "age": {
+                            "min": "20y",
+                            "max": "70y"
+                        },
+                        "sum": 100000
+                    }
+                ]
+            },
+            {
+                "option": 6000,
+                "age": {
+                    "min": "20y",
+                    "max": "70y"
+                },
+                "sum": 300000
+            },
+            {
+                "option": 8000,
+                "age": {
+                    "min": "20y",
+                    "max": "70y"
+                },
+                "sum": 500000
+            },
+            {
+                "option": 10000,
+                "age": {
+                    "min": "20y",
+                    "max": "70y"
+                },
+                "sum": 500000
+            }
+        ]
+    }]
+}

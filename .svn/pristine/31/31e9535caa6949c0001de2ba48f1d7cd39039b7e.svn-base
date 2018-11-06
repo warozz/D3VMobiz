@@ -1,0 +1,60 @@
+<div class="boxTableStyle1 boxSearchHospitalTable">
+    <table>
+        <thead>
+            <tr>
+                <th class="ws-sm-nowrap w100">ลำดับที่</th>
+                <th class="view-only-sm txt-left">รายละเอียด</th>
+                <th class="hide-only-sm hide-only-xs txt-left">ชื่อโรงพยาบาล</th>
+                <th class="hide-only-sm hide-only-xs txt-left w300">สถานที่ติดต่อ</th>
+                <th class="w170">รองรับบริการ</th>
+                <th class="hide-only-sm hide-only-xs">เบอร์แฟกซ์</th>
+                <th class="ws-sm-nowrap">เบอร์โทรศัพท์</th>
+                <th class="w170">แผนที่ Google Map</th>
+            </tr>
+        </thead>
+        <tbody *ngIf="data.length > 0">
+            <tr *ngFor="let item of data; let i = index" [attr.data-index]="i">
+                <td class="txt-center"><span class="visible-xs-inline-block">ลำดับที่ &nbsp;</span>{{ i + 1 }}</td>
+                <td class="view-only-sm txt-left">
+                    <div>{{ item.nameth }}</div>
+                    <div>{{ item.address }}</div>
+                    <div *ngIf="item.fax != ''">แฟกซ์ {{ item.fax }}</div>
+
+                    <div class="visible-xs-block pdb10"><span class="c-blue">เบอร์โทรศัพท์ &nbsp;</span>{{ item.telephone }}</div>
+                    <div class="visible-xs-block c-blue">รองรับบริการ</div>
+                </td>
+                <td class="hide-only-sm hide-only-xs">{{ item.nameth }}</td>
+                <td class="hide-only-sm hide-only-xs">{{ item.address }}</td>
+                <td class="clear-xs-after txt-center">
+                    <div class="visible-xs-block float-xs-left c-blue">IPD</div>
+                    <div class="visible-xs-block float-xs-right">
+                        <i class="icon-checkmark3 c-blue" *ngIf="item.ipdright == 'Y'"></i>
+                    </div>
+                    <div class="float-xs-right hide-only-xs">
+                        <span class="c-blue" *ngIf="item.ipdright == 'Y'">IPD</span>
+                        <span class="c-green" *ngIf="item.opdright == 'Y'">OPD</span>
+                    </div>
+                </td>
+                <td class="clear-xs-after txt-center hide-only-sm">
+                    <div class="hide-only-sm hide-only-xs" [innerHTML]="item.fax2"></div>
+                    <div class="visible-xs-block float-xs-left c-green">OPD</div>
+                    <div class="visible-xs-block float-xs-right">
+                        <i class="icon-checkmark3 c-blue" *ngIf="item.opdright == 'Y'"></i>
+                    </div>
+                </td>
+                <td class="hide-only-xs txt-center" [innerHTML]="item.telephone2"></td>
+                <td class="clear-xs-after pdt10-xs txt-center">
+                    <div class="visible-xs-block float-xs-left c-blue">แผนที่ Google Map</div>
+                    <div class="float-xs-right"><a *ngIf="item.geolocation != ''" class="btnPop" href="https://maps.google.com/?q={{ item.geolocation }}" target="_system"><i class="icon-pin c-blue"></i> นำทาง</a></div>
+                </td>
+            </tr>
+        </tbody>
+        <tbody *ngIf="data.length == 0">
+            <tr>
+                <td colspan="8" class="c-red" style="text-align: center !important">
+                    ไม่พบข้อมูล
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

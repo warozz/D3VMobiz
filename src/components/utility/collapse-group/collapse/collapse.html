@@ -1,0 +1,9 @@
+<div class="oneAcc" [ngClass]="{action: action, disable: disabled}">
+    <h2 class="titleAcc" (click)="click()" #target>
+        {{ title }}
+        <span class="subTitleAcc">{{ subtitle }}</span>
+    </h2>
+    <div class="contentAcc">
+        <ng-content></ng-content>
+    </div>
+</div>

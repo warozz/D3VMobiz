@@ -1,0 +1,64 @@
+page-app-form {
+    table,
+    th,
+    td {
+        text-align: center
+    }
+    .hide-content-mat-paginator {
+        display: none;
+    }
+    .divPage {
+        .page-container {
+            padding-top: 10px;
+            text-align: right;
+        }
+        .page-container2 {
+            padding-top: 10px;
+            padding-left: 0px;
+        }
+        .select-text {
+            min-width: 20px;
+            color: #666;
+        }
+        ion-select {
+            max-width: 100%;
+            width: 60px;
+            border: 1px solid #BDCBD3;
+            height: 40px;
+        }
+        .select-ios {
+            padding: 5px 8px 11px 16px;
+        }
+        .select-icon-inner {
+            margin-left: -7px;
+        }
+        .item-cover {
+            left: 15px;
+            top: 10px;
+            width: 60px;
+            height: 40px;
+        }
+        .tp0 {
+            top: 0px;
+            font-size: 18px;
+        }
+        .select-md {
+            padding: 5px 7px 11px 10px;
+        }
+        @media screen and (max-width: 389px) {
+            .btn-style-m {
+                font-size: 22px;
+            }
+            .select-md {
+                padding: 5px 7px 11px 5px !important;
+            }
+            .col-xs-2 {
+                width: 19.666667%;
+            }
+            .col-xs-10 {
+                width: 80.333333%;
+                padding-left: unset;
+            }
+        }
+    }
+}

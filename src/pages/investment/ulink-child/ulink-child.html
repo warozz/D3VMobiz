@@ -1,0 +1,61 @@
+<div class="boxContentPage bgBlue3 hasBgImg">
+    <div class="container">
+        <div class="bgPaperShadow">
+            <div class="contentPaperShadow">
+                <div class="boxListForm">
+
+                    <!-- ทุนการศึกษาให้กับบุตรหลาน -->
+                    <form [formGroup]="ulinkChild">
+                        <div class="col-md-4 pd0">
+                            <div class="col-sm-4 txt-sm-right pdr-sm-7 lh-form-control">คำนำหน้า :</div>
+                            <div class="col-sm-8 pdl-sm-7">
+                                <prefix-name formControlName="pname" (disabledSex)="disabledSex($event)" (sex)="ulinkChild.controls['sex'].setValue($event)"></prefix-name>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 pd0">
+                            <div class="col-sm-4 txt-sm-right pdr-sm-7 lh-form-control">ชื่อ :</div>
+                            <div class="col-sm-8 pdl-sm-7">
+                                <div class="form-group">
+                                    <input class="form-control" formControlName="fname" type="text" maxlength="30" CharacterOnly />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 pd0">
+                            <div class="col-sm-4 txt-sm-right pdr-sm-7 lh-form-control">นามสกุล :</div>
+                            <div class="col-sm-8 pdl-sm-7">
+                                <div class="form-group">
+                                    <input class="form-control" formControlName="lname" type="text" maxlength="30" CharacterOnly />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 pd0">
+                            <div class="col-sm-4 txt-sm-right pdr-sm-7 lh-form-control">เพศ :</div>
+                            <div class="col-sm-8 pdl-sm-7">
+                                <dropdown formControlName="sex">
+                                    <dropdown-option value="M">ชาย</dropdown-option>
+                                    <dropdown-option value="F">หญิง</dropdown-option>
+                                </dropdown>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 pd0">
+                            <div class="col-md-7 col-sm-4 txt-sm-right pdr-sm-7 lh-form-control">อายุปัจจุบัน (ปี) :</div>
+                            <div class="col-md-5 col-sm-8 pdl-sm-7">
+                                <calendar-age formControlName="agestart" [maxAge]="prospect.age" [minDate]="prospect.birthDate"></calendar-age>
+                            </div>
+                        </div>
+                        <div class="col-md-4 pd0">
+                            <div class="col-lg-7 col-md-8 col-sm-4 txt-sm-right pdr-sm-7 lh-form-control">การคุ้มครองถึงอายุ (ปี) :</div>
+                            <div class="col-lg-5 col-md-4 col-sm-8 pdl-sm-7">
+                                <input class="form-control" formControlName="ageend" type="text" calculator [min]="ulinkChild.value.agestart + 1" max="99" />
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

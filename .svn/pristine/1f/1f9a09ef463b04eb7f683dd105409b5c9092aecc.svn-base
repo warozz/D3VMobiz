@@ -1,0 +1,284 @@
+<div class="boxContentPage bgBlue2 zIndex1">
+    <div class="container xs-pdlr0">
+        <div class="boxSearchPlanInsurance">
+            <div class="col-md-12 offset-6 zIndex3">
+                <div class="label">
+                    <span>แบบทดสอบประเมินความเสี่ยง</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="boxContentPage bgBlue3 hasBgImg">
+    <div class="container">
+        <div class="bgPaperShadow mgt0">
+            <div class="contentPaperShadow2">
+                <div class="boxActionForm boxActionForm-xs_1 pdt10">
+
+                    <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <div class="col-label txt-md-left lh-form-control">
+                            1. ปัจจุบันท่านอายุเท่าไร
+                        </div>
+                        <div class="form-group col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                            <input class="form-control" disabled="disabled" [(ngModel)]="riskPoint.age" type="text" disabled="disabled" width="20" />
+                        </div>
+                    </div>
+
+                    <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <div class="col-label txt-md-left lh-form-control">
+                            2. ปัจจุบันท่านมีภาระทางการเงินและค่าใช้จ่ายประจํา เช่น ค่าผ่อนบ้าน รถ ค่าใช้จ่ายส่วนตัว และค่าเลี้ยงดูครอบครัว เป็นสัดส่วนเท่าใด
+                        </div>
+                        <div class="form-group ">
+                            <div class="col-input">
+                                <dropdown placeholder="----- โปรดเลือก -----" [(data)]="riskProfile.risk2" (dataChange)="dataChange()">
+                                    <dropdown-option value="1">(1) มากกว่าร้อยละ 75 ของรายได้ทั้งหมด</dropdown-option>
+                                    <dropdown-option value="2">(2) ระหว่างร้อยละ 50 ถึงร้อยละ 75 ของรายได้ทั้งหมด</dropdown-option>
+                                    <dropdown-option value="3">(3) ระหว่างร้อยละ 25 ถึงร้อยละ 50 ของรายได้ทั้งหมด</dropdown-option>
+                                    <dropdown-option value="4">(4) น้อยกว่าร้อยละ 25 ของรายได้ทั้งหมด</dropdown-option>
+                                </dropdown>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <div class="col-label txt-md-left lh-form-control">
+                            3. ท่านมีสถานภาพทางการเงินในปัจจุบันอย่างไร
+                        </div>
+                        <div class="form-group ">
+                            <div class="col-input">
+                                <dropdown placeholder="----- โปรดเลือก -----" [(data)]="riskProfile.risk3" (dataChange)="dataChange()">
+                                    <dropdown-option value="1">(1) มีทรัพย์สินน้อยกว่าหนี้สิน</dropdown-option>
+                                    <dropdown-option value="2">(2) มีทรัพย์สินเท่ากับหนี้สิน</dropdown-option>
+                                    <dropdown-option value="3">(3) มีทรัพย์สินมากกว่าหนี้สิน</dropdown-option>
+                                    <dropdown-option value="4">(4) มีความมั่นใจว่ามีเงินออมหรือเงินลงทุนเพียงพอสําหรับการใช้ชีวิตหลังเกษียณอายุแล้ว</dropdown-option>
+                                </dropdown>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <div class="col-label txt-md-left lh-form-control">
+                            4. ท่านเคยมีประสบการณ์ หรือมีความรู้ในการลงทุนในทรัพย์สินกลุ่มใดต่อไปนี้บ้าง
+                            <div>
+                                (เลือกได้มากกว่า 1 ข้อ)
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                <input id="chkRiskProfile1" class="check-style" type="checkbox" [checked]="checkboxQ4.isCheckedQ4_1" (click)="getValCheckBox($event)" value="1" [(ngModel)]="riskProfile.chkRiskProfile1">
+                                <label for="chkRiskProfile1" style="font-size: 22px; font-weight: normal;">(1.) เงินฝากธนาคาร</label>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                <input id="chkRiskProfile2" class="check-style" type="checkbox" [checked]="checkboxQ4.isCheckedQ4_2" (click)="getValCheckBox($event)" value="1" [(ngModel)]="riskProfile.chkRiskProfile2">
+                                <label for="chkRiskProfile2" style="font-size: 22px; font-weight: normal;">(2.) พันธบัตรรัฐบาล หรือกองทุนรวมพันธบัตรรัฐบาล</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                <input id="chkRiskProfile3" class="check-style" type="checkbox" [checked]="checkboxQ4.isCheckedQ4_3" (click)="getValCheckBox($event)" value="1" [(ngModel)]="riskProfile.chkRiskProfile3">
+                                <label for="chkRiskProfile3" style="font-size: 22px; font-weight: normal;">(3.) หุ้นกู้ หรือกองทุนรวมตราสารหนี้</label>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                <input id="chkRiskProfile4" class="check-style" type="checkbox" [checked]="checkboxQ4.isCheckedQ4_4" (click)="getValCheckBox($event)" value="1" [(ngModel)]="riskProfile.chkRiskProfile4">
+                                <label for="chkRiskProfile4" style="font-size: 22px; font-weight: normal;">(4.) หุ้นสามัญ หรือกองทุนรวมหุ้น หรือสินทรัพย์อื่นที่มีความเสี่ยงสูง</label>
+                            </div>
+                        </div>
+
+
+
+                        <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <div class="col-label txt-md-left lh-form-control">
+                                5. ระยะเวลาที่ท่านคาดว่าจะไม่มีความจําเป็นต้องใช้เงินลงทุนนี้
+                            </div>
+                            <div class="form-group ">
+                                <div class="col-input">
+                                    <dropdown placeholder="----- โปรดเลือก -----" [(data)]="riskProfile.risk5" (dataChange)="dataChange()">
+                                        <dropdown-option value="1">(1) ไม่เกิน 1 ปี</dropdown-option>
+                                        <dropdown-option value="2">(2) 1 ถึง 3 ปี</dropdown-option>
+                                        <dropdown-option value="3">(3) 3 ถึง 5 ปี</dropdown-option>
+                                        <dropdown-option value="4">(4) มากกว่า 5 ปี</dropdown-option>
+                                    </dropdown>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <div class="col-label txt-md-left lh-form-control">
+                                6. วัตถุประสงค์หลักในการลงทุนของท่าน คือ
+                            </div>
+                            <div class="form-group ">
+                                <div class="col-input">
+                                    <dropdown placeholder="----- โปรดเลือก -----" [(data)]="riskProfile.risk6" (dataChange)="dataChange()">
+                                        <dropdown-option value="1">(1) เน้นเงินต้นต้องปลอดภัยและได้รับผลตอบแทนสม่ำเสมอแต่ตํ่าได้</dropdown-option>
+                                        <dropdown-option value="2">(2) เน้นโอกาสได้รับผลตอบแทนที่สม่ำเสมอ แต่อาจเสี่ยงที่จะสูญเสียเงินต้นได้บ้าง</dropdown-option>
+                                        <dropdown-option value="3">(3) เน้นโอกาสได้รับผลตอบแทนที่สูงขึ้น แต่อาจเสี่ยงที่จะสูญเสียเงินต้นได้มากขึ้น</dropdown-option>
+                                        <dropdown-option value="4">(4) เน้นผลตอบแทนสูงสุดในระยะยาว แต่อาจเสี่ยงที่จะสูญเงินต้นส่วนใหญ่ได้</dropdown-option>
+                                    </dropdown>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <div class="col-label txt-md-left lh-form-control">
+                                7. เมื่อพิจารณารูปแสดงตัวอย่างผลตอบแทนของกลุ่มการลงทุนที่อาจเกิดขึ้นด้านล่าง
+                            </div>
+                            <div class="carousel-img-wrap">
+                                <div class="carousel-img">
+                                    <img src="assets/img/riskprofile/riskprofile2.png" alt="Image">
+                                </div>
+                            </div>
+                            <div class="col-label txt-md-left lh-form-control">
+                                จากภาพ ท่านเต็มใจที่จะลงทุนในกลุ่มการลงทุนใด มากที่สุด
+                            </div>
+                            <div class="form-group ">
+                                <div class="col-input">
+                                    <dropdown placeholder="----- โปรดเลือก -----" [(data)]="riskProfile.risk7" (dataChange)="dataChange()">
+                                        <dropdown-option value="1">(1) กลุ่มการลงทุนที่ 1 มีโอกาสได้รับผลตอบแทน 2.5% โดยไม่ขาดทุนเลย</dropdown-option>
+                                        <dropdown-option value="2">(2) กลุ่มการลงทุนที่ 2 มีโอกาสได้รับผลตอบแทนสูงสุด 7% แต่อาจมีผลขาดทุนได้ถึง 1%</dropdown-option>
+                                        <dropdown-option value="3">(3) กลุ่มการลงทุนที่ 3 มีโอกาสได้รับผลตอบแทนสูงสุด 15% แต่อาจมีผลขาดทุนได้ถึง 5%</dropdown-option>
+                                        <dropdown-option value="4">(4) กลุ่มการลงทุนที่ 4 มีโอกาสได้รับผลตอบแทนสูงสุด 25% แต่อาจมีผลขาดทุนได้ถึง 15%</dropdown-option>
+                                    </dropdown>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <div class="col-label txt-md-left lh-form-control">
+                                8. ถ้าท่านเลือกลงทุนในทรัพย์สินที่มีโอกาสได้รับผลตอบแทนมาก แต่มีโอกาสขาดทุนสูงด้วยเช่นกัน ท่านจะรู้สึกอย่างไร
+                            </div>
+                            <div class="form-group ">
+                                <div class="col-input">
+                                    <dropdown placeholder="----- โปรดเลือก -----" [(data)]="riskProfile.risk8" (dataChange)="dataChange()">
+                                        <dropdown-option value="1">(1) กังวลและตื่นตระหนกกลัวขาดทุน</dropdown-option>
+                                        <dropdown-option value="2">(2) ไม่สบายใจแต่พอเข้าใจได้บ้าง</dropdown-option>
+                                        <dropdown-option value="3">(3) เข้าใจและรับความผันผวนได้ในระดับหนึ่ง</dropdown-option>
+                                        <dropdown-option value="4">(4) ไม่กังวลกับโอกาสขาดทุนสูง และหวังกับผลตอบแทนที่อาจจะได้รับสูงขึ้น</dropdown-option>
+                                    </dropdown>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <div class="col-label txt-md-left lh-form-control">
+                                9. ท่านจะรู้สึกกังวล/รับไม่ได้ เมื่อมูลค่าเงินลงทุนของท่านมีการปรับตัวลดลงในสัดส่วนเท่าใด
+                            </div>
+                            <div class="form-group ">
+                                <div class="col-input">
+                                    <dropdown placeholder="----- โปรดเลือก -----" [(data)]="riskProfile.risk9" (dataChange)="dataChange()">
+                                        <dropdown-option value="1">(1) 5% หรือน้อยกว่า</dropdown-option>
+                                        <dropdown-option value="2">(2) มากกว่า 5% - 10%</dropdown-option>
+                                        <dropdown-option value="3">(3) มากกว่า 10% - 20%</dropdown-option>
+                                        <dropdown-option value="4">(4) มากกว่า 20% ขึ้นไป</dropdown-option>
+                                    </dropdown>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <div class="col-label txt-md-left lh-form-control">
+                                10. หากปีที่แล้วท่านลงทุนไป 100,000 บาท ปีนี้ท่านพบว่ามูลค่าเงินลงทุนลดลงเหลือ 85,000 บาท ท่านจะทําอย่างไร
+                            </div>
+                            <div class="form-group ">
+                                <div class="col-input">
+                                    <dropdown placeholder="----- โปรดเลือก -----" [(data)]="riskProfile.risk10" (dataChange)="dataChange()">
+                                        <dropdown-option value="1">(1) ตกใจ และต้องการขายการลงทุนที่เหลือทิ้ง</dropdown-option>
+                                        <dropdown-option value="2">(2) กังวลใจ และจะปรับเปลี่ยนการลงทุนบางส่วนไปในทรัพย์สินที่เสี่ยงน้อยลง</dropdown-option>
+                                        <dropdown-option value="3">(3) อดทนถือต่อไปได้ และรอผลตอบแทนปรับตัวกลับมา</dropdown-option>
+                                        <dropdown-option value="4">(4) ยังมั่นใจ เพราะเข้าใจว่าต้องลงทุนระยะยาว และจะเพิ่มเงินลงทุนในแบบเดิมเพื่อเฉลี่ยต้นทุน</dropdown-option>
+                                    </dropdown>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <div class="col-label txt-md-left lh-form-control">
+                                11. หากการลงทุนในอนุพันธ์และหุ้นกู้อนุพันธ์ประสบความสําเร็จ ท่านจะได้รับผลตอบแทนในอัตราที่สูงมาก แต่หากการลงทุนล้มเหลวท่านอาจจะสูญเงินลงทุนทั้งหมดและอาจต้องลงเงินชดเชยเพิ่มบางส่วน ท่านยอมรับได้เพียงใด
+                                <div>
+                                    (เฉพาะที่จะมีการลงทุนในอนุพันธ์และหุ้นกู้อนุพันธ์โดยตรงเท่านั้น)
+                                </div>
+                            </div>
+                            <div class="form-group ">
+                                <div class="col-input">
+                                    <dropdown placeholder="----- โปรดเลือก -----" [(data)]="riskProfile.risk11" (dataChange)="dataChange()">
+                                        <dropdown-option value="1">(1) ไม่ได้</dropdown-option>
+                                        <dropdown-option value="2">(2) ได้บ้าง</dropdown-option>
+                                        <dropdown-option value="3">(3) ได้</dropdown-option>
+                                    </dropdown>
+                                </div>
+                            </div>
+                        </div> -->
+
+                        <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <div class="col-label txt-md-left lh-form-control">
+                                11. นอกเหนือจากความเสี่ยงในการลงทุนแล้ว ท่านสามารถรับความเสี่ยงด้านอัตราแลกเปลี่ยนได้เพียงใด
+                                <div>
+                                    (เฉพาะที่จะมีการลงทุนในต่างประเทศ)
+                                </div>
+                            </div>
+                            <div class="form-group ">
+                                <div class="col-input">
+                                    <dropdown placeholder="----- โปรดเลือก -----" [(data)]="riskProfile.risk11" (dataChange)="dataChange()">
+                                        <dropdown-option value="1">(1) ไม่ได้</dropdown-option>
+                                        <dropdown-option value="2">(2) ได้บ้าง</dropdown-option>
+                                        <dropdown-option value="3">(3) ได้</dropdown-option>
+                                    </dropdown>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div align="center">
+                            <span style="color:#fff"> - </span>
+                        </div>
+
+                    </div>
+                    <div align="center" class="pdt5 pdb5">
+                        <button class="btn-style3" (click)="submitCalculate();" id="btnClear" type="button">
+                <span>
+                  <i class="icon-ion-pie-graph"></i> ประเมินผล </span>
+              </button>
+                    </div>
+
+                    <div class="bgPaperShadow mgt0" *ngIf="showPieChart">
+                        <div class="contentPaperShadow">
+
+                            <div class="boxLeft">
+                                <div class="boxGraphBlueRed">
+                                    <div align="center">
+                                        <div>
+                                            <h3>รวมคะแนน</h3>
+                                        </div>
+                                        <div style="border:1px solid #c8c8c8;width:100px;background-color:#F3F3F3">
+                                            <span style="color: #456E92">{{riskProfile.sumScore}}</span>
+                                        </div>
+                                        <div>
+                                            <span style="color:#456E92">{{riskProfile.resultType}}</span>
+                                        </div>
+                                        <div>
+                                            ตัวอย่างคำแนะนำการจัดสรรการลงทุน (Basic Assets Allocation)
+                                        </div>
+                                    </div>
+                                    <pie-chart [data]="pieChartData" [label]="pieChartLabels" [color]="pieChartColor" [option]="pieChartOption">
+                                    </pie-chart>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div *ngIf="toggle_footer" class="boxBlue txt-center">
+        <div>
+            <button class="btn-style2 btn-style-m" type="button" (click)="saveRiskProfile()" [disabled]="disableSaveButton"><span><i class="icon-save-file-option"></i> บันทึก</span></button>
+            <button class="btn-style3 btn-style-m" type="button" (click)="resetData()"><span><i class="icon-reload"></i> เริ่มใหม่ </span></button>
+        </div>
+    </div>

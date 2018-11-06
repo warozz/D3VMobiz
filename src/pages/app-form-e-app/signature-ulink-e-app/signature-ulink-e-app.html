@@ -1,0 +1,160 @@
+<ion-content>
+    <div class="modal">
+        <a class="fancybox-close" href="javascript:void(0)" (click)="close()"></a>
+        <h1 class="modal-title">ลงลายมือชื่อ ใบคำขอ<br class="view-only-mb" />เอาประกันภัย ยูนิตลิงค์ </h1>
+        <div class="popup popup-style1">
+            <div class="boxNewUpdate">
+                <div class="scrollbar-inner">
+                    <form [formGroup]="signature">
+                        <div class="inside-container">
+                            <div class="form-horizontal">
+                                <div class="col-xs-12 col-sm-offset-4 col-sm-8 txt-center c-blue">
+                                    <h2>ผู้เอาประกันภัย</h2>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 pdtb10">
+                                    <div class="col-sm-4 col-xs-12 txt-sm-right pdr-sm-7 lh-form-control lh100"> ลายเซ็น :</div>
+                                    <div class="col-sm-8 col-xs-12 pdl-sm-7 signature-height">
+                                        <div class="form-group">
+                                            <input type="text" *ngIf="signs['1'] === undefined" class="signature-thumb fs30" text-center (click)="openSignature(signs, 1)" placeholder="ลงลายมือชื่อ" readonly />
+                                            <div *ngIf="signs['1'] !== undefined" class="signature-thumb" (click)="openSignature(signs, 1)">
+                                                <img [src]="signs['1']" style="width: 100%;height: 100%" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                    <div class="col-sm-4 col-xs-12 txt-sm-right pdr-sm-7 lh-form-control">
+                                        ชื่อ-นามสกุล :
+                                    </div>
+                                    <div class="col-sm-8 col-xs-12 pdl-sm-7">
+                                        <div class="form-group">
+                                            <input type="text" formControlName="insureFullname" class="form-control" disabled>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="underline"></div>
+                                <div class="col-xs-12 col-sm-offset-4 col-sm-8 txt-center c-blue">
+                                    <h2>พยาน</h2>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 pdtb10">
+                                    <div class="col-sm-4 col-xs-12 txt-sm-right pdr-sm-7 lh-form-control lh100">
+                                        ลายเซ็น :
+                                    </div>
+                                    <div class="col-sm-8 col-xs-12 pdl-sm-7 signature-height">
+                                        <div class="form-group">
+                                            <input *ngIf="signs['2'] === undefined" class="signature-thumb fs30" text-center type="text" (click)="openSignature(signs, 2)" placeholder="ลงลายมือชื่อ" readonly />
+                                            <div *ngIf="signs['2'] !== undefined" class="signature-thumb" (click)="openSignature(signs, 2)">
+                                                <img [src]="signs['2']" style="width: 100%;height: 100%" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                    <div class="col-sm-4 col-xs-12 txt-sm-right pdr-sm-7 lh-form-control">
+                                        ชื่อ-นามสกุล :
+                                    </div>
+                                    <div class="col-sm-8 col-xs-12 pdl-sm-7">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" formControlName="witnessFullname1" disabled>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="underline"></div>
+                                <div class="col-xs-12 col-sm-offset-4 col-sm-8 txt-center c-blue">
+                                    <h2>พยาน / ผู้เขียน</h2>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 pdtb10">
+                                    <div class="col-sm-4 col-xs-12 txt-sm-right pdr-sm-7 lh-form-control lh100">
+                                        ลายเซ็น :
+                                    </div>
+                                    <div class="col-sm-8 col-xs-12 pdl-sm-7 signature-height">
+                                        <div class="form-group">
+                                            <input *ngIf="signs['3'] === undefined" class="signature-thumb fs30" text-center type="text" (click)="openSignature(signs, 3)" placeholder="ลงลายมือชื่อ" readonly />
+                                            <div *ngIf="signs['3'] !== undefined" class="signature-thumb" (click)="openSignature(signs, 3)">
+                                                <img [src]="signs['3']" style="width: 100%;height: 100%" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 ">
+                                    <div class="col-sm-4 col-xs-12 txt-sm-right pdr-sm-7 lh-form-control">
+                                        ชื่อ-นามสกุล :
+                                    </div>
+                                    <div class="col-sm-8 col-xs-12 pdl-sm-7">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" formControlName="witnessFullname2" disabled>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="underline"></div>
+                                <div class="col-xs-12 col-sm-offset-4 col-sm-8 txt-center c-blue">
+                                    <h2>ตัวแทน</h2>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 pdtb10">
+                                    <div class="col-sm-4 col-xs-12 txt-sm-right pdr-sm-7 lh-form-control lh100">
+                                        ลายเซ็น :
+                                    </div>
+                                    <div class="col-sm-8 col-xs-12 pdl-sm-7 signature-height">
+                                        <div class="form-group">
+                                            <input type="text" *ngIf="signs['4'] === undefined" class="signature-thumb fs30" text-center (click)="openSignature(signs, 4)" placeholder="ลงลายมือชื่อ" readonly />
+                                            <div *ngIf="signs['4'] !== undefined" class="signature-thumb" (click)="openSignature(signs, 4)">
+                                                <img [src]="signs['4']" style="width: 100%;height: 100%" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 ">
+                                    <div class="col-sm-4 col-xs-12 txt-sm-right pdr-sm-7 lh-form-control">
+                                        ชื่อ-นามสกุล :
+                                    </div>
+                                    <div class="col-sm-8 col-xs-12 pdl-sm-7">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" formControlName="agentfullname" disabled>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="underline"></div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 mgt12 mgb10">
+                                    <div class="col-sm-4 col-xs-12 txt-sm-right pdr-sm-7 lh-form-control">
+                                        ทำที่ :
+                                    </div>
+                                    <div class="col-sm-8 col-xs-12 pdl-sm-7">
+                                        <div class="form-group">
+                                            <input type="text" formControlName="signedAddress" class="form-control" disabled>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="col-12 txt-center mgt25">
+                                    <button class="btnSaveLeadRegister btn-style2" type="button" (click)="save()">
+                                        <span><i class="icon-save-file-option"></i> บันทึก</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</ion-content>
+<ion-footer>
+    <div id="footer">
+        <div id="Footer_la_address">
+            สงวนสิทธิ์โดย บริษัท ไทยประกันชีวิต จำกัด &#40;มหาชน&#41;
+            <br> 123 ถนนรัชดาภิเษก ดินแดง กรุงเทพฯ 10400 โทร. 02 247 0247
+        </div>
+    </div>
+</ion-footer>

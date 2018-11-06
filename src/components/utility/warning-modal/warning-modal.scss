@@ -1,0 +1,49 @@
+warning-modal {
+
+    .modal h1 {
+        text-align: left;
+    }
+    .detail-header {
+        height: 50px;
+        background-color: #28ABE6;
+        color: #fff;
+        div {
+            top: 12px;
+        }
+    }
+    .detail {
+        border-bottom: 2px solid #28ABE6;
+        height: 150px;
+    }
+    .div-btn {
+        text-align: center;
+        margin-top: 30px;
+        // button {
+        //     &[showpdf] {
+        //         margin-right: 30px;
+        //     }
+        //     &[editapp] {
+        //         margin-left: 30px;
+        //     }
+        // }
+    }
+
+    @media screen and (max-width: 500px) {
+        .col-md-5,
+        .col-xs-5,
+        .col-md-7,
+        .col-xs-7,
+        {
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+    }
+    @media screen and (max-width: 427px) {
+        .detail {
+            height: 185px;
+        }
+    }
+    .col-xs-7 {
+        width: 53.333333%;
+    }
+}

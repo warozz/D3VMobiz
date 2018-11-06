@@ -1,0 +1,22 @@
+<!-- Generated template for the SignatureComponent component -->
+<div class="modal">
+  <i class="close" (click)="close()"></i>
+  <h1 class="modal-title">ลายเซ็น</h1>
+  <div class="popup">
+    <div class="boxTableStyle2 td_pd-2-15 txt-center">
+      <signature-pad class="signature" [options]="signaturePadOptions" (onBeginEvent)="drawStart()" (onEndEvent)="drawComplete()"></signature-pad>
+    </div>
+
+    <div class="txt-center">
+      <button type="button" id="bt_save" class="btnSaveLeadRegister btn-style2" (click)="save()">
+        <span>
+          <i class="icon-save-file-option"></i> บันทึก</span>
+      </button>
+      <button id="bt_restart" class="btn-style3" type="button" (click)="clear()">
+        <span>
+          <i class="icon-reload"></i> เริ่มใหม่</span>
+      </button>
+    </div>
+  </div>
+</div>
+

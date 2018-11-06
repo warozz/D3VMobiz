@@ -1,0 +1,36 @@
+app-info {
+    .form-group {
+        ion-item {
+            border: 1px solid #C8C8C8;
+        }
+    }
+    #style1 {
+        @media screen and (min-width: $screen-xl-min) {
+            .col-label {
+                width: 110px;
+            }
+        }
+    }
+    #style2 {
+        @media screen and (min-width: $screen-xl-min) {
+            width: 245px;
+            .col-label {
+                width: 100px;
+            }
+        }
+        @media screen and (min-width: $screen-lg-min) and (max-width: $screen-lg-max) {
+            width: 260px;
+            .col-label {
+                width: 120px;
+            }
+        }
+    }
+    #style3 {
+        @media screen and (min-width: $screen-lg-min) and (max-width: $screen-lg-max) {
+            width: 275px;
+            .col-label {
+                width: 145px;
+            }
+        }
+    }
+}

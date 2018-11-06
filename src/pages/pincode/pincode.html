@@ -1,0 +1,55 @@
+<ion-header>
+    <h1 text-center [ngClass]="{'middle': title2 == ''}">
+        <span>{{ title }}</span>
+        <span>{{ title2 }}</span>
+    </h1>
+</ion-header>
+
+<ion-content>
+    <div class="pin-group" text-center>
+        <div class="reference" [ngClass]="{'hidden': incorrectLeft > 0}">
+            <span>เลขที่อ้างอิง </span>
+            <span class="c-red">{{ activateRef }}</span>
+        </div>
+        <div class="pin" *ngFor="let pin of pinArray" [ngClass]="{'active': pin != '', 'hidden': incorrectLeft == 0}">
+            <span class="point" *ngIf="!showPin"></span>
+            <span class="pwd" *ngIf="showPin">{{ pin }}</span>
+        </div>
+        <div class="activate" [ngClass]="{'hidden': incorrectLeft > 0}">
+            <div class="actBox" *ngFor="let pin of actArray" [ngClass]="{'active': pin != '', 'hidden': showPin}">
+                <span class="point" *ngIf="!showPin"></span>
+            </div>
+            <span class="pwd" *ngIf="showPin">{{ pin }}</span>
+        </div>
+    </div>
+
+    <div class="showpin">
+        <div>
+            <input type="checkbox" id="showPin" class="check-style" [(ngModel)]="showPin" />
+            <label for="showPin">แสดงรหัส</label>
+        </div>
+    </div>
+
+    <p>
+        <span>{{ message }}</span>
+        <span>{{ message2 }}</span>
+    </p>
+    <ion-grid>
+        <ion-row class="portrait">
+            <ion-col col-4 text-center *ngFor="let key of buttonArray.portrait">
+                <button type="button" ion-button color="light" (click)="pinCode(key)">
+                    <span *ngIf="key.length == 1">{{ key }}</span>
+                    <i *ngIf="key.length > 1" [ngClass]="key"></i>
+                </button>
+            </ion-col>
+        </ion-row>
+        <ion-row class="landscape">
+            <ion-col col-2 text-center *ngFor="let key of buttonArray.landscape">
+                <button type="button" ion-button color="light" (click)="pinCode(key)">
+                    <span *ngIf="key.length == 1">{{ key }}</span>
+                    <i *ngIf="key.length > 1" [ngClass]="key"></i>
+                </button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

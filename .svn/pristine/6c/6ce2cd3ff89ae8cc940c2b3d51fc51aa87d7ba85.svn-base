@@ -1,0 +1,33 @@
+<div class="modal">
+    <a class="fancybox-close" href="javascript:void(0)" (click)="close()"></a>
+    <h1 class="modal-title">
+        รูปผู้เอาประกัน
+    </h1>
+    <div class="popup popup-style1">
+        <div class="boxNewUpdate">
+            <div class="scrollbar-inner">
+                <div class="detail pdt10 c-red">
+                    <p class="">ถ่ายรูปผู้เอาประกันโดย</p>
+                    <p class="c-red">1. ถ่ายรูปท่ายืนเต็มตัว หน้าตรง</p>
+                    <p class="c-red">2. ไม่สวมใส่แว่นตาดำ ขณะถ่ายภาพ</p>
+                    <p class="c-red">3. ไม่สวนใส่หมวกกันน๊อค ขณะถ่ายภาพ</p>
+                </div>
+                <div class="submit">
+                    <button class="btn-style4 btn-style-l pdlr10 center-block " (click)="presentAction()" type="button"><span><i class="icon-ion-ios-camera-outline fs29"></i>ถ่ายรูปผู้เอาประกัน</span></button>
+                </div>
+
+                <div class="clearfix"></div>
+                <div class="mgt25 txt-center">
+                    <button class="btn-style2 btn-style-m" type="button" (click)="close()"><span> ยกเลิก </span></button>
+                    <button class="btn-style3 btn-style-m" type="button" (click)="saveEAppPhotoModal()"><span> ตกลง </span></button>
+                </div>
+                <div class="clearfix"></div>
+                <div class="txt-center mgt25 c-red">
+                    หมายเหตุ : ใช้สำหรับแบบประกอบใบคำขอเอาออนไลน์ (e-app)
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>

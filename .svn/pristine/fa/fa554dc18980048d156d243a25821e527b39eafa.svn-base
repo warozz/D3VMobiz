@@ -1,0 +1,41 @@
+page-home {
+    // .boxGraphBlueRed {
+    //     background: none !important;
+    //     width: 100% !important;
+    // }
+    .boxGraphBlueDarkBlue {
+        padding: 0 !important;
+    }
+    .boxTitleChart {
+        margin: 0px;
+        font-weight: normal;
+        font-size: 28px;
+        color: #333;
+    }
+    .oneListItem {
+        cursor: pointer;
+    }
+    .oneListItem.disabled {
+        cursor: default;
+        color: #aaa;
+    }
+    tr.trRow:hover,
+    .row.trRow:hover {
+        color: $color-primary;
+        cursor: pointer;
+    }
+    .boxContentDashBoard_3 {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    tr.trRow.disabled,
+    .trRow.disabled>div {
+        cursor: default;
+        color: #aaa;
+    }
+    @media screen and (min-width: 1200px) {
+        .boxContentDashBoard_1 .boxRight {
+            width: 740px;
+        }
+    }
+}

@@ -1,0 +1,733 @@
+<form [formGroup]="appGeneral">
+    <div class="boxContentPage bgBlue3 hasBgImg bgImg95">
+        <div class="container">
+            <div class="bgPaperShadow mgt25">
+                <div class="contentPaperShadow">
+
+                    <!-- start boxFixTopJumpMenu -->
+                    <div class="boxFixTopJumpMenu">
+                        <div id="boxFixJumpMenu" class="boxContentFixJumpMenu">
+                            <div class="boxListFixJumpMenu sm-a-mgr0 sm-a-action-fsnormal">
+                                <a class="action" (click)="scrollToTop()">ข้อมูลทั่วไป</a>
+                                <a class="down" (click)="scrollToCenter()">ที่อยู่</a>
+                                <a class="down" (click)="scrollToBot()">อาชีพ</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end boxFixTopJumpMenu -->
+
+                    <div id="boxListJumpContent" class="boxListJumpContent">
+                        <div class="oneJumpContent">
+                            <!-- start oneJumpContent -->
+                            <div class="pdt20">
+                                <h2 class="view-only-xs c-blue boxTitleFixJumpMenu">ข้อมูลทั่วไป</h2>
+                                <div class="col-lg-4 col-md-6 pd0">
+                                    <div class="col-md-4 col-sm-3 txt-sm-right pdr-sm-7 lh-form-control">
+                                        <font color="red">*</font> คำนำหน้า :
+                                    </div>
+                                    <div class="col-md-8 col-sm-9 pdl-sm-7">
+                                        <div class="form-group">
+                                            <input type="text" id="title" formControlName="title" class="form-control" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-4 col-md-6 pd0">
+                                    <div class="col-md-4 col-sm-3 txt-sm-right pdr-sm-7 lh-form-control">
+                                        <font color="red">*</font> ชื่อ :
+                                    </div>
+                                    <div class="col-md-8 col-sm-9 pdl-sm-7">
+                                        <div class="form-group">
+                                            <input id="name" name="" formControlName="name" class="form-control" type="text" value="" placeholder="" CharacterOnly />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-4 col-md-6 pd0">
+                                    <div class="col-md-4 col-sm-3 txt-sm-right pdr-sm-7 lh-form-control">
+                                        <font color="red">*</font> นามสกุล :
+                                    </div>
+                                    <div class="col-md-8 col-sm-9 pdl-sm-7">
+                                        <div class="form-group">
+                                            <input id="lastname" name="" formControlName="lastName" class="form-control" type="text" value="" placeholder="" CharacterOnly />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-4 col-md-6 pd0">
+                                    <div class="col-md-4 col-sm-3 txt-sm-right pdr-sm-7 lh-form-control">เบอร์ติดต่อ :</div>
+                                    <div class="col-md-8 col-sm-9 pdl-sm-7">
+                                        <div class="form-group">
+                                            <input id="telephone" name="" formControlName="telephone" class="form-control" type="text" value="" placeholder="" maxlength="10" NumberOnly />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-4 col-md-6 pd0">
+                                    <div class="col-md-4 col-sm-3 txt-sm-right pdr-sm-7 lh-form-control">เพศ :</div>
+                                    <div class="col-md-8 col-sm-9 pdl-sm-7">
+                                        <dropdown id="gender" name="dp_sex" formControlName="gender">
+                                            <dropdown-option value="M">ชาย</dropdown-option>
+                                            <dropdown-option value="F">หญิง</dropdown-option>
+                                        </dropdown>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-4 col-md-6 pd0">
+                                    <div class="col-md-4 col-sm-3 txt-sm-right pdr-sm-7 lh-form-control">ระบุวันเกิด :</div>
+                                    <div class="col-md-8 col-sm-9 pdl-sm-7">
+                                        <calendar class="hidden" id="birth_date" (dateChange)="changeBirthDate($event)" [(date)]="appGeneral.value.birthDate"></calendar>
+                                        <div class="form-group">
+                                            <input type="text" [ngModel]="appGeneral.value.birthDate.substring(0, 10) | date | dateFormatTHYeartoENYear" [ngModelOptions]="{standalone: true}" class="form-control" disabled />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-4 col-md-6 pd0">
+                                    <div class="col-md-4 col-sm-3 txt-sm-right pdr-sm-7 lh-form-control">อายุ :</div>
+                                    <div class="col-md-7 col-sm-8 col-xs-8 pdl-sm-7">
+                                        <div class="form-group">
+                                            <input id="age" name="" formControlName="age" class="form-control" calculate-age [birthDate]="appGeneral.controls['birthDate'].value" type="text" placeholder="" [(ngModel)]="appGeneral.controls['age'].value" />
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-1 pdl0 ws-nowrap lh-form-control">
+                                        ปี
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+
+                                <div class="col-lg-4 col-md-6 pd0">
+                                    <div class="col-md-4 col-sm-3 txt-sm-right pdr-sm-7 lh-form-control">
+                                        <font color="red">*</font> ส่วนสูง :
+                                    </div>
+                                    <div class="col-md-7 col-sm-8 col-xs-8 pdl-sm-7">
+                                        <div class="form-group">
+                                            <input id="heigh" name="" formControlName="heigh" class="form-control" type="text" value="" placeholder="" maxlength="3" NumberOnly />
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-1 pdl0 ws-nowrap lh-form-control">
+                                        ซม.
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+
+                                <div class="col-lg-4 col-md-6 pd0">
+                                    <div class="col-md-4 col-sm-3 txt-sm-right pdr-sm-7 lh-form-control">
+                                        <font color="red">*</font> น้ำหนัก :
+                                    </div>
+                                    <div class="col-md-7 col-sm-8 col-xs-8 pdl-sm-7">
+                                        <div class="form-group">
+                                            <input id="weigh" name="" formControlName="weigh" class="form-control" type="text" value="" placeholder="" maxlength="3" NumberOnly />
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-1 pdl0 ws-nowrap lh-form-control">
+                                        กก.
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+
+                                <div class="col-lg-4 col-md-6 pd0">
+                                    <div class="col-md-4 col-sm-3 txt-sm-right pdr-sm-7 lh-form-control">
+                                        <font color="red">*</font> ศาสนา :
+                                    </div>
+                                    <div [class]="appGeneral.value.religion=='อื่นๆ' ? 'col-md-4 col-sm-9 pdl-sm-7' : 'col-md-8 col-sm-9 pdl-sm-7'">
+                                        <dropdown id="religion" formControlName="religion" (ngModelChange)="religionChage($event)">
+                                            <dropdown-option [value]="re.value" *ngFor="let re of religionDropdown ">{{re.value}} </dropdown-option>
+                                        </dropdown>
+                                    </div>
+                                    <div class="col-sm-3 visible-sm" *ngIf="appGeneral.value.religion=='อื่นๆ'">
+                                    </div>
+                                    <div class="col-md-4 col-sm-9 pdl-sm-7 pdl-sm-7" *ngIf="appGeneral.value.religion=='อื่นๆ'">
+                                        <div class="form-group">
+                                            <input id="religion_desc" formControlName="religion_desc" class="form-control" type="text" value="" placeholder="" maxlength="30" CharacterOnly>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-4 col-md-6 pd0">
+                                    <div class="col-md-4 col-sm-3 txt-sm-right pdr-sm-7 lh-form-control">
+                                        <font color="red">*</font> เชื้อชาติ :
+                                    </div>
+                                    <div class="col-md-8 col-sm-9 pdl-sm-7">
+                                        <dropdown id="race" formControlName="race">
+                                            <dropdown-option [value]="na.key1" *ngFor="let na of countryDropdown">{{na.th}}</dropdown-option>
+                                        </dropdown>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-4 col-md-6 pd0">
+                                    <div class="col-md-4 col-sm-3 txt-sm-right pdr-sm-7 lh-form-control">
+                                        <font color="red">*</font> สัญชาติ :
+                                    </div>
+                                    <div class="col-md-8 col-sm-9 pdl-sm-7">
+                                        <dropdown id="nationality" formControlName="nationality">
+                                            <dropdown-option [value]="ra.key1" *ngFor="let ra of countryDropdown">{{ra.th}}</dropdown-option>
+                                        </dropdown>
+                                    </div>
+                                </div>
+                                <hr />
+
+                                <div class="col-md-12 pd0 pdt10">
+                                    <div class="col-lg-3 col-md-4 col-sm-5 pdr-sm-7 txt-sm-right lh-form-control">เคยเปลี่ยนชื่อ - นามสกุลหรือไม่ :</div>
+                                    <div class="col-lg-9 col-md-8 col-sm-7 pdl-sm-7">
+                                        <div class="inline_block pdlr10 pdb10 lh-form-control">
+                                            <input id="change-1" formControlName="isChange" name="isChange" class="radio-style3" type="radio" value="N" (change)="isChange()" />
+                                            <label for="change-1">ไม่เคย</label>
+                                        </div>
+                                        <div class="inline_block pdlr10 pdb10 lh-form-control">
+                                            <input #ischange id="change-2" formControlName="isChange" name="isChange" class="radio-style3" type="radio" value="Y" (change)="isChange()" />
+                                            <label for="change-2">เคย</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div *ngIf="appGeneral.value.isChange == 'Y'" class="col-lg-4 col-md-6 pd0">
+                                    <div class="col-md-4 col-sm-3 txt-sm-right pdr-sm-7 lh-form-control">คำนำหน้า :</div>
+                                    <div class="col-md-8 col-sm-9 pdl-sm-7">
+                                        <prefix-name formControlName="titleChange"></prefix-name>
+                                    </div>
+                                </div>
+
+                                <div class="clearfix view-only-md"></div>
+                                <div *ngIf="appGeneral.value.isChange == 'Y'" class="col-lg-4 col-md-6 pd0">
+                                    <div class="col-md-4 col-sm-3 txt-sm-right pdr-sm-7 lh-form-control">ชื่อเดิม :</div>
+                                    <div class="col-md-8 col-sm-9 pdl-sm-7">
+                                        <div class="form-group">
+                                            <input id="spouse_name" name="" formControlName="oldFirstName" class="form-control" type="text" value="" placeholder="" maxlength="30" CharacterOnly />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div *ngIf="appGeneral.value.isChange == 'Y'" class="col-lg-4 col-md-6 pd0">
+                                    <div class="col-md-4 col-sm-3 txt-sm-right pdr-sm-7 lh-form-control">นามสกุลเดิม :</div>
+                                    <div class="col-md-8 col-sm-9 pdl-sm-7">
+                                        <div class="form-group">
+                                            <input id="spouse_lastname" class="form-control" formControlName="oldLastName" type="text" value="" placeholder="" maxlength="30" CharacterOnly />
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr />
+
+                                <div class="col-lg-offset-1 col-md-offset-2 pdt10 pdb10">
+                                    <div class="inline_block pdlr10 pdb10 xs-pdlr15 lh-form-control">
+                                        <input id="identifyType-1" value="N" name="identifyOption" formControlName="identifyOption" class="radio-style3" type="radio" (change)="identifyOptionChange(true);identifyTypeChange('01')" />
+                                        <label for="identifyType-1">บัตรประชาชน</label>
+                                    </div>
+
+                                    <div class="inline_block pdlr10 pdb10 xs-pdlr15 lh-form-control">
+                                        <input id="identify_type-2" value="Y" name="identifyOption" formControlName="identifyOption" class="radio-style3" type="radio" (change)="identifyOptionChange(false)" />
+                                        <label for="identify_type-2">อื่นๆ โปรดระบุ</label>
+                                    </div>
+
+                                    <div *ngIf="appGeneral.value.identifyOption == 'Y'" class="inline_block mw270 pdl10 xs-pdlr15">
+                                        <dropdown id="identify_type-3" name="identifyType" formControlName="identifyType" (dataChange)="identifyTypeChange($event)">
+                                            <dropdown-option value="02">บัตรประจำตัวข้าราชการ </dropdown-option>
+                                            <dropdown-option value="03">ใบสำคัญต่างด้าว</dropdown-option>
+                                            <dropdown-option value="04">หนังสือเดินทาง</dropdown-option>
+                                            <dropdown-option value="06">ใบสุทธิพระ</dropdown-option>
+                                            <dropdown-option value="07">ใบขับขี่</dropdown-option>
+                                            <dropdown-option value="08">สูติบัตร</dropdown-option>
+                                            <dropdown-option value="09">ใบรายการจากฐานข้อมูลทะเบียนบัตรประจำตัวประชาชน</dropdown-option>
+                                            <dropdown-option value="10">สมุดประจำตัวคนพิการ</dropdown-option>
+                                            <dropdown-option value="11">ทะเบียนบ้าน (ทร.14)</dropdown-option>
+                                            <dropdown-option value="12">บัตรประจำตัวผู้หลบหนีเข้าเมือง</dropdown-option>
+                                            <dropdown-option value="13">หนังสือรับรองแทนบัตรประจำตัวบุคคลผู้มิได้สัญชาติไทย</dropdown-option>
+                                        </dropdown>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-4 col-md-6 pd0">
+                                    <div class="col-md-4 col-sm-3 txt-sm-right pdr-sm-7 lh-form-control">
+                                        <font color="red">* </font>เลขที่ :
+                                    </div>
+                                    <div class="col-md-8 col-sm-9 pdl-sm-7">
+                                        <div class="form-group">
+                                            <input id="identify_id" formControlName="identify_id" name="" class="form-control" maxlength="13" type="text" NumberCharacterOnly />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-4 col-md-6 pd0">
+                                    <div class="col-md-4 col-sm-3 txt-sm-right pdr-sm-7 lh-form-control">
+                                        <font color="red">* </font>วันหมดอายุ :
+                                    </div>
+                                    <div class="col-md-8 col-sm-9 pdl-sm-7">
+                                        <!-- <div class="form-group"> -->
+                                        <calendar id="identify_expire_date-1" [min]="minExpireDate" formControlName="identifyExpireDate" [disabled]="disabledCalendarIdentifyNoExpire"></calendar>
+                                        <!-- </div> -->
+                                    </div>
+                                </div>
+
+                                <div class="clearfix view-only-sm view-only-xs"></div>
+                                <div class="col-lg-offset-0 col-lg-4 col-md-offset-2 col-md-6 col-sm-offset-3 col-sm-9 pdl-sm-7">
+                                    <div class="form-group lh-form-control">
+                                        <input id="identify_expire_date-2" name="identifyNoExpire" formControlName="identifyNoExpire" class="check-style3" type="checkbox" (change)="identifyNoExpireChange()" />
+                                        <label for="identify_expire_date-2" style="margin-top: 5px;">ตลอดชีพ</label>
+                                    </div>
+                                </div>
+
+                                <div class="clearfix"></div>
+                                <hr />
+
+                                <div class="col-xs-12 pd0 pdt10 lh-form-control">
+                                    <div class="col-md-2 col-xs-12 pdr-md-7 txt-md-right">
+                                        <font color="red">*</font> สถานภาพ :
+                                    </div>
+                                    <div class="col-md-10 col-xs-12 pdl-md-7">
+                                        <div class="inline_block pdlr10 pdb10">
+                                            <input #marry id="martial-1-1" name="martial" value="M" formControlName="martial" class="radio-style3" type="radio" (change)="statusMarry()" />
+                                            <label for="martial-1-1">สมรส</label>
+                                        </div>
+
+                                        <div class="inline_block pdlr10 pdb10">
+                                            <input id="martial-1-2" name="martial" value="S" formControlName="martial" class="radio-style3" type="radio" (change)="statusMarry()" />
+                                            <label for="martial-1-2">โสด</label>
+
+                                        </div>
+
+                                        <div class="inline_block pdlr10 pdb10">
+                                            <input id="martial-1-3" name="martial" value="D" formControlName="martial" class="radio-style3" type="radio" (change)="statusMarry()" />
+                                            <label for="martial-1-3">หย่า</label>
+                                        </div>
+
+                                        <div class="inline_block pdlr10 pdb10">
+                                            <input id="martial-1-4" name="martial" value="G" formControlName="martial" class="radio-style3" type="radio" (change)="statusMarry()" />
+                                            <label for="martial-1-4">หม้าย</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+
+                                <div *ngIf="marry.checked" class="col-lg-4 col-md-6 pd0">
+                                    <div class="col-md-4 col-sm-3 txt-sm-right pdr-sm-7 lh-form-control">คำนำหน้า :</div>
+                                    <div class="col-md-8 col-sm-9 pdl-sm-7">
+                                        <!-- <div class="form-group">
+                                            <ion-item class="form-control">
+                                                <ion-select formControlName="spouseTitle" interface="popover">
+                                                    <ion-option value="นาย">นาย</ion-option>
+                                                    <ion-option value="นาง">นาง</ion-option>
+                                                    <ion-option value="นางสาว">นางสาว</ion-option>
+                                                </ion-select>
+                                            </ion-item>
+                                        </div> -->
+
+                                        <prefix-name formControlName="spouseTitle"></prefix-name>
+                                    </div>
+                                </div>
+
+                                <div class="clearfix view-only-md"></div>
+                                <div *ngIf="marry.checked" class="col-lg-4 col-md-6 pd0">
+                                    <div class="col-md-4 col-sm-3 txt-sm-right pdr-sm-7 lh-form-control">ชื่อคู่สมรส :</div>
+                                    <div class="col-md-8 col-sm-9 pdl-sm-7">
+                                        <div class="form-group">
+                                            <input id="spouse_name" formControlName="spouseName" name="" class="form-control" type="text" value="" placeholder="" maxlength="30" CharacterOnly />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div *ngIf="marry.checked" class="col-lg-4 col-md-6 pd0">
+                                    <div class="col-md-4 col-sm-3 txt-sm-right pdr-sm-7 lh-form-control">นามสกุล :</div>
+                                    <div class="col-md-8 col-sm-9 pdl-sm-7">
+                                        <div class="form-group">
+                                            <input id="spouse_lastname" formControlName="spouseLastname" class="form-control" type="text" value="" placeholder="" maxlength="30" CharacterOnly />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div *ngIf="marry.checked && isUlink" class="col-lg-5 col-md-6 pd0">
+                                    <!-- Defect เพิ่มเติม-->
+                                    <div class="col-lg-6 col-md-7 col-sm-5 txt-sm-right pdr-sm-7 lh-form-control">เลขประจำตัวประชาชนคู่สมรส :</div>
+                                    <div class="col-lg-6 col-md-5 col-sm-7 pdl-sm-7">
+                                        <div class="form-group">
+                                            <input id="spouse_identifyid" formControlName="spouseIdentifyid" class="form-control" type="text" maxlength="13" NumberOnly />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="clearfix"></div>
+                                <hr />
+
+                                <!-- บุตรธิดา สำหรับยูนิตลิงค์ -->
+                                <div class="xs-pdlr15" *ngIf="isUlink">
+                                    <div class="pdt10 pdb10 lh-form-control">
+                                        <font color="red">*</font> ท่านมี บุตร/ธิดา ที่ยังไม่บรรลุนิติภาวะหรือไม่
+                                    </div>
+
+                                    <div class="boxChkAndInfo">
+                                        <div class="boxTopChk">
+                                            <div class="inline_block lh-form-control pdb10 pdr20">
+                                                <input id="dont-have-child" name="childdrenTeen" formControlName="childdrenTeen" class="radio-style3" type="radio" value="N" (change)="childdrenTeen($event)" />
+                                                <label for="dont-have-child">ไม่มี</label>
+                                            </div>
+
+                                            <div class="inline_block lh-form-control pdb10 pdr20">
+                                                <input #childdren id="have-child" name="childdrenTeen" formControlName="childdrenTeen" class="radio-style3" type="radio" value="Y" (change)="childdrenTeen($event)" />
+                                                <label for="have-child">มี (โปรดระบุ รายละเอียดบุตรที่ยังไม่บรรลุนิติภาวะ)</label>
+                                            </div>
+                                        </div>
+
+                                        <!-- มีลูกยังไม่บรรลุนิติภาวะ -->
+                                        <div class="boxInfoForm" *ngIf="childdren.checked">
+                                            <div formArrayName="childrenData" *ngFor="let item of appGeneral.get('childrenData').controls; let i = index;">
+                                                <div [formGroupName]="i">
+                                                    <div class="boxRemoveRow" *ngIf="showCloseIcon">
+                                                        <a class="btnTxtIconRight" href="javascript:;" (click)="removeChild(i)">ลบบุตร/ธิดา <span><i class="icon-close"></i></span></a>
+                                                    </div>
+
+                                                    <div class="col-lg-4 col-md-6 pd0">
+                                                        <div class="col-md-4 col-sm-3 txt-sm-right pdr-sm-7 lh-form-control">คำนำหน้า :</div>
+                                                        <div class="col-md-8 col-sm-9 pdl-sm-7">
+                                                            <prefix-name class="child-{{ i }}" formControlName="childTitle"></prefix-name>
+                                                        </div>
+                                                    </div>
+                                                    <div class="clearfix view-only-md"></div>
+                                                    <div class="col-lg-4 col-md-6 pd0">
+                                                        <div class="col-md-4 col-sm-3 txt-sm-right pdr-sm-7 lh-form-control">ชื่อ :</div>
+                                                        <div class="col-md-8 col-sm-9 pdl-sm-7">
+                                                            <div class="form-group">
+                                                                <input id="" name="" formControlName="childfName" class="form-control" type="text" value="" placeholder="" maxlength="30" CharacterOnly />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-4 col-md-6 pd0">
+                                                        <div class="col-md-4 col-sm-3 txt-sm-right pdr-sm-7 lh-form-control">นามสกุล :</div>
+                                                        <div class="col-md-8 col-sm-9 pdl-sm-7">
+                                                            <div class="form-group">
+                                                                <input id="" class="form-control" formControlName="childlName" type="text" value="" placeholder="" maxlength="30" CharacterOnly />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-5 col-md-6 col-sm-8 pd0">
+                                                        <div class="col-lg-6 col-md-7 col-sm-6 txt-sm-right pdr-sm-7 lh-form-control">เลขประจำตัวประชาชน :</div>
+                                                        <div class="col-lg-6 col-md-5 col-sm-6 pdl-sm-7">
+                                                            <div class="form-group">
+                                                                <input id="" class="form-control" formControlName="childIdentify" type="text" value="" placeholder="" maxlength="13" NumberOnly />
+                                                            </div>
+                                                        </div>
+                                                        <div class="clearfix"></div>
+                                                    </div>
+                                                    <div class="col-lg-3 col-md-6 col-sm-4 pd0">
+                                                        <div class="col-lg-5 col-md-4 col-sm-4 txt-sm-right pdr-sm-7 lh-form-control">อายุ :</div>
+                                                        <div class="col-lg-6 col-md-4 col-sm-7 col-xs-8 pdl-sm-7">
+                                                            <div class="form-group">
+                                                                <input id="" class="form-control" formControlName="childAge" type="text" value="" placeholder="" maxlength="2" NumberOnly />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xs-4 col-sm-1 pdl0 ws-nowrap lh-form-control">ปี</div>
+                                                        <div class="clearfix"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="boxAddRow txt-center" *ngIf="childdren.checked && appGeneral.value.childrenData.length < 5">
+                                        <a class="btnTxtIconRight" href="javascript:;" (click)="addMoreChildren()">เพิ่ม รายละเอียดบุตร/ธิดา <span><i class="icon-plus2"></i></span></a>
+                                    </div>
+                                    <hr />
+                                </div>
+                                <!-- //บุตรธิดา -->
+
+                                <div class="clearfix"></div>
+
+                                <div class="xs-pdlr15">
+                                    <div class="pdt10 lh-form-control">
+                                        <font color="red">*</font> ในรอบ 6 เดือนที่ผ่านมาน้ำหนักตัวของท่านเปลี่ยนแปลงหรือไม่
+                                    </div>
+                                    <div class="col-md-offset-2 pdt10 pdb10">
+                                        <div class="inline_block pdlr10 lh-form-control">
+                                            <input id="checkbox-1-1" name="weigthChange" formControlName="weigthChange" class="radio-style3" type="radio" value="N" (change)="weigthChange()" />
+                                            <label for="checkbox-1-1">ไม่เปลี่ยน</label>
+                                        </div>
+
+                                        <div class="inline_block pdlr10 lh-form-control">
+                                            <input #weighthchange id="checkbox-1-2" name="weigthChange" formControlName="weigthChange" class="radio-style3" type="radio" value="Y" (change)="weigthChange()" />
+                                            <label for="checkbox-1-2">เปลี่ยน</label>
+                                        </div>
+
+                                        <div class="inline_block w120 pdl10" *ngIf="weighthchange.checked">
+                                            <!--  <ion-item class="form-control">
+                                                    <ion-select id="weigth_value" name="weigthValue" formControlName="weigthChangeUD" interface="popover">
+                                                        <ion-option value="U">เพิ่มขึ้น</ion-option>
+                                                        <ion-option value="D">ลดลง</ion-option>
+                                                    </ion-select>
+                                                </ion-item> -->
+                                            <dropdown id="weigth_value" name="weigthValue" formControlName="weigthChangeUD">
+                                                <dropdown-option value="U">เพิ่มขึ้น</dropdown-option>
+                                                <dropdown-option value="D">ลดลง</dropdown-option>
+                                            </dropdown>
+                                        </div>
+
+                                        <div class="inline_block w170 pdl10" *ngIf="weighthchange.checked">
+                                            <input name="weigthChangeNum" formControlName="weigthChangeNum" class="form-control w120 pull-left" type="text" value="" placeholder="" maxlength="2" NumberOnly />
+                                            <span class="pull-right lh-form-control">กก.</span>
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+
+                                    <div class="col-md-12 pd0">
+                                        <div class="floatL lh-form-control">สาเหตุที่น้ำหนักเปลี่ยน :</div>
+                                        <div class="floatL col-md-7 pdl-md-7">
+                                            <div class="form-group">
+                                                <input name="weigthChangeDesc" formControlName="weigthChangeDesc" class="form-control" type="text" value="" placeholder="" maxlength="90" disabled NumberCharacterOnly />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="clearfix"></div>
+                                <hr />
+                                <div class="xs-pdlr15">
+                                    <div class="pdt10 lh-form-control">
+                                        <font color="red">*</font> ท่านเคยมีส่วนเกี่ยวข้องกับการค้ายาเสพติดหรือเคยต้องโทษเกี่ยวกับคดียาเสพติดหรือไม่
+                                    </div>
+
+                                    <div class="col-md-offset-2 pdt10 pdb10">
+                                        <div class="inline_block pdlr10 pdb10 lh-form-control">
+                                            <input id="drug-1" name="drug" value="N" formControlName="drug" class="radio-style3" type="radio" />
+                                            <label for="drug-1">ไม่เคย</label>
+                                        </div>
+
+                                        <div class="inline_block pdlr10 pdb10 lh-form-control">
+                                            <input id="drug-2" name="drug" value="Y" formControlName="drug" class="radio-style3" type="radio" />
+                                            <label for="drug-2">เคย</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="clearfix"></div>
+                                <hr />
+                                <div class="xs-pdlr15">
+                                    <div class="pdt10 lh-form-control">
+                                        <font color="red">*</font> ท่านเสพหรือเคยเสพยาเสพติด
+                                    </div>
+
+                                    <div class="col-md-offset-2 pdt10 pdb10">
+                                        <div class="inline_block pdlr10 pdb10 lh-form-control">
+                                            <input id="drug_exp-1" name="drug_exp" formControlName="drug_exp" value="N" class="radio-style3" type="radio" />
+                                            <label for="drug_exp-1">ไม่เสพ/ไม่เคยเสพ</label>
+                                        </div>
+
+                                        <div class="inline_block pdlr10 pdb10 lh-form-control">
+                                            <input id="drug_exp-2" name="drug_exp" formControlName="drug_exp" value="Y" class="radio-style3" type="radio" />
+                                            <label for="drug_exp-2">เสพ/เคยเสพ</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="clearfix"></div>
+                                <hr />
+                                <div class="xs-pdlr15">
+                                    <div class="col-md-12 pd0 pdt10">
+                                        <div class="floatL lh-form-control">สำหรับผู้ขอเอาประกัน (กรณีต้องการแจ้งรายละเอียดเพิ่มเติม) :</div>
+                                        <div class="floatL col-md-5 pdl-md-7">
+                                            <div class="form-group">
+                                                <input name="description" formControlName="description" class="form-control" type="text" value="" placeholder="" maxlength="90" NumberCharacterOnly />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- end oneJumpContent -->
+                        <hr />
+                        <!-- start Adress Tab -->
+                        <div id="boxListContentTabStyle3" class="boxListContentTabStyle3">
+                            <tabs (change)="selectTabAddress($event)">
+                                <tab *ngFor="let item of tabsPage;let i = index" [tabTitle]="item.title" [tabIcon]="item.icon" [root]="item.root" [disabled]="item.disabled"> </tab>
+                            </tabs>
+                        </div>
+                        <!-- end Address Tab -->
+
+                        <div class="col-md-12 pdlr0 pdt20">
+                            <div class="col-lg-3 col-md-4 pdr-md-7 txt-md-right lh-form-control">
+                                <font color="red">*</font> สถานที่ติดต่อ (ในประเทศไทย) :
+                            </div>
+                            <div class="col-lg-9 col-md-8 pdl-md-7">
+                                <div class="inline_block pdlr10 pdb10 lh-form-control">
+                                    <input id="contactaddresscd-1-1" name="contactaddresscd" value="P" formControlName="contactaddresscd" class="radio-style3" type="radio" />
+                                    <label for="contactaddresscd-1-1">ที่อยู่ตามทะเบียนบ้าน</label>
+                                </div>
+
+                                <div class="inline_block pdlr10 pdb10 lh-form-control">
+                                    <input id="contactaddresscd-1-2" name="contactaddresscd" value="C" formControlName="contactaddresscd" class="radio-style3" type="radio" />
+                                    <label for="contactaddresscd-1-2">ที่อยู่ปัจจุบัน</label>
+                                </div>
+
+                                <div class="inline_block pdlr10 pdb10 lh-form-control">
+                                    <input id="contactaddresscd-1-3" name="contactaddresscd" value="W" formControlName="contactaddresscd" class="radio-style3" type="radio" />
+                                    <label for="contactaddresscd-1-3">สถานที่ทำงาน</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="clearfix"></div>
+                        <hr />
+
+                        <div class="oneJumpContent">
+                            <!-- start oneJumpContent -->
+                            <div class="pdt20">
+                                <h2 class="view-only-xs c-blue boxTitleFixJumpMenu">อาชีพ</h2>
+                                <!-- start อาชีพ ปปง. -->
+                                <div *ngIf="isUlink" class="col-lg-10 col-md-10 pd0">
+                                    <div class="col-lg-2 col-md-3 col-sm-3 txt-sm-right pdr-sm-7 lh-form-control">
+                                        <font color="red">*</font> อาชีพ ปปง :
+                                    </div>
+                                    <div class="col-lg-10 col-md-9 col-sm-9 pdl-sm-7">
+                                        <dropdown formControlName="occupation_ppng" (dataChange)="occupationPPGChange($event)">
+                                            <dropdown-option [value]="ppng.key" *ngFor="let ppng of occupationPPNGDropdown ">{{ppng.value}}</dropdown-option>
+                                        </dropdown>
+                                    </div>
+                                </div>
+                                <!-- start อาชีพ ปปง. -->
+                                <div class="col-lg-4 col-md-6 pd0" *ngIf="!isPPNG">
+                                    <div class="col-md-5 col-sm-3 txt-sm-right pdr-sm-7 lh-form-control">
+                                        <font color="red">*</font> อาชีพ :
+                                    </div>
+                                    <div class="col-md-7 col-sm-9 pdl-sm-7">
+                                        <!--
+                                                 <div class="form-group">
+                                                     <ion-item class="form-control">
+                                                <ion-select id="occupation" formControlName="occupation" interface="popover">
+                                                    <ion-option [value]="oc.key" *ngFor="let oc of occupationDropdown ">{{oc.value}} </ion-option>
+                                                </ion-select>
+                                            </ion-item>  </div>-->
+                                        <dropdown id="occupation" formControlName="occupation" (dataChange)="occupationChange($event)">
+                                            <!-- <dropdown-option value="00">ไม่มี</dropdown-option> -->
+                                            <dropdown-option [value]="orc.key" *ngFor="let orc of occupationDropdown ">{{orc.value}}</dropdown-option>
+                                        </dropdown>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-4 col-md-6 pd0" *ngIf="appGeneral.value.occupation=='25'">
+                                    <div class="col-md-offset-0 col-md-7 col-sm-offset-3 col-sm-9 pdl-sm-7">
+                                        <div class="form-group">
+                                            <input name="" id="occupation_desc" formControlName="occupation_desc" class="form-control" type="text" value="" placeholder="" maxlength="90" NumberCharacterOnly />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="clearfix"></div>
+                                <div class="col-lg-4 col-md-6 pd0">
+                                    <div class="col-md-5 col-sm-3 txt-sm-right pdr-sm-7 lh-form-control">
+                                        <font color="red">*</font> ตำแหน่ง :
+                                    </div>
+                                    <div class="col-md-7 col-sm-9 pdl-sm-7">
+                                        <div class="form-group">
+                                            <input id="position" formControlName="position" class="form-control" type="text" value="" placeholder="" maxlength="60" NumberCharacterOnly />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-4 col-md-6 pd0">
+                                    <div class="col-md-5 col-sm-3 txt-sm-right pdr-sm-7 lh-form-control">
+                                        <font color="red">*</font> รายได้ต่อปี :
+                                    </div>
+                                    <div class="col-md-7 col-sm-9 pdl-sm-7">
+                                        <div class="form-group">
+                                            <input id="year_salary" formControlName="year_salary" name="" class="form-control" type="text" value="" placeholder="" maxlength="11" NumberOnly />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-4 col-md-6 pd0">
+                                    <div class="col-md-5 col-sm-3 txt-sm-right pdr-sm-7 lh-form-control">
+                                        <font color="red">*</font> ลักษณะธุรกิจ :
+                                    </div>
+                                    <div class="col-md-7 col-sm-9 pdl-sm-7">
+                                        <div class="form-group">
+                                            <input id="business_type" formControlName="business_type" name="" class="form-control" type="text" value="" placeholder="" maxlength="240" CharacterOnly />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-4 col-md-6 pd0">
+                                    <div class="col-md-5 col-sm-3 txt-sm-right pdr-sm-7 lh-form-control">
+                                        <font color="red">*</font> ลักษณะงานที่ทำ :
+                                    </div>
+                                    <div class="col-md-7 col-sm-9 pdl-sm-7">
+                                        <div class="form-group">
+                                            <input id="business_desc" formControlName="business_desc" name="" class="form-control" type="text" value="" placeholder="" maxlength="100" CharacterOnly />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="clearfix"></div>
+                            <hr />
+                            <div class="pdt20">
+                                <div class="col-lg-4 col-md-6 pd0">
+                                    <div class="col-md-5 col-sm-3 txt-sm-right pdr-sm-7 lh-form-control">
+                                        อาชีพอื่นๆ :
+                                    </div>
+                                    <div class="col-md-7 col-sm-9 pdl-sm-7">
+                                        <dropdown id="otherOccupation" formControlName="otherOccupation">
+                                            <!--<dropdown id="otherOccupation" formControlName="otherOccupation" interface="popover">-->
+                                            <dropdown-option value="00">ไม่มี</dropdown-option>
+                                            <dropdown-option [value]="orc.key" *ngFor="let orc of occupationDropdown ">{{orc.value}}</dropdown-option>
+
+                                        </dropdown>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-4 col-md-6 pd0" *ngIf="appGeneral.value.otherOccupation=='25'">
+                                    <div class="col-md-offset-0 col-md-7 col-sm-offset-3 col-sm-9 pdl-sm-7">
+                                        <div class="form-group">
+                                            <input name="" class="form-control" formControlName="otherOccupationDesc" type="text" value="" placeholder="" maxlength="90" NumberCharacterOnly />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="clearfix"></div>
+                                <div class="col-lg-4 col-md-6 pd0">
+                                    <div class="col-md-5 col-sm-3 txt-sm-right pdr-sm-7 lh-form-control">
+                                        ตำแหน่ง :
+                                    </div>
+                                    <div class="col-md-7 col-sm-9 pdl-sm-7">
+                                        <div class="form-group">
+                                            <input name="position2" formControlName="otherBusinessPosition" class="form-control" type="text" value="" placeholder="" maxlength="60" NumberCharacterOnly />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-4 col-md-6 pd0">
+                                    <div class="col-md-5 col-sm-3 txt-sm-right pdr-sm-7 lh-form-control">
+                                        รายได้ต่อปี :
+                                    </div>
+                                    <div class="col-md-7 col-sm-9 pdl-sm-7">
+                                        <div class="form-group">
+                                            <input name="year_salary2" formControlName="otherBusinessYearSalary" class="form-control" type="text" value="" placeholder="" maxlength="11" NumberOnly />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-4 col-md-6 pd0">
+                                    <div class="col-md-5 col-sm-3 txt-sm-right pdr-sm-7 lh-form-control">
+                                        ลักษณะธุรกิจ :
+                                    </div>
+                                    <div class="col-md-7 col-sm-9 pdl-sm-7">
+                                        <div class="form-group">
+                                            <input name="" class="form-control" formControlName="otherBusinessType" type="text" value="" placeholder="" maxlength="240" CharacterOnly />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-4 col-md-6 pd0">
+                                    <div class="col-md-5 col-sm-3 txt-sm-right pdr-sm-7 lh-form-control">
+                                        ลักษณะงานที่ทำ :
+                                    </div>
+                                    <div class="col-md-7 col-sm-9 pdl-sm-7">
+                                        <div class="form-group">
+                                            <input name="business_desc2" class="form-control" formControlName="otherBusinessDesc" type="text" value="" placeholder="" maxlength="100" CharacterOnly />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,448 @@
+<ion-header header>
+</ion-header>
+<ion-content>
+    <div id="app_form_page" class="mainContainer">
+        <title-page sub1="ใบคำร้องเกี่ยวกับเบี้ยประกันภัย">ใบคำขอ</title-page>
+        <div class="boxContentPage bgBlue1">
+            <div class="container xs-pdlr0">
+                <form [formGroup]="customerDetail">
+                    <div class="boxListForm pd0 pdt15">
+                        <div class="col-lg-6 col-md-6 pd0">
+                            <div class="col-lg-4 col-md-4 col-sm-3 txt-sm-right pdr-sm-7 lh-form-control">
+                                ผู้ขอเอาประกันภัย :
+                            </div>
+                            <div class="col-lg-8 col-md-8 col-sm-9 pdl-sm-7">
+                                <div class="form-group">
+                                    <input class="form-control" formControlName="customername" type="text" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-6 pd0">
+                            <div class="col-lg-5 col-md-5 col-sm-6 txt-sm-right pdr-sm-7 lh-form-control">
+                                เพศ :
+                            </div>
+                            <div class="col-lg-7 col-md-7 col-sm-6 pdl-sm-7">
+                                <div class="form-group">
+                                    <input class="form-control" formControlName="gender" type="text" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-6 pd0">
+                            <div class="col-lg-5 col-md-5 col-sm-6 txt-sm-right pdr-sm-7 lh-form-control">
+                                อายุ :
+                            </div>
+                            <div class="col-lg-7 col-md-7 col-sm-6 pdl-sm-7">
+                                <div class="form-group">
+                                    <input class="form-control" formControlName="age" type="text" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 pd0">
+                            <div class="col-lg-4 col-md-4 col-sm-3 txt-sm-right pdr-sm-7 lh-form-control">
+                                แบบประกัน :
+                            </div>
+                            <div class="col-lg-8 col-md-8 col-sm-9 pdl-sm-7">
+                                <div class="form-group">
+                                    <input class="form-control" formControlName="planname" type="text" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-6 pd0">
+                            <div class="col-lg-5 col-md-5 col-sm-6 txt-sm-right pdr-sm-7 lh-form-control">
+                                ชำระเบี้ย :
+                            </div>
+                            <div class="col-lg-7 col-md-7 col-sm-6 pdl-sm-7">
+                                <div class="form-group">
+                                    <input class="form-control" formControlName="payment" type="text" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-6 pd0">
+                            <div class="col-lg-5 col-md-5 col-sm-6 txt-sm-right pdr-sm-7 lh-form-control">
+                                ชั้นอาชีพ :
+                            </div>
+                            <div class="col-lg-7 col-md-7 col-sm-6 pdl-sm-7">
+                                <div class="form-group">
+                                    <input class="form-control" formControlName="occupationtype" type="text" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="boxContentPage">
+            <steps design="2" (changeIndex)="changeIndex($event)" [selectIndex]="selectedStep">
+                <!-- STEP 1 -->
+                <step index="0" stepTitle="การชำระเบี้ยประกันภัย">
+                    <form [formGroup]="app_lifepremiun_ulink_tab1Data">
+                        <div class="boxContentPage bgBlue3 hasBgImg bgImg95">
+                            <div class="container">
+                                <div class="bgPaperShadow mgt25">
+                                    <div class="contentPaperShadow">
+                                        <!-- start boxFixTopJumpMenu -->
+                                        <div class="boxFixTopJumpMenu">
+                                            <div id="boxFixJumpMenu" class="boxContentFixJumpMenu">
+                                                <div class="boxListFixJumpMenu">
+                                                    <a class="action">ใบคำร้องเกี่ยวกับเบี้ยประกันภัย</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- end boxFixTopJumpMenu -->
+                                        <!--boxListJumpContent-->
+                                        <!-- {{plan_code}} -->
+                                        <div id="boxListJumpContent" class="boxListJumpContent">
+                                            <!-- start oneJumpContent -->
+                                            <div class="oneJumpContent">
+                                                <div class="boxListForm pdlr0 pdb15">
+                                                    <div class="pdb10 xs-pdlr15 lh-form-control c-blue">การชำระเบี้ยประกันภัยตามกรมธรรม์</div>
+                                                    <div *ngIf="plan_code == 'UA01'">
+                                                        <div class="col-lg-6 col-md-6 pd0">
+                                                            <div class="col-lg-12 col-sm-12 pdr-sm-7 lh-form-control">ชำระเบี้ยประกันภัยครั้งเดียว (Single Premium)</div>
+                                                        </div>
+                                                        <div class="col-lg-6 col-md-6 pd0">
+                                                            <div class="col-lg-4 col-md-3 col-sm-4 pdr-sm-7 lh-form-control">จำนวนเงิน </div>
+                                                            <div class="col-lg-5 col-md-6 col-sm-4 col-xs-6 pdl-sm-7">
+                                                                <div class="form-group">
+                                                                    <input class="form-control" formControlName="singlepremium" type="text" />
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-2 col-sm-4 col-xs-6 pdl-sm-7 lh-form-control"> บาท</div>
+                                                        </div>
+                                                        <div class="clearfix"></div>
+                                                    </div>
+                                                    <div *ngIf="plan_code == 'UA02'">
+                                                        <div class="col-lg-6 col-md-6 pd0">
+                                                            <div class="col-lg-12 col-sm-12 pdr-sm-7 lh-form-control">ชำระเบี้ยประกันภัย เพื่อความคุ้มครอง (Regular Protection Premium)</div>
+                                                        </div>
+                                                        <div class="col-lg-6 col-md-6 pd0">
+                                                            <div class="col-lg-4 col-md-3 col-sm-4 pdr-sm-7 lh-form-control">จำนวนเงิน </div>
+                                                            <div class="col-lg-5 col-md-6 col-sm-4 col-xs-6 pdl-sm-7">
+                                                                <div class="form-group">
+                                                                    <input class="form-control" formControlName="RPP" type="text" />
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-2 col-sm-4 col-xs-6 pdl-sm-7 lh-form-control"> บาท</div>
+                                                        </div>
+                                                        <div class="clearfix"></div>
+                                                        <div class="col-lg-6 col-md-6 pd0">
+                                                            <div class="col-lg-12 col-sm-12 pdr-sm-7 lh-form-control">ชำระเบี้ยประกันภัย เพื่อการออม (Regular Saving Premium)</div>
+                                                        </div>
+                                                        <div class="col-lg-6 col-md-6 pd0">
+                                                            <div class="col-lg-4 col-md-3 col-sm-4 pdr-sm-7 lh-form-control">จำนวนเงิน </div>
+                                                            <div class="col-lg-5 col-md-6 col-sm-4 col-xs-6 pdl-sm-7">
+                                                                <div class="form-group">
+                                                                    <input class="form-control" formControlName="RSP" type="text" />
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-2 col-sm-4 col-xs-6 pdl-sm-7 lh-form-control"> บาท</div>
+                                                        </div>
+                                                        <div class="clearfix"></div>
+                                                    </div>
+
+                                                    <div class="col-lg-6 col-md-6 pd0">
+                                                        <div class="col-lg-12 col-sm-12 pdr-sm-7 lh-form-control">ชำระเบี้ยประกันภัยเพิ่มพิเศษ (Top Up Premium)</div>
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-6 pd0">
+                                                        <div class="col-lg-4 col-md-3 col-sm-4 pdr-sm-7 lh-form-control">จำนวนเงิน </div>
+                                                        <div class="col-lg-5 col-md-6 col-sm-4 col-xs-6 pdl-sm-7">
+                                                            <div class="form-group">
+                                                                <input class="form-control" formControlName="topuppremium" type="text" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-3 col-md-2 col-sm-4 col-xs-6 pdl-sm-7 lh-form-control"> บาท</div>
+                                                    </div>
+                                                    <div class="clearfix"></div>
+                                                    <hr>
+                                                    <div class="pdb10 xs-pdlr15 lh-form-control c-blue">การจัดสรรสัดส่วนการลงทุน</div>
+
+                                                    <div class="col-md-12 pd0">
+                                                        <div class="col-lg-12 col-sm-12 pdr-sm-7 pdb10 lh-form-control">การจัดสรรสัดส่วนการลงทุน เบี้ยประกันเพื่อความคุ้มครอง</div>
+                                                    </div>
+                                                    <div class="col-md-12 pd0">
+                                                        <div class="col-sm-offset-1 col-sm-11 pd0 xs-pdlr15">
+                                                            <div class="form-group">
+                                                                <input id="radio-choice-1-1" name="radio-choice-1" class="radio-style3" type="radio" value='1' formControlName="question1" name="question1" />
+                                                                <label for="radio-choice-1-1">เลือกรูปแบบการลงทุนตามที่บริษัทเสนอ</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12 pd0">
+                                                        <div class="col-sm-offset-1 col-lg-3 col-md-3 col-sm-4 pdr-sm-7 pdl-sm-7 col-xs-10">
+                                                            <div *ngIf="rppchoice == 'low'" class="form-group">
+                                                                <input class="form-control" type="text" disabled value="ความเสี่ยงต่ำ" />
+                                                            </div>
+                                                            <div *ngIf="rppchoice == 'medium'" class="form-group">
+                                                                <input class="form-control" type="text" disabled value="ความเสี่ยงปานกลาง" />
+                                                            </div>
+                                                            <div *ngIf="rppchoice == 'height'" class="form-group">
+                                                                <input class="form-control" type="text" disabled value="ความเสี่ยงสูง" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-7 col-md-7 col-sm-7 pdr-sm-7 pdl-sm-7 col-xs-12">
+                                                            <div *ngIf="rppchoice == 'low'" class="form-group">
+                                                                <input class="form-control" type="text" disabled value="TMBABF 100%" />
+                                                            </div>
+                                                            <div *ngIf="rppchoice == 'medium'" class="form-group">
+                                                                <input class="form-control" type="text" disabled value="CIMB-PRINCIPAL iBALANCED-C 100%" />
+                                                            </div>
+                                                            <div *ngIf="rppchoice == 'height'" class="form-group">
+                                                                <input class="form-control" type="text" disabled value="KFSEQ 100%" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="clearfix"></div>
+                                                    <div class="col-md-12 pd0">
+                                                        <div class="col-sm-offset-1 col-sm-11 pd0 xs-pdlr15">
+                                                            <div class="form-group">
+                                                                <input id="radio-choice-1-2" name="radio-choice-1" class="radio-style3" type="radio" value='2' formControlName="question1" name="question1" />
+                                                                <label for="radio-choice-1-2">เลือกรูปแบบกลยุทธ์การลงทุนเอง</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="clearfix"></div>
+                                                    <div *ngIf="allocationRPP.length > 0 && rppchoice == 'custom' ">
+                                                        <div class="col-md-6 pd0 hide-only-xs">
+                                                            <div class="col-md-8 col-sm-9 pdr-sm-7 pdb10 lh-form-control txt-center">กองทุน</div>
+                                                            <div class="col-md-4 col-sm-3 pdr-sm-7 pdb10 lh-form-control txt-center">ร้อยละ</div>
+                                                        </div>
+                                                        <div *ngIf="allocationRPP.length > 1 " class="col-md-6 pd0 hide-only-sm hide-only-xs">
+                                                            <div class="col-md-8 col-sm-8 pdr-sm-7 pdb10 lh-form-control txt-center">กองทุน</div>
+                                                            <div class="col-md-4 col-sm-4 pdr-sm-7 pdb10 lh-form-control txt-center">ร้อยละ</div>
+                                                        </div>
+                                                        <div class="clearfix"></div>
+                                                        <div id="fund">
+                                                            <div class="col-md-6 col-xs-12 pd0" *ngFor="let item of allocationRPP;let i = index">
+                                                                <div *ngIf="i <= 9">
+                                                                    <div class="view-only-xs lh-form-control txt-center">กองทุน</div>
+                                                                    <div class="col-md-8 col-sm-9 pdr-sm-7 lh-form-control txt-center">
+                                                                        <div class="form-group mgb0">
+                                                                            <input class="form-control" type="text" disabled value=" {{item.fundCode}} " />
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="view-only-xs lh-form-control txt-center">ร้อยละ</div>
+                                                                    <div class="col-md-4 col-sm-3 pdr-sm-7 lh-form-control">
+                                                                        <div class="form-group">
+                                                                            <input class="form-control center-block" type="text" value="{{item.percent}}" disabled />
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="clearfix"></div>
+                                                    </div>
+                                                    <hr>
+                                                    <div *ngIf="plan_code == 'UA02'">
+                                                        <div class="col-md-12 pd0">
+                                                            <div class="col-md-12 pdr-sm-7 pdb10 lh-form-control">การจัดสรรสัดส่วนการลงทุน เบี้ยประกันหลักเพื่อการออม</div>
+                                                        </div>
+                                                        <div class="col-md-12 pd0">
+                                                            <div class="col-sm-offset-1 col-sm-11 pd0 xs-pdlr15">
+                                                                <div class="form-group">
+                                                                    <input id="radio-choice-2-1" name="radio-choice-2" class="radio-style3" type="radio" value='1' formControlName="question2" name="question2" />
+                                                                    <label for="radio-choice-2-1">เลือกรูปแบบการลงทุนตามเบี้ยประกันหลักเพื่อความคุ้มครอง</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="clearfix"></div>
+                                                        <div class="col-md-12 pd0">
+                                                            <div class="col-sm-offset-1 col-sm-11 pd0 xs-pdlr15">
+                                                                <div class="form-group">
+                                                                    <input id="radio-choice-2-2" name="radio-choice-2" class="radio-style3" type="radio" value='2' formControlName="question2" name="question2" />
+                                                                    <label for="radio-choice-2-2">เลือกรูปแบบกลยุทธ์การลงทุนเอง</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="clearfix"></div>
+                                                        <div *ngIf="allocationRSP.length > 0 && rspchoice != 'rpp' ">
+                                                            <div class="col-md-6 pd0 hide-only-xs">
+                                                                <div class="col-md-8 col-sm-9 pdr-sm-7 pdb10 lh-form-control txt-center">กองทุน</div>
+                                                                <div class="col-md-4 col-sm-3 pdr-sm-7 pdb10 lh-form-control txt-center">ร้อยละ</div>
+                                                            </div>
+                                                            <div *ngIf="allocationRSP.length > 1 " class="col-md-6 pd0 hide-only-sm hide-only-xs">
+                                                                <div class="col-md-8 col-sm-8 pdr-sm-7 pdb10 lh-form-control txt-center">กองทุน</div>
+                                                                <div class="col-md-4 col-sm-4 pdr-sm-7 pdb10 lh-form-control txt-center">ร้อยละ</div>
+                                                            </div>
+                                                            <div class="clearfix"></div>
+                                                            <div id="fund">
+                                                                <div class="col-md-6 col-xs-12 pd0" *ngFor="let item of allocationRSP;let i = index">
+                                                                    <div *ngIf="i <= 9">
+                                                                        <div class="view-only-xs lh-form-control txt-center">กองทุน</div>
+                                                                        <div class="col-md-8 col-sm-9 pdr-sm-7 lh-form-control txt-center">
+                                                                            <div class="form-group mgb0">
+                                                                                <input class="form-control" type="text" disabled value=" {{item.fundCode}} " />
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="view-only-xs lh-form-control txt-center">ร้อยละ</div>
+                                                                        <div class="col-md-4 col-sm-3 pdr-sm-7 lh-form-control">
+                                                                            <div class="form-group">
+                                                                                <input class="form-control center-block" type="text" value="{{item.percent}}" disabled />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                            <div class="clearfix"></div>
+                                                        </div>
+
+                                                        <hr>
+                                                    </div>
+
+
+                                                    <div class="col-md-12 pd0">
+                                                        <div class="col-md-12 pdr-sm-7 pdb10 lh-form-control">การจัดสรรสัดส่วนการลงทุน เบี้ยประกันภัยเพิ่มพิเศษ (Top Premium) </div>
+                                                    </div>
+                                                    <div class="col-md-12 pd0">
+                                                        <div class="col-sm-offset-1 col-sm-11 pd0 xs-pdlr15">
+                                                            <div class="form-group">
+                                                                <input id="radio-choice-3-1" name="radio-choice-3" class="radio-style3" type="radio" value='1' formControlName="question3" name="question3" />
+                                                                <label for="radio-choice-3-1">เลือกรูปแบบการลงทุนตามเบี้ยประกันหลักเพื่อความคุ้มครอง</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="clearfix"></div>
+                                                    <div class="col-md-12 pd0">
+                                                        <div class="col-sm-offset-1 col-sm-11 pd0 xs-pdlr15">
+                                                            <div class="form-group">
+                                                                <input id="radio-choice-3-2" name="radio-choice-3" class="radio-style3" type="radio" value='2' formControlName="question3" name="question3" />
+                                                                <label for="radio-choice-3-2">เลือกรูปแบบกลยุทธ์การลงทุนเอง</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="clearfix"></div>
+                                                    <div *ngIf="allocationTopPremium.length > 0 && topchoice != 'rpp'">
+                                                        <div class="col-md-6 pd0 hide-only-xs">
+                                                            <div class="col-md-8 col-sm-9 pdr-sm-7 pdb10 lh-form-control txt-center">กองทุน</div>
+                                                            <div class="col-md-4 col-sm-3 pdr-sm-7 pdb10 lh-form-control txt-center">ร้อยละ</div>
+                                                        </div>
+                                                        <div *ngIf="allocationTopPremium.length > 1 " class="col-md-6 pd0 hide-only-sm hide-only-xs">
+                                                            <div class="col-md-8 col-sm-8 pdr-sm-7 pdb10 lh-form-control txt-center">กองทุน</div>
+                                                            <div class="col-md-4 col-sm-4 pdr-sm-7 pdb10 lh-form-control txt-center">ร้อยละ</div>
+                                                        </div>
+                                                        <div class="clearfix"></div>
+                                                        <div id="fund">
+                                                            <div class="col-md-6 col-xs-12 pd0" *ngFor="let item of allocationTopPremium;let i = index">
+                                                                <div *ngIf="i <= 9">
+                                                                    <div class="view-only-xs lh-form-control txt-center">กองทุน</div>
+                                                                    <div class="col-md-8 col-sm-9 pdr-sm-7 lh-form-control txt-center">
+                                                                        <div class="form-group mgb0">
+                                                                            <input class="form-control" type="text" disabled value=" {{item.fundCode}} " />
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="view-only-xs lh-form-control txt-center">ร้อยละ</div>
+                                                                    <div class="col-md-4 col-sm-3 pdr-sm-7 lh-form-control">
+                                                                        <div class="form-group">
+                                                                            <input class="form-control center-block" type="text" value="{{item.percent}}" disabled />
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="clearfix"></div>
+                                                    </div>
+
+
+                                                    <div class="txt-center pdt15">
+                                                        <button class="btn-style4 btn-style-l" (click)="editAllocation()"><span>เลือก/แก้ไข กองทุน</span></button>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </step>
+                <!--STEP 2-->
+                <step index="1" stepTitle="ลงชื่อผู้เอาประกัน">
+                    <form [formGroup]="customerSign_tab2Data">
+                        <div class="boxContentPage bgBlue3 hasBgImg bgImg95">
+                            <div class="container">
+                                <div class="bgPaperShadow mgt25">
+                                    <div class="contentPaperShadow">
+                                        <!-- start boxFixTopJumpMenu -->
+                                        <div class="boxFixTopJumpMenu">
+                                            <div id="boxFixJumpMenu" class="boxContentFixJumpMenu">
+                                                <div class="boxListFixJumpMenu">
+                                                    <a class="action">ลงชื่อผู้เอาประกัน</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- end boxFixTopJumpMenu -->
+                                        <!--boxListJumpContent-->
+                                        <div id="boxListJumpContent" class="boxListJumpContent">
+                                            <!-- start oneJumpContent -->
+                                            <div class="oneJumpContent">
+                                                <div class="boxListForm pdlr0 pdb10 xs-pdt0">
+                                                </div>
+                                                <div class="boxChkAndInfo">
+                                                    <div class="boxInfoForm">
+                                                        <div class="col-md-6 pdlr0">
+                                                            <div class="col-lg-5 col-md-6 col-sm-5 pdr-sm-7 txt-sm-right lh-form-control">ทำที่ :</div>
+                                                            <div class="col-lg-7 col-md-6 col-sm-7 pdl-sm-7">
+                                                                <div class="form-group">
+                                                                    <input class="form-control" formControlName="signPlace" type="text" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6 pdlr0">
+                                                            <div class="col-lg-5 col-md-6 col-sm-5 pdr-sm-7 txt-sm-right lh-form-control">วันที่ :</div>
+                                                            <div class="col-lg-7 col-md-6 col-sm-7 pdl-sm-7">
+                                                                <div class="form-group">
+                                                                    <input class="form-control" type="text" formControlName="date" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="clearfix"></div>
+                                                        <div class="col-md-6 pdlr0">
+                                                            <div class="col-lg-5 col-md-6 col-sm-5 pdr-sm-7 txt-sm-right lh-form-control">ชื่อพยาน :</div>
+                                                            <div class="col-lg-7 col-md-6 col-sm-7 pdl-sm-7">
+                                                                <div class="form-group">
+                                                                    <input class="form-control" id="witnessName1" formControlName="witnessName1" [info]="fullnameInfo_witness1" readonly fullname-popup (fullnameChange)="fullnameChange($event,'witnessName1')" type="text" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6 pdlr0">
+                                                            <div class="col-lg-5 col-md-6 col-sm-5 pdr-sm-7 txt-sm-right lh-form-control">ผู้เอาประกัน/ผู้ขอเอาประกัน :</div>
+                                                            <div class="col-lg-7 col-md-6 col-sm-7 pdl-sm-7">
+                                                                <div class="form-group">
+                                                                    <input class="form-control" formControlName="customername" type="text" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="clearfix"></div>
+                                                        <div class="col-md-6 pdlr0">
+                                                            <div class="col-lg-5 col-md-6 col-sm-5 pdr-sm-7 txt-sm-right lh-form-control">ชื่อพยาน :</div>
+                                                            <div class="col-lg-7 col-md-6 col-sm-7 pdl-sm-7">
+                                                                <div class="form-group">
+                                                                    <input class="form-control" formControlName="witnessName2" [info]="fullnameInfo_witness2" readonly fullname-popup (fullnameChange)="fullnameChange($event,'witnessName2')" type="text" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- end oneJumpContent -->
+                                        </div>
+                                        <!-- end boxListJumpContent -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                </step>
+                <ng-template #action>
+                    <button class="btn-style2" type="button" (click)="validateBeforeSave()"><span><i class="icon-save-file-option"></i> บันทึก</span></button>
+                    <!--button class="btn-style3" type="submit"><span><i class="icon-reload"></i> เริ่มใหม่</span></button-->
+                </ng-template>
+            </steps>
+        </div>
+    </div>
+</ion-content>

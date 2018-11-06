@@ -1,0 +1,36 @@
+<ion-header header></ion-header>
+
+<ion-content>
+    <div id="prospect_page" class="mainContainer">
+        <title-page>ผู้มุ่งหวัง</title-page>
+
+        <div class="boxContentPage">
+            <div class="container">
+                <div class="bgPaperShadow mgt0">
+                    <div class="contentPaperShadow">
+                        <div class="boxListTabStyle2" data-target="#boxListContentTabStyle2">
+                            <a id="prospect-tab-1" class="oneTab action" (click)="selectTab(1)">จัดการผู้มุ่งหวัง</a>
+                            <a id="prospect-tab-2" class="oneTab" (click)="selectTab(2)">ศูนย์บริการข้อมูลตัวแทน</a>
+                        </div>
+                        <div id="boxListContentTabStyle2" class="boxListContentTabStyle2">
+                            <!-- start oneContentTab -->
+                            <div class="oneContentTab" id="prospect-content-tab-1" style="display: block;">
+                                <prospect-add (searchProspect)="cahngeComponent($event,'Search')" [prospectDataEdit]="prospectObj" *ngIf="componentId=='Add'"></prospect-add>
+                                <prospect-search (addProspect)="cahngeComponent($event,'Add');" *ngIf="componentId=='Search'"></prospect-search>
+                            </div>
+                            <div class="oneContentTab" id="prospect-content-tab-2" style="display: none;">
+                                <div class="bgBlue4">
+                                    tab2
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <prospect-add></prospect-add> -->
+
+            </div>
+        </div>
+    </div>
+
+    <footer footer></footer>
+</ion-content>

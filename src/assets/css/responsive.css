@@ -1,0 +1,2504 @@
+/* clear data
+=================================== */
+
+.boxMobilePageName {
+    display: none;
+}
+
+.btnMobileMainMenu {
+    display: none;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 58px;
+    padding-left: 10px;
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    height: 55px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.btnMobileMainMenu .hamburger-inner {
+    width: calc(100% - 30px);
+    height: 3px;
+    display: block;
+    background-color: #fff;
+    border-radius: 0;
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    margin-top: -2px;
+    transition-duration: 0.3s;
+    transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.btnMobileMainMenu .hamburger-inner::before {
+    content: '';
+    width: 100%;
+    height: 3px;
+    display: block;
+    background-color: #fff;
+    border-radius: 0;
+    position: absolute;
+    left: 0;
+    top: -8px;
+    transition: top 0.1s 0.34s ease-in, opacity 0.1s ease-in;
+}
+
+.btnMobileMainMenu .hamburger-inner::after {
+    content: '';
+    width: 100%;
+    height: 3px;
+    display: block;
+    background-color: #fff;
+    border-radius: 0;
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    transition: bottom 0.1s 0.34s ease-in, -webkit-transform 0.3s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    transition: bottom 0.1s 0.34s ease-in, transform 0.3s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    transition: bottom 0.1s 0.34s ease-in, transform 0.3s cubic-bezier(0.55, 0.055, 0.675, 0.19), -webkit-transform 0.3s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.btnMobileMainMenu.action .hamburger-inner {
+    -webkit-transform: rotate(225deg);
+    transform: rotate(225deg);
+    transition-delay: 0.14s;
+    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.btnMobileMainMenu.action .hamburger-inner::before {
+    top: 0;
+    opacity: 0;
+    transition: top 0.1s ease-out, opacity 0.1s 0.14s ease-out;
+}
+
+.btnMobileMainMenu.action .hamburger-inner::after {
+    bottom: 0;
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    transition: bottom 0.1s ease-out, -webkit-transform 0.3s 0.14s cubic-bezier(0.215, 0.61, 0.355, 1);
+    transition: bottom 0.1s ease-out, transform 0.3s 0.14s cubic-bezier(0.215, 0.61, 0.355, 1);
+    transition: bottom 0.1s ease-out, transform 0.3s 0.14s cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 0.3s 0.14s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.btnToggleAccMenu {
+    display: none;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 58px;
+    padding-left: 10px;
+    border-right: 1px solid #dddddf;
+    height: 56px;
+    text-decoration: none !important;
+    text-align: center;
+    overflow: hidden;
+    color: #1484C6;
+    cursor: pointer;
+}
+
+.btnToggleAccMenu .hamburger-inner {
+    width: calc(100% - 30px);
+    height: 3px;
+    display: block;
+    background-color: #1484C6;
+    border-radius: 0;
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    margin-top: -2px;
+    transition-duration: 0.3s;
+    transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.btnToggleAccMenu .hamburger-inner::before {
+    content: '';
+    width: 100%;
+    height: 3px;
+    display: block;
+    background-color: #1484C6;
+    border-radius: 0;
+    position: absolute;
+    left: 0;
+    top: -8px;
+    transition: top 0.1s 0.34s ease-in, opacity 0.1s ease-in;
+}
+
+.btnToggleAccMenu .hamburger-inner::after {
+    content: '';
+    width: 100%;
+    height: 3px;
+    display: block;
+    background-color: #1484C6;
+    border-radius: 0;
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    transition: bottom 0.1s 0.34s ease-in, -webkit-transform 0.3s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    transition: bottom 0.1s 0.34s ease-in, transform 0.3s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    transition: bottom 0.1s 0.34s ease-in, transform 0.3s cubic-bezier(0.55, 0.055, 0.675, 0.19), -webkit-transform 0.3s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.btnToggleAccMenu.action .hamburger-inner {
+    -webkit-transform: rotate(225deg);
+    transform: rotate(225deg);
+    transition-delay: 0.14s;
+    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.btnToggleAccMenu.action .hamburger-inner::before {
+    top: 0;
+    opacity: 0;
+    transition: top 0.1s ease-out, opacity 0.1s 0.14s ease-out;
+}
+
+.btnToggleAccMenu.action .hamburger-inner::after {
+    bottom: 0;
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    transition: bottom 0.1s ease-out, -webkit-transform 0.3s 0.14s cubic-bezier(0.215, 0.61, 0.355, 1);
+    transition: bottom 0.1s ease-out, transform 0.3s 0.14s cubic-bezier(0.215, 0.61, 0.355, 1);
+    transition: bottom 0.1s ease-out, transform 0.3s 0.14s cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 0.3s 0.14s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.hide-all {
+    display: none !important;
+}
+
+.view-only-md {
+    display: none;
+}
+
+.view-only-sm {
+    display: none;
+}
+
+.view-only-xs {
+    display: none;
+}
+
+.boxMobileUser {
+    display: none !important;
+}
+
+.btnMobileLogout {
+    display: none !important;
+}
+
+.boxListTabStyle1.xs-has-select .btnShowSelect {
+    display: none;
+}
+
+.xs-tableFixDetail1 .btnBackCol {
+    display: none;
+}
+
+.xs-tableFixDetail1 .btnNextCol {
+    display: none;
+}
+
+.xs-tableFixDetail1 .btnBackColDisable {
+    display: none;
+}
+
+.xs-tableFixDetail1 .btnNextColDisable {
+    display: none;
+}
+
+
+/* media screen
+=================================== */
+
+@media (min-width: 768px) {
+    .txt-sm-right {
+        text-align: right;
+    }
+    .pdlr-sm-0 {
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+    }
+    .pdr-sm-7 {
+        padding-right: 7px !important;
+    }
+    .pdl-sm-0 {
+        padding-left: 0px !important;
+    }
+    .pdl-sm-7 {
+        padding-left: 7px !important;
+    }
+}
+
+@media (min-width: 992px) {
+    .txt-md-right {
+        text-align: right;
+    }
+    .pdlr-md-0 {
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+    }
+    .pdr-md-7 {
+        padding-right: 7px !important;
+    }
+    .pdl-md-0 {
+        padding-left: 0px !important;
+    }
+    .pdl-md-7 {
+        padding-left: 7px !important;
+    }
+    .indent-md-15 {
+        text-indent: 15px;
+    }
+    .indent-md-30 {
+        text-indent: 30px;
+    }
+    .boxFixTopJumpMenu .boxContentFixJumpMenu .boxListFixJumpMenu ul.boxRight {
+        margin: -20px 0px 0px 0px;
+        padding: 9px 0px 0px 0px;
+        float: right;
+    }
+    /* 
+tab style CSS ====================================== */
+    .boxListTabStyle1 .oneTab {
+        font-size: 25px;
+    }
+    /* 
+boxContentDashBoard_1 CSS ====================================== */
+    .boxContentDashBoard_1 .boxRight {
+        width: 510px;
+    }
+    /* 
+col-sw CSS ====================================== */
+    [class*=col-sw-] {
+        float: left;
+        box-sizing: border-box;
+    }
+    [class*=col-sw-] .col-label {
+        float: left;
+        box-sizing: border-box;
+        padding-right: 15px;
+    }
+    [class*=col-sw-] .col-input {
+        float: left;
+        box-sizing: border-box;
+    }
+    .col-sw-1 {
+        width: 210px;
+        padding: 0px 15px 0px 0px;
+    }
+    .col-sw-1 .col-label {
+        width: 80px;
+    }
+    .col-sw-1 .col-input {
+        width: 115px;
+    }
+    .col-sw-2 {
+        width: 235px;
+        padding: 0px 15px 0px 0px;
+    }
+    .col-sw-2 .col-label {
+        width: 80px;
+    }
+    .col-sw-2 .col-input {
+        width: 140px;
+    }
+    .col-sw-3 {
+        width: 260px;
+        padding: 0px;
+    }
+    .col-sw-3 .col-label {
+        width: 130px;
+    }
+    .col-sw-3 .col-input {
+        width: 130px;
+    }
+    .col-sw-4 {
+        width: 145px;
+        padding: 0px 15px 0px 0px;
+    }
+    .col-sw-4 .col-label {
+        width: 80px;
+    }
+    .col-sw-4 .col-input {
+        width: 50px;
+    }
+    .col-sw-5 {
+        width: 195px;
+        padding: 0px 15px 0px 0px;
+    }
+    .col-sw-5 .col-label {
+        width: 70px;
+    }
+    .col-sw-5 .col-input {
+        width: 110px;
+    }
+    .col-sw-6 {
+        width: 155px;
+        padding: 0px;
+    }
+    .col-sw-6 .col-label {
+        width: 85px;
+    }
+    .col-sw-6 .col-input {
+        width: 70px;
+    }
+    .col-sw-7 {
+        width: 175px;
+        padding: 0px;
+    }
+    .col-sw-7 .col-label {
+        width: 45px;
+    }
+    .col-sw-7 .col-input {
+        width: 130px;
+    }
+    .col-sw-8 {
+        width: 210px;
+        padding: 0px 15px 0px 0px;
+    }
+    .col-sw-8 .col-label {
+        width: 110px;
+    }
+    .col-sw-8 .col-input {
+        width: 85px;
+    }
+    .col-sw-9 {
+        width: 270px;
+        padding: 0px 15px;
+    }
+}
+
+@media (min-width: 1200px) {
+    /* fix menu */
+    #menu_bt_name>span>i {
+        height: 35px;
+    }
+    #menu_bt_search>span>i {
+        height: 35px;
+    }
+    /* 
+tab style CSS ====================================== */
+    .boxListTabStyle1 .oneTab {
+        min-width: 240px;
+    }
+    /* 
+boxContentDashBoard_1 CSS ====================================== */
+    .boxContentDashBoard_1 .boxRight {
+        width: 770px;
+    }
+    /* 
+col-sw CSS ====================================== */
+    .col-sw-1 {
+        width: 240px;
+        padding: 0px 15px;
+    }
+    .col-sw-1 .col-label {
+        width: 95px;
+    }
+    .col-sw-1 .col-input {
+        width: 115px;
+    }
+    .col-sw-2 {
+        width: 300px;
+        padding: 0px 15px 0px 0px;
+    }
+    .col-sw-2 .col-label {
+        width: 115px;
+    }
+    .col-sw-2 .col-input {
+        width: 170px;
+    }
+    .col-sw-3 {
+        width: 360px;
+        padding: 0px 15px 0px 0px;
+    }
+    .col-sw-3 .col-label {
+        width: 175px;
+    }
+    .col-sw-3 .col-input {
+        width: 170px;
+    }
+    .col-sw-4 {
+        width: 195px;
+        padding: 0px 15px 0px 0px;
+    }
+    .col-sw-4 .col-label {
+        width: 115px;
+    }
+    .col-sw-4 .col-input {
+        width: 65px;
+    }
+    .col-sw-5 {
+        width: 255px;
+        padding: 0px 15px 0px 0px;
+    }
+    .col-sw-5 .col-label {
+        width: 110px;
+    }
+    .col-sw-5 .col-input {
+        width: 130px;
+    }
+    .col-sw-6 {
+        width: 210px;
+        padding: 0px 15px 0px 0px;
+    }
+    .col-sw-6 .col-label {
+        width: 115px;
+    }
+    .col-sw-6 .col-input {
+        width: 80px;
+    }
+    .col-sw-7 {
+        width: 230px;
+        padding: 0px 15px 0px 0px;
+    }
+    .col-sw-7 .col-label {
+        width: 45px;
+    }
+    .col-sw-7 .col-input {
+        width: 170px;
+    }
+    .col-sw-8 {
+        width: 240px;
+        padding: 0px 15px 0px 0px;
+    }
+    .col-sw-8 .col-label {
+        width: 95px;
+    }
+    .col-sw-8 .col-input {
+        width: 130px;
+    }
+    .col-sw-9 {
+        width: 310px;
+        padding: 0px 15px;
+    }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    #header .boxHeaderMenu .container .boxListHeaderMenu a#menu_bt_search {
+        width: 13%;
+    }
+    .hide-only-md {
+        display: none !important;
+    }
+    .view-only-md {
+        display: inherit;
+    }
+    th.view-only-md,
+    td.view-only-md {
+        display: table-cell;
+    }
+    /* fix menu */
+    #menu_bt_name>span>i {
+        height: 35px;
+    }
+    #menu_bt_search>span>i {
+        height: 35px;
+    }
+    /* app form
+	===================================== */
+    .boxStatusStep {
+        min-height: 110px;
+    }
+    .boxStatusStep .oneStep a span {
+        line-height: 21px;
+    }
+    /* quatation
+	===================================== */
+    .boxInformationLead .boxListField {
+        display: block;
+    }
+    .boxInformationLead .oneField {
+        display: inline-block;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .mainContainer .boxTitlePage h1 {
+        text-align: left;
+    }
+    .hide-only-sm {
+        display: none !important;
+    }
+    .view-only-sm {
+        display: inherit;
+    }
+    th.view-only-sm,
+    td.view-only-sm {
+        display: table-cell;
+    }
+    .sm-w30p {
+        width: 30%;
+    }
+    .sm-w40p {
+        width: 40%;
+    }
+    .sm-pdl0 {
+        padding-left: 0px !important;
+    }
+    .ws-sm-nowrap {
+        white-space: nowrap;
+    }
+    .sm-a-mgr0 a {
+        margin-right: 5px !important;
+    }
+    .sm-a-action-fsnormal a.action {
+        font-size: 26px !important;
+    }
+    [class*=col-sw-] .col-label {
+        float: left;
+        width: 30%;
+        box-sizing: border-box;
+        padding-right: 15px;
+        text-align: right;
+    }
+    [class*=col-sw-] .col-input {
+        float: left;
+        width: 70%;
+        box-sizing: border-box;
+    }
+    /* fix menu */
+    #menu_bt_home {
+        width: 9% !important;
+    }
+    #menu_bt_name>span>i {
+        height: 35px;
+    }
+    #menu_bt_search {
+        width: 14% !important;
+    }
+    #menu_bt_search>span>i {
+        height: 35px;
+    }
+    #menu_bt_appForm {
+        width: 9% !important;
+    }
+    /* 
+	shadow ====================================== */
+    .bgPaperShadow.sm-hide-shadow:before {
+        display: none;
+    }
+    .bgPaperShadow.sm-hide-shadow:after {
+        display: none;
+    }
+    /* 
+	popup ====================================== */
+    .popup-style2 {
+        width: 96vw;
+    }
+    /* 
+	table ====================================== */
+    .boxTableStyle5 {}
+    .boxTableStyle5 table {
+        display: block;
+    }
+    .boxTableStyle5 table tbody {
+        display: block;
+    }
+    .boxTableStyle5 table tbody tr {
+        display: block;
+        padding-bottom: 20px;
+    }
+    .boxTableStyle5 table tbody tr:after {
+        display: block;
+        content: '';
+        height: 0px;
+        overflow: hidden;
+        clear: both;
+    }
+    .boxTableStyle5 table tbody tr td {
+        display: inline-block;
+    }
+    .boxTableStyle5 table tbody tr td:after {
+        display: none;
+    }
+    /* 
+	home_page ====================================== */
+    .boxContentDashBoard_1 .boxLeft {
+        float: none;
+        margin: 0px auto;
+    }
+    .boxContentDashBoard_1 .boxRight {
+        clear: both;
+    }
+    /* 
+	search-member page ====================================== */
+    .boxSearchMember {
+        width: auto;
+        padding: 20px 0px;
+    }
+    .boxSearchMember.advance {
+        width: auto;
+        padding: 20px 0px;
+    }
+    .boxSearchMember .boxLeft {
+        padding-top: 20px;
+    }
+    .boxSearchMember .boxRight {
+        padding-left: 50px;
+    }
+    .boxTableMemberInfo {
+        font-size: 22px;
+    }
+    /* app form
+	===================================== */
+    .boxStatusStep {
+        min-height: 110px;
+    }
+    .boxStatusStep .oneStep a span {
+        line-height: 19px;
+        font-size: 22px;
+        padding-top: 34px;
+    }
+    .boxFixTopJumpMenu .boxContentFixJumpMenu .boxListFixJumpMenu ul.boxRight {
+        margin: -20px 0px 0px 0px;
+        padding: 9px 0px 0px 0px;
+        float: right;
+    }
+    /* quatation
+	===================================== */
+    .boxInformationLead .boxListField {
+        display: block;
+    }
+    .boxInformationLead .oneField {
+        display: inline-block;
+    }
+    .box2ColPage {
+        display: block;
+        position: relative;
+    }
+    .box2ColPage .box2ColLeft {
+        display: none !important;
+        float: none;
+        width: 100%;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        background: #F5F5F7;
+        z-index: 5;
+        padding: 0px;
+    }
+    .box2ColPage .box2ColLeft .boxTitleListQuickAcc {
+        display: block;
+        padding: 15px 10px 15px 73px;
+        height: 56px;
+        font-size: 30px;
+    }
+    .box2ColPage .box2ColLeft .boxTitleListQuickAcc .btnToggleAccMenu {
+        display: block;
+    }
+    .box2ColPage .box2ColLeft .boxListQuickAcc {
+        display: none;
+        background: #fff;
+        /*padding: 10px 10px 15px 20px;*/
+        padding: 10px 20px 20px 60px;
+        white-space: nowrap;
+        position: absolute;
+        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    }
+    .box2ColPage .box2ColLeft .boxListQuickAcc.action {
+        display: block;
+    }
+    .box2ColPage .box2ColRight {
+        float: none;
+        width: 100%;
+    }
+    .box2ColPage .box2ColRight .bgPaperShadow .contentPaperShadow2 {
+        padding-top: 1px;
+        padding-bottom: 1px !important;
+    }
+    .box2ColPage .box2ColRight .boxListAcc .oneAcc {
+        display: block !important;
+        margin-bottom: 1px;
+    }
+    .box2ColPage .box2ColRight .boxListAcc .oneAcc .titleAcc {
+        padding: 20px 0px 15px;
+        background: #1BAAEA;
+        color: #fff;
+        cursor: pointer;
+    }
+    .box2ColPage .box2ColRight .boxListAcc .oneAcc .titleAcc .subTitleAcc {
+        color: rgba(255, 255, 255, 0.8);
+    }
+    .box2ColPage .box2ColRight .boxListAcc .oneAcc .titleAcc:after {
+        display: block;
+        content: "\5c";
+        font-family: "tl-prompt";
+        font-size: 24px;
+        color: #fff;
+        position: absolute;
+        right: 20px;
+        top: 22px;
+    }
+    .box2ColPage .box2ColRight .boxListAcc .oneAcc .contentAcc {
+        display: none !important;
+    }
+    .box2ColPage .box2ColRight .boxListAcc .oneAcc.action .contentAcc {
+        display: block !important;
+    }
+    .box2ColPage .box2ColRight .boxListAcc .oneAcc.action .titleAcc:after {
+        content: "\e001";
+    }
+    .box2ColPage .box2ColRight .boxListAcc .oneAcc.disable .titleAcc {
+        background: #F5F9FA;
+        color: #999;
+        cursor: inherit;
+    }
+    .box2ColPage .box2ColRight .boxListAcc .oneAcc.disable .titleAcc:after {
+        color: #999;
+    }
+    .box2ColPage .box2ColRight .boxListAcc .oneAcc.disable .titleAcc .subTitleAcc {
+        color: rgba(153, 153, 153, 0.8);
+    }
+    .box2ColPage .box2ColRight .boxListAcc .oneAcc.disable .contentAcc {
+        display: none !important;
+    }
+    .boxAccGroup .contentPaperShadow2 {
+        padding-left: 1px !important;
+        padding-right: 1px !important;
+    }
+    .boxAccGroup.box2ColPage .box2ColRight .boxListAcc .oneAcc .titleAcc {
+        padding-left: 20px !important;
+        padding-right: 50px !important;
+    }
+    .boxAccGroup.box2ColPage .box2ColRight .boxListAcc .oneAcc .contentAcc {
+        padding: 20px !important;
+    }
+    .boxListAcc .oneAcc .titleAcc .subTitleAcc:after {
+        display: none !important;
+    }
+}
+
+@media (max-width: 767px) {
+    .hide-only-xs {
+        display: none !important;
+    }
+    .view-only-xs {
+        display: inherit;
+    }
+    th.view-only-xs,
+    td.view-only-xs {
+        display: table-cell;
+    }
+    .xs-pdlr0 {
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+    }
+    .xs-pdlr15 {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+    .xs-pdlr25 {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+    .xs-pdt0 {
+        padding-top: 0px !important;
+    }
+    .xs-pdt10 {
+        padding-top: 10px !important;
+    }
+    .xs-pdt15 {
+        padding-top: 15px !important;
+    }
+    .xs-pdt30 {
+        padding-top: 30px !important;
+    }
+    .xs-pdt-30 {
+        padding-top: 30px !important;
+    }
+    .xs-pdl0 {
+        padding-left: 0px !important;
+    }
+    .xs-pdb-0 {
+        padding-bottom: 0px !important;
+    }
+    .xs-pdb-20 {
+        padding-bottom: 20px !important;
+    }
+    .xs-mg0 {
+        margin: 0px !important;
+    }
+    .xs-mgt0 {
+        margin-top: 0px !important;
+    }
+    .xs-mgb0 {
+        margin-bottom: 0px !important;
+    }
+    .xs-mgb15 {
+        margin-bottom: 15px !important;
+    }
+    .pdr-xs-15 {
+        padding-right: 15px !important;
+    }
+    .xs-txt-left {
+        text-align: left;
+    }
+    .xs-txt-center {
+        text-align: center;
+    }
+    .xs-txt-right {
+        text-align: right;
+    }
+    .xs-floatL {
+        float: left !important;
+    }
+    .xs-floatR {
+        float: right !important;
+    }
+    .xs-w30p {
+        width: 30% !important;
+        box-sizing: border-box !important;
+    }
+    .xs-w70p {
+        width: 70% !important;
+        box-sizing: border-box !important;
+    }
+    .xs-after-clear:after {
+        display: block;
+        content: '';
+        clear: both;
+        height: 0px;
+        overflow: hidden;
+    }
+    .xs-fs23 {
+        font-size: 23px;
+    }
+    .xs-lh-form-control {
+        line-height: 38px;
+    }
+    .xs-inline-block {
+        display: inline-block !important;
+    }
+    .xs-td-pdtb0 td {
+        padding-top: 0px !important;
+        padding-bottom: 0px !important;
+    }
+    .xs-c-blue {
+        color: #0082C8;
+    }
+    .boxListForm {
+        padding: 20px 0px;
+    }
+    #header .boxHeaderTop .container {
+        height: 62px;
+        padding-top: 0px;
+        padding-right: 7px;
+    }
+    #header .boxHeaderTop .logo {
+        width: 56px;
+        height: 60px;
+        background-size: 100%;
+    }
+    #header .boxHeaderTop .headerTools .boxHeaderToolsUser {
+        display: none;
+    }
+    #header .boxHeaderTop .headerTools .boxHeaderToolsStatus {
+        display: none;
+    }
+    #header .boxHeaderTop .headerTools .boxHeaderToolsVersion:before {
+        display: none;
+    }
+    #header .boxHeaderTop .headerTools .boxVersion {
+        width: 165px;
+    }
+    #header .boxHeaderTop .headerTools .boxVersion .txt3 {
+        left: 83px;
+        top: 13px;
+        width: 80px;
+    }
+    #header .boxHeaderTop .headerTools .boxHeaderToolsNetwork {
+        padding-left: 16px;
+    }
+    #header .boxHeaderTop .headerTools .boxHeaderToolsLogin {
+        display: none;
+    }
+    #header .boxHeaderMenu .container {
+        height: 55px;
+        padding: 0px;
+    }
+    .header-menu-fix-top #header .boxHeaderTop {
+        margin-bottom: 55px;
+    }
+    .header-menu-fix-top.sub-menu-fix-top .targetdSubMenu {
+        top: 55px;
+    }
+    .boxMobilePageName {
+        display: block;
+        color: #fff;
+        font-size: 25px;
+        font-style: italic;
+        width: 100%;
+        height: 55px;
+        line-height: 55px;
+        white-space: nowrap;
+        padding-right: 60px;
+        padding-left: 15px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .boxMobilePageName.action {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    }
+    .btnMobileMainMenu {
+        display: block;
+    }
+    #header .boxHeaderMenu .container .boxListHeaderMenu {
+        display: none;
+        height: auto;
+        max-height: calc(100vh - 117px);
+        overflow: auto;
+        background: #0080CB;
+        text-align: left;
+    }
+    .header-menu-fix-top #header .boxHeaderMenu .container .boxListHeaderMenu {
+        max-height: calc(100vh - 55px);
+    }
+    #header .boxHeaderMenu .container .boxListHeaderMenu a {
+        display: block;
+        width: 100%;
+        transform: matrix(1, 0, 0, 1, 0, 0);
+        border-left: none;
+        font-size: 24px;
+    }
+    #header .boxHeaderMenu .container .boxListHeaderMenu a:hover {
+        background: transparent;
+    }
+    #header .boxHeaderMenu .container .boxListHeaderMenu a:last-child {
+        border-right: none;
+    }
+    #header .boxHeaderMenu .container .boxListHeaderMenu a span {
+        transform: matrix(1, 0, 0, 1, 0, 0);
+        padding: 15px 15px 14px 80px;
+    }
+    #header .boxHeaderMenu .container .boxListHeaderMenu a span i {
+        margin: 0px;
+        position: absolute;
+        left: 35px;
+        top: 11px;
+        font-size: 25px;
+    }
+    #header .boxHeaderMenu .container .boxListHeaderMenu a span i.fs40 {
+        font-size: 29px !important;
+    }
+    #header .boxHeaderMenu .container .boxListHeaderMenu a span i.fs29 {
+        font-size: 28px !important;
+    }
+    #header .boxHeaderMenu .container .boxListHeaderMenu a span br {
+        display: none;
+    }
+    #header .boxHeaderMenu .container .action+.boxListHeaderMenu {
+        display: block;
+    }
+    .boxMobileUser {
+        display: block !important;
+        background: #006197;
+        padding: 10px 0px 10px 20px;
+    }
+    .boxMobileUser .boxUserProfile {
+        display: block;
+        float: left;
+        width: 52px !important;
+        height: 52px !important;
+        border: 2px solid #137ebe !important;
+        border-radius: 50%;
+        margin-top: 0;
+        line-height: 0;
+    }
+    .boxMobileUser .boxUserProfile img {
+        width: 44px;
+        height: 44px;
+        border: 2px solid #fff;
+        border-radius: 100%;
+        box-sizing: initial !important;
+    }
+    .boxMobileUser .boxUserStatus {
+        display: block;
+        width: auto !important;
+        float: left;
+        padding-left: 44px;
+        padding-top: 9px;
+        position: relative;
+        font-size: 22px !important;
+        line-height: 25px;
+    }
+    .boxMobileUser .boxUserStatus [class^=icon-] {
+        position: absolute;
+        left: 15px;
+        top: 17px;
+        font-size: 18px;
+    }
+    .boxMobileUser:after {
+        display: block;
+        content: '';
+        clear: both;
+        height: 0px;
+        overflow: hidden;
+    }
+    .btnMobileLogout {
+        display: block !important;
+        background: #006197;
+    }
+    .mainContainer .boxTitlePage {
+        display: none;
+    }
+    .boxBlue {
+        padding: 20px 0px;
+    }
+    .boxSpaceTop {
+        height: 25px;
+    }
+    .boxActionForm .boxActionLeft {
+        float: none;
+    }
+    .boxActionForm .boxActionLeft li {
+        float: none;
+        text-align: center;
+        margin: 5px;
+    }
+    .boxActionForm .boxActionLeft li [class^=btn-] {
+        width: 90%;
+        margin: 0px auto;
+    }
+    .boxActionForm .boxActionRight {
+        float: none;
+    }
+    .boxActionForm .boxActionRight li {
+        float: none;
+        text-align: center;
+        margin: 5px;
+    }
+    .boxActionForm .boxActionRight li [class^=btn-] {
+        width: 90%;
+        margin: 0px auto;
+    }
+    .boxActionForm.xs-lr .boxActionLeft {
+        float: left;
+    }
+    .boxActionForm.xs-lr .boxActionLeft li {
+        float: left;
+        text-align: center;
+        margin: 0px 5px 5px 0px;
+    }
+    .boxActionForm.xs-lr .boxActionLeft li [class^=btn-] {
+        width: auto;
+        margin: 0px;
+    }
+    .boxActionForm.xs-lr .boxActionRight {
+        float: right;
+    }
+    .boxActionForm.xs-lr .boxActionRight li {
+        float: left;
+        text-align: center;
+        margin: 0px 5px 5px 0px;
+    }
+    .boxActionForm.xs-lr .boxActionRight li [class^=btn-] {
+        width: auto;
+        margin: 0px;
+    }
+    .bgPaperShadow .contentPaperShadow2 {
+        font-size: 23px;
+        line-height: 25px;
+    }
+    /* 
+	button ====================================== */
+    .btn-style2 {
+        font-size: 24px;
+        min-width: inherit;
+        height: 53px;
+        line-height: 53px;
+    }
+    .btn-style2 [class^=icon-] {
+        font-size: 20px;
+    }
+    .btn-style3 {
+        font-size: 24px;
+        min-width: inherit;
+        height: 53px;
+        line-height: 53px;
+    }
+    .btn-style3 [class^=icon-] {
+        font-size: 20px;
+    }
+    /* 
+	shadow ====================================== */
+    .bgPaperShadow:before {
+        display: none;
+    }
+    .bgPaperShadow:after {
+        display: none;
+    }
+    /* 
+	table ====================================== */
+    .ctrlBottom1:after {
+        display: block;
+        content: '';
+        clear: both;
+        height: 0px;
+        overflow: hidden;
+    }
+    .ctrlBottom1 .dataTables_paginate {
+        height: auto;
+        overflow: inherit;
+    }
+    .ctrlBottom1 .dataTables_length {
+        display: none;
+    }
+    .ctrlBottom1 .dataTables_paginate .paginate_button.previous span {
+        text-indent: -9999px;
+        width: 21px;
+    }
+    .ctrlBottom1 .dataTables_paginate .paginate_button.previous span i {
+        text-indent: 0px;
+        position: absolute;
+        left: 0px;
+        top: 5px;
+    }
+    .ctrlBottom1 .dataTables_paginate .paginate_button.next span {
+        text-indent: -9999px;
+        width: 21px;
+    }
+    .ctrlBottom1 .dataTables_paginate .paginate_button.next span i {
+        text-indent: 0px;
+        position: absolute;
+        left: 0px;
+        top: 5px;
+    }
+    .boxTableStyle5 {}
+    .boxTableStyle5 table {
+        display: block;
+    }
+    .boxTableStyle5 table tbody {
+        display: block;
+    }
+    .boxTableStyle5 table tbody tr {
+        display: block;
+        padding-bottom: 20px;
+    }
+    .boxTableStyle5 table tbody tr:after {
+        display: block;
+        content: '';
+        height: 0px;
+        overflow: hidden;
+        clear: both;
+    }
+    .boxTableStyle5 table tbody tr td {
+        display: block;
+    }
+    .boxTableStyle5 table tbody tr td:after {
+        display: none;
+    }
+    /* 
+	popup ====================================== */
+    .popup .title {
+        font-size: 30px;
+        padding: 22px 58px 15px 15px;
+        min-height: 70px;
+        height: auto;
+        line-height: 28px;
+    }
+    .popup .txtTitle2 {
+        font-size: 28px;
+        line-height: 33px;
+    }
+    .popup .txtTitle2 span {
+        font-size: 30px;
+    }
+    .popup .txtTitle3 {
+        padding: 0px 0px 10px;
+    }
+    .popup .txtTitle3 h2 {
+        font-size: 29px;
+        line-height: 30px;
+    }
+    .popup .boxListAddress {
+        padding: 30px 0px 30px 10px;
+    }
+    .popup .txtTitle1 {
+        font-size: 28px;
+        line-height: 25px;
+    }
+    .popup-check-card-id {
+        width: 96vw;
+        padding: 30px 20px 30px;
+    }
+    .popup-lead-register-complete {
+        width: 96vw;
+        padding: 30px 20px 30px;
+    }
+    .popup-style1 {
+        width: 96vw;
+    }
+    .popup-style2 {
+        width: 96vw;
+    }
+    .popup-alert-message {
+        width: 96vw;
+        padding: 30px 10px 30px;
+    }
+    .popup-calculate-tax {
+        width: 96vw;
+        padding-bottom: 10px;
+    }
+    .popup-calculate-tax .boxContentCalculateTax {
+        width: 100%;
+    }
+    .popup-calculate-tax .boxContentCalculateTax table {
+        display: block;
+    }
+    .popup-calculate-tax .boxContentCalculateTax table tbody {
+        display: block;
+    }
+    .popup-calculate-tax .boxContentCalculateTax table tbody tr {
+        display: block;
+    }
+    .popup-calculate-tax .boxContentCalculateTax table tbody tr:after {
+        display: block;
+        content: '';
+        clear: both;
+        height: 0px;
+        overflow: hidden;
+    }
+    .popup-calculate-tax .boxContentCalculateTax table tbody tr td {
+        display: block;
+        padding: 2px 15px;
+    }
+    /* 
+	login ====================================== */
+    #login_page .loginHeader .logoThailife a {
+        width: 114px;
+        height: 87px;
+        background-size: auto 87px;
+    }
+    #login_page .loginHeader .boxVersion {
+        width: 175px;
+    }
+    #login_page .loginHeader .boxVersion .txt1 {
+        top: 30px;
+    }
+    #login_page .loginHeader .boxVersion .txt2 {
+        top: 47px;
+        font-size: 19px;
+    }
+    #login_page .loginHeader .boxVersion .txt3 {
+        left: 96px;
+        top: 30px;
+        width: 78px;
+        background-color: #1484c6;
+        font-size: 23px;
+    }
+    #login_page .boxFormLogin {
+        max-width: 410px;
+        width: 100%;
+        padding: 0px 0px 0px 0px;
+    }
+    #login_page .boxFormLogin h1 {
+        font-size: 47px;
+    }
+    #login_page .boxFormLogin .formLogin .bg-style {
+        width: 100%;
+    }
+    #login_page .boxFormLogin .formLogin .bg-style li {
+        margin: 0px 30px;
+    }
+    #login_page .boxFormLogin .formLogin .bg-style .intxt-style {
+        font-size: 24px;
+    }
+    #login_page .boxFormLogin .formLogin ul:nth-of-type(2) {
+        margin: 0px 15px;
+    }
+    /* 
+	home_page ====================================== */
+    #home_page {
+        background-color: #fff;
+        background-size: auto 500px;
+        background-position: center -150px;
+    }
+    #home_page:before {
+        display: block;
+        content: '';
+        position: absolute;
+        left: -30px;
+        top: 320px;
+        width: calc(100vw + 60px);
+        height: 50px;
+        background: #fff;
+        -webkit-filter: blur(15px);
+        filter: blur(15px);
+    }
+    .boxContentDashBoard_1 {
+        padding-top: 20px;
+    }
+    .boxContentDashBoard_1 .boxLeft {
+        float: none;
+        width: 290px;
+        margin: 0px auto;
+    }
+    .boxContentDashBoard_1 .boxLeft .boxGraphBlueRed {
+        width: 180px;
+        height: 180px;
+    }
+    .boxContentDashBoard_1 .boxLeft .boxGraphBlueRed .boxTitleCircle {
+        font-size: 24px;
+    }
+    .boxContentDashBoard_1 .boxLeft .boxGraphBlueRed .boxType1 {
+        left: 164px;
+    }
+    .boxContentDashBoard_1 .boxLeft .boxGraphBlueRed .boxType1 .boxTypePercent span {
+        font-size: 33px;
+    }
+    .boxContentDashBoard_1 .boxLeft .boxGraphBlueRed .boxType2 {
+        right: 154px;
+        top: 147px;
+    }
+    .boxContentDashBoard_1 .boxLeft .boxGraphBlueRed .boxType2 .boxTypePercent span {
+        font-size: 33px;
+    }
+    .boxContentDashBoard_1 .boxRight {
+        clear: both;
+    }
+    .boxContentDashBoard_1 .boxRight .boxGraphBlueDarkBlue {
+        padding-right: 0px;
+    }
+    .boxContentDashBoard_1 .boxRight .boxGraphBlueDarkBlue .boxBarLeft .titleBar {
+        font-size: 22px;
+        right: 24px;
+        top: -47px;
+    }
+    .boxContentDashBoard_1 .boxRight .boxGraphBlueDarkBlue .boxBarRight {
+        display: none;
+    }
+    .boxContentDashBoard_2 {
+        padding: 0px;
+        background: #fff;
+    }
+    .boxContentDashBoard_2 .oneListItem .des {
+        font-size: 22px;
+    }
+    .boxContentDashBoard_2 .col-sm-6+.col-sm-6:before {
+        display: block;
+        content: '';
+        height: 0px;
+        overflow: hidden;
+        position: relative;
+        top: -8px;
+        border-top: 1px solid #DFDFDF;
+    }
+    .boxContentDashBoard_3 {
+        padding: 30px 0px 20px 0px;
+    }
+    .boxContentDashBoard_3 .subTitleContentDashBoard_3 {
+        margin: 10px 0px;
+        padding: 10px 15px;
+        background: #E3F0F8;
+    }
+    /* 
+	lead-register page ====================================== */
+    #lead_register_page .boxContentPage>.container {
+        padding: 0px;
+    }
+    #lead_register_page:before {
+        height: 150px;
+        background-position: center bottom;
+        background-size: auto;
+    }
+    #lead_register_page .boxCardId label {
+        padding-bottom: 5px;
+    }
+    #lead_register_page .boxCardId .boxInput {
+        padding-bottom: 10px;
+    }
+    #lead_register_page .boxCardId {
+        font-size: 18px;
+        padding-bottom: 7px;
+    }
+    /* 
+	search-member page ====================================== */
+    .boxSearchMember {
+        width: auto;
+        padding: 20px 0px;
+    }
+    .boxSearchMember.advance {
+        width: auto;
+        padding: 20px 0px;
+    }
+    .boxSearchMember .boxLeft {
+        padding-top: 20px;
+    }
+    .boxHeadInfo {
+        padding: 10px;
+    }
+    .boxHeadInfo .boxLeft {
+        float: none;
+        padding: 0px;
+        text-align: center;
+    }
+    .boxHeadInfo .boxLeft li {
+        float: none;
+        padding: 0px;
+        white-space: normal;
+    }
+    .boxHeadInfo .boxLeft li.xs-underline {
+        height: 0px;
+        width: 100%;
+        overflow: hidden;
+        text-align: -9999px;
+        border-top: 1px solid #dedede;
+    }
+    .boxHeadInfo .boxLeft li.xs-inline {
+        display: inline-block;
+        padding: 10px 5px 10px 5px;
+    }
+    .boxHeadInfo .boxLeft li.xs-inline .form-group {
+        margin-bottom: 0px;
+    }
+    .boxHeadInfo .boxRight {
+        float: none;
+        padding-top: 10px;
+        border-top: 1px solid #dedede;
+    }
+    .boxHeadInfo .boxRight li {
+        float: none;
+        padding: 0px;
+        white-space: normal;
+        text-align: center;
+    }
+    .boxSearchMemberTable {
+        padding: 0px 0px 20px 0px;
+    }
+    .boxSearchMemberTable table {
+        display: block;
+    }
+    .boxSearchMemberTable table thead {
+        display: block;
+        height: 0px;
+        overflow: hidden;
+        border-top: 4px solid #1BAAEA;
+    }
+    .boxSearchMemberTable table tbody {
+        display: block;
+    }
+    .boxSearchMemberTable table tbody tr {
+        display: block;
+        text-align: left !important;
+        padding: 10px;
+    }
+    .boxSearchMemberTable table tbody tr:nth-child(2n) {
+        background: #F5F5F5;
+    }
+    .boxSearchMemberTable table tbody tr:after {
+        display: block;
+        content: '';
+        clear: both;
+        height: 0px;
+        overflow: hidden;
+    }
+    .boxSearchMemberTable table tbody tr td {
+        display: block;
+        padding: 0px 5px;
+        background: transparent;
+    }
+    .boxSearchMemberTable table tbody tr:nth-child(2n) td {
+        background: transparent;
+    }
+    .boxSearchMemberTable table tbody tr td.xs-w25Left {
+        display: block;
+        float: left;
+        border-top: 1px solid #dedede;
+        margin-top: 10px;
+        line-height: 20px;
+        padding: 15px 5px 0px 5px;
+        width: 25%;
+        box-sizing: border-box;
+        text-align: center;
+    }
+    .boxQuatationView {
+        padding: 0px 0px 20px 0px;
+    }
+    .boxTableMemberInfo {
+        display: block;
+        font-size: 20px;
+        line-height: 25px;
+    }
+    .boxTableMemberInfo tbody {
+        display: block;
+    }
+    .boxTableMemberInfo tbody tr {
+        display: block;
+    }
+    .boxTableMemberInfo tbody tr td {
+        display: block;
+        float: left;
+        width: 50%;
+        padding-left: 0px !important;
+    }
+    .boxTableMemberInfo tbody tr td .right-15 {
+        right: -7px;
+    }
+    .boxTableStyle2.td_pd-2-15 table.boxTableMemberInfo tbody tr:first-child td {
+        padding-top: 2px;
+    }
+    .boxTableMemberInfo2 {
+        font-size: 20px;
+        line-height: 25px;
+    }
+    /* 
+	download_file_page ====================================== */
+    #download_file_page:before {
+        height: 100px;
+    }
+    .boxListTabStyle2 .oneTab {
+        white-space: normal;
+        line-height: 20px;
+        padding: 15px 0px;
+        vertical-align: middle;
+        font-size: 22px;
+    }
+    /* 
+	hospital_search_page ====================================== */
+    #hospital_search_page:before {
+        height: 100px;
+    }
+    .boxSearchHospitalTable {
+        padding: 0px 0px 20px 0px;
+    }
+    .boxSearchHospitalTable table {
+        display: block;
+    }
+    .boxSearchHospitalTable table thead {
+        display: block;
+        height: 0px;
+        overflow: hidden;
+        border-top: 4px solid #1BAAEA;
+    }
+    .boxSearchHospitalTable table tbody {
+        display: block;
+    }
+    .boxSearchHospitalTable table tbody tr {
+        display: block;
+        text-align: left !important;
+        padding: 10px;
+    }
+    .boxSearchHospitalTable table tbody tr:nth-child(2n) {
+        background: #F5F5F5;
+    }
+    .boxSearchHospitalTable table tbody tr:after {
+        display: block;
+        content: '';
+        clear: both;
+        height: 0px;
+        overflow: hidden;
+    }
+    .boxSearchHospitalTable table tbody tr td {
+        display: block;
+        padding: 0px 5px;
+        background: transparent;
+        text-align: left;
+    }
+    .boxSearchHospitalTable table tbody tr:nth-child(2n) td {
+        background: transparent;
+    }
+    .boxSearchHospitalTable table tbody tr td.xs-w25Left {
+        display: block;
+        float: left;
+        border-top: 1px solid #dedede;
+        margin-top: 10px;
+        line-height: 20px;
+        padding: 15px 5px 0px 5px;
+        width: 25%;
+        box-sizing: border-box;
+        text-align: center;
+    }
+    .boxSearchHospitalTable .float-xs-left {
+        float: left;
+    }
+    .boxSearchHospitalTable .float-xs-right {
+        float: right;
+    }
+    .boxSearchHospitalTable .pdt10-xs {
+        padding-top: 10px;
+    }
+    .boxSearchHospitalTable table tbody tr td.clear-xs-after:after {
+        display: block;
+        content: '';
+        clear: both;
+        height: 0px;
+        overflow: hidden;
+    }
+    /* 
+	quatation_search_page ====================================== */
+    .boxSearchQuatationTable {
+        padding: 0px 0px 20px 0px;
+    }
+    .boxSearchQuatationTable table {
+        display: block;
+    }
+    .boxSearchQuatationTable table thead {
+        display: block;
+        height: 0px;
+        overflow: hidden;
+        border-top: 4px solid #1BAAEA;
+    }
+    .boxSearchQuatationTable table tbody {
+        display: block;
+    }
+    .boxSearchQuatationTable table tbody tr {
+        display: block;
+        text-align: left !important;
+        padding: 10px;
+    }
+    .boxSearchQuatationTable table tbody tr:nth-child(2n) {
+        background: #F5F5F5;
+    }
+    .boxSearchQuatationTable table tbody tr:after {
+        display: block;
+        content: '';
+        clear: both;
+        height: 0px;
+        overflow: hidden;
+    }
+    .boxSearchQuatationTable table tbody tr td {
+        display: block;
+        padding: 0px 5px;
+        background: transparent;
+    }
+    .boxSearchQuatationTable table tbody tr:nth-child(2n) td {
+        background: transparent;
+    }
+    .boxSearchQuatationTable .float-xs-left {
+        float: left;
+    }
+    .boxSearchQuatationTable .float-xs-right {
+        float: right;
+        min-width: 100px;
+    }
+    .boxSearchQuatationTable .txt-xs-center {
+        text-align: center;
+    }
+    .boxSearchQuatationTable .lh-xs-15 {
+        display: block;
+        line-height: 15px;
+    }
+    .boxSearchQuatationTable .icon-file-add {
+        top: 10px;
+        position: relative;
+    }
+    .boxSearchQuatationTable .pdtb10-xs {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .boxSearchQuatationTable .pdt10-xs {
+        padding-top: 10px;
+    }
+    .boxSearchQuatationTable .pdb10-xs {
+        padding-bottom: 10px;
+    }
+    .boxSearchQuatationTable table tbody tr td.clear-xs-after:after {
+        display: block;
+        content: '';
+        clear: both;
+        height: 0px;
+        overflow: hidden;
+    }
+    .boxQuatationViewTable {}
+    .boxQuatationViewTable table {
+        display: block;
+    }
+    .boxQuatationViewTable table thead {
+        display: block;
+    }
+    .boxQuatationViewTable table thead tr {
+        display: block;
+        padding: 10px 15px;
+        background: #29ABE7;
+    }
+    .boxQuatationViewTable table thead tr th {
+        display: block;
+        padding: 0px;
+        background: transparent;
+    }
+    .boxQuatationViewTable table tbody {
+        display: block;
+    }
+    .boxQuatationViewTable table tbody tr {
+        display: block;
+        padding: 10px 15px;
+    }
+    .boxQuatationViewTable table tbody tr td {
+        display: block;
+        padding: 0px;
+        font-size: 22px;
+    }
+    /* 
+	app form page ====================================== */
+    .boxAppFormTable1 {}
+    .boxAppFormTable1 table {
+        display: block;
+    }
+    .boxAppFormTable1 table thead {
+        display: block;
+        height: 0px;
+        overflow: hidden;
+        border-top: 4px solid #1BAAEA;
+    }
+    .boxAppFormTable1 table tbody {
+        display: block;
+    }
+    .boxAppFormTable1 table tbody tr {
+        display: block;
+        text-align: left !important;
+        padding: 10px;
+    }
+    .boxAppFormTable1 table tbody tr:nth-child(2n) {
+        background: #F5F5F5;
+    }
+    .boxAppFormTable1 table tbody tr:after {
+        display: block;
+        content: '';
+        clear: both;
+        height: 0px;
+        overflow: hidden;
+    }
+    .boxAppFormTable1 table tbody tr td {
+        display: block;
+        padding: 0px 5px;
+        background: transparent;
+    }
+    .boxAppFormTable1 table tbody tr:nth-child(2n) td {
+        background: transparent;
+    }
+    .boxAppFormTable1 .float-xs-left {
+        float: left;
+    }
+    .boxAppFormTable1 .float-xs-right {
+        float: right;
+        min-width: 100px;
+    }
+    .boxAppFormTable1 .txt-xs-center {
+        text-align: center;
+    }
+    .boxAppFormTable1 .lh-xs-15 {
+        display: block;
+        line-height: 15px;
+    }
+    .boxAppFormTable1 .icon-file-add {
+        top: 10px;
+        position: relative;
+    }
+    .boxAppFormTable1 .pdtb10-xs {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .boxAppFormTable1 .pdt10-xs {
+        padding-top: 10px;
+    }
+    .boxAppFormTable1 .pdb10-xs {
+        padding-bottom: 10px;
+    }
+    .boxAppFormTable1 table tbody tr td.clear-xs-after:after {
+        display: block;
+        content: '';
+        clear: both;
+        height: 0px;
+        overflow: hidden;
+    }
+    .boxAppFormTable1.no-bg-nth table tbody tr td {
+        border-bottom: none;
+    }
+    .boxAppFormTable1.no-bg-nth table tbody tr:nth-child(2n) td {
+        background: transparent;
+    }
+    .boxAppFormViewTable {}
+    .boxAppFormViewTable table {
+        display: block;
+    }
+    .boxAppFormViewTable table thead {
+        display: block;
+    }
+    .boxAppFormViewTable table thead tr {
+        display: block;
+        padding: 10px 15px;
+        background: #29ABE7;
+    }
+    .boxAppFormViewTable table thead tr th {
+        display: block;
+        padding: 0px;
+        background: transparent;
+    }
+    .boxAppFormViewTable table tbody {
+        display: block;
+    }
+    .boxAppFormViewTable table tbody tr {
+        display: block;
+        padding: 10px 15px;
+    }
+    .boxAppFormViewTable table tbody tr td {
+        display: block;
+        padding: 0px;
+        font-size: 22px;
+    }
+    .boxFixTopJumpMenu {
+        display: none !important;
+    }
+    #app_form_page .boxFixedSubMenuSpace+.boxContentPage .container {
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+    }
+    #app_form_page .boxFixedSubMenuSpace+.boxContentPage .container .bgPaperShadow {
+        margin-top: 0px !important;
+    }
+    #app_form_page .boxListJumpContent .oneJumpContent {
+        padding: 0px !important;
+    }
+    #app_form_page .boxTitleFixJumpMenu {
+        padding: 15px;
+        margin: 0px;
+        font-weight: normal;
+        text-align: center;
+        font-size: 29px;
+    }
+    .boxTabAddress_xs_1 a.oneTab {
+        height: auto;
+        padding: 20px;
+        line-height: 22px;
+        white-space: normal;
+    }
+    .boxStatusStep {
+        min-height: inherit;
+        height: 55px;
+        padding: 0px;
+    }
+    .boxStatusStep .oneStep {
+        padding: 15px 0px;
+    }
+    .boxStatusStep .oneStep:before {
+        display: none;
+    }
+    .boxStatusStep .oneStep:after {
+        display: none;
+    }
+    .boxStatusStep .oneStep a {
+        top: 15px;
+    }
+    .boxStatusStep .oneStep a span {
+        display: none;
+    }
+    .boxStatusStep .has-wait a i:after {
+        display: none;
+    }
+    .boxStatusStep .oneStep.action:before {
+        display: block;
+        content: '';
+        border-top: 0px;
+        position: absolute;
+        left: 0px;
+        top: -1px;
+        width: 100%;
+        height: 57px;
+        background: #1484C6;
+        transform: matrix(1, 0, -0.17364, 0.9848, 0, 0);
+    }
+    .boxStatusStep .oneStep a:hover i {
+        background: #ddd;
+        color: #fff;
+    }
+    .boxStatusStep .oneStep.action a i {
+        background: #fff;
+        color: #1484C6;
+    }
+    .boxDetailStatusStep {
+        background: #1484C6;
+        color: #fff;
+        padding: 15px 30px;
+        text-align: center;
+        white-space: nowrap;
+        font-size: 30px;
+        line-height: 30px;
+        font-weight: normal;
+        position: relative;
+    }
+    .boxDetailStatusStep .btnBackStep {
+        display: block;
+        position: absolute;
+        left: 5px;
+        top: 17px;
+        color: #fff;
+        font-size: 24px;
+        text-decoration: none !important;
+    }
+    .boxDetailStatusStep .btnNextStep {
+        display: block;
+        position: absolute;
+        right: 5px;
+        top: 17px;
+        color: #fff;
+        font-size: 24px;
+        text-decoration: none !important;
+    }
+    .boxDetailStatusStep>div>img {
+        display: inline-block;
+        width: 26px;
+        padding-left: 5px;
+        margin-top: -3px;
+    }
+    /* quatation
+	===================================== */
+    #quatation_page .boxFixedSubMenuSpace+.boxContentPage .container {
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+    }
+    .boxInformationLead {
+        padding: 15px 0px;
+    }
+    .boxInformationLead .boxListField {
+        display: block;
+    }
+    .boxInformationLead .oneField {
+        display: block;
+        padding: 0px;
+        white-space: normal;
+    }
+    .boxInformationLead hr {
+        margin: 10px 0px;
+    }
+    .mainContainer .boxContentPage .titleContentPage1 {
+        font-size: 35px;
+        line-height: 32px;
+        padding: 20px 0px 15px;
+    }
+    #quatation_page .bgPaperShadow {
+        margin: 0px !important;
+    }
+    #quatation_page .bgPaperShadow .contentPaperShadow2 {
+        padding: 0px 0px 20px 0px;
+    }
+    #quatation_page .bgPaperShadow .contentPaper {
+        padding: 0px 0px 20px 0px;
+    }
+    .boxActionForm-xs_1 {
+        padding: 10px 0px !important;
+    }
+    .boxActionForm-xs_1 .boxActionRight li {
+        margin: 0px;
+        padding: 0px 15px;
+    }
+    .boxActionForm-xs_1 .boxActionLeft li {
+        margin: 0px;
+        padding: 0px 15px;
+    }
+    .xs-li-w50p li {
+        width: 50%;
+        float: left !important;
+        margin: 0px !important;
+        padding: 0px 5px 5px 5px !important;
+    }
+    .xs-li-w50p li [class*=btn-] {
+        min-width: 40px;
+        height: 40px;
+        line-height: 40px;
+        font-size: 25px;
+    }
+    .xs-li-w100p {}
+    .boxActionLeft.xs-li-w100p {
+        border-top: 1px solid rgba(255, 255, 255, 0.3);
+        margin-top: 10px !important;
+        padding-top: 10px !important;
+    }
+    .xs-li-w100p li {
+        margin: 0px !important;
+        padding: 0px 15px 5px 15px;
+    }
+    .xs-li-w100p li [class*=btn-] {
+        width: 100% !important;
+        margin: 0px auto;
+    }
+    .xs-li-w100p .btnCalculateTax [class^=icon-] {
+        display: inline-block;
+        position: relative;
+        top: 8px;
+        height: 40px;
+    }
+    .xs-li-w100p .btnCalculateTax b {
+        display: inline-block;
+        width: auto;
+        height: 53px;
+        font-weight: normal;
+        text-align: center;
+        padding-left: 0px;
+        margin: 0px auto;
+    }
+    .boxActionForm .btnCalculateTax b u {
+        display: inline-block;
+        height: 53px;
+        line-height: 53px;
+    }
+    .boxQuatationTable1 {}
+    .boxQuatationTable1 table {
+        display: block;
+    }
+    .boxQuatationTable1 table thead {
+        display: block;
+        height: 0px;
+        overflow: hidden;
+        border-top: 4px solid #1BAAEA;
+    }
+    .boxQuatationTable1 table tbody {
+        display: block;
+    }
+    .boxQuatationTable1 table tbody tr {
+        display: block;
+    }
+    .boxQuatationTable1 table tbody tr td {
+        display: block;
+        background: #fff !important;
+    }
+    .hasAccTable table tbody tr td {
+        padding: 0px !important;
+    }
+    .hasAccTable .oneAccTable {
+        margin-bottom: 1px;
+    }
+    .hasAccTable .oneAccTable .oneTitleAccTable {
+        display: table;
+        width: 100%;
+        background: #F5F9FA;
+        color: #1486C5;
+    }
+    .hasAccTable .oneAccTable .oneTitleAccTable .boxLeft {
+        display: table-cell;
+        padding: 15px 2px 15px 35px;
+        position: relative;
+    }
+    .hasAccTable .oneAccTable .oneTitleAccTable .boxLeft:before {
+        display: block;
+        content: "\e00e";
+        position: absolute;
+        left: 11px;
+        top: 19px;
+        font-size: 20px;
+        font-family: "tl-prompt";
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        speak: none;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    .hasAccTable .oneAccTable .oneTitleAccTable .boxRight {
+        display: table-cell;
+        text-align: right;
+        padding: 15px 15px 15px 2px;
+    }
+    .hasAccTable .oneAccTable .oneDetailAccTable {
+        display: none;
+        font-size: 23px;
+        padding: 5px 5px 15px 0px;
+    }
+    .hasAccTable .oneAccTable .oneDetailAccTable .rowDetailAccTable {
+        display: table;
+        width: 100%;
+    }
+    .hasAccTable .oneAccTable .oneDetailAccTable .rowDetailAccTable .boxLeft {
+        display: table-cell;
+        padding: 0px 2px 0px 15px;
+    }
+    .hasAccTable .oneAccTable .oneDetailAccTable .rowDetailAccTable .boxRight {
+        display: table-cell;
+        text-align: right;
+        padding: 0px 15px 0px 2px;
+    }
+    .hasAccTable .oneAccTable.action .oneTitleAccTable .boxLeft:before {
+        content: "\e007";
+    }
+    .hasAccTable .oneAccTable.action .oneDetailAccTable {
+        display: block;
+    }
+    .box2ColPage {
+        display: block;
+        position: relative;
+    }
+    .box2ColPage .box2ColLeft {
+        display: none !important;
+        float: none;
+        width: 100%;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        background: #F5F5F7;
+        z-index: 5;
+        padding: 0px;
+    }
+    .box2ColPage .box2ColLeft .boxTitleListQuickAcc {
+        display: block;
+        padding: 15px 10px 15px 73px;
+        height: 56px;
+        font-size: 30px;
+    }
+    .box2ColPage .box2ColLeft .boxTitleListQuickAcc .btnToggleAccMenu {
+        display: block;
+    }
+    .box2ColPage .box2ColLeft .boxListQuickAcc {
+        display: none;
+        background: #fff;
+        /*padding: 10px 10px 15px 20px;*/
+        padding: 10px 30px 20px 60px;
+        position: absolute;
+        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+        max-width: 320px;
+    }
+    .box2ColPage .box2ColLeft .boxListQuickAcc.action {
+        display: block;
+    }
+    .box2ColPage .box2ColRight {
+        float: none;
+        width: 100%;
+    }
+    .box2ColPage .box2ColRight .bgPaperShadow .contentPaperShadow2 {
+        padding-top: 1px !important;
+        padding-bottom: 1px !important;
+    }
+    .box2ColPage .box2ColRight .boxListAcc .oneAcc {
+        display: block !important;
+        margin-bottom: 1px;
+    }
+    .box2ColPage .box2ColRight .boxListAcc .oneAcc .titleAcc {
+        padding: 20px 0px 15px;
+        background: #1BAAEA;
+        color: #fff;
+        cursor: pointer;
+    }
+    .box2ColPage .box2ColRight .boxListAcc .oneAcc .titleAcc .subTitleAcc {
+        color: rgba(255, 255, 255, 0.8);
+    }
+    .box2ColPage .box2ColRight .boxListAcc .oneAcc .titleAcc:after {
+        display: block;
+        content: "\5c";
+        font-family: "tl-prompt";
+        font-size: 24px;
+        color: #fff;
+        position: absolute;
+        right: 20px;
+        top: 22px;
+    }
+    .box2ColPage .box2ColRight .boxListAcc .oneAcc .contentAcc {
+        display: none !important;
+    }
+    .box2ColPage .box2ColRight .boxListAcc .oneAcc.action .contentAcc {
+        display: block !important;
+    }
+    .box2ColPage .box2ColRight .boxListAcc .oneAcc.action .titleAcc:after {
+        content: "\e001";
+    }
+    .box2ColPage .box2ColRight .boxListAcc .oneAcc.disable .titleAcc {
+        background: #F5F9FA;
+        color: #999;
+        cursor: inherit;
+    }
+    .box2ColPage .box2ColRight .boxListAcc .oneAcc.disable .titleAcc:after {
+        color: #999;
+    }
+    .box2ColPage .box2ColRight .boxListAcc .oneAcc.disable .titleAcc .subTitleAcc {
+        color: rgba(153, 153, 153, 0.8);
+    }
+    .box2ColPage .box2ColRight .boxListAcc .oneAcc.disable .contentAcc {
+        display: none !important;
+    }
+    .boxAccGroup .contentPaperShadow2 {
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+    }
+    .boxAccGroup.box2ColPage .box2ColRight .boxListAcc .oneAcc .titleAcc {
+        padding-left: 20px !important;
+        padding-right: 50px !important;
+    }
+    .boxAccGroup.box2ColPage .box2ColRight .boxListAcc .oneAcc .contentAcc {
+        padding: 10px !important;
+    }
+    .boxListAcc .oneAcc .titleAcc .subTitleAcc:after {
+        display: none !important;
+    }
+    .boxBannerGraph {
+        display: block;
+        width: auto;
+        margin: 0px 10px;
+    }
+    .bgPaperShadow .boxBenefit .boxContentBenefit {
+        padding: 0px 20px 0px 65px;
+    }
+    .formInformationLead [class*=col-sw-] {
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+    }
+    #boxFixedFooterMenu {
+        display: none !important;
+    }
+    .xs-filter-mgAuto .oneFilter {
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+        display: block;
+    }
+    .xs-filter-mgAuto .oneFilter .label {
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+        padding-right: 0px !important;
+    }
+    .xs-filter-mgAuto .oneFilter .form-group {
+        float: none;
+        display: inline-block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .boxSearchPlanInsurance .boxSelectPlan {
+        padding-left: 0px;
+        padding-right: 0px;
+        height: auto;
+    }
+    .boxSearchPlanInsurance .boxSelectPlan .areaLeft {
+        display: block;
+        position: relative;
+        width: 100%;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    }
+    .boxSearchPlanInsurance .boxSelectPlan .btnFavorite {
+        top: auto;
+        bottom: 0px;
+    }
+    .boxSearchPlanInsurance .boxSelectPlan .boxDropdownPlan {
+        padding-right: 40px;
+    }
+    .boxListTabStyle1.xs-has-select .oneTab {
+        display: none;
+        width: 100%;
+        font-size: 27px;
+    }
+    .boxListTabStyle1.xs-has-select.showSelect .oneTab {
+        display: block;
+        background: #fff;
+    }
+    .boxListTabStyle1.xs-has-select.showSelect .oneTab.action:after {
+        display: none;
+    }
+    .boxListTabStyle1.xs-has-select .btnShowSelect {
+        display: block;
+        cursor: pointer;
+        position: relative;
+        padding: 0px 20px;
+        height: 75px;
+        white-space: nowrap;
+        line-height: 75px;
+        font-size: 27px;
+        text-decoration: none;
+        color: #1484C6;
+    }
+    .boxListTabStyle1.xs-has-select .btnShowSelect:before {
+        display: block;
+        content: '';
+        width: 27px;
+        height: 15px;
+        position: absolute;
+        left: 50%;
+        bottom: -2px;
+        margin-left: -14px;
+        overflow: hidden;
+        background: url(../img/icon/tabActionStyle1.png) no-repeat left top;
+    }
+    .boxListTabStyle1.xs-has-select .btnShowSelect:after {
+        display: inline-block;
+        font-size: 22px;
+        position: relative;
+        top: 5px;
+        left: 5px;
+        content: "\e00e";
+        font-family: "tl-prompt";
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        speak: none;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    .boxListTabStyle1.xs-has-select.showSelect .btnShowSelect {
+        display: none;
+    }
+    .xs-tableFixDetail1 {
+        font-size: 20px;
+    }
+    .xs-tableFixDetail1 .btnBackCol {
+        display: block;
+        position: absolute;
+        left: 7px;
+        top: 50%;
+        margin-top: -10px;
+        height: auto;
+        text-decoration: none !important;
+        color: #fff;
+        cursor: pointer;
+    }
+    .xs-tableFixDetail1 .btnNextCol {
+        display: block;
+        position: absolute;
+        right: 7px;
+        top: 50%;
+        margin-top: -10px;
+        height: atuo;
+        text-decoration: none !important;
+        color: #fff;
+        cursor: pointer;
+    }
+    .xs-tableFixDetail1 .btnBackColDisable {
+        display: block;
+        position: absolute;
+        left: 7px;
+        top: 50%;
+        margin-top: -10px;
+        height: auto;
+        text-decoration: none !important;
+        color: #fff;
+        cursor: pointer;
+        opacity: 0.3;
+    }
+    .xs-tableFixDetail1 .btnNextColDisable {
+        display: block;
+        position: absolute;
+        right: 7px;
+        top: 50%;
+        margin-top: -10px;
+        height: atuo;
+        text-decoration: none !important;
+        color: #fff;
+        cursor: pointer;
+        opacity: 0.3;
+    }
+    .xs-tableFixDetail1 table thead tr th {
+        display: none;
+        position: relative;
+        padding-left: 30px;
+        padding-right: 30px;
+        width: 40%;
+        font-size: 23px;
+    }
+    .xs-tableFixDetail1 table tbody tr td {
+        display: none;
+        position: relative;
+        padding-left: 30px;
+        padding-right: 30px;
+        background: #EBF8FF;
+    }
+    .xs-tableFixDetail1 table tbody tr:nth-child(2n) td {
+        background: #E3F1FA;
+    }
+    .xs-tableFixDetail1 table thead tr th:nth-child(1) {
+        display: table-cell;
+        width: 60%;
+    }
+    .xs-tableFixDetail1 table tbody tr td:nth-child(1) {
+        display: table-cell;
+        background: #FFFFFF;
+    }
+    .xs-tableFixDetail1 table tbody tr:nth-child(2n) td:nth-child(1) {
+        background: #F5F9FA;
+    }
+    .xs-tableFixDetail1 table.viewCol-2 thead tr th:nth-child(2) {
+        display: table-cell;
+    }
+    .xs-tableFixDetail1 table.viewCol-2 tbody tr td:nth-child(2) {
+        display: table-cell;
+    }
+    .xs-tableFixDetail1 table.viewCol-3 thead tr th:nth-child(3) {
+        display: table-cell;
+    }
+    .xs-tableFixDetail1 table.viewCol-3 tbody tr td:nth-child(3) {
+        display: table-cell;
+    }
+    .xs-tableFixDetail1 table.viewCol-4 thead tr th:nth-child(4) {
+        display: table-cell;
+    }
+    .xs-tableFixDetail1 table.viewCol-4 tbody tr td:nth-child(4) {
+        display: table-cell;
+    }
+    .xs-tableFixDetail1 table.viewCol-5 thead tr th:nth-child(5) {
+        display: table-cell;
+    }
+    .xs-tableFixDetail1 table.viewCol-5 tbody tr td:nth-child(5) {
+        display: table-cell;
+    }
+    .xs-tableFixDetail1 table.viewCol-6 thead tr th:nth-child(6) {
+        display: table-cell;
+    }
+    .xs-tableFixDetail1 table.viewCol-6 tbody tr td:nth-child(6) {
+        display: table-cell;
+    }
+    .xs-tableFixDetail1 table.viewCol-7 thead tr th:nth-child(7) {
+        display: table-cell;
+    }
+    .xs-tableFixDetail1 table.viewCol-7 tbody tr td:nth-child(7) {
+        display: table-cell;
+    }
+    .xs-tableInsurance1 {}
+    .xs-tableInsurance1 table {
+        display: block;
+    }
+    .xs-tableInsurance1 table thead {
+        display: block;
+    }
+    .xs-tableInsurance1 table thead tr {
+        display: block;
+    }
+    .xs-tableInsurance1 table thead tr th {
+        display: block;
+    }
+    .xs-tableInsurance1 table tbody {
+        display: block;
+    }
+    .xs-tableInsurance1 table tbody tr {
+        display: block;
+    }
+    .xs-tableInsurance1 table tbody tr:after {
+        display: block;
+        content: '';
+        clear: both;
+        height: 0px;
+        overflow: hidden;
+    }
+    .xs-tableInsurance1 table tbody tr td {
+        display: block;
+    }
+    .xs-tableInsurance1 table tbody tr td:first-child {
+        padding-top: 15px;
+        padding-bottom: 15px;
+        background-color: #E3F1FA;
+    }
+    .xs-tableInsurance1 table tbody tr td:last-child {
+        padding-bottom: 15px;
+    }
+    .xs-tableInsurance1 table tbody tr td:after {
+        display: block;
+        content: '';
+        clear: both;
+        height: 0px;
+        overflow: hidden;
+    }
+}
+
+@media (max-width: 479px) {
+    /* 
+	login ====================================== */
+    #login_page .boxFormLogin .formLogin .bg-style li {
+        margin: 0px 20px;
+    }
+    #login_page .boxFormLogin .formLogin .bg-style .intxt-style {
+        font-size: 21px;
+    }
+    /* 
+	lead-register page ====================================== */
+    #lead_register_page .boxCardId .boxInput .btnCheckCardId {
+        margin-top: 8px;
+        margin-left: 18px;
+        width: 222px;
+    }
+}

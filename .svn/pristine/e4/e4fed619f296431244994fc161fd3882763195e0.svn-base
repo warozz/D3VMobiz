@@ -1,0 +1,33 @@
+<!-- Generated template for the PopupTableComponent component -->
+<div class="modal">
+    <a class="fancybox-close" href="javascript:void(0)" (click)="close()"></a>
+
+    <h1 *ngIf="data.title != null" class="modal-title" style="font-size: 28px;">
+        <i [ngClass]="data.icon"></i>
+        <span [innerHtml]="data.title"></span>
+    </h1>
+    <div class="modal-body" style="height: calc(100% - 100px); margin: 10px 0px;">
+        <div *ngIf="data.content != null">
+            <h1 [innerHtml]="data.content"></h1>
+        </div>
+        <div *ngIf="(data.tableBody != null && data.tableBody.length > 0) || (data.tableHeader != null && data.tableHeader.length > 0)" style="overflow-y: auto; height: 100%">
+          <div class="boxTableStyle3 hasAccTable table-bdb0">
+              <table>
+                <thead>
+                  <tr *ngFor="let items of data.tableHeader">
+                    <th *ngFor="let item of items" [innerHtml]="item"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let items of data.tableBody">
+                    <td *ngFor="let item of items" [innerHtml]="item" [ngClass]="data.tableBodyClass"></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer" *ngIf="data.footer != undefined">
+        <p [innerHtml]="data.footer" [ngClass]="data.footerClass"></p>
+    </div>
+</div>

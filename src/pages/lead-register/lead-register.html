@@ -1,0 +1,174 @@
+<ion-header header></ion-header>
+
+<ion-content>
+    <div id="lead_register_page" class="mainContainer">
+        <title-page>ผู้มุ่งหวัง</title-page>
+
+        <div class="boxContentPage">
+            <div class="container">
+                <div class="bgPaperShadow">
+                    <div class="contentPaperShadow">
+                        <div class="boxCardId">
+                            <label>เลขที่บัตรประชาชน : </label>
+                            <div class="boxInput">
+                                <input id="tx_id" name="tx_id" type="text" value="" placeholder="0000000000000" />
+                                <button class="btnCheckCardId" type="button"><span>ตรวจสอบเลขที่บัตรประชาชน</span></button>
+                            </div>
+                        </div>
+
+                        <div class="boxListForm">
+                            <div class="col-md-4">
+                                <div class="col-sm-5 pdl0 txt-sm-right lh-form-control ws-nowrap">คำนำหน้า :</div>
+                                <div class="col-sm-7 pdlr0">
+                                    <!--
+                                    <div class="form-group hasSelect">
+                                        <select id="dp_title" name="dp_title" class="form-control">
+                                      <option value="" hidden>คำนำหน้า</option>
+                                      <option value="นาย">นาย</option>
+                                      <option value="นาง">นาง</option>
+                                      <option value="นางสาว">นางสาว</option>
+                                  </select>
+                                    </div>
+                                    -->
+                                    <prefix-name></prefix-name>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="col-sm-5 pdl0 txt-sm-right lh-form-control ws-nowrap">ชื่อ :</div>
+                                <div class="col-sm-7 pdlr0">
+                                    <div class="form-group">
+                                        <input id="dp_name" name="dp_name" class="form-control" type="text" value="" placeholder="ชื่อ" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="col-sm-5 pdl0 txt-sm-right lh-form-control ws-nowrap">นามสกุล :</div>
+                                <div class="col-sm-7 pdlr0">
+                                    <div class="form-group">
+                                        <input id="tx_surname" name="tx_surname" class="form-control" type="text" value="" placeholder="นามสกุล" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="col-sm-5 pdl0 txt-sm-right lh-form-control ws-nowrap">เพศ :</div>
+                                <div class="col-sm-7 pdlr0">
+                                    <div class="form-group hasSelect">
+                                        <select id="dp_sex" name="dp_sex" class="form-control">
+                                      <option value="" hidden>เพศ</option>
+                                      <option value="ชาย">ชาย</option>
+                                      <option value="หญิง">หญิง</option>
+                                  </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="col-sm-5 pdl0 txt-sm-right lh-form-control ws-nowrap">ระบุวันเกิด :</div>
+                                <div class="col-sm-7 pdlr0">
+                                    <div class="form-group hasIcon">
+                                        <input id="dp_birthdate" name="dp_birthdate" type='text' class="form-control js_pickadate" value="" placeholder="วัน เดือน ปี" />
+                                        <i class="icon-calendar"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="col-sm-5 pdl0 txt-sm-right lh-form-control ws-nowrap">อายุ :</div>
+                                <div class="col-sm-7 pdlr0">
+                                    <div class="form-group">
+                                        <input id="tx_age" name="tx_age" class="form-control" type="text" value="" placeholder="00" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="col-sm-5 pdl0 txt-sm-right lh-form-control ws-nowrap">อาชีพ :</div>
+                                <div class="col-sm-7 pdlr0">
+                                    <div class="form-group hasSelect">
+                                        <select id="dp_ccupation" name="dp_ccupation" class="form-control">
+                                      <option value="" hidden>เลือก</option>
+                                      <option value="Designer">Designer</option>
+                                      <option value="Programmer">Programmer</option>
+                                      <option value="Other">Other</option>
+                                  </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="col-sm-5 pdl0 txt-sm-right lh-form-control ws-nowrap">กรุณากรอก อาชีพ :</div>
+                                <div class="col-sm-7 pdlr0">
+                                    <div class="form-group">
+                                        <input id="dp_ccupation_other" name="dp_ccupation_other" class="form-control" type="text" value="" placeholder="กรุณากรอก อาชีพ" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="col-sm-5 pdl0 txt-sm-right lh-form-control ws-nowrap">ขั้นอาชีพ :</div>
+                                <div class="col-sm-7 pdlr0">
+                                    <div class="form-group hasSelect">
+                                        <select id="dp_jobStages" name="dp_jobStages" class="form-control">
+                                      <option value="" hidden>0</option>
+                                      <option value="1">1</option>
+                                      <option value="2">2</option>
+                                  </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="col-sm-5 pdl0 txt-sm-right lh-form-control ws-nowrap">เบอร์ติดต่อ :</div>
+                                <div class="col-sm-7 pdlr0">
+                                    <div class="form-group">
+                                        <input id="tx_tel" name="tx_tel" class="form-control" type="text" value="" placeholder="0000000000" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="col-sm-5 pdl0 txt-sm-right lh-form-control ws-nowrap">อีเมล :</div>
+                                <div class="col-sm-7 pdlr0">
+                                    <div class="form-group">
+                                        <input id="tx_mail" name="tx_mail" class="form-control" type="text" value="" placeholder="example@example.com" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="col-sm-5 pdl0 txt-sm-right lh-form-control ws-nowrap">Line ID :</div>
+                                <div class="col-sm-7 pdlr0">
+                                    <div class="form-group">
+                                        <input id="dp_line" name="dp_line" class="form-control" type="text" value="" placeholder="ID000000" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="col-sm-5 pdl0 txt-sm-right lh-form-control ws-nowrap">Link Facebook :</div>
+                                <div class="col-sm-7 pdlr0">
+                                    <div class="form-group">
+                                        <input id="tx_facebook" name="tx_facebook" class="form-control" type="text" value="" placeholder="http://www.facebook.com/username" />
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="boxBlue txt-center">
+                <div class="container">
+                    <button id="bt_save" class="btnSaveLeadRegister btn-style2" type="button"><span><i class="icon-save-file-option"></i> บันทึก</span></button>
+                    <button id="bt_restart" class="btn-style3" type="button"><span><i class="icon-reload"></i> เริ่มใหม่</span></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer footer></footer>
+</ion-content>

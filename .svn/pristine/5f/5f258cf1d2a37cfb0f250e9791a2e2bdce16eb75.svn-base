@@ -1,0 +1,18 @@
+<div class="boxContentPage bgBlue3 hasBgImg bgImg95">
+    <div class="container">
+        <div class="bgPaperShadow mgt25">
+            <div class="contentPaperShadow pd20">
+                <div>
+                    <h1 class="base-line fs30 mg0 c-blue">ผลการรับประกัน</h1>
+                </div>
+                <br>
+                <div class="boxCardId txt-center">
+                    <div class="divHead pdt5 pdb5">
+                        <h1 class="fontHead">ผลการพิจารณาเอกสาร</h1>
+                    </div>
+                    <h2 class="c-blue font25 pdt5 pdb5">ใบคำขอนี้ผ่านการพิจารณารับประกัน กรุณาชำระเงิน โดยกดปุ่ม ถัดไป" และปุ่มถัดไปจะ Active</h2>
+                    <h2 class="c-red font25 pdt5 pdb5">ติดต่อสอบถาม หรือติดตามการพิจาณาได้ที่ ศูนย์บริการข้อมูลและทบทวนการรับประกัน โทร. 023069292</h2>
+                </div>
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,23 @@
+popup-example-benefit {
+  @media only screen and (min-width: 768px) and (min-height: 600px) {
+    @at-root .benefitView {
+        .modal-wrapper {
+            left: calc(10%);
+            top: calc(10%);
+            position: absolute;
+            width: 80%;
+            height: 80%
+        }
+    }
+}
+  .benefit-title {
+    color: #007ac2;
+  }
+  .benefit-content {
+    color: #666666 !important;
+    height: 60%;
+    overflow: auto;
+    .header { color: #007ac2; }
+    .float-right { text-align: right; }
+  }
+}

@@ -1,0 +1,40 @@
+popup-app-ulink {
+    .popup-style1 {
+        height: 100%;
+        width: 100%;
+        border-radius: 0px;
+        .boxNewUpdate {
+            margin: 0px;
+            height: 100%;
+            padding-bottom: 50px;
+            .scrollbar-inner {
+                height: 100%;
+                p {
+                    font-size: $font-md;
+                    margin: 12px auto;
+                }
+                position: relative;
+            }
+        }
+    }
+    .item-checkbox {
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .item.item-md .checkbox-md {
+        margin-right: 15px;
+    }
+    .c-blue {
+        font-size: $font-xl;
+    }
+    .scroll-content {
+        overflow: hidden;
+    }
+    .padding-r20 {
+        padding-right: 20px;
+    }
+    .item-md.item-block .item-inner {
+        border-bottom: 0px;
+    }
+}

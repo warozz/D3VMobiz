@@ -1,0 +1,76 @@
+<div class="modal">
+    <i class="close" (click)="close()"></i>
+
+    <div class="modal-title benefit-title">
+        <h1>รายละเอียดข้อมูลตัวอย่างผลประโยชน์</h1>
+    </div>
+
+    <div class="modal-body benefit-content">
+        <div class="scrollbar-inner">
+            <div class="boxQuatationView">
+                <div class="boxTableStyle2 td_pd-2-15">
+                    <div class="row">
+                        <div class="col-md-3 float-right">วันที่บันทึก:</div>
+                        <div class="col-md-9">{{ benefit.issuedate }} น.</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 header">ข้อมูลผู้มุ่งหวัง</div>
+                        <div class="col-md-3 float-right">ชื่อ-นามสกุล:</div>
+                        <div class="col-md-9">
+                            <div class="row">
+                                <div class="col-md-5">{{prospect.preName}} {{prospect.firstName}} {{prospect.lastName}}</div>
+                                <div class="col-md-2">อายุ: {{prospect.age}} ปี</div>
+                                <div class="col-md-2">เพศ: {{prospect.gender === 'F' ? 'หญิง' : 'ชาย'}}</div>
+                                <div class="col-md-3">ชั้นอาชีพ: {{prospect.occupationType}}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 header">การนำเสนอ</div>
+                        <div class="col-md-3 float-right">แบบประกัน:</div>
+                        <div class="col-md-9">{{ benefit.benefitname}}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3 float-right">แผน:</div>
+                        <div class="col-md-9">{{benefit.plancode}}</div>
+                    </div>
+                    <div *ngIf="benefit.benefitname == 'educate'" class="row">
+                        <div class="col-md-3 float-right">ข้อมูลบุตรในอุปการะ:</div>
+                        <div class="col-md-9">
+                            {{benefit.examplechild.pname}} {{benefit.examplechild.fname}} {{benefit.examplechild.lname}} อายุ {{benefit.examplechild.agestart}} ปี เพศ {{benefit.examplechild.sex === 'F' ? 'หญิง' : 'ชาย'}} ต้องการความคุ้มครองถึงอายุ {{benefit.examplechild.ageend}}
+                            ปี
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3 float-right">การชำระเบี้ย:</div>
+                        <div class="col-md-9">
+                            <div class="col-md-12" *ngFor="let pay of benefit.listExamplepay">
+                                อายุ {{pay.agestart}} ปี RPP {{pay.premiumrpp}} บาท RSP {{pay.premiumrsp}} บาท TOP UP {{pay.premiumtop}} บาท
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3 float-right">อัตาผลตอบแทน:</div>
+                        <div class="col-md-9">
+                            <div class="col-md-12" *ngFor="let profit of benefit.listExampleprofit">
+                                อายุ {{profit.agestart}} ปี ผลตอบแทน {{profit.ratebenefit}} %
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3 float-right">การถอนบางส่วน:</div>
+                        <div class="col-md-9">
+                            <div class="col-md-12" *ngFor="let exampleWithDraw of benefit.listExamplewithdraw">
+                                การถอนเงินทุก x ปี ครั้งละ xxx,xxx บาท/ปี อายุ xx-xx ปี ปีกรมธรรม์ที่ x-x
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-footer txt-center">
+        <a class="btn-style4"><span><i class="icon-edit-interface-symbol"></i> แก้ไขข้อมูล</span></a>
+    </div>
+</div>

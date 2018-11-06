@@ -1,0 +1,12 @@
+<div class="boxSelectPlan" [ngClass]="{'pdl0': label == ''}">
+    <a class="areaLeft" (click)="popup()" *ngIf="label != ''">
+        <i [ngClass]="icon"></i> {{ label }}
+    </a>
+    <div class="boxDropdownPlan" (click)="_disabled ? '' : showListOption = !showListOption">
+        <div class="txtView" [ngClass]="{'no-selected': text == '', 'disabled': _disabled}">{{ text != '' ? text : placeholder }}</div>
+        <div class="listOption" *ngIf="showListOption">
+            <a class="oneOption" *ngFor="let item of optionArray" [ngClass]="{'mark': item.classMark}" (click)="select(item.text, item.value)">{{ item.text }}</a>
+        </div>
+    </div>
+    <a class="btnFavorite"><i class="icon-"></i></a>
+</div>

@@ -1,0 +1,6 @@
+<div class="form-group form-style3 hasSelect">
+    <select name="sector" class="form-control" [(ngModel)]="data" (change)="selectRegion()">
+        <option value="" >เลือกภาค</option>
+        <option [attr.value]="item.regionId" *ngFor="let item of dlRegion.datas">{{ item.regionName }}</option>
+    </select>
+</div>

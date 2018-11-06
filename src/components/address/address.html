@@ -1,0 +1,9 @@
+<input [ngModel]="addressText" class="form-control" (focus)="onFocus();" (blur)="onBlur()" (ngModelChange)="addressTextChamge($event);" (keydown)="keyDown($event)" maxlength="30" NumberCharacterOnly [attr.disabled]="_disabled ? '' : null" />
+<div class="address-auto-complete" [ngClass]="{'hide':!isShowAutoComplete}">
+    <ul class="address-auto-complete-list">
+        <li *ngFor="let address of displayAddresses; let i = index" (click)="selectAddress(address)" [ngClass]="{'active':i==arrowkeyLocation}">
+            {{address.tambon_name}} {{address.amphur_name}} {{address.province_name}} {{address.zip}}
+
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,38 @@
+<!-- ประสบการณ์การลงทุน -->
+<div class="boxContentPage">
+        <div class="container">
+                <div class="boxActionForm txt-center">
+                        <div class="form-group">
+                                <label class="boxComment2">ท่านเคยมีประสบการณ์ หรือมีความรู้ในการลงทุนในทรัพย์สินกลุ่มใดต่อไปนี้บ้าง (เลือกได้มากกว่า 1 ข้อ) <span class="required"></span> <span class="required"></span> <span class="required"></span> <span class="required"></span></label>
+                                <div class="row row-center">
+                                        <ion-grid>
+                                        <ion-row> 
+                                        <ion-col col-11 col-sm-4 text-left>
+                                        <input id="deposit" class="check-style2" type="checkbox" [(ngModel)]="ulinkCheckbox.deposit" (change)="onChange($event)" [checked]="ulinkCheckbox.deposit"/>
+                                        <label for="deposit" [ngClass]="[unitlinkData.flagValidUlinkExpreiene ? 'border-red' : '']">เงินฝากธนาคาร</label>
+
+                                        </ion-col>
+                                        <ion-col col-11 col-sm-6 text-left>
+                                        <input id="governmentbonds" class="check-style2" type="checkbox"  [(ngModel)]="ulinkCheckbox.governmentbonds" (change)="onChange($event)" [checked]="ulinkCheckbox.governmentbonds"/>
+                                        <label for="governmentbonds" [ngClass]="[unitlinkData.flagValidUlinkExpreiene ? 'border-red' : '']">พันธบัตรรัฐบาล หรือกองทุนรวมพันธบัตรรัฐบาล</label>
+
+                                        </ion-col>
+                                        </ion-row>
+                                        <ion-row>
+                                        <ion-col col-11 col-sm-4 text-left>
+                                        <input id="fixedincome" class="check-style2" type="checkbox" [(ngModel)]="ulinkCheckbox.fixedincome" (change)="onChange($event)" [checked]="ulinkCheckbox.fixedincome"/>
+                                        <label for="fixedincome" [ngClass]="[unitlinkData.flagValidUlinkExpreiene ? 'border-red' : '']"> หุ้นกู้ หรือกองทุนรวมตราสารหนี้</label>
+
+                                        </ion-col>
+                                        <ion-col col-11 col-sm-6 text-left>
+                                        <input id="stock" class="check-style2" type="checkbox"  [(ngModel)]="ulinkCheckbox.stock" (change)="onChange($event)" [checked]="ulinkCheckbox.stock"/>
+                                        <label for="stock" [ngClass]="[unitlinkData.flagValidUlinkExpreiene ? 'border-red' : '']"> หุ้นสามัญ หรือกองทุนรวมหุ้น หรือสินทรัพย์อื่นที่มีความเสี่ยงสูง</label>
+
+                                        </ion-col>
+                                        </ion-row>
+                                        </ion-grid>
+                                </div>  
+                        </div>
+                </div>
+        </div>
+</div>

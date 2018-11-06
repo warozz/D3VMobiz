@@ -1,0 +1,439 @@
+<tabs (change)="changeTabs($event)">
+    <tab *ngFor="let item of tabsPage;let i = index" id="quatationTab_plan{{i}}" [tabTitle]="item.title" [tabIcon]="item.icon" [disabled]="item.disabled">
+        <div class="boxContentPage bgBlue2" *ngIf="i == 1">
+            <div class="container">
+                <div class="quatation-dropdown">
+                    <div class="row">
+                        <h2 class="col-lg-1 col-md-2 col-sm-2 col-xs-12">ค้นหาจาก</h2>
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                            <!--
+                                <ion-item class="form-control">
+                                    <ion-label></ion-label>
+                                    <ion-select placeholder="กรุณาเลือก" interface="popover" (ionChange)="setDropdown()" [(ngModel)]="selectVal">
+                                        <ion-option value="1">กลุ่มแบบประกัน</ion-option>
+                                        <ion-option value="2">ระยะเวลา</ion-option>
+                                        <ion-option value="3">ลดหย่อนภาษี</ion-option>
+                                        <ion-option value="4">แบบล่าสุด</ion-option>
+                                        <ion-option value="5">แบบขายดี</ion-option>
+                                    </ion-select>
+                                </ion-item>
+                            -->
+                            <dropdown placeholder="กรุณาเลือก" [(data)]="selectVal" (dataChange)="setDropdown($event)">
+                                <dropdown-option value="1">กลุ่มแบบประกัน</dropdown-option>
+                                <dropdown-option value="2">ระยะเวลา</dropdown-option>
+                                <dropdown-option value="3">ลดหย่อนภาษี</dropdown-option>
+                                <dropdown-option value="4">แบบล่าสุด</dropdown-option>
+                                <dropdown-option value="5">แบบขายดี</dropdown-option>
+                            </dropdown>
+                        </div>
+
+                        <h2 *ngIf="showDivDropdown === 'detail1'" class="col-lg-2 col-md-2 col-sm-3 col-xs-12">ประเภทความคุ้มครอง</h2>
+                        <div *ngIf="showDivDropdown === 'detail1'" class="col-lg-4 col-md-5 col-sm-4 col-xs-12">
+                            <!--
+                            <ion-item class="form-control">
+                                <ion-label></ion-label>
+                                <ion-select placeholder="กรุณาเลือก" interface="popover" (ionChange)="checkGropType()" [(ngModel)]="selectType">
+                                    <ion-option value="1">เงินออมเพื่อการเกษียณอายุ</ion-option>
+                                    <ion-option value="2">เงินออมสำหรับอนาคต</ion-option>
+                                    <ion-option value="3">การสร้างสวัสดิการ</ion-option>
+                                    <ion-option value="4">หลักประกันทุนการศึกษา</ion-option>
+                                    <ion-option value="5">หลักประกันรายได้ครอบครัว</ion-option>
+                                    <ion-option value="6">คุ้มครองสินเชื่อ</ion-option>
+                                    <ion-option value="7">ประกันเพื่อสมาชิก กบข.</ion-option>
+                                    <ion-option value="8">ประกันพิเศษ</ion-option>
+                                </ion-select>
+                            </ion-item>
+                            -->
+                            <dropdown placeholder="กรุณาเลือก" [(data)]="selectType" (dataChange)="checkGropType($event)">
+                                <dropdown-option value="1">เงินออมเพื่อการเกษียณอายุ</dropdown-option>
+                                <dropdown-option value="2">เงินออมสำหรับอนาคต</dropdown-option>
+                                <dropdown-option value="3">การสร้างสวัสดิการ</dropdown-option>
+                                <dropdown-option value="4">หลักประกันทุนการศึกษา</dropdown-option>
+                                <dropdown-option value="5">หลักประกันรายได้ครอบครัว</dropdown-option>
+                                <dropdown-option value="6">คุ้มครองสินเชื่อ</dropdown-option>
+                                <dropdown-option value="7">ประกันเพื่อสมาชิก กบข.</dropdown-option>
+                                <dropdown-option value="8">ประกันพิเศษ</dropdown-option>
+                            </dropdown>
+                        </div>
+
+                        <div *ngIf="showDivDropdown === 'detail2'" class="hidden-lg hidden-xs col-md-6 col-sm-6"></div>
+                        <h2 *ngIf="showDivDropdown === 'detail2'" class="col-lg-1 col-md-2 col-sm-2 col-xs-12">การชำระเบี้ย</h2>
+                        <div *ngIf="showDivDropdown === 'detail2'" class="col-md-3 col-sm-4 col-xs-12">
+                            <!--
+                            <ion-item class="form-control">
+                                <ion-label>
+                                </ion-label>
+                                <ion-select placeholder="กรุณาเลือก" interface="popover" (ionChange)="getPay()" [(ngModel)]="selectPay">
+                                    <ion-option value="1">ไม่ระบุเงื่อนไข</ion-option>
+                                    <ion-option value="2">ระยะสั้นน้อยกว่า 10 ปี</ion-option>
+                                    <ion-option value="3">ระยะปานกลาง 10-20 ปี</ion-option>
+                                    <ion-option value="4">ระยะยาวมากกว่า 20 ปี</ion-option>
+                                    <ion-option value="5">ตลอดชีพ</ion-option>
+                                </ion-select>
+                            </ion-item>
+                            -->
+                            <dropdown placeholder="กรุณาเลือก" [(data)]="selectPay" (dataChange)="getPay($event)">
+                                <dropdown-option value="1">ไม่ระบุเงื่อนไข</dropdown-option>
+                                <dropdown-option value="2">ระยะสั้นน้อยกว่า 10 ปี</dropdown-option>
+                                <dropdown-option value="3">ระยะปานกลาง 10-20 ปี</dropdown-option>
+                                <dropdown-option value="4">ระยะยาวมากกว่า 20 ปี</dropdown-option>
+                                <dropdown-option value="5">ตลอดชีพ</dropdown-option>
+                            </dropdown>
+                        </div>
+
+                        <h2 *ngIf="selectPay !== '' && selectVal === '2'" class="col-lg-1 col-md-2 col-sm-2 col-xs-12">ความคุ้มครอง</h2>
+                        <div *ngIf="selectPay !== '' && selectVal === '2'" class="col-md-3 col-sm-4 col-xs-12">
+                            <!--
+                            <ion-item class="form-control">
+                                <ion-label>
+                                </ion-label>
+                                <ion-select placeholder="กรุณาเลือก" interface="popover" (ionChange)="getProtection()" [(ngModel)]="selectProtection">
+                                    <ion-option value="1">ไม่ระบุเงื่อนไข</ion-option>
+                                    <ion-option value="2">ระยะสั้นน้อยกว่า 10 ปี</ion-option>
+                                    <ion-option value="3">ระยะปานกลาง 10-20 ปี</ion-option>
+                                    <ion-option value="4">ระยะยาวมากกว่า 20 ปี</ion-option>
+                                    <ion-option value="5">ตลอดชีพ</ion-option>
+                                </ion-select>
+                            </ion-item>
+                            -->
+                            <dropdown placeholder="กรุณาเลือก" [(data)]="selectProtection" (dataChange)="getProtection($event)">
+                                <dropdown-option value="1">ไม่ระบุเงื่อนไข</dropdown-option>
+                                <dropdown-option value="2">ระยะสั้นน้อยกว่า 10 ปี</dropdown-option>
+                                <dropdown-option value="3">ระยะปานกลาง 10-20 ปี</dropdown-option>
+                                <dropdown-option value="4">ระยะยาวมากกว่า 20 ปี</dropdown-option>
+                                <dropdown-option value="5">ตลอดชีพ</dropdown-option>
+                            </dropdown>
+                        </div>
+
+                        <h2 *ngIf="showDivDropdown === 'detail3'" class="col-lg-2 col-md-2 col-sm-3 col-xs-12">การลดหย่อนภาษี</h2>
+                        <div *ngIf="showDivDropdown === 'detail3'" class="col-lg-4 col-md-5 col-sm-4 col-xs-12">
+                            <!--
+                            <ion-item class="form-control">
+                                <ion-label>
+                                </ion-label>
+                                <ion-select placeholder="กรุณาเลือก" interface="popover" (ionChange)="getTaxDeduct()" [(ngModel)]="selectTaxDeduct">
+                                    <ion-option value="1">เบี้ยประกันชีวิต</ion-option>
+                                    <ion-option value="2">เบี้ยประกันชีวิตแบบบำนาญ</ion-option>
+                                </ion-select>
+                            </ion-item>
+                            -->
+                            <dropdown placeholder="กรุณาเลือก" [(data)]="selectTaxDeduct" (dataChange)="getTaxDeduct($event)">
+                                <dropdown-option value="1">เบี้ยประกันชีวิต</dropdown-option>
+                                <dropdown-option value="2">เบี้ยประกันชีวิตแบบบำนาญ</dropdown-option>
+                            </dropdown>
+                        </div>
+
+                        <h2 *ngIf="showDivDropdown === 'detail5'" class="col-lg-2 col-md-2 col-sm-3 col-xs-12">20 อันดับแบบขายดี</h2>
+                        <div *ngIf="showDivDropdown === 'detail5'" class="col-lg-4 col-md-5 col-sm-4 col-xs-12">
+                            <!--
+                            <ion-item class="form-control">
+                                <ion-label>
+                                </ion-label>
+                                <ion-select placeholder="กรุณาเลือก" interface="popover" (ionChange)="getRegion()" [(ngModel)]="selectRegion">
+
+                                    <ion-option value="2">ภาคกลาง</ion-option>
+                                    <ion-option value="4">ภาคตะวันออก</ion-option>
+                                    <ion-option value="3">ภาคตะวันออกเฉียงเหนือ</ion-option>
+                                    <ion-option value="5">ภาคเหนือ</ion-option>
+                                    <ion-option value="6">ภาคใต้</ion-option>
+
+                                </ion-select>
+                            </ion-item>
+                            -->
+                            <dropdown placeholder="กรุณาเลือก" [(data)]="selectRegion" (dataChange)="getRegion($event)">
+                                <dropdown-option value="2">ภาคกลาง</dropdown-option>
+                                <dropdown-option value="4">ภาคตะวันออก</dropdown-option>
+                                <dropdown-option value="3">ภาคตะวันออกเฉียงเหนือ</dropdown-option>
+                                <dropdown-option value="5">ภาคเหนือ</dropdown-option>
+                                <dropdown-option value="6">ภาคใต้</dropdown-option>
+                            </dropdown>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </tab>
+
+    <!--
+    <tab id="quatationTab_plan0" [tabTitle]="tabsPage[0].title" [tabIcon]="tabsPage[0].icon" [disabled]="tabsPage[0].disabled">
+    </tab>
+    <tab id="quatationTab_plan0" [tabTitle]="tabsPage[1].title" [tabIcon]="tabsPage[1].icon" [disabled]="tabsPage[1].disabled">
+        <div class="boxContentPage bgBlue2 zIndex1">
+            <div class="container xs-pdlr0">
+                <div class="boxSearchPlanInsurance quatation-dropdown" text-center>
+                    <h2 class="col-md-1">ค้นหาจาก</h2>
+                    <div class="col-md-3 dropdownDetail">
+                        <ion-item class="form-control">
+                            <ion-label></ion-label>
+                            <ion-select placeholder="กรุณาเลือก" interface="popover" (ionChange)="setDropdown()" [(ngModel)]="selectVal">
+                                <ion-option value="1">กลุ่มแบบประกัน</ion-option>
+                                <ion-option value="2">ระยะเวลา</ion-option>
+                                <ion-option value="3">ลดหย่อนภาษี</ion-option>
+                                <ion-option value="4">แบบล่าสุด</ion-option>
+                                <ion-option value="5">แบบขายดี</ion-option>
+                            </ion-select>
+                        </ion-item>
+                    </div>
+
+                    <div *ngIf="showDivDropdown === 'detail1'"> 
+                        <h2 class="col-md-2">ประเภทความคุ้มครอง</h2>
+                        <div class="col-md-4 dropdownDetail">
+                            <ion-item class="form-control">
+                                <ion-label></ion-label>
+                                <ion-select placeholder="กรุณาเลือก" (ionChange)="checkGropType()" [(ngModel)]="selectType">
+                                    <ion-option value="1">เงินออมเพื่อการเกษียณอายุ</ion-option>
+                                    <ion-option value="2">เงินออมสำหรับอนาคต</ion-option>
+                                    <ion-option value="3">การสร้างสวัสดิการ</ion-option>
+                                    <ion-option value="4">หลักประกันทุนการศึกษา</ion-option>
+                                    <ion-option value="5">หลักประกันรายได้ครอบครัว</ion-option>
+                                    <ion-option value="6">คุ้มครองสินเชื่อ</ion-option>
+                                    <ion-option value="7">ประกันเพื่อสมาชิก กบข.</ion-option>
+                                    <ion-option value="8">ประกันพิเศษ</ion-option>
+                                </ion-select>
+                            </ion-item>
+                        </div>
+                    </div>
+
+                    <div *ngIf="showDivDropdown === 'detail2'">
+                        <h2 class="col-md-1">การชำระเบี้ย</h2>
+                        <div class="col-md-3 dropdownDetail">
+                            <ion-item class="form-control">
+                                <ion-label>
+                                </ion-label>
+                                <ion-select placeholder="กรุณาเลือก" interface="popover" (ionChange)="getPay()" [(ngModel)]="selectPay">
+                                    <ion-option value="1">ไม่ระบุเงื่อนไข</ion-option>
+                                    <ion-option value="2">ระยะสั้นน้อยกว่า 10 ปี</ion-option>
+                                    <ion-option value="3">ระยะปานกลาง 10-20 ปี</ion-option>
+                                    <ion-option value="4">ระยะยาวมากกว่า 20 ปี</ion-option>
+                                    <ion-option value="5">ตลอดชีพ</ion-option>
+                                </ion-select>
+                            </ion-item>
+                        </div>
+                    </div>
+                    <div *ngIf="selectPay !== '' && selectVal === '2' ">
+                        <h2 class="col-md-1">ความคุ้มครอง</h2>
+                        <div class="col-md-3 dropdownDetail">
+                            <ion-item class="form-control">
+                                <ion-label>
+                                </ion-label>
+                                <ion-select placeholder="กรุณาเลือก" interface="popover" (ionChange)="getProtection()" [(ngModel)]="selectProtection">
+                                    <ion-option value="1">ไม่ระบุเงื่อนไข</ion-option>
+                                    <ion-option value="2">ระยะสั้นน้อยกว่า 10 ปี</ion-option>
+                                    <ion-option value="3">ระยะปานกลาง 10-20 ปี</ion-option>
+                                    <ion-option value="4">ระยะยาวมากกว่า 20 ปี</ion-option>
+                                    <ion-option value="5">ตลอดชีพ</ion-option>
+                                </ion-select>
+                            </ion-item>
+                        </div>
+                    </div>
+
+                    <div *ngIf="showDivDropdown === 'detail3'">
+                        <h2 class="col-md-2">การลดหย่อนภาษี</h2>
+                        <div class="col-md-4 dropdownDetail">
+                            <ion-item class="form-control">
+                                <ion-label>
+                                </ion-label>
+                                <ion-select placeholder="กรุณาเลือก" interface="popover" (ionChange)="getTaxDeduct()" [(ngModel)]="selectTaxDeduct">
+                                    <ion-option value="1">เบี้ยประกันชีวิต</ion-option>
+                                    <ion-option value="2">เบี้ยประกันชีวิตแบบบำนาญ</ion-option>
+                                </ion-select>
+                            </ion-item>
+                        </div>
+                    </div>
+
+                    <div *ngIf="showDivDropdown === 'detail5'">
+                        <h2 class="col-md-2">20 อันดับแบบขายดี</h2>
+                        <div class="col-md-4 dropdownDetail">
+                            <ion-item class="form-control">
+                                <ion-label>
+                                </ion-label>
+                                <ion-select placeholder="กรุณาเลือก" interface="popover" (ionChange)="getRegion()" [(ngModel)]="selectRegion">
+                                    <ion-option value="2">ภาคกลาง</ion-option>
+                                    <ion-option value="4">ภาคตะวันออก</ion-option>
+                                    <ion-option value="3">ภาคตะวันออกเฉียงเหนือ</ion-option>
+                                    <ion-option value="5">ภาคเหนือ</ion-option>
+                                    <ion-option value="6">ภาคใต้</ion-option>
+                                </ion-select>
+                            </ion-item>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+    </tab>
+    <tab id="quatationTab_plan0" [tabTitle]="tabsPage[2].title" [tabIcon]="tabsPage[2].icon" [disabled]="tabsPage[2].disabled">
+    </tab>
+    <tab id="quatationTab_plan0" [tabTitle]="tabsPage[3].title" [tabIcon]="tabsPage[3].icon" [disabled]="tabsPage[3].disabled">
+    </tab>
+-->
+</tabs>
+
+
+
+
+<div class="boxContentPage bgBlue2 zIndex1">
+    <div class="container xs-pdlr0">
+        <div class="boxSearchPlanInsurance">
+            <!-- เฉพาะต่างประเทศ -->
+            <div *ngIf="planType == 1" class="col-lg-6 col-md-5">
+                <div class="col-lg-2 col-md-3 txt-md-right lh-form-control ws-nowrap pdl0">ประเภท :</div>
+                <div class="col-lg-10 col-md-9 pdlr0">
+                    <div class="form-group form-style1">
+                        <ion-item class="form-control">
+                            <ion-label>ประเภท</ion-label>
+                            <ion-select id="neighborType" (ionChange)="getNeighborType()" [(ngModel)]="neighborType" cancelText="ยกเลิก" okText="ตกลง">
+                                <ion-option value="0" selected="true">กลุ่มแรงงานต่างด้าว (ลาว พม่า กัมพูชา)</ion-option>
+                                <ion-option value="1">บุคคลที่มีบัตรประจำตัวคนไม่มีสัญชาติไทย</ion-option>
+                                <ion-option value="2">บุคคลสัญชาติ ลาว พม่า ที่อยู่ในประเทศตนเอง</ion-option>
+                            </ion-select>
+                        </ion-item>
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="planType == 1" class="col-lg-2 col-md-2 col-sm-6">
+                <div class="form-group form-style1">
+                    <ion-item class="form-control">
+                        <ion-label></ion-label>
+                        <ion-select id="nationality" interface="popover" (ionChange)="nationality()" [(ngModel)]="nationality" cancelText="ยกเลิก" okText="ตกลง">
+                            <ion-option value="0" selected="true">สัญชาติ ลาว</ion-option>
+                            <ion-option value="1">สัญชาติ พม่า</ion-option>
+                            <ion-option value="2">สัญชาติ กัมพูชา</ion-option>
+                        </ion-select>
+                    </ion-item>
+                </div>
+            </div>
+            <div *ngIf="planType == 1" class="col-lg-2 col-md-2 col-sm-6">
+                <div class="form-group form-style1">
+                    <ion-item class="form-control">
+                        <ion-label></ion-label>
+                        <ion-select id="group" interface="popover" (ionChange)="group()" [(ngModel)]="group" cancelText="ยกเลิก" okText="ตกลง">
+                            <ion-option value="1" selected="true">กลุ่ม 1</ion-option>
+                            <ion-option value="2">กลุ่ม 2</ion-option>
+                            <ion-option value="3">กลุ่ม 3</ion-option>
+                        </ion-select>
+                    </ion-item>
+                </div>
+            </div>
+            <div *ngIf="planType == 1" class="col-lg-2 col-md-3 txt-center">
+                <a id="popupRule" (click)="popupRule()" href="javascript:void(0)" class="btn-style4 btn-style-m pdlr20"><span><i class="icon-pdf-file"></i> หลักเกณฑ์</span></a>
+            </div>
+
+            <div class="col-md-10 zIndex3">
+                <autocomplete id="quatationForm_plan" placeholder="กรุณาเลือก" [(data)]="choosePlan" (dataChange)="changePlan($event)" icon="icon-open-book mgr7" [label]="'PLAN' | planLabel" [favorite]="profile.roleType == 'agent'" (changeFavorite)="changeFavorite($event)"
+                    [disabled]="disabledPlan">
+                    <dropdown-option [value]="item.planCode" [data-favorite]="item.favorite" *ngFor="let item of tlPlan">{{item.planName}}</dropdown-option>
+                </autocomplete>
+            </div>
+            <div class="col-md-2 pdlr-md-0">
+                <div *ngIf="packages.length > 0 && choosePlan != 'EN36' && choosePlan != 'EN37'" class="form-group form-style1">
+                    <ion-item class="form-control">
+                        <ion-label>แผนประกัน</ion-label>
+                        <ion-select [id]="id" [(ngModel)]="package" (ionChange)="selectPackage()" cancelText="ยกเลิก" okText="ตกลง" interface="popover">
+                            <ion-option [value]="item" *ngFor="let item of packages">แผน {{ item }}</ion-option>
+                        </ion-select>
+                    </ion-item>
+                </div>
+                <div *ngIf="choosePlan == 'EN36' || choosePlan == 'EN37'" class="form-group form-style1">
+                    <ion-item class="form-control">
+                        <ion-label>อาชีพ</ion-label>
+                        <ion-select [id]="id" [(ngModel)]="soldier" (ionChange)="selectSoldier()" cancelText="ยกเลิก" okText="ตกลง" interface="popover">
+                            <ion-option value="1">พลทหารประจำการ</ion-option>
+                            <ion-option value="2">ทหารชั้นประทวน</ion-option>
+                            <ion-option value="3">ทหารสัญญาบัตร</ion-option>
+                            <ion-option value="" selected="true">อื่นๆ</ion-option>
+                        </ion-select>
+                    </ion-item>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="boxContentPage">
+    <div class="container xs-pdlr0">
+        <div class="boxPromisesMore">
+            <div class="boxListForm pdl0 pdt20 pdb10">
+                <div class="col-md-5 col-sm-8">
+                    <div class="onePromise" *ngIf="calType != 5">
+                        <div class="label"><span>{{ 'SUM' | planLabel }}</span></div>
+                        <incrementer *ngIf="calType == 1" id="quatationForm_baseIncrementer" [(value)]="baseIncrementer" [min]="minStep" [max]="maxStep" [step]="step" (valueChange)="getSum($event)" [maxAlert]="maxAlert" [minAlert]="minAlert" [sumMonth]="sumMonth"></incrementer>
+                        <input *ngIf="calType == 2 || calType == 3 || calType == 4 || calType == 5" id="quatationForm_baseIncrementer" class="form-control" type="text" disabled [ngModel]="baseIncrementer | number" />
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-4">
+                    <div class="onePromise noLabel">
+                        <div class="form-group mgb0">
+                            <ion-item class="form-control">
+                                <ion-label></ion-label>
+                                <ion-select id="quatationForm_mode" interface="popover" (ionChange)="getMode()" [(ngModel)]="mode">
+                                    <ion-option [value]="item.value" *ngFor="let item of dlMode ; let i = index" [selected]="i==1">{{item.text}}</ion-option>
+                                </ion-select>
+                            </ion-item>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-5 col-sm-12">
+                    <div class="onePromise noBtn">
+                        <div class="label" *ngIf="choosePlan != 'EN09' && choosePlan != 'NC01' && choosePlan != 'ND01' && choosePlan != 'EN08'"><span>เบี้ยประกันรวม</span></div>
+                        <div class="label" *ngIf="choosePlan == 'EN09' || choosePlan == 'NC01' || choosePlan == 'ND01' || choosePlan == 'EN08'"><span>เงินสบทบรวม</span></div>
+                        <div class="form-group mgb0">
+                            <input *ngIf="calType == 1 || calType == 4 || calType == 5" id="quatationForm_premiumTotal" class="form-control" type="text" disabled [ngModel]="premiumTotal | numberFormat" />
+                            <ion-item *ngIf="calType == 2 || calType == 3" class="form-control">
+                                <ion-label></ion-label>
+                                <ion-select id="quatationForm_premiumTotal" interface="popover" [(ngModel)]="premiumTotal" (ionChange)="getPremium()">
+                                    <ion-option [value]="item" *ngFor="let item of premiumPackage ; let i = index" [selected]="i==0">{{ item | number }}</ion-option>
+                                </ion-select>
+                            </ion-item>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<rider show="false"></rider>
+
+<div class="boxContentPage bgBlue4">
+    <div class="container pdt20 pdb20">
+        <div class="boxSummary">
+            <ion-grid>
+                <ion-row>
+                    <ion-col col-12 col-md-4>
+                        <p class="txt-center">
+                            {{ 'MAIN_PREMIUM' | planLabel }}
+                            <br class="view-only-md view-only-sm" /> {{ premiumFooter | numberFormat }} บาท
+                        </p>
+                    </ion-col>
+                    <ion-col col-12 col-md-4>
+                        <p class="txt-center">
+                            {{ 'RIDER_PREMIUM' | planLabel }}
+                            <br class="view-only-md view-only-sm" /> {{ riderFooter | numberFormat }} บาท
+                        </p>
+                    </ion-col>
+                    <ion-col col-12 col-md-4>
+                        <p class="txt-center total">
+                            {{ 'TOTAL_PREMIUM' | planLabel }}
+                            <br class="view-only-md view-only-sm" /> {{ premiumTotal | numberFormat }} บาท
+                        </p>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </div>
+    </div>
+</div>
+
+<div class="boxContentPage">
+    <div class="container">
+        <div class="boxActionForm txt-center">
+            <button id="btnSave" class="btn-style2" type="button" (click)="saveQuationAll();" *ngIf="roleType == 'agent'" [disabled]="disableSaveButton || choosePlan == ''"><span><i class="icon-save-file-option"></i> บันทึก</span></button>
+            <button id="btnClear" class="btn-style3" type="button" (click)="reset()"><span><i class="icon-reload"></i> เริ่มใหม่ </span></button>
+            <button id="btnReport" class="btn-style2" type="button" (click)="navCtrl.push('QuatationReportPage')" *ngIf="roleType == 'employee'"><span><i class="icon-ion-document"></i> รายงานการพิมพ์ใบเสนอขาย(รายบุคคล)</span></button>
+            <button id="btnReport2" class="btn-style2" type="button" (click)="navCtrl.push('QuationReportBraPage')" *ngIf="roleType == 'employee'"><span ><i class="icon-ion-document"></i> รายงานการพิมพ์ใบเสนอขาย(รายสาขา)</span></button>
+        </div>
+    </div>
+</div>

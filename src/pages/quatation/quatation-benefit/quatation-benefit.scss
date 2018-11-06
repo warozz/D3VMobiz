@@ -1,0 +1,498 @@
+page-quatation-benefit {
+
+
+#X4 {
+
+    .width-auto-cd {
+        width: 60%;
+    }
+
+    .form-control-override {
+        display: block;
+        width: 100%;
+        height: 38px;
+        /* padding: 6px 12px; */
+        font-size: 20px;
+        line-height: 1;
+        color: #555555;
+        background-color: #ffffff;
+        background-image: none;
+        border: 1px solid #C8C8C8;
+        border-radius: 0px;
+    }
+    // ######  content in dropdown #####
+    .label-red {
+        color: #923130 !important;
+    }
+    .bg-light-blue {
+        background-color: #EFF7FB;
+    }
+    .col-label.lh-form-control.label {
+        color: #007ac2;
+    }
+    .item-inline {
+        display: inline-flex;
+    }
+    .ion-select {
+        max-width: 190px;
+        min-width: 190px;
+    }
+    input.form-control{
+        text-align: left;
+        padding: 5px;
+        min-width: 40px;
+    }
+    .boxPromisesMore .onePromise input.form-control {
+        border: 1px solid #C8C8C8;
+        padding: -1px;
+    }
+    .boxPromisesMore.closed .boxListForm-custom{
+        display: none;
+    }
+    .grid {
+        min-height: 120px;
+    }
+    .ion-item-border{
+        border: 1px solid #C8C8C8;
+    }
+    .hasBgImg .container {
+        position: relative;
+        width: 90%;
+    }
+
+    .suptext {
+        font-size: 18px;
+        color: #666666;
+    }
+
+    .col-width-alignment {
+        width: 75%;
+        float: left;
+    }
+
+    .bgPaperShadow .contentPaperShadow2 {
+        display: block;
+        position: relative;
+        min-height: 200px;
+        z-index: 1;
+        background: #fff;
+        padding: 20px;
+        color: #333;
+        font-size: 25px;
+        margin-top: 50px;
+    }
+
+    .hasBgImg:before {
+        display: block;
+        content: '';
+        background: #28ABE6 no-repeat center top;
+        background-size: 100% 100%;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        height: 190px;
+    }
+
+    .hasBgImg .container {
+        position: relative;
+
+    }
+
+    .bg-gray {
+        background: #F5F5F5
+    }
+    .ion-item-border{
+        border: 1px solid #C8C8C8;
+    }
+
+    .boxPromisesMore .onePromise .btnMinus {
+        left: 20px;
+    }
+    .boxPromisesMore .onePromise .btnPlus {
+        right: 15px;
+    }
+    .boxPromisesMore .onePromise {
+        padding: 0px 63px 10px 69px;
+    }
+    // ###### end content in dropdown #####
+
+    .text-color {
+
+        color: #007ac2;
+    }
+
+    .scaleX {
+        padding: 0px 200px 0px;
+    }
+
+    .scaleX2 {
+        padding: 0px 300px 0px;
+    }
+
+    .item-inline {
+        display: inline-flex;
+        color: #007ac2;
+    }
+
+    .item-cover {
+        left: 0;
+        top: 0;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: transparent;
+        cursor: pointer;
+        border: 1px solid #c8c8c8;
+    }
+
+    .hasBgImg .container {
+        position: relative;
+        width: 90%;
+    }
+
+    .bgPaperShadow .contentPaperShadow2 {
+        display: block;
+        position: relative;
+        min-height: 200px;
+        z-index: 1;
+        background: #fff;
+        padding: 20px;
+        color: #333;
+        font-size: 25px;
+        margin-top: 50px;
+    }
+
+    .hasBgImg:before {
+        display: block;
+        content: '';
+        background: #28ABE6 no-repeat center top;
+        background-size: 100% 100%;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        height: 190px;
+    }
+
+    .hasBgImg .container {
+        position: relative;
+
+    }
+
+    .boxSearchPlanInsurance {
+        padding-left: 385px;
+    }
+
+
+    .inputWithIcon input[type=text]{
+        padding-left:  5px;
+    }
+
+    .inputWithIcon{
+        position: relative;
+    }
+
+    .inputWithIcon i {
+        position: absolute;
+        top: 0px;
+        margin: 7px 80px;
+        color: #007ac2;
+        transition: .3s;
+    }
+
+    .inputWithIcon input[type=text]:focus + i {
+        color: dodgerblue;
+    }
+
+   #preName .boxSearchPlanInsurance {
+        padding-left: 0px;
+
+    }
+    #preName {
+        prefix-name .boxSearchPlanInsurance .boxSelectPlan .boxDropdownPlan .txtView {
+        height: 38px;
+        line-height: 38px;
+        padding: 6px 12px;
+        font-size: 25px;
+        border: 1px solid #c8c8c8;
+        text-align: center;
+        }
+    }
+
+    .boxSearchPlanInsurance .boxSelectPlan {
+        display: block;
+        position: relative;
+        padding: 0px 0px 0px 0px !important;
+
+        height: 46px;
+    }
+
+    .boxStatusStep {
+        display: table;
+        width: 100%;
+        // height: 95px;
+        // min-height: 90px;
+        padding: 23px 27px 20px 0px;
+        text-align: center;
+    }
+
+   .form-control.item-block {
+        min-height: auto;
+        height: 44px;
+        text-align: left;
+    }
+
+    .zIndex10 {
+        z-index: 10;
+    }
+
+
+    .btn-style-one {
+        font-size: 24px;
+        min-width: inherit;
+        height: 53px;
+        line-height: 53px;
+    }
+    .btn-style-one [class^=icon-] {
+        font-size: 20px;
+    }
+
+    .btn-style-one {
+        display: inline-block;
+        cursor: pointer;
+        position: relative;
+        margin: 0px 1px;
+        left: 0px;
+        font-size: 30px;
+        outline: none;
+        border: none;
+        background: transparent;
+        color: #fff;
+        min-width: 180px;
+        height: 63px;
+        line-height: 63px;
+        padding: 0px 30px;
+    }
+
+    .btn-style-one [class^=icon-] {
+        font-size: 25px;
+        margin-right: 7px;
+        position: relative;
+        top: 3px;
+    }
+
+    .btn-style-one:before {
+        display: block;
+        content: '';
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+        background: #FFCC00;
+        transform: matrix(1, 0, -0.17364, 0.9848, 0, 0);
+    }
+
+    .btn-style-one:hover::after {
+        display: block;
+        content: '';
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.1);
+        transform: matrix(1, 0, -0.17364, 0.9848, 0, 0);
+    }
+
+    .box-row {
+
+        display: inline-block;
+    }
+
+    .bow-grid {
+     display: inline-grid;
+    }
+
+    .boxListForm-custom {
+        padding: 30px 200px;
+    }
+
+    .btn-style-one span {
+        display: block;
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        color: #fff;
+    }
+
+    .bgNewBlue{
+        background:  #f4f8fa;
+    }
+
+    .mlr-auto{
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .margin-custom-md {
+        margin: -22px 0px -22px 0px;
+    }
+
+    //custom max width
+    .max-width-50{
+        max-width: 50px;
+    }
+    .max-width-100{
+        max-width: 100px;
+    }
+    .max-width-150{
+        max-width: 150px;
+    }
+    .max-width-250{
+        max-width: 250px;
+    }
+
+    @media(max-width:767px){
+
+        .width-auto-cd {
+            width: 100%;
+        }
+
+        .boxSearchPlanInsurance .boxSelectPlan .boxDropdownPlan {
+            padding-right: 0px;
+        }
+
+        .boxSearchPlanInsurance {
+            padding-left: 0px;
+        }
+        .boxStatusStep {
+            padding: 20px 0px 20px 0px !important;
+        }
+
+        .scaleX {
+            padding: 0px 50px 0px;
+        }
+
+        .boxListForm-custom {
+            padding: 30px 20px;
+        }
+
+        .scaleX2 {
+            padding: 0px 0px 0px;
+        }
+
+        .item-centre{
+            display: inline;
+        }
+
+    }
+
+
+    @media only screen and (min-width: 280px) and (max-width: 313px) {
+
+        .width-auto-cd {
+            width: 76%;
+        }
+    }
+
+    @media only screen and (min-width: 314px) and (max-width: 366px) {
+
+        .width-auto-cd {
+            width: 81%;
+        }
+    }
+
+    @media only screen and (min-width: 367px) and (max-width: 395px) {
+
+        .width-auto-cd {
+            width: 84%;
+        }
+    }
+
+
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
+
+        .width-auto-cd {
+            width: 100%;
+        }
+
+        .boxStatusStep {
+            height: 120px;
+        }
+        .sm-txt-center {
+            text-align: center;
+        }
+
+        .scaleX {
+            padding: 0px 50px 0px;
+        }
+
+        .boxListForm-custom {
+            padding: 30px 20px;
+        }
+
+        .scaleX2 {
+            padding: 0px 0px 0px;
+        }
+
+        .item-centre{
+            display: inline;
+        }
+
+        .boxSearchPlanInsurance {
+            padding-left: 0px;
+        }
+
+        .input-sm {
+            margin: 0px 0px 0px 58px;
+            width: 86%;
+        }
+
+        .margin-custom-sm {
+            margin: 4px 144px 4px 144px;
+        }
+    }
+
+    @media only screen and (min-width: 1024px) and (max-width: 1200px) {
+        .boxSearchPlanInsurance {
+            padding-left: 271px;
+        }
+
+        .width-auto-cd {
+            width: 100%;
+        }
+
+    }
+
+    @media only screen and (min-width: 1201px) and (max-width: 1500px) {
+        .pd-left {
+            padding-left: 7px;
+        }
+
+        .pd-right {
+            padding-right: 7px;
+        }
+
+        .mrg-left-minus-6 {
+            margin-left: -6px;
+        }
+
+        .width-auto-cd {
+            width: 60%;
+        }
+    }
+
+}
+    .btn-border-radius{
+        border: #ffffff 1px solid;
+        border-radius: 50%;
+        padding: 1px;
+    }
+    .min-width-1{
+        min-width: 1px !important;
+    }
+
+}

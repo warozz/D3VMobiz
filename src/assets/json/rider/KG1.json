@@ -1,0 +1,29 @@
+{
+    "rider": "ฆจ.1",
+    "age": {
+        "min": "0y",
+        "max": "64y"
+    },
+    "steps": [{
+            "value": 50000,
+            "step": 50000
+        },
+        {
+            "value": 500000,
+            "step": 100000
+        }
+    ],
+    "agent": [{
+        "permission": "Normal",
+        "sum": {
+            "min": "AC01",
+            "max": {
+                "required": "AC01",
+                "value": [
+                    4000000,
+                    "KG2"
+                ]
+            }
+        }
+    }]
+}

@@ -1,0 +1,49 @@
+page-app-history {
+    .select-company {
+        border: 1px solid #C8C8C8;
+    }
+    .btnTxtIconRight-close span {
+        display: inline-block;
+        margin-bottom: -3px;
+        margin-left: 7px;
+        width: 18px;
+        height: 18px;
+        font-size: 10px;
+        line-height: 23px;
+        overflow: hidden;
+        background: darkred;
+        border-radius: 100%;
+        color: #fff;
+        text-align: center;
+        font-weight: bold;
+    }
+    @media screen and (max-width: 991px) {
+        .otherCompany {
+            margin-top: 15px;
+        }
+    }
+    calendar>.form-group {
+        // border: 1px solid #C8C8C8 !important;
+        h1 {
+            height: 36px;
+            padding: 3px 12px;
+        }
+        .mat-button-wrapper::before {
+            margin-top: -4px;
+        }
+    }
+    /* .txtView,
+    calendar>.form-group {
+         border: 1px solid #C8C8C8 !important;
+        h1 {
+            height: 36px;
+            padding: 3px 12px;
+        }
+        .mat-button-wrapper::before {
+            margin-top: -4px;
+        }
+    }*/
+    .occupation {
+        padding-top: 15px;
+    }
+}

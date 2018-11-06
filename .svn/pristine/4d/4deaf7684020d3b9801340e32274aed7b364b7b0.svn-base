@@ -1,0 +1,97 @@
+autocomplete {
+    $color-white: #EEF7FB;
+    .oneOption::after {
+        display: none !important;
+    }
+    .boxSelectPlan,
+    .boxDropdownPlan {
+        @media screen and (min-width: $screen-md-min) {
+            padding-right: 0px !important;
+        }
+    }
+    @media screen and (max-width: $screen-sm-max) {
+        .boxSelectPlan .boxDropdownPlan input.txtView {
+            padding-right: 40px !important;
+        }
+    }
+    .oneOptionList {
+        display: flex;
+        .oneOption {
+            flex: 1 1 auto !important;
+        }
+        .btn-icon-favorites {
+            margin-left: auto;
+            background-color: $color-white;
+            display: block;
+            font-size: 18px;
+            color: #0082C8;
+            cursor: pointer;
+            font-family: "tl-prompt";
+            font-style: normal;
+            font-weight: normal;
+            font-variant: normal;
+            text-transform: none;
+            speak: none;
+            line-height: 1;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .btn-icon-favorites i:before {
+            content: "\e030";
+        }
+        // .btn-icon-favorites:hover {
+        //     background-color: $color-white;
+        //     transition: $color-white 0.4s;
+        //     border: 2px solid $color-white;
+        //     border-radius: 5px;
+        //     i:before {
+        //         text-decoration:none;
+        //         content:"\70"; 
+        //         color:#FFCC00; 
+        //     }
+        // }
+        .btn-icon-favorites.mark i:before {
+            text-decoration: none;
+            content: "\70";
+            color: #FFCC00;
+        }
+    }
+    .btnFavorite {
+        display: none !important;
+        .icon- {
+            line-height: 40px !important;
+        }
+    }
+    &.favorite {
+        .btnFavorite {
+            display: block !important;
+        }
+        @media (max-screen: $screen-sm-max) {
+            .boxSelectPlan {
+                padding-right: 40px !important;
+            }
+        }
+    }
+    .btnClearSearch {
+        position: absolute;
+        right: 42px;
+        top: 0px;
+        text-decoration: none;
+        cursor: pointer;
+        color: #b1b1b1;
+        background: none;
+        font-size: $font-md;
+        height: 46px;
+        &.no-favorite {
+            right: 5px;
+        }
+    }
+    input[disabled] {
+        background-color: #eeeeee !important;
+        cursor: not-allowed !important;
+    }
+    a.disabled,
+    a.disabled:hover {
+        cursor: not-allowed !important;
+    }
+}

@@ -1,0 +1,117 @@
+member-view-data {
+    @media only screen and (min-width: 768px) and (min-height: 600px) {
+        @at-root .memberView {
+            .modal-wrapper {
+                left: calc(10%);
+                top: calc(10%);
+                position: absolute;
+                width: 80%;
+                height: 80%
+            }
+        }
+    }
+    @media only screen and (min-width: 992px) and (min-height: 600px) {
+        @at-root .memberView {
+            .modal-wrapper {
+                left: calc(10%);
+                top: calc(10%);
+                position: absolute;
+                width: 80%;
+                height: 80%
+            }
+        }
+    }
+    @media only screen and (min-width: 768px) {
+        .td_16 {
+            width: 16%;
+        }
+        ;
+    }
+    .popup-style1 {
+        height: 100%;
+        width: 100%;
+        border-radius: 0px;
+        .boxNewUpdate {
+            margin: 0px;
+            height: 100%;
+            padding-bottom: 50px;
+            .scrollbar-inner {
+                height: 100%;
+            }
+        }
+    }
+    .center {
+        text-align: center;
+    }
+    h2 {
+        color: $color-primary;
+        text-align: left;
+        font-size: $font-lg;
+    }
+    .boxTableStyle2 .td_pd-2-15 .dataTable thead tr th {
+        text-align: center;
+    }
+    @media (max-width: 767px) {
+        .boxSearchMemberTable table tbody tr td.xs-w50Left {
+            display: block;
+            float: left;
+            border-top: 1px solid #dedede;
+            margin-top: 10px;
+            line-height: 20px;
+            padding: 15px 5px 0px 5px;
+            width: 50%;
+            box-sizing: border-box;
+            text-align: center;
+        }
+        .sm-icon {
+            border-bottom: 1px solid darkgray;
+        }
+        .boxTableStyle2.td_pd-2-15 table tbody tr td.xs-w50Left.center.sm-icon {
+            padding-top: 20px;
+        }
+    }
+    .boxTableStyle2 .modal-detail {
+        border-bottom: 2px solid #29ABE7;
+        padding-bottom: 15px;
+        line-height: 1.3em;
+    }
+    @media only screen and (min-width: 1236px) {
+        .boxTableStyle2 .modal-detail {
+            font-size: 22px;
+            // padding-left: 55px;
+        }
+        .boxTableStyle2 .dataTable {
+            font-size: 22px;
+        }
+    }
+    @media (min-width: 992px) and (max-width: 1235px) {
+        .boxTableStyle2 .modal-detail {
+            font-size: 20px;
+            padding-left: 50px;
+        }
+        .boxTableStyle2 .dataTable {
+            font-size: 20px;
+        }
+        @at-root .memberView {
+            .modal-wrapper {
+                left: calc(5.5%);
+                top: calc(5.5%);
+                position: absolute;
+                width: 89%;
+                height: 89%
+            }
+        }
+    }
+    @media (min-width: 768px) and (max-width: 991px) {
+        .border-sm {
+            border-bottom: 1px solid darkgray;
+            //padding-top: 15px;
+        }
+    }
+    @media (max-width: 991px) {
+        .sm-xs-padding {
+            padding-top: 10px!important;
+            padding-bottom: 10px!important;
+        }
+    }
+}

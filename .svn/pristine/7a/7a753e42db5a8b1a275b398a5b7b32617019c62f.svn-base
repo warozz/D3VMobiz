@@ -1,0 +1,309 @@
+page-pdf {
+    // header
+    #header .boxHeaderTop {
+        a {
+            text-decoration: none;
+        }
+        .headerTitle {
+            display: block;
+            float: left;
+            margin: 0px;
+            padding: 4px 0px 0px 0px;
+            list-style: none;
+            li {
+                position: relative;
+                padding: 0px 10px 5px;
+                .boxVersion {
+                    position: relative;
+                    width: 183px;
+                    font: normal 35px/0.3em $font-helvethaica-med;
+                    .txt1 {
+                        position: absolute;
+                        top: 13px;
+                        color: $color-primary;
+                        span {
+                            color: $color-danger;
+                        }
+                    }
+                    .txt2 {
+                        position: absolute;
+                        top: 35px;
+                        color: #999;
+                        font-size: $font-sm;
+                        letter-spacing: 0.3px;
+                    }
+                    .txt3 {
+                        position: absolute;
+                        left: 120px;
+                        top: 8px;
+                        width: 120px;
+                        height: 40px;
+                        border: 1px solid #d8d8d8;
+                        background-color: #fff;
+                        color: $color-primary;
+                        font: normal 40px/40px $font-helvethaica-regular;
+                        font-style: italic;
+                        text-align: center;
+                    }
+                    &.mini {
+                        .txt1,
+                        .txt2 {
+                            left: -8px;
+                            font-size: $font-md;
+                        }
+                        .txt2 {
+                            font-size: $font-xs;
+                        }
+                    }
+                }
+                .btnNewUpdate {
+                    position: absolute;
+                    width: 60px;
+                    left: 260px;
+                    top: -5px;
+                    font-size: $font-sm;
+                    color: $color-primary;
+                    i {
+                        position: relative;
+                        display: block;
+                        top: 2px;
+                        left: 15px;
+                    }
+                }
+                @media (max-width: $screen-md-max) {
+                    .boxVersion {
+                        font: normal 30px/0.7em $font-helvethaica-med;
+                        .txt2 {
+                            top: 30px;
+                            font-size: $font-xs;
+                        }
+                        .txt3 {
+                            left: 100px;
+                            top: 13px;
+                            width: 90px;
+                            height: 30px;
+                            font: normal 28px/30px $font-helvethaica-regular;
+                        }
+                    }
+                    .btnNewUpdate {
+                        left: 200px;
+                        top: -5px;
+                    }
+                }
+                @media (max-width: $screen-xs-max) {
+                    .boxVersion {
+                        .txt3 {
+                            display: none;
+                        }
+                    }
+                    .btnNewUpdate {
+                        left: 100px;
+                        top: -5px;
+                    }
+                }
+            }
+        }
+        .headerTools {
+            position: absolute;
+            right: 0px;
+            .btnHelp {
+                height: 30px;
+                line-height: 12px;
+                display: block;
+                padding: 5px 0px 0px 30px;
+                margin-top: 10px;
+                font-size: $font-sm;
+                color: $color-default;
+                i {
+                    font-size: $font-sm;
+                    position: absolute;
+                    left: 12px;
+                    top: 16px;
+                    color: $color-primary;
+                }
+            }
+        }
+    }
+    // main menu
+    #header .boxHeaderMenu .container {
+        .boxListHeaderMenu {
+            a {
+                text-decoration: none;
+            }
+        }
+    }
+    // tlprompt mini
+    #header .boxHeaderMenu.mini .container {
+        .boxListHeaderMenu {
+            a[disabled=disabled] {
+                background-color: #aaa;
+                opacity: 1;
+            }
+        }
+    }
+    @media (min-width: $screen-md-min) {
+        #header .boxHeaderMenu .container {
+            height: 80px;
+        }
+    }
+    @media (max-width: $screen-sm-max) {
+        #header .boxHeaderTop .logo {
+            top: 5px;
+            position: relative;
+        }
+    }
+    .textLayer {
+        border: 5px solid black;
+    }
+    .pdf {
+        display: block;
+        background-color: grey;
+    }
+    .boxRight {
+        text-align: right;
+        margin-top: auto;
+        margin-bottom: auto;
+        padding-top: 15px;
+    }
+    @media (max-width: $screen-sm-max) {
+        .boxRight {
+            padding-top: 12px;
+        }
+    }
+    .btn-style4.btn-style-s.pdlr10 {
+        vertical-align: middle;
+    }
+    .btn-style4 .view-only-xs.view-only-sm [class^=icon-] {
+        margin-right: 0px;
+    }
+    .btn-style5.btn-style-s.txt-center.pdlr10 {
+        vertical-align: middle;
+    }
+    .btn-style7.btn-style-s.pdlr10 {
+        vertical-align: middle;
+    }
+    ion-select button {
+        border: 1px solid rgb(200, 200, 200);
+        border-radius: 0px;
+        vertical-align: middle;
+    }
+    .form-control {
+        display: inline-block;
+        transform: matrix(1, 0, -0.17364, 0.9848, 0, 0);
+        height: 40px;
+        line-height: 40px;
+        &.md {
+            width: 100px;
+        }
+        &.sm {
+            width: 65px;
+        }
+    }
+    .select-md {
+        padding-top: 2px;
+    }
+    .pdf {
+        display: block;
+        background-color: grey;
+    }
+    .boxPdfView {
+        display: inherit;
+        position: inherit;
+        width: auto;
+        height: auto;
+        overflow: inherit;
+    }
+    .btn-lang {
+        display: inline-block;
+        position: relative;
+        .boxSelectLang {
+            text-align: left;
+        }
+    }
+    @media screen and (max-width: 450px) {
+        #header .boxHeaderTop .container {
+            height: 20px;
+            padding-left: 7px;
+            padding-right: 7px;
+        }
+    }
+    @media screen and (max-width: 450px) {
+        #header {
+            background-color: #fff;
+            height: 50px;
+        }
+        #header .boxHeaderTop .logo {
+            width: 44px;
+            height: 50px;
+            background-size: 100%;
+        }
+        .pdlr10 {
+            padding-left: 5px !important;
+            padding-right: 5px !important;
+        }
+        .btn-style-m {
+            min-width: 30px;
+            height: 24px;
+            line-height: 23px;
+            font-size: 11px;
+            text-align: center;
+        }
+        .btn-style4 {
+            margin: 0px;
+        }
+        .boxPdfView .btnSelectLang span:after {
+            right: 6px;
+            top: 6px;
+        }
+        .boxPdfView .btnSelectLang span {
+            padding-left: 10px;
+            padding-right: 24px;
+        }
+    }
+    @media screen and (max-width: 450px) {
+        // .hide-logo-smallest-device {
+        //     display: none !important;
+        // }
+        #header .boxHeaderTop .headerTitle li .boxVersion {
+            font: normal 24px/0.7em "db_helvethaica_x65_med";
+        }
+        #header .boxHeaderTop .headerTitle li .boxVersion .txt2 {
+            top: 26px;
+            font-size: 12px;
+        }
+    }
+    @media screen and (max-width: 314px) {
+        .hide-logo-smallest-device {
+            display: none !important;
+        }
+    }
+    ion-header:not([hidden])~ion-content {
+        .fixed-content,
+        .scroll-content {
+            margin-top: 96px !important;
+            overflow-x: auto;
+        }
+        .ng2-pdf-viewer-container[_ngcontent-c2] {
+            width: 100%;
+            overflow-x: inherit;
+        }
+        @media screen and (max-width: $screen-sm-max) {
+            .fixed-content,
+            .scroll-content {
+                margin-top: 62px !important;
+            }
+        }
+        @media screen and (max-width: 450px) {
+            .fixed-content,
+            .scroll-content {
+                margin-top: 50px !important;
+            }
+        }
+    }
+    ion-fab {
+        position: fixed;
+    }
+    .fab-md {
+        background-color: #1379b7;
+    }
+}

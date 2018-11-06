@@ -1,0 +1,55 @@
+{
+    "rider": "สร.2",
+    "age": {
+        "min": "20y",
+        "max": "70y"
+    },
+    "rule": [{
+        "deny": "D03"
+    }],
+    "steps": 1,
+    "agent": [{
+        "permission": "Normal",
+        "select": [{
+                "option": 1,
+                "sum": 100000
+            },
+            {
+                "option": 2,
+                "sum": 100000
+            },
+            {
+                "option": 3,
+                "sum": 100000
+            },
+            {
+                "option": 4,
+                "sum": 100000
+            },
+            {
+                "option": 5,
+                "sum": 100000
+            },
+            {
+                "option": 6,
+                "sum": 200000
+            },
+            {
+                "option": 7,
+                "sum": 200000
+            },
+            {
+                "option": 8,
+                "sum": 200000
+            },
+            {
+                "option": 9,
+                "sum": 200000
+            },
+            {
+                "option": 10,
+                "sum": 200000
+            }
+        ]
+    }]
+}

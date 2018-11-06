@@ -1,0 +1,188 @@
+rider {
+    .boxPromisesMore {
+        .titlePromisesMore {
+            span {
+                display: inline-block;
+                width: 25px;
+                height: 25px;
+                border-radius: 15px;
+                background: #1484C6;
+                color: #fff;
+                text-align: center;
+                overflow: hidden;
+                line-height: 25px;
+                font-size: 25px;
+                position: relative;
+                top: 5px;
+            }
+        }
+        #occupation-btn {
+            text-align: center;
+            float: left;
+            margin: 0px;
+            padding-bottom: 10px;
+            font-size: $font-md;
+            color: $color-primary;
+            text-decoration: none;
+            span {
+                color: $color-danger;
+            }
+            .icon {
+                color: $color-default;
+                float: right;
+            }
+        }
+        .title {
+            text-align: center;
+            padding-left: 70%;
+            margin: 0px;
+            padding-bottom: 10px;
+            font-size: $font-md;
+            color: $color-primary;
+        }
+        .onePromise {
+            float: left;
+            position: relative;
+            width: 70%;
+            padding-bottom: 20px;
+            .label {
+                color: $color-primary;
+                font-size: $font-md;
+                &.V {
+                    width: 91px;
+                }
+            }
+            &.disabled {
+                visibility: hidden;
+            }
+            .form-group {
+                margin-bottom: 0px !important;
+                .mydp {
+                    border: 0px;
+                }
+            }
+        }
+        .twoPromise {
+            float: left;
+            position: relative;
+            width: 30%;
+            padding-bottom: 20px;
+            p {
+                height: 38px;
+                line-height: 38px;
+                font-size: $font-md;
+                background-color: #e6e6e6;
+                padding: 0px 10px;
+                text-align: right;
+                margin: 0px;
+            }
+            .label {
+                display: none;
+            }
+            &.disabled {
+                visibility: hidden;
+            }
+        }
+        @media (max-width: $screen-xs-max) {
+            .title {
+                display: none;
+            }
+            .onePromise {
+                width: 100%;
+                padding-bottom: 10px;
+            }
+            .twoPromise {
+                width: 100%;
+                padding: 0px 45px 20px 135px;
+                .label {
+                    display: table;
+                    width: 150px;
+                    height: 38px;
+                    position: absolute;
+                    left: 0px;
+                    top: 0px;
+                    color: $color-primary;
+                    font-size: $font-md;
+                    span {
+                        display: table-cell;
+                        vertical-align: middle;
+                        height: 100%;
+                        line-height: 20px;
+                    }
+                }
+            }
+        }
+        @media (max-width: $screen-md-max) {
+            .onePromise {
+                &.disabled {
+                    display: none;
+                }
+                &.special {
+                    margin-bottom: 0px;
+                    top: 0px;
+                }
+            }
+            .twoPromise {
+                &.disabled {
+                    display: none;
+                }
+                &.special {
+                    margin-bottom: 0px;
+                    top: 0px;
+                }
+            }
+        }
+        @media (min-width: $screen-lg-min) and (max-width: $screen-lg-max) {
+            #occupation-btn {
+                text-align: left;
+            }
+            .onePromise.kb {
+                .calendar {
+                    width: 150px !important;
+                }
+            }
+        }
+    }
+    // คบ.2
+    #KB2_1-premium {
+        text-align: left;
+        background-color: inherit;
+    }
+    @media (min-width: $screen-lg-min) and (max-width: $screen-lg-max) {
+        #KB2_1-premium {
+            text-align: right;
+            padding-right: 0px;
+        }
+        .onePromise.kb {
+            width: 340px;
+            &~.twoPromise {
+                width: 70px;
+            }
+        }
+    }
+    calendar .form-group {
+        border: none;
+    }
+    dropdown {
+        .txtView {
+            border: none;
+        }
+        &.boxSearchPlanInsurance .boxSelectPlan {
+            height: 38px;
+            margin-bottom: 0px;
+            .boxDropdownPlan {
+                .txtView,
+                &::after {
+                    height: 38px;
+                    line-height: 38px;
+                    font-size: $font-md;
+                    padding-left: 12px;
+                    padding-right: 12px;
+                }
+                .listOption {
+                    top: inherit;
+                }
+            }
+        }
+    }
+}

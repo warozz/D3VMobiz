@@ -1,0 +1,28 @@
+{
+    "rider": "ทร.44",
+    "age": {
+        "min": "20y",
+        "max": "65y"
+    },
+    "steps": [{
+            "value": 50000,
+            "step": 50000
+        },
+        {
+            "value": 500000,
+            "step": 100000
+        }
+    ],
+    "agent": [{
+        "permission": "Normal",
+        "sum": {
+            "min": 0,
+            "max": {
+                "value": [
+                    "sum",
+                    2000000
+                ]
+            }
+        }
+    }]
+}

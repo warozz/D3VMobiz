@@ -1,0 +1,6 @@
+<ion-item class="form-control">
+    <ion-label>เพศ</ion-label>
+    <ion-select [id]="id" [(ngModel)]="data" (ionChange)="select($event)" cancelText="ยกเลิก" okText="ตกลง" interface="popover">
+        <ion-option [value]="item.key" *ngFor="let item of sex">{{ item.value }}</ion-option>
+    </ion-select>
+</ion-item>

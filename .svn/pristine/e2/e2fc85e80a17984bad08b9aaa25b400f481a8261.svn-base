@@ -1,0 +1,11 @@
+page-app-treatment-history {
+    .textBlue {
+        color: $color-primary !important;
+    }
+    .textDisabled {
+        color: silver;
+    }
+    .center {
+        text-align: center;
+    }
+}

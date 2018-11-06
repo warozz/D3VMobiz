@@ -1,0 +1,15 @@
+<div class="modal">
+    <h1 class="modal-title">
+        <i class="icon-alert-circled"></i> <span class="title">รหัสตัวแทนที่กรอกไม่ตรงกับข้อมูลเดิม</span>
+    </h1>
+    <div class="popup popup-style">
+        <div class="box-reset-container">
+            &nbsp;&nbsp;&nbsp;&nbsp;ระบบจะทำการเปลี่ยนข้อมูลผู้ใช้ใหม่ เพื่อป้องกันการสูญหายของข้อมูล โปรดเปิดการใช้งานอินเทอร์เน็ต และลงชื่อเข้าใช้งานด้วยรหัสเดิม เพื่อให้ระบบสำรองข้อมูลอัตโนมัติ ก่อนเปลี่ยนผู้ใช้ใหม่
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;ต้องการเปลี่ยนข้อมูลผู้ใช้ กดปุ่ม “ตกลง” ไม่ต้องการเปลี่ยนข้อมูลผู้ใช้ กดปุ่ม “ยกเลิก”
+        </div>
+        <div class="box-reset-footer txt-center">
+            <a class="btn-style4 btn-style-m txt-center pdlr30 cancel-btn" (click)="close();"><span>ยกเลิก</span></a>
+            <a class="btn-style4 btn-style-m txt-center pdlr30" (click)="handleSubmited();"><span>ตกลง</span></a>
+        </div>
+    </div>
+</div>

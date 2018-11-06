@@ -1,0 +1,241 @@
+<div class="boxContentPage bgBlue3 hasBgImg">
+    <div class="container">
+        <div class="bgPaperShadow">
+            <div class="contentPaperShadow">
+                <div class="boxListForm pdlr0">
+
+                    <!-- การชำระเบี้ยประกันภัย -->
+                    <form [formGroup]="ulinkPayment">
+                        <div class="boxPromisesMore">
+                            <div class="col-md-4 pd0" [ngClass]="{'col-lg-3': ulinkData.choosePlan == 1}">
+                                <div class="col-label lh-form-control" *ngIf="ulinkData.chooseType != 'educate'">ต้องการความคุ้มครองถึงอายุ (ปี)</div>
+                                <div class="col-input form-inline" *ngIf="ulinkData.chooseType != 'educate'">
+                                    <input class="form-control" type="text" calculator max="99" formControlName="mAgestart" [(value)]="prospect.age"/>
+                                    <i class="icon-minus2"></i>
+                                    <input class="form-control" type="text" calculator max="99" formControlName="mAgeend" 
+                                        [(value)]="ulinkPayment.value.mAgeend" (calculatorChange)="checkAge($event, 'mAgeend')"
+                                    />
+                                </div>
+                            </div>
+
+                            <!-- เฉพาะ ทีแอล ไลฟ์ โซลูชั่น 99/99 -->
+                            <div class="col-md-4 pd0" [ngClass]="{'col-lg-3': ulinkData.choosePlan == 1}">
+                                <div class="col-label lh-form-control" *ngIf="ulinkData.choosePlan == 2">EM (อัตราค่าเอาประกันภัยเพิ่ม)</div>
+                                <div class="col-input" *ngIf="ulinkData.choosePlan == 2">
+                                    <dropdown class="dropdown-sm" formControlName="emrate">
+                                        <dropdown-option value="25">25</dropdown-option>
+                                        <dropdown-option value="50">50</dropdown-option>
+                                        <dropdown-option value="75">75</dropdown-option>
+                                        <dropdown-option value="100">100</dropdown-option>
+                                        <dropdown-option value="125">125</dropdown-option>
+                                        <dropdown-option value="150">150</dropdown-option>
+                                        <dropdown-option value="175">175</dropdown-option>
+                                        <dropdown-option value="200">200</dropdown-option>
+                                        <dropdown-option value="225">225</dropdown-option>
+                                        <dropdown-option value="250">250</dropdown-option>
+                                        <dropdown-option value="275">275</dropdown-option>
+                                        <dropdown-option value="300">300</dropdown-option>
+                                    </dropdown>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 pd0" [ngClass]="{'col-lg-3': ulinkData.choosePlan == 1}">
+                                <div class="col-label lh-form-control">ขั้นภาษีสูงสุดที่ต้องการ</div>
+                                <div class="col-input">
+                                    <dropdown class="dropdown-sm" formControlName="taxrate">
+                                        <dropdown-option value="5">5</dropdown-option>
+                                        <dropdown-option value="10">10</dropdown-option>
+                                        <dropdown-option value="15">15</dropdown-option>
+                                        <dropdown-option value="20">20</dropdown-option>
+                                        <dropdown-option value="25">25</dropdown-option>
+                                        <dropdown-option value="30">30</dropdown-option>
+                                        <dropdown-option value="35">35</dropdown-option>
+                                    </dropdown>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+
+                        <!-- เฉพาะ ทีแอล ไลฟ์ โซลูชั่น 99/1 -->
+                        <div class="boxPromisesMore" *ngIf="ulinkData.choosePlan == 1">
+                            <div class="col-lg-3 col-md-4 pd0">
+                                <div class="col-label lh-form-control">อายุปัจจุบัน (ปี)</div>
+                                <div class="col-input">
+                                    <input class="form-control" type="text" calculator max="99" formControlName="age" [value]="prospect.age" />
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-md-4 pd0">
+                                <div class="col-label lh-form-control">เบี้ยประกันภัย (Single Premium)</div>
+                                <div class="col-input">
+                                    <div class="onePromise">
+                                        <incrementer 
+                                            [min]="100000" [max]="30000000" [showMinMax]="true" formControlName="premiumsp" 
+                                            [step]="1000" [minAlert]="textAlert.minPremiumsp" [maxAlert]="textAlert.maxPremiumsp"
+                                            (valueChange)="changeValue($event, 'premiumsp')" [round]="false">
+                                        </incrementer>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-md-4 pd0">
+                                <div class="col-label lh-form-control">ชำระเบี้ยพิเศษ (TOP-UP Premium)</div>
+                                <div class="col-input">
+                                    <div class="onePromise">
+                                        <incrementer 
+                                            [min]="10000" [max]="120000000" [showMinMax]="true" formControlName="premiumtop"
+                                            [zero]="0" [step]="1000" [maxAlert]="textAlert.maxPremiumtop"
+                                            (valueChange)="changeValue($event, 'premiumtop')" [round]="false">
+                                        </incrementer>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+
+                        <!-- เฉพาะ ทีแอล ไลฟ์ โซลูชั่น 99/1 -->
+                        <div formArrayName="ulinkPaymentArray" *ngIf="ulinkData.choosePlan == 1">
+                            <div *ngFor="let item of ulinkPayment.get('ulinkPaymentArray').controls; let i = index;" [formGroupName]="i" class="boxPromisesMore">
+                                <div class="col-md-3 pd0">
+                                    <div class="col-label lh-form-control">รูปแบบการชำระ</div>
+                                    <div class="col-input">
+                                        <dropdown formControlName="formatpay" (dataChange)="changeFormatPay($event, i)">
+                                            <dropdown-option value="1">ประจำ</dropdown-option>
+                                            <dropdown-option value="2">ครั้งเดียว</dropdown-option>
+                                        </dropdown>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3 pd0">
+                                    <div class="col-label lh-form-control">อายุเพิ่ม TOP-UP (ปี)</div>
+                                    <div class="col-input" [ngClass]="{'form-inline': ulinkPayment.value.ulinkPaymentArray[i].formatpay != '2'}">
+                                        <input class="form-control" type="text" calculator max="99" formControlName="agestart"
+                                            [(value)]="ulinkPayment.value.ulinkPaymentArray[i].agestart"
+                                            (calculatorChange)="checkArrayAge($event, 'agestart', i)"
+                                        />
+                                        <i class="icon-minus2" *ngIf="ulinkPayment.value.ulinkPaymentArray[i].formatpay != '2'"></i>
+                                        <input class="form-control" *ngIf="ulinkPayment.value.ulinkPaymentArray[i].formatpay != '2'" type="text"
+                                            calculator max="99" formControlName="ageend" [(value)]="ulinkPayment.value.ulinkPaymentArray[i].ageend" 
+                                            (calculatorChange)="checkArrayAge($event, 'ageend', i)"
+                                        />
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3 pd0">
+                                    <div class="col-label lh-form-control">เพิ่ม TOP-UP</div>
+                                    <div class="col-input">
+                                        <div class="onePromise">
+                                            <incrementer 
+                                                formControlName="premiumtop" [min]="10000" [max]="120000000" [step]="1000"
+                                                [maxAlert]="textAlert.maxPremiumtop">
+                                            </incrementer>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3 pd0" *ngIf="i > 0">
+                                    <div class="btn-action">
+                                        <button class="btn-style2 btn-style-m pdlr20" type="submit" (click)="remove(i)">
+                                            <span> <i class="icon-rubbish-bin"></i> ลบ </span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+
+                        <!-- เฉพาะ ทีแอล ไลฟ์ โซลูชั่น 99/99 -->
+                        <div class="boxPromisesMore" *ngIf="ulinkData.choosePlan == 2">
+                            <div class="col-md-4 pd0">
+                                <div class="col-label lh-form-control">คาดว่าจะชำระเบี้ยประกันภัย (ปี)</div>
+                                <div class="col-input">
+                                    <input class="form-control" type="text" calculator max="99" formControlName="amountpayyear" 
+                                        [(value)]="ulinkPayment.value.amountpayyear" (calculatorChange)="checkAge($event, 'amountpayyear')"
+                                    />
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 pd0">
+                                <div class="col-label lh-form-control">อายุเริ่มรับประกันถึงอายุ (ปี)</div>
+                                <div class="col-input form-inline">
+                                    <input class="form-control" type="text" calculator max="99" formControlName="agestart" [(value)]="prospect.age"/>
+                                    <i class="icon-minus2"></i>
+                                    <input class="form-control" type="text" calculator max="99" formControlName="endpayyear" 
+                                        [(value)]="ulinkPayment.value.endpayyear" (calculatorChange)="checkAge($event, 'endpayyear')"
+                                    />
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 pd0">
+                                <div class="col-label lh-form-control">ชำระเบี้ยประกันภัย</div>
+                                <div class="col-input">
+                                    <dropdown formControlName="mode" (dataChange)="changeMode($event)">
+                                        <dropdown-option value="0">รายเดือน</dropdown-option>
+                                        <dropdown-option value="4">ราย 3 เดือน</dropdown-option>
+                                        <dropdown-option value="2">ราย 6 เดือน</dropdown-option>
+                                        <dropdown-option value="1">รายปี</dropdown-option>
+                                    </dropdown>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+
+                        <!-- เฉพาะ ทีแอล ไลฟ์ โซลูชั่น 99/99 -->
+                        <div class="boxPromisesMore" *ngIf="ulinkData.choosePlan == 2">
+                            <div class="col-md-3 pd0">
+                                <div class="col-label lh-form-control">RPP (บาท)</div>
+                                <div class="col-input">
+                                    <input class="form-control" type="text" caption="ระบุจำนวนเงิน" calculator 
+                                        formControlName="premiumrpp" (value)="ulinkPayment.value.premiumrpp"
+                                        (calculatorChange)="changeValue($event, 'premiumrpp')"
+                                        [attr.disabled]="disableRpp ? '' : null" [ngClass]="[disableRpp ? 'disabled' : '']"
+                                    />
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 pd0">
+                                <div class="col-label lh-form-control">RSP (บาท)</div>
+                                <div class="col-input">
+                                    <input class="form-control" type="text" caption="ระบุจำนวนเงิน" calculator 
+                                        formControlName="premiumrsp" (value)="ulinkPayment.value.premiumrsp"
+                                        (calculatorChange)="changeValue($event, 'premiumrsp')"
+                                        [attr.disabled]="disableRsp ? '' : null" [ngClass]="[disableRsp ? 'disabled' : '']"
+                                    />
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 pd0">
+                                <div class="col-label lh-form-control">TOP-UP (บาท)</div>
+                                <div class="col-input">
+                                    <input class="form-control" type="text" caption="ระบุจำนวนเงิน" calculator 
+                                        formControlName="premiumtop" (value)="ulinkPayment.value.premiumtop"
+                                        (calculatorChange)="changeValue($event, 'premiumtop')"
+                                        [attr.disabled]="disableRsp ? '' : null" [ngClass]="[disableRsp ? 'disabled' : '']"
+                                    />
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 pd0">
+                                <div class="col-label lh-form-control c-red">รวมเบี้ยประกันภัย (บาท)</div>
+                                <div class="col-input">
+                                    <input class="form-control" type="text" caption="ระบุจำนวนเงิน" formControlName="sumpremium" [ngModel]="premiumSum | number" disabled/>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+
+                        <!-- เฉพาะ ทีแอล ไลฟ์ โซลูชั่น 99/1 -->
+                        <div class="boxActionForm" *ngIf="ulinkData.choosePlan == 1">
+                            <button id="btnAdd" class="btn-style3" type="button" (click)="add()" [disabled]="disabledAddTopup">
+                                <span><i class="icon-ion-ios-plus-outline fs29"></i> เพิ่ม TOP-UP</span>
+                            </button>
+                            <button id="btnReset" class="btn-style3 btn-style-warning" type="button" (click)="reset()">
+                                <span><i class="icon-reload"></i> ล้างค่า</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,357 @@
+<div class="boxContentPage bgBlue3" *ngIf="hasRider">
+    <div class="container xs-pdlr0">
+        <div class="boxPromisesMore" [ngClass]="{'closed': !showRider}">
+            <h2 class="titlePromisesMore" (click)="toggleRider()">
+                สัญญาเพิ่มเติม <span><i class="icon-"></i></span>
+            </h2>
+            <div class="boxListForm pdt10 pdb10">
+                <div class="col-md-6">
+                    <a *ngIf="(config[conf.rider('AC01')].active || config[conf.rider('AC02')].active || config[conf.rider('TAC01')].active || config[conf.rider('TAC02')].active) && (!config[conf.rider('AC01')].disabled || !config[conf.rider('AC02')].disabled || !config[conf.rider('TAC01')].disabled || !config[conf.rider('TAC02')].disabled) && age > 15"
+                        id="occupation-btn" href="javascript:void(0)" (click)="fn_open_occupation()">
+                        อาชีพ อ.1 อ.2 :
+                        <br class="view-only-md" />
+                        <span>{{ occ != '' ? occ : 'ยังไม่ระบุอาชีพ' }}</span>
+                        <i class="icon icon-notepad-and-pencil"></i>
+                    </a>
+                    <p class="title">{{ riderTitle }}</p>
+
+                    <div *ngIf="!takafulRider" class="onePromise" [ngClass]="{'disabled': config[conf.rider('AC01')].disabled || !config[conf.rider('AC01')].active}">
+                        <div class="label" (click)="popup('AC01')"><span>{{ config[conf.rider('AC01')].rider }}</span></div>
+                        <incrementer [default]="sum" id="quatationRider_ac1" [(value)]="rider[conf.rider('AC01')].sum" [min]="config[conf.rider('AC01')].min" [max]="config[conf.rider('AC01')].max" [minAlert]="config[conf.rider('AC01')].minAlert" [maxAlert]="config[conf.rider('AC01')].maxAlert"
+                            [step]="config[conf.rider('AC01')].steps" (valueChange)="onChange(conf.rider('AC01')); fn_open_occupation('AC01');"></incrementer>
+                    </div>
+                    <div *ngIf="!takafulRider" class="twoPromise" [ngClass]="{'disabled': config[conf.rider('AC01')].disabled || !config[conf.rider('AC01')].active}">
+                        <div class="label"><span>{{ riderTitle }}</span></div>
+                        <p id="AC01-premium">{{ rider[conf.rider('AC01')].premium | number }}</p>
+                    </div>
+
+                    <div *ngIf="takafulRider" class="onePromise" [ngClass]="{'disabled': config[conf.rider('TAC01')].disabled || !config[conf.rider('TAC01')].active}">
+                        <div class="label" (click)="popup('TAC01')"><span>{{ config[conf.rider('TAC01')].rider }}</span></div>
+                        <incrementer [default]="sum" id="quatationRider_tac1" [(value)]="rider[conf.rider('TAC01')].sum" [min]="config[conf.rider('TAC01')].min" [max]="config[conf.rider('TAC01')].max" [minAlert]="config[conf.rider('TAC01')].minAlert" [maxAlert]="config[conf.rider('TAC01')].maxAlert"
+                            [step]="config[conf.rider('TAC01')].steps" (valueChange)="onChange(conf.rider('TAC01')); fn_open_occupation('TAC01');"></incrementer>
+                    </div>
+                    <div *ngIf="takafulRider" class="twoPromise" [ngClass]="{'disabled': config[conf.rider('TAC01')].disabled || !config[conf.rider('TAC01')].active}">
+                        <div class="label"><span>{{ riderTitle }}</span></div>
+                        <p id="TAC01-premium">{{ rider[conf.rider('TAC01')].premium | number }}</p>
+                    </div>
+
+                    <div *ngIf="!takafulRider" class="onePromise" [ngClass]="{'disabled': config[conf.rider('KG1')].disabled || !config[conf.rider('KG1')].active}">
+                        <div class="label" (click)="popup('KG1')"><span>{{ config[conf.rider('KG1')].rider }}</span></div>
+                        <incrementer [default]="sum" id="quatationRider_kg1" [(value)]="rider[conf.rider('KG1')].sum" [min]="config[conf.rider('KG1')].min" [max]="config[conf.rider('KG1')].max" [minAlert]="config[conf.rider('KG1')].minAlert" [maxAlert]="config[conf.rider('KG1')].maxAlert"
+                            [step]="config[conf.rider('KG1')].steps" (valueChange)="onChange(conf.rider('KG1'));"></incrementer>
+                    </div>
+                    <div *ngIf="!takafulRider" class="twoPromise" [ngClass]="{'disabled': config[conf.rider('KG1')].disabled || !config[conf.rider('KG1')].active}">
+                        <div class="label"><span>{{ riderTitle }}</span></div>
+                        <p id="KG1-premium">{{ rider[conf.rider('KG1')].premium | number }}</p>
+                    </div>
+
+                    <div *ngIf="takafulRider" class="onePromise" [ngClass]="{'disabled': config[conf.rider('TKG1')].disabled || !config[conf.rider('TKG1')].active}">
+                        <div class="label" (click)="popup('TKG1')"><span>{{ config[conf.rider('TKG1')].rider }}</span></div>
+                        <incrementer [default]="sum" id="quatationRider_tkg1" [(value)]="rider[conf.rider('TKG1')].sum" [min]="config[conf.rider('TKG1')].min" [max]="config[conf.rider('TKG1')].max" [minAlert]="config[conf.rider('TKG1')].minAlert" [maxAlert]="config[conf.rider('TKG1')].maxAlert"
+                            [step]="config[conf.rider('TKG1')].steps" [zero]="config[conf.rider('TKG1')].zero" (valueChange)="onChange(conf.rider('TKG1'));"></incrementer>
+                    </div>
+                    <div *ngIf="takafulRider" class="twoPromise" [ngClass]="{'disabled': config[conf.rider('TKG1')].disabled || !config[conf.rider('TKG1')].active}">
+                        <div class="label"><span>{{ riderTitle }}</span></div>
+                        <p id="TKG1-premium">{{ rider[conf.rider('TKG1')].premium | number }}</p>
+                    </div>
+
+                    <div *ngIf="!takafulRider" class="onePromise" [ngClass]="{'disabled': config[conf.rider('AC02')].disabled || !config[conf.rider('AC02')].active}">
+                        <div class="label" (click)="popup('AC02')"><span>{{ config[conf.rider('AC02')].rider }}</span></div>
+                        <incrementer [default]="sum" id="quatationRider_ac2" [(value)]="rider[conf.rider('AC02')].sum" [min]="config[conf.rider('AC02')].min" [max]="config[conf.rider('AC02')].max" [minAlert]="config[conf.rider('AC02')].minAlert" [maxAlert]="config[conf.rider('AC02')].maxAlert"
+                            [step]="config[conf.rider('AC02')].steps" (valueChange)="onChange(conf.rider('AC02')); fn_open_occupation('AC02');"></incrementer>
+                    </div>
+                    <div *ngIf="!takafulRider" class="twoPromise" [ngClass]="{'disabled': config[conf.rider('AC02')].disabled || !config[conf.rider('AC02')].active}">
+                        <div class="label"><span>{{ riderTitle }}</span></div>
+                        <p id="AC02-premium">{{ rider[conf.rider('AC02')].premium | number }}</p>
+                    </div>
+
+                    <div *ngIf="takafulRider" class="onePromise" [ngClass]="{'disabled': config[conf.rider('TAC02')].disabled || !config[conf.rider('TAC02')].active}">
+                        <div class="label" (click)="popup('TAC02')"><span>{{ config[conf.rider('TAC02')].rider }}</span></div>
+                        <incrementer [default]="sum" id="quatationRider_tac2" [(value)]="rider[conf.rider('TAC02')].sum" [min]="config[conf.rider('TAC02')].min" [max]="config[conf.rider('TAC02')].max" [minAlert]="config[conf.rider('TAC02')].minAlert" [maxAlert]="config[conf.rider('TAC02')].maxAlert"
+                            [step]="config[conf.rider('TAC02')].steps" (valueChange)="onChange(conf.rider('TAC02')); fn_open_occupation('TAC02');"></incrementer>
+                    </div>
+                    <div *ngIf="takafulRider" class="twoPromise" [ngClass]="{'disabled': config[conf.rider('TAC02')].disabled || !config[conf.rider('TAC02')].active}">
+                        <div class="label"><span>{{ riderTitle }}</span></div>
+                        <p id="TAC02-premium">{{ rider[conf.rider('TAC02')].premium | number }}</p>
+                    </div>
+
+                    <div *ngIf="!takafulRider" class="onePromise" [ngClass]="{'disabled': config[conf.rider('KG2')].disabled || !config[conf.rider('KG2')].active}">
+                        <div class="label" (click)="popup('KG2')"><span>{{ config[conf.rider('KG2')].rider }}</span></div>
+                        <incrementer [default]="sum" id="quatationRider_kg2" [(value)]="rider[conf.rider('KG2')].sum" [min]="config[conf.rider('KG2')].min" [max]="config[conf.rider('KG2')].max" [minAlert]="config[conf.rider('KG2')].minAlert" [maxAlert]="config[conf.rider('KG2')].maxAlert"
+                            [step]="config[conf.rider('KG2')].steps" (valueChange)="onChange(conf.rider('KG2'));"></incrementer>
+                    </div>
+                    <div *ngIf="!takafulRider" class="twoPromise" [ngClass]="{'disabled': config[conf.rider('KG2')].disabled || !config[conf.rider('KG2')].active}">
+                        <div class="label"><span>{{ riderTitle }}</span></div>
+                        <p id="KG2-premium">{{ rider[conf.rider('KG2')].premium | number }}</p>
+                    </div>
+
+                    <div *ngIf="takafulRider" class="onePromise" [ngClass]="{'disabled': config[conf.rider('TKG2')].disabled || !config[conf.rider('TKG2')].active}">
+                        <div class="label" (click)="popup('TKG2')"><span>{{ config[conf.rider('TKG2')].rider }}</span></div>
+                        <incrementer [default]="sum" id="quatationRider_tkg2" [(value)]="rider[conf.rider('TKG2')].sum" [min]="config[conf.rider('TKG2')].min" [max]="config[conf.rider('TKG2')].max" [minAlert]="config[conf.rider('TKG2')].minAlert" [maxAlert]="config[conf.rider('TKG2')].maxAlert"
+                            [step]="config[conf.rider('TKG2')].steps" [zero]="config[conf.rider('TKG2')].zero" (valueChange)="onChange(conf.rider('TKG2'));"></incrementer>
+                    </div>
+                    <div *ngIf="takafulRider" class="twoPromise" [ngClass]="{'disabled': config[conf.rider('TKG2')].disabled || !config[conf.rider('TKG2')].active}">
+                        <div class="label"><span>{{ riderTitle }}</span></div>
+                        <p id="TKG2-premium">{{ rider[conf.rider('TKG2')].premium | number }}</p>
+                    </div>
+
+                    <div class="onePromise" [ngClass]="{'disabled': config[conf.rider('AC03')].disabled || !config[conf.rider('AC03')].active}">
+                        <div class="label" (click)="popup('AC03')"><span>อ.3</span></div>
+                        <incrementer [default]="sum" id="quatationRider_ac3" [(value)]="rider[conf.rider('AC03')].sum" [min]="config[conf.rider('AC03')].min" [max]="config[conf.rider('AC03')].max" [minAlert]="config[conf.rider('AC03')].minAlert" [maxAlert]="config[conf.rider('AC03')].maxAlert"
+                            [step]="config[conf.rider('AC03')].steps" (valueChange)="onChange(conf.rider('AC03'));"></incrementer>
+                    </div>
+                    <div class="twoPromise" [ngClass]="{'disabled': config[conf.rider('AC03')].disabled || !config[conf.rider('AC03')].active}">
+                        <div class="label"><span>{{ riderTitle }}</span></div>
+                        <p id="AC03-premium">{{ rider[conf.rider('AC03')].premium | number }}</p>
+                    </div>
+
+                    <div class="onePromise" [ngClass]="{'disabled': config[conf.rider('JP')].disabled || !config[conf.rider('JP')].active}">
+                        <div class="label" (click)="popup('JP')"><span>{{ config[conf.rider('JP')].rider }}</span></div>
+                        <incrementer [default]="sum" id="quatationRider_jp" [(value)]="rider[conf.rider('JP')].sum" [min]="config[conf.rider('JP')].min" [max]="config[conf.rider('JP')].max" [minAlert]="config[conf.rider('JP')].minAlert" [maxAlert]="config[conf.rider('JP')].maxAlert"
+                            [step]="config[conf.rider('JP')].steps" (valueChange)="onChange(conf.rider('JP'));"></incrementer>
+                    </div>
+                    <div class="twoPromise" [ngClass]="{'disabled': config[conf.rider('JP')].disabled || !config[conf.rider('JP')].active}">
+                        <div class="label"><span>{{ riderTitle }}</span></div>
+                        <p id="JP-premium">{{ rider[conf.rider('JP')].premium | number }}</p>
+                    </div>
+
+                    <div *ngIf="!takafulRider" class="onePromise" [ngClass]="{'disabled': config[conf.rider('RP')].disabled || !config[conf.rider('RP')].active}">
+                        <div class="label" (click)="popup('RP')"><span>{{ config[conf.rider('RP')].rider }}</span></div>
+                        <incrementer [default]="sum" id="quatationRider_rp" [(value)]="rider[conf.rider('RP')].sum" [min]="config[conf.rider('RP')].min" [max]="config[conf.rider('RP')].max" [minAlert]="config[conf.rider('RP')].minAlert" [maxAlert]="config[conf.rider('RP')].maxAlert"
+                            [step]="config[conf.rider('RP')].steps" (valueChange)="onChange(conf.rider('RP'));"></incrementer>
+                    </div>
+                    <div *ngIf="!takafulRider" class="twoPromise" [ngClass]="{'disabled': config[conf.rider('RP')].disabled || !config[conf.rider('RP')].active}">
+                        <div class="label"><span>{{ riderTitle }}</span></div>
+                        <p id="RP-premium">{{ rider[conf.rider('RP')].premium | number }}</p>
+                    </div>
+
+                    <div *ngIf="takafulRider" class="onePromise" [ngClass]="{'disabled': config[conf.rider('TRP')].disabled || !config[conf.rider('TRP')].active}">
+                        <div class="label" (click)="popup('TRP')"><span>{{ config[conf.rider('TRP')].rider }}</span></div>
+                        <incrementer [default]="sum" id="quatationRider_trp" [(value)]="rider[conf.rider('TRP')].sum" [min]="config[conf.rider('TRP')].min" [max]="config[conf.rider('TRP')].max" [minAlert]="config[conf.rider('TRP')].minAlert" [maxAlert]="config[conf.rider('TRP')].maxAlert"
+                            [step]="config[conf.rider('TRP')].steps" (valueChange)="onChange(conf.rider('TRP'));"></incrementer>
+                    </div>
+                    <div *ngIf="takafulRider" class="twoPromise" [ngClass]="{'disabled': config[conf.rider('TRP')].disabled || !config[conf.rider('TRP')].active}">
+                        <div class="label"><span>{{ riderTitle }}</span></div>
+                        <p id="TRP-premium">{{ rider[conf.rider('TRP')].premium | number }}</p>
+                    </div>
+
+                    <div class="onePromise" [ngClass]="{'disabled': config[conf.rider('RPG')].disabled || !config[conf.rider('RPG')].active}">
+                        <div class="label" (click)="popup('RPG')"><span>{{ config[conf.rider('RPG')].rider }}</span></div>
+                        <incrementer [default]="sum" id="quatationRider_rpg" [(value)]="rider[conf.rider('RPG')].sum" [min]="config[conf.rider('RPG')].min" [max]="config[conf.rider('RPG')].max" [minAlert]="config[conf.rider('RPG')].minAlert" [maxAlert]="config[conf.rider('RPG')].maxAlert"
+                            [step]="config[conf.rider('RPG')].steps" (valueChange)="onChange(conf.rider('RPG'));"></incrementer>
+                    </div>
+                    <div class="twoPromise" [ngClass]="{'disabled': config[conf.rider('RPG')].disabled || !config[conf.rider('RPG')].active}">
+                        <div class="label"><span>{{ riderTitle }}</span></div>
+                        <p id="RPG-premium">{{ rider[conf.rider('RPG')].premium | number }}</p>
+                    </div>
+
+                    <div class="onePromise" [ngClass]="{'disabled': config[conf.rider('SR2')].disabled || !config[conf.rider('SR2')].active}">
+                        <div class="label" (click)="popup('SR2')"><span>{{ config[conf.rider('SR2')].rider }}</span></div>
+                        <div class="form-group mgb0">
+                            <ion-item class="form-control">
+                                <ion-label></ion-label>
+                                <ion-select interface="popover" [(ngModel)]="rider[conf.rider('SR2')].sum" (ionChange)="conditionDropdown(conf.rider('SR2'))">
+                                    <ion-option value="0">0</ion-option>
+                                    <ion-option [value]="item.option" *ngFor="let item of config[conf.rider('SR2')].select">{{ item.option }}</ion-option>
+                                </ion-select>
+                            </ion-item>
+                        </div>
+                    </div>
+                    <div class="twoPromise" [ngClass]="{'disabled': config[conf.rider('SR2')].disabled || !config[conf.rider('SR2')].active}">
+                        <div class="label"><span>{{ riderTitle }}</span></div>
+                        <p id="SR2-premium">{{ rider[conf.rider('SR2')].premium | number }}</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <p class="title hide-only-sm hide-only-xs">เบี้ยสัญญาเพิ่มเติม</p>
+
+                    <div class="onePromise" [ngClass]="{'disabled': (config[conf.rider('D01')].disabled || !config[conf.rider('D01')].active) && (config[conf.rider('D02')].disabled || !config[conf.rider('D02')].active) && (config[conf.rider('D03')].disabled || !config[conf.rider('D03')].active)}">
+                        <div class="label" (click)="popup(dType)"><span>{{ config[conf.rider('D01')].rider }}</span></div>
+                        <div class="form-group mgb0">
+                            <ion-item class="form-control">
+                                <ion-label></ion-label>
+                                <ion-select interface="popover" [(ngModel)]="dType" (ionChange)="changeD()">
+                                    <ion-option [value]="conf.rider('D01')" *ngIf="!config[conf.rider('D01')].disabled && config[conf.rider('D01')].active">ทร.</ion-option>
+                                    <ion-option [value]="conf.rider('D02')" *ngIf="!config[conf.rider('D02')].disabled && config[conf.rider('D02')].active">ทร.44</ion-option>
+                                    <ion-option [value]="conf.rider('D03')" *ngIf="!config[conf.rider('D03')].disabled && config[conf.rider('D03')].active">ทร.ตลอดชีพ</ion-option>
+                                </ion-select>
+                            </ion-item>
+                        </div>
+                    </div>
+
+                    <div class="twoPromise hide-only-sm hide-only-xs" [ngClass]="{'disabled': (config[conf.rider('D01')].disabled || !config[conf.rider('D01')].active) && (config[conf.rider('D02')].disabled || !config[conf.rider('D02')].active) && (config[conf.rider('D03')].disabled || !config[conf.rider('D03')].active)}">
+                        <div class="label"><span>{{ riderTitle }}</span></div>
+                        <p id="{{ dType }}-premium">{{ rider[dType].premium | number }}</p>
+                    </div>
+
+                    <div class="onePromise" [ngClass]="{'disabled': (config[conf.rider('D01')].disabled || !config[conf.rider('D01')].active) && (config[conf.rider('D02')].disabled || !config[conf.rider('D02')].active) && (config[conf.rider('D03')].disabled || !config[conf.rider('D03')].active)}">
+                        <div class="label"><span hidden>{{ config[conf.rider('D01')].rider }}</span></div>
+                        <incrementer [default]="sum" id="quatationRider_{{ dType }}" [(value)]="rider[dType].sum" [min]="config[dType].min" [max]="config[dType].max" [minAlert]="config[dType].minAlert" [maxAlert]="config[dType].maxAlert" [step]="config[dType].steps" (valueChange)="onChange(dType);"></incrementer>
+                    </div>
+
+                    <div class="twoPromise view-only-sm view-only-xs" [ngClass]="{'disabled': (config[conf.rider('D01')].disabled || !config[conf.rider('D01')].active) && (config[conf.rider('D02')].disabled || !config[conf.rider('D02')].active) && (config[conf.rider('D03')].disabled || !config[conf.rider('D03')].active)}">
+                        <div class="label"><span>{{ riderTitle }}</span></div>
+                        <p id="{{ dType }}-premium_2">{{ rider[dType].premium | number }}</p>
+                    </div>
+
+                    <div *ngIf="!takafulRider" class="onePromise" [ngClass]="{'disabled': config[conf.rider('H')].disabled || !config[conf.rider('H')].active}">
+                        <div class="label" (click)="popup('H')"><span>{{ config[conf.rider('H')].rider }}</span></div>
+                        <div class="form-group mgb0">
+                            <ion-item class="form-control">
+                                <ion-label></ion-label>
+                                <ion-select id="quatationRider_h" interface="popover" [(ngModel)]="rider[conf.rider('H')].sum" (ionChange)="conditionDropdown(conf.rider('H'))">
+                                    <ion-option value="0">0</ion-option>
+                                    <ion-option [value]="item.option" *ngFor="let item of config[conf.rider('H')].select">{{ item.option | number }}</ion-option>
+                                </ion-select>
+                            </ion-item>
+                        </div>
+                    </div>
+                    <div *ngIf="!takafulRider" class="twoPromise" [ngClass]="{'disabled': config[conf.rider('H')].disabled || !config[conf.rider('H')].active}">
+                        <div class="label"><span>{{ riderTitle }}</span></div>
+                        <p id="H-premium">{{ rider[conf.rider('H')].premium | number }}</p>
+                    </div>
+
+                    <div class="onePromise" [ngClass]="{'disabled': config[conf.rider('J0')].disabled || !config[conf.rider('J0')].active}">
+                        <div class="label" (click)="popup('J0')"><span>{{ config[conf.rider('J0')].rider }}</span></div>
+                        <div class="form-group mgb0">
+                            <ion-item class="form-control">
+                                <ion-label></ion-label>
+                                <ion-select id="quatationRider_j0" interface="popover" [(ngModel)]="rider[conf.rider('J0')].sum" (ionChange)="conditionDropdown(conf.rider('J0'))">
+                                    <ion-option value="0">0</ion-option>
+                                    <ion-option [value]="item.option" *ngFor="let item of config[conf.rider('J0')].select">{{ item.option * 5000 + 5000 | number }}</ion-option>
+                                </ion-select>
+                            </ion-item>
+                        </div>
+                    </div>
+                    <div class="twoPromise" [ngClass]="{'disabled': config[conf.rider('J0')].disabled || !config[conf.rider('J0')].active}">
+                        <div class="label"><span>{{ riderTitle }}</span></div>
+                        <p id="J0-premium">{{ rider[conf.rider('J0')].premium | number }}</p>
+                    </div>
+
+                    <div *ngIf="takafulRider" class="onePromise" [ngClass]="{'disabled': config[conf.rider('TH')].disabled || !config[conf.rider('TH')].active}">
+                        <div class="label" (click)="popup('TH')"><span>{{ config[conf.rider('TH')].rider }}</span></div>
+                        <div class="form-group mgb0">
+                            <ion-item class="form-control">
+                                <ion-label></ion-label>
+                                <ion-select id="quatationRider_th" interface="popover" [(ngModel)]="rider[conf.rider('TH')].sum" (ionChange)="conditionDropdown(conf.rider('TH'))">
+                                    <ion-option value="0">0</ion-option>
+                                    <ion-option [value]="item.option" *ngFor="let item of config[conf.rider('TH')].select">{{ item.option | number }}</ion-option>
+                                </ion-select>
+                            </ion-item>
+                        </div>
+                    </div>
+                    <div *ngIf="takafulRider" class="twoPromise" [ngClass]="{'disabled': config[conf.rider('TH')].disabled || !config[conf.rider('TH')].active}">
+                        <div class="label"><span>{{ riderTitle }}</span></div>
+                        <p id="TH-premium">{{ rider[conf.rider('TH')].premium | number }}</p>
+                    </div>
+
+                    <div class="onePromise" [ngClass]="{'disabled': config[conf.rider('G')].disabled || !config[conf.rider('G')].active}">
+                        <div class="label" (click)="popup('G')"><span>{{ config[conf.rider('G')].rider }}</span></div>
+                        <div class="form-group mgb0">
+                            <ion-item class="form-control">
+                                <ion-label></ion-label>
+                                <ion-select id="quatationRider_g" interface="popover" [(ngModel)]="rider[conf.rider('G')].sum" (ionChange)="conditionDropdown(conf.rider('G'))">
+                                    <ion-option value="0">0</ion-option>
+                                    <ion-option [value]="item.option" *ngFor="let item of config[conf.rider('G')].select">{{ item.option | number }}</ion-option>
+                                </ion-select>
+                            </ion-item>
+                        </div>
+                    </div>
+                    <div class="twoPromise" [ngClass]="{'disabled': config[conf.rider('G')].disabled || !config[conf.rider('G')].active}">
+                        <div class="label"><span>{{ riderTitle }}</span></div>
+                        <p id="G-premium">{{ rider[conf.rider('G')].premium | number }}</p>
+                    </div>
+
+                    <div class="onePromise" [ngClass]="{'disabled': config[conf.rider('VP')].disabled || !config[conf.rider('VP')].active}">
+                        <div class="label" (click)="popup('VP')"><span>{{ config[conf.rider('VP')].rider }}</span></div>
+                        <div class="form-group mgb0">
+                            <ion-item class="form-control">
+                                <ion-label></ion-label>
+                                <ion-select id="quatationRider_vp" interface="popover" [(ngModel)]="rider[conf.rider('VP')].sum" (ionChange)="conditionDropdown(conf.rider('VP'))">
+                                    <ion-option value="0">0</ion-option>
+                                    <ion-option [value]="item.option" *ngFor="let item of config[conf.rider('VP')].select">{{ item.option | number }}</ion-option>
+                                </ion-select>
+                            </ion-item>
+                        </div>
+                    </div>
+                    <div class="twoPromise" [ngClass]="{'disabled': config[conf.rider('VP')].disabled || !config[conf.rider('VP')].active}">
+                        <div class="label"><span>{{ riderTitle }}</span></div>
+                        <p id="VP-premium">{{ rider[conf.rider('VP')].premium | number }}</p>
+                    </div>
+
+                    <div class="onePromise" [ngClass]="{'disabled': config[conf.rider('V')].disabled || !config[conf.rider('V')].active}">
+                        <div class="label V" (click)="popup('V')"><span>{{ config[conf.rider('V')].rider }} </span></div>
+                        <div class="form-group mgb0">
+                            <ion-item class="form-control">
+                                <ion-label></ion-label>
+                                <ion-select id="quatationRider_v" interface="popover" [(ngModel)]="rider[conf.rider('V')].sum" (ionChange)="conditionDropdown(conf.rider('V'))">
+                                    <ion-option value="0">0</ion-option>
+                                    <ion-option [value]="item.option" *ngFor="let item of config[conf.rider('V')].select">{{ item.option | number }}</ion-option>
+                                </ion-select>
+                            </ion-item>
+                        </div>
+                    </div>
+                    <div class="twoPromise" [ngClass]="{'disabled': config[conf.rider('V')].disabled || !config[conf.rider('V')].active}">
+                        <div class="label"><span>{{ riderTitle }}</span></div>
+                        <p id="V-premium">{{ rider[conf.rider('V')].premium | number }}</p>
+                    </div>
+
+                    <div class="onePromise" [ngClass]="{'disabled': config[conf.rider('VP5')].disabled || !config[conf.rider('VP5')].active}">
+                        <div class="label" (click)="popup('VP5')"><span>{{ config[conf.rider('VP5')].rider }}</span></div>
+                        <div>
+                            <input id="VP5-input" class="check-style2" type="checkbox" [(ngModel)]="rider[conf.rider('VP5')].sum" (change)="onChange(conf.rider('VP5'))" [disabled]="sum == 0" />
+                            <label for="VP5-input"></label>
+                        </div>
+                    </div>
+                    <div class="twoPromise" [ngClass]="{'disabled': config[conf.rider('VP5')].disabled || !config[conf.rider('VP5')].active}">
+                        <div class="label"><span>{{ riderTitle }}</span></div>
+                        <p id="VP5-premium">{{ rider[conf.rider('VP5')].premium | number }}</p>
+                    </div>
+
+                    <div *ngIf="!(choosePlan == 'SN' && prospect.age == 20)" class="onePromise" [ngClass]="{'disabled': config[conf.rider('KB2_1')].disabled || !config[conf.rider('KB2')].active}">
+                        <div class="label" (click)="popup('KB2')"><span>คบ.</span></div>
+                        <div>
+                            <input id="KB2-input" class="check-style2" type="checkbox" [(ngModel)]="buyKB2" (change)="changeBuyKB2()" [disabled]="sum == 0" />
+                            <label for="KB2-input"></label>
+                        </div>
+                    </div>
+                    <div *ngIf="!(choosePlan == 'SN' && prospect.age == 20)" class="twoPromise" [ngClass]="{'disabled': config[conf.rider('KB2_1')].disabled || !config[conf.rider('KB2')].active}">
+                        <div class="label"><span>{{ riderTitle }}</span></div>
+                        <p id="KB2-premium">{{ rider[conf.rider('KB2')].premium | number }}</p>
+                    </div>
+
+                    <div class="onePromise kb" [ngClass]="{'disabled': !buyKB2}">
+                        <div class="label" (click)="popup('KB2')"><span>{{ config[conf.rider('KB2')].rider }}</span></div>
+                        <calendar [id]="quatationRiderInput_ageParent" [min]="minKB2Date" [max]="maxKB2Date" [(date)]="rider[conf.rider('KB2')].birth" (dateChange)="onChange(conf.rider('KB2'))"></calendar>
+                        <!-- {{minKB2Date +" : "+ maxKB2Date}} -->
+                        <!-- <div class="form-group hasIcon mgb0">
+                            <ion-item class="form-control">
+                                <ion-datetime id="quatationRiderInput_ageParent" displayFormat="D MMMM YYYY" pickerFormat="D MMMM YYYY" [min]="minKB2Date" [max]="maxKB2Date" cancelText="ยกเลิก" doneText="ตกลง" [(ngModel)]="rider[conf.rider('KB2')].birth" (ionChange)="onChange(conf.rider('KB2'))"></ion-datetime>
+                            </ion-item>
+                            <i class="icon-calendar2"></i>
+                        </div> -->
+                        <input class="hidden" type="text" calculate-age [birthDate]="rider[conf.rider('KB2')].birth" [(ngModel)]="rider[conf.rider('KB2')].age" />
+                    </div>
+                    <div class="twoPromise" [ngClass]="{'disabled': !buyKB2}">
+                        <div class="label"><span></span></div>
+                        <p id="KB2_1-premium" class="c-red">{{ rider[conf.rider('KB2')].age }} ปี</p>
+                    </div>
+
+                    <div class="onePromise" [ngClass]="{'disabled': !buyKB2}">
+                        <div class="label" (click)="popup('KB2')"><span>{{ config[conf.rider('KB2_1')].rider }}</span></div>
+                        <div class="form-group mgb0">
+                            <ion-item class="form-control">
+                                <ion-label></ion-label>
+                                <ion-select id="quatationRider_sexParent" interface="popover" [(ngModel)]="rider[conf.rider('KB2')].sex" (ionChange)="conditionDropdown(conf.rider('KB2')); onChange(conf.rider('KB2'))">
+                                    <ion-option value="M">ชาย</ion-option>
+                                    <ion-option value="F">หญิง</ion-option>
+                                </ion-select>
+                            </ion-item>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

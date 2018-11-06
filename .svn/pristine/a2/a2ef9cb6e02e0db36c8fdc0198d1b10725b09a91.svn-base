@@ -1,0 +1,256 @@
+<div class="modal">
+    <i class="close" (click)="close()"></i>
+
+    <h1 class="modal-title">ข้อมูลลูกค้า/ผู้มุ่งหวัง</h1>
+    <div class="popup popup-style1">
+        <div class="boxNewUpdate">
+            <div class="scrollbar-inner">
+                <div class="boxQuatationView">
+                    <div class="boxTableStyle2 td_pd-2-15">
+                        <!-- <table class="boxTableMemberInfo">
+                            <tbody>
+                                <tr>
+                                    <td class="txt-right td_16">แหล่งที่มา <span class="relative right-15">:</span></td>
+                                    <td>{{data.programe}}</td>
+                                    <td colspan="2" class="txt-right">เลขประจำตัวประชาชน <span class="relative">:</span></td>
+                                    <td colspan="2">{{data.citizenID}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="txt-right">คำนำหน้า <span class="relative right-15">:</span></td>
+                                    <td>{{data.preName}}</td>
+                                    <td class="txt-right">ชื่อ <span class="relative right-15">:</span></td>
+                                    <td>{{data.firstName}}</td>
+                                    <td class="txt-right">นามสกุล <span class="relative right-15">:</span></td>
+                                    <td>{{data.lastName}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="txt-right">เพศ <span class="relative right-15">:</span></td>
+                                    <td>{{genderMap[data.gender]}}</td>
+                                    <td class="txt-right">วันเกิด <span class="relative right-15">:</span></td>
+                                    <td>{{data.birthDate}}</td>
+                                    <td class="txt-right">อายุ <span class="relative right-15">:</span></td>
+                                    <td>{{data.age}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="txt-right">ชั้นอาชีพ <span class="relative right-15">:</span></td>
+                                    <td>{{data.occupationType}}</td>
+                                    <td class="txt-right">เบอร์มือถือ <span class="relative right-15">:</span></td>
+                                    <td>{{data.mobilephone}}</td>
+                                    <td class="txt-right">เบอร์บ้าน <span class="relative right-15">:</span></td>
+                                    <td>{{data.telephone}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="txt-right">แฟกซ์ <span class="relative right-15">:</span></td>
+                                    <td colspan="2">{{data.fax}}</td>
+                                    <td class="txt-right">พาสปอร์ต <span class="relative right-15">:</span></td>
+                                    <td colspan="2">{{data.passport}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="txt-right">Facebook <span class="relative right-15">:</span></td>
+                                    <td colspan="2">{{data.linkFacebook}}</td>
+                                    <td class="txt-right">Line ID <span class="relative right-15">:</span></td>
+                                    <td colspan="2">{{data.lineID}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="txt-right">พิกัด <span class="relative right-15">:</span></td>
+                                    <td colspan="5">{{data.geolocation}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="txt-right">ที่อยู่ <span class="relative right-15">:</span></td>
+                                    <td colspan="5" style="word-wrap: break-word">{{address}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="txt-right">หมายเหตุ <span class="relative right-15">:</span></td>
+                                    <td colspan="5">{{data.remark}}</td>
+                            </tbody>
+                        </table> -->
+
+                        <div class="modal-detail">
+                            <div class="row">
+                                <div class=" col-md-1 col-sm-6 col-xs-6 txt-right pdr0 pdl0">เเหล่งที่มา : </div>
+                                <div class=" col-md-2 col-sm-6 col-xs-6 txt-left pdr0">{{data.programe}}</div>
+                                <div class=" col-md-2 col-sm-6 col-xs-6 txt-right pdr0">เลขประจำตัวประชาชน : </div>
+                                <div class=" col-md-6 col-sm-6 col-xs-6 txt-left">{{data.citizenID}}</div>
+                            </div>
+
+                            <div class="row">
+                                <div class=" col-md-1 col-sm-6 col-xs-6 txt-right pdr0 pdl0">คำนำหน้า : </div>
+                                <div class=" col-md-1 col-sm-6 col-xs-6 txt-left pdr0">{{data.preName}}</div>
+                                <div class=" col-md-2 col-sm-6 col-xs-6 txt-right pdr0">ชื่อ : </div>
+                                <div class=" col-md-3 col-sm-6 col-xs-6 txt-left">{{data.firstName}}</div>
+                                <div class=" col-md-2 col-sm-6 col-xs-6 txt-right pdr0">นามสกุล : </div>
+                                <div class=" col-md-3 col-sm-6 col-xs-6 txt-left">{{data.lastName}}</div>
+
+                            </div>
+
+
+                            <div class="row">
+                                <div class=" col-md-1 col-sm-6 col-xs-6 txt-right pdr0">เพศ : </div>
+                                <div class=" col-md-1 col-sm-6 col-xs-6 txt-left">{{genderMap[data.gender]}}</div>
+                                <div class=" col-md-2 col-sm-6 col-xs-6 txt-right pdr0">วันเกิด : </div>
+                                <div class=" col-md-3 col-sm-6 col-xs-6 txt-left">{{data.birthDate}}</div>
+                                <div class=" col-md-2 col-sm-6 col-xs-6 txt-right pdr0">อายุ : </div>
+                                <div class=" col-md-3 col-sm-6 col-xs-6 txt-left">{{data.age}}</div>
+                            </div>
+
+                            <div class="row">
+                                <div class=" col-md-1 col-sm-6 col-xs-6 txt-right pdr0 pdl0">ชั้นอาชีพ : </div>
+                                <div class=" col-md-1 col-sm-6 col-xs-6 txt-left">{{data.occupationType}}</div>
+                                <div class=" col-md-2 col-sm-6 col-xs-6 txt-right pdr0 pdl0">เบอร์มือถือ : </div>
+                                <div class=" col-md-3 col-sm-6 col-xs-6 txt-left">{{data.mobilephone}}</div>
+                                <div class=" col-md-2 col-sm-6 col-xs-6 txt-right pdr0 pdl0">เบอร์บ้าน : </div>
+                                <div class=" col-md-3 col-sm-6 col-xs-6 txt-left">{{data.telephone}}</div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class=" col-md-1 col-sm-6 col-xs-6 txt-right pdr0">แฟกซ์ : </div>
+                                <div class=" col-md-2 col-sm-6 col-xs-6 txt-left">{{data.fax}}</div>
+                                <div class=" col-md-1 col-sm-6 col-xs-6 txt-right pdr0 pdl0">พาสปอร์ต : </div>
+                                <div class=" col-md-3 col-sm-6 col-xs-6 txt-left">{{data.passport}}</div>
+                            </div>
+
+                            <div class="row">
+                                <div class=" col-md-1 col-sm-6 col-xs-6 txt-right pdr0 pdl0">Facebook : </div>
+                                <div class=" col-md-2 col-sm-6 col-xs-6 txt-left">{{data.linkFacebook}}</div>
+                                <div class=" col-md-1 col-sm-6 col-xs-6 txt-right pdr0">Line ID : </div>
+                                <div class=" col-md-3 col-sm-6 col-xs-6 txt-left">{{data.lineID}}</div>
+                            </div>
+
+                            <div class="row">
+                                <div class=" col-md-1 col-sm-6 col-xs-6 txt-right pdr0">พิกัด : </div>
+                                <div class=" col-md-11 col-sm-6 col-xs-6 txt-left">{{data.geolocation}}</div>
+                            </div>
+
+                            <div class="row">
+                                <div class=" col-md-1 col-sm-6 col-xs-6 txt-right pdr0">ที่อยู่ : </div>
+                                <div class=" col-md-11 col-sm-6 col-xs-6 txt-left">{{address}}</div>
+                            </div>
+
+                            <div class="row">
+                                <div class=" col-md-1 col-sm-6 col-xs-6 txt-right pdr0 pdl0">หมายเหตุ : </div>
+                                <div class=" col-md-11 col-sm-6 col-xs-6 txt-left">{{data.remark}}</div>
+                            </div>
+                        </div>
+
+
+                        <div class="txt-center pdt15"><a name="ProspectAddComponent_{{data.customerId}}" log [page]="'ProspectPage'" [object]="'ProspectAddComponent_'+data.customerId" [type]="" class="btn-style4" (click)="showAddMember(exportElement)"><span><i class="icon-edit-interface-symbol"></i> แก้ไขข้อมูล</span></a></div>
+                        <div class="boxTableStyle2 td_pd-2-15">
+                            <h2 class="modal-title">ข้อมูลลูกค้า/ผู้มุ่งหวัง</h2>
+                            <table class="dataTable">
+                                <thead>
+                                    <tr>
+                                        <th class="hide-only-sm hide-only-xs">แบบ</th>
+                                        <th class="view-only-sm txt-left sm-w30p">รายละเอียด</th>
+                                        <th class="hide-only-sm hide-only-xs">ทุนประกัน</th>
+                                        <th class="hide-only-xs">ดู/แก้ไขใบเสนอ</th>
+                                        <th class="hide-only-xs">ดูใบเสนอ</th>
+                                        <th class="hide-only-sm hide-only-xs">วันที่บันทึก</th>
+                                        <th class="hide-only-xs">ลบ</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let quotation of quatationList">
+                                        <td *ngIf="quotation.packageno != '' " class="view-only-sm view-only-xs txt-left" style="border-bottom: 1px solid darkgray;">
+                                            {{quotation.planname}} <br> {{"แผน "+quotation.packageno}} <br> {{dateFormat.dateFormatShotTh2(quotation.lastmodify)}}
+                                        </td>
+                                        <td *ngIf="quotation.packageno == '' " class="sm-xs-padding view-only-sm view-only-xs txt-left" style="border-bottom: 1px solid darkgray;">
+                                            {{quotation.planname}} <br> {{currencyFormat.currencyFormat(quotation.lifesum)}} <br> {{dateFormat.dateFormatShotTh2(quotation.lastmodify)}}
+                                        </td>
+                                        <td class="hide-only-sm hide-only-xs">{{quotation.planname}}</td>
+                                        <td class="hide-only-sm hide-only-xs txt-center">
+                                            <span *ngIf="quotation.packageno != '' "> {{"แผน "+quotation.packageno}}</span>
+                                            <span *ngIf="quotation.packageno == '' "> {{currencyFormat.currencyFormat(quotation.lifesum)}}</span>
+                                        </td>
+
+                                        <td class="sm-xs-padding border-sm xs-w50Left txt-center sm-icon">
+                                            <div class="float-xs-right txt-xs-center" *ngIf="quotation.disabled == true && quotation.caseExpire != '0'">
+                                                <span class="lh-xs-15 c-red">{{ "หมดอายุ" }}</span>
+                                            </div>
+                                            <div class="sm-xs-padding float-xs-right txt-xs-center" *ngIf="quotation.disabled == true && quotation.caseExpire == '0'">
+                                                <span>-</span>
+                                            </div>
+                                            <a *ngIf="quotation.disabled != true" name="EditQuatation_{{quotation.quotationno}}" log [page]="'QuatationPage'" [object]="'EditQuatation_'+quotation.quotationno" [type]="" (click)="openQuatation(data, quotation)" href="javascript:void(0)"><i class="icon-file-add"></i></a></td>
+                                        <td class="sm-xs-padding border-sm xs-w50Left txt-center sm-icon">
+                                            <div class="float-xs-right txt-xs-center" *ngIf="quotation.referenceno != ''">
+                                                <a href="javascript:void(0)" (click)="viewQuotationForm(quotation)">
+                                                    <i class="icon icon-pdf-file"></i>
+                                                </a>
+                                            </div>
+                                            <div class="float-xs-right txt-xs-center" *ngIf="quotation.referenceno == ''">
+                                                <i class="icon icon-pdf-file"></i>
+                                            </div>
+                                        </td>
+                                        <td class="hide-only-sm hide-only-xs txt-center">{{dateFormat.dateFormatShotTh2(quotation.lastmodify)}}</td>
+                                        <td class="sm-xs-padding border-sm xs-w50Left txt-center sm-icon">
+                                            <a name="DeleteQuatation_{{quotation.quotationno}}" log [page]="'ProspectPage'" [object]="'DeleteQuatation_'+quotation.quotationno" [type]="" class="btnPop" (click)="confirmDelete(quotation)" href="javascript:void(0)"><i class="icon-rubbish-bin"></i></a>
+                                        </td>
+
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- Start -->
+                        <div class="boxTableStyle2 td_pd-2-15 mgt25">
+                            <h2 class="modal-title">ข้อมูลตัวอย่างผลประโยชน์</h2>
+                            <table class="dataTable">
+                                <thead>
+                                    <tr>
+                                        <th class="hide-only-xs">แบบ</th>
+                                        <th class="hide-only-xs">รายละเอียด</th>
+                                        <th class="hide-only-xs">ดู/แก้ไขใบเสนอ</th>
+                                        <th class="hide-only-sm hide-only-xs">วันที่บันทึก</th>
+                                        <th class="hide-only-xs">ลบ</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let exampleBenefit of exampleBenefitList">
+                                        <td class="sm-xs-padding txt-left">
+                                            {{ exampleBenefit.benefitname }}
+                                        </td>
+                                        <td class="txt-center">
+                                            <a name="EditExampleBenefit_{{exampleBenefit.benefitid}}" [type]="" (click)="viewBenefitDetail(exampleBenefit)" href="javascript:void(0)">
+                                                <i class="icon-text-file-document"></i>
+                                            </a>
+                                        </td>
+                                        <td class="sm-xs-padding border-sm xs-w50Left txt-center sm-icon">
+                                            <div class="float-xs-right txt-xs-center" *ngIf="exampleBenefit.disabled && exampleBenefit.expire">
+                                                <span class="lh-xs-15 c-red">{{ "หมดอายุ" }}</span>
+                                            </div>
+                                            <div class="sm-xs-padding float-xs-right txt-xs-center" *ngIf="exampleBenefit.disabled && !exampleBenefit.expire">
+                                                <span>-</span>
+                                            </div>
+                                            <a name="EditExampleBenefit_{{exampleBenefit.benefitid}}" log [object]="'EditExampleBenefit_' + exampleBenefit.benefitid" [type]="" href="javascript:void(0)" *ngIf="!exampleBenefit.disabled && !exampleBenefit.expire" (click)="openExampleBenefit(exampleBenefit)">
+                                                <i class="icon-view-files"></i>
+                                            </a>
+                                        </td>
+                                        <td class="hide-only-xs txt-center">
+                                            {{ dateFormat.dateFormatShotTh2(exampleBenefit.lastupdate) }}
+                                        </td>
+                                        <td class="sm-xs-padding border-sm xs-w50Left txt-center sm-icon">
+                                            <a name="DeleteExampleBenefit_{{exampleBenefit.benefitid}}" log [object]="'DeleteExampleBenefit_' + exampleBenefit.benefitid" [type]="" (click)="deleteBenefit(exampleBenefit.benefitid)" class="btnPop" href="javascript:void(0)">
+                                                <i class="icon-rubbish-bin"></i>
+                                            </a>
+                                        </td>
+
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- End -->
+                    </div>
+
+                    <div class="row">
+
+
+                    </div>
+
+                    <div class="boxActionForm txt-center">
+                        <a name="'ModalCreateQuatation_{{data.customerId}}" log [page]="'QuatationPage'" [object]="'ModalCreateQuatation_'+data.customerId" [type]="" (click)="openQuatation(null, null)" class="btn-style4"><span><i class="icon-file-add"></i> สร้างใบเสนอขาย</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

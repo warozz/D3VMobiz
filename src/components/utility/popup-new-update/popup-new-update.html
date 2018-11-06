@@ -1,0 +1,85 @@
+<div class="modal">
+    <a class="fancybox-close" href="javascript:void(0)" (click)="close()"></a>
+
+    <h1 class="modal-title">
+        มีอะไรใหม่
+    </h1>
+
+    <div class="popup popup-style1">
+        <div class="boxNewUpdate">
+            <div class="scrollbar-inner">
+                <div class="oneNew" *ngFor="let item of version; let i = index">
+                    <h3>เวอร์ชัน {{ item.version }}{{ item.build == null ? '' : '.' + item.build }} (อัปเดต {{ item.date | date }})</h3>
+                    <ion-grid *ngIf="item.feature.new.length > 0">
+                        <ion-row>
+                            <ion-col col-12 col-sm-3 class="new">
+                                <p *ngIf="i < 1"><i class="icon-star"></i> ใหม่</p>
+                            </ion-col>
+                            <ion-col col-12 col-sm-9>
+                                <ul>
+                                    <li *ngFor="let new of item.feature.new">
+                                        {{ new.title }} <span *ngIf="new.platform == 'app'">(แอปพลิเคชัน)</span>
+                                        <ul *ngIf="new.subtitle">
+                                            <li *ngFor="let sub of new.subtitle">{{ sub.title }}</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </ion-col>
+                        </ion-row>
+                    </ion-grid>
+                    <ion-grid *ngIf="item.feature.changed.length > 0">
+                        <ion-row>
+                            <ion-col col-12 col-sm-4 class="changed">
+                                <p><i class="icon-refresh"></i> เปลี่ยนแปลง</p>
+                            </ion-col>
+                            <ion-col col-12 col-sm-8>
+                                <ul>
+                                    <li *ngFor="let changed of item.feature.changed">
+                                        {{ changed.title }} <span *ngIf="changed.platform == 'app'">(แอปพลิเคชัน)</span>
+                                        <ul *ngIf="changed.subtitle">
+                                            <li *ngFor="let sub of changed.subtitle">{{ sub.title }}</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </ion-col>
+                        </ion-row>
+                    </ion-grid>
+                    <ion-grid *ngIf="item.feature.fixed.length > 0">
+                        <ion-row>
+                            <ion-col col-12 col-sm-4 class="fixed">
+                                <p><i class="icon-ion-wrench"></i> แก้ไขข้อผิดพลาด</p>
+                            </ion-col>
+                            <ion-col col-12 col-sm-8>
+                                <ul>
+                                    <li *ngFor="let fixed of item.feature.fixed">
+                                        {{ fixed.title }} <span *ngIf="fixed.platform == 'app'">(แอปพลิเคชัน)</span>
+                                        <ul *ngIf="fixed.subtitle">
+                                            <li *ngFor="let sub of fixed.subtitle">{{ sub.title }}</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </ion-col>
+                        </ion-row>
+                    </ion-grid>
+                    <ion-grid *ngIf="item.feature.cancel.length > 0">
+                        <ion-row>
+                            <ion-col col-12 col-sm-4 class="cancel">
+                                <p><i class="icon-close-circled"></i> ยกเลิก</p>
+                            </ion-col>
+                            <ion-col col-12 col-sm-8>
+                                <ul>
+                                    <li *ngFor="let cancel of item.feature.cancel">
+                                        {{ cancel.title }} <span *ngIf="cancel.platform == 'app'">(แอปพลิเคชัน)</span>
+                                        <ul *ngIf="cancel.subtitle">
+                                            <li *ngFor="let sub of cancel.subtitle">{{ sub.title }}</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </ion-col>
+                        </ion-row>
+                    </ion-grid>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

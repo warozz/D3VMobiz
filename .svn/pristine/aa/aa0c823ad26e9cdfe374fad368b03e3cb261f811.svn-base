@@ -1,0 +1,11 @@
+<ion-header header>
+</ion-header>
+<ion-content>
+    <div id="quatation_page" class="mainContainer">
+        <title-page sub1="Allocation">ใบคำขอ</title-page>
+        <div class="pdt20">
+            <allocation [refresh]="true" [tlPlan]="planCode" [dataEdit]="dataEdit" [prospect]="prospect"></allocation>
+        </div>
+    </div>
+    <footer footer></footer>
+</ion-content>

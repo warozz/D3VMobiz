@@ -1,0 +1,4 @@
+<!-- Generated template for the QuatationAnnotationComponent component -->
+<div class="boxComment3">
+    เอกสารนี้เป็นเพียงการสรุปผลประโยชน์โดยสังเขป และขอสงวนสิทธิ์ในการพิจารณารับประกันตามหลักเกณฑ์ของบริษัทฯ ทั้งนี้เงื่อนไขและความคุ้มครองอย่างสมบูรณ์จะถูกระบุอยู่ใน{{ 'INSURANCE' | planLabel }}ที่ท่านซื้อไว้เท่านั้น
+</div>

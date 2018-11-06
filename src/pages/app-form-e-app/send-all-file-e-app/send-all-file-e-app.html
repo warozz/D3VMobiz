@@ -1,0 +1,75 @@
+<div class="boxContentPage bgBlue3 hasBgImg bgImg95">
+    <div class="container">
+        <div class="bgPaperShadow mgt25">
+            <div class="contentPaperShadow pd20">
+
+                <div>
+                    <h1 class="base-line fs30 mg0 c-blue pdb10">ส่งใบคำขอไปที่สาขา</h1>
+                </div>
+                <br>
+                <div id="link1" class="oneJumpContent sendAllFiles">
+                    <div class="boxListForm pdlr0 pdt0 pdb20 xs-pdt0">
+                        <div class="col-md-6 txt-md-right pdr-md-7">
+                            <div class="txt-vm">
+                                <div>ผู้เอาประกันภัย : </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 pdl-md-7">
+                            <div class="txt-vm">
+                                <div>{{pname}} {{fname}} {{lname}}</div>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+
+                        <div class="col-md-6 txt-md-right pdr-md-7">
+                            <div class="txt-vm">
+                                <div>เลขที่ใบคำขอ : </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 pdl-md-7">
+                            <div class="txt-vm">
+                                <div>{{applicationid}}</div>
+                            </div>
+                        </div>
+
+                        <div class="clearfix"></div>
+
+                        <div class="col-md-6 txt-md-right pdr-md-7">
+                            <div class="txt-vm">
+                                <div>เอกสารประกอบ : </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 pdl-md-7">
+                            <div class="txt-vm">
+                                <font color="#c33333"><b>{{ totalFile }}</b> </font> ฉบับ
+                            </div>
+                        </div>
+
+                        <div class="clearfix"></div>
+
+                        <div class="col-md-6 txt-md-right pdr-md-7">
+                            <div class="txt-vm">
+                                <div>สถานะชำระเงิน : </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 pdl-md-7">
+                            <div *ngIf="'01' == paymentStatus">
+                                <font color="#c33333"><b>ชำระเงินเรียบร้อย</b></font>
+                            </div>
+                            <div *ngIf="'02' == paymentStatus">
+                                <font color="#c33333"><b>ยังไม่ได้ชำระเงิน</b></font>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+
+                    </div>
+
+                    <div *ngIf="true" class="centertext col-sm-12 pdlr0">
+                        <font color="#c33333">วันที่ส่งใบคำขอ : ({{ dateSubmitAppForm }}) </font>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

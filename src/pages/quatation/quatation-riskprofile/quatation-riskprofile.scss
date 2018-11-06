@@ -1,0 +1,130 @@
+page-quatation-riskprofile {
+    .ion-item-border {
+        border: 1px solid #C8C8C8;
+    }
+    .carousel-img {
+        padding: 5px;
+    }
+    .col-input-20 {
+        width: 20px;
+    }
+    .col-input-300 {
+        width: 300px;
+    }
+    .popover-content {
+        $control-width: 500px !important;
+    }
+    .myCustomSelect {
+        max-width: 100% !important;
+    }
+    // ### grid checkbox ##
+    .check-style2+label::before {
+        background: #fff;
+        border-style: groove;
+    }
+    .boxComment2 {
+        font-size: 25px;
+    }
+    ion-grid {
+        padding-left: 280px !important;
+        font-size: 25px;
+    }
+    @media(max-width:767px) {
+        ion-grid {
+            padding-left: 40px !important;
+            font-size: 25px;
+        }
+    }
+    .boxGraphBlueRed {
+        background: none !important;
+        width: 100% !important;
+    }
+    .alert-md .alert-radio-label {
+        white-space: normal;
+    }
+    .alert-ios .alert-radio-label {
+        white-space: normal;
+    }
+    .select-text {
+        color: red;
+    }
+    .boxSearchPlanInsurance {
+        padding: 10px 0px 10px;
+    }
+    .boxSearchPlanInsurance .boxSelectPlan {
+        display: block;
+        position: relative;
+        padding: 0px 0px 0px 0px !important;
+        margin-bottom: 15px;
+        height: 46px;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+    }
+    .boxStatusStep {
+        display: table;
+        width: 100%;
+        height: 95px;
+        min-height: 90px;
+        padding: 23px 80px 20px 80px;
+        text-align: center;
+    }
+    .form-control.item-block {
+        min-height: auto;
+        height: 44px;
+        text-align: center;
+    }
+    .hasBgImg .container {
+        position: relative;
+        width: 90%;
+    }
+    .bgPaperShadow .contentPaperShadow2 {
+        display: block;
+        position: relative;
+        min-height: 200px;
+        z-index: 1;
+        background: #fff;
+        padding: 20px;
+        color: #333;
+        font-size: 25px;
+        margin-top: 10px;
+    }
+    .hasBgImg:before {
+        display: block;
+        content: '';
+        background: #28ABE6 no-repeat center top;
+        background-size: 100% 100%;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        height: 190px;
+    }
+    .hasBgImg .container {
+        position: relative;
+    }
+    .boxSearchPlanInsurance .label {
+        position: relative;
+        text-align: center;
+    }
+    .boxSearchPlanInsurance .label span {
+        color: #fff;
+        text-align: center;
+        font-size: 25px;
+    }
+    .boxSearchPlanInsurance .label {
+        position: relative;
+        text-align: center;
+    }
+    .col-input {
+        border: 1px solid #C8C8C8;
+        dropdown {
+            padding-bottom: 0px;
+            .boxSelectPlan {
+                margin-bottom: 0px;
+            }
+            .txtView {
+                color: $color-danger !important;
+                text-align: center;
+            }
+        }
+    }
+}

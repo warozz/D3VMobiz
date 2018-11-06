@@ -1,0 +1,29 @@
+[{
+        "planCode": ["ZH", "ZM", "ZS", "ZT", "EN02", "EN05", "EN13", "EN16", "EN21", "ZV", "EN28", "EN29", "EN30", "EN33", "EN34", "EN35","AS85","AS90","AS99","AT85","AT90","AT99", "EN39", "EN40" ],
+        "interval": [{
+                "minage": 0,
+                "maxage": 70,
+                "mb": 160000000
+            },
+            {
+                "minage": 71,
+                "maxage": 80,
+                "mb": 80000000
+            }
+        ]
+    },
+    {
+        "planCode": ["ZJ", "ZK", "NL", "NM", "NQ", "EN03", "EN04", "EN06", "EN07", "EN15"],
+        "interval": [{
+                "minage": 0,
+                "maxage": 70,
+                "mb": 30000000
+            },
+            {
+                "minage": 71,
+                "maxage": 80,
+                "mb": 15000000
+            }
+        ]
+    }
+]

@@ -1,0 +1,76 @@
+<ion-header header></ion-header>
+
+<ion-content>
+    <div id="search_branch_page" class="mainContainer">
+        <title-page>สื่อและเอกสารงานขาย</title-page>
+
+        <div class="boxContentPage">
+            <div class="container">
+                <div class="boxSpaceTop"></div>
+                <div class="bgPaperShadow mgt0">
+                    <div class="contentPaperShadow">
+                        <tabs tabStyle="2" selectIndex="2">
+                            <tab tabTitle="เปิดใจกับการประกันชีวิต" [disabled]="true"></tab>
+                            <tab tabTitle="คู่มือแบบประกัน" [disabled]="true"></tab>
+
+                            <tab tabTitle="ดาวน์โหลดเอกสาร">
+                                <div id="boxListContentTabStyle2" class="boxListContentTabStyle2">
+                                    <!-- start oneContentTab -->
+                                    <div class="oneContentTab">
+                                        <div class="bgBlue4 search">
+                                            <div class="boxFilterSearch">
+                                                <p class="areaLeft">เอกสารประกอบ</p>
+                                                <dropdown [(data)]="payType" (dataChange)="detailBypayType($event)">
+                                                    <dropdown-option *ngFor="let document of documents" value="{{document.id}}">{{document.name}}</dropdown-option>
+                                                </dropdown>
+                                            </div>
+                                        </div>
+
+                                        <div class="boxHeadInfo pdt10 pdb10 pdlr20">
+                                            <ul class="boxLeft lh-form-control">
+                                                <li class="txt-left">แสดงผล <span class="c-blue">{{datasTable.length}}</span> รายการ</li>
+                                            </ul>
+                                        </div>
+
+                                        <!-- ใช้ mat-table -->
+                                        <div class="boxTableStyle1">
+                                            <table matSort [matSortDisableClear]="true" (matSortChange)="sortData($event)">
+                                                <thead>
+                                                    <tr>
+                                                        <th mat-sort-header="no">ลำดับ</th>
+                                                        <th class="fixRightBlue view-only-xs txt-left" mat-sort-header="formNameF">เอกสาร</th>
+                                                        <th class="hide-only-xs txt-left" mat-sort-header="formNameM">เอกสาร</th>
+                                                        <th class="hide-only-xs">รายละเอียด</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr *ngFor="let form of datasTable; let i = index">
+                                                        <td class="txt-center">{{form.no}}</td>
+                                                        <td class="view-only-xs">
+                                                            <div>{{ form.formName }}</div>
+                                                            <a href="javascript:void(0)"><i class="icon-pdf-file"></i></a>
+                                                        </td>
+                                                        <td class="hide-only-xs">{{ form.formName }}</td>
+                                                        <td class="hide-only-xs txt-center">
+                                                            <a href="javascript:void(0)" (click)="openPDF(form)"><i class="icon-pdf-file"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                    <!-- Empty -->
+                                                    <tr>
+                                                        <td *ngIf="datasTable.length == 0" colspan="3" class="txt-center">ว่าง</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <!-- end oneContentTab -->
+                                </div>
+                            </tab>
+                        </tabs>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer footer></footer>
+</ion-content>

@@ -1,0 +1,42 @@
+{
+    "rider": "สมาร์ท วีไอพี",
+    "age": {
+        "min": "16y",
+        "max": "70y"
+    },
+    "rule": [{
+            "deny": ["G", "VP"]
+        },
+        {
+            "config": "UW"
+        }
+    ],
+    "agent": [{
+        "permission": "Normal",
+        "select": [{
+                "option": 1,
+                "value": 10000,
+                "sum": {
+                    "newcase": 1500000,
+                    "wholelife": 3000000
+                }
+            },
+            {
+                "option": 2,
+                "value": 10000,
+                "sum": {
+                    "newcase": 1500000,
+                    "wholelife": 3000000
+                }
+            },
+            {
+                "option": 3,
+                "value": 10000,
+                "sum": {
+                    "newcase": 1500000,
+                    "wholelife": 3000000
+                }
+            }
+        ]
+    }]
+}

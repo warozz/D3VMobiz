@@ -1,0 +1,22 @@
+send-email {
+    .form-horizontal .form-group{
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    .pading-txt{
+        padding-left: 10px;
+    }
+    .popup-style1 {
+        height: 100%;
+        width: 100%;
+        border-radius: 0px;
+        .boxNewUpdate {
+            margin: 0px;
+            height: 100%;
+            padding-bottom: 50px;
+            .scrollbar-inner {
+                height: 100%;
+            }
+        }
+    }
+}

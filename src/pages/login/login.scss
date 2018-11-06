@@ -1,0 +1,14 @@
+page-login {
+    #login_page {
+        .txt1 {
+            font-size: $font-md;
+            color: $color-primary !important;
+            span {
+                color: $color-danger !important;
+            }
+        }
+        .txt2 {
+            font-size: $font-xs !important;
+        }
+    }
+}

@@ -1,0 +1,42 @@
+<div class="modal">
+    <a class="fancybox-close" href="javascript:void(0)" (click)="close()"></a>
+
+    <h1 class="modal-title">
+        หลักเกณฑ์การ<br class="view-only-xs" />ประกันชีวิตชาวต่างชาติ
+    </h1>
+
+    <div class="boxTableStyle1">
+        <table>
+            <thead>
+                <tr>
+                    <th>เลขที่ระเบียบ</th>
+                    <th></th>
+                    <th>รายละเอียด</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="txt-center">UW1-8/01:</td>
+                    <td>หลักเกณฑ์การรับประกันชีวิตแรงงานต่างด้าวที่อยู่ในประเทศไทย</td>
+                    <td class="txt-center">
+                        <div class="float-xs-right txt-xs-center"><a href="javascript:void(0)" (click)="openPdf('UW1-8-01.pdf')"><i class="icon-pdf-file"></i></a></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="txt-center">UW1-8/02:</td>
+                    <td>หลักเกณฑ์การรับประกันชีวิตบุคคลที่ไม่มีสัญชาติไทย</td>
+                    <td class="txt-center">
+                        <div class="float-xs-right txt-xs-center"><a href="javascript:void(0)" (click)="openPdf('UW1-8-02.pdf')"><i class="icon-pdf-file"></i></a></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="txt-center">UW1-8/03:</td>
+                    <td>หลักเกณฑ์การรับประกันชีวิตแรงงานต่างด้าวที่อยู่ในประเทศไทย</td>
+                    <td class="txt-center">
+                        <div class="float-xs-right txt-xs-center"><a href="javascript:void(0)" (click)="openPdf('UW1-8-03.pdf')"><i class="icon-pdf-file"></i></a></div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

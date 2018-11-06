@@ -1,0 +1,71 @@
+<div class="example-container mat-elevation-z8">
+    <mat-table #table [dataSource]="dataSource" matSort>
+  
+      <!-- Position Column -->
+      <ng-container matColumnDef="position">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> ลำดับ </mat-header-cell>
+        <mat-cell *matCellDef="let item"> 1 </mat-cell>
+      </ng-container>
+  
+      <!-- Weight Column -->
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> ชื่อ นามสกุล </mat-header-cell>
+        <mat-cell *matCellDef="let item"> {{item.fname}} {{item.lname}} </mat-cell>
+      </ng-container>
+  
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="planname">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> แบบประกัน </mat-header-cell>
+        <mat-cell *matCellDef="let item"> {{item.planname}} </mat-cell>
+      </ng-container>
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="lifesum">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> ทุนประกัน </mat-header-cell>
+        <mat-cell *matCellDef="let item"> {{item.lifesum | number}} </mat-cell>
+      </ng-container>
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="referenceno">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Ref. ID </mat-header-cell>
+        <mat-cell *matCellDef="let item"> {{item.referenceno}} </mat-cell>
+      </ng-container>
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="applicationid">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> เลขที่ใบคำขอ </mat-header-cell>
+        <mat-cell *matCellDef="let item"> {{item.applicationid}} </mat-cell>
+      </ng-container>
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="publishstatus">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> สถานะ </mat-header-cell>
+        <mat-cell *matCellDef="let item"> {{item.publishstatus}} </mat-cell>
+      </ng-container>
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="type">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> ประเภท </mat-header-cell>
+        <mat-cell *matCellDef="let item"> 1 </mat-cell>
+      </ng-container>
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="view">
+        <mat-header-cell *matHeaderCellDef > ดูรายละเอียด </mat-header-cell>
+        <mat-cell *matCellDef="let item"> 1 </mat-cell>
+      </ng-container>
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="delete" >
+        <mat-header-cell *matHeaderCellDef> ลบข้อมูล </mat-header-cell>
+        <mat-cell *matCellDef="let item"> 1 </mat-cell>
+      </ng-container>
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="lastmodify">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> วันที่บันทึกล่าสุด </mat-header-cell>
+        <mat-cell *matCellDef="let item"> {{item.lastmodify}} </mat-cell>
+      </ng-container>
+  
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+  
+    <mat-paginator #paginator
+                   [pageSize]="10"
+                   [pageSizeOptions]="[5, 10, 15, 20]"
+                   [showFirstLastButtons]="true">
+    </mat-paginator>
+  </div>

@@ -1,0 +1,54 @@
+page-app-application {
+    .textBlue {
+        color: $color-primary !important;
+    }
+    .inline_block {
+        .form-control {
+            margin-bottom: -13px;
+        }
+    }
+    dropdown {
+        &.boxSearchPlanInsurance {
+            .boxSelectPlan {
+                height: 38px;
+                // z-index: 11;
+                .boxDropdownPlan {
+                    height: 38px;
+                    .txtView {
+                        height: 38px;
+                        line-height: 38px;
+                        padding-left: 12px;
+                        padding-right: 12px;
+                        font-size: $font-md;
+                    }
+                    &::after {
+                        height: 38px;
+                    }
+                }
+            }
+        }
+    }
+    prefix-name {
+        .boxSearchPlanInsurance {
+            .boxSelectPlan {
+                height: 38px;
+            }
+        }
+    }
+    .form-control[readonly][fullname-popup] {
+        background-color: #fff;
+    }
+    .boxRemoveRow {
+        display: block;
+        text-align: right;
+        padding: 0px 20px 6px;
+        width: 100%;
+        clear: both;
+        .btnTxtIconRight {
+            color: $color-primary;
+            span {
+                background: $color-danger;
+            }
+        }
+    }
+}

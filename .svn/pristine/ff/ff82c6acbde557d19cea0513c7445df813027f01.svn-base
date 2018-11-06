@@ -1,0 +1,67 @@
+page-app-form-e-app {
+    .textBlue {
+        color: $color-primary !important;
+    }
+    .form-control,
+    .col-label,
+    .lh-form-control {
+        font-size: 20px;
+    }
+    .mainContainer .boxTitlePage h1 {
+        text-align: left;
+    }
+    .stepTitle {
+        position: absolute;
+        top: 0px;
+        height: 100%;
+        line-height: 60px;
+        font-size: 25px;
+        left: 210px;
+        color: #666;
+        p {
+            display: inline-block;
+            margin-left: 10px;
+            margin-top: 0px;
+            font-size: 40px;
+            margin-bottom: 0px;
+        }
+    }
+    .editApp {
+        text-align: right;
+        button {
+            height: 53px;
+            line-height: 53px;
+            font-size: 35px;
+            top: -40px;
+        }
+    }
+    @media screen and (max-width: 1119px) {
+        .col-md-12 {
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+    }
+    @media screen and (max-width: 991px) {
+        .editApp {
+            text-align: center;
+            button {
+                top: 0px;
+            }
+        }
+    }
+    @media screen and (max-width: 767px) {
+        .editApp {
+            text-align: center;
+            button {
+                height: 40px;
+                line-height: 40px;
+                font-size: 25px;
+                top: 0px;
+                margin-bottom: 18px;
+            }
+        }
+    }
+    .btn-back {
+        margin-bottom: 15px;
+    }
+}

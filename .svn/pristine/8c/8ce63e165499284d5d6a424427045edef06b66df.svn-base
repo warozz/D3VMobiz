@@ -1,0 +1,94 @@
+app-form {
+    .boxStatusStep {
+        .oneStep {
+            cursor: pointer;
+            a {
+                i {
+                    width: 40px;
+                    height: 40px;
+                    line-height: 40px;
+                    border-radius: 50%;
+                    top: -7px;
+                    left: -20px;
+                }
+                span {
+                    top: 5px;
+                }
+                @media (max-width: $screen-lg-max) {
+                    span {
+                        margin: 0px 50px;
+                        width: 100px;
+                    }
+                }
+            }
+            &:before,
+            &:after {
+                width: calc(50% - 20px);
+            }
+            &.icon:before,
+            &.icon:after {
+                display: none;
+            }
+            &[area-selected=true] a {
+                opacity: 1;
+                i {
+                    background: $color-primary !important;
+                }
+                span {
+                    color: $color-primary;
+                }
+            }
+        }
+    }
+    @media (min-width: $screen-md-min) {
+        .boxStatusStep {
+            padding-top: 20px;
+        }
+    }
+    @media (max-width: $screen-sm-max) {
+        .boxStatusStep {
+            .oneStep[area-selected=true]:before {
+                display: block;
+                content: '';
+                border-top: 0px;
+                position: absolute;
+                left: 0px;
+                top: -1px;
+                width: 100%;
+                height: 57px;
+                background: $color-primary;
+                transform: matrix(1, 0, -0.17364, 0.9848, 0, 0);
+            }
+        }
+        .boxActionForm {
+            margin: 0px 20px;
+            .boxActionRight,
+            .boxActionLeft {
+                float: none;
+            }
+            .boxActionRight {
+                button {
+                    width: 48%;
+                }
+                button:first-child {
+                    float: left;
+                }
+                button:last-child {
+                    float: right;
+                }
+                margin: 0 auto;
+            }
+            .boxLeft{
+                margin-left: 150px;
+            }
+            .btnSaveLeadRegister{
+                position: absolute;
+                float: center;
+                top: 50%;
+            }
+        }
+    }
+    .boxDetailStatusStep {
+        background: $color-primary;
+    }
+}

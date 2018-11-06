@@ -1,0 +1,81 @@
+page-quatation-e-app {
+    .e-app-container{
+        width: 100%;
+        height: 100%;
+        background-color: #ffffff;
+        overflow: hidden;
+        padding: 20px;
+        margin-top: 30px;
+        .e-app-title {
+            border-bottom: 1px solid #bbb;
+            margin: 0px 0px 10px 0px;
+            padding-right: 30px;
+            padding-bottom: 10px;
+            i {
+                font-size: $font-lg;
+            }
+        }
+        h1 {
+            color: $color-primary;
+            text-align: left;
+            font-size: $font-lg;
+        }
+        h2 {
+            color: $color-primary;
+            text-align: center;
+            font-size: $font-md;
+        }
+    }
+
+    .inside-container {
+        margin: auto;
+    }
+
+    @media (min-width: 768px){
+        .inside-container{
+            width: 70%;
+        }
+    }
+
+    @media (max-width: 767px){
+        .inside-container{
+            width: 100%;
+        }
+    }
+    
+    .signature-height {
+        height: 100px;
+    }
+
+    .signature-thumb{
+        height: 100%;
+        border: 1.5px solid #d5d5d5;
+        background: #eee;
+        width: 100%;
+    }
+
+    .spec-margin{
+        margin-bottom: 10px;
+    }
+
+    @media (min-width: 768px) {
+        .form-horizontal .control-label.middle{
+            margin-top: auto;
+            margin-bottom: auto;
+        }
+    }
+    .underline{
+        border-bottom:1px solid #aaa;
+        padding-bottom:10px;
+    }
+
+    ion-select button {
+        border: 1px solid rgb(200, 200, 200);
+        border-radius: 0px;
+    }
+
+    .form-horizontal .form-group{
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+}

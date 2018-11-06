@@ -1,0 +1,105 @@
+<div class="modal modal-1" *ngIf="modalStyle == 1">
+    <i class="close" (click)="close()"></i>
+
+    <h1 class="modal-title">
+        ผลการตรวจสอบรับประกันเบื้องต้น
+    </h1>
+
+    <div class="popup popup-style1">
+        <div class="boxNewUpdate">
+            <div class="scrollbar-inner">
+
+                <div class="detail">
+                    <div *ngIf="(platform.is('core') || platform.is('mobileweb')) && verifyCode === 'Y' && 'TRUE' === verifyMsg">
+                        <p class="mgt0 txt-center c-black">ใบคำขอนี้เป็นกรมธรรม์สมาร์ทเคส หากต้องการใช้ใบคำขอนี้สำหรับส่งสาขากรุณาเลือก " ส่งข้อมูลไปยังสาขา " เพื่อความสะดวกในการให้บริการ ณ สาขา
+                        </p>
+                    </div>
+
+                    <!-- Below is case app mobile -->
+                    <div *ngIf="(!platform.is('core') && !platform.is('mobileweb')) && verifyCode === 'Y' && 'TRUE' === verifyMsg && 'TRUE' === isplaneapp">
+                        <p class="mgt0 txt-center c-black">ใบคำขอนี้เป็นกรมธรรม์สมาร์ทเคส หากต้องการใช้ใบคำขอนี้สำหรับส่งสาขากรุณาเลือก " ส่งข้อมูลไปยังสาขา " เพื่อความสะดวกในการให้บริการ ณ สาขา หรือหากท่านต้องการชำระเงินผ่านบัตรเครดิต พร้อมลงลายมือชื่อผ่านแอปฯ กรุณาเลือก " ทำใบคำขอออนไลน์
+                            (E-App) "
+                        </p>
+                    </div>
+                    <div *ngIf="(!platform.is('core') && !platform.is('mobileweb')) && verifyCode === 'Y' && 'TRUE' === verifyMsg && 'FALSE' === isplaneapp">
+                        <p class="mgt0 txt-center c-black">ใบคำขอนี้เป็นกรมธรรม์สมาร์ทเคส หากต้องการใช้ใบคำขอนี้สำหรับส่งสาขากรุณาเลือก " ส่งข้อมูลไปยังสาขา " เพื่อความสะดวกในการให้บริการ ณ สาขา
+                        </p>
+                    </div>
+                    <!-- End -->
+
+                    <div *ngIf="'TRUE' != verifyMsg">
+                        <p class="mgt0 txt-center c-black ">{{ verifyMsg }}
+                        </p>
+                    </div>
+
+                    <div *ngIf="platform.is('core') || platform.is('mobileweb')">
+                        <div class="select-send-type">
+                            <div class="inline_block pdb10 pdr20 ">
+                                <input id="radio-1" name="sendType" class="radio-style3 " type="radio" (change)="onSelectionChangeSendType(1) ">
+                                <label class="branchLebelText " for="radio-1">ส่งข้อมูลไปยังสาขา</label>
+                            </div>
+                        </div>
+                        <div class="submit ">
+                            <button (click)="submitData(); " class="btn-style3 btn-style-m " type="button "><span>ตกลง</span></button>
+                        </div>
+                    </div>
+
+                    <div *ngIf="!platform.is('core') && !platform.is('mobileweb')">
+                        <div class="select-send-type ">
+                            <div class="inline_block pdb10 pdr20">
+                                <input id="radio-1" name="sendType" class="radio-style3" type="radio" (change)="onSelectionChangeSendType(1) ">
+                                <label class="branchLebelText " for="radio-1">ส่งข้อมูลไปยังสาขา</label>
+                            </div>
+                            <div class="inline_block pdb10 pdr20" *ngIf="verifyCode==='Y' && 'TRUE' === verifyMsg && 'TRUE' === isplaneapp && nationality == 'THA'">
+                                <input id="radio-2" name="sendType" class="radio-style3" type="radio" (change)="onSelectionChangeSendType(2) ">
+                                <label class="eappText " for="radio-2">ทำใบคำขอออนไลน์ (E-App)</label>
+                            </div>
+                        </div>
+                        <div class="submit">
+                            <button (click)="submitData(); " class="btn-style3 btn-style-m " type="button "><span>ตกลง</span></button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal modal-2" *ngIf="modalStyle == 2">
+    <i class="close" (click)="close()"></i>
+
+    <h1 class="modal-title">
+        ส่งข้อมูลไปยังสาขาเรียบร้อย
+    </h1>
+
+    <div class="popup popup-style1">
+        <div class="boxNewUpdate">
+            <div class="scrollbar-inner">
+
+                <div class="box-detail">
+                    <br>
+                    <p class="mgt0 txt-center c-blue">
+                        การส่งข้อมูลไปยังสาขาจะช่วยลดขั้นตอนการทำงานของสาขา ท่านจำเป็นต้องพิมพ์ใบคำขอฉบับนี้ เพื่อนำไปให้ผู้มุ่งหวังทำการลงลายมือชื่อ และ นำใบคำขอฉบับนี้ พร้อมเอกสารแนบ และหลักฐานการชำระเงิน ส่งสาขาต้นสังกัดของท่าน
+                    </p>
+                </div>
+
+                <div class="box-detail">
+                    <br>
+                    <p class="mgt0 txt-left c-blue">
+                        ตรวจพบข้อมูลผู้เอาประกันดังนี้
+                    </p>
+                </div>
+                <div class="box-detail-warning">
+                    <p class="mgt0 txt-left c-blue">{{ responseMsgUNW }}
+                    </p>
+                </div>
+
+                <div class="div-btn">
+                    <button class="btn-style3 btn-style-m" type="button" (click)="openPDF()"><span><i class="icon-pdf-file"></i> ดูใบคำขอ</span></button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

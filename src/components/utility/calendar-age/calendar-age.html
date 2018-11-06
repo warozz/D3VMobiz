@@ -1,0 +1,4 @@
+<div class="form-group">
+    <input class="form-control" type="text" [(ngModel)]="value" calculator [max]="maxAge" />
+    <calendar [(date)]="birthDate" (dateChange)="calAge(birthDate)" [min]="minDate" [max]="maxDate"></calendar>
+</div>

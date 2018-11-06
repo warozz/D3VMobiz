@@ -1,0 +1,63 @@
+attach-photo-ulink-e-app {
+    .popup-style1 {
+        height: 100%;
+        width: 100%;
+        border-radius: 0px;
+        .boxNewUpdate {
+            margin: 0px;
+            height: 100%;
+            padding-bottom: 50px;
+            .scrollbar-inner {
+                height: 100%;
+                .detail {
+                    border-bottom: 2px solid #28ABE6;
+                    padding-bottom: 20px;
+                    p {
+                        font-size: $font-lg;
+                        margin: 12px auto;
+                        max-width: 340px;
+                    }
+                }
+                .submit {
+                    margin-top: 20px;
+                    text-align: center;
+                }
+            }
+            .oneNew {
+                margin-right: 20px;
+                h3 {
+                    font-size: $font-lg;
+                }
+                p,
+                ul {
+                    margin: 0px 0px;
+                }
+                ul {
+                    margin-left: -20px;
+                    li {
+                        color: $color-dark;
+                    }
+                }
+                .row {
+                    margin-left: -10px;
+                    margin-right: -10px;
+                }
+                .new {
+                    color: #df8a13;
+                }
+                .changed {
+                    color: #017a43;
+                }
+                .fixed {
+                    color: #8834b0;
+                }
+                .cancel {
+                    color: #ff0000;
+                }
+                span {
+                    color: $color-default;
+                }
+            }
+        }
+    }
+}

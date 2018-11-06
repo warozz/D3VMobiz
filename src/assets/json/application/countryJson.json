@@ -1,0 +1,969 @@
+{
+    "country": [{
+            "en": "THAILAND",
+            "th": "ไทย",
+            "key1": "THA",
+            "key2": "TH"
+        },
+        {
+            "en": "LAO",
+            "th": "ลาว",
+            "key1": "LAO",
+            "key2": "LA"
+        },
+        {
+            "en": "CAMBODIA",
+            "th": "กัมพูชา",
+            "key1": "KIM",
+            "key2": "KH"
+        },
+        {
+            "en": "MYANMAR",
+            "th": "พม่า",
+            "key1": "MMR",
+            "key2": "MM"
+        },
+        {
+            "en": "VIET NAM",
+            "th": "เวียดนาม",
+            "key1": "VNM",
+            "key2": "VN"
+        },
+        {
+            "en": "MALAYSIA",
+            "th": "มาเลเซีย",
+            "key1": "MYS",
+            "key2": "MY"
+        },
+        {
+            "en": "INDONESIA",
+            "th": "อินโดนีเซีย",
+            "key1": "IDN",
+            "key2": "ID"
+        },
+        {
+            "en": "GREECE",
+            "th": "กรีซ",
+            "key1": "GRC",
+            "key2": "GR"
+        },
+        {
+            "en": "GUATEMAIA",
+            "th": "กัวเตมาลา",
+            "key1": "GTM",
+            "key2": "GT"
+        },
+        {
+            "en": "QATAR",
+            "th": "กาตาร์",
+            "key1": "QAT",
+            "key2": "QA"
+        },
+        {
+            "en": "GHANA",
+            "th": "กานา",
+            "key1": "GHA",
+            "key2": "GH"
+        },
+        {
+            "en": "GABON",
+            "th": "กาบอง",
+            "key1": "GAB",
+            "key2": "GA"
+        },
+        {
+            "en": "KAZAKHSTAN",
+            "th": "คาซัคสถาน",
+            "key1": "KAZ",
+            "key2": "KZ"
+        },
+        {
+            "en": "CUBA",
+            "th": "คิวบา",
+            "key1": "CUB",
+            "key2": "CU"
+        },
+        {
+            "en": "KYRGYZSTAN",
+            "th": "คีร์กีซสถาน",
+            "key1": "KGZ",
+            "key2": "KG"
+        },
+        {
+            "en": "KUWAIT",
+            "th": "คูเวต",
+            "key1": "KWT",
+            "key2": "KW"
+        },
+        {
+            "en": "GEORGIA",
+            "th": "จอร์เจีย",
+            "key1": "GEO",
+            "key2": "GE"
+        },
+        {
+            "en": "JORDAN",
+            "th": "จอร์แดน",
+            "key1": "JOR",
+            "key2": "JO"
+        },
+        {
+            "en": "JAMAICA",
+            "th": "จาเมกา",
+            "key1": "JAM",
+            "key2": "JM"
+        },
+        {
+            "en": "CHINA",
+            "th": "จีน",
+            "key1": "CHN",
+            "key2": "CN"
+        },
+        {
+            "en": "CHAD",
+            "th": "ชาด",
+            "key1": "TCD",
+            "key2": "TD"
+        },
+        {
+            "en": "CHILE",
+            "th": "ชิลี",
+            "key1": "CHL",
+            "key2": "CL"
+        },
+        {
+            "en": "SAN MARINO",
+            "th": "ซานมารีโน",
+            "key1": "SMR",
+            "key2": "SM"
+        },
+        {
+            "en": "SAMOA",
+            "th": "ซามัว",
+            "key1": "WSM",
+            "key2": "WS"
+        },
+        {
+            "en": "SAUDI ARABIA",
+            "th": "ซาอุดีอาระเบีย",
+            "key1": "SAU",
+            "key2": "SA"
+        },
+        {
+            "en": "ZIMBABWE",
+            "th": "ซิมบับเว",
+            "key1": "ZIM",
+            "key2": "ZW"
+        },
+        {
+            "en": "SYRIA",
+            "th": "ซีเรีย",
+            "key1": "SYR",
+            "key2": "SY"
+        },
+        {
+            "en": "SUDAN",
+            "th": "ซูดาน",
+            "key1": "SUD",
+            "key2": "SD"
+        },
+        {
+            "en": "JAPAN",
+            "th": "ญี่ปุ่น",
+            "key1": "JPN",
+            "key2": "JP"
+        },
+        {
+            "en": "TRINIDAD AND TOBAGO",
+            "th": "ตรินิแดดและโตเบโก",
+            "key1": "TTO",
+            "key2": "TT"
+        },
+        {
+            "en": "TIMOR-LESTE",
+            "th": "ติมอร์-เลสเต",
+            "key1": "TLS",
+            "key2": "TL"
+        },
+        {
+            "en": "TURKEY",
+            "th": "ตุรกี",
+            "key1": "TUR",
+            "key2": "TR"
+        },
+        {
+            "en": "TUNISIA",
+            "th": "ตูนีเซีย",
+            "key1": "TUN",
+            "key2": "TN"
+        },
+        {
+            "en": "TAJIKISTAN",
+            "th": "ทาจิกิสถาน",
+            "key1": "TJK",
+            "key2": "TJ"
+        },
+        {
+            "en": "NORWAY",
+            "th": "นอร์เวย์",
+            "key1": "NOR",
+            "key2": "NO"
+        },
+        {
+            "en": "NICARAGUA",
+            "th": "นิการากัว",
+            "key1": "NIC",
+            "key2": "NI"
+        },
+        {
+            "en": "NEW ZEALAND",
+            "th": "นิวซีเเลนด์",
+            "key1": "NZL",
+            "key2": "NZ"
+        },
+        {
+            "en": "BRAZIL",
+            "th": "บราซิล",
+            "key1": "BRA",
+            "key2": "BR"
+        },
+        {
+            "en": "BRUNEI DARUSSALAM",
+            "th": "บรูไน",
+            "key1": "BRN",
+            "key2": "BN"
+        },
+        {
+            "en": "BOTSWANA",
+            "th": "บอตสวานา",
+            "key1": "BWA",
+            "key2": "BW"
+        },
+        {
+            "en": "BOSNIA AND HERZEGOWINA",
+            "th": "บอสเนีย",
+            "key1": "BIH",
+            "key2": "BA"
+        },
+        {
+            "en": "BANGLADESH",
+            "th": "บังกลาเทศ",
+            "key1": "BGD",
+            "key2": "BD"
+        },
+        {
+            "en": "BULGARIA",
+            "th": "บัลแกเรีย",
+            "key1": "BGR",
+            "key2": "BG"
+        },
+        {
+            "en": "BAHRAIN",
+            "th": "บาห์เรน",
+            "key1": "BHR",
+            "key2": "BH"
+        },
+        {
+            "en": "BURUNDI",
+            "th": "บุรุนดิ",
+            "key1": "BDI",
+            "key2": "BI"
+        },
+        {
+            "en": "BURKINA FASO",
+            "th": "บูร์กินาฟาโซ",
+            "key1": "BFA",
+            "key2": "BF"
+        },
+        {
+            "en": "PAKISTAN",
+            "th": "ปากีสถาน",
+            "key1": "PAK",
+            "key2": "PK"
+        },
+        {
+            "en": "PANAMA",
+            "th": "ปานามา",
+            "key1": "PAN",
+            "key2": "PA"
+        },
+        {
+            "en": "PAPUA NEW GUINEA",
+            "th": "ปาปัวนิวกินี",
+            "key1": "PNG",
+            "key2": "PG"
+        },
+        {
+            "en": "PARAGUAY",
+            "th": "ปารากวัย",
+            "key1": "PRY",
+            "key2": "PY"
+        },
+        {
+            "en": "PALESTINE",
+            "th": "ปาเลสไตน์",
+            "key1": "PSE",
+            "key2": "PS"
+        },
+        {
+            "en": "FRANCE",
+            "th": "ฝรั่งเศส",
+            "key1": "FRA",
+            "key2": "FR"
+        },
+        {
+            "en": "FIJI",
+            "th": "ฟิจิ",
+            "key1": "FJI",
+            "key2": "FJ"
+        },
+        {
+            "en": "FINLAND",
+            "th": "ฟินแลนด์",
+            "key1": "FIN",
+            "key2": "FI"
+        },
+        {
+            "en": "PHILIPINES",
+            "th": "ฟิลิปปินส์",
+            "key1": "PHL",
+            "key2": "PH"
+        },
+        {
+            "en": "BHUTAN",
+            "th": "ภูฏาน",
+            "key1": "BTN",
+            "key2": "BT"
+        },
+        {
+            "en": "MONGOLIA",
+            "th": "มองโกเลีย",
+            "key1": "MNG",
+            "key2": "MN"
+        },
+        {
+            "en": "MONTENEGRO",
+            "th": "มอนเตเนโกร",
+            "key1": "MNE",
+            "key2": "ME"
+        },
+        {
+            "en": "MAURITANIA",
+            "th": "มอริเตเนีย",
+            "key1": "MRT",
+            "key2": "MR"
+        },
+        {
+            "en": "MALTA",
+            "th": "มอลตา",
+            "key1": "MLT",
+            "key2": "MT"
+        },
+        {
+            "en": "MOLDOVA",
+            "th": "มอลโดวา",
+            "key1": "MDA",
+            "key2": "MD"
+        },
+        {
+            "en": "MALDIVES",
+            "th": "มัลดีฟส์",
+            "key1": "MDV",
+            "key2": "MV"
+        },
+        {
+            "en": "MADAGASCAR",
+            "th": "มาดากัสการ์",
+            "key1": "MDG",
+            "key2": "MG"
+        },
+        {
+            "en": "MACAO",
+            "th": "มาเก๊า",
+            "key1": "MAC",
+            "key2": "MO"
+        },
+        {
+            "en": "UGANDA",
+            "th": "ยูกันดา",
+            "key1": "UGA",
+            "key2": "UG"
+        },
+        {
+            "en": "UKRAINE",
+            "th": "ยูเครน",
+            "key1": "UKR",
+            "key2": "UA"
+        },
+        {
+            "en": "RUSSIAN FEDERATION",
+            "th": "รัสเซีย",
+            "key1": "RUS",
+            "key2": "RU"
+        },
+        {
+            "en": "LUXEMBOURG",
+            "th": "ลักเซมเบิร์ก",
+            "key1": "LUX",
+            "key2": "LU"
+        },
+        {
+            "en": "LATVIA",
+            "th": "ลัตเวีย",
+            "key1": "LVA",
+            "key2": "LV"
+        },
+        {
+            "en": "LIECHTENSTEIN",
+            "th": "ลิกเตนสไตน์",
+            "key1": "LIE",
+            "key2": "LI"
+        },
+        {
+            "en": "LITHUANIA",
+            "th": "ลิทัวเนีย",
+            "key1": "LTU",
+            "key2": "LT"
+        },
+        {
+            "en": "LIBYA",
+            "th": "ลิเบีย",
+            "key1": "LBY",
+            "key2": "LY"
+        },
+        {
+            "en": "VANUATU",
+            "th": "วานูเอตู",
+            "key1": "VUT",
+            "key2": "VU"
+        },
+        {
+            "en": "SRI LANKA",
+            "th": "ศรีลังกา",
+            "key1": "LKA",
+            "key2": "LK"
+        },
+        {
+            "en": "SWITZERLAND",
+            "th": "สวิตเซอร์แลนด์",
+            "key1": "CHE",
+            "key2": "CH"
+        },
+        {
+            "en": "SWEDEN",
+            "th": "สวีเดน",
+            "key1": "SWE",
+            "key2": "SE"
+        },
+        {
+            "en": "UNITED ARAB EMIRATES",
+            "th": "สหรัฐอาหรับเอมิเรตส์",
+            "key1": "ARE",
+            "key2": "AE"
+        },
+        {
+            "en": "UNITED STATES",
+            "th": "สหรัฐอเมริกา",
+            "key1": "USA",
+            "key2": "US"
+        },
+        {
+            "en": "UNITED KINGDOM",
+            "th": "สหราชอาณาจักร",
+            "key1": "GBR",
+            "key2": "GB"
+        },
+        {
+            "en": "TANZANIA",
+            "th": "สหสาธารณรัฐแทนซาเนีย",
+            "key1": "TZA",
+            "key2": "TZ"
+        },
+        {
+            "en": "GUYANA",
+            "th": "สาธารณรัฐกายอานา",
+            "key1": "GUY",
+            "key2": "GY"
+        },
+        {
+            "en": "REPUBLIC OF NAMIBIA",
+            "th": "สาธารณรัฐนามิเบีย",
+            "key1": "NAM",
+            "key2": "NA"
+        },
+        {
+            "en": "REPUBLIC OF NICARAGUA",
+            "th": "สาธารณรัฐนิการากัว",
+            "key1": "NIC",
+            "key2": "NI"
+        },
+        {
+            "en": "CONGO,REPUBLIC OF",
+            "th": "สาธารณรัฐประชาธิปไตยตองโก",
+            "key1": "COD",
+            "key2": "CD"
+        },
+        {
+            "en": "CZECH REPUBLIC",
+            "th": "สาธารณรัฐเช็ก",
+            "key1": "CZE",
+            "key2": "CZ"
+        },
+        {
+            "en": "SINGAPORE",
+            "th": "สิงคโปร์",
+            "key1": "SGP",
+            "key2": "SG"
+        },
+        {
+            "en": "SPAIN",
+            "th": "สเปน",
+            "key1": "ESP",
+            "key2": "ES"
+        },
+        {
+            "en": "SLOVAKIA",
+            "th": "สโลวาเกีย",
+            "key1": "SVK",
+            "key2": "SK"
+        },
+        {
+            "en": "SLOVENIA",
+            "th": "สโลวีเนีย",
+            "key1": "SVN",
+            "key2": "SI"
+        },
+        {
+            "en": "AUSTRIA",
+            "th": "ออสเตรีย",
+            "key1": "AUT",
+            "key2": "AT"
+        },
+        {
+            "en": "AUSTRALIA",
+            "th": "ออสเตรเลีย",
+            "key1": "AUS",
+            "key2": "AU"
+        },
+        {
+            "en": "AFGHANISTAN",
+            "th": "อัฟกานิสถาน",
+            "key1": "AFG",
+            "key2": "AF"
+        },
+        {
+            "en": "ARGENTINA",
+            "th": "อาร์เจนตินา",
+            "key1": "ARG",
+            "key2": "AR"
+        },
+        {
+            "en": "ARMENIA",
+            "th": "อาร์เมเนีย",
+            "key1": "ARM",
+            "key2": "AM"
+        },
+        {
+            "en": "AZERBAIJAN",
+            "th": "อาเซอร์ไบจาน",
+            "key1": "AZE",
+            "key2": "AZ"
+        },
+        {
+            "en": "ITALY",
+            "th": "อิตาลี",
+            "key1": "ITA",
+            "key2": "IT"
+        },
+        {
+            "en": "INDIA",
+            "th": "อินเดีย",
+            "key1": "IND",
+            "key2": "IN"
+        },
+        {
+            "en": "IRAQ",
+            "th": "อิรัก",
+            "key1": "IRQ",
+            "key2": "IQ"
+        },
+        {
+            "en": "ISRAEL",
+            "th": "อิสราเอล",
+            "key1": "ISR",
+            "key2": "IL"
+        },
+        {
+            "en": "IRAN",
+            "th": "อิหร่าน",
+            "key1": "IRN",
+            "key2": "IR"
+        },
+        {
+            "en": "EQUATORIAL GUINEA",
+            "th": "อิเควทอเรียดินี",
+            "key1": "GQ",
+            "key2": "GQ"
+        },
+        {
+            "en": "EGYPT",
+            "th": "อียิปต์",
+            "key1": "EGY",
+            "key2": "EG"
+        },
+        {
+            "en": "UZBEKISTAN",
+            "th": "อุซเบกิสถาน",
+            "key1": "UZB",
+            "key2": "UZ"
+        },
+        {
+            "en": "URUGUAY",
+            "th": "อุรุกวัย",
+            "key1": "URY",
+            "key2": "UY"
+        },
+        {
+            "en": "AMERICAN SAMOA",
+            "th": "อเมริกันซามัว",
+            "key1": "ASM",
+            "key2": "AS"
+        },
+        {
+            "en": "HONDURAS",
+            "th": "ฮอนดูรัส",
+            "key1": "HND",
+            "key2": "HN"
+        },
+        {
+            "en": "HUNGARY",
+            "th": "ฮังการี",
+            "key1": "HUN",
+            "key2": "HU"
+        },
+        {
+            "en": "HONG KONG",
+            "th": "ฮ่องกง",
+            "key1": "HKG",
+            "key2": "HK"
+        },
+        {
+            "en": "KOREA,DEMOCRATIC",
+            "th": "เกาหลีเหนือ",
+            "key1": "PRK",
+            "key2": "KP"
+        },
+        {
+            "en": "KOREA,REPUBLIC OF",
+            "th": "เกาหลีใต้",
+            "key1": "KOR",
+            "key2": "KR"
+        },
+        {
+            "en": "KENYA",
+            "th": "เคนย่า",
+            "key1": "KEN",
+            "key2": "KE"
+        },
+        {
+            "en": "SERBIA",
+            "th": "เซอร์เบีย",
+            "key1": "SRB",
+            "key2": "RS"
+        },
+        {
+            "en": "SOUTH SUDAN",
+            "th": "เซาท์ซูดาน",
+            "key1": "SSD",
+            "key2": "SS"
+        },
+        {
+            "en": "SIERRA LEONE",
+            "th": "เซียร์ราลีโอน",
+            "key1": "SLE",
+            "key2": "SL"
+        },
+        {
+            "en": "SENEGAI",
+            "th": "เซเนกัล",
+            "key1": "SEN",
+            "key2": "SN"
+        },
+        {
+            "en": "DENMARK",
+            "th": "เดนมาร์ก",
+            "key1": "DNK",
+            "key2": "DK"
+        },
+        {
+            "en": "TURKMENISTAN",
+            "th": "เติร์กเมนิสสถาน",
+            "key1": "TKM",
+            "key2": "TM"
+        },
+        {
+            "en": "NEPAL",
+            "th": "เนปาล",
+            "key1": "NPL",
+            "key2": "NP"
+        },
+        {
+            "en": "NETHERLANDS",
+            "th": "เนเธอร์แลนด์",
+            "key1": "NLD",
+            "key2": "NL"
+        },
+        {
+            "en": "BENIN",
+            "th": "เบนิน",
+            "key1": "BEN",
+            "key2": "BJ"
+        },
+        {
+            "en": "BELARUS",
+            "th": "เบลารุส",
+            "key1": "BLR",
+            "key2": "BY"
+        },
+        {
+            "en": "BELIZE",
+            "th": "เบลีซ",
+            "key1": "BLZ",
+            "key2": "BZ"
+        },
+        {
+            "en": "BELGIUM",
+            "th": "เบลเยียม",
+            "key1": "BEL",
+            "key2": "BE"
+        },
+        {
+            "en": "PERU",
+            "th": "เปรู",
+            "key1": "PER",
+            "key2": "PE"
+        },
+        {
+            "en": "PUERTO RICO",
+            "th": "เปอร์โตริโก",
+            "key1": "PRI",
+            "key2": "PR"
+        },
+        {
+            "en": "MEXICO",
+            "th": "เม็กซิโก",
+            "key1": "MEX",
+            "key2": "MX"
+        },
+        {
+            "en": "GERMANY",
+            "th": "เยอรมนี",
+            "key1": "DEU",
+            "key2": "DE"
+        },
+        {
+            "en": "YEMEN",
+            "th": "เยเมน",
+            "key1": "YEM",
+            "key2": "YE"
+        },
+        {
+            "en": "LEBANON",
+            "th": "เลบานอน",
+            "key1": "LBN",
+            "key2": "LB"
+        },
+        {
+            "en": "VENEZUELA",
+            "th": "เวเนซุเอลา",
+            "key1": "VEN",
+            "key2": "VE"
+        },
+        {
+            "en": "ECUADOR",
+            "th": "เอกวาดอร์",
+            "key1": "ECU",
+            "key2": "EC"
+        },
+        {
+            "en": "ETHIOPIA",
+            "th": "เอธิโอเปีย",
+            "key1": "ETH",
+            "key2": "ET"
+        },
+        {
+            "en": "ERITREA",
+            "th": "เอริเทรีย",
+            "key1": "ERI",
+            "key2": "ER"
+        },
+        {
+            "en": "EL SALVADOR",
+            "th": "เอลซัลวาดอร์",
+            "key1": "SLV",
+            "key2": "SV"
+        },
+        {
+            "en": "ESTONIA",
+            "th": "เอสโตเนีย",
+            "key1": "EST",
+            "key2": "EE"
+        },
+        {
+            "en": "HAITI",
+            "th": "เฮติ",
+            "key1": "HTI",
+            "key2": "HT"
+        },
+        {
+            "en": "CANADA",
+            "th": "แคนาดา",
+            "key1": "CAN",
+            "key2": "CA"
+        },
+        {
+            "en": "CAMAROON",
+            "th": "แคเมอรูน",
+            "key1": "CMR",
+            "key2": "CM"
+        },
+        {
+            "en": "ANGOLA",
+            "th": "แองโกลา",
+            "key1": "ANG",
+            "key2": "AO"
+        },
+        {
+            "en": "ANTIGUA AND BARBUDA",
+            "th": "แอนติกาและบาร์บูดา",
+            "key1": "ATG",
+            "key2": "AG"
+        },
+        {
+            "en": "SOUTH AFRICA",
+            "th": "แอฟริกาใต้",
+            "key1": "ZAF",
+            "key2": "ZA"
+        },
+        {
+            "en": "ALGERIA",
+            "th": "แอลจีเรีย",
+            "key1": "DZA",
+            "key2": "DZ"
+        },
+        {
+            "en": "ALBANIA",
+            "th": "แอลเบเนีย",
+            "key1": "ALB",
+            "key2": "AL"
+        },
+        {
+            "en": "COTE D'LVOIRE",
+            "th": "โกตดิวัวร์",
+            "key1": "CI",
+            "key2": "CI"
+        },
+        {
+            "en": "CROATIA",
+            "th": "โครเอเซีย",
+            "key1": "HRV",
+            "key2": "HR"
+        },
+        {
+            "en": "COLOMBIA",
+            "th": "โคลัมเบีย",
+            "key1": "COL",
+            "key2": "CO"
+        },
+        {
+            "en": "SOMALIA",
+            "th": "โซมาเรีย",
+            "key1": "SOM",
+            "key2": "SO"
+        },
+        {
+            "en": "DOMINICAN REPUBLIC",
+            "th": "โดมินิกัน",
+            "key1": "DOM",
+            "key2": "DO"
+        },
+        {
+            "en": "BOLIVIA",
+            "th": "โบลิเวีย",
+            "key1": "BOL",
+            "key2": "BO"
+        },
+        {
+            "en": "PORTUGAL",
+            "th": "โปรตุเกส",
+            "key1": "PRT",
+            "key2": "PT"
+        },
+        {
+            "en": "POLAND",
+            "th": "โปแลนด์",
+            "key1": "POL",
+            "key2": "PL"
+        },
+        {
+            "en": "MOZAMBIQUE",
+            "th": "โมซัมบิก",
+            "key1": "MOZ",
+            "key2": "MZ"
+        },
+        {
+            "en": "MOROCCO",
+            "th": "โมร็อกโก",
+            "key1": "MAR",
+            "key2": "MA"
+        },
+        {
+            "en": "ROMANIA",
+            "th": "โรมาเนีย",
+            "key1": "ROU",
+            "key2": "RO"
+        },
+        {
+            "en": "OMAN",
+            "th": "โอมาน",
+            "key1": "OMN",
+            "key2": "OM"
+        },
+        {
+            "en": "CYPRUS",
+            "th": "ไซปรัส",
+            "key1": "CYP",
+            "key2": "CY"
+        },
+        {
+            "en": "TAIWAN",
+            "th": "ไต้หวัน",
+            "key1": "TWN",
+            "key2": "TW"
+        },
+        {
+            "en": "NIGERIA",
+            "th": "ไนจีเรีย",
+            "key1": "NGA",
+            "key2": "NG"
+        },
+        {
+            "en": "LIBERIA",
+            "th": "ไลบีเรีย",
+            "key1": "LBR",
+            "key2": "LR"
+        },
+        {
+            "en": "ICELAND",
+            "th": "ไอซ์แลนด์",
+            "key1": "ISL",
+            "key2": "IS"
+        },
+        {
+            "en": "IRELAND",
+            "th": "ไอร์แลนด์",
+            "key1": "IRL",
+            "key2": "IE"
+        }
+    ]
+}

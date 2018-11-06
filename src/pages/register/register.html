@@ -1,0 +1,67 @@
+<ion-header hidden></ion-header>
+
+<ion-content>
+    <div id="login_page" class="mainContainer">
+        <div class="container">
+            <!-- start loginHeader -->
+            <div class="loginHeader">
+                <h1 class="logoThailife hide-only-xs"><a id="login_pic_logoTL" href="#">ไทยประกันชีวิต</a></h1>
+                <div class="boxVersion">
+                    <div class="txt1">ทีแอล <span>โปร<sup>+</sup></span></div>
+                    <div id="login_lb_tlprompt" class="txt2">TL PRO PLUS</div>
+                    <div id="login_lb_version" class="txt3">{{ tlpromptVersion }}</div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <!-- end loginHeader -->
+
+            <div class="ct">
+                <div class="cc">
+                    <!-- start boxFormLogin -->
+                    <div class="boxFormLogin">
+                        <h1 id="login_lb_memberLogin">{{ titlePage }}</h1>
+                        <div class="formLogin">
+                            <form id="formLogin" #f="ngForm" novalidate [formGroup]="register">
+                                <ul class="bg-style">
+                                    <li><i class="icon-ion-android-person"></i>
+                                        <input name="perid" class="intxt-style" placeholder="รหัสตัวแทน" [(ngModel)]="perid" required formControlName="perid" (keyup)="checkValidateGetMobile()" />
+                                    </li>
+                                    <li><i class="icon-ion-locked "></i>
+                                        <input name="idCardNo" class="intxt-style" placeholder="เลขประจำตัวประชาชน" [(ngModel)]="idCardNo" required formControlName="idCardNo" (keyup)="checkValidateGetMobile()" />
+                                    </li>
+                                    <li>
+                                        <i class="icon-calendar2"></i>
+                                        <!--
+                                        <ion-item class="intxt-style">
+                                            <ion-datetime displayFormat="D MMMM YYYY" pickerFormat="D MMMM YYYY" placeholder="วัน เดือน ปี เกิด" cancelText="ยกเลิก" doneText="ตกลง" [(ngModel)]="birthDate" name="birthDate" required formControlName="birthDate" (ionChange)="checkValidateGetMobile()"></ion-datetime>
+                                        </ion-item>
+                                    -->
+                                        <calendar class="intxt-style" placeholder="วัน เดือน ปี เกิด" [max]="dateDefualt" [date]="birthDate" (dateChange)="dateChange($event)"></calendar>
+                                    </li>
+                                    <li>
+                                        <i class="icon-ion-android-phone-portrait"></i>
+                                        <ion-item class="intxt-style form-control">
+                                            <ion-label>เบอร์โทรศัพท์</ion-label>
+                                            <ion-select name="mobileNo" [(ngModel)]="mobileNo" required formControlName="mobileNo" cancelText="ยกเลิก" okText="ตกลง" interface="popover">
+                                                <ion-option value="">เลือกเบอร์โทรศัพท์</ion-option>
+                                                <ion-option value="{{item}}|{{i+1}}" *ngFor="let item of data; let i = index">{{ item }}</ion-option>
+                                            </ion-select>
+                                        </ion-item>
+                                    </li>
+                                </ul>
+                                <!--  {{register.value | json}} -->
+                                <ul>
+                                    <li>
+                                        <button class="btn-style3 " type="submit " (click)="submit() "><span>ตกลง</span></button>
+                                        <button class="btn-style2 " type="button " (click)="cancel() "><span>ยกเลิก</span></button>
+                                    </li>
+                                </ul>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- end boxFormLogin -->
+                </div>
+            </div>
+        </div>
+    </div>
+</ion-content>

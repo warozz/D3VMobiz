@@ -1,0 +1,25 @@
+popup-plan-detail {
+    .popup-style1 {
+        height: 100%;
+        width: 100%;
+        border-radius: 0px;
+        .boxNewUpdate {
+            margin: 0px;
+            height: calc(100% - 115px);
+            .scrollbar-inner {
+                height: 100%;
+            }
+            .oneNew {
+                margin-right: 20px;
+            }
+        }
+        @media (max-width: $screen-xs-max) {
+            .boxNewUpdate {
+                height: calc(100% - 200px);
+            }
+        }
+    }
+    .form-control {
+        border: 1px solid #c8c8c8;
+    }
+}

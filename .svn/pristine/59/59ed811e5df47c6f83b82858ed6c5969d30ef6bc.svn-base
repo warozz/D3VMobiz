@@ -1,0 +1,170 @@
+<ion-header header></ion-header>
+
+<ion-content>
+    <div id="prospect_page" class="mainContainer">
+        <title-page>รายงานการพิมพ์ใบเสนอขาย (รายบุคคล)</title-page>
+        <div class="boxContentPage bgBlue3 hasBgImg">
+            <div class="container">
+                <div class="bgPaperShadow mgt0">
+                    <div class="contentPaperShadow2">
+                        <div class="boxActionForm boxActionForm-xs_1 pdt10">
+                            <ion-list no-lines>
+                                <button ion-item *ngFor="let item of listLogType; let i = index" (click)="itemSelected(i)" [ngStyle]="{'color': selectedColor == i ? '#0082C8' : ''}">
+                                    {{ i+1 +". "+ item.text }}
+                                </button>
+                            </ion-list>
+                        </div>
+
+                        <div class="formInformationLead">
+                                <div class="col-sw-2 calendar-quatation-form">
+                                    <div class="col-label txt-md-right lh-form-control ws-nowrap">ตั้งแต่ </div>
+                                    <div class="col-input">
+                                            <calendar [max]="maxStartDate" [(date)]="startDate" (dateChange)="changeMinEndDate($event)"></calendar>
+                                    </div>
+                                </div>
+                                <div class="col-sw-2 calendar-quatation-form">
+                                    <div class="col-label txt-md-right lh-form-control ws-nowrap">ถึง </div>
+                                    <div class="col-input">
+                                            <calendar [min]="minEndDate" [(date)]="endDate" (dateChange)="changeMaxStartDate($event)"></calendar>
+                                    </div>
+                                </div>
+                                <div class="col-sw-4 search">
+                                    <a class="btn-style4 btn-style-m txt-center pdlr10" (click)="callLogList()" >
+                                        <span>ค้นหา</span>
+                                    </a>
+                                </div>
+                                <div class="col-sw-2 back">
+                                    <a class="btn-style4 btn-style-m txt-center pdlr10" navPop>
+                                        <span>กลับหน้าใบเสนอขาย</span>
+                                    </a>
+                                </div>
+                            </div>
+                        <!-- <div class="boxHeadInfo">
+                            <h1><b>แสดงรายการพิมพ์ ใบเสนอขาย</b></h1>
+                            <ul class="boxLeft lh-form-control">
+                                <li>ตั้งแต่</li>
+                            </ul>
+                            <ul class="boxLeft lh-form-control">
+                                <li class="calendar">
+                                    <calendar [max]="maxStartDate" [(date)]="startDate" (dateChange)="changeMinEndDate($event)"></calendar>
+                                </li>
+                            </ul>
+                            <ul class="boxLeft lh-form-control">
+                                <li>ถึง</li>
+                            </ul>
+                            <ul class="boxLeft lh-form-control">
+                                <li class="calendar">
+                                    <calendar [min]="minEndDate" [(date)]="endDate" (dateChange)="changeMaxStartDate($event)"></calendar>
+                                </li>
+                            </ul>
+                            <ul class="boxLeft lh-form-control">
+                                <li>
+                                    <a class="btn-style4 btn-style-m txt-center pdlr10" (click)="callLogList()" >
+                                        <span>ค้นหา</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="boxRight lh-form-control">
+                                <li>
+                                    <a class="btn-style4 btn-style-m txt-center pdlr10" navPop>
+                                        <span>กลับหน้าใบเสนอขาย</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        
+                        </div> -->
+                        <div class="boxHeadInfo">
+                            <ul class="boxLeft lh-form-control">
+                                <li>ผลการค้นหา
+                                    <span class="c-blue">{{list?.length}}</span> รายการ
+                                </li>
+                            </ul>
+                            <ul class="boxRight lh-form-control">
+                                <li class="xs-inline">แสดงข้อมูล</li>
+                                <li class="xs-inline">
+                                    <ion-item class="form-control">
+                                        <ion-select [(ngModel)]="pageSize" cancelText="ยกเลิก" okText="ตกลง" interface="popover" (ionChange)="changePageSize($event)">
+                                            <ion-option value="5">5</ion-option>
+                                            <ion-option value="10">10</ion-option>
+                                            <ion-option value="15">15</ion-option>
+                                            <ion-option value="20">20</ion-option>
+                                        </ion-select>
+                                    </ion-item>
+                                </li>
+                                <li class="xs-inline">ต่อหน้า</li>
+                            </ul>
+                        </div>
+                        <div class="boxTableStyle1 boxSearchMemberTable">
+                            <table id="table_1" class="dataTable">
+                                <thead>
+                                    <tr>
+                                        <th>ลำดับ</th>
+                                        <th class="hide-only-sm hide-only-xs sorting" [ngClass]="{'sorting_asc': sortingFlag === 'asc'  && column === 'id', 'sorting_desc': sortingFlag === 'desc' && column === 'id'}" (click)="sort('id','str')">
+                                            วันที่
+                                        </th>
+                                        <th class="hide-only-xs sorting" [ngClass]="{'sorting_asc': sortingFlag === 'asc'  && column === 'text', 'sorting_desc': sortingFlag === 'desc' && column === 'text'}" (click)="sort('text','str')">
+                                            รหัสพนักงาน
+                                        </th>
+                                        <th class="hide-only-sm hide-only-xs sorting" [ngClass]="{'sorting_asc': sortingFlag === 'asc'  && column === 'text', 'sorting_desc': sortingFlag === 'desc' && column === 'text'}" (click)="sort('text','str')">
+                                            จำนวน
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr align="center" *ngFor="let item of list | orderBy:{property:column,direction:direction} | pagination:{pageSize:pageSize,currentPage:currentPage,flagSort:flagSort} let i = index;">
+                                        <td>
+                                            <span class="visible-xs-inline-block">ลำดับที่ &nbsp;</span> {{((i+1)+((currentPage - 1)*pageSize))}}
+                                        </td>
+
+                                        <td class="view-only-sm txt-left">
+                                            <br> วันที่ {{item.logdate}}
+                                            <br> รหัสพนักงาน {{item.userid}}
+                                            <br> จำนวน {{item.amt}}
+                                        </td>
+
+                                        <td class="hide-only-sm hide-only-xs">{{item.logdate | date :'dd MMM yyyy' | dateFormatTHYeartoENYear}}</td>
+                                        <td class="hide-only-sm hide-only-xs">{{item.userid}}</td>
+                                        <td class="hide-only-sm hide-only-xs">{{item.amt}}</td>
+                                    </tr>
+                                    <tr align="center" *ngIf="list?.length > 0">
+
+                                        <td class="view-only-sm txt-left">
+                                            <br> รวม {{sum}}
+                                        </td>
+                                        <td>
+                                            
+                                        </td>
+                                        <td>
+                                            
+                                        </td>
+                                        <td class="hide-only-sm hide-only-xs" colspan="1">รวม</td>
+                                        <td class="hide-only-sm hide-only-xs">{{ sum }}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <br/>
+                            <div *ngIf="list.length < 1" class="txt-center c-red">ไม่พบข้อมูลที่ค้นหา</div>
+                            <br/>
+                            <div class="right">
+                                <a class="btn-style4 btn-style-m txt-center pdlr10" (click)="changePage(currentPage - 1)">
+                                    <span>
+                                        <i class="icon-android-arrow-back"></i> ย้อนกลับ</span>
+                                </a>
+                                <a class="btn-style5 btn-style-m txt-center pdlr10">
+                                    <span>{{currentPage}}/{{totalPage}}</span>
+                                </a>
+                                <a class="btn-style4 btn-style-m txt-center pos-icon-right pdlr10" (click)="changePage(currentPage + 1)">
+                                    <span>ถัดไป
+                                        <i class="icon-android-arrow-forward"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer footer></footer>
+</ion-content>

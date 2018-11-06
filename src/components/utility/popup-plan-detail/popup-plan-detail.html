@@ -1,0 +1,29 @@
+<div class="modal">
+    <a class="fancybox-close" href="javascript:void(0)" (click)="close()"></a>
+
+    <h1 class="modal-title">
+        รายละเอียดแบบประกันชีวิต<br class="view-only-xs" />และสัญญาเพิ่มเติม
+    </h1>
+
+    <div class="popup popup-style1">
+        <div class="form-group">
+            <ion-item class="form-control" style="border: 1px solid #C8C8C8;">
+                <ion-label>แบบประกันชีวิตและสัญญาเพิ่มเติม</ion-label>
+                <ion-select [(ngModel)]="plancode" cancelText="ยกเลิก" okText="ตกลง" (ionChange)="selectPlan()">
+                    <ion-option [value]="item.plancode" *ngFor="let item of dlplan">{{ item.name }}</ion-option>
+                </ion-select>
+            </ion-item>
+        </div>
+        <div class="boxNewUpdate">
+
+            <div class="scrollbar-inner">
+                <!-- <div class="oneNew" *ngFor="let item of version"> -->
+
+                <div class="oneNew">
+
+                    <div [innerHtml]="attachdata"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

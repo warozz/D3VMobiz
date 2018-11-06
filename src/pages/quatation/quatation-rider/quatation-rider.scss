@@ -1,0 +1,66 @@
+page-quatation-rider {
+    .olNum {
+        &.txt-left {
+            text-align: left ;
+        }
+    }
+    .txt-highlight {
+        color: #000;
+        font-size: $font-lg;
+    }
+    .list {
+        list-style: none;
+        li {
+            &::before {
+                content: '-';
+                margin-left: -25px;
+                margin-right: 18px;
+            }
+        }
+    }
+    .baht {
+        float: right;
+    }
+    table.dataTable {
+        &.riderJ0 {
+            width: 100%;
+            // border-collapse: collapse;
+        }
+        // td,th {
+        //     border: 1px solid #ddd;
+        // }
+    }
+    .boxTableStyle5 table tr td:after {
+        border: none;
+    }
+    // new rider j0
+    .contentAcc.j0 {
+        line-height: 30.4px;
+        input[type=radio][name=radio-choice-j0]~label {
+            margin-left: 20px;
+        }
+        .tableStyle {
+            background: #29abe7;
+            color: #fff;
+            padding: 10px 0px;
+            margin-bottom: 20px;
+        }
+        .row {
+            p {
+                margin: 0px;
+                color: $color-default;
+            }
+            ul {
+                li {
+                    color: $color-default;
+                }
+            }
+        }
+    }
+    .sumJ0PlanH {
+        color: $color-default;
+        .row:nth-child(even) {
+            background: #F5F5F5;
+        }
+    }
+}

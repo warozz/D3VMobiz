@@ -1,0 +1,15 @@
+collapse-group {
+    .boxListQuickAcc a.action {
+        color: $color-primary;
+    }
+    .boxListQuickAcc a.action:before {
+        font-family: 'tl-prompt';
+        content: '\e01b';
+        background: transparent;
+        width: auto;
+        height: auto;
+        top: auto;
+        left: -3px;
+        font-size: $font-xs;
+    }
+}

@@ -1,0 +1,17 @@
+page-app-acceptrisk-ulink {
+    .form-control[readonly][fullname-popup] {
+        background-color: #fff;
+    }
+    .check-style3+label {
+        font-size: $font-md;
+        line-height: 38px;
+        margin-bottom: 0px;
+        &::before,
+        &::after {
+            top: 7px;
+        }
+    }
+    .radio-style3+label {
+        font-size: $font-md;
+    }
+}

@@ -1,0 +1,6 @@
+<div [ngClass]="{'active': signal > 0}"></div>
+<div [ngClass]="{'active': signal > 1}"></div>
+<div [ngClass]="{'active': signal > 2}"></div>
+<div [ngClass]="{'active': signal > 3}"></div>
+<div [ngClass]="{'active': signal > 4}"></div>
+<i class="icon-close-circled" [ngClass]="{'active': signal < 0}"></i>

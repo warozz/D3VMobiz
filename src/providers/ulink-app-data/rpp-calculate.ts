@@ -1,0 +1,107 @@
+export const rppCalculate = {
+        "rppByAge": [
+            {
+                "minAge": 0,
+                "maxAge": 25,
+                "multiply": 55
+            },{
+                "minAge": 26,
+                "maxAge": 30,
+                "multiply": 50
+            },
+            {
+                "minAge": 31,
+                "maxAge": 35,
+                "multiply": 45
+            },{
+                "minAge": 36,
+                "maxAge": 41,
+                "multiply": 40
+            },{
+                "minAge": 42,
+                "maxAge": 45,
+                "multiply": 30
+            },{
+                "minAge": 46,
+                "maxAge": 50,
+                "multiply": 25
+            },{
+                "minAge": 51,
+                "maxAge": 55,
+                "multiply": 20
+            },{
+                "minAge": 56,
+                "maxAge": 60,
+                "multiply": 15
+            },{
+                "minAge": 61,
+                "maxAge": 64,
+                "multiply": 10
+            },{
+                "minAge": 65,
+                "maxAge": 70,
+                "multiply": 8
+            }
+        ],
+        "rppByGender": [{
+            "minAge": 0,
+            "maxAge": 35,
+            "genderF": 120,
+            "genderM": 100  
+        },{
+            "minAge": 36,
+            "maxAge": 37,
+            "genderF": 110,
+            "genderM": 90  
+        },{
+            "minAge": 38,
+            "maxAge": 39,
+            "genderF": 100,
+            "genderM": 80 
+        },{
+            "minAge": 40,
+            "maxAge": 41,
+            "genderF": 90,
+            "genderM": 70  
+        },{
+            "minAge": 42,
+            "maxAge": 43,
+            "genderF": 80,
+            "genderM": 60  
+        },{
+            "minAge": 44,
+            "maxAge": 45,
+            "genderF": 65,
+            "genderM": 55  
+        },{
+            "minAge": 46,
+            "maxAge": 50,
+            "genderF": 55,
+            "genderM": 45  
+        },{
+            "minAge": 51,
+            "maxAge": 55,
+            "genderF": 45,
+            "genderM": 35  
+        },{
+            "minAge": 56,
+            "maxAge": 60,
+            "genderF": 35,
+            "genderM": 25  
+        },{
+            "minAge": 61,
+            "maxAge": 64,
+            "genderF": 20,
+            "genderM": 15  
+        },{
+            "minAge": 65,
+            "maxAge": 67,
+            "genderF": 15,
+            "genderM": 8  
+        },{
+            "minAge": 68,
+            "maxAge": 70,
+            "genderF": 8,
+            "genderM": 8  
+        }]
+}

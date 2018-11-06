@@ -1,0 +1,20 @@
+page-attach-file-e-app {
+    .base-line {
+        border-bottom: 1px solid #dedede;
+    }
+    .pd30-align {
+        padding: 50px;
+        text-align: center;
+    }
+    th {
+        font-size: 25px;
+    }
+    .btn-upload {
+        @media (max-width: $screen-xs-max) {
+            button {
+                width: 80%;
+                margin: 5px 0px;
+            }
+        }
+    }
+}

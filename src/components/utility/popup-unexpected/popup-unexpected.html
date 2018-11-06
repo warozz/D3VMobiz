@@ -1,0 +1,26 @@
+<div class="modal">
+    <i class="close" (click)="close()"></i>
+
+    <h1 class="modal-title">
+           ( {{ riderTH }} ) ความคุ้มครองกรณีเสียชีวิตเนื่องจากโรคร้ายแรง {{ dataLenght }} โรค ได้แก่
+    </h1>
+
+    <div class="popup popup-style1">
+        <div class="boxNewUpdate">
+            <div class="scrollbar-inner">
+                <div class="oneNew">
+                    <ion-grid>
+                        <ion-col col-12>
+                            <ol>
+                                <li *ngFor="let item of dataArr">{{ item.text }} </li>
+                            </ol>
+                        </ion-col>
+                        <ion-col col-12 class="totals">
+                                ความคุ้มครองกรณีเสียชีวิตด้วยโรคร้ายแรง {{result | number}} บาท
+                        </ion-col>
+                    </ion-grid>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

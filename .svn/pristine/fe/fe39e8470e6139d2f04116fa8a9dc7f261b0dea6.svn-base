@@ -1,0 +1,1 @@
+<riskprofile [prospect]="prospect" [refresh]="refresh"></riskprofile>

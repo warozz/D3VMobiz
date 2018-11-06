@@ -1,0 +1,107 @@
+prospect-search {
+    ion-select button {
+        border: 1px solid rgb(200, 200, 200);
+        border-radius: 0px;
+    }
+    calendar {
+        h1 {
+            border: 1px solid rgb(200, 200, 200) !important;
+        }
+    }
+    .display-none {
+        display: none;
+    }
+    .right {
+        float: right;
+    }
+    @media (min-width: 1200px) {
+        .boxAdvanceSearch {
+            .fix1200r1 {
+                width: 20% !important;
+            }
+            .fix1200r3 {
+                width: 33% !important;
+            }
+            .fix1200r4 {
+                width: 22% !important;
+            }
+            .fix1200r4To {
+                margin-left: -95px !important;
+            }
+            .col-lg-5,
+            .col-lg-7,
+            .col-lg-3 {
+                padding-left: 0px !important;
+                padding-right: 2px !important;
+            }
+            .btn-searchProspect {
+                text-align: left;
+            }
+        }
+        .boxSearchMember {
+            .boxLeft {
+                padding: 0px 20px;
+            }
+        }
+        .boxSearchMember {
+            .boxRight {
+                padding: 0px 20px;
+            }
+        }
+    }
+    @media only screen and (max-width: 1199px) and (min-width: 992px) {
+        .boxSearchMember {
+            .boxLeft {
+                padding: 0px 20px;
+            }
+        }
+        .boxSearchMember {
+            .boxRight {
+                padding: 0px 20px;
+            }
+        }
+        .boxSearchMember .boxAdvanceSearch {
+            padding: 15px 0px;
+        }
+    }
+    @media only screen and (max-width: 991px) and (min-width: 768px) {
+        .boxSearchMember {
+            padding: 20px 20px;
+        }
+        .boxSearchMember.advance {
+            padding: 20px 20px;
+        }
+        .boxSearchMember .boxAdvanceSearch {
+            padding: 15px 0px;
+        }
+    }
+    @media (max-width: 767px) {
+        .boxSearchMember {
+            padding: 20px 20px;
+        }
+        .boxSearchMember.advance {
+            padding: 20px 20px;
+        }
+        .boxSearchMemberTable table tbody tr td.xs-w20Left {
+            display: block;
+            float: left;
+            border-top: 1px solid #dedede;
+            margin-top: 10px;
+            line-height: 20px;
+            padding: 15px 5px 0px 5px;
+            width: 20%;
+            box-sizing: border-box;
+            text-align: center;
+        }
+    }
+    @media (min-width: $screen-xl-min) {
+        .btn-searchProspect {
+            text-align: left;
+        }
+    }
+    @media (max-width: $screen-lg-max) {
+        .btn-searchProspect {
+            text-align: center !important;
+        }
+    }
+}

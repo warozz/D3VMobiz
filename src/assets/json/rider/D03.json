@@ -1,0 +1,47 @@
+{
+    "rider": "ทร.ตลอดชีพ",
+    "age": {
+        "min": "1m",
+        "max": "65y"
+    },
+    "rule": [{
+        "deny": "SR2"
+    }],
+    "steps": [{
+            "value": 100000,
+            "step": 50000
+        },
+        {
+            "value": 500000,
+            "step": 100000
+        }
+    ],
+    "agent": [{
+        "permission": "Normal",
+        "sum": {
+            "min": 0,
+            "max": [{
+                    "age": "1m",
+                    "value": [
+                        "sum",
+                        300000
+                    ]
+                },
+                {
+                    "age": "6y",
+                    "value": [
+                        "sum",
+                        1000000
+                    ]
+                },
+                {
+                    "age": "16y",
+                    "value": [
+                        "sum",
+                        3000000
+                    ]
+                }
+            ]
+        }
+    }]
+}

@@ -1,0 +1,19 @@
+setting {
+    top: 25px;
+    width: 50px;
+    display: block;
+    position: relative;
+    .btn-setting {
+        background-color: rgba(0, 0, 0, 0.6);
+        color: #ffffff;
+        text-align: center;
+        font-size: $font-sm;
+        padding: 10px 0px 5px 0px;
+        display: block;
+        border-radius: 0px 10px 10px 0px;
+        i {
+            display: block;
+            margin-bottom: 5px;
+        }
+    }
+}

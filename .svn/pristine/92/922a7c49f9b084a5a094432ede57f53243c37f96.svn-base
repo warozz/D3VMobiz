@@ -1,0 +1,33 @@
+page-ulink-withdraw {
+    .toggle {
+        margin: 10px 0px;
+        text-align: center;
+        color: $color-primary;
+        font-weight: bold;
+        display: block;
+        text-decoration: none;
+        font-size: $font-md;
+        &::after {
+            font-family: "tl-prompt" !important;
+            font-style: normal !important;
+            font-weight: normal !important;
+            font-variant: normal !important;
+            text-transform: none !important;
+            speak: none;
+            line-height: 1;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            position: relative;
+            top: -1px;
+            background-color: $color-primary;
+            color: #ffffff;
+            border-radius: 50%;
+            font-size: $font-xs;
+            margin-left: 4px;
+            content: "\e018";
+        }
+        &.closed::after {
+            content: "\e020";
+        }
+    }
+}

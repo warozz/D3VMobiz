@@ -1,0 +1,22 @@
+<!-- Generated template for the AttachFileEAppModalComponent component -->
+<div id="ClassClose" class="modal">
+    <a class="fancybox-close" href="javascript:void(0)" (click)="close()"></a>
+    <h1 class="modal-title">
+        <div *ngIf="!list" style=" text-align: center; vertical-align: middle;">
+            <i class="icon-alert-circled c-red"></i><span *ngIf="!list"> {{ data.title }} </span>
+        </div>
+        <div *ngIf="list" style=" text-align: center; vertical-align: middle;">
+            <i class="icon-alert-circled c-red"></i><span *ngIf="list"> {{ title }} </span>
+        </div>
+    </h1>
+
+    <div *ngIf="!list" style=" text-align: center; vertical-align: middle; white-space: pre-wrap; font-size: 25px; line-height: 1.4em;">
+        <span>{{ data.text }}</span>
+        <span style="color: red;">{{ data.redText}}</span>
+    </div>
+    <div *ngIf="list" style=" text-align: center; vertical-align: middle; white-space: pre-wrap; font-size: 25px; line-height: 1.4em;">
+        <span style="color:#007ac2;">{{ value }}</span>
+        <p *ngFor="let item of array;let i = index" style="color:#007ac2; text-align: center;margin: 0;"><input type="radio" class="radio-style3" id="radio_{{i}}" (change)="setValue(i);" name="dupicate_name" />  <label for="radio_{{i}}">{{ item }}</label></p>
+        <button class="btn-style3 btn-style-m" type="button" (click)="dismissData();"><span> ตกลง </span></button>
+    </div>
+</div>

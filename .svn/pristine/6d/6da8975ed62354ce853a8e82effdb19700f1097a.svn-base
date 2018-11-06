@@ -1,0 +1,40 @@
+u-life-saleoffer-10-10 {
+    .form-control {
+        border: 1px solid #BDCBD3;
+    }
+    .onePromise {
+        padding-bottom: 5px!important;
+    }
+    .label {
+        margin-top: 10px;
+    }
+    .boxSearchPlanInsurance .boxSelectPlan {
+        padding-right: 0px;
+        border: none;
+    }
+    .boxSearchPlanInsurance .boxSelectPlan .areaLeft {
+        background: transparent;
+    }
+    // #X3 .boxDropdownPlan>p {
+    //     display: inline;
+    // }
+    // ion-select {
+    //     width: 364px!important;
+    // }
+    // .popover-content {
+    //     width: 24%!important;
+    // }
+    .boxSearchPlanInsurance .boxSelectPlan .boxDropdownPlan {
+        padding-right: 0px;
+    }
+    @media screen and (min-width: $screen-md-min) {
+        .boxSearchPlanInsurance .boxSelectPlan {
+            padding-left: 100px;
+        }
+    }
+    dropdown {
+        .txtView {
+            border: 1px solid #ccc;
+        }
+    }
+}

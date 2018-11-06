@@ -1,0 +1,48 @@
+<div class="boxContentPage bgBlue2" style="z-index: 5;">
+    <div class="container">
+        <div class="boxSearchPlanInsurance center-block" style="max-width: 480px;">
+            <!--
+            <div class="boxDropdownPlan nonIcon">
+                <ion-item class="form-control">
+                    <ion-select placeholder="กรุณาเลือก" [(ngModel)]="insuranceType" cancelText="ยกเลิก" okText="ตกลง" interface="alert" (ngModelChange)="changeInsuranceType(insuranceType)">
+                        <ion-option value="UZA">ยูนิเวอร์แซลไลฟ์ 10/1</ion-option>
+                        <ion-option value="UEA">ยูนิเวอร์แซลไลฟ์ 10/10</ion-option>
+                        <ion-option value="UWA">ยูนิเวอร์แซลไลฟ์ 90/90</ion-option>
+                    </ion-select>
+                </ion-item>
+            </div>
+            -->
+            <div id="X1" class="boxSelectPlan">
+                <a class="areaLeft" (click)="popup()">
+                    <i class="icon-open-book mgr7" ng-reflect-ng-class="icon-open-book mgr7"></i> แบบประกัน
+                </a>
+                <div class="boxDropdownPlan nonIcon pdr0">
+                    <dropdown placeholder="กรุณาเลือก" [(data)]="insuranceType" (dataChange)="changeInsuranceType($event)">
+                        <dropdown-option value="UZA">ยูนิเวอร์แซลไลฟ์ 10/1 [UZA]</dropdown-option>
+                        <dropdown-option value="UEA">ยูนิเวอร์แซลไลฟ์ 10/10 [UEA]</dropdown-option>
+                        <dropdown-option value="UWA">ยูนิเวอร์แซลไลฟ์ 90/90 [UWA]</dropdown-option>
+                    </dropdown>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div [style.display]="insuranceType == '' ?'none':'inherit'">
+    <steps design="3" (change)="selectStep($event)" [(selectIndex)]="step">
+        <step *ngFor="let item of stepsPage; let i = index" [stepTitle]="item.title " [stepIcon]="item.icon" [root]="item.root" [disabled]="insuranceType == ''? true : item.disabled" [index]="item.id"></step>
+        <ng-template #action>
+            <div *ngIf=" (insuranceType != '' &&  insuranceType == 'UZA') || (insuranceType != '' &&  insuranceType != 'UZA' && payType != 99 )">
+                <button *ngIf="step == 1" class="btn-style3 btn-style-m" type="button" (click)="openPdf()"><span><i class="icon-pdf-file"></i> ดูใบเสนอขาย</span></button>
+                <button class="btn-style2 btn-style-m" type="button" (click)="saveData()" [disabled]="disableSaveButton"><span><i class="icon-save-file-option"></i> บันทึก</span></button>
+                <button *ngIf="step == 1" class="btn-style3 btn-style-m" type="button" (click)="resetData()"><span><i class="icon-reload"></i> เริ่มใหม่ </span></button>
+            </div>
+
+        </ng-template>
+        <div *ngIf="step == 1 && ( (insuranceType != '' &&  insuranceType == 'UZA') || (insuranceType != '' &&  insuranceType != 'UZA' && payType != 99 ) ) " class="row c-white insurance fs29 txt-center">
+            <div class="insuranceSum">
+                <p style="margin-bottom: 22px;">เบี้ยประกันรวม {{insuranceSum |number: '1.0-0'}} บาท</p>
+            </div>
+        </div>
+    </steps>
+</div>

@@ -1,0 +1,78 @@
+    app-detail-modal {
+        @media (min-width: 992px) and (max-width: 1235px) {
+            .boxTableStyle2 .detail-header {
+                font-size: 20px;
+                padding-left: 50px;
+            }
+            .boxTableStyle2 .dataTable {
+                font-size: 20px;
+            }
+            .modal-wrapper {
+                left: calc(2.5%);
+                top: calc(2.5%);
+                position: absolute;
+                width: 95% !important;
+                height: 95% !important;
+            }
+        }
+        @media only screen and (min-width: 768px) and (min-height: 600px) {
+            .modal-wrapper {
+                left: calc(10%);
+                top: calc(10%);
+                position: absolute;
+                width: 80% !important;
+                height: 80% !important;
+            }
+        }
+        @media only screen and (min-width: 992px) and (min-height: 600px) {
+            .modal-wrapper {
+                left: calc(10%);
+                top: calc(10%);
+                position: absolute;
+                width: 80% !important;
+                height: 80% !important;
+            }
+        }
+        @media (max-width: 414px) {
+            .modal h1 {
+                font-size: 26px!important;
+            }
+        }
+        .fancybox-close {
+            top: 20px;
+        }
+        .modal h1 {
+            text-align: left;
+        }
+        .detail-header {
+            position: relative;
+            background-color: #28ABE6;
+            color: #fff;
+            .row {
+                padding-top: 7px;
+                padding-bottom: 7px;
+            }
+        }
+        .detail {
+            padding-top: 4px;
+            border-bottom: 2px solid #28ABE6;
+        }
+        .div-btn {
+            text-align: center;
+            margin-top: 30px;
+        }
+        .popup-style1 {
+            height: 100%;
+            width: 100%;
+            border-radius: 0px;
+            .boxNewUpdate {
+                margin: 0px;
+                height: 100%;
+                padding-bottom: 50px;
+                .scrollbar-inner {
+                    height: 100%;
+                    overflow-x: hidden;
+                }
+            }
+        }
+    }

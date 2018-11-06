@@ -1,0 +1,95 @@
+page-app-summary-ulink {
+    .boxActionForm {
+        text-align: center;
+        .prev {
+            float: left;
+            &[disabled] {
+                visibility: hidden;
+            }
+        }
+        .next {
+            float: right;
+            &[disabled] {
+                visibility: hidden;
+            }
+        }
+        @media (max-width: $screen-sm-max) {
+            button {
+                width: 100%;
+                margin: 5px 0px;
+            }
+            .prev {
+                width: 48%;
+                margin-bottom: 20px;
+            }
+            .next {
+                width: 48%;
+                margin-bottom: 20px;
+            }
+        }
+        @media (max-width: $screen-md-max) {
+            button {
+                margin-bottom: 10px;
+            }
+        }
+    }
+    .risk {
+        padding-top: 0px !important;
+        padding-bottom: 0px !important;
+        &>span {
+            display: block;
+            background-color: #cccccc;
+            color: #ffffff;
+            width: 56.4px;
+            line-height: 56.4px;
+            margin: 0px auto;
+            text-align: center;
+            @media screen and (max-width: $screen-sm-max) {
+                margin: 0px 0px 10px 0px;
+            }
+        }
+        &.risk-1 {
+            &>span {
+                background-color: #24492E;
+            }
+        }
+        &.risk-2 {
+            &>span {
+                background-color: #235C37;
+            }
+        }
+        &.risk-3 {
+            &>span {
+                background-color: #597F34;
+            }
+        }
+        &.risk-4 {
+            &>span {
+                background-color: #AAA325;
+            }
+        }
+        &.risk-5 {
+            &>span {
+                background-color: #CF9D2A;
+            }
+        }
+        &.risk-6 {
+            &>span {
+                background-color: #C46F2C;
+            }
+        }
+        &.risk-7 {
+            &>span {
+                background-color: #900214;
+            }
+        }
+        &.risk-8 {
+            &>span {
+                background-color: #A82120;
+            }
+        }
+    }
+    .width-130 {
+        width: 130px;
+    }
+}

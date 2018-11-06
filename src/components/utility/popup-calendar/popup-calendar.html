@@ -1,0 +1,78 @@
+<div class="modal">
+    <a class="fancybox-close" href="javascript:void(0)" (click)="close()"></a>
+
+    <h1 class="modal-title">
+        วัน เดือน ปี
+    </h1>
+
+    <div class="modal-body">
+        <p class="display">{{ (year - 543) + '-' + month + '-' + day | date | dateFormatTHYeartoENYear }}</p>
+
+        <div class="col-xs-12 pd20 txt-left">
+            <div class="col-sm-3 pdlr10">
+                <dropdown [(ngModel)]="day">
+                    <dropdown-option value="1">1</dropdown-option>
+                    <dropdown-option value="2">2</dropdown-option>
+                    <dropdown-option value="3">3</dropdown-option>
+                    <dropdown-option value="4">4</dropdown-option>
+                    <dropdown-option value="5">5</dropdown-option>
+                    <dropdown-option value="6">6</dropdown-option>
+                    <dropdown-option value="7">7</dropdown-option>
+                    <dropdown-option value="8">8</dropdown-option>
+                    <dropdown-option value="9">9</dropdown-option>
+                    <dropdown-option value="10">10</dropdown-option>
+                    <dropdown-option value="11">11</dropdown-option>
+                    <dropdown-option value="12">12</dropdown-option>
+                    <dropdown-option value="13">13</dropdown-option>
+                    <dropdown-option value="14">14</dropdown-option>
+                    <dropdown-option value="15">15</dropdown-option>
+                    <dropdown-option value="16">16</dropdown-option>
+                    <dropdown-option value="17">17</dropdown-option>
+                    <dropdown-option value="18">18</dropdown-option>
+                    <dropdown-option value="19">19</dropdown-option>
+                    <dropdown-option value="20">20</dropdown-option>
+                    <dropdown-option value="21">21</dropdown-option>
+                    <dropdown-option value="22">22</dropdown-option>
+                    <dropdown-option value="23">23</dropdown-option>
+                    <dropdown-option value="24">24</dropdown-option>
+                    <dropdown-option value="25">25</dropdown-option>
+                    <dropdown-option value="26">26</dropdown-option>
+                    <dropdown-option value="27">27</dropdown-option>
+                    <dropdown-option value="28">28</dropdown-option>
+                    <dropdown-option value="29">29</dropdown-option>
+                    <dropdown-option value="30">30</dropdown-option>
+                    <dropdown-option value="31">31</dropdown-option>
+                </dropdown>
+            </div>
+
+            <div class="col-sm-4 pdlr10">
+                <dropdown [(ngModel)]="month">
+                    <dropdown-option value="1">ม.ค.</dropdown-option>
+                    <dropdown-option value="2">ก.พ.</dropdown-option>
+                    <dropdown-option value="3">มี.ค.</dropdown-option>
+                    <dropdown-option value="4">เม.ย.</dropdown-option>
+                    <dropdown-option value="5">พ.ค.</dropdown-option>
+                    <dropdown-option value="6">มิ.ย.</dropdown-option>
+                    <dropdown-option value="7">ก.ค.</dropdown-option>
+                    <dropdown-option value="8">ส.ค.</dropdown-option>
+                    <dropdown-option value="9">ก.ย.</dropdown-option>
+                    <dropdown-option value="10">ต.ค.</dropdown-option>
+                    <dropdown-option value="11">พ.ย.</dropdown-option>
+                    <dropdown-option value="12">ธ.ค.</dropdown-option>
+                </dropdown>
+            </div>
+
+            <div class="col-sm-5 pdlr10">
+                <dropdown [(ngModel)]="year">
+                    <dropdown-option *ngFor="let year of years" [value]="year">{{ year }}</dropdown-option>
+                </dropdown>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-footer">
+        <button class="btn-style3 btn-style-m" (click)="submit()">
+        <span>ตกลง</span>
+      </button>
+    </div>
+</div>

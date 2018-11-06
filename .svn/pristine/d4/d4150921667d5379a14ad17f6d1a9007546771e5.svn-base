@@ -1,0 +1,139 @@
+<form [formGroup]="appTreatmentHistory">
+    <div class="boxContentPage bgBlue3 hasBgImg bgImg95">
+        <div class="container">
+            <div class="bgPaperShadow mgt25">
+                <div class="contentPaperShadow">
+
+                    <!-- start boxFixTopJumpMenu -->
+                    <div class="boxFixTopJumpMenu">
+                        <div id="boxFixJumpMenu" class="boxContentFixJumpMenu">
+                            <div class="boxListFixJumpMenu sm-a-mgr0 sm-a-action-fsnormal">
+                                <a class="action" (click)="scrollToCenter()">รับรองสถานะตามกฏหมาย FATCA</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end boxFixTopJumpMenu -->
+
+                    <div id="boxListJumpContent" class="boxListJumpContent xs-pdlr15">
+                        <!-- start oneJumpContent -->
+
+                        <div id="link1" class="oneJumpContent">
+
+
+                            <h2 class="view-only-xs c-blue boxTitleFixJumpMenu">รับรอง FATCA</h2>
+                            <br>
+                            <div class="pdb10 lh-form-control">
+                                <font color="red"> * </font>ผู้ขอเอาประกันภัยมีสัญชาติประเทศที่เกิด ที่เกี่ยวข้องกับสหรัฐอเมริกาหรือไม่ </div>
+                            <div class="boxChkAndInfo">
+                                <div class="boxTopChk">
+                                    <div class="inline_block pdb10 pdr20 lh-form-control">
+                                        <input id="nationcheck-1" name="nationcheck" value="N" formControlName="nationcheck" class="radio-style3" type="radio">
+                                        <label for="nationcheck-1">ไม่มี</label>
+                                    </div>
+
+                                    <div class="inline_block pdb10 pdr20 lh-form-control">
+                                        <input #nationcheckY id="nationcheck-2" name="nationcheck" value="Y" formControlName="nationcheck" class="radio-style3" type="radio">
+                                        <label for="nationcheck-2">มี ดังนี้</label>
+                                    </div>
+                                </div>
+
+                                <div *ngIf="nationcheckY.checked" class="boxInfoForm" style="padding-left:20px">
+                                    <div class="inline_block pdb10 pdr20 lh-form-control">
+                                        <input id="radio-5-1" name="nationality" formControlName="nationality" value="1" class="radio-style3" type="radio">
+                                        <label for="radio-5-1">ถือสัญชาติอเมริกัน</label>
+                                    </div>
+
+                                    <div class="inline_block pdb10 pdr20 lh-form-control">
+                                        <input id="radio-5-2" name="nationality" formControlName="nationality" value="2" class="radio-style3" type="radio">
+                                        <label for="radio-5-2">เกิดในประเทศสหรัฐอเมริกา</label>
+                                    </div>
+
+
+                                    <div class="inline_block pdb10 pdr20 lh-form-control">
+                                        <input id="radio-5-3" name="nationality" formControlName="nationality" value="3" class="radio-style3" type="radio">
+                                        <label for="radio-5-3">ถือสัญชาติอเมริกาและเกิดในประเทศสหรัฐอเมริกา</label>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+
+                            <div class="pdb10 lh-form-control">
+                                <font color="red">*</font> ผู้ขอเอาประกันภัยเป็นหรือเคยเป็นผู้ภือบัตรประจำตัว ผู้มีถิ่นอยู่ถาวรอย่างถูกกฏหมายในประเทศสหรัฐอเมริกา (Green Card) หรือไม่</div>
+                            <div class="pdb20">
+                                <div class="inline_block pdb10 pdt5 pdlr20 lh-form-control">
+                                    <input id="radio-4-1" name="nationalityAddress" value="N" formControlName="nationalityAddress" class="radio-style3" type="radio">
+                                    <label for="radio-4-1">ไม่เป็น</label>
+                                </div>
+
+                                <div class="inline_block pdb10 pdt5 pdlr20 lh-form-control">
+                                    <input id="radio-4-2" name="nationalityAddress" value="Y" formControlName="nationalityAddress" class="radio-style3" type="radio">
+                                    <label for="radio-4-2">เป็น</label>
+                                </div>
+
+                                <div class="inline_block pdb10 pdt5 pdlr20 lh-form-control">
+                                    <input id="radio-4-3" name="nationalityAddress" value="W" formControlName="nationalityAddress" class="radio-style3" type="radio">
+                                    <label for="radio-4-3">เคยเป็นและสิ้นผลบังคับ</label>
+                                </div>
+
+                                <div class="clearfix"></div>
+                            </div>
+
+                            <div class="pdb10 lh-form-control">
+                                <font color="red">*</font> ผู้ขอเอาประกันภัยมีหน้าที่เสียภาษีให้แก่กรมสรรพากรสหรัฐอเมริกาหรือไม่</div>
+                            <div class="pdb20">
+                                <div class="inline_block pdb10 pdt5 pdlr20 lh-form-control">
+                                    <input id="radio-4-4" name="nationalityTax" value="N" formControlName="nationalityTax" class="radio-style3" type="radio">
+                                    <label for="radio-4-4">ไม่มี</label>
+                                </div>
+
+                                <div class="inline_block pdb10 pdt5 pdlr20 lh-form-control">
+                                    <input id="radio-4-5" name="nationalityTax" value="Y" formControlName="nationalityTax" class="radio-style3" type="radio">
+                                    <label for="radio-4-5">มี</label>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+
+                            <div class="pdb10 lh-form-control">
+                                <font color="red">*</font> ผู้ขอเอาประกันภัยมีสถานะเป็นผู้มีถิ่นที่อยู่ในประเทศสหรัฐอเมริกาเพื่อวัตถุประสงค์ในการเก็บภาษีอากรของประเทศสหรัฐอเมริกาหรือไม่ เช่น มีถิ่นที่อยู่ในประเทศสหรัฐอเมริกาอย่างน้อย 183 วันในปฏิทินที่ผ่านมา</div>
+                            <div class="pdb20">
+                                <div class="inline_block pdb10 pdt5 pdlr20 lh-form-control">
+                                    <input id="radio-4-6" name="nationalityStatus" value="N" formControlName="nationalityStatus" class="radio-style3" type="radio">
+                                    <label for="radio-4-6">ไม่มี</label>
+                                </div>
+
+                                <div class="inline_block pdb10 pdt5 pdlr20 lh-form-control">
+                                    <input id="radio-4-7" name="nationalityStatus" value="Y" formControlName="nationalityStatus" class="radio-style3" type="radio">
+                                    <label for="radio-4-7">มี</label>
+                                </div>
+                                <div class="clearfix"></div>
+                                <hr [hidden]="appTreatmentHistory?.controls['agreeTerm']?.value" />
+                            </div>
+
+                        </div>
+
+                        <!-- end oneJumpContent -->
+                        <div class="confirmFATCA" [hidden]="appTreatmentHistory?.controls['selectAgreeTerm']?.value">
+                            <div class="textBlue txt-center">
+                                <h1> คำยินยอมและข้อตกลงในกฏหมาย FATCA</h1>
+                            </div>
+                            <div class="txt-center">
+                                <button id="bt_restart" class="btn-style3" type="button" (click)="callModalFATCA()">
+                                    <span>รายละเอียด</span>
+                                </button>
+                            </div>
+                            <div class="pdb20 textBlue center">
+                                <div class="inline_block pdb10 pdt5 pdl100 txt-center lh-form-control" [ngClass]="{'textDisabled': disabledAgreeTerm}">
+                                    <input id="agreeTerm" name="agreeTerm" formControlName="agreeTerm" class="check-style3" type="checkbox" disabled>
+                                    <label for="agreeTerm"><font color="red">*</font> ข้าพเจ้าได้อ่านรายละเอียดเป็นที่เรียบร้อย</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr/>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</form>

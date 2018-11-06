@@ -1,0 +1,17 @@
+<div class="boxTitlePage">
+    <div class="container">
+        <h1 class="{{h1Class ? h1Class : ''}}" [ngClass]="{'hasNav': sub1 != ''}">
+            <ng-content></ng-content>
+
+            <span *ngIf="sub1 != ''" class="icon-ios-arrow-thin-right"></span>
+            <b *ngIf="sub1 != ''">{{ sub1 }}</b>
+
+            <span *ngIf="sub2 != ''" class="icon-ios-arrow-thin-right"></span>
+            <b *ngIf="sub2 != ''">{{ sub2 }}</b>
+        </h1>
+
+        <div class="boxNoteDateTime">
+            <i id="head_bt_calendar" class="icon-calendar-with-a-clock-time-tools"></i> {{ today }}
+        </div>
+    </div>
+</div>

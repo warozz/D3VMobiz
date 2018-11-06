@@ -1,0 +1,185 @@
+calculator {
+    @media only screen and (min-height: 600px) and (min-width: 768px) {
+        @at-root .calculator {
+            .modal-wrapper {
+                left: calc(50% - (350px/2));
+                top: calc(50% - (535px/2));
+                width: 350px;
+                height: 535px;
+            }
+        }
+    }
+    .modal {
+        padding-left: 0px;
+        padding-right: 0px;
+        .modal-title {
+            border-bottom: none;
+            text-align: left;
+            margin-left: 20px;
+            padding-bottom: 0px;
+        }
+        .modal-body {
+            text-align: center;
+            margin: 0px;
+        }
+        .modal-footer {
+            position: absolute;
+            bottom: 0px;
+            width: 100%;
+            background-color: #ddf1ff;
+            text-align: center;
+            padding: 15px 0px
+        }
+    }
+    ion-grid.full {
+        max-width: 300px;
+        left: calc(50% - (300px/2));
+        top: calc(50% - (290px/2));
+        position: absolute;
+        ion-col {
+            button {
+                font-size: $font-xxl !important;
+                background-color: rgba(255, 255, 255, 0.7) !important;
+                max-width: 65px !important;
+                width: 100% !important;
+                height: 65px !important;
+                border-radius: 50% !important;
+                border: 1px solid rgba(0, 122, 194, 0.7) !important;
+                color: $color-primary;
+                &.button-md,
+                &.button-ios,
+                &.button-wp {
+                    text-transform: none;
+                    -webkit-box-shadow: inherit;
+                    box-shadow: inherit;
+                    margin: 3px auto;
+                    padding: inherit;
+                }
+            }
+            @media (min-height: 500px) {
+                &:nth-child(4),
+                &:nth-child(8) {
+                    button {
+                        color: $color-danger;
+                    }
+                }
+                &:nth-child(12),
+                &:nth-child(15),
+                &:nth-child(16) {
+                    button {
+                        color: $color-dark;
+                    }
+                }
+            }
+            @media (max-height: 499px) {
+                &:nth-child(15),
+                &:nth-child(16) {
+                    button {
+                        color: $color-danger;
+                    }
+                }
+                &:nth-child(6),
+                &:nth-child(7),
+                &:nth-child(8) {
+                    button {
+                        color: $color-dark;
+                    }
+                }
+            }
+        }
+        .portrait {}
+        .landscape {
+            display: none;
+        }
+    }
+    ion-grid.mini {
+        max-width: 300px;
+        left: calc(50% - (300px/2));
+        top: calc(50% - (290px/2));
+        position: absolute;
+        ion-col {
+            button {
+                font-size: $font-xxl !important;
+                background-color: rgba(255, 255, 255, 0.7) !important;
+                max-width: 65px !important;
+                width: 100% !important;
+                height: 65px !important;
+                border-radius: 50% !important;
+                border: 1px solid rgba(0, 122, 194, 0.7) !important;
+                color: $color-primary;
+                &.button-md,
+                &.button-ios,
+                &.button-wp {
+                    text-transform: none;
+                    -webkit-box-shadow: inherit;
+                    box-shadow: inherit;
+                    margin: 3px auto;
+                    padding: inherit;
+                }
+            }
+            @media (min-height: 500px) {
+                &:nth-child(10),
+                &:nth-child(12) {
+                    button {
+                        color: $color-danger;
+                    }
+                }
+            }
+            @media (max-height: 499px) {
+                &:nth-child(6),
+                &:nth-child(12) {
+                    button {
+                        color: $color-danger;
+                    }
+                }
+            }
+        }
+        .portrait {
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+        .landscape {
+            display: none;
+        }
+    }
+    .display {
+        background-color: $color-primary;
+        margin: 0px 0px 10px 0px;
+        font-size: $font-xxl !important;
+        line-height: 50px;
+        color: #fff;
+    }
+    .row:before {
+        display: inherit;
+    }
+    // 575 $screen-xs-max
+    @media (max-height: 499px) {
+        ion-grid.full {
+            max-width: 650px;
+            left: calc(50% - (650px/2));
+            top: calc(50% - (110px/2));
+            .portrait {
+                display: none;
+            }
+            .landscape {
+                display: block;
+            }
+        }
+        ion-grid.mini {
+            max-width: 500px;
+            left: calc(50% - (500px/2));
+            top: calc(50% - (110px/2));
+            .portrait {
+                display: none;
+            }
+            .landscape {
+                display: block;
+            }
+        }
+    }
+}
+
+.form-control[readonly][calculator],
+.form-control[readonly][calculator-incrementer] {
+    background-color: #ffffff;
+}

@@ -1,0 +1,34 @@
+<ion-header header></ion-header>
+
+<ion-content>
+    <div id="hospital_search_page" class="mainContainer">
+        <title-page>โรงพยาบาลเครือข่าย</title-page>
+
+        <div class="boxContentPage">
+            <div class="container">
+                <div class="boxFilterSearchHospital">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <search (value)="search($event)"></search>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 pdr-md-7">
+                        <region [(data)]="region" (dataShow)="show($event)"></region>
+                    </div>
+                    <div class="col-md-6 pdl-md-7">
+                        <province [(data)]="province" [filter]="region"></province>
+                    </div>
+                </div>
+
+                <div class="bgPaperShadow mgt0" *ngIf="hospitalData">
+                    <div class="contentPaperShadow">
+                        <hospital-table [data]="hospitalData"></hospital-table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer footer></footer>
+</ion-content>

@@ -1,0 +1,57 @@
+<div class="boxContentPage bgBlue3 hasBgImg">
+    <div class="container">
+        <div class="bgPaperShadow">
+            <div class="contentPaperShadow">
+                <div class="boxListForm pdlr0">
+
+                    <!-- จำนวนเงินเอาประกันภัย RPP -->
+                    <form [formGroup]="ulinkSum">
+                        <h1 class="total">รวมชำระเบี้ยประกัน RPP ปีละ <span>{{ ulinkData.premiumPerYear == 0 ? 'x,xxx,xxx' : ulinkData.premiumPerYear | number  }}</span> บาท</h1>
+
+                        <div formArrayName="ulinkSumArray">
+                            <div *ngFor="let item of ulinkSum.get('ulinkSumArray').controls; let i = index;" [formGroupName]="i" class="boxPromisesMore">
+                                <div class="col-md-5 pd0">
+                                    <div class="col-label lh-form-control">อายุผู้เอาประกันภัย (ปี)</div>
+                                    <div class="col-input">
+                                        <input *ngIf="i == 0" class="form-control" type="text" formControlName="agestart" calculator max="99" [(value)]="prospect.age"/>
+                                        <input *ngIf="i > 0" class="form-control" type="text" formControlName="agestart" calculator max="99" 
+                                            [(value)]="ulinkSum.value.ulinkSumArray[i].agestart" (calculatorChange)="checkArrayAge($event, i)"
+                                        />
+                                    </div>
+                                </div>
+                                <div class="col-md-5 pd0">
+                                    <div class="col-label lh-form-control">ระบุจำนวนเงินผู้เอาประกันภัย</div>
+                                    <div class="col-input">
+                                        <div class="onePromise">
+                                            <incrementer formControlName="realsumrpp" [min]="ulinkData.minAmountRpp" [max]="ulinkData.maxAmountRpp" [showMinMax]="true"
+                                                [step]="1000" [minAlert]="textAlert.notRangeAmountRpp" [maxAlert]="textAlert.notRangeAmountRpp" 
+                                                [(value)]="ulinkSum.value.ulinkSumArray[i].realsumrpp" (valueChange)="changeValue($event, i)">
+                                            </incrementer>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-2 pd0" *ngIf="i > 0">
+                                    <div class="btn-action">
+                                        <button class="btn-style2 btn-style-m pdlr20" type="submit" (click)="remove(i)">
+                                            <span> <i class="icon-rubbish-bin"></i> ลบ </span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+
+                        <div class="boxActionForm">
+                            <button id="btnAdd" class="btn-style3" type="button" (click)="add()" [disabled]="disabledAddSumRpp">
+                                <span><i class="icon-ion-ios-plus-outline fs29"></i> ปรับทุน</span>
+                            </button>
+                            <button id="btnReset" class="btn-style3 btn-style-warning" type="button" (click)="reset()">
+                                <span><i class="icon-reload"></i> ล้างค่า</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,46 @@
+<div id="boxFixedSubMenu" class="boxContentPage bgWhite bgShadow zIndex3" data-spaceclass="boxFixedSubMenuSpace">
+    <div class="container">
+        <div class="boxStatusStep">
+            <div #oneStep class="oneStep" *ngFor="let item of stepArray; let i = index" [ngClass]="{'icon': item.icon != null, 'disabled': (item.disabledTab != null && item.disabledTab) || disabled}" (click)="step(i, event.click)" [attr.area-selected]="i == index">
+                <a>
+                    <i id="me_{{i+1}}" [ngClass]="item.icon">{{ item.icon == null ? i + 1 : '' }}</i>
+                    <span>{{ item.titleArray[0] }}<br class="view-only-md view-only-sm" />{{ item.titleArray[1] }}</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="view-only-xs boxDetailStatusStep">
+        <a *ngIf="(index > 0 && !disabled) || prevPage" (click)="step(index - 1, event.decrease)" class="btnBackStep" href="javascript:void(0)"><i class="icon-ios-arrow-back"></i></a>
+        <div>{{ selectTitle }}</div>
+        <a *ngIf="(index != last && !disabled) || nextPage" (click)="step(index + 1, event.increase)" class="btnNextStep" href="javascript:void(0)"><i class="icon-ios-arrow-forward"></i></a>
+    </div>
+</div>
+
+<ng-content></ng-content>
+
+<div class="boxContentPage bgBlue4" *ngIf="showAction == 1">
+    <div class="container xs-pdlr0">
+        <div class="boxActionForm" *ngIf="design == 1">
+            <div class="boxActionRight">
+                <button [disabled]="(!(index > 0) || disabled) && !prevPage" (click)="step(index - 1, event.decrease)" class="btn-style3 btn-style-m" type="button"><span><i class="icon-ios-arrow-back"></i> ย้อนกลับ</span></button>
+                <button [disabled]="(!(index != last) || disabled) && !nextPage" (click)="step(index + 1, event.increase)" class="btn-style3 btn-style-m pos-icon-right" type="button"><span>ถัดไป <i class="icon-ios-arrow-forward"></i></span></button>
+            </div>
+
+            <div class="boxActionLeft">
+                <ng-container *ngTemplateOutlet="actionTemp"></ng-container>
+            </div>
+        </div>
+
+        <div class="boxActionForm style2" *ngIf="design == 2">
+            <button [disabled]="(!(index > 0) || disabled) && !prevPage" (click)="step(index - 1, event.decrease)" class="btn-style3 prev" type="button"><span><i class="icon-ios-arrow-back"></i> ย้อนกลับ</span></button>
+            <button [disabled]="(!(index != last) || disabled) && !nextPage" (click)="step(index + 1, event.increase)" class="btn-style3 pos-icon-right next" type="button"><span>ถัดไป <i class="icon-ios-arrow-forward"></i></span></button>
+
+            <ng-container *ngTemplateOutlet="actionTemp"></ng-container>
+        </div>
+
+        <div class="boxActionForm style2" *ngIf="design == 3">
+            <ng-container *ngTemplateOutlet="actionTemp"></ng-container>
+        </div>
+    </div>
+</div>

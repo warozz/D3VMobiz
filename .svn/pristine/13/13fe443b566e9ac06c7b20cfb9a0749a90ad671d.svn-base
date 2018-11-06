@@ -1,0 +1,218 @@
+{
+    "rider": "ตสพ.",
+    "age": {
+        "min": "6y",
+        "max": "70y"
+    },
+    "agent": [{
+            "permission": "Normal",
+            "select": [{
+                    "option": 1000,
+                    "age": {
+                        "min": "6y",
+                        "max": "70y"
+                    },
+                    "sum": 100000
+                },
+                {
+                    "option": 1500,
+                    "age": {
+                        "min": "6y",
+                        "max": "70y"
+                    },
+                    "sum": 100000
+                },
+                {
+                    "option": 2000,
+                    "age": {
+                        "min": "6y",
+                        "max": "70y"
+                    },
+                    "sum": 100000
+                },
+                {
+                    "option": 2500,
+                    "age": {
+                        "min": "6y",
+                        "max": "70y"
+                    },
+                    "sum": 100000
+                },
+                {
+                    "option": 3000,
+                    "condition": [{
+                            "age": {
+                                "min": "6y",
+                                "max": "15y"
+                            },
+                            "sum": 300000
+                        },
+                        {
+                            "age": {
+                                "min": "16y",
+                                "max": "70y"
+                            },
+                            "sum": 100000
+                        }
+                    ]
+                },
+                {
+                    "option": 4000,
+                    "age": {
+                        "min": "6y",
+                        "max": "70y"
+                    },
+                    "sum": 300000
+                },
+                {
+                    "option": 5000,
+                    "age": {
+                        "min": "6y",
+                        "max": "70y"
+                    },
+                    "sum": 500000
+                }
+            ]
+        },
+        {
+            "permission": "Q UP",
+            "select": [{
+                    "option": 1000,
+                    "age": {
+                        "min": "6y",
+                        "max": "70y"
+                    },
+                    "sum": 100000
+                },
+                {
+                    "option": 1500,
+                    "age": {
+                        "min": "6y",
+                        "max": "70y"
+                    },
+                    "sum": 100000
+                },
+                {
+                    "option": 2000,
+                    "age": {
+                        "min": "6y",
+                        "max": "70y"
+                    },
+                    "sum": 100000
+                },
+                {
+                    "option": 2500,
+                    "age": {
+                        "min": "6y",
+                        "max": "70y"
+                    },
+                    "sum": 100000
+                },
+                {
+                    "option": 3000,
+                    "condition": [{
+                            "age": {
+                                "min": "6y",
+                                "max": "15y"
+                            },
+                            "sum": 300000
+                        },
+                        {
+                            "age": {
+                                "min": "16y",
+                                "max": "70y"
+                            },
+                            "sum": 100000
+                        }
+                    ]
+                },
+                {
+                    "option": 4000,
+                    "age": {
+                        "min": "6y",
+                        "max": "70y"
+                    },
+                    "sum": 300000
+                },
+                {
+                    "option": 5000,
+                    "age": {
+                        "min": "6y",
+                        "max": "70y"
+                    },
+                    "sum": 500000
+                }
+            ]
+        },
+        {
+            "permission": "Top UP",
+            "select": [{
+                    "option": 1000,
+                    "age": {
+                        "min": "6y",
+                        "max": "70y"
+                    },
+                    "sum": 100000
+                },
+                {
+                    "option": 1500,
+                    "age": {
+                        "min": "6y",
+                        "max": "70y"
+                    },
+                    "sum": 100000
+                },
+                {
+                    "option": 2000,
+                    "age": {
+                        "min": "6y",
+                        "max": "70y"
+                    },
+                    "sum": 100000
+                },
+                {
+                    "option": 2500,
+                    "age": {
+                        "min": "6y",
+                        "max": "70y"
+                    },
+                    "sum": 100000
+                },
+                {
+                    "option": 3000,
+                    "age": {
+                        "min": "6y",
+                        "max": "70y"
+                    },
+                    "sum": 100000
+                },
+                {
+                    "option": 4000,
+                    "condition": [{
+                            "age": {
+                                "min": "6y",
+                                "max": "15y"
+                            },
+                            "sum": 300000
+                        },
+                        {
+                            "age": {
+                                "min": "16y",
+                                "max": "70y"
+                            },
+                            "sum": 100000
+                        }
+                    ]
+                },
+                {
+                    "option": 5000,
+                    "age": {
+                        "min": "6y",
+                        "max": "70y"
+                    },
+                    "sum": 300000
+                }
+            ]
+        }
+    ]
+}

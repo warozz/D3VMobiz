@@ -1,0 +1,31 @@
+{
+    "rider": "ตฆ.2",
+    "age": {
+        "min": "5y",
+        "max": "64y"
+    },
+    "steps": [{
+            "value": 50000,
+            "step": 50000
+        },
+        {
+            "value": 500000,
+            "step": 100000
+        }
+    ],
+    "agent": [{
+        "permission": "Normal",
+        "sum": {
+            "min": {
+                "required": "TAC02"
+            },
+            "max": {
+                "required": "TAC02",
+                "value": [
+                    4000000,
+                    "TKG1"
+                ]
+            }
+        }
+    }]
+}

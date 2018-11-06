@@ -1,0 +1,13 @@
+popup-plan-rule-international {
+    .popup-style1 {
+        height: 100%;
+        width: 100%;
+        border-radius: 0px;
+    }
+    @media (max-width: $screen-xs-max) {
+        .boxTableStyle1 {
+            height: calc(100% - 100px);
+            overflow-y: scroll;
+        }
+    }
+}

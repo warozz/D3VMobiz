@@ -1,0 +1,108 @@
+page-setting {
+    #setting_page::before {
+        height: 0px;
+    }
+    .boxFilterSearch {
+        padding: 20px !important;
+        .select-group {
+            display: block;
+            position: relative;
+            .form-group {
+                margin-bottom: 10px;
+                .select-md,
+                .select-ios,
+                .select-wp {
+                    padding: 13px 8px 13px 16px;
+                    width: 100%;
+                    max-width: 100%;
+                }
+            }
+            .form-group {
+                .select-md,
+                .select-ios,
+                .select-wp {
+                    .select-icon {
+                        .select-icon-inner {
+                            color: #28ABE6;
+                        }
+                    }
+                }
+            }
+            a {
+                position: absolute;
+                top: 0px;
+                right: 0px;
+                left: inherit;
+                width: 95px;
+            }
+            label {
+                font-size: $font-md;
+                position: absolute;
+                top: 5px;
+                color: #ffffff;
+            }
+        }
+        @media (max-width: $screen-sm-max) {
+            .select-group {
+                text-align: center;
+                .form-control {
+                    margin: 10px 0px 20px 0px;
+                }
+                a {
+                    position: relative;
+                }
+                label {
+                    position: relative;
+                    text-align: left;
+                    display: block;
+                }
+            }
+        }
+    }
+    autocomplete {
+        text-align: left;
+        &.boxSearchPlanInsurance .boxSelectPlan {
+            z-index: 2;
+            .boxDropdownPlan {
+                padding-right: 0px;
+            }
+        }
+    }
+    // ionic-selectable {
+    //     background-color: #ffffff;
+    //     width: 100%;
+    //     max-width: 100% !important;
+    //     height: 44px;
+    //     .ionic-selectable-icon {
+    //         margin-right: 10px;
+    //         .ionic-selectable-icon-inner {
+    //             color: $color-primary;
+    //         }
+    //     }
+    //     .ionic-selectable-value {
+    //         padding: 0px 5px 0px 20px;
+    //         line-height: 44px;
+    //         text-align: left;
+    //     }
+    //     margin-top: 10px;
+    //     margin-bottom: 15px;
+    // }
+}
+
+// ionic-selectable-page {
+//     ion-header {
+//         .bar-button-default-md,
+//         .bar-button-clear-md-default,
+//         .bar-button-md-default,
+//         .bar-button-default-ios,
+//         .bar-button-clear-ios-default,
+//         .bar-button-ios-default {
+//             color: #ffffff;
+//             background-color: $color-primary;
+//             border-radius: 50%;
+//             width: 25px;
+//             height: 25px;
+//             font-weight: bold;
+//         }
+//     }
+// }

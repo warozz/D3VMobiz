@@ -1,0 +1,98 @@
+<div class="boxContentPage bgBlue3 hasBgImg">
+    <div class="container">
+        <h1 class="titleContentPage1">{{ 'PLAN' | planLabel }} {{ planName }}</h1>
+
+        <div class="bgPaperShadow mgt0">
+            <div class="contentPaperShadow2 xs-pdt10">
+
+                <div class="boxTableStyle3 xs-tableFixDetail1 table-bdb0">
+                    <!--<table [ngClass]="'focusCol-'+focus">-->
+                    <table [ngClass]="'focusCol-'+ (modeSelected == 0 ? 3 : modeSelected == 4 ? 4 : modeSelected == 2 ? 5 : 6) + ' viewCol-' + viewCol">
+                        <thead>
+                            <tr>
+                                <th class="txt-left">รายละเอียด</th>
+                                <th style="max-width: 140px;">
+                                    <a class="btnBackColDisable"><i class="icon-ios-arrow-back"></i></a> {{ 'SUM2' | planLabel }}
+                                    <a class="btnNextCol" (click)="viewCol = viewCol + 1; modeSelected = 0"><i class="icon-ios-arrow-forward"></i></a>
+                                </th>
+                                <th>
+                                    <a class="btnBackCol" (click)="viewCol = viewCol - 1"><i class="icon-ios-arrow-back"></i></a>
+                                    <a class="txt-header" (click)="modeSelected = 0">{{ 'PREMIUM3' | planLabel }}<br />รายเดือน</a>
+                                    <a class="btnNextCol" (click)="viewCol = viewCol + 1; modeSelected = 4"><i class="icon-ios-arrow-forward"></i></a>
+                                </th>
+                                <th>
+                                    <a class="btnBackCol" (click)="viewCol = viewCol - 1; modeSelected = 0"><i class="icon-ios-arrow-back"></i></a>
+                                    <a class="txt-header" (click)="modeSelected = 4">{{ 'PREMIUM3' | planLabel }}<br />ราย 3 เดือน</a>
+                                    <a class="btnNextCol" (click)="viewCol = viewCol + 1; modeSelected = 2"><i class="icon-ios-arrow-forward"></i></a>
+                                </th>
+                                <th>
+                                    <a class="btnBackCol" (click)="viewCol = viewCol - 1; modeSelected = 4"><i class="icon-ios-arrow-back"></i></a>
+                                    <a class="txt-header" (click)="modeSelected = 2">{{ 'PREMIUM3' | planLabel }}<br />ราย 6 เดือน</a>
+                                    <a class="btnNextCol" (click)="viewCol = viewCol + 1; modeSelected = 1"><i class="icon-ios-arrow-forward"></i></a>
+                                </th>
+                                <th>
+                                    <a class="btnBackCol" (click)="viewCol = viewCol - 1; modeSelected = 2"><i class="icon-ios-arrow-back"></i></a>
+                                    <a class="txt-header" (click)="modeSelected = 1">{{ 'PREMIUM3' | planLabel }}<br />รายปี</a>
+                                    <a class="btnNextColDisable"><i class="icon-ios-arrow-forward"></i></a>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>{{ 'PLANSUM' | planLabel }}</td>
+                                <td class="txt-center" *ngFor="let item of data">{{checkNumber(item.sum) ? (item.sum | number) : (item.sum == '0'?'-':item.sum) }}</td>
+                                <td class="txt-center" *ngFor="let item of data">{{(item.one == '0'?'-':item.one | number)}}</td>
+                                <td class="txt-center" *ngFor="let item of data">{{(item.three == '0'?'-':item.three | number)}}</td>
+                                <td class="txt-center" *ngFor="let item of data">{{(item.six == '0'?'-':item.six | number)}}</td>
+                                <td class="txt-center" *ngFor="let item of data">{{(item.year == '0'?'-':item.year | number)}}</td>
+
+                            </tr>
+                            <tr *ngFor="let item of data1">
+                                <td>{{item.name}}</td>
+                                <td class="txt-center">{{checkNumber(item.sum) ? (item.sum | number) : (item.sum == '0'?'-':item.sum) }}</td>
+                                <td class="txt-center">{{(item.one == '0'?'-':item.one | number)}}</td>
+                                <td class="txt-center">{{(item.three == '0'?'-':item.three | number)}}</td>
+                                <td class="txt-center">{{(item.six == '0'?'-':item.six | number)}}</td>
+                                <td class="txt-center">{{(item.year == '0'?'-':item.year | number)}}</td>
+                            </tr>
+                            <tr>
+                                <td>{{ 'PLANPREMIUM' | planLabel }}</td>
+                                <td class="txt-center"></td>
+                                <td class="txt-center">{{(oneTotal == '0'?'-':oneTotal | number)}}</td>
+                                <td class="txt-center">{{(threeTotal == '0'?'-':threeTotal | number)}}</td>
+                                <td class="txt-center">{{(sixTotal == '0'?'-':sixTotal | number)}}</td>
+                                <td class="txt-center">{{(yearTotal == '0'?'-':yearTotal | number)}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="boxTotalPrice">
+                    <div class="col-md-8 col-sm-6 txt-sm-right">
+                        <!--<div class="lh-form-control">รวมเบี้ยประกันภัย {{focusDetail}} ทั้งหมด</div>-->
+                        <div class="lh-form-control">
+                            รวม{{ 'PREMIUM3' | planLabel }}
+                            <span *ngIf="modeSelected == 0">รายเดือน</span>
+                            <span *ngIf="modeSelected == 4">ราย 3 เดือน</span>
+                            <span *ngIf="modeSelected == 2">ราย 6 เดือน</span>
+                            <span *ngIf="modeSelected == 1 || modeSelected == 9">รายปี</span> ทั้งหมด
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-3 col-xs-9 ">
+                        <div class="form-group mgb0">
+                            <!--<input class="form-control" type="text" value="{{total | number}}" disabled />-->
+                            <input *ngIf="modeSelected == 0" class="form-control" type="text" value="{{(oneTotal == '0'?'-':oneTotal | number)}}" disabled />
+                            <input *ngIf="modeSelected == 4" class="form-control" type="text" value="{{(threeTotal == '0'?'-':threeTotal | number)}}" disabled />
+                            <input *ngIf="modeSelected == 2" class="form-control" type="text" value="{{(sixTotal == '0'?'-':sixTotal | number)}}" disabled />
+                            <input *ngIf="modeSelected == 1 || modeSelected == 9" class="form-control" type="text" value="{{(yearTotal == '0'?'-':yearTotal | number)}}" disabled />
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-3 col-xs-3 ">
+                        <div class="lh-form-control">บาท</div>
+                    </div>
+                </div>
+                <quatation-annotation></quatation-annotation>
+            </div>
+        </div>
+    </div>
+</div>

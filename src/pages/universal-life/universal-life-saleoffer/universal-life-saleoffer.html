@@ -1,0 +1,13 @@
+<!--
+  Generated template for the UniversalLifeSaleofferPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<!-- ส่วนเนื้อหาของ 10/1 'ชำระครั้งเดียว' -->
+<u-life-saleoffer-10-1 *ngIf="insuranceType == 'UZA' " (total)="getInsuranceSum($event)"></u-life-saleoffer-10-1>
+<!-- end -->
+
+<!-- ส่วนเนื้อหาของ 10/10 ,90/90-->
+<u-life-saleoffer-10-10 *ngIf="insuranceType != 'UZA' && insuranceType != '' " [choosePlan]="insuranceType" (total)="getInsuranceSum($event)"></u-life-saleoffer-10-10>
+<!-- end -->

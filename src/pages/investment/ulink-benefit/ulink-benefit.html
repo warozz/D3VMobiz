@@ -1,0 +1,547 @@
+<div class="boxContentPage bgBlue3 hasBgImg">
+    <div class="container">
+        <div class="bgPaperShadow">
+            <div class="contentPaperShadow">
+                <div class="boxListForm">
+
+                    <!-- สรุปตัวอย่างผลประโยชน์ -->
+                    <div class="boxPromisesMore">
+                        <div class="showAll zIndex3">
+                            <input [ngModel]="showHideColumn.sumProtect && showHideColumn.sumSaving && showHideColumn.sumTotal && showHideColumn.premiumSP && showHideColumn.premiumProtect && showHideColumn.premiumSaving && showHideColumn.premiumTopupPlus && showHideColumn.premiumRider && showHideColumn.premiumTotal && showHideColumn.premiumCumulative && showHideColumn.expenseOperations && showHideColumn.expenseManagement && showHideColumn.expenseInsurance && showHideColumn.expenseTotal && showHideColumn.bonusSP && showHideColumn.bonusProtect && showHideColumn.expectReturn && showHideColumn.withdrawAmount && showHideColumn.withdrawFee && showHideColumn.withdrawActual && showHideColumn.withdrawCumulative && showHideColumn.valueSP && showHideColumn.valueProtect && showHideColumn.valueSaving && showHideColumn.valueTopupPlus && showHideColumn.valueTotal && showHideColumn.deathBenefit && showHideColumn.taxAllowance && showHideColumn.taxBase && showHideColumn.taxRefund"
+                                id="showAll" class="check-style3" type="checkbox" (ngModelChange)="checkParent($event)" />
+                            <label for="showAll">ทั้งหมด</label>
+                        </div>
+
+                        <a href="javascript:void(0)" class="toggle" [ngClass]="{'closed': !open}" (click)="open = !open">
+                            เพิ่ม / ลด คอลัมน์
+                            <span class="icon"></span>
+                        </a>
+                    </div>
+
+                    <div *ngIf="open" class="boxInfoForm plan{{ ulinkData.choosePlan }}">
+                        <div class="col-lg-3 col-md-4 col-sm-6">
+                            <input [ngModel]="showHideColumn.sumProtect && showHideColumn.sumSaving && showHideColumn.sumTotal" id="sum" class="check-style3" type="checkbox" (ngModelChange)="checkParent($event, 'sum')" />
+                            <label for="sum" class="label">ทุนประกัน</label>
+
+                            <input [(ngModel)]="showHideColumn.sumProtect" *ngIf="ulinkData.choosePlan == 2" id="sumProtect" class="check-style3" type="checkbox" />
+                            <label *ngIf="ulinkData.choosePlan == 2" for="sumProtect">เบี้ยประกันภัยหลักเพื่อความคุ้มครอง</label>
+
+                            <input [(ngModel)]="showHideColumn.sumSaving" *ngIf="ulinkData.choosePlan == 2" id="sumSaving" class="check-style3" type="checkbox" />
+                            <label *ngIf="ulinkData.choosePlan == 2" for="sumSaving">เบี้ยประกันภัยหลักเพื่อการออม</label>
+
+                            <input [(ngModel)]="showHideColumn.sumTotal" *ngIf="ulinkData.choosePlan == 2" id="sumTotal" class="check-style3" type="checkbox" />
+                            <label *ngIf="ulinkData.choosePlan == 2" for="sumTotal">รวม</label>
+                        </div>
+
+                        <div class="col-lg-3 col-md-4 col-sm-6">
+                            <input [ngModel]="ulinkData.choosePlan == 1 ? showHideColumn.premiumSP && showHideColumn.premiumTopupPlus && showHideColumn.premiumTotal && showHideColumn.premiumCumulative : showHideColumn.premiumProtect && showHideColumn.premiumSaving && showHideColumn.premiumTopupPlus && showHideColumn.premiumRider && showHideColumn.premiumTotal && showHideColumn.premiumCumulative"
+                                id="premium" class="check-style3" type="checkbox" (ngModelChange)="checkParent($event, 'premium')" />
+                            <label for="premium" class="label">เบี้ยประกันภัย</label>
+
+                            <input [(ngModel)]="showHideColumn.premiumSP" *ngIf="ulinkData.choosePlan == 1" id="premiumSP" class="check-style3" type="checkbox" />
+                            <label *ngIf="ulinkData.choosePlan == 1" for="premiumSP">เบี้ยประกันภัยชำระครั้งเดียว</label>
+
+
+                            <input [(ngModel)]="showHideColumn.premiumProtect" *ngIf="ulinkData.choosePlan == 2" id="premiumProtect" class="check-style3" type="checkbox" />
+                            <label *ngIf="ulinkData.choosePlan == 2" for="premiumProtect">เบี้ยประกันภัยหลักเพื่อความคุ้มครอง</label>
+
+                            <input [(ngModel)]="showHideColumn.premiumSaving" *ngIf="ulinkData.choosePlan == 2" id="premiumSaving" class="check-style3" type="checkbox" />
+                            <label *ngIf="ulinkData.choosePlan == 2" for="premiumSaving">เบี้ยประกันภัยหลักเพื่อการออม</label>
+
+                            <input [(ngModel)]="showHideColumn.premiumTopupPlus" id="premiumTopupPlus" class="check-style3" type="checkbox" />
+                            <label for="premiumTopupPlus">เบี้ยประกันภัยเพิ่มพิเศษ</label>
+
+                            <input [(ngModel)]="showHideColumn.premiumRider" *ngIf="ulinkData.choosePlan == 2" id="premiumRider" class="check-style3" type="checkbox" />
+                            <label *ngIf="ulinkData.choosePlan == 2" for="premiumRider">สัญญาเพิ่มเติม</label>
+
+                            <input [(ngModel)]="showHideColumn.premiumTotal" id="premiumTotal" class="check-style3" type="checkbox" />
+                            <label for="premiumTotal">รวม</label>
+
+                            <input [(ngModel)]="showHideColumn.premiumCumulative" id="premiumCumulative" class="check-style3" type="checkbox" />
+                            <label for="premiumCumulative">รวมสะสม</label>
+                        </div>
+
+                        <div class="col-lg-3 col-md-4 col-sm-6">
+                            <input [ngModel]="showHideColumn.expenseOperations && showHideColumn.expenseManagement && showHideColumn.expenseInsurance && showHideColumn.expenseTotal" id="expense" class="check-style3" type="checkbox" (ngModelChange)="checkParent($event, 'expense')"
+                            />
+                            <label for="expense" class="label">ค่าใช้จ่าย</label>
+
+                            <input [(ngModel)]="showHideColumn.expenseOperations" id="expenseOperations" class="check-style3" type="checkbox" />
+                            <label for="expenseOperations">ค่าใช้จ่ายในการดำเนินการประกันภัย</label>
+
+                            <input [(ngModel)]="showHideColumn.expenseManagement" id="expenseManagement" class="check-style3" type="checkbox" />
+                            <label for="expenseManagement">ค่าธรรมเนียมการบริหารกรมธรรม์</label>
+
+                            <input [(ngModel)]="showHideColumn.expenseInsurance" id="expenseInsurance" class="check-style3" type="checkbox" />
+                            <label for="expenseInsurance">ค่าการประกันภัย</label>
+
+                            <input [(ngModel)]="showHideColumn.expenseTotal" id="expenseTotal" class="check-style3" type="checkbox" />
+                            <label for="expenseTotal">รวม</label>
+                        </div>
+
+                        <div class="col-lg-3 col-md-4 col-sm-6">
+                            <input [(ngModel)]="showHideColumn.bonusSP" *ngIf="ulinkData.choosePlan == 1" id="bonusSP" class="check-style3" type="checkbox" />
+                            <label *ngIf="ulinkData.choosePlan == 1" for="bonusSP">โบนัสเบี้ยประกันภัยชำระครั้งเดียว</label>
+
+                            <input [(ngModel)]="showHideColumn.bonusProtect" *ngIf="ulinkData.choosePlan == 2" id="bonusProtect" class="check-style3" type="checkbox" />
+                            <label *ngIf="ulinkData.choosePlan == 2" for="bonusProtect">โบนัสเบี้ยประกันภัยหลักเพื่อความคุ้มครอง</label>
+
+                            <input [(ngModel)]="showHideColumn.expectReturn" id="expectReturn" class="check-style3" type="checkbox" />
+                            <label for="expectReturn">คาดหวังผลตอบแทน (%)</label>
+                        </div>
+
+                        <div class="col-lg-3 col-md-4 col-sm-6">
+                            <input [ngModel]="ulinkData.choosePlan == 1 ? showHideColumn.withdrawAmount && showHideColumn.withdrawCumulative : showHideColumn.withdrawAmount && showHideColumn.withdrawFee && showHideColumn.withdrawActual && showHideColumn.withdrawCumulative" id="withdraw"
+                                class="check-style3" type="checkbox" (ngModelChange)="checkParent($event, 'withdraw')" />
+                            <label for="withdraw" class="label">การถอนเงินจากกรมธรรม์</label>
+
+                            <input [(ngModel)]="showHideColumn.withdrawAmount" id="withdrawAmount" class="check-style3" type="checkbox" />
+                            <label for="withdrawAmount">จำนวนเงินที่ถอน</label>
+
+                            <input [(ngModel)]="showHideColumn.withdrawFee" *ngIf="ulinkData.choosePlan == 2" id="withdrawFee" class="check-style3" type="checkbox" />
+                            <label *ngIf="ulinkData.choosePlan == 2" for="withdrawFee">ค่าธรรมเนียมการถอน</label>
+
+                            <input [(ngModel)]="showHideColumn.withdrawActual" *ngIf="ulinkData.choosePlan == 2" id="withdrawActual" class="check-style3" type="checkbox" />
+                            <label *ngIf="ulinkData.choosePlan == 2" for="withdrawActual">จำนวนเงินที่รับจริง</label>
+
+                            <input [(ngModel)]="showHideColumn.withdrawCumulative" id="withdrawCumulative" class="check-style3" type="checkbox" />
+                            <label for="withdrawCumulative">จำนวนเงินที่ถอนสะสม</label>
+                        </div>
+
+                        <div class="col-lg-3 col-md-4 col-sm-6">
+                            <input [ngModel]="ulinkData.choosePlan == 1 ? showHideColumn.valueSP && showHideColumn.valueTopupPlus && showHideColumn.valueTotal : showHideColumn.valueProtect && showHideColumn.valueSaving && showHideColumn.valueTopupPlus && showHideColumn.valueTotal"
+                                id="value" class="check-style3" type="checkbox" (ngModelChange)="checkParent($event, 'value')" />
+                            <label for="value" class="label">มูลค่ารับซื้อคืนหน่วยลงทุน ณ สิ้นปีกรมธรรม์</label>
+
+                            <input [(ngModel)]="showHideColumn.valueSP" *ngIf="ulinkData.choosePlan == 1" id="valueSP" class="check-style3" type="checkbox" />
+                            <label *ngIf="ulinkData.choosePlan == 1" for="valueSP">เบี้ยประกันภัยชำระครั้งเดียว</label>
+
+                            <input [(ngModel)]="showHideColumn.valueProtect" *ngIf="ulinkData.choosePlan == 2" id="valueProtect" class="check-style3" type="checkbox" />
+                            <label *ngIf="ulinkData.choosePlan == 2" for="valueProtect">เบี้ยประกันภัยหลักเพื่อความคุ้มครอง</label>
+
+                            <input [(ngModel)]="showHideColumn.valueSaving" *ngIf="ulinkData.choosePlan == 2" id="valueSaving" class="check-style3" type="checkbox" />
+                            <label *ngIf="ulinkData.choosePlan == 2" for="valueSaving">เบี้ยประกันภัยหลักเพื่อการออม</label>
+
+                            <input [(ngModel)]="showHideColumn.valueTopupPlus" id="valueTopupPlus" class="check-style3" type="checkbox" />
+                            <label for="valueTopupPlus">เบี้ยประกันภัยเพิ่มพิเศษ</label>
+
+                            <input [(ngModel)]="showHideColumn.valueTotal" id="valueTotal" class="check-style3" type="checkbox" />
+                            <label for="valueTotal">รวม</label>
+                        </div>
+
+                        <div class="col-lg-3 col-md-4 col-sm-6">
+                            <input [(ngModel)]="showHideColumn.deathBenefit" id="deathBenefit" class="check-style3" type="checkbox" />
+                            <label for="deathBenefit">ผลประโยชน์กรณีเสียชีวิต ณ สิ้นปีกรมธรรม์</label>
+                        </div>
+
+                        <div class="col-lg-3 col-md-4 col-sm-6">
+                            <input [ngModel]="showHideColumn.taxAllowance && showHideColumn.taxBase && showHideColumn.taxRefund" id="tax" class="check-style3" type="checkbox" (ngModelChange)="checkParent($event, 'tax')" />
+                            <label for="tax" class="label">ค่าใช้จ่ายที่นำไปหักลดหย่อนภาษีได้</label>
+
+                            <input [(ngModel)]="showHideColumn.taxAllowance" id="taxAllowance" class="check-style3" type="checkbox" />
+                            <label for="taxAllowance">ค่าใช้จ่ายที่นำไปหักลดหย่อนภาษีได้</label>
+
+                            <input [(ngModel)]="showHideColumn.taxBase" id="taxBase" class="check-style3" type="checkbox" />
+                            <label for="taxBase">ฐานภาษี</label>
+
+                            <input [(ngModel)]="showHideColumn.taxRefund" id="taxRefund" class="check-style3" type="checkbox" />
+                            <label for="taxRefund">เงินคืนภาษีที่คาดว่าจะได้รับ</label>
+                        </div>
+                    </div>
+
+                    <div id="table-benefit">
+                        <table>
+                            <thead class="hidden-xs hidden-sm">
+                                <tr>
+                                    <th rowspan="2">อายุ</th>
+                                    <th rowspan="2">ปี กธ.</th>
+                                    <th rowspan="2" *ngIf="ulinkData.choosePlan == 1 && showHideColumn.sumProtect && showHideColumn.sumSaving && showHideColumn.sumTotal">จำนวนเงินเอาประกันภัย</th>
+
+                                    <th [attr.colspan]="showHideColumn.sumProtect + showHideColumn.sumSaving + showHideColumn.sumTotal" *ngIf="ulinkData.choosePlan == 2 && (showHideColumn.sumProtect || showHideColumn.sumSaving || showHideColumn.sumTotal)">ทุนประกัน</th>
+
+                                    <th [attr.colspan]="ulinkData.choosePlan == 1 ? showHideColumn.premiumSP + showHideColumn.premiumTopupPlus + showHideColumn.premiumTotal + showHideColumn.premiumCumulative : showHideColumn.premiumProtect + showHideColumn.premiumSaving + showHideColumn.premiumTopupPlus + showHideColumn.premiumRider + showHideColumn.premiumTotal + showHideColumn.premiumCumulative"
+                                        *ngIf="ulinkData.choosePlan == 1 ? showHideColumn.premiumSP || showHideColumn.premiumTopupPlus || showHideColumn.premiumTotal || showHideColumn.premiumCumulative : showHideColumn.premiumProtect || showHideColumn.premiumSaving || showHideColumn.premiumTopupPlus || showHideColumn.premiumRider || showHideColumn.premiumTotal || showHideColumn.premiumCumulative">เบี้ยประกันภัย</th>
+
+                                    <th [attr.colspan]="showHideColumn.expenseOperations + showHideColumn.expenseManagement + showHideColumn.expenseInsurance + showHideColumn.expenseTotal" *ngIf="showHideColumn.expenseOperations || showHideColumn.expenseManagement || showHideColumn.expenseInsurance || showHideColumn.expenseTotal">ค่าใช้จ่าย</th>
+
+                                    <th rowspan="2" *ngIf="ulinkData.choosePlan == 1 && showHideColumn.bonusSP">โบนัสเบี้ยประกันภัยชำระครั้งเดียว</th>
+                                    <th rowspan="2" *ngIf="ulinkData.choosePlan == 2 && showHideColumn.bonusProtect">โบนัสเบี้ยประกันภัยหลักเพื่อความคุ้มครอง</th>
+                                    <th rowspan="2" *ngIf="showHideColumn.expectReturn">คาดหวังผลตอบแทน (%)</th>
+
+                                    <th [attr.colspan]="ulinkData.choosePlan == 1 ? showHideColumn.withdrawAmount + showHideColumn.withdrawCumulative : showHideColumn.withdrawAmount + showHideColumn.withdrawFee + showHideColumn.withdrawActual + showHideColumn.withdrawCumulative" *ngIf="ulinkData.choosePlan == 1 ? showHideColumn.withdrawAmount || showHideColumn.withdrawCumulative : showHideColumn.withdrawAmount || showHideColumn.withdrawFee || showHideColumn.withdrawActual || showHideColumn.withdrawCumulative">การถอนเงินจากกรมธรรม์</th>
+
+                                    <th [attr.colspan]="ulinkData.choosePlan == 1 ? showHideColumn.valueSP + showHideColumn.valueTopupPlus + showHideColumn.valueTotal : showHideColumn.valueProtect + showHideColumn.valueSaving + showHideColumn.valueTopupPlus + showHideColumn.valueTotal"
+                                        *ngIf="ulinkData.choosePlan == 1 ? showHideColumn.valueSP || showHideColumn.valueTopupPlus || showHideColumn.valueTotal : showHideColumn.valueProtect || showHideColumn.valueSaving || showHideColumn.valueTopupPlus || showHideColumn.valueTotal">มูลค่ารับซื้อคืนหน่วยลงทุน ณ สิ้นปีกรมธรรม์</th>
+
+                                    <th rowspan="2" *ngIf="showHideColumn.deathBenefit">ผลประโยชน์กรณีเสียชีวิต ณ สิ้นปีกรมธรรม์</th>
+
+                                    <th [attr.colspan]="showHideColumn.taxAllowance + showHideColumn.taxBase + showHideColumn.taxRefund" *ngIf="showHideColumn.taxAllowance || showHideColumn.taxBase || showHideColumn.taxRefund">ค่าใช้จ่ายที่นำไปหักลดหย่อนภาษีได้</th>
+                                </tr>
+
+                                <tr>
+                                    <!-- ทุนประกัน -->
+                                    <th *ngIf="ulinkData.choosePlan == 2 && showHideColumn.sumProtect">เบี้ยประกันภัยหลักเพื่อความคุ้มครอง</th>
+                                    <th *ngIf="ulinkData.choosePlan == 2 && showHideColumn.sumSaving">เบี้ยประกันภัยหลักเพื่อการออม</th>
+                                    <th *ngIf="ulinkData.choosePlan == 2 && showHideColumn.sumTotal">รวม</th>
+
+                                    <!-- เบี้ยประกันภัย -->
+                                    <th *ngIf="ulinkData.choosePlan == 1 && showHideColumn.premiumSP">เบี้ยประกันภัยชำระครั้งเดียว</th>
+                                    <th *ngIf="ulinkData.choosePlan == 2 && showHideColumn.premiumProtect">เบี้ยประกันภัยหลักเพื่อความคุ้มครอง</th>
+                                    <th *ngIf="ulinkData.choosePlan == 2 && showHideColumn.premiumSaving">เบี้ยประกันภัยหลักเพื่อการออม</th>
+                                    <th *ngIf="showHideColumn.premiumTopupPlus">เบี้ยประกันภัยเพิ่มพิเศษ</th>
+                                    <th *ngIf="ulinkData.choosePlan == 2 && showHideColumn.premiumRider">สัญญาเพิ่มเติม</th>
+                                    <th *ngIf="showHideColumn.premiumTotal">รวม</th>
+                                    <th *ngIf="showHideColumn.premiumCumulative">รวมสะสม</th>
+
+                                    <!-- ค่าใช้จ่าย -->
+                                    <th *ngIf="showHideColumn.expenseOperations">ค่าใช้จ่ายในการดำเนินการประกันภัย</th>
+                                    <th *ngIf="showHideColumn.expenseManagement">ค่าธรรมเนียมการบริหารกรมธรรม์</th>
+                                    <th *ngIf="showHideColumn.expenseInsurance">ค่าการประกันภัย</th>
+                                    <th *ngIf="showHideColumn.expenseTotal">รวม</th>
+
+                                    <!-- การถอนเงินจากกรมธรรม์ -->
+                                    <th *ngIf="showHideColumn.withdrawAmount">จำนวนเงินที่ถอน</th>
+                                    <th *ngIf="ulinkData.choosePlan == 2 && showHideColumn.withdrawFee">ค่าธรรมเนียมการถอน</th>
+                                    <th *ngIf="ulinkData.choosePlan == 2 && showHideColumn.withdrawActual">จำนวนเงินที่รับจริง</th>
+                                    <th *ngIf="showHideColumn.withdrawCumulative">จำนวนเงินที่ถอนสะสม</th>
+
+                                    <!-- มูลค่ารับซื้อคืนหน่วยลงทุน ณ สิ้นปีกรมธรรม์ -->
+                                    <th *ngIf="ulinkData.choosePlan == 1 && showHideColumn.valueSP">เบี้ยประกันภัยชำระครั้งเดียว</th>
+                                    <th *ngIf="ulinkData.choosePlan == 2 && showHideColumn.valueProtect">เบี้ยประกันภัยหลักเพื่อความคุ้มครอง</th>
+                                    <th *ngIf="ulinkData.choosePlan == 2 && showHideColumn.valueSaving">เบี้ยประกันภัยหลักเพื่อการออม</th>
+                                    <th *ngIf="showHideColumn.valueTopupPlus">เบี้ยประกันภัยเพิ่มพิเศษ</th>
+                                    <th *ngIf="showHideColumn.valueTotal">รวม</th>
+
+                                    <!-- ค่าใช้จ่ายที่นำไปหักลดหย่อนภาษีได้ -->
+                                    <th *ngIf="showHideColumn.taxAllowance">ค่าใช้จ่ายที่นำไปหักลดหย่อนภาษีได้</th>
+                                    <th *ngIf="showHideColumn.taxBase">ฐานภาษี</th>
+                                    <th *ngIf="showHideColumn.taxRefund">เงินคืนภาษีที่คาดว่าจะได้รับ</th>
+                                </tr>
+                            </thead>
+
+                            <tbody *ngFor="let item of ulinkBenefit; let i = index;">
+                                <!-- pc -->
+                                <tr class="hidden-xs hidden-sm">
+                                    <!-- อายุ -->
+                                    <td class="txt-center">
+                                        {{ item.age }}
+                                    </td>
+                                    <!-- ปี กธ. -->
+                                    <td class="txt-center">
+                                        {{ item.policyYear }}
+                                    </td>
+                                    <!-- จำนวนเงินเอาประกันภัย -->
+                                    <td class="txt-right" *ngIf="ulinkData.choosePlan == 1 && showHideColumn.sumProtect && showHideColumn.sumSaving && showHideColumn.sumTotal">
+                                        {{ item.sum | number }}
+                                    </td>
+
+                                    <!-- เบี้ยประกันภัยหลักเพื่อความคุ้มครอง -->
+                                    <td class="txt-right" *ngIf="ulinkData.choosePlan == 2 && showHideColumn.sumProtect">
+                                        {{ item.sumProtect | number }}
+                                    </td>
+                                    <!-- เบี้ยประกันภัยหลักเพื่อการออม -->
+                                    <td class="txt-right" *ngIf="ulinkData.choosePlan == 2 && showHideColumn.sumSaving">
+                                        {{ item.sumSaving | number }}
+                                    </td>
+                                    <!-- รวม -->
+                                    <td class="txt-right" *ngIf="ulinkData.choosePlan == 2 && showHideColumn.sumTotal">
+                                        {{ item.sumTotal | number }}
+                                    </td>
+
+                                    <!-- เบี้ยประกันภัยชำระครั้งเดียว -->
+                                    <td class="txt-right" *ngIf="ulinkData.choosePlan == 1 && showHideColumn.premiumSP">
+                                        {{ item.premiumSP | number }}
+                                    </td>
+                                    <!-- เบี้ยประกันภัยหลักเพื่อความคุ้มครอง -->
+                                    <td class="txt-right" *ngIf="ulinkData.choosePlan == 2 && showHideColumn.premiumProtect">
+                                        {{ item.premiumProtect | number }}
+                                    </td>
+                                    <!-- เบี้ยประกันภัยหลักเพื่อการออม -->
+                                    <td class="txt-right" *ngIf="ulinkData.choosePlan == 2 && showHideColumn.premiumSaving">
+                                        {{ item.premiumSaving | number }}
+                                    </td>
+                                    <!-- เบี้ยประกันภัยเพิ่มพิเศษ -->
+                                    <td class="txt-right" *ngIf="showHideColumn.premiumTopupPlus">
+                                        {{ item.premiumTopupPlus | number }}
+                                    </td>
+                                    <!-- สัญญาเพิ่มเติม -->
+                                    <td class="txt-right" *ngIf="ulinkData.choosePlan == 2 && showHideColumn.premiumRider">
+                                        {{ item.premiumRider | number }}
+                                    </td>
+                                    <!-- รวม -->
+                                    <td class="txt-right" *ngIf="showHideColumn.premiumTotal">
+                                        {{ item.premiumTotal | number }}
+                                    </td>
+                                    <!-- รวมสะสม -->
+                                    <td class="txt-right" *ngIf="showHideColumn.premiumCumulative">
+                                        {{ item.premiumCumulative | number }}
+                                    </td>
+
+                                    <!-- ค่าใช้จ่ายในการดำเนินการประกันภัย -->
+                                    <td class="txt-right" *ngIf="showHideColumn.expenseOperations">
+                                        {{ item.expenseOperations | number }}
+                                    </td>
+                                    <!-- ค่าธรรมเนียมการบริหารกรมธรรม์ -->
+                                    <td class="txt-right" *ngIf="showHideColumn.expenseManagement">
+                                        {{ item.expenseManagement | number }}
+                                    </td>
+                                    <!-- ค่าการประกันภัย -->
+                                    <td class="txt-right" *ngIf="showHideColumn.expenseInsurance">
+                                        {{ item.expenseInsurance | number }}
+                                    </td>
+                                    <!-- รวม -->
+                                    <td class="txt-right" *ngIf="showHideColumn.expenseTotal">
+                                        {{ item.expenseTotal | number }}
+                                    </td>
+
+                                    <!-- โบนัสเบี้ยประกันภัยชำระครั้งเดียว -->
+                                    <td class="txt-right" *ngIf="ulinkData.choosePlan == 1 && showHideColumn.bonusSP">
+                                        {{ item.bonusSP | number }}
+                                    </td>
+                                    <!-- โบนัสเบี้ยประกันภัยหลักเพื่อความคุ้มครอง -->
+                                    <td class="txt-right" *ngIf="ulinkData.choosePlan == 2 && showHideColumn.bonusProtect">
+                                        {{ item.bonusProtect | number }}
+                                    </td>
+                                    <!-- คาดหวังผลตอบแทน (%) -->
+                                    <td class="txt-right" *ngIf="showHideColumn.expectReturn">
+                                        {{ item.expectReturn | number }}%
+                                    </td>
+
+                                    <!-- จำนวนเงินที่ถอน -->
+                                    <td class="txt-right" *ngIf="showHideColumn.withdrawAmount">
+                                        {{ item.withdrawAmount | number }}
+                                    </td>
+                                    <!-- ค่าธรรมเนียมการถอน -->
+                                    <td class="txt-right" *ngIf="ulinkData.choosePlan == 2 && showHideColumn.withdrawFee">
+                                        {{ item.withdrawFee | number }}
+                                    </td>
+                                    <!-- จำนวนเงินที่รับจริง -->
+                                    <td class="txt-right" *ngIf="ulinkData.choosePlan == 2 && showHideColumn.withdrawActual">
+                                        {{ item.withdrawActual | number }}
+                                    </td>
+                                    <!-- จำนวนเงินที่ถอนสะสม -->
+                                    <td class="txt-right" *ngIf="showHideColumn.withdrawCumulative">
+                                        {{ item.withdrawCumulative | number }}
+                                    </td>
+
+                                    <!-- เบี้ยประกันภัยชำระครั้งเดียว -->
+                                    <td class="txt-right" *ngIf="ulinkData.choosePlan == 1 && showHideColumn.valueSP">
+                                        {{ item.valueSP | number }}
+                                    </td>
+                                    <!-- เบี้ยประกันภัยหลักเพื่อความคุ้มครอง -->
+                                    <td class="txt-right" *ngIf="ulinkData.choosePlan == 2 && showHideColumn.valueProtect">
+                                        {{ item.valueProtect | number }}
+                                    </td>
+                                    <!-- เบี้ยประกันภัยหลักเพื่อการออม -->
+                                    <td class="txt-right" *ngIf="ulinkData.choosePlan == 2 && showHideColumn.valueSaving">
+                                        {{ item.valueSaving | number }}
+                                    </td>
+                                    <!-- เบี้ยประกันภัยเพิ่มพิเศษ -->
+                                    <td class="txt-right" *ngIf="showHideColumn.valueTopupPlus">
+                                        {{ item.valueTopupPlus | number }}
+                                    </td>
+                                    <!-- รวม -->
+                                    <td class="txt-right" *ngIf="showHideColumn.valueTotal">
+                                        {{ item.valueTotal | number }}
+                                    </td>
+
+                                    <!-- ผลประโยชน์กรณีเสียชีวิต ณ สิ้นปีกรมธรรม์ -->
+                                    <td class="txt-right" *ngIf="showHideColumn.deathBenefit">
+                                        {{ item.deathBenefit | number }}
+                                    </td>
+
+                                    <!-- ค่าใช้จ่ายที่นำไปหักลดหย่อนภาษีได้ -->
+                                    <td class="txt-right" *ngIf="showHideColumn.taxAllowance">
+                                        {{ item.taxAllowance | number }}
+                                    </td>
+                                    <!-- ฐานภาษี -->
+                                    <td class="txt-right" *ngIf="showHideColumn.taxBase">
+                                        {{ item.taxBase | number }}%
+                                    </td>
+                                    <!-- เงินคืนภาษีที่คาดว่าจะได้รับ -->
+                                    <td class="txt-right" *ngIf="showHideColumn.taxRefund">
+                                        {{ item.taxRefund | number }}
+                                    </td>
+                                </tr>
+
+                                <!-- mobile -->
+                                <tr class="view-only-xs view-only-sm th-m">
+                                    <th>อายุ {{ item.age }} &nbsp; &nbsp; ปี กธ. {{ item.policyYear }}</th>
+                                    <th></th>
+                                </tr>
+
+                                <!-- จำนวนเงินเอาประกันภัย -->
+                                <tr class="view-only-xs view-only-sm" *ngIf="ulinkData.choosePlan == 1 && showHideColumn.sumProtect && showHideColumn.sumSaving && showHideColumn.sumTotal">
+                                    <th>จำนวนเงินเอาประกันภัย</th>
+                                    <th>{{ item.sum | number }}</th>
+                                </tr>
+
+                                <!-- ทุนประกัน -->
+                                <tr class="view-only-xs view-only-sm" *ngIf="ulinkData.choosePlan == 2 && (showHideColumn.sumProtect || showHideColumn.sumSaving || showHideColumn.sumTotal)">
+                                    <th>ทุนประกัน</th>
+                                    <th></th>
+                                </tr>
+                                <tr class="view-only-xs view-only-sm" *ngIf="ulinkData.choosePlan == 2 && showHideColumn.sumProtect">
+                                    <td>เบี้ยประกันภัยหลักเพื่อความคุ้มครอง</td>
+                                    <td>{{ item.sumProtect | number }}</td>
+                                </tr>
+                                <tr class="view-only-xs view-only-sm" *ngIf="ulinkData.choosePlan == 2 && showHideColumn.sumSaving">
+                                    <td>เบี้ยประกันภัยหลักเพื่อการออม</td>
+                                    <td>{{ item.sumSaving | number }}</td>
+                                </tr>
+                                <tr class="view-only-xs view-only-sm" *ngIf="ulinkData.choosePlan == 2 && showHideColumn.sumTotal">
+                                    <td>รวม</td>
+                                    <td>{{ item.sumTotal | number }}</td>
+                                </tr>
+
+                                <!-- เบี้ยประกันภัย -->
+                                <tr class="view-only-xs view-only-sm" *ngIf="ulinkData.choosePlan == 1 ? showHideColumn.premiumSP || showHideColumn.premiumTopupPlus || showHideColumn.premiumTotal || showHideColumn.premiumCumulative : showHideColumn.premiumProtect || showHideColumn.premiumSaving || showHideColumn.premiumTopupPlus || showHideColumn.premiumRider || showHideColumn.premiumTotal || showHideColumn.premiumCumulative">
+                                    <th>เบี้ยประกันภัย</th>
+                                    <th></th>
+                                </tr>
+                                <tr class="view-only-xs view-only-sm" *ngIf="ulinkData.choosePlan == 1 && showHideColumn.premiumSP">
+                                    <td>เบี้ยประกันภัยชำระครั้งเดียว</td>
+                                    <td>{{ item.premiumSP | number }}</td>
+                                </tr>
+                                <tr class="view-only-xs view-only-sm" *ngIf="ulinkData.choosePlan == 2 && showHideColumn.premiumProtect">
+                                    <td>เบี้ยประกันภัยหลักเพื่อความคุ้มครอง</td>
+                                    <td>{{ item.premiumProtect | number }}</td>
+                                </tr>
+                                <tr class="view-only-xs view-only-sm" *ngIf="ulinkData.choosePlan == 2 && showHideColumn.premiumSaving">
+                                    <td>เบี้ยประกันภัยหลักเพื่อการออม</td>
+                                    <td>{{ item.premiumSaving | number }}</td>
+                                </tr>
+                                <tr class="view-only-xs view-only-sm" *ngIf="showHideColumn.premiumTopupPlus">
+                                    <td>เบี้ยประกันภัยเพิ่มพิเศษ</td>
+                                    <td>{{ item.premiumTopupPlus | number }}</td>
+                                </tr>
+                                <tr class="view-only-xs view-only-sm" *ngIf="ulinkData.choosePlan == 2 && showHideColumn.premiumRider">
+                                    <td>สัญญาเพิ่มเติม</td>
+                                    <td>{{ item.premiumRider | number }}</td>
+                                </tr>
+                                <tr class="view-only-xs view-only-sm" *ngIf="showHideColumn.premiumTotal">
+                                    <td>รวม</td>
+                                    <td>{{ item.premiumTotal | number }}</td>
+                                </tr>
+                                <tr class="view-only-xs view-only-sm" *ngIf="showHideColumn.premiumCumulative">
+                                    <td>รวมสะสม</td>
+                                    <td>{{ item.premiumCumulative | number }}</td>
+                                </tr>
+
+                                <!-- ค่าใช้จ่าย -->
+                                <tr class="view-only-xs view-only-sm" *ngIf="showHideColumn.expenseOperations || showHideColumn.expenseManagement || showHideColumn.expenseInsurance || showHideColumn.expenseTotal">
+                                    <th>ค่าใช้จ่าย</th>
+                                    <th></th>
+                                </tr>
+                                <tr class="view-only-xs view-only-sm" *ngIf="showHideColumn.expenseOperations">
+                                    <td>ค่าใช้จ่ายในการดำเนินการประกันภัย</td>
+                                    <td>{{ item.expenseOperations | number }}</td>
+                                </tr>
+                                <tr class="view-only-xs view-only-sm" *ngIf="showHideColumn.expenseManagement">
+                                    <td>ค่าธรรมเนียมการบริหารกรมธรรม์</td>
+                                    <td>{{ item.expenseManagement | number }}</td>
+                                </tr>
+                                <tr class="view-only-xs view-only-sm" *ngIf="showHideColumn.expenseInsurance">
+                                    <td>ค่าการประกันภัย</td>
+                                    <td>{{ item.expenseInsurance | number }}</td>
+                                </tr>
+                                <tr class="view-only-xs view-only-sm" *ngIf="showHideColumn.expenseTotal">
+                                    <td>รวม</td>
+                                    <td>{{ item.expenseTotal | number }}</td>
+                                </tr>
+
+                                <!-- โบนัสเบี้ยประกันภัยชำระครั้งเดียว -->
+                                <tr class="view-only-xs view-only-sm" *ngIf="ulinkData.choosePlan == 1 && showHideColumn.bonusSP">
+                                    <th>โบนัสเบี้ยประกันภัยชำระครั้งเดียว</th>
+                                    <th>{{ item.bonusSP | number }}</th>
+                                </tr>
+                                <!-- โบนัสเบี้ยประกันภัยหลักเพื่อความคุ้มครอง -->
+                                <tr class="view-only-xs view-only-sm" *ngIf="ulinkData.choosePlan == 2 && showHideColumn.bonusProtect">
+                                    <th>โบนัสเบี้ยประกันภัยหลักเพื่อความคุ้มครอง</th>
+                                    <th>{{ item.bonusProtect | number }}</th>
+                                </tr>
+                                <!-- คาดหวังผลตอบแทน (%) -->
+                                <tr class="view-only-xs view-only-sm" *ngIf="showHideColumn.expectReturn">
+                                    <th>คาดหวังผลตอบแทน (%)</th>
+                                    <th>{{ item.expectReturn | number }}%</th>
+                                </tr>
+
+                                <!-- การถอนเงินจากกรมธรรม์ -->
+                                <tr class="view-only-xs view-only-sm" *ngIf="ulinkData.choosePlan == 1 ? showHideColumn.withdrawAmount || showHideColumn.withdrawCumulative : showHideColumn.withdrawAmount || showHideColumn.withdrawFee || showHideColumn.withdrawActual || showHideColumn.withdrawCumulative">
+                                    <th>การถอนเงินจากกรมธรรม์</th>
+                                    <th></th>
+                                </tr>
+                                <tr class="view-only-xs view-only-sm" *ngIf="showHideColumn.withdrawAmount">
+                                    <td>จำนวนเงินที่ถอน</td>
+                                    <td>{{ item.withdrawAmount | number }}</td>
+                                </tr>
+                                <tr class="view-only-xs view-only-sm" *ngIf="ulinkData.choosePlan == 2 && showHideColumn.withdrawFee">
+                                    <td>ค่าธรรมเนียมการถอน</td>
+                                    <td>{{ item.withdrawFee | number }}</td>
+                                </tr>
+                                <tr class="view-only-xs view-only-sm" *ngIf="ulinkData.choosePlan == 2 && showHideColumn.withdrawActual">
+                                    <td>จำนวนเงินที่รับจริง</td>
+                                    <td>{{ item.withdrawActual | number }}</td>
+                                </tr>
+                                <tr class="view-only-xs view-only-sm" *ngIf="showHideColumn.withdrawCumulative">
+                                    <td>จำนวนเงินที่ถอนสะสม</td>
+                                    <td>{{ item.withdrawCumulative | number }}</td>
+                                </tr>
+
+                                <!-- มูลค่ารับซื้อคืนหน่วยลงทุน ณ สิ้นปีกรมธรรม์ -->
+                                <tr class="view-only-xs view-only-sm" *ngIf="ulinkData.choosePlan == 1 ? showHideColumn.valueSP || showHideColumn.valueTopupPlus || showHideColumn.valueTotal : showHideColumn.valueProtect || showHideColumn.valueSaving || showHideColumn.valueTopupPlus || showHideColumn.valueTotal">
+                                    <th>มูลค่ารับซื้อคืนหน่วยลงทุน ณ สิ้นปีกรมธรรม์</th>
+                                    <th></th>
+                                </tr>
+                                <tr class="view-only-xs view-only-sm" *ngIf="ulinkData.choosePlan == 1 && showHideColumn.valueSP">
+                                    <td>เบี้ยประกันภัยชำระครั้งเดียว</td>
+                                    <td>{{ item.valueSP | number }}</td>
+                                </tr>
+                                <tr class="view-only-xs view-only-sm" *ngIf="ulinkData.choosePlan == 2 && showHideColumn.valueProtect">
+                                    <td>เบี้ยประกันภัยหลักเพื่อความคุ้มครอง</td>
+                                    <td>{{ item.valueProtect | number }}</td>
+                                </tr>
+                                <tr class="view-only-xs view-only-sm" *ngIf="ulinkData.choosePlan == 2 && showHideColumn.valueSaving">
+                                    <td>เบี้ยประกันภัยหลักเพื่อการออม</td>
+                                    <td>{{ item.valueSaving | number }}</td>
+                                </tr>
+                                <tr class="view-only-xs view-only-sm" *ngIf="showHideColumn.valueTopupPlus">
+                                    <td>เบี้ยประกันภัยเพิ่มพิเศษ</td>
+                                    <td>{{ item.valueTopupPlus | number }}</td>
+                                </tr>
+                                <tr class="view-only-xs view-only-sm" *ngIf="showHideColumn.valueTotal">
+                                    <td>รวม</td>
+                                    <td>{{ item.valueTotal | number }}</td>
+                                </tr>
+
+                                <!-- ผลประโยชน์กรณีเสียชีวิต ณ สิ้นปีกรมธรรม์ -->
+                                <tr class="view-only-xs view-only-sm" *ngIf="showHideColumn.deathBenefit">
+                                    <th>ผลประโยชน์กรณีเสียชีวิต ณ สิ้นปีกรมธรรม์</th>
+                                    <th>{{ item.deathBenefit | number }}</th>
+                                </tr>
+
+                                <!-- ค่าใช้จ่ายที่นำไปหักลดหย่อนภาษีได้ -->
+                                <tr class="view-only-xs view-only-sm" *ngIf="showHideColumn.taxAllowance || showHideColumn.taxBase || showHideColumn.taxRefund">
+                                    <th>ค่าใช้จ่ายที่นำไปหักลดหย่อนภาษีได้</th>
+                                    <th></th>
+                                </tr>
+                                <tr class="view-only-xs view-only-sm" *ngIf="showHideColumn.taxAllowance">
+                                    <td>ค่าใช้จ่ายที่นำไปหักลดหย่อนภาษีได้</td>
+                                    <td>{{ item.taxAllowance | number }}</td>
+                                </tr>
+                                <tr class="view-only-xs view-only-sm" *ngIf="showHideColumn.taxBase">
+                                    <td>ฐานภาษี</td>
+                                    <td>{{ item.taxBase | number }}%</td>
+                                </tr>
+                                <tr class="view-only-xs view-only-sm" *ngIf="showHideColumn.taxRefund">
+                                    <td>เงินคืนภาษีที่คาดว่าจะได้รับ</td>
+                                    <td>{{ item.taxRefund | number }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

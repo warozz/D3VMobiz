@@ -1,0 +1,19 @@
+<div class="box2ColPage boxAccGroup">
+    <div class="box2ColLeft">
+        <h2 class="boxTitleListQuickAcc">
+            <a class="btnToggleAccMenu view-only-sm"><span class="hamburger-inner"></span></a> {{ title }}
+        </h2>
+        <div class="boxListQuickAcc">
+            <a *ngFor="let item of collapseArray; let i = index" (click)="tab(i)" [ngClass]="{action: i == index, disable: collapseArray[i].disabled}">{{ item.tab }}</a>
+        </div>
+    </div>
+    <div class="box2ColRight">
+        <div class="bgPaperShadow mgt0">
+            <div class="contentPaperShadow2">
+                <div class="boxListAcc">
+                    <ng-content></ng-content>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

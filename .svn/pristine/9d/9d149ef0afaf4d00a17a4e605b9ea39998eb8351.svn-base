@@ -1,0 +1,8 @@
+collapse {
+    .oneAcc {
+        display: none;
+        &.action {
+            display: block;
+        }
+    }
+}

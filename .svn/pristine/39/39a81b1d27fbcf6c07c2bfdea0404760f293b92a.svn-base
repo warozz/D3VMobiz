@@ -1,0 +1,224 @@
+<form [formGroup]="appHistory">
+    <div class="boxContentPage bgBlue3 hasBgImg bgImg95">
+        <div class="container">
+            <div class="bgPaperShadow mgt25">
+                <div class="contentPaperShadow">
+
+                    <!-- start boxFixTopJumpMenu -->
+                    <div class="boxFixTopJumpMenu">
+                        <div id="boxFixJumpMenu" class="boxContentFixJumpMenu">
+                            <div class="boxListFixJumpMenu sm-a-mgr0 sm-a-action-fsnormal">
+                                <a class="action" (click)="scrollToCenter()">ประวัติการประกัน</a>
+                                <a class="down" (click)="scrollToBot()">ประวัติการถูกปฏิเสธ</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end boxFixTopJumpMenu -->
+
+                    <div id="boxListJumpContent" class="boxListJumpContent xs-pdlr15">
+                        <!-- start oneJumpContent -->
+                        <div class="oneJumpContent">
+                            <h2 class="view-only-xs c-blue boxTitleFixJumpMenu">ประวัติการประกัน</h2>
+                            <div class="pdt10 pdb10 lh-form-control">
+                                <font color="red">*</font>
+                                ท่านเคยทำประกันชีวิต ประกันสุขภาพหรือประกันอุบัติเหตุหรือกำลังขอเอาประกันภัยอื่นหรือไม่</div>
+
+                            <div class="boxChkAndInfo">
+                                <div class="boxTopChk">
+                                    <div class="inline_block pdb10 pdr20 lh-form-control">
+                                        <input id="other_insurance_yn-1" name="otherinsuranceyn" value="N" formControlName="otherinsuranceyn" class="radio-style3" type="radio" (change)="resetOtherInsuranceData()">
+                                        <label for="other_insurance_yn-1">ไม่มี</label>
+                                    </div>
+
+                                    <div class="inline_block pdb10 pdr20 lh-form-control">
+                                        <input #insuranceY id="other_insurance_yn-2" name="otherinsuranceyn" value="Y" formControlName="otherinsuranceyn" class="radio-style3" type="radio" (change)="addOtherInsuranceData()">
+                                        <label for="other_insurance_yn-2">มี ดังนี้</label>
+                                    </div>
+                                </div>
+
+                                <div *ngIf="insuranceY.checked" class="boxInfoForm">
+                                    <!-- start one business -->
+                                    <div class="oneBusiness">
+                                        <div formArrayName="otherInsuranceData" *ngFor="let item of appHistory.get('otherInsuranceData').controls; let i = index;">
+                                            <div [formGroupName]="i">
+                                                <div class="boxRemoveRow" *ngIf="appHistory.value.otherInsuranceData.length > 1">
+                                                    <a class="btnTxtIconRight" href="javascript:;" (click)="removeOtherInsuranceData(i)">ลบบริษัท <span><i class="icon-close"></i></span></a>
+                                                </div>
+
+                                                <div class="col-md-6 pdlr0">
+                                                    <div class="col-md-5 col-sm-4 pdr-sm-7 txt-sm-right lh-form-control">
+                                                        <font color="red">*</font> ชื่อบริษัทประกันภัย :</div>
+                                                    <div class="col-md-5 col-sm-6 pdl-sm-7 pdr-sm-7">
+                                                        <dropdown #companySelect formControlName="company" (ngModelChange)="companyChange($event, 1, i)">
+                                                            <dropdown-option [value]="co.key +':'+ co.value" *ngFor="let co of companyDropdown">{{co.value}}</dropdown-option>
+                                                        </dropdown>
+                                                    </div>
+                                                    <!-- <div *ngIf="companySelect.value == '99:อื่นๆ'" class="col-md-1 pdl-md-7 otherCompany">
+                                                        <div class="form-group">
+                                                            <input id="company_desc" formControlName="company_desc" name="" class="form-control" type="text" value="" placeholder="" maxlength="100" NumberCharacterOnly />
+                                                        </div>
+                                                    </div> -->
+                                                </div>
+
+                                                <div class="col-md-6 pdlr0">
+                                                    <div class="col-md-5 col-sm-4 pdr-sm-7 txt-sm-right lh-form-control">
+                                                        <font color="red">*</font> อุบัติเหตุ :</div>
+                                                    <div class="col-md-5 col-sm-6 col-xs-8 pdl-sm-7 pdr7">
+                                                        <div class="form-group">
+                                                            <input id="accident_amount" name="" formControlName="accident_amount" class="form-control" type="text" value="" placeholder="" maxlength="12" NumberOnly>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xs-4 col-sm-2 pdl7 lh-form-control">บาท</div>
+                                                </div>
+                                                <div class="clearfix"></div>
+
+                                                <div class="col-md-6 pdlr0">
+                                                    <div class="col-md-5 col-sm-4 pdr-sm-7 txt-sm-right lh-form-control">
+                                                        <font color="red">*</font> ชีวิต :</div>
+                                                    <div class="col-md-5 col-sm-6 col-xs-8 pdl-sm-7 pdr7">
+                                                        <div class="form-group">
+                                                            <input id="life_amount" name="" formControlName="life_amount" class="form-control" type="text" value="" placeholder="" maxlength="12" NumberOnly>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xs-4 col-sm-2 pdl7 lh-form-control">บาท</div>
+                                                </div>
+                                                <div class="clearfix view-only-sm view-only-xs"></div>
+
+                                                <div class="col-md-6 pdlr0">
+                                                    <div class="col-md-5 col-sm-4 pdr-sm-7 txt-sm-right lh-form-control">
+                                                        <font color="red">*</font> เงินชดเชยรายวัน :</div>
+                                                    <div class="col-md-5 col-sm-6 col-xs-8 pdl-sm-7 pdr7">
+                                                        <div class="form-group">
+                                                            <input id="compensation_daily" name="" formControlName="compensation_daily" class="form-control" type="text" value="" placeholder="" maxlength="7" NumberOnly>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xs-4 col-sm-2 pdl7 lh-form-control">บาท</div>
+                                                </div>
+                                                <div class="clearfix"></div>
+
+                                                <div class="col-md-6 pdlr0">
+                                                    <div class="col-md-5 col-sm-4 pdr-sm-7 txt-sm-right lh-form-control">
+                                                        <font color="red">*</font> โรคร้ายแรง :</div>
+                                                    <div class="col-md-5 col-sm-6 col-xs-8 pdl-sm-7 pdr7">
+                                                        <div class="form-group">
+                                                            <input id="critical_illness_amount" formControlName="critical_illness_amount" name="" class="form-control" type="text" value="" placeholder="" maxlength="12" NumberOnly>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xs-4 col-sm-2 pdl7 lh-form-control">บาท</div>
+                                                </div>
+                                                <div class="clearfix view-only-sm view-only-xs"></div>
+
+                                                <div class="col-md-6 pdlr0">
+                                                    <div class="col-md-5 col-sm-4 pdr7 txt-sm-right lh-form-control">
+                                                        <font color="red">*</font> ผลบังคับของสัญญา :</div>
+                                                    <div class="col-sm-7 pdl7">
+                                                        <div class="inline_block pdr20 lh-form-control">
+                                                            <input id="contract_effective_flag-1-{{i}}" value="Y" formControlName="contract_effective_flag" class="radio-style3" type="radio">
+                                                            <label for="contract_effective_flag-1-{{i}}">มีผลบังคับ</label>
+                                                        </div>
+
+                                                        <div class="inline_block pdr20 lh-form-control">
+                                                            <input id="contract_effective_flag-2-{{i}}" value="N" formControlName="contract_effective_flag" class="radio-style3" type="radio">
+                                                            <label for="contract_effective_flag-2-{{i}}">ไม่มีผลบังคับ</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="clearfix"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- end one business -->
+
+                                    <div *ngIf="appHistory.value.otherInsuranceData.length < 3" class="boxAddRow txt-center">
+                                        <a class="btnTxtIconRight" href="javascript:;" (click)="
+                                        addOtherInsuranceData()">เพิ่มบริษัท <span><i class="icon-plus2"></i></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end oneJumpContent -->
+
+                        <!-- start oneJumpContent -->
+                        <div class="oneJumpContent xs-pdlr15">
+                            <h2 class="view-only-xs c-blue boxTitleFixJumpMenu">ประวัติการถูกปฏิเสธ</h2>
+
+                            <div id="link2" class="pdt10 pdb10 lh-form-control">
+                                <font color="red"> * </font>ท่านเคยถูกปฏิเสธ เลื่อนการรับประกันภัย เพิ่มอัตราเบี้ย เปลี่ยนแปลงเงื่อนไข สำหรับการขอเอาประกันภัย หรือการขอกลับคืนสู่สถานะเดิม หรือการขอต่ออายุกรมธรรม์ จากบริษัทนี้ หรือบริษัทอื่นหรือไม่</div>
+
+                            <div class="boxChkAndInfo">
+                                <div class="boxTopChk">
+                                    <div class="inline_block pdb10 pdr20 lh-form-control">
+                                        <input id="insurance_reject-1" name="insurancerejectionflag" value="N" formControlName="insurancerejectionflag" class="radio-style3" type="radio" (change)="resetInsuranceRejection()">
+                                        <label for="insurance_reject-1">ไม่เคย</label>
+                                    </div>
+
+                                    <div class="inline_block pdb10 pdr20 lh-form-control">
+                                        <input #insuranceReject id="insurance_reject-2" value="Y" formControlName="insurancerejectionflag" name="insurancerejectionflag" class="radio-style3" type="radio" (change)="addInsuranceRejection()">
+                                        <label for="insurance_reject-2">เคย (ระบุรายละเอียด)</label>
+                                    </div>
+                                </div>
+
+                                <div *ngIf="insuranceReject.checked" class="boxInfoForm">
+                                    <!-- start one business -->
+                                    <div class="oneBusiness">
+                                        <div formArrayName="insuranceRejectionData" *ngFor="let item of appHistory.get('insuranceRejectionData').controls; let j = index;">
+                                            <div [formGroupName]="j">
+                                                <div class="boxRemoveRow" *ngIf="appHistory.value.insuranceRejectionData.length > 1">
+                                                    <a class="btnTxtIconRight" href="javascript:;" (click)="removeInsuranceRejection(i)">ลบบริษัท <span><i class="icon-close"></i></span></a>
+                                                </div>
+
+                                                <div class="col-md-6 pdlr0">
+                                                    <div class="col-md-5 col-sm-4 pdr-sm-7 txt-sm-right lh-form-control">
+                                                        <font color="red">*</font> ชื่อบริษัทประกันภัย :</div>
+                                                    <div class="col-md-5 col-sm-6 pdl-sm-7 pdr-sm-7">
+                                                        <dropdown #companySelect formControlName="company" (ngModelChange)="companyChange($event, 2, j)">
+                                                            <dropdown-option [value]="co.key +':'+ co.value" *ngFor="let co of companyDropdown ">{{co.value}}</dropdown-option>
+                                                        </dropdown>
+                                                    </div>
+                                                    <!-- <div *ngIf="companySelect.value == '99:อื่นๆ'" class="col-md-3 pdl-md-7">
+                                                        <div class="form-group">
+                                                            <input id="company_desc" formControlName="company_desc" name="" class="form-control" type="text" value="" placeholder="" maxlength="100" NumberCharacterOnly />
+                                                        </div>
+                                                    </div> -->
+                                                </div>
+                                                <div class="col-md-6 pdlr0">
+                                                    <div class="col-md-5 col-sm-4 pdr-sm-7 txt-sm-right lh-form-control">
+                                                        <font color="red">*</font> เมื่อ :</div>
+                                                    <div class="col-md-5 col-sm-6 pdl-sm-7 pdr-sm-7">
+                                                        <div class="form-group hasIcon">
+                                                            <calendar [max]="maxDate" [id]="reject_date" formControlName="reject_date"></calendar>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="clearfix"></div>
+
+                                                <div class="col-md-6 pdlr0">
+                                                    <div class="col-md-5 col-sm-4 pdr-sm-7 txt-sm-right lh-form-control">
+                                                        <font color="red">*</font> สาเหตุ :</div>
+                                                    <div class="col-md-7 col-sm-8 pdl-sm-7 pdr-sm-7">
+                                                        <div class="form-group">
+                                                            <input id="description" formControlName="description" minlength="1" class="form-control" type="text" value="" placeholder="" maxlength="90" NumberCharacterOnly />
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="clearfix"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- end one business -->
+
+                                    <div *ngIf="appHistory.value.insuranceRejectionData.length < 2" class="boxAddRow txt-center ">
+                                        <a class="btnTxtIconRight " href="javascript:; " (click)="addInsuranceRejection() ">เพิ่มบริษัท <span><i class="icon-plus2 "></i></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end oneJumpContent -->
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</form>

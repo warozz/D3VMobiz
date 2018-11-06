@@ -1,0 +1,109 @@
+<div class="boxContentPage bgBlue2 zIndex1">
+    <div id="X3" class="container">
+        <div class="boxSearchPlanInsurance">
+            <div class="boxSelectPlan">
+                <div class="boxDropdownPlan nonIcon pdr0">
+                    <dropdown *ngIf="tlPlan == 'UA02' " placeholder="กรุณาเลือก" [(data)]="payType" (dataChange)="getPayType($event)">
+                        <dropdown-option value="0">รายเดือน</dropdown-option>
+                        <dropdown-option value="4">ราย 3 เดือน</dropdown-option>
+                        <dropdown-option value="2">ราย 6 เดือน</dropdown-option>
+                        <dropdown-option value="1">รายปี</dropdown-option>
+                    </dropdown>
+                    <input *ngIf="tlPlan == 'UA01' " class="form-control c-blue" text-center type="text" value="ชำระครั้งเดียว" disabled />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ส่วนเนื้อหาของ 99/1 'ชำระครั้งเดียว' -->
+<div id="X3" *ngIf="tlPlan == 'UA01' ">
+        <div class="container">
+            <div class="boxPromisesMore2 pdt10">
+                    <div class="boxListForm">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-6">
+                                <div class="label"><span>เบี้ยประกันภัย</span></div>
+                                <div class="onePromise">
+                                    <incrementer id="quatationForm_premiunIncrememter" [(value)]="valueTlPlanOne" (valueChange)="getSum($event, 'tlPlanOne')" [round]="false" [step]=1000 [min]="minTlPlanOne" [max]="maxTlPlanOne" [minAlert]="minAlertOne" [maxAlert]="maxAlertOne"></incrementer>
+                                    <span>เริ่มต้น 100,000 - สูงสุด 30,000,000 บาท</span>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6">
+                                <div class="label"><span>จำนวนเงินเอาประกันภัย</span></div>
+                                <div class="onePromise">
+                                    <input id="quatationForm_premiunIncrememter" class="form-control c-blue" type="text" [ngModel]=" amount |number: '1.0-0' " readonly/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+</div>
+<!-- end -->
+
+<!-- ส่วนเนื้อหาของ 99/99 -->
+<div *ngIf="tlPlan === 'UA02' && payType !== ''" id="X3">
+        <div class="container">
+                <div class="boxPromisesMore2 pdt10">
+                    <div class="boxListForm">
+                        <div class="row">
+                                <div class="col-xs-12 col-sm-6">
+                                    <div class="label"><span>เบี้ยประกันภัยหลักเพื่อความคุ้มครอง (RPP)</span></div>
+                                    <div class="onePromise">
+                                        <incrementer [(value)]="value.rppInsurancePremium" (valueChange)="getSum($event ,'RPP')" [round]="false" [step]=1000 [min]="value.min"></incrementer>
+                                        <span>{{wording.rppInsurancePremium}} บาท</span>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-6">
+                                    <div class="label"><span>เบี้ยประกันภัยหลักเพื่อการออม (RSP)</span></div>
+                                    <div class="onePromise">
+                                        <incrementer [(value)]="value.rspInsurancePremium" (valueChange)="getSum($event, 'RSP' )" [round]="false" [step]=1000 [zero]=0 [min]="value.min"></incrementer>
+                                        <span>{{wording.rspInsurancePremium}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col scaleX">
+                                <div class="col-xs-12 col-sm-6">
+                                        <div class="label"><span>จำนวนเงินเอาประกันภัย เบี้ยประกันภัยหลักเพื่อความคุ้มครอง</span></div>
+                                        <div class="onePromise">
+                                            <incrementer [(value)]="value.rppAmount" (valueChange)="getSum($event, 'rppAmount')" [round]="false" [step]=1000 [min]="value.minAmountRpp"></incrementer>
+                                            <span>{{wording.rppAmount}}</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6">
+                                        <div class="label"><span>จำนวนเงินเอาประกันภัย เบี้ยประกันภัยหลักเพื่อการออม</span></div>
+                                        <div class="onePromise">
+                                            <input class="form-control" type="text" [ngModel]="value.rspAmount | number" readonly />
+                                        </div>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+</div>
+
+<rider2 *ngIf=" tlPlan == 'UA02' && payType !== '' && showRider" [(rider)]="rider" [prospect]="prospect" [sum]="quatationSum" [plan]="tlPlan" [tlplan]="tlplan" [mode]="payType" (premium)="premiumRider($event)"></rider2>
+<div *ngIf="tlPlan == 'UA02' && payType !== '' " class="container-fluid">
+    <div class="row c-white insurance fs29 txt-center">
+        <div class="col-xs-12 col-sm-4">
+            <p>เบี้ยประกันหลัก {{mainInsurance|number: '1.0-0'}} บาท</p>
+        </div>
+        <div class="col-xs-12 col-sm-4">
+            <p>เบี้ยสัญญาเพิ่มเติมรวม {{riderInsuranceSum|number: '1.0-0'}} บาท</p>
+        </div>
+        <div class="col-xs-12 col-sm-4">
+            <p>เบี้ยประกันรวม {{insuranceSum|number: '1.0-0'}} บาท</p>
+        </div>
+    </div>
+</div>
+
+<div class="bgBlue4">
+    <div *ngIf="payType !== '' " class="boxActionForm style2">
+        <button class="btn-style3 btn-style-m" type="button" (click)="openQuotation()"><span><i class="icon-pdf-file"></i> ดูใบเสนอขาย </span></button>
+        <button class="btn-style2 btn-style-m" type="button" (click)="saveData()" [disabled]="disableSaveButton"><span><i class="icon-save-file-option"></i> บันทึก</span></button>
+        <button class="btn-style3 btn-style-m" type="button" (click)="resetData()"><span><i class="icon-reload"></i> เริ่มใหม่ </span></button>
+    </div>
+</div>

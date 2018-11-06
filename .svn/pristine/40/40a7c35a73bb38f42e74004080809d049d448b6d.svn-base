@@ -1,0 +1,82 @@
+quatation-form {
+    .formInformationLead input.form-control {
+        border-bottom: none;
+    }
+    .mydp {
+        border: none !important;
+    }
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus,
+    input:-webkit-autofill:active {
+        transition: background-color 5000s ease-in-out 0s;
+    }
+    @media (min-width: $screen-lg-min) and (max-width: 1199px) {
+        .container {
+            width: 990px;
+        }
+        .col-sw-2 {
+            &.calendar-quatation-form {
+                width: 230px;
+                padding-right: 0px;
+                .col-input {
+                    width: 150px;
+                }
+            }
+            width: 200px;
+            .col-input {
+                width: 100px;
+            }
+        }
+        .col-sw-3 {
+            width: 330px;
+            .col-label {
+                width: 180px;
+            }
+            .col-input {
+                width: 150px;
+            }
+        }
+        .col-sw-4 {
+            width: 130px;
+            .col-label {
+                width: 65px;
+            }
+            .col-input {
+                width: 50px;
+            }
+        }
+        .col-sw-5 {
+            width: 230px;
+            padding: 0px;
+            .col-label {
+                width: 110px;
+            }
+            .col-input {
+                width: 120px;
+            }
+        }
+    }
+    @media (min-width: $screen-xl-min) {
+        .container {
+            width: 1230px;
+            .hide-only-xl {
+                display: none !important;
+            }
+            .view-only-xl {
+                display: inherit;
+            }
+        }
+    }
+    prefix-name .boxSearchPlanInsurance .boxSelectPlan .boxDropdownPlan .txtView,
+    calendar>.form-group {
+        border: none;
+        &:focus {
+            -webkit-box-shadow: none;
+            box-shadow: none;
+        }
+    }
+    prefix-name .boxSearchPlanInsurance .boxSelectPlan {
+        z-index: 10;
+    }
+}

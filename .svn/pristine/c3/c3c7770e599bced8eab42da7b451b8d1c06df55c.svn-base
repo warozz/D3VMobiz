@@ -1,0 +1,19 @@
+page-quatation-health {
+    .form-control {
+        border: 1px solid rgb(200, 200, 200);
+    }
+    ion-item {
+        div.item-inner {
+            height: 100%;
+        }
+    }
+    .lh-form-control {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    ion-popover {
+        .popover-content {
+            width: 270px !important;
+        }
+    }
+}

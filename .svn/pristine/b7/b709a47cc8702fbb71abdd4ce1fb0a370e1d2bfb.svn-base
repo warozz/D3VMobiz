@@ -1,0 +1,10 @@
+step {
+    // hide
+    &[area-hidden=true] {
+        display: none;
+    }
+    // show
+    &[area-hidden=false] {
+        display: block;
+    }
+}

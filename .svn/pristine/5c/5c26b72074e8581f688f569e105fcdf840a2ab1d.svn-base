@@ -1,0 +1,19 @@
+<div *ngIf="hidden == 0" class="form-group">
+
+    <h1 *ngIf="date != ''">{{ date | date | dateFormatTHYeartoENYear}}</h1>
+    <h1 *ngIf="date == ''">{{placeholder}}</h1>
+
+    <input class="form-control" matInput [matDatepicker]="picker" placeholder="{{placeholder}}" (dateChange)="changeDate($event)" [(ngModel)]="date" [max]="max" [min]="min" readonly />
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker touchUi="true" #picker [disabled]="disabled"></mat-datepicker>
+</div>
+
+<div *ngIf="hidden == 1" class="form-group">
+
+    <div style="width: 50px;"></div>
+
+    <input class="form-control" matInput [matDatepicker]="picker" placeholder="{{placeholder}}" (dateChange)="changeDate($event)" [(ngModel)]="date" [max]="max" [min]="min" readonly />
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker touchUi="true" #picker disabled="false"></mat-datepicker>
+
+</div>

@@ -1,0 +1,61 @@
+quatation-signature-form {
+    .signature-thumb{
+        height: 100%;
+        border: 1.5px solid #d5d5d5;
+        background: #fff;
+        width: 100%;
+        text-align: center
+    }
+    .signature-height {
+        height: 100px;
+    }
+
+    @media (min-width: 768px) {
+        .form-horizontal .control-label.middle{
+            margin-top: auto;
+            margin-bottom: auto;
+        }
+    }
+
+    .underline{
+        border-bottom:1px solid #aaa;
+        padding-bottom:10px;
+    }
+
+    .spec-margin10{
+        margin-bottom: 10px;
+    }
+    .spec-margin5{
+        margin-bottom: 5px;
+    }
+
+    .popup-style1 {
+        height: 100%;
+        width: 100%;
+        border-radius: 0px;
+        .boxNewUpdate {
+            margin: 0px;
+            height: 100%;
+            padding-bottom: 50px;
+            .scrollbar-inner {
+                height: 100%;
+                overflow-x: hidden;
+            }
+        }
+    }
+    
+    .btn-style2{
+        min-width: 130px;
+        height: 50px;
+        line-height: 50px;
+        font-size: 25px;
+    }
+
+    .lineHeight100{
+        line-height: 100px
+    }
+
+    .scroll-content{
+        overflow: hidden;
+    }
+}

@@ -1,0 +1,124 @@
+<div class="boxContentPage bgBlue3 hasBgImg bgImg115">
+    <div class="container">
+        <h1 class="titleContentPage1">{{ 'PLAN' | planLabel }} {{ planName }}</h1>
+        <collapse-group (selectIndexChange)="tabSelecter($event)" collapseTitle="เหตุไม่คาดฝันจาก">
+            <collapse *ngFor="let item of selectedUnexpectedType" [collapseTab]="item.title" [collapseTitle]="item.titleName">
+                <div class="boxTableStyle4 table-bdb0">
+                    <div class="row thead">
+                        <div class="col-xs-6 col-sm-8">ความคุ้มครอง</div>
+                        <div class="col-xs-6 col-sm-4 txt-center">เงินทดแทน (บาท)</div>
+                    </div>
+                    <div class="row tbody" *ngFor="let items of chooseUnexpected">
+                        <div class="col-xs-6 col-sm-8" [innerHtml]="items.text"></div>
+
+                        <div class="col-xs-6 col-sm-4 txt-center" *ngIf="selectIndex != '4' && displaySum?.length <= 0">
+                            {{items.max == items.min ? (items.max | number) : ( (items.min | number) +" - "+ (items.max | number) )}}
+                        </div>
+                        <div class="col-xs-6 col-sm-4 txt-center" *ngIf="selectIndex != '4' && displaySum?.length > 0">
+                            {{ displaySum }}
+                        </div>
+                        <div class="col-xs-6 col-sm-4 txt-center" *ngIf="
+                        selectIndex == '4' 
+                        && items.value != conf.rider('RP')
+                        && items.value != conf.rider('RPG')
+                        && items.value != conf.rider('SR2')
+                        && items.value != conf.rider('TRP')
+                        ">
+                            {{items.max == items.min ? (items.max | number) : ( (items.min | number) +" - "+ (items.max | number) )}}
+                        </div>
+                        <div class="col-xs-6 col-sm-4 txt-center" *ngIf="items.value == conf.rider('RP') ">
+                            <button class="" (click)="callModal(items)">รายละเอียด</button>
+                        </div>
+                        <div class="col-xs-6 col-sm-4 txt-center" *ngIf="items.value == conf.rider('RPG') && selectIndex == '4' && arr5CaseTotal > 0">
+                            <button class="" (click)="callModal(items)">รายละเอียด</button>
+                        </div>
+                        <div class="col-xs-6 col-sm-4 txt-center" *ngIf="items.value == conf.rider('SR2') ">
+                            <button class="" (click)="callModal(items)">รายละเอียด</button>
+                        </div>
+                        <div class="col-xs-6 col-sm-4 txt-center" *ngIf="items.value == conf.rider('TRP') && selectIndex == '4' && arr5CaseTotal > 0">
+                            <button class="" (click)="callModal(items)">รายละเอียด</button>
+                        </div>
+                    </div>
+                    <div class="row footer" *ngIf="!hidden">
+                        <div class="col-xs-6 col-sm-8">
+                            รวม 
+                        </div>
+                        <div class="col-xs-6 col-sm-4 txt-center" *ngIf="sumMinUnexpectedList == sumMaxUnexpectedList">{{sumMaxUnexpectedList | number}} <span class="c-333">บาท</span></div>
+                        <div class="col-xs-6 col-sm-4 txt-center" *ngIf="sumMinUnexpectedList != sumMaxUnexpectedList">{{(sumMinUnexpectedList | number) +" - "+ (sumMaxUnexpectedList | number)}} <span class="c-333">บาท</span></div>
+                    </div>
+                    <!--
+                    <table>
+                        <thead>
+                            <tr>
+                                <th class="txt-left">ความคุ้มครอง</th>
+                                <th>เงินทดแทน (บาท)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let items of chooseUnexpected">
+                                <td [innerHtml]="items.text"></td>
+                                <td *ngIf="selectIndex != '4'" class="txt-center">
+                                    {{items.max == items.min ? (items.max | number) : ( (items.min | number) +" - "+ (items.max | number) )}}
+                                </td>
+                                <td *ngIf="
+                                selectIndex == '4' 
+                                && items.value != conf.rider('RP')
+                                && items.value != conf.rider('RPG')
+                                && items.value != conf.rider('SR2')
+                                && items.value != conf.rider('TRP')
+                                " class="txt-center">
+                                    {{items.max == items.min ? (items.max | number) : ( (items.min | number) +" - "+ (items.max | number) )}}
+                                </td>
+
+                                <td *ngIf="items.value == conf.rider('RP') " class="txt-center">
+                                    <button class="" (click)="callModal(items)">รายละเอียด</button>
+                                </td>
+                                <td *ngIf="items.value == conf.rider('RPG') && selectIndex == '4' && arr5CaseTotal > 0" class="txt-center">
+                                    <button class="" (click)="callModal(items)">รายละเอียด</button>
+                                </td>
+                                <td *ngIf="items.value == conf.rider('SR2') " class="txt-center">
+                                    <button class="" (click)="callModal(items)">รายละเอียด</button>
+                                </td>
+                                <td *ngIf="items.value == conf.rider('TRP') && selectIndex == '4' && arr5CaseTotal > 0" class="txt-center">
+                                    <button class="" (click)="callModal(items)">รายละเอียด</button>
+                                </td>
+                            </tr>
+                            <tr class="total" [hidden]="hidden">
+                                <!-- <td>รวม</td>
+                                <td *ngIf="sumMinUnexpectedList == sumMaxUnexpectedList" class="txt-center">{{sumMaxUnexpectedList | number}} <span class="c-333">บาท</span></td>
+                                <td *ngIf="sumMinUnexpectedList != sumMaxUnexpectedList" class="txt-center">{{(sumMinUnexpectedList | number) +" - "+ (sumMaxUnexpectedList | number)}} <span class="c-333">บาท</span></td> -->
+                    <!--<td colspan="2">
+                                    <div class="flex-container">
+                                        <div class="sum">รวม</div>
+                                        <div class="values" *ngIf="sumMinUnexpectedList == sumMaxUnexpectedList" >{{sumMaxUnexpectedList | number}} <span class="c-333">  บาท</span></div>
+                                        <div class="values" *ngIf="sumMinUnexpectedList != sumMaxUnexpectedList" >{{(sumMinUnexpectedList | number) +" - "+ (sumMaxUnexpectedList | number)}} <span class="c-333">  บาท</span></div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                -->
+
+                </div>
+
+                <div class="boxComment2">
+                    <!-- new version flex -->
+                    <div class="flex-container">
+                        <div class="star" [hidden]="arr5CaseTotal <= 0">*</div>
+                        <div class="5case text" [hidden]="arr5CaseTotal <= 0">{{arr5CaseText}}</div>
+                    </div>
+                    <div class="flex-container">
+                        <div class="star">{{star}}</div>
+                        <div class="text" [innerHtml]="text"></div>
+                    </div>
+                    <!-- new version flex -->
+                    <!-- old version  -->
+                    <!-- <div class="5case" [hidden]="arr5CaseTotal <= 0">{{arr5CaseText}}</div>
+                    <div class="text" [innerHtml]="text"></div> -->
+                    <!-- old version  -->
+                </div>
+                <quatation-annotation></quatation-annotation>
+            </collapse>
+        </collapse-group>
+    </div>
+</div>

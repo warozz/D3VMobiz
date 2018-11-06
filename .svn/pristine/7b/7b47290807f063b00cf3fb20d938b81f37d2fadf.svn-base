@@ -1,0 +1,17 @@
+<div class="modal">
+    <a class="fancybox-close" href="javascript:void(0)" (click)="close()"></a>
+
+    <h1 *ngIf="data.title != null" class="modal-title">
+        <i [ngClass]="data.icon"></i>
+        <span [innerHtml]="data.title"></span>
+    </h1>
+    <div class="modal-body">
+        <div *ngIf="data.content != null" class="content">
+            <h1 [innerHtml]="data.content"></h1>
+        </div>
+        <p *ngFor="let item of data.paragraph" [innerHtml]="item" [ngClass]="data.paragraphClass"></p>
+    </div>
+    <div class="modal-footer" *ngIf="data.footer != undefined">
+        <p [innerHtml]="data.footer" [ngClass]="data.footerClass"></p>
+    </div>
+</div>

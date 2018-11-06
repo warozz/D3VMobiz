@@ -1,0 +1,70 @@
+<div class="boxContentPage bgBlue3 hasBgImg">
+    <div class="container">
+        <div class="bgPaperShadow">
+            <div class="contentPaperShadow">
+                <div class="boxListForm pdlr0">
+
+                    <!-- อัตราผลตอบแทน -->
+                    <form [formGroup]="ulinkReturn">
+
+                        <div formArrayName="ulinkReturnArray">
+                            <div *ngFor="let item of ulinkReturn.get('ulinkReturnArray').controls; let i = index;" [formGroupName]="i" class="boxPromisesMore">
+                                <div class="pd0" [ngClass]="{'col-md-3': ulinkData.chooseType == 'educate', 'col-md-5': ulinkData.chooseType != 'educate'}">
+                                    <div class="col-label lh-form-control">อายุที่เริ่มผลตอบแทน (ปี)</div>
+                                    <div class="col-input">
+                                        <input *ngIf="i<1"  class="form-control" type="text" formControlName="agestart" calculator max="99" />
+                                        <input *ngIf="i>=1" class="form-control" type="text" formControlName="agestart" (calculatorChange)="calculatorChange($event,'agestart',i)" [value]="getValue(i,'agestart')" calculator max="99" />
+                                    </div>
+                                </div>
+                                <div class="col-md-3 pd0" *ngIf="ulinkData.chooseType =='educate'">
+                                    <div class="col-label lh-form-control">อายุบุตร (ปี)</div>
+                                    <div class="col-input">
+
+                                        <input *ngIf="i<1" class="form-control" type="text" formControlName="agechild" calculator max="99"  />
+                                        <input *ngIf="i>=1"  class="form-control" type="text" formControlName="agechild" (calculatorChange)="calculatorChange($event,'agechild',i)" [value]="getValue(i,'agechild')" calculator max="99"   />
+                                    </div>
+                                </div>
+                                <div class="pd0" [ngClass]="{'col-md-3': ulinkData.chooseType == 'educate', 'col-md-4': ulinkData.chooseType != 'educate'}">
+                                    <div class="col-label lh-form-control">ผลตอบแทนที่คาดหวัง (%)</div>
+                                    <div class="col-input">
+                                        <dropdown formControlName="ratebenefit" class="dropdown-sm">
+                                            <dropdown-option value="1">1</dropdown-option>
+                                            <dropdown-option value="2">2</dropdown-option>
+                                            <dropdown-option value="3">3</dropdown-option>
+                                            <dropdown-option value="4">4</dropdown-option>
+                                            <dropdown-option value="5">5</dropdown-option>
+                                            <dropdown-option value="6">6</dropdown-option>
+                                            <dropdown-option value="7">7</dropdown-option>
+                                            <dropdown-option value="8">8</dropdown-option>
+                                            <dropdown-option value="9">9</dropdown-option>
+                                            <dropdown-option value="10">10</dropdown-option>
+                                            <dropdown-option value="11">11</dropdown-option>
+                                            <dropdown-option value="12">12</dropdown-option>
+                                        </dropdown>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 pd0" *ngIf="i > 0">
+                                    <div class="btn-action">
+                                        <button class="btn-style2 btn-style-m pdlr20" type="submit" (click)="remove(i)">
+                                            <span> <i class="icon-rubbish-bin"></i> ลบ </span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+
+                        <div class="boxActionForm">
+                            <button [disabled]="btnAddArrYield" id="btnAdd" class="btn-style3" type="button" (click)="add()">
+                                <span><i class="icon-ion-ios-plus-outline fs29"></i> ปรับอัตราผลตอบแทน</span>
+                            </button>
+                            <button id="btnReset" class="btn-style3 btn-style-warning" type="button" (click)="reset()">
+                                <span><i class="icon-reload"></i> ล้างค่า</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

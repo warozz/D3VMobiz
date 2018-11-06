@@ -1,0 +1,61 @@
+prefix-name {
+    &.ng-dirty.ng-invalid .boxSearchPlanInsurance .boxSelectPlan {
+        .boxDropdownPlan {
+            .txtView {
+                -webkit-transition-duration: 1s;
+                transition-duration: 1s;
+                border-color: #cc0000;
+            }
+        }
+    }
+    .boxSearchPlanInsurance .boxSelectPlan {
+        .boxDropdownPlan {
+            .txtView:focus {
+                border-color: #66afe9;
+                outline: 0;
+                -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, 0.6);
+                box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, 0.6);
+            }
+        }
+    }
+    .boxSearchPlanInsurance .boxSelectPlan {
+        margin-bottom: 15px;
+        z-index: 1;
+        .boxDropdownPlan {
+            .txtView {
+                height: 38px;
+                line-height: 38px;
+                padding: 6px 12px;
+                font-size: $font-md;
+                border: 1px solid #c8c8c8;
+            }
+        }
+        @media screen and (max-width: $screen-sm-max) {
+            .boxDropdownPlan {
+                padding-right: 0px;
+            }
+        }
+    }
+    autocomplete .btnClearSearch {
+        height: 38px;
+        &.no-favorite {
+            right: 0px;
+        }
+    }
+    .boxSearchPlanInsurance .boxSelectPlan {
+        height: 38px;
+        .boxDropdownPlan {
+            height: auto;
+            border: none;
+            .listOption {
+                .oneOption {
+                    padding-right: 20px;
+                    overflow-y: hidden;
+                }
+            }
+            .txtView {
+                padding-right: 40px;
+            }
+        }
+    }
+}

@@ -1,0 +1,56 @@
+<ion-header header></ion-header>
+
+<ion-content>
+    <div id="setting_page" class="mainContainer">
+        <title-page>ตั้งค่า</title-page>
+
+        <div class="boxContentPage bgBlue2 zIndex2">
+            <div class="boxFilterSearch">
+                <div class="select-group">
+                    <label>แบบประกัน</label>
+
+                    <autocomplete [(data)]="plancode">
+                        <dropdown-option *ngFor="let item of dlplan" [value]="item.planCode">{{ item.planName }}</dropdown-option>
+                    </autocomplete>
+
+                    <!--
+                    <div class="form-group">
+                        <ion-item>
+                            <ion-select [(ngModel)]="plancode" cancelText="ยกเลิก" okText="ตกลง" [disabled]="dlplan ? null : ''">
+                                <ion-option [value]="item.planCode" *ngFor="let item of dlplan">{{ item.planName }}</ion-option>
+                            </ion-select>
+                        </ion-item>
+                    </div>
+                    -->
+
+                    <!-- <ionic-selectable class="savedata"
+                                item-content
+                                [(ngModel)]="plan"
+                                [items]="dlplan"
+                                itemValueField="planCode"
+                                itemTextField="planName"
+                                [canSearch]="true"
+                                (onChange)="portChange($event)">
+                            </ionic-selectable> -->
+                    <a class="btn-style4 btn-style-m txt-center pdlr10" (click)="insertPlanCode()"><span><i class="icon-ion-android-locate"></i>เลือก</span></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="boxContentPage">
+            <div class="container">
+                <div class="bgPaperShadow mgt0">
+                    <div class="contentPaperShadow">
+                        <div class="boxTopTitle">
+                            <h1>เลือกแบบประกันไม่เกิน 10 แบบ เพื่อนำเสนอบน ทีแอล โปร พลัส มินิ</h1>
+                        </div>
+
+                        <setting-table [data]="tlplanshow" (plancodeout)="deletePlanCode($event)"></setting-table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer footer></footer>
+</ion-content>

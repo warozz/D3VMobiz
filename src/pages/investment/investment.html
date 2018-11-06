@@ -1,0 +1,67 @@
+<ion-header header></ion-header>
+
+<ion-content>
+    <div id="quatation_page" class="mainContainer">
+        <title-page>ใบเสนอขาย</title-page>
+
+        <div class="boxContentPage">
+            <tabs selectIndex="1" tabStyle="2" (change)="selectTab($event)">
+                <tab *ngFor="let item of tabsPage;let i = index " id="tabQuatationPage_{{i}}" [tabTitle]="item.title" [disabled]="item.disabled"></tab>
+            </tabs>
+
+            <!-- ข้อมูลผู้มุ่งหวัง -->
+            <quatation-form (keyup)="keyupProspect($event)"></quatation-form>
+
+            <!-- ประสบการณ์การลงทุน -->
+            <div class="boxContentPage bgWhite bgShadow zIndex3">
+                <tabs tabStyle="2" (change)="selectTab2($event)" [selectIndex]="indexTab2">
+                    <tab *ngFor="let item of insideTabsPage;let i = index " id="tabQuatationPage_{{i}}" [tabTitle]="item.title" [disabled]="item.disabled"></tab>
+                </tabs>
+                <unit-link-plan *ngIf="!universalLifePage && selectedIndexTab2 == 0"></unit-link-plan>
+            </div>
+
+            <!-- check do not call -->
+            <div *ngIf="!universalLifePage" class="boxContentPage txt-center">
+                <div class="container">
+                    <div class="col col-md-5 adjust-position">
+                        <button class="btn-style8" id="chkDonot" type="button" style="transition: none;" (click)="doNotCall()">
+                        <span>ตรวจสอบ Do Not Call List<br/>(รายชื่อห้ามนำเสนอขายสินค้ายูนิตลิงค์)</span>
+                    </button>
+                        <div class="adjust-content pdl20" *ngIf="chkDoNot"><img src="assets/img/icon/icon_checkmark.png" width="45" /></div>
+                        <div class="adjust-content pdl20" *ngIf="chkDoNot_fail"><img src="assets/img/icon/red-cross.png" width="45" /></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- เลือกแบบประกัน unit link -->
+            <div *ngIf="allowChoosePlan&&chkDoNot&&!universalLifePage" class="boxContentPage bgBlue2" style="z-index: 5;">
+                <div class="container">
+                    <div class="boxSearchPlanInsurance center-block max-480">
+                        <div id="X1" class="boxSelectPlan">
+                            <a class="areaLeft" (click)="popup()">
+                                <i class="icon-open-book mgr7" ng-reflect-ng-class="icon-open-book mgr7"></i> แบบประกัน
+                            </a>
+                            <div class="boxDropdownPlan nonIcon pdr0">
+                                <dropdown placeholder="กรุณาเลือก" [(data)]="dataTL" (dataChange)="changeDetailPage($event)">
+                                    <dropdown-option value="UA01">ทีแอล ไลฟ์ โซลูชั่น 99/1 [UA01]</dropdown-option>
+                                    <dropdown-option value="UA02">ทีแอล ไลฟ์ โซลูชั่น 99/99 [UA02]</dropdown-option>
+                                </dropdown>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- unit link page -->
+            <steps id="firstStep" design="3" *ngIf="showUlPage && !universalLifePage && dataTL!='' " stepStyle="2" (change)="selectStep($event)" [selectIndex]="selectedTabIndex" [ngClass]="[chkDoNot && allowChoosePlan ? '' : 'hide']">
+                <step *ngFor=" let item of stepsPlanPage;let i = index" id="stepsQuatationPage_{{i}}" [root]="item.root" [stepTitle]="item.title" [stepIcon]="item.icon" [disabled]="item.disabled" [index]="item.id"></step>
+            </steps>
+
+            <!-- universal life page -->
+            <page-universal-life *ngIf="universalLifePage"></page-universal-life>
+
+        </div>
+    </div>
+
+    <footer footer></footer>
+</ion-content>

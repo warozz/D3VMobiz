@@ -1,0 +1,39 @@
+<div style="position: relative; left: 0; top: 0;">
+  <div id="section1" *ngIf="data?.section1">
+    <div class="col-xs-12 margin-bottom20">
+      <div class="col-xs-4 txt-right"> <span>คุ้มครองชีวิต </span> </div>
+      <div class="col-xs-4 txt-center"> <input class="txt-center width100" disabled value="{{data.section1.coverage | quatationPlanBinding:calculate }}"> </div>
+      <div class="col-xs-4 txt-left"> <span> บาท</span> </div>
+    </div>
+    <div class="col-xs-12 margin-bottom20">
+      <div class="col-xs-4 txt-right"> <span>ชำระเบี้ยประกันภัย </span> </div>
+      <div class="col-xs-4 txt-center"> <input class="txt-center width100" disabled value="{{data.section1.pay | quatationPlanBinding:calculate }}"> </div>
+      <div class="col-xs-4 txt-left"> <span> บาท/ปี</span> </div>
+    </div>
+    <div class="col-xs-12 margin-bottom20">
+      <div class="col-xs-4 txt-right"> <span>หรือเพียงวันละ </span> </div>
+      <div class="col-xs-4 txt-center"> <input class="txt-center width100" disabled value="{{data.section1.perDay | quatationPlanBinding:calculate }}"> </div>
+      <div class="col-xs-4 txt-left"><span> บาท</span> </div>
+    </div>
+  </div>
+</div>
+
+<div class="boxBannerGraph scrollbar-inner">
+  <div style="position: relative; left: 0; top: 0;">
+    <!-- section 2 -->
+    <div id="section2" *ngIf="data?.section2" [ngStyle]="data?.section2?.css">
+      <div *ngFor="let item of data.section2.data">
+        <img *ngIf="item.type == 'image'" [ngClass]="item?.class" src="{{item.value | quatationPlanBinding:calculate }}" [ngStyle]="item?.css"/>
+        <label *ngIf="item.type =='text'" [ngClass]="item?.class" [ngStyle]="item?.css">{{item?.value | quatationPlanBinding:calculate }}</label>
+      </div>
+    </div>
+
+    <!-- section 3 -->
+    <div id="section3" *ngIf="data?.section3" [ngStyle]="data?.section3?.css">
+      <div *ngFor="let item of data?.section3?.data">
+        <img *ngIf="item.type =='image'" [ngClass]="item?.class" src="{{item.value | quatationPlanBinding:calculate }}" [ngStyle]="item?.css"/>
+        <label *ngIf="item.type =='text'" [ngClass]="item?.class" [ngStyle]="item?.css">{{item?.value | quatationPlanBinding:calculate }}</label>
+      </div>
+    </div>
+  </div>
+</div>

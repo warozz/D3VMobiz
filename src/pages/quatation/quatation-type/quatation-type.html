@@ -1,0 +1,12 @@
+<div class="boxContentPage bgBlue3 hasBgImg">
+    <div class="container">
+        <h1 class="titleContentPage1">{{ 'PLAN' | planLabel }} {{ planName }}</h1>
+        <div class="bgPaperShadow mgt0">
+            <div class="contentPaperShadow2">
+                <quatation-plan-info [data]="tlplan?.info" [calculate]="calculate"></quatation-plan-info>
+                <quatation-plan-summary [data]="tlplan?.summary" [calculate]="calculate"></quatation-plan-summary>
+            </div>
+        </div>
+
+    </div>
+</div>

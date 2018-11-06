@@ -1,0 +1,45 @@
+{
+    "rider": "อ.3",
+    "age": {
+        "min": "5y",
+        "max": "64y"
+    },
+    "steps": 10000,
+    "agent": [{
+            "permission": "Normal",
+            "sum": {
+                "min": 0,
+                "max": {
+                    "value": [
+                        "10%sum",
+                        100000
+                    ]
+                }
+            }
+        },
+        {
+            "permission": "Q UP",
+            "sum": {
+                "min": 0,
+                "max": {
+                    "value": [
+                        "20%sum",
+                        200000
+                    ]
+                }
+            }
+        },
+        {
+            "permission": "Top UP",
+            "sum": {
+                "min": 0,
+                "max": {
+                    "value": [
+                        "20%sum",
+                        200000
+                    ]
+                }
+            }
+        }
+    ]
+}

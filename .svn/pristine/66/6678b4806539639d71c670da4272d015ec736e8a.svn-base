@@ -1,0 +1,48 @@
+fullname {
+    .popup-style1 {
+        height: 100%;
+        width: 100%;
+        border-radius: 0px;
+        .boxNewUpdate {
+            margin: 0px;
+            height: calc(100% - 100px);
+            .scrollbar-inner {
+                height: 100%;
+            }
+            .label {
+                margin-top: 20px;
+                margin-bottom: 0px;
+            }
+            .label,
+            label {
+                font-size: $font-md;
+            }
+            .div-btn {
+                text-align: center;
+                margin-top: 30px;
+            }
+            p,
+            ol {
+                margin: 10px 0px;
+            }
+            .box-detail {
+                font-size: 24px;
+            }
+        }
+    }
+    .modal {
+        padding: 35px !important;
+        .modal-title {
+            .icon-alert-circled {
+                color: #ce0000;
+            }
+        }
+    }
+    .txtView {
+        // border: 1px solid #C8C8C8 !important;
+        h1 {
+            height: 36px;
+            padding: 3px 12px;
+        }
+    }
+}

@@ -1,0 +1,33 @@
+page-quatation-detail {
+    /*.click {
+        cursor: pointer;
+        &:hover {
+            background-color: rgba(20, 132, 198, 0.5);
+        }
+    }*/
+    .boxTableStyle3 table {
+        thead tr {
+            background-color: #29abe7;
+            .txt-header {
+                text-decoration: none;
+                color: inherit;
+                cursor: pointer;
+            }
+        }
+        &.focusCol-3 tr td:nth-child(3) {
+            color: $color-primary;
+        }
+        &.focusCol-4 tr td:nth-child(4) {
+            color: $color-primary;
+        }
+        &.focusCol-5 tr td:nth-child(5) {
+            color: $color-primary;
+        }
+        &.focusCol-6 tr td:nth-child(6) {
+            color: $color-primary;
+        }
+        tbody tr:last-child {
+            color: $color-primary;
+        }
+    }
+}

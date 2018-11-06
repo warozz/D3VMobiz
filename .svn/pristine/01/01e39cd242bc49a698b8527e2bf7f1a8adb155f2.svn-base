@@ -1,0 +1,223 @@
+page-universal-life-saleoffer {
+    #X3 {
+        .boxListForm {
+            padding: 0px 0px;
+        }
+        // .pdl0 {
+        //     padding-left: 150px !important;
+        // }
+        .pdb10 {
+            padding-bottom: 0px
+        }
+        .pdt20 {
+            padding-top: 0px;
+        }
+        .boxSearchPlanInsurance {
+            //padding-left: 468px;
+        }
+        .boxSearchPlanInsurance .boxSelectPlan {
+            display: block;
+            position: relative;
+            padding: 0px 0px 0px 0px !important;
+            margin-bottom: 15px;
+            height: 46px;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+        .boxStatusStep {
+            display: table;
+            width: 100%;
+            height: 95px;
+            min-height: 90px;
+            padding: 23px 80px 20px 80px;
+            text-align: center;
+        }
+        .form-control.item-block {
+            min-height: auto;
+            height: 44px;
+            text-align: center;
+        }
+        .boxPromisesMore2 .titlePromisesMore {
+            text-align: center;
+            font-weight: normal;
+            font-size: 35px;
+            color: #333;
+            padding: 25px 0px 25px;
+            margin: 0px;
+            cursor: pointer;
+        }
+        .boxPromisesMore2 .titlePromisesMore span {
+            display: inline-block;
+            width: 13px;
+            height: 13px;
+            border-radius: 7px;
+            background: #1484C6;
+            color: #fff;
+            text-align: center;
+            line-height: 20px;
+            overflow: hidden;
+            font-size: 10px;
+        }
+        .boxPromisesMore2 .titlePromisesMore span i:before {
+            content: "\e018";
+        }
+        .boxPromisesMore2.closed .titlePromisesMore span i:before {
+            content: "\e020";
+            position: relative;
+            top: -1px;
+        }
+        .boxPromisesMore2.closed .boxListForm {
+            display: none;
+        }
+        .boxPromisesMore2 .onePromise {
+            position: relative;
+            padding: 0px 100px 10px 100px;
+        }
+        .boxPromisesMore2 .label {
+            display: table;
+            width: 100%;
+            height: 38px;
+            left: 0px;
+            top: 0px;
+            color: #1483C6;
+            font-size: 24px;
+            cursor: pointer;
+            position: relative;
+            text-align: center;
+        }
+        .boxPromisesMore2 .onePromise a i {
+            font-size: 10px;
+        }
+        .boxPromisesMore2 .onePromise a:hover {
+            text-decoration: none;
+            opacity: 0.8;
+        }
+        .boxPromisesMore2 .onePromise .btnMinus {
+            cursor: pointer;
+            display: block;
+            width: 28px;
+            height: 28px;
+            overflow: hidden;
+            text-align: center;
+            line-height: 28px;
+            border-radius: 14px;
+            background: #09F;
+            color: #fff;
+            position: absolute;
+            left: 65px;
+            top: 6px;
+        }
+        .boxPromisesMore2 .onePromise .btnPlus {
+            cursor: pointer;
+            display: block;
+            width: 28px;
+            height: 28px;
+            overflow: hidden;
+            text-align: center;
+            line-height: 28px;
+            border-radius: 14px;
+            background: #09F;
+            color: #fff;
+            position: absolute;
+            right: 65px;
+            top: 6px;
+        }
+        .boxPromisesMore2 .onePromise input.form-control {
+            box-shadow: none;
+            border: 1px solid #c8c8c8;
+        }
+        .boxPromisesMore2 .onePromise select.form-control {
+            box-shadow: none;
+            border: none;
+        }
+        .scaleX {
+            padding: 40px 0px;
+        }
+        .text-below {
+            display: inline-block;
+            cursor: pointer;
+            position: relative;
+            padding: 0px 20px;
+            height: 75px;
+            white-space: nowrap;
+            line-height: 20px;
+            font-size: 20px;
+            color: #666666;
+        }
+        @media(max-width:767px) {
+            .scaleX {
+                padding: 0px 0px;
+            }
+            .pdl0 {
+                padding-left: 0px !important;
+            }
+            .boxSearchPlanInsurance {
+                padding-left: 0px;
+            }
+            .boxStatusStep {
+                padding: 20px 0px 20px 0px !important;
+            }
+            .boxPromisesMore2 .label {
+                position: relative;
+                text-align: center;
+            }
+            .boxSearchPlanInsurance {
+                padding-left: 0px;
+            }
+            .boxPromisesMore2 .onePromise {
+                position: relative;
+                padding: 0px 91px 10px 83px;
+            }
+            .boxPromisesMore2 .onePromise .btnMinus {
+                left: 45px;
+            }
+            .boxPromisesMore2 .onePromise .btnPlus {
+                right: 54px;
+            }
+            .boxPromisesMore2 .onePromise input.form-control {
+                box-shadow: none;
+                border: 1px;
+                border-style: inset;
+                height: 45px;
+            }
+        }
+        @media only screen and (min-width: 768px) and (max-width: 991px) {
+            .boxPromisesMore2 .label {
+                position: relative;
+                text-align: center;
+            }
+            .boxSearchPlanInsurance {
+                padding-left: 0px;
+            }
+            .boxPromisesMore2 .onePromise .btnMinus {
+                left: 65px;
+            }
+            .boxStatusStep {
+                height: 120px;
+            }
+            .boxPromisesMore2 .onePromise .btnPlus {
+                right: 65px;
+            }
+            .boxPromisesMore2 .onePromise input.form-control {
+                box-shadow: none;
+                border: 1px;
+                border-style: inset;
+                height: 45px;
+            }
+        }
+        @media only screen and (min-width: 1024px) and (max-width: 1200px) {
+            .boxPromisesMore2 .label {
+                position: relative;
+                padding: 0px 0px 11px 0px;
+            }
+            .boxSearchPlanInsurance {
+                //padding-left: 385px;
+            }
+            .boxPromisesMore2 .onePromise input.form-control {
+                box-shadow: none;
+                border: 1px;
+                border-style: inset;
+                height: 45px;
+            }
+        }
+    }
+}

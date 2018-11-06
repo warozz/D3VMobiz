@@ -1,0 +1,644 @@
+<ion-header header></ion-header>
+
+<ion-content>
+    <div class="mainContainer">
+        <title-page sub1="แนบเอกสารหลักฐาน" sub2="ปช.60">ใบคำขอออนไลน์</title-page>
+
+        <div class="boxContentPage">
+            <steps design="2" (changeIndex)="changeIndex($event)" [selectIndex]="index" prevPage="AppFormEAppPage" nextPage="AppFormEAppPage">
+
+                <!-- STEP 1 -->
+                <step index="0" stepTitle="ฐานะและความเป็นอยู่">
+                    <form [formGroup]="pc60StepOne">
+                        <div class="boxContentPage bgBlue3 hasBgImg bgImg95">
+                            <div class="container">
+                                <div class="bgPaperShadow mgt25">
+                                    <div class="contentPaperShadow">
+
+                                        <!-- start boxFixTopJumpMenu -->
+                                        <div class="boxFixTopJumpMenu">
+                                            <div id="boxFixJumpMenu" class="boxContentFixJumpMenu">
+                                                <div class="boxListFixJumpMenu">
+                                                    <a class="action">เอกสารแนบ</a>
+                                                    <a class="down">ปช.60</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- end boxFixTopJumpMenu -->
+
+                                        <div id="boxListJumpContent" class="boxListJumpContent">
+                                            <!-- start oneJumpContent -->
+                                            <div id="boxListJumpContent" class="boxListJumpContent">
+                                                <div class="oneJumpContent">
+                                                    <div class="boxListForm pdlr0 pdb10 xs-pdt0">
+                                                        <div class="col-md-12 pdlr0">
+                                                            <div class="col-lg-3 col-md-4 col-sm-5 txt-sm-right pdr-md-7 lh-form-control">
+                                                                ผู้ขอเอาประกัน ชื่อ - นามสกุล :
+                                                            </div>
+                                                            <div class="col-md-3 col-sm-7 pdl-md-7">
+                                                                <div class="form-group">
+                                                                    <input class="form-control" type="text" formControlName="customername" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-12 pdlr0">
+                                                            <div class="col-lg-3 col-md-4 col-sm-5 txt-sm-right pdr-md-7 lh-form-control">
+                                                                <font color="red">* </font> ผู้ชำระเบี้ยประกัน ชื่อ - นามสกุล :
+                                                            </div>
+                                                            <div class="col-md-3 col-sm-7 pdl-md-7">
+                                                                <div class="form-group">
+                                                                    <input class="form-control" type="text" formControlName="paymentname" CharacterOnly />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="clearfix"></div>
+                                                    </div>
+                                                    <div class="boxChkAndInfo">
+                                                        <div class="boxTopChk">
+                                                            <div class="inline_block pdb10 pdr20">
+                                                                ฐานะและความเป็นอยู่
+                                                            </div>
+                                                        </div>
+                                                        <div class="boxInfoForm">
+                                                            <div class="col-md-12 pdlr0">
+                                                                <div class="col-lg-3 col-md-4 col-sm-5 pdr-sm-7 txt-sm-right lh-form-control">
+                                                                    <font color="red">* </font>ลักษณะอาชีพประจำโดยละเอียด :</div>
+                                                                <div class="col-lg-9 col-md-8 col-sm-7 pdl-sm-7">
+                                                                    <div class="form-group">
+                                                                        <input class="form-control" type="text" formControlName="occupationdetail" />
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-12 pdlr0">
+                                                                <div class="col-lg-3 col-md-4 col-sm-5 pdr-sm-7 txt-sm-right lh-form-control">
+                                                                    <font color="red">* </font>รายได้เดือนละ :</div>
+                                                                <div class="col-sm-3 pdl-sm-7">
+                                                                    <div class="form-group">
+                                                                        <input class="form-control" type="text" formControlName="monthlysalary" maxlength="9" NumberOnly />
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-sm-1 pdr-sm-7 pdl-sm-0 txt-sm-right lh-form-control">
+                                                                    <font color="red">* </font>ปีละ :</div>
+                                                                <div class="col-sm-3 pdl-sm-7">
+                                                                    <div class="form-group">
+                                                                        <input class="form-control" type="text" formControlName="yearlysalary" maxlength="11" NumberOnly />
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-12 pdlr0">
+                                                                <div class="col-lg-3 col-md-4 col-sm-5 pdr-sm-7 txt-sm-right lh-form-control">
+                                                                    อาชีพพิเศษ :</div>
+                                                                <div class="col-lg-9 col-md-8 col-sm-7 pdl-sm-7">
+                                                                    <div class="form-group">
+                                                                        <input class="form-control" type="text" formControlName="job" CharacterOnly />
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-12 pdlr0">
+                                                                <div class="col-lg-3 col-md-4 col-sm-5 pdr-sm-7 txt-sm-right lh-form-control">
+                                                                    รายได้เดือนละ :</div>
+                                                                <div class="col-sm-3 pdl-sm-7">
+                                                                    <div class="form-group">
+                                                                        <input class="form-control" type="text" formControlName="jobmonthincome" maxlength="9" NumberOnly />
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-sm-1 pdr-sm-7 pdl-sm-0 txt-sm-right lh-form-control">ปีละ :</div>
+                                                                <div class="col-sm-3 pdl-sm-7">
+                                                                    <div class="form-group">
+                                                                        <input class="form-control" type="text" formControlName="jobyearincome" maxlength="11" NumberOnly />
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-12 pdlr0">
+                                                                <div class="col-lg-3 col-md-4 col-sm-5 pdr-sm-7 txt-sm-right lh-form-control">
+                                                                    <font color="red">* </font>รายละเอียดทรัพย์สิน :</div>
+                                                                <div class="col-lg-9 col-md-8 col-sm-7 pdl-sm-7">
+                                                                    <div class="form-group">
+                                                                        <input class="form-control" type="text" formControlName="propertydetail" CharacterOnly />
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-12 pdlr0">
+                                                                <div class="col-lg-3 col-md-4 col-sm-5 pdr-sm-7 txt-sm-right lh-form-control">
+                                                                    <font color="red">* </font>ราคาประมาณ :</div>
+                                                                <div class="col-sm-3 pdl-sm-7">
+                                                                    <div class="form-group">
+                                                                        <input class="form-control" type="text" formControlName="propertyvalue" maxlength="11" NumberOnly />
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- end oneJumpContent -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </step>
+
+                <step index="1" stepTitle="การทำประกันชีวิต">
+                    <form [formGroup]="pc60StepTwo">
+                        <div class="boxContentPage bgBlue3 hasBgImg bgImg95">
+                            <div class="container">
+                                <div class="bgPaperShadow mgt25">
+                                    <div class="contentPaperShadow">
+
+                                        <div class="boxFixTopJumpMenu">
+                                            <div id="boxFixJumpMenu" class="boxContentFixJumpMenu">
+                                                <div class="boxListFixJumpMenu">
+                                                    <a class="action">เอกสารแนบ</a>
+                                                    <a class="down">ปช.60</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="boxListJumpContent" class="boxListJumpContent">
+                                            <div class="oneJumpContent">
+                                                <div class="boxListForm pdlr0 pdb10 xs-pdt0">
+                                                    <div class="col-lg-12 pdlr0">
+                                                        <div class="col-md-4 col-sm-6 txt-sm-right pdr-md-7 lh-form-control">
+                                                            <font color="red">* </font>ตัวแทนรู้จักกับผู้เอาประกันเมื่อใด :
+                                                        </div>
+                                                        <div class="col-md-4 col-sm-6 pdl-md-7">
+                                                            <div class="form-group">
+                                                                <input class="form-control" type="text" formControlName="relationwhen" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <hr/>
+                                                    <div class="col-md-12 pd0 pdt10">
+                                                        <div class="col-md-4 col-sm-6 txt-sm-right pdr-md-7 lh-form-control">
+                                                            <font color="red">* </font>มีผู้แนะนำหรือขอเอาประกันด้วยตนเอง :
+                                                        </div>
+                                                        <div class="col-md-4 col-sm-6 pdl-md-7">
+                                                            <div class="form-group">
+                                                                <ion-item class="form-control">
+                                                                    <ion-select interface="popover" formControlName="insuredecision" (ngModelChange)="insuredecisionChange($event)">
+                                                                        <ion-option value="มีผู้แนะนำ">มีผู้แนะนำ</ion-option>
+                                                                        <ion-option value="ขอเอาประกันด้วยตนเอง">ขอเอาประกันด้วยตนเอง</ion-option>
+                                                                    </ion-select>
+                                                                </ion-item>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12 pdlr0">
+                                                        <div class="col-md-4 col-sm-6 txt-sm-right pdr-md-7 lh-form-control">
+                                                            <font color="red">* </font> ผู้แนะนำ :
+                                                        </div>
+                                                        <div class="col-md-4 col-sm-6 pdl-md-7">
+                                                            <div class="form-group">
+                                                                <input class="form-control" type="text" formControlName="invitename" CharacterOnly />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <!--address-->
+                                                <div class="boxChkAndInfo">
+                                                    <div class="boxTopChk">
+                                                        <div class="inline_block pdb10 pdr20">
+                                                            ที่อยู่ผู้แนะนำ
+                                                        </div>
+                                                    </div>
+                                                    <div class="boxInfoForm">
+                                                        <div class="col-lg-4 col-md-6 col-xs-12">
+                                                            <div class="row">
+                                                                <div class="col-md-4 col-sm-6 col-xs-12 txt-sm-right pdr-sm-7 lh-form-control ws-nowrap">
+                                                                    <font color="red">*</font> เลขที่ :
+                                                                </div>
+                                                                <div class="col-md-8 col-sm-6 col-xs-12 pdl-sm-7">
+                                                                    <div class="form-group">
+                                                                        <input class="form-control" type="text" formControlName="addressno" />
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-lg-4 col-md-6 col-xs-12">
+                                                            <div class="row">
+                                                                <div class="col-md-4 col-sm-6 col-xs-12 txt-sm-right pdr-sm-7 lh-form-control pdl-sm-0 ws-nowrap">หมู่บ้าน/อาคาร :</div>
+                                                                <div class="col-md-8 col-sm-6 col-xs-12 pdl-sm-7">
+                                                                    <div class="form-group">
+                                                                        <input class="form-control" type="text" formControlName="buildingname" />
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-lg-4 col-md-6 col-xs-12">
+                                                            <div class="row">
+                                                                <div class="col-md-4 col-sm-6 col-xs-12 txt-sm-right pdr-sm-7 lh-form-control ws-nowrap">หมู่ที่ :</div>
+                                                                <div class="col-md-8 col-sm-6 col-xs-12 pdl-sm-7">
+                                                                    <div class="form-group">
+                                                                        <input class="form-control" type="text" formControlName="moo" />
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-lg-4 col-md-6 col-xs-12">
+                                                            <div class="row">
+                                                                <div class="col-md-4 col-sm-6 col-xs-12 txt-sm-right pdr-sm-7 lh-form-control ws-nowrap">ตรอกซอย :</div>
+                                                                <div class="col-md-8 col-sm-6 col-xs-12 pdl-sm-7">
+                                                                    <div class="form-group">
+                                                                        <input class="form-control" type="text" formControlName="soi" />
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-lg-4 col-md-6 col-xs-12">
+                                                            <div class="row">
+                                                                <div class="col-md-4 col-sm-6 col-xs-12 txt-sm-right pdr-sm-7 lh-form-control ws-nowrap">ถนน :</div>
+                                                                <div class="col-md-8 col-sm-6 col-xs-12 pdl-sm-7">
+                                                                    <div class="form-group">
+                                                                        <input class="form-control" type="text" formControlName="road" />
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-lg-4 col-md-6 col-xs-12">
+                                                            <div class="row">
+                                                                <div class="col-md-4 col-sm-6 col-xs-12 txt-sm-right pdr-sm-7 lh-form-control ws-nowrap">
+                                                                    <font color="red">*</font> ตำบล/แขวง :
+                                                                </div>
+                                                                <div class="col-md-8 col-sm-6 col-xs-12 pdl-sm-7">
+                                                                    <div class="form-group hasSelect">
+                                                                        <address [ngClass]="{'hidden': pc60StepTwo.value.insuredecision != 'มีผู้แนะนำ'}" addressType="tambon_name" [(address)]="pc60StepTwo.value.permanentAddress.addressSelected"></address>
+                                                                        <input [ngClass]="{'hidden': pc60StepTwo.value.insuredecision == 'มีผู้แนะนำ'}" class="form-control" type="text" formControlName="subdistrict" [(ngModel)]="pc60StepTwo.value.permanentAddress.addressSelected.tambon_name" />
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-lg-4 col-md-6 col-xs-12">
+                                                            <div class="row">
+                                                                <div class="col-md-4 col-sm-6 col-xs-12 txt-sm-right pdr-sm-7 lh-form-control ws-nowrap">
+                                                                    <font color="red">*</font> อำเภอ/เขต :
+                                                                </div>
+                                                                <div class="col-md-8 col-sm-6 col-xs-12 pdl-sm-7">
+                                                                    <div class="form-group hasSelect">
+                                                                        <address [ngClass]="{'hidden': pc60StepTwo.value.insuredecision != 'มีผู้แนะนำ'}" addressType="amphur_name" [(address)]="pc60StepTwo.value.permanentAddress.addressSelected"></address>
+                                                                        <input [ngClass]="{'hidden': pc60StepTwo.value.insuredecision == 'มีผู้แนะนำ'}" class="form-control" type="text" formControlName="district" [(ngModel)]="pc60StepTwo.value.permanentAddress.addressSelected.amphur_name" />
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-lg-4 col-md-6 col-xs-12">
+                                                            <div class="row">
+                                                                <div class="col-md-4 col-sm-6 col-xs-12 txt-sm-right pdr-sm-7 lh-form-control ws-nowrap">
+                                                                    <font color="red">*</font> จังหวัด :</div>
+                                                                <div class="col-md-8 col-sm-6 col-xs-12 pdl-sm-7">
+                                                                    <div class="form-group hasSelect">
+                                                                        <address [ngClass]="{'hidden': pc60StepTwo.value.insuredecision != 'มีผู้แนะนำ'}" addressType="province_name" [(address)]="pc60StepTwo.value.permanentAddress.addressSelected"></address>
+                                                                        <input [ngClass]="{'hidden': pc60StepTwo.value.insuredecision == 'มีผู้แนะนำ'}" class="form-control" type="text" formControlName="province" [(ngModel)]="pc60StepTwo.value.permanentAddress.addressSelected.province_name" />
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-lg-4 col-md-6 col-xs-12">
+                                                            <div class="row">
+                                                                <div class="col-md-4 col-sm-6 col-xs-12 txt-sm-right pdr-sm-7 lh-form-control pdl-sm-0 ws-nowrap">
+                                                                    <font color="red">*</font> รหัสไปรษณีย์ : </div>
+                                                                <div class="col-md-8 col-sm-6 col-xs-12 pdl-sm-7">
+                                                                    <div class="form-group hasSelect">
+                                                                        <address [ngClass]="{'hidden': pc60StepTwo.value.insuredecision != 'มีผู้แนะนำ'}" addressType="zip" [(address)]="pc60StepTwo.value.permanentAddress.addressSelected"></address>
+                                                                        <input [ngClass]="{'hidden': pc60StepTwo.value.insuredecision == 'มีผู้แนะนำ'}" type="text" class="form-control" formControlName="postcode" [(ngModel)]="pc60StepTwo.value.permanentAddress.addressSelected.zip" />
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-lg-4 col-md-6 col-xs-12">
+                                                            <div class="row">
+                                                                <div class="col-md-4 col-sm-6 col-xs-12 txt-sm-right pdr-sm-7 lh-form-control ws-nowrap">ประเทศ :</div>
+                                                                <div class="col-md-8 col-sm-6 col-xs-12 pdl-sm-7 lh-form-control" style="padding-bottom:15px;">
+                                                                    <ion-item class="form-control">
+                                                                        <ion-select interface="popover" formControlName="country">
+                                                                            <ion-option [value]="re.key2" *ngFor="let re of countryDropdown ">{{re.th}} </ion-option>
+                                                                        </ion-select>
+                                                                    </ion-item>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+
+                                                <div class="boxListForm pdlr0 pdt0 xs-pdt0">
+                                                    <div class="col-md-12 pd0 pdt10">
+                                                        <div class="col-md-4 col-sm-6 txt-sm-right pdr-md-7 lh-form-control">
+                                                            <font color="red">* </font> ใครเป็นผู้ชำระเบี้ยประกัน :
+                                                        </div>
+                                                        <div class="col-md-4 col-sm-6 pdl-md-7">
+                                                            <div class="form-group">
+                                                                <ion-item class="form-control">
+                                                                    <ion-select interface="popover" formControlName="paymentperson" (ngModelChange)="paymentpersonChange($event)">
+                                                                        <ion-option value="ผู้เอาประกัน">ผู้เอาประกัน</ion-option>
+                                                                        <ion-option value="บุคคลอื่น">บุคคลอื่น</ion-option>
+                                                                    </ion-select>
+                                                                </ion-item>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12 pdlr0">
+                                                        <div class="col-md-4 col-sm-6 txt-sm-right pdr-md-7 lh-form-control">
+                                                            <font color="red">* </font> เหตุผล :
+                                                        </div>
+                                                        <div class="col-md-4 col-sm-6 pdl-md-7">
+                                                            <div class="form-group">
+                                                                <input class="form-control" type="text" formControlName="paymentreason" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12 pdlr0">
+                                                        <div class="col-md-4 col-sm-6 txt-sm-right pdr-md-7 lh-form-control">
+                                                            <font color="red">* </font> ความสัมพันธ์โดยละเอียด :
+                                                        </div>
+                                                        <div class="col-md-4 col-sm-6 pdl-md-7">
+                                                            <div class="form-group">
+                                                                <input class="form-control" type="text" formControlName="relationdetail" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <hr/>
+                                                    <div class="col-md-12 pd0 pdt10">
+                                                        <div class="col-md-4 col-sm-6 txt-sm-right pdr-md-7 lh-form-control">
+                                                            <font color="red">* </font> วัตถุประสงค์การทำประกัน :
+                                                        </div>
+                                                        <div class="col-md-4 col-sm-6 pdl-md-7">
+                                                            <div class="form-group">
+                                                                <input class="form-control" type="text" formControlName="insureobjective" CharacterOnly />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </step>
+
+                <step index="2" stepTitle="กรณีผู้รับประโยชน์/ผู้เยาว์">
+                    <form [formGroup]="pc60StepThree">
+                        <div class="boxContentPage bgBlue3 hasBgImg bgImg95">
+                            <div class="container">
+                                <div class="bgPaperShadow mgt25">
+                                    <div class="contentPaperShadow">
+                                        <div class="boxFixTopJumpMenu">
+                                            <div id="boxFixJumpMenu" class="boxContentFixJumpMenu">
+                                                <div class="boxListFixJumpMenu">
+                                                    <a class="action">เอกสารแนบ</a>
+                                                    <a class="down">ปช.60</a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div id="boxListJumpContent" class="boxListJumpContent">
+                                            <div class="oneJumpContent">
+                                                <div class="boxChkAndInfo">
+                                                    <div class="boxTopChk">
+                                                        <div class="inline_block pdb10 pdr20">
+                                                            ข้อเท็จจริงเกี่ยวกับผู้รับประโยชน์
+                                                        </div>
+                                                    </div>
+                                                    <div class="boxInfoForm">
+                                                        <div class=" col-md-12 pdlr0">
+                                                            <div class="col-lg-4 col-md-5 col-sm-6 pdr-sm-7 txt-sm-right lh-form-control">
+                                                                <font color="red">* </font>มีความสัมพันธ์ทางเครือญาติกันอย่างไร :</div>
+
+                                                            <div class="col-md-4 col-sm-6 pdl-sm-7">
+                                                                <div class="form-group">
+                                                                    <input class="form-control" type="text" formControlName="relativedetail" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class=" col-md-12 pdlr0">
+                                                            <div class="col-lg-4 col-md-5 col-sm-6 pdr-sm-7 txt-sm-right lh-form-control">
+                                                                <font color="red">* </font>มีการอุปการะซึ่งกันและกันอย่างไร :</div>
+                                                            <div class="col-md-4 col-sm-6 pdl-sm-7">
+                                                                <div class="form-group">
+                                                                    <input class="form-control" type="text" formControlName="sponsordetail" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class=" col-md-12 pdlr0">
+                                                            <div class="col-lg-4 col-md-5 col-sm-6 pdr-sm-7 txt-sm-right lh-form-control">
+                                                                <font color="red">* </font>อยู่ร่วมกันหรือแยกกันอยู่ตั้งแต่เมื่อใด :</div>
+                                                            <div class="col-md-4 col-sm-6 pdl-sm-7">
+                                                                <div class="form-group">
+                                                                    <input class="form-control" type="text" formControlName="livingdetail" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="boxListForm pdlr0 pdb10 xs-pdt0">
+                                                    <div class="col-md-12 pdlr0">
+                                                        <div class="col-lg-5 col-md-6 col-sm-8 pdr-sm-7 txt-sm-right lh-form-control">
+                                                            กรณีผู้ขอเอาประกันเป็นผู้เยาว์ เหตุผลที่พี่น้องไม่ได้ทำประกัน :</div>
+                                                        <div class="col-md-4 col-sm-4 pdl-sm-7">
+                                                            <div class="form-group">
+                                                                <ion-item class="form-control">
+                                                                    <ion-select interface="popover" formControlName="siblingnoinsurereason">
+                                                                        <ion-option value="ทำแล้ว">ทำแล้ว</ion-option>
+                                                                        <ion-option value="ทำมาพร้อมกัน">ทำมาพร้อมกัน</ion-option>
+                                                                        <ion-option value="จะทำทีหลัง">จะทำทีหลัง</ion-option>
+                                                                        <ion-option value="เป็นบุตรคนเดียว">เป็นบุตรคนเดียว</ion-option>
+                                                                    </ion-select>
+                                                                </ion-item>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </step>
+
+                <step index="3" stepTitle="กรณีเป็นสตรี">
+                    <form [formGroup]="pc60StepFour">
+                        <div class="boxContentPage bgBlue3 hasBgImg bgImg95">
+                            <div class="container">
+                                <div class="bgPaperShadow mgt25">
+                                    <div class="contentPaperShadow">
+                                        <div class="boxFixTopJumpMenu">
+                                            <div id="boxFixJumpMenu" class="boxContentFixJumpMenu">
+                                                <div class="boxListFixJumpMenu">
+                                                    <a class="action">เอกสารแนบ</a>
+                                                    <a class="down">ปช.60</a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div id="boxListJumpContent" class="boxListJumpContent">
+                                            <div class="oneJumpContent">
+                                                <div class="boxChkAndInfo">
+                                                    <div class="boxTopChk">
+                                                        <div class="inline_block pdb10 pdr20">
+                                                            กรณีผู้ประกันเป็นสตรี (เฉพาะที่ไม่มีอาชีพรายได้ และสามีไม่ได้ทำประกัน)
+                                                        </div>
+                                                    </div>
+                                                    <div class="boxInfoForm">
+                                                        <div class="col-md-12 pdlr0">
+                                                            <div class="col-lg-3 col-md-4 col-sm-5 txt-sm-right pdr-sm-7 lh-form-control">
+                                                                อยู่ร่วมกับสามี จำนวน :</div>
+                                                            <div class="col-md-1 col-sm-6 pdl-sm-7 col-xs-8">
+                                                                <div class="form-group">
+                                                                    <input class="form-control" type="text" formControlName="marriedperiod" maxlength="2" NumberOnly />
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-xs-4 col-sm-1 pdl0 ws-nowrap lh-form-control">ปี</div>
+                                                        </div>
+                                                        <div class="clearfix"></div>
+                                                        <div class="col-md-12 pdlr0">
+                                                            <div class="col-lg-3 col-md-4 col-sm-5 txt-sm-right pdr-sm-7 lh-form-control">
+                                                                มีบุตร จำนวน :
+                                                            </div>
+                                                            <div class="col-md-1 col-sm-6 pdl-sm-7 col-xs-8">
+                                                                <div class="form-group">
+                                                                    <input class="form-control" type="text" formControlName="child" maxlength="2" NumberOnly/>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-xs-4 col-sm-1 pdl0 ws-nowrap lh-form-control">คน</div>
+                                                        </div>
+                                                        <div class="clearfix"></div>
+                                                        <div class="col-md-12 pdlr0">
+                                                            <div class="col-lg-3 col-md-4 col-sm-5 pdr-sm-7 txt-sm-right lh-form-control">
+                                                                เหตุผลที่แยกกันอยู่ :</div>
+                                                            <div class="col-md-3 col-sm-6 pdl-sm-7">
+                                                                <div class="form-group">
+                                                                    <ion-item class="form-control">
+                                                                        <ion-select interface="popover" formControlName="breakreason">
+                                                                            <ion-option value="หย่าร้าง">หย่าร้าง</ion-option>
+                                                                            <ion-option value="หม้าย">หม้าย</ion-option>
+                                                                        </ion-select>
+                                                                    </ion-item>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-12 pdlr0">
+                                                            <div class="col-lg-3 col-md-4 col-sm-5 pdr-sm-7 txt-sm-right lh-form-control">
+                                                                สาเหตุ :</div>
+                                                            <div class="col-md-3 col-sm-6 col-sm-6 pdl-sm-7">
+                                                                <div class="form-group">
+                                                                    <input class="form-control" type="text" formControlName="breakcause" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-12 pdlr0">
+                                                            <div class="col-lg-3 col-md-4 col-sm-5 pdr-sm-7 txt-sm-right lh-form-control">
+                                                                เมื่อไหร่ :</div>
+                                                            <div class="col-md-3 col-sm-6 pdl-sm-7">
+                                                                <div class="form-group">
+                                                                    <input class="form-control" type="text" formControlName="breakwhen" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-12 pdlr0">
+                                                            <div class="col-lg-3 col-md-4 col-sm-5 pdr-sm-7 txt-sm-right lh-form-control">
+                                                                เหตุผลที่สามีไม่ทำประกัน :</div>
+                                                            <div class="col-md-3 col-sm-6 col-sm-6 pdl-sm-7">
+                                                                <div class="form-group">
+                                                                    <input class="form-control" type="text" formControlName="husbandnoinsurereason" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </step>
+                <step index="4" stepTitle="ผู้รายงาน">
+                    <form [formGroup]="pc60StepFive">
+                        <div class="boxContentPage bgBlue3 hasBgImg bgImg95">
+                            <div class="container">
+                                <div class="bgPaperShadow mgt25">
+                                    <div class="contentPaperShadow">
+                                        <div class="boxFixTopJumpMenu">
+                                            <div id="boxFixJumpMenu" class="boxContentFixJumpMenu">
+                                                <div class="boxListFixJumpMenu">
+                                                    <a class="action">เอกสารแนบ</a>
+                                                    <a class="down">ปช.60</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="boxListJumpContent" class="boxListJumpContent">
+                                            <div class="oneJumpContent">
+                                                <div class="lh-form-control mgt25 indent80">
+                                                    ข้าพเจ้าขอรับรองว่า ข้อเท็จจริงที่แจ้งไว้ข้างต้นเป็นความจริงทุกประการ หากมีข้อเท็จจริงผิดจากนี้ โดยเจตนาทุจริต หรือ โดยที่ข้าพเจ้าไม่ได้ตรวจสอบข้อเท็จจริงเอง ไม่ว่าจะเป็นการกระทำโดยตรง หรือ โดยรวมกับบุคคลอื่น ข้าพเจ้ายินยอมชดใช้ค่าเสียหาย และความเสียหายให้แก่บริษัท
+                                                    ไทยประกันชีวิต จำกัด (มหาชน) ทุกกรณี
+                                                </div>
+                                                <div class="boxListForm pdlr0 pdb10 xs-pdt0">
+                                                    <div class="col-md-12 pdlr0">
+                                                        <div class="col-md-4 col-sm-4 txt-sm-right pdr-sm-7 lh-form-control">
+                                                            ผู้รายงาน :
+                                                        </div>
+                                                        <div class="col-md-4 col-sm-6 pdl-sm-7">
+                                                            <div class="form-group">
+                                                                <input class="form-control" formControlName="accreditor" type="text" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12 pdlr0">
+                                                        <div class="col-md-4 col-sm-4 txt-sm-right pdr-sm-7 lh-form-control">
+                                                            ตำแหน่ง :
+                                                        </div>
+                                                        <div class="col-md-4 col-sm-6 pdl-sm-7">
+                                                            <div class="form-group">
+                                                                <input class="form-control" type="text" formControlName="position" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12 pdlr0">
+                                                        <div class="col-md-4 col-sm-4 txt-sm-right pdr-sm-7 lh-form-control">
+                                                            วันที่ :
+                                                        </div>
+                                                        <div class="col-md-4 col-sm-6 pdl-sm-7">
+                                                            <div class="form-group">
+                                                                <input type="hidden" formControlName="accreditdate" />
+                                                                <input type="text" [ngModel]="pc60StepFive.value.accreditdate.substring(0, 10) | date | dateFormatTHYeartoENYear" [ngModelOptions]="{standalone: true}" class="form-control" disabled />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </step>
+
+                <ng-template #action>
+                    <button class="btn-style2" type="button" (click)="save()"><span><i class="icon-save-file-option"></i> บันทึก</span></button>
+                </ng-template>
+            </steps>
+        </div>
+    </div>
+
+    <footer footer></footer>
+</ion-content>

@@ -1,0 +1,23 @@
+{
+    "rider": "ฉพ.",
+    "age": {
+        "min": "20y",
+        "max": "60y"
+    },
+    "steps": [{
+            "value": 50000,
+            "step": 50000
+        },
+        {
+            "value": 500000,
+            "step": 100000
+        }
+    ],
+    "agent": [{
+        "permission": "Normal",
+        "sum": {
+            "min": "sum",
+            "max": "5xsum"
+        }
+    }]
+}

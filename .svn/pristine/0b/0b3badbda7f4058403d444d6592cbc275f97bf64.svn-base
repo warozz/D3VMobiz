@@ -1,0 +1,1151 @@
+<ion-header header>
+</ion-header>
+<ion-content>
+    <div id="app_form_page" class="mainContainer">
+        <title-page sub1="แบบแสดงข้อมูลผู้ถือหน่วยลงทุน">ใบคำขอ</title-page>
+        <div class="boxContentPage bgBlue1">
+            <div class="container xs-pdlr0">
+                <form [formGroup]="appInfo">
+                    <div class="boxListForm pd0 pdt15">
+                        <div class="col-lg-6 col-md-6 pd0">
+                            <div class="col-lg-4 col-md-4 col-sm-3 txt-sm-right pdr-sm-7 lh-form-control">
+                                ผู้ขอเอาประกันภัย :
+                            </div>
+                            <div class="col-lg-8 col-md-8 col-sm-9 pdl-sm-7">
+                                <div class="form-group">
+                                    <input id="customername" formControlName="customername" class="form-control" type="text" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-6 pd0">
+                            <div class="col-lg-5 col-md-5 col-sm-6 txt-sm-right pdr-sm-7 lh-form-control">
+                                เพศ :
+                            </div>
+                            <div class="col-lg-7 col-md-7 col-sm-6 pdl-sm-7">
+                                <div class="form-group">
+                                    <input id="gender" formControlName="gender" class="form-control" type="text" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-6 pd0">
+                            <div class="col-lg-5 col-md-5 col-sm-6 txt-sm-right pdr-sm-7 lh-form-control">
+                                อายุ :
+                            </div>
+                            <div class="col-lg-7 col-md-7 col-sm-6 pdl-sm-7">
+                                <div class="form-group">
+                                    <input id="age" formControlName="age" class="form-control" type="text" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 pd0">
+                            <div class="col-lg-4 col-md-4 col-sm-3 txt-sm-right pdr-sm-7 lh-form-control">
+                                แบบประกัน :
+                            </div>
+                            <div class="col-lg-8 col-md-8 col-sm-9 pdl-sm-7">
+                                <div class="form-group">
+                                    <input id="planname" formControlName="planname" class="form-control" type="text" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-6 pd0">
+                            <div class="col-lg-5 col-md-5 col-sm-6 txt-sm-right pdr-sm-7 lh-form-control">
+                                ชำระเบี้ย :
+                            </div>
+                            <div class="col-lg-7 col-md-7 col-sm-6 pdl-sm-7">
+                                <div class="form-group">
+                                    <input id="payment" formControlName="payment" class="form-control" type="text" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-6 pd0">
+                            <div class="col-lg-5 col-md-5 col-sm-6 txt-sm-right pdr-sm-7 lh-form-control">
+                                ชั้นอาชีพ :
+                            </div>
+                            <div class="col-lg-7 col-md-7 col-sm-6 pdl-sm-7">
+                                <div class="form-group">
+                                    <input id="occupationtype" formControlName="occupationtype" class="form-control" type="text" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="boxContentPage">
+            <steps design="2" (changeIndex)="changeIndex($event)" [selectIndex]="selectedStep">
+
+                <!-- STEP 1 -->
+                <step index="0" stepTitle="ข้อมูลทั่วไป">
+                    <!-- <form [formGroup]="appGeneral"> -->
+                    <div class="boxContentPage bgBlue3 hasBgImg bgImg95">
+                        <div class="container">
+                            <div class="bgPaperShadow mgt25">
+                                <div class="contentPaperShadow">
+                                    <form [formGroup]="appGeneral">
+                                        <!-- start boxFixTopJumpMenu -->
+                                        <div class="boxFixTopJumpMenu">
+                                            <div id="boxFixJumpMenu" class="boxContentFixJumpMenu">
+                                                <div class="boxListFixJumpMenu">
+                                                    <a class="action">ข้อมูลทั่วไป ผู้ขอเอาประกัน/ผู้เอาประกัน</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- end boxFixTopJumpMenu -->
+                                        <div id="boxListJumpContent" class="boxListJumpContent">
+                                            <!-- start oneJumpContent -->
+                                            <div class="oneJumpContent">
+                                                <div class="pdt20">
+                                                    <div class="boxListForm pdlr0 pdb10 xs-pdt0">
+                                                        <div class="col-lg-4 col-md-6 pd0">
+                                                            <div class="col-lg-5 col-md-4 col-sm-6 txt-sm-right pdr-sm-7 lh-form-control">
+                                                                ข้าพเจ้า :
+                                                            </div>
+                                                            <div class="col-lg-7 col-md-8 col-sm-6 pdl-sm-7">
+                                                                <div class="form-group">
+                                                                    <input class="form-control" id="username" formControlName="username" type="text" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-4 col-md-6 pd0">
+                                                            <div class="col-lg-5 col-md-4 col-sm-6 txt-sm-right pdr-sm-7 lh-form-control">
+                                                                เพศ :
+                                                            </div>
+                                                            <div class="col-lg-7 col-md-8 col-sm-6 pdl-sm-7">
+                                                                <dropdown formControlName="gender">
+                                                                    <dropdown-option value="M">ชาย</dropdown-option>
+                                                                    <dropdown-option value="F">หญิง</dropdown-option>
+                                                                </dropdown>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-4 col-md-6 pd0">
+                                                            <div class="col-lg-5 col-md-4 col-sm-6 txt-sm-right pdr-sm-7 lh-form-control">
+                                                                วันเกิด :
+                                                            </div>
+                                                            <div class="col-lg-7 col-md-8 col-sm-6 pdl-sm-7">
+                                                                <!-- <calendar formControlName="birthdate" [disabled]="true"></calendar> -->
+                                                                <div class="form-group">
+                                                                    <input class="form-control" type="text" formControlName="birthdate" disabled/>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-4 col-md-6 pd0">
+                                                            <div class="col-lg-5 col-md-4 col-sm-6 txt-sm-right pdr-sm-7 lh-form-control">สัญชาติ :</div>
+                                                            <div class="col-lg-7 col-md-8 col-sm-6 pdl-sm-7">
+                                                                <dropdown formControlName="nationality">
+                                                                    <dropdown-option [value]="item.key1" *ngFor="let item of countryDropdown">{{ item.th }}</dropdown-option>
+                                                                </dropdown>
+                                                            </div>
+                                                        </div>
+                                                        <div *ngIf="appGeneral.get('nationality').value != 'THA'" class="col-lg-offset-1 col-lg-7 pd0">
+
+                                                            <div class="col-md-8 col-sm-6 txt-sm-right pdr-sm-7 lh-form-control">หมายเลขประจำตัวผู้เสียภาษี (ชาวต่างชาติ) :</div>
+                                                            <div class="col-md-4 col-sm-6 pdl-sm-7">
+                                                                <div class="form-group">
+                                                                    <input class="form-control" formControlName="taxid" type="text" maxlength="13" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <hr />
+
+                                                <div class="pdt10 pdb10 xs-pdlr15 lh-form-control">
+                                                    เอกสารประกอบ ได้แก่
+                                                </div>
+                                                <div class="col-md-12 pd0">
+                                                    <div class="col-sm-offset-1 col-lg-3 col-sm-11 xs-pdlr15 pd0">
+                                                        <div class="form-group">
+                                                            <input id="doc01" class="check-style3" type="checkbox" formControlName="citizenCheck" />
+                                                            <label for="doc01">สำเนาบัตรประจำตัวประชาชน</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-4 col-md-6 pd0">
+                                                        <div class="col-lg-5 col-md-4 col-sm-6 txt-sm-right pdr-sm-7 lh-form-control">เลขที่ :</div>
+                                                        <div class="col-lg-7 col-md-8 col-sm-6 pdl-sm-7">
+                                                            <div class="form-group">
+                                                                <input class="form-control" formControlName="citizenid" type="text" maxlength="13" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-4 col-md-6 pd0">
+                                                        <div class="col-lg-5 col-md-4 col-sm-6 txt-sm-right pdr-sm-7 lh-form-control">วันหมดอายุบัตร :</div>
+                                                        <div class="col-lg-7 col-md-8 col-sm-6 pdl-sm-7">
+                                                            <div class="form-group">
+                                                                <input class="form-control" type="text" formControlName="expiredate" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="clearfix"></div>
+
+                                                <div class="col-md-12 pd0">
+                                                    <div class="col-sm-offset-1 col-lg-3 col-sm-11 xs-pdlr15 pd0">
+                                                        <div class="form-group">
+                                                            <input id="doc02" formControlName="houseParticularsCheck" class="check-style3" type="checkbox" />
+                                                            <label for="doc02">สำเนาทะเบียนบ้าน</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="col-md-12 pd0">
+                                                    <div class="col-sm-offset-1 col-lg-3 col-sm-11 xs-pdlr15 pd0">
+                                                        <div class="form-group">
+                                                            <input id="doc03" class="check-style3" formControlName="passportCheck" type="checkbox" />
+                                                            <label for="doc03">สำเนาหนังสือเดินทาง (Passport)</label>
+                                                        </div>
+                                                    </div>
+                                                    <div *ngIf="(appGeneral.get('passportCheck').value)" class="col-lg-4 col-md-6 pd0">
+                                                        <div class="col-lg-5 col-md-4 col-sm-6 txt-sm-right pdr-sm-7 lh-form-control">เลขที่ :</div>
+                                                        <div class="col-lg-7 col-md-8 col-sm-6 pdl-sm-7">
+                                                            <div class="form-group">
+                                                                <input class="form-control" formControlName="passportValue" type="text" maxlength="13" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-12 pd0">
+                                                    <div class="col-sm-offset-1 col-sm-11 pd0">
+                                                        <div class="inline_block pdr-sm-7 xs-pdlr15 doc04-label">
+                                                            <div class="form-group">
+                                                                <input id="doc04" class="check-style3" formControlName="otherDescCheck" type="checkbox" />
+                                                                <label for="doc04">อื่นๆ (โปรดระบุ)</label>
+                                                            </div>
+                                                        </div>
+                                                        <div *ngIf="(appGeneral.get('otherDescCheck').value)" class="inline_block pdl-sm-7 xs-pdlr15 doc04-input">
+                                                            <div class="form-group">
+                                                                <input class="form-control" formControlName="otherDescValue" type="text" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <hr />
+                                            </div>
+                                            <!-- end oneJumpContent -->
+
+
+                                            <!-- start oneJumpContent -->
+                                            <div class="oneJumpContent">
+                                                <!-- start Adress Tab -->
+                                                <div id="boxListContentTabStyle3" class="boxListContentTabStyle3">
+                                                    <tabs>
+                                                        <tab tabTitle="ที่อยู่ปัจจุบัน">
+                                                            <div class="oneContentTab">
+                                                                <div class="boxListForm pdlr0" style="overflow-y: auto;">
+                                                                    <div class="col-lg-4 col-md-6">
+                                                                        <div class="row">
+                                                                            <div class="col-lg-5 col-md-4 col-sm-6 col-xs-12 txt-sm-right pdr-sm-7 lh-form-control ws-nowrap">
+                                                                                <font color="red">*</font> เลขที่ :
+                                                                            </div>
+                                                                            <div class="col-lg-7 col-md-8 col-sm-6 col-xs-12 pdl-sm-7">
+                                                                                <div class="form-group">
+                                                                                    <input class="form-control" maxlength="10" type="text" formControlName="permanentAddressNo" NumberCharacterOnly />
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="col-lg-4 col-md-6">
+                                                                        <div class="row">
+                                                                            <div class="col-lg-5 col-md-4 col-sm-6 col-xs-12 txt-sm-right pdr-sm-7 lh-form-control ws-nowrap">หมู่บ้าน/อาคาร :</div>
+                                                                            <div class="col-lg-7 col-md-8 col-sm-6 col-xs-12 pdl-sm-7">
+                                                                                <div class="form-group">
+                                                                                    <input class="form-control" maxlength="32" formControlName="permanentVillage" type="text" NumberCharacterOnly/>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="col-lg-4 col-md-6">
+                                                                        <div class="row">
+                                                                            <div class="col-lg-5 col-md-4 col-sm-6 col-xs-12 txt-sm-right pdr-sm-7 lh-form-control ws-nowrap">หมู่ที่ :</div>
+                                                                            <div class="col-lg-7 col-md-8 col-sm-6 col-xs-12 pdl-sm-7">
+                                                                                <div class="form-group">
+                                                                                    <input class="form-control" maxlength="2" formControlName="permanentMoo" type="text" NumberCharacterOnly/>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="col-lg-4 col-md-6">
+                                                                        <div class="row">
+                                                                            <div class="col-lg-5 col-md-4 col-sm-6 col-xs-12 txt-sm-right pdr-sm-7 lh-form-control ws-nowrap">ตรอก/ซอย :</div>
+                                                                            <div class="col-lg-7 col-md-8 col-sm-6 col-xs-12 pdl-sm-7">
+                                                                                <div class="form-group">
+                                                                                    <input class="form-control" maxlength="20" formControlName="permanentSoi" type="text" NumberCharacterOnly />
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="col-lg-4 col-md-6">
+                                                                        <div class="row">
+                                                                            <div class="col-lg-5 col-md-4 col-sm-6 col-xs-12 txt-sm-right pdr-sm-7 lh-form-control ws-nowrap">ถนน :</div>
+                                                                            <div class="col-lg-7 col-md-8 col-sm-6 col-xs-12 pdl-sm-7">
+                                                                                <div class="form-group">
+                                                                                    <input class="form-control" maxlength="20" formControlName="permanentRoad" type="text" NumberCharacterOnly/>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="col-lg-4 col-md-6">
+                                                                        <div class="row">
+                                                                            <div class="col-lg-5 col-md-4 col-sm-6 col-xs-12 txt-sm-right pdr-sm-7 lh-form-control ws-nowrap">
+                                                                                <font color="red">*</font> ตำบล/แขวง :
+                                                                            </div>
+                                                                            <div class="col-lg-7 col-md-8 col-sm-6 col-xs-12 pdl-sm-7">
+                                                                                <div class="form-group hasSelect">
+                                                                                    <address addressType="tambon_name" formControlName="subdistrict" [(address)]="appGeneral.value.permanentAddress.addressSelected"></address>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="col-lg-4 col-md-6">
+                                                                        <div class="row">
+                                                                            <div class="col-lg-5 col-md-4 col-sm-6 col-xs-12 txt-sm-right pdr-sm-7 lh-form-control ws-nowrap">
+                                                                                <font color="red">*</font> อำเภอ/เขต :
+                                                                            </div>
+                                                                            <div class="col-lg-7 col-md-8 col-sm-6 col-xs-12 pdl-sm-7">
+                                                                                <div class="form-group hasSelect">
+                                                                                    <address addressType="amphur_name" formControlName="district" [(address)]="appGeneral.value.permanentAddress.addressSelected"></address>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="col-lg-4 col-md-6">
+                                                                        <div class="row">
+                                                                            <div class="col-lg-5 col-md-4 col-sm-6 col-xs-12 txt-sm-right pdr-sm-7 lh-form-control ws-nowrap">
+                                                                                <font color="red">*</font> จังหวัด :</div>
+                                                                            <div class="col-lg-7 col-md-8 col-sm-6 col-xs-12 pdl-sm-7">
+                                                                                <div class="form-group hasSelect">
+                                                                                    <address addressType="province_name" formControlName="province" [(address)]="appGeneral.value.permanentAddress.addressSelected"></address>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="col-lg-4 col-md-6">
+                                                                        <div class="row">
+                                                                            <div class="col-lg-5 col-md-4 col-sm-6 col-xs-12 txt-sm-right pdr-sm-7 lh-form-control ws-nowrap">
+                                                                                <font color="red">*</font> รหัสไปรษณีย์ :
+                                                                            </div>
+                                                                            <div class="col-lg-7 col-md-8 col-sm-6 col-xs-12 pdl-sm-7">
+                                                                                <div class="form-group hasSelect">
+                                                                                    <address addressType="zip" formControlName="postcode" [(address)]="appGeneral.value.permanentAddress.addressSelected"></address>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="col-lg-4 col-md-6">
+                                                                        <div class="row">
+                                                                            <div class="col-lg-5 col-md-4 col-sm-6 col-xs-12 txt-sm-right pdr-sm-7 lh-form-control ws-nowrap">
+                                                                                <font color="red">*</font> ประเทศ :</div>
+                                                                            <div class="col-lg-7 col-md-8 col-sm-6 col-xs-12 pdl-sm-7">
+                                                                                <dropdown id="permanentCountry" formControlName="permanentCountry">
+                                                                                    <dropdown-option [value]="item.key2" *ngFor="let item of countryDropdown">{{ item.th }}</dropdown-option>
+                                                                                </dropdown>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="col-lg-4 col-md-6">
+                                                                        <div class="row">
+                                                                            <div class="col-lg-5 col-md-4 col-sm-6 col-xs-12 txt-sm-right pdr-sm-7 lh-form-control ws-nowrap">โทรศัพท์บ้าน :</div>
+                                                                            <div class="col-lg-7 col-md-8 col-sm-6 col-xs-12 pdl-sm-7">
+                                                                                <div class="form-group">
+                                                                                    <input name="tel_no" formControlName="permanentTelNo" maxlength="10" class="form-control" type="text" NumberOnly />
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="col-lg-4 col-md-6">
+                                                                        <div class="row">
+                                                                            <div class="col-lg-5 col-md-4 col-sm-6 col-xs-12 txt-sm-right pdr-sm-7 lh-form-control ws-nowrap">
+                                                                                <font color="red">*</font> โทรศัพท์มือถือ :
+                                                                            </div>
+                                                                            <div class="col-lg-7 col-md-8 col-sm-6 col-xs-12 pdl-sm-7">
+                                                                                <div class="form-group">
+                                                                                    <input formControlName="permanentMobileNo" maxlength="10" class="form-control" type="text" NumberOnly />
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </tab>
+
+                                                        <tab tabTitle="สถานที่ทำงาน">
+                                                            <div class="oneContentTab">
+                                                                <div class="boxListForm pdlr0" style="overflow-y: auto;">
+                                                                    <div class="col-lg-4 col-md-6">
+                                                                        <div class="row">
+                                                                            <div class="col-lg-5 col-md-4 col-sm-6 col-xs-12 txt-sm-right pdr-sm-7 lh-form-control ws-nowrap">
+                                                                                <font color="red">*</font> สถานที่ทำงาน :
+                                                                            </div>
+                                                                            <div class="col-lg-7 col-md-8 col-sm-6 col-xs-12 pdl-sm-7">
+                                                                                <div class="form-group">
+                                                                                    <input class="form-control" id="address" formControlName="workplace" maxlength="32" type="text" NumberCharacterOnly/>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="col-lg-4 col-md-6">
+                                                                        <div class="row">
+                                                                            <div class="col-lg-5 col-md-4 col-sm-6 col-xs-12 txt-sm-right pdr-sm-7 lh-form-control ws-nowrap">
+                                                                                อาคาร :
+                                                                            </div>
+                                                                            <div class="col-lg-7 col-md-8 col-sm-6 col-xs-12 pdl-sm-7">
+                                                                                <div class="form-group">
+                                                                                    <input class="form-control" id="companyVillage" formControlName="companyVillage" maxlength="32" type="text" NumberCharacterOnly />
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="col-lg-4 col-md-6">
+                                                                        <div class="row">
+                                                                            <div class="col-lg-5 col-md-4 col-sm-6 col-xs-12 txt-sm-right pdr-sm-7 lh-form-control ws-nowrap">
+                                                                                <font color="red">*</font> เลขที่ :
+                                                                            </div>
+                                                                            <div class="col-lg-7 col-md-8 col-sm-6 col-xs-12 pdl-sm-7">
+                                                                                <div class="form-group">
+                                                                                    <input class="form-control" maxlength="10" id="address" formControlName="companyAddressNo" type="text" NumberCharacterOnly/>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="col-lg-4 col-md-6">
+                                                                        <div class="row">
+                                                                            <div class="col-lg-5 col-md-4 col-sm-6 col-xs-12 txt-sm-right pdr-sm-7 lh-form-control ws-nowrap">หมู่ที่ :</div>
+                                                                            <div class="col-lg-7 col-md-8 col-sm-6 col-xs-12 pdl-sm-7">
+                                                                                <div class="form-group">
+                                                                                    <input class="form-control" maxlength="2" type="text" formControlName="companyMoo" NumberCharacterOnly/>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="col-lg-4 col-md-6">
+                                                                        <div class="row">
+                                                                            <div class="col-lg-5 col-md-4 col-sm-6 col-xs-12 txt-sm-right pdr-sm-7 lh-form-control ws-nowrap">ตรอก/ซอย :</div>
+                                                                            <div class="col-lg-7 col-md-8 col-sm-6 col-xs-12 pdl-sm-7">
+                                                                                <div class="form-group">
+                                                                                    <input class="form-control" maxlength="20" type="text" formControlName="companySoi" NumberCharacterOnly/>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="col-lg-4 col-md-6">
+                                                                        <div class="row">
+                                                                            <div class="col-lg-5 col-md-4 col-sm-6 col-xs-12 txt-sm-right pdr-sm-7 lh-form-control ws-nowrap">ถนน :</div>
+                                                                            <div class="col-lg-7 col-md-8 col-sm-6 col-xs-12 pdl-sm-7">
+                                                                                <div class="form-group">
+                                                                                    <input class="form-control" maxlength="20" type="text" formControlName="companyRoad" NumberCharacterOnly/>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="col-lg-4 col-md-6">
+                                                                        <div class="row">
+                                                                            <div class="col-lg-5 col-md-4 col-sm-6 col-xs-12 txt-sm-right pdr-sm-7 lh-form-control ws-nowrap">
+                                                                                <font color="red">*</font> ตำบล/แขวง :
+                                                                            </div>
+                                                                            <div class="col-lg-7 col-md-8 col-sm-6 col-xs-12 pdl-sm-7">
+                                                                                <div class="form-group hasSelect">
+                                                                                    <address addressType="tambon_name" formControlName="companySubdistrict" [(address)]="appGeneral.value.companyAddress.addressSelected"></address>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="col-lg-4 col-md-6">
+                                                                        <div class="row">
+                                                                            <div class="col-lg-5 col-md-4 col-sm-6 col-xs-12 txt-sm-right pdr-sm-7 lh-form-control ws-nowrap">
+                                                                                <font color="red">*</font> อำเภอ/เขต :
+                                                                            </div>
+                                                                            <div class="col-lg-7 col-md-8 col-sm-6 col-xs-12 pdl-sm-7">
+                                                                                <div class="form-group hasSelect">
+                                                                                    <address addressType="amphur_name" formControlName="companyDistrict" [(address)]="appGeneral.value.companyAddress.addressSelected"></address>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="col-lg-4 col-md-6">
+                                                                        <div class="row">
+                                                                            <div class="col-lg-5 col-md-4 col-sm-6 col-xs-12 txt-sm-right pdr-sm-7 lh-form-control ws-nowrap">
+                                                                                <font color="red">*</font> จังหวัด :</div>
+                                                                            <div class="col-lg-7 col-md-8 col-sm-6 col-xs-12 pdl-sm-7">
+                                                                                <div class="form-group hasSelect">
+                                                                                    <address addressType="province_name" formControlName="companyProvince" [(address)]="appGeneral.value.companyAddress.addressSelected"></address>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="col-lg-4 col-md-6">
+                                                                        <div class="row">
+                                                                            <div class="col-lg-5 col-md-4 col-sm-6 col-xs-12 txt-sm-right pdr-sm-7 lh-form-control ws-nowrap">
+                                                                                <font color="red">*</font> รหัสไปรษณีย์ :
+                                                                            </div>
+                                                                            <div class="col-lg-7 col-md-8 col-sm-6 col-xs-12 pdl-sm-7">
+                                                                                <div class="form-group hasSelect">
+                                                                                    <address addressType="zip" formControlName="companyPostcode" [(address)]="appGeneral.value.companyAddress.addressSelected"></address>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="col-lg-4 col-md-6">
+                                                                        <div class="row">
+                                                                            <div class="col-lg-5 col-md-4 col-sm-6 col-xs-12 txt-sm-right pdr-sm-7 lh-form-control ws-nowrap">
+                                                                                <font color="red">*</font> ประเทศ :</div>
+                                                                            <div class="col-lg-7 col-md-8 col-sm-6 col-xs-12 pdl-sm-7">
+                                                                                <dropdown formControlName="companyCountry">
+                                                                                    <dropdown-option [value]="item.key2" *ngFor="let item of countryDropdown">{{ item.th }}</dropdown-option>
+                                                                                </dropdown>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="col-lg-4 col-md-6">
+                                                                        <div class="row">
+                                                                            <div class="col-lg-5 col-md-4 col-sm-6 col-xs-12 txt-sm-right pdr-sm-7 lh-form-control ws-nowrap">โทรศัพท์ :</div>
+                                                                            <div class="col-lg-7 col-md-8 col-sm-6 col-xs-12 pdl-sm-7">
+                                                                                <div class="form-group">
+                                                                                    <input maxlength="10" class="form-control" type="text" formControlName="companyTelNo" NumberOnly/>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </tab>
+                                                    </tabs>
+                                                </div>
+                                            </div>
+                                            <!-- end oneJumpContent -->
+                                        </div>
+                                    </form>
+                                    <form [formGroup]="appGeneralForSave">
+                                        <div id="boxListJumpContent" class="boxListJumpContent">
+                                            <!-- start oneJumpContent -->
+                                            <div class="oneJumpContent">
+                                                <div class="pdt20">
+                                                    <div class="boxListForm pdlr0 pdb10 xs-pdt0">
+                                                        <div class="col-lg-4 col-md-6 pd0">
+                                                            <div class="col-lg-5 col-md-4 col-sm-6 txt-sm-right pdr-sm-7 lh-form-control">
+                                                                <font color="red">*</font> วุฒิการศึกษา :
+                                                            </div>
+                                                            <div class="col-lg-7 col-md-8 col-sm-6 pdl-sm-7">
+                                                                <dropdown formControlName="dropdownEducate">
+                                                                    <dropdown-option value="1">ต่ำกว่าปริญญาตรี</dropdown-option>
+                                                                    <dropdown-option value="2">ปริญญาตรีหรือเทียบเท่า</dropdown-option>
+                                                                    <dropdown-option value="3">ปริญญาโทหรือเทียบเท่า</dropdown-option>
+                                                                    <dropdown-option value="4">ปริญญาเอกหรือเทียบเท่า</dropdown-option>
+                                                                </dropdown>
+                                                            </div>
+                                                        </div>
+                                                        <div class="clearfix view-only-md"></div>
+
+                                                        <div class="col-lg-4 col-md-6 pd0">
+                                                            <div class="col-lg-5 col-md-4 col-sm-6 txt-sm-right pdr-sm-7 lh-form-control">
+                                                                <font color="red">*</font> อาชีพ :
+                                                            </div>
+                                                            <div class="col-lg-7 col-md-8 col-sm-6 pdl-sm-7">
+                                                                <dropdown formControlName="occupation">
+                                                                    <dropdown-option [value]="item.key" *ngFor="let item of occupationDropdown">{{ item.value }}</dropdown-option>
+                                                                </dropdown>
+                                                            </div>
+                                                        </div>
+
+                                                        <div *ngIf="occupationNormalFlag" class="col-lg-4 col-md-6 pd0">
+                                                            <div class="col-md-offset-0 col-md-7 col-sm-offset-6 col-sm-6 pdl-sm-7">
+                                                                <div class="form-group">
+                                                                    <input class="form-control" formControlName="occupationNormol" type="text" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-lg-8 col-md-6 pd0">
+                                                            <div class="col-lg-21p col-md-4 col-sm-6 txt-sm-right pdr-sm-7 lh-form-control">
+                                                                <font color="red">*</font> ประเภทกิจการ :
+                                                            </div>
+                                                            <div class="col-lg-79p col-md-8 col-sm-6 pdl-sm-7">
+                                                                <div class="form-group">
+                                                                    <input class="form-control" formControlName="businessType" type="text" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-lg-4 col-md-6 pd0">
+                                                            <div class="col-lg-5 col-md-4 col-sm-6 txt-sm-right pdr-sm-7 lh-form-control">
+                                                                <font color="red">*</font> รายได้ต่อปี :
+                                                            </div>
+                                                            <div class="col-lg-7 col-md-8 col-sm-6 pdl-sm-7">
+                                                                <div class="form-group">
+                                                                    <input class="form-control" formControlName="annualRevenue" type="text" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-lg-12 col-md-12 pd0 pdt10 pdb10 xs-pdlr15 lh-form-control">
+                                                            <font color="red">*</font> แหล่งที่มาของเงิน (ตอบได้มากกว่า 1 ข้อ)
+                                                        </div>
+                                                        <div class="col-md-offset-1 col-md-12 pd0">
+                                                            <div class="col-lg-3 col-sm-6 pd0 xs-pdlr15">
+                                                                <div class="form-group">
+                                                                    <input id="doc05" class="check-style3" type="checkbox" formControlName="salaryCheckbox" (change)="questionChange('tab1','salaryCheckbox')" />
+                                                                    <label for="doc05">เงินเดือน / บำนาญ</label>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-lg-4 col-sm-6 pd0 xs-pdlr15">
+                                                                <div class="form-group">
+                                                                    <input id="doc06" class="check-style3" type="checkbox" formControlName="savingCheckbox" (change)="questionChange('tab1','savingCheckbox')" />
+                                                                    <label for="doc06">เงินปันผล / ดอกเบี้ย</label>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-lg-5 col-sm-6 pd0 xs-pdlr15">
+                                                                <div class="form-group">
+                                                                    <input id="doc07" class="check-style3" type="checkbox" formControlName="bonusCheckbox" (change)="questionChange('tab1','bonusCheckbox')" />
+                                                                    <label for="doc07">เงินออม</label>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-lg-3 col-sm-6 pd0 xs-pdlr15">
+                                                                <div class="form-group">
+                                                                    <input id="doc08" class="check-style3" type="checkbox" formControlName="businessCheckbox" (change)="questionChange('tab1','businessCheckbox')" />
+                                                                    <label for="doc08">ธุรกิจส่วนตัว</label>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-lg-4 col-sm-6 pd0 xs-pdlr15">
+                                                                <div class="form-group">
+                                                                    <input id="doc09" class="check-style3" type="checkbox" formControlName="propertyCheckbox" (change)="questionChange('tab1','propertyCheckbox')" />
+                                                                    <label for="doc09">การขายอสังหาริมทรัพย์ / สังหาริมทรัพย์</label>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-lg-5 col-sm-6 pd0 xs-pdlr15">
+                                                                <div class="form-group">
+                                                                    <input id="doc10" class="check-style3" type="checkbox" formControlName="lagacyCheckbox" (change)="questionChange('tab1','lagacyCheckbox')" />
+                                                                    <label for="doc10">มรดก</label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="clearfix"></div>
+
+                                                            <div class="col-lg-12 pd0">
+                                                                <div class="inline_block pdr7 xs-pdlr15">
+                                                                    <div class="form-group">
+                                                                        <input id="doc11" class="check-style3" type="checkbox" formControlName="otherCheckbox" (change)="questionChange('tab1','otherCheckbox')" />
+                                                                        <label for="doc11">อื่นๆ (โปรดระบุ)</label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="inline_block pdl7 xs-pdlr15 doc11-input">
+                                                                    <div class="form-group">
+                                                                        <input class="form-control w270" type="text" formControlName="otherDesc" />
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-lg-5 col-md-6 pd0">
+                                                            <div class="col-md-5 col-sm-6 txt-sm-right pdr-sm-7 lh-form-control">
+                                                                <font color="red">*</font> ภาระทางการเงินต่อปี :
+                                                            </div>
+                                                            <div class="col-md-7 col-sm-6 pdl-sm-7">
+                                                                <div class="form-group">
+                                                                    <dropdown formControlName="liability">
+                                                                        <dropdown-option value="1">น้อยกว่า 1 ล้านบาท</dropdown-option>
+                                                                        <dropdown-option value="2">1-5 ล้านบาท</dropdown-option>
+                                                                        <dropdown-option value="3">5-10 ล้านบาท</dropdown-option>
+                                                                        <dropdown-option value="4">10 ล้านบาทขึ้นไป</dropdown-option>
+                                                                    </dropdown>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- end oneJumpContent -->
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </step>
+
+                <step index="1" stepTitle="ข้อมูลการลงทุน">
+                    <form [formGroup]="tab2Data">
+                        <div class="boxContentPage bgBlue3 hasBgImg bgImg95">
+                            <div class="container">
+                                <div class="bgPaperShadow mgt25">
+                                    <div class="contentPaperShadow">
+                                        <!-- start boxFixTopJumpMenu -->
+                                        <div class="boxFixTopJumpMenu">
+                                            <div id="boxFixJumpMenu" class="boxContentFixJumpMenu">
+                                                <div class="boxListFixJumpMenu">
+                                                    <a class="action">ข้อมูลการลงทุน</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- end boxFixTopJumpMenu -->
+                                        <!--boxListJumpContent-->
+                                        <div id="boxListJumpContent" class="boxListJumpContent">
+                                            <!-- start oneJumpContent -->
+                                            <div class="oneJumpContent">
+                                                <div class="boxListForm pdlr0 pdb10">
+                                                    <div class="col-md-12 pd0">
+                                                        <div class="xs-pdlr15 lh-form-control">วัตถุประสงค์การลงทุน (ตอบได้มากกว่า 1 ข้อ)</div>
+                                                    </div>
+                                                    <div class="col-md-offset-1 col-md-12 pd0">
+                                                        <div class="col-lg-2 col-sm-5 pd0 xs-pdlr15">
+                                                            <div class="form-group">
+                                                                <input id="check-choice-1-1" class="check-style3" type="checkbox" formControlName="question14_1" (change)="questionChange('tab2' , 'question14_1')" />
+                                                                <label for="check-choice-1-1">เกษียณอายุ</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-2 col-sm-7 pd0 xs-pdlr15">
+                                                            <div class="form-group">
+                                                                <input id="check-choice-1-2" class="check-style3" type="checkbox" formControlName="question14_2" (change)="questionChange('tab2' ,'question14_2')" />
+                                                                <label for="check-choice-1-2">การศึกษาบุตร</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-2 col-sm-5 pd0 xs-pdlr15">
+                                                            <div class="form-group">
+                                                                <input id="check-choice-1-3" class="check-style3" type="checkbox" formControlName="question14_3" (change)="questionChange('tab2' ,'question14_3')" />
+                                                                <label for="check-choice-1-3">เพื่อสร้างผลกำไร</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-6 col-sm-7 pd0 xs-pdlr15">
+                                                            <div class="inline_block pdr7">
+                                                                <div class="form-group">
+                                                                    <input id="check-choice-1-4" class="check-style3" type="checkbox" formControlName="question14_4" (change)="questionChange('tab2' ,'question14_4')" />
+                                                                    <label for="check-choice-1-4">อื่นๆ (โปรดระบุ)</label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="inline_block pdl-sm-7 doc11-input">
+                                                                <div class="form-group">
+                                                                    <input class="form-control w200" type="text" formControlName="question14_4_desc" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="clearfix"></div>
+
+                                                    <div class="xs-pdlr15 lh-form-control">
+                                                        <div class="inline_block pdr7">
+                                                            <div class="form-group">
+                                                                <label for="check-choice-1-5">มูลค่าทรัพย์สินสุทธิโดยประมาณ (บาท)</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="inline_block pdl-sm-7">
+                                                            <div class="form-group">
+                                                                <input class="form-control w200" type="text" formControlName="question15" maxlength="12" NumberOnly />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="pdb10 xs-pdlr15 lh-form-control">จำนวนเงินที่คาดว่าจะลงทุน</div>
+                                                    <div class="col-md-offset-1 col-md-12 pd0">
+                                                        <div class="col-lg-2 col-sm-5 pd0 xs-pdlr15">
+                                                            <div class="form-group">
+                                                                <input id="radio-choice-1-1" name="doc12" class="radio-style3" type="radio" value='1' formControlName="question16" name='question16' />
+                                                                <label for="radio-choice-1-1">น้อยกว่า 1 ล้านบาท</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-2 col-sm-7 pd0 xs-pdlr15">
+                                                            <div class="form-group">
+                                                                <input id="radio-choice-1-2" name="doc12" class="radio-style3" type="radio" value='2' formControlName="question16" name='question16'>
+                                                                <label for="radio-choice-1-2">1 - 5 ล้านบาท</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-2 col-sm-5 pd0 xs-pdlr15">
+                                                            <div class="form-group">
+                                                                <input id="radio-choice-1-3" name="doc12" class="radio-style3" type="radio" value='3' formControlName="question16" name='question16'>
+                                                                <label for="radio-choice-1-3">5 - 10 ล้านบาท </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-2 col-sm-7 pd0 xs-pdlr15">
+                                                            <div class="form-group">
+                                                                <input id="radio-choice-1-4" name="doc12" class="radio-style3" type="radio" value='4' formControlName="question16" name='question16'>
+                                                                <label for="radio-choice-1-4">10 ล้านบาท ขึ้นไป</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="clearfix"></div>
+
+                                                    <div class="pdb10 xs-pdlr15 lh-form-control">ประสบการณ์ลงทุนใน (ตอบได้มากกว่า 1 ข้อ)</div>
+                                                    <div class="col-md-offset-1 col-md-12 pd0">
+                                                        <div class="col-lg-3 col-sm-5 pd0 xs-pdlr15">
+                                                            <div class="form-group">
+                                                                <input id="check-choice-2-1" class="check-style3" type="checkbox" formControlName="question17_1" (change)="questionChange('tab2' ,'question17_1')" />
+                                                                <label for="check-choice-2-1">เงินฝาก/พันธบัตรรัฐบาล</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-3 col-sm-7 pd0 xs-pdlr15">
+                                                            <div class="form-group">
+                                                                <input id="check-choice-2-2" class="check-style3" type="checkbox" formControlName="question17_2" (change)="questionChange('tab2' ,'question17_2')" />
+                                                                <label for="check-choice-2-2">ตราสารอนุพันธ์</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-6 col-sm-5 pd0 xs-pdlr15">
+                                                            <div class="form-group">
+                                                                <input id="check-choice-2-3" class="check-style3" type="checkbox" formControlName="question17_3" (change)="questionChange('tab2' ,'question17_3')" />
+                                                                <label for="check-choice-2-3">กองทุนรวม</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-3 col-sm-7 pd0 xs-pdlr15">
+                                                            <div class="form-group">
+                                                                <input id="check-choice-2-4" class="check-style3" type="checkbox" formControlName="question17_4" (change)="questionChange('tab2' ,'question17_4')" />
+                                                                <label for="check-choice-2-4">ทรัพย์สิน เช่น ทีดิน, ทองคํา เป็นต้น</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-3 col-sm-5 pd0 xs-pdlr15">
+                                                            <div class="form-group">
+                                                                <input id="check-choice-2-5" class="check-style3" type="checkbox" formControlName="question17_5" (change)="questionChange('tab2' ,'question17_5')" />
+                                                                <label for="check-choice-2-5">หุ้น</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-6 col-sm-7 pd0 xs-pdlr15">
+                                                            <div class="inline_block pdr7">
+                                                                <div class="form-group">
+                                                                    <input id="check-choice-2-6" class="check-style3 floatL pdr10 pdt5" type="checkbox" formControlName="question17_6" (change)="questionChange('tab2' ,'question17_6')" />
+                                                                    <label for="check-choice-2-6">อื่นๆ (โปรดระบุ)</label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="inline_block pdl-sm-7 doc11-input">
+                                                                <div class="form-group">
+                                                                    <input class="form-control w200" type="text" formControlName="question17_6_desc" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="clearfix"></div>
+                                                    <div class="pdb10 xs-pdlr15 lh-form-control">กองทุนรวมที่สนใจจะลงทุน (ตอบได้มากกว่า 1 ข้อ)</div>
+                                                    <div class="col-md-offset-1 col-md-12 pd0">
+                                                        <div class="col-lg-3 col-sm-5 pd0 xs-pdlr15">
+                                                            <div class="form-group">
+                                                                <input id="check-choice-3-1" class="check-style3" type="checkbox" formControlName="question18_1" (change)="questionChange('tab2' ,'question18_1')" />
+                                                                <label for="check-choice-3-1">กองทุนรวมตราสารทุน</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-3 col-sm-5 pd0 xs-pdlr15">
+                                                            <div class="form-group">
+                                                                <input id="check-choice-3-2" class="check-style3" type="checkbox" formControlName="question18_2" (change)="questionChange('tab2' ,'question18_2')" />
+                                                                <label for="check-choice-3-2">กองทุนรวมหุ้นระยะยาว (LTF)</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-6 col-sm-5 pd0 xs-pdlr15">
+                                                            <div class="form-group">
+                                                                <input id="check-choice-3-3" class="check-style3" type="checkbox" formControlName="question18_3" (change)="questionChange('tab2' ,'question18_3')" />
+                                                                <label for="check-choice-3-3">กองทุนรวมเพือการเลี้ยงชีพ (RMF)</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-3 col-sm-5 pd0 xs-pdlr15">
+                                                            <div class="form-group">
+                                                                <input id="check-choice-3-4" class="check-style3" type="checkbox" formControlName="question18_4" (change)="questionChange('tab2' ,'question18_4')" />
+                                                                <label for="check-choice-3-4">กองทุนรวมในต่างประเทศ</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-3 col-sm-5 pd0 xs-pdlr15">
+                                                            <div class="form-group">
+                                                                <input id="check-choice-3-5" class="check-style3" type="checkbox" formControlName="question18_5" (change)="questionChange('tab2' ,'question18_5')" />
+                                                                <label for="check-choice-3-5">กองทุนรวมตราสารหนี้</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-6 col-sm-7 pd0 xs-pdlr15">
+                                                            <div class="inline_block pdr7">
+                                                                <div class="form-group">
+                                                                    <input id="check-choice-3-6" class="check-style3" type="checkbox" formControlName="question18_6" (change)="questionChange('tab2' ,'question18_6')" />
+                                                                    <label for="check-choice-3-6">อื่นๆ (โปรดระบุ)</label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="inline_block pdl-sm-7 doc11-input">
+                                                                <div class="form-group">
+                                                                    <input class="form-control w200" type="text" formControlName="question18_6_desc" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="clearfix"></div>
+
+                                                    <div class="pdb10 xs-pdlr15 lh-form-control">บุคคลที่มีจำนวนควบคุมหรือตัดสินใจในทอดสุดท้ายเกี่ยวกับการทำธุรกรรม (Controlling Person)</div>
+                                                    <div class="col-md-offset-1 col-md-12 pd0">
+                                                        <div class="col-lg-2 col-sm-5 pd0 xs-pdlr15">
+                                                            <div class="form-group">
+                                                                <input id="radio-choice-4-1" name="doc13" class="radio-style3" type="radio" value='1' formControlName="question19" name='question19'>
+                                                                <label for="radio-choice-4-1">ตนเอง</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-2 col-sm-7 pd0 xs-pdlr15">
+                                                            <div class="form-group">
+                                                                <input id="radio-choice-4-2" name="doc13" class="radio-style3" type="radio" value='2' formControlName="question19" name='question19'>
+                                                                <label for="radio-choice-4-2">ผู้อื่น (โปรดระบุ)</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="clearfix"></div>
+
+                                                        <div *ngIf="tab2Data.get('question19').value == 2 " class="col-lg-6 col-sm-12 pd0 xs-pdlr15">
+                                                            <div class="inline_block pdr7">
+                                                                <div class="form-group">
+                                                                    <!-- <input id="check-choice-4-3" class="check-style3" type="checkbox" /> -->
+                                                                    <label for="check-choice-4-3">ชื่อ - นามสกุล</label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="inline_block pdl-sm-7 doc11-input">
+                                                                <div class="form-group">
+                                                                    <input class="form-control w200" type="text" formControlName="controlling_person_name" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="clearfix"></div>
+                                            </div>
+                                            <!-- end oneJumpContent -->
+
+                                            <div *ngIf="tab2Data.get('question19').value == 2 " class="oneJumpContent">
+                                                <div class="boxChkAndInfo">
+                                                    <div class="boxTopChk">
+                                                        <div class="inline_block pdb10 pdr20">
+                                                            <input id="addres-1-1" name="address_1" class="radio-style3" type="radio" value='P' formControlName="controlling_person_address_type" name="controlling_person_address_type">
+                                                            <label for="addres-1-1">ตามที่อยู่ทะเบียนบ้าน</label>
+                                                        </div>
+
+                                                        <div class="inline_block pdb10 pdr20">
+                                                            <input id="addres-1-2" name="address_1" class="radio-style3" type="radio" value='C' formControlName="controlling_person_address_type" name="controlling_person_address_type">
+                                                            <label for="addres-1-2">ตามที่อยู่ปัจจุบัน</label>
+                                                        </div>
+
+                                                        <div class="inline_block pdb10 pdr20">
+                                                            <input id="addres-1-3" name="address_1" class="radio-style3" type="radio" value='W' formControlName="controlling_person_address_type" name="controlling_person_address_type">
+                                                            <label for="addres-1-3">อื่นๆ</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="boxInfoForm" style="overflow-y: auto;">
+                                                        <div class="col-lg-4 col-md-6">
+                                                            <div class="row">
+                                                                <div class="col-lg-5 col-md-4 col-sm-6 col-xs-12 txt-sm-right pdr-sm-7 lh-form-control ws-nowrap">
+                                                                    <font color="red">*</font> เลขที่ :
+                                                                </div>
+                                                                <div class="col-lg-7 col-md-8 col-sm-6 col-xs-12 pdl-sm-7">
+                                                                    <div class="form-group">
+                                                                        <input class="form-control" maxlength="10" type="text" formControlName="controlling_person_address_no" NumberCharacterOnly />
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-lg-4 col-md-6">
+                                                            <div class="row">
+                                                                <div class="col-lg-5 col-md-4 col-sm-6 col-xs-12 txt-sm-right pdr-sm-7 lh-form-control ws-nowrap">หมู่บ้าน/อาคาร :</div>
+                                                                <div class="col-lg-7 col-md-8 col-sm-6 col-xs-12 pdl-sm-7">
+                                                                    <div class="form-group">
+                                                                        <input class="form-control" maxlength="32" type="text" formControlName="controlling_person_village" NumberCharacterOnly />
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-lg-4 col-md-6">
+                                                            <div class="row">
+                                                                <div class="col-lg-5 col-md-4 col-sm-6 col-xs-12 txt-sm-right pdr-sm-7 lh-form-control ws-nowrap">หมู่ที่ :</div>
+                                                                <div class="col-lg-7 col-md-8 col-sm-6 col-xs-12 pdl-sm-7">
+                                                                    <div class="form-group">
+                                                                        <input class="form-control" maxlength="2" type="text" formControlName="controlling_person_moo" NumberCharacterOnly />
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-lg-4 col-md-6">
+                                                            <div class="row">
+                                                                <div class="col-lg-5 col-md-4 col-sm-6 col-xs-12 txt-sm-right pdr-sm-7 lh-form-control ws-nowrap">ตรอก/ซอย :</div>
+                                                                <div class="col-lg-7 col-md-8 col-sm-6 col-xs-12 pdl-sm-7">
+                                                                    <div class="form-group">
+                                                                        <input class="form-control" maxlength="20" type="text" formControlName="controlling_person_soi" NumberCharacterOnly />
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-lg-4 col-md-6">
+                                                            <div class="row">
+                                                                <div class="col-lg-5 col-md-4 col-sm-6 col-xs-12 txt-sm-right pdr-sm-7 lh-form-control ws-nowrap">ถนน :</div>
+                                                                <div class="col-lg-7 col-md-8 col-sm-6 col-xs-12 pdl-sm-7">
+                                                                    <div class="form-group">
+                                                                        <input class="form-control" maxlength="20" type="text" formControlName="controlling_person_road" NumberCharacterOnly />
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-lg-4 col-md-6">
+                                                            <div class="row">
+                                                                <div class="col-lg-5 col-md-4 col-sm-6 col-xs-12 txt-sm-right pdr-sm-7 lh-form-control ws-nowrap">
+                                                                    <font color="red">*</font> ตำบล/แขวง :
+                                                                </div>
+                                                                <div class="col-lg-7 col-md-8 col-sm-6 col-xs-12 pdl-sm-7">
+                                                                    <div class="form-group hasSelect">
+                                                                        <address id="subdistrict" name="subdistrict" formControlName="subdistrict" addressType="tambon_name" [(address)]="tab2Data.value.controlling_person_address.addressSelected"></address>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-lg-4 col-md-6">
+                                                            <div class="row">
+                                                                <div class="col-lg-5 col-md-4 col-sm-6 col-xs-12 txt-sm-right pdr-sm-7 lh-form-control ws-nowrap">
+                                                                    <font color="red">*</font> อำเภอ/เขต :
+                                                                </div>
+                                                                <div class="col-lg-7 col-md-8 col-sm-6 col-xs-12 pdl-sm-7">
+                                                                    <div class="form-group hasSelect">
+                                                                        <address id="district" name="district" formControlName="district" addressType="amphur_name" [(address)]="tab2Data.value.controlling_person_address.addressSelected"></address>
+                                                                        <!-- <address addressType="amphur_name" [(address)]="appInfo.value.permanentAddress.addressSelected"></address> -->
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-lg-4 col-md-6">
+                                                            <div class="row">
+                                                                <div class="col-lg-5 col-md-4 col-sm-6 col-xs-12 txt-sm-right pdr-sm-7 lh-form-control ws-nowrap">
+                                                                    <font color="red">*</font> จังหวัด :</div>
+                                                                <div class="col-lg-7 col-md-8 col-sm-6 col-xs-12 pdl-sm-7">
+                                                                    <div class="form-group hasSelect">
+                                                                        <address id="province" name="province" formControlName="province" addressType="province_name" [(address)]="tab2Data.value.controlling_person_address.addressSelected"></address>
+                                                                        <!-- <address addressType="province_name" [(address)]="appInfo.value.permanentAddress.addressSelected"></address> -->
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-lg-4 col-md-6">
+                                                            <div class="row">
+                                                                <div class="col-lg-5 col-md-4 col-sm-6 col-xs-12 txt-sm-right pdr-sm-7 lh-form-control ws-nowrap">
+                                                                    <font color="red">*</font> รหัสไปรษณีย์ :
+                                                                </div>
+                                                                <div class="col-lg-7 col-md-8 col-sm-6 col-xs-12 pdl-sm-7">
+                                                                    <div class="form-group hasSelect">
+                                                                        <address id="postcode" name="postcode" formControlName="postcode" addressType="zip" [(address)]="tab2Data.value.controlling_person_address.addressSelected"></address>
+                                                                        <!-- <address addressType="zip" [(address)]="appInfo.value.permanentAddress.addressSelected"></address> -->
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                            </div>
+
+                                            <div *ngIf="tab2Data.get('question19').value == 2 " class="oneJumpContent">
+                                                <div class="boxListForm pd0">
+                                                    <div class="col-lg-5 col-md-6 pd0">
+                                                        <div class="col-md-5 col-sm-6 txt-sm-right pdr-sm-7 lh-form-control">
+                                                            ความสัมพันธ์กับลูกค้า :
+                                                        </div>
+                                                        <div class="col-md-7 col-sm-6 pdl-sm-7">
+                                                            <div class="form-group">
+                                                                <dropdown formControlName="relation">
+                                                                    <dropdown-option [value]="item.key" *ngFor="let item of relationDropdown">{{ item.value }}</dropdown-option>
+                                                                </dropdown>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- end boxListJumpContent -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </step>
+                <step index="2" stepTitle="ลงชื่อผู้เอาประกัน">
+                    <form [formGroup]="customerAppSign">
+                        <div class="boxContentPage bgBlue3 hasBgImg bgImg95">
+                            <div class="container">
+                                <div class="bgPaperShadow mgt25">
+                                    <div class="contentPaperShadow">
+                                        <!-- start boxFixTopJumpMenu -->
+                                        <div class="boxFixTopJumpMenu">
+                                            <div id="boxFixJumpMenu" class="boxContentFixJumpMenu">
+                                                <div class="boxListFixJumpMenu">
+                                                    <a class="action">ลงชื่อผู้เอาประกัน</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- end boxFixTopJumpMenu -->
+                                        <!--boxListJumpContent-->
+                                        <div id="boxListJumpContent" class="boxListJumpContent">
+                                            <!-- start oneJumpContent -->
+                                            <div class="oneJumpContent">
+                                                <div class="boxChkAndInfo">
+                                                    <div class="boxInfoForm">
+                                                        <div class="col-md-6 pdlr0">
+                                                            <div class="col-sm-5 pdr-sm-7 txt-sm-right lh-form-control">ชื่อผู้ขอเอาประกันภัย :</div>
+                                                            <div class="col-sm-7 pdl-sm-7">
+                                                                <div class="form-group">
+                                                                    <input class="form-control" formControlName="customername" type="text" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6 pdlr0">
+                                                            <div class="col-sm-5 pdr-sm-7 txt-sm-right lh-form-control">วันที่ :</div>
+                                                            <div class="col-sm-7 pdl-sm-7">
+                                                                <!-- <calendar formControlName="date"></calendar> -->
+                                                                <div class="form-group">
+                                                                    <input class="form-control" type="text" formControlName="date" disabled/>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="clearfix"></div>
+                                                        <div class="col-md-6 pdlr0">
+                                                            <div class="col-sm-5 pdr-sm-7 txt-sm-right lh-form-control">ชื่อผู้แทนโดยชอบธรรม :</div>
+                                                            <div class="col-sm-7 pdl-sm-7">
+                                                                <div class="form-group">
+                                                                    <!-- <input class="form-control" type="text" /> -->
+
+                                                                    <input id="regalRepresentative" [info]="fullnameInfo" fullname-popup (fullnameChange)="fullnameChange($event)" formControlName="regalRepresentative" class="form-control" type="text" placeholder="" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="clearfix"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- end oneJumpContent -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </form>
+                </step>
+                <ng-template #action>
+                    <button class="btn-style2" type="button" (click)="validateBeforeSave()"><span><i class="icon-save-file-option"></i> บันทึก</span></button>
+                </ng-template>
+            </steps>
+        </div>
+    </div>
+</ion-content>

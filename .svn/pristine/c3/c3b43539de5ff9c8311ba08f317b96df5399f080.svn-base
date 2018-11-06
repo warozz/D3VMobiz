@@ -1,0 +1,66 @@
+<div class="modal">
+    <a class="fancybox-close" href="javascript:void(0)" (click)="close()"></a>
+
+    <h1 class="modal-title">
+        <i class="icon-alert-circled c-red"></i> กรุณาเลือกอาชีพ <br class="view-only-mb" />(สำหรับ อ.1, อ.2)<br />เพื่อตรวจสอบจำนวนเงิน<br class="view-only-mb" />เอาประกันภัยสูงสุด
+    </h1>
+    <div class="popup popup-style1">
+        <div class="boxNewUpdate">
+            <div class="scrollbar-inner">
+                <p class="label">{{ occupation[0].group }}</p>
+                <ion-grid class="pdlr10">
+                    <ion-row>
+                        <ion-col col-12 col-md-4>
+                            <input [(ngModel)]="occ" [value]="occupation[0].occ[0]" type="radio" name="occupation" id="occ-student" class="radio-style3" />
+                            <label for="occ-student">{{ occupation[0].occ[0] }}</label>
+                        </ion-col>
+                        <ion-col col-12 col-md-4>
+                            <input [(ngModel)]="occ" [value]="occupation[0].occ[1]" type="radio" name="occupation" id="occ-monk" class="radio-style3" />
+                            <label for="occ-monk">{{ occupation[0].occ[1] }}</label>
+                        </ion-col>
+                        <ion-col col-12 col-md-4>
+                            <input [(ngModel)]="occ" [value]="occupation[0].occ[2]" type="radio" name="occupation" id="occ-child" class="radio-style3" />
+                            <label for="occ-child">{{ occupation[0].occ[2] }}</label>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+
+                <p class="label">{{ occupation[1].group }}</p>
+                <ion-grid class="pdlr10">
+                    <ion-row>
+                        <ion-col col-12 col-md-4>
+                            <input [(ngModel)]="occ" [value]="occupation[1].occ[0]" type="radio" name="occupation" id="occ-husband" class="radio-style3" />
+                            <label for="occ-husband">{{ occupation[1].occ[0] }}</label>
+                        </ion-col>
+                        <ion-col col-12 col-md-4>
+                            <input [(ngModel)]="occ" [value]="occupation[1].occ[1]" type="radio" name="occupation" id="occ-maid" class="radio-style3" />
+                            <label for="occ-maid">{{ occupation[1].occ[1] }}</label>
+                        </ion-col>
+                        <ion-col col-12 col-md-4>
+                            <input [(ngModel)]="occ" [value]="occupation[1].occ[2]" type="radio" name="occupation" id="occ-free" class="radio-style3" />
+                            <label for="occ-free">{{ occupation[1].occ[2] }}</label>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+
+                <p class="label">{{ occupation[2].group }}</p>
+                <ion-grid class="pdlr10">
+                    <ion-row>
+                        <ion-col col-12 col-md-7>
+                            <input [(ngModel)]="occ" [value]="occupation[2].occ[0]" type="radio" name="occupation" id="occ-homework" class="radio-style3" />
+                            <label for="occ-homework">{{ occupation[2].occ[0] }}</label>
+                        </ion-col>
+                        <ion-col col-12 col-md-5>
+                            <input [(ngModel)]="occ" [value]="occupation[2].occ[1]" type="radio" name="occupation" id="occ-other" class="radio-style3" />
+                            <label for="occ-other">{{ occupation[2].occ[1] }}</label>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+
+                <p class="txt-center mg0">
+                    <button id="occ-submit" class="btn-style3 btn-style-m" type="button" (click)="submit()"><span>ตกลง</span></button>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

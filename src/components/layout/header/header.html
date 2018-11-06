@@ -1,0 +1,70 @@
+<div id="header" permission>
+    <div class="boxHeaderTop" #boxHeaderTop>
+        <div class="container">
+            <!--
+            <h1 class="logo"><a id="menu_pic_logoTL" href="javascript:void(0)" (click)="open('HomePage')">ไทยประกันชีวิต</a></h1>
+            -->
+            <ul class="headerTitle">
+                <li class="boxHeaderToolsVersion">
+                    <div class="boxVersion" [ngClass]="{'mini': tlpromptMode == 'mini'}">
+                        <div class="txt1">ทีแอล <span>โปร<sup>+</sup></span><span *ngIf="tlpromptMode == 'mini'"> มินิ</span></div>
+                        <div id="menu_lb_tlprompt" class="txt2">TL PRO PLUS<span *ngIf="tlpromptMode == 'mini'"> MINI</span></div>
+                        <div id="menu_lb_version" class="txt3">{{ version }}</div>
+                    </div>
+                </li>
+                <li class="boxHeaderToolsNewUpdate hide-only-xs"><a id="menu_bt_newUpdate" class="btnNewUpdate" href="javascript:void(0)" (click)="fn_open_new_update();"><i class="icon-ion-ios-lightbulb-outline fs29"></i>มีอะไรใหม่</a></li>
+            </ul>
+            <ul class="headerTools">
+                <li class="boxHeaderToolsUser">
+                    <a class="boxThumbUser" href="javascript:void(0)">
+                        <p (click)="presentPopover($event)"><img id="menu_pic_profile" *ngIf="profile.image" [src]="profile.image" onError="this.src='assets/img/upload/img-profile.jpg'" alt="pic_profile"></p>
+                    </a>
+                </li>
+                <li class="boxHeaderToolsStatus"><a id="menu_bt_status" class="btnStatusTopUp" href="javascript:void(0)"><i class="icon-tick-inside-circle"></i>สถานะ<br />{{profile.perrmissionAgent}}</a></li>
+                <!--
+                <li class="boxHeaderToolsNetwork">
+                    <a id="menu_bt_network" class="btnSignal" href="javascript:void(0)">
+                        <signal></signal>
+                    </a>
+                </li>
+                -->
+                <li class="boxHeaderToolsLogin"><a id="menu_bt_logout" class="btnLogout" href="javascript:void(0)" (click)="open('LoginPage')"><i class="icon-power2"></i>ออกจาก<br />ระบบ</a></li>
+                <li class="boxHeaderToolsHelp"><a id="menu_bt_help" class="btnHelp" href="javascript:void(0)" (click)="open('HelpPage')"><i class="icon-info2"></i>ช่วย<br />เหลือ</a></li>
+                <li class="boxHeaderToolsVersion">{{ version }}</li>
+            </ul>
+        </div>
+    </div>
+    <div class="boxHeaderMenu" [ngClass]="tlpromptMode">
+        <div class="container">
+            <div class="boxMobilePageName" [ngClass]="toggleMainMenu">{{ pageName }}</div>
+            <a class="btnMobileMainMenu" (click)="fn_toggle_main_menu()" [ngClass]="toggleMainMenu"><span class="hamburger-inner"></span></a>
+            <div class="boxListHeaderMenu" [ngStyle]="{'max-height': headerMenuHeight + 'px'}">
+                <div class="boxMobileUser agent" *ngIf="profile.roleType == 'agent'">
+                    <a class="boxUserProfile" href="javascript:void(0)">
+                        <p><img *ngIf="profile.image" [src]="profile.image" onError="this.src='assets/img/upload/img-profile.jpg'" alt="pic_profile"></p>
+                    </a>
+                    <!-- <a class="boxUserStatus" href="javascript:void(0)"><i class="icon-tick-inside-circle"></i>สถานะ<br>{{profile.perrmissionAgent}}</a> -->
+                    <strong>คุณ{{ profile.fName }} {{ profile.lName }}</strong>
+                    <span>{{ salePosition }} สาขา{{ profile.branch }}</span>
+                    <span>สถานะ : {{ profile.perrmissionAgent }}</span>
+                </div>
+                <div class="boxMobileUser employee" *ngIf="profile.roleType == 'employee'">
+                    <a class="boxUserProfile" href="javascript:void(0)">
+                        <p><img *ngIf="profile.image" [src]="profile.image" onError="this.src='assets/img/upload/img-profile.jpg'" alt="pic_profile"></p>
+                    </a>
+                    <!-- <a class="boxUserStatus" href="javascript:void(0)"><i class="icon-tick-inside-circle"></i>สถานะ<br>{{profile.perrmissionAgent}}</a> -->
+                    <strong>คุณ{{ profile.empName }}</strong>
+                    <span>สถานะ : {{ profile.perrmissionAgent }}</span>
+                </div>
+                <a log [page]="menu.name" [object]="'mainMenu'" [type]="'nav'" href="javascript:void(0)" *ngFor="let menu of mainMenu" [attr.disabled]="menu.disabled" [ngClass]="{'action': menu.name == navCtrl.getActive().id}" [class]="menu.class" (click)="open(menu.name)">
+                    <span>
+                      <i [ngClass]="menu.icon"></i>
+                      {{ menu.title }}
+                  </span>
+                </a>
+                <a class="btnMobileLogout" href="javascript:void(0)" (click)="open('LoginPage')"><span><i class="icon-power2"></i>ออกจาก<br>ระบบ</span></a>
+            </div>
+        </div>
+    </div>
+</div>
+<setting class="hide-only-xs" *ngIf="tlpromptMode == 'mini' && navCtrl.getActive().id != 'SettingPage'" (click)="open('SettingPage')"></setting>

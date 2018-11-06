@@ -1,0 +1,122 @@
+page-register {
+    #login_page .boxFormLogin {
+        .formLogin .bg-style {
+            height: 270.5px;
+            background-size: 31px 271px;
+        }
+        h1 {
+            color: #666 !important;
+            font: normal 26px/67px 'db_helvethaica_x55_regular' !important;
+        }
+        .formLogin {
+            .bg-style li:nth-of-type(3) .intxt-style {
+                background-image: url(../assets/img/icon/masterkey.png);
+            }
+            .bg-style li:nth-of-type(4) .intxt-style {
+                background-image: url(../assets/img/icon/masterkey.png);
+            }
+            ul:nth-of-type(2) {
+                margin: 0px;
+                text-align: center;
+            }
+            .form-group.hasSelect {
+                height: 100%;
+                &:after {
+                    height: 66px;
+                }
+                // chrome, safari
+                padding-left: 40px;
+                padding-right: 10px;
+                select {
+                    padding-left: 34%;
+                    text-align: left;
+                    &::-ms-expand {
+                        display: none;
+                    }
+                }
+            }
+            .select-text {
+                padding-left: 20px;
+            }
+        }
+    }
+    ion-item {
+        padding: 0px;
+        height: 100%;
+        .item-inner {
+            padding: 0px !important;
+            border: 0px !important;
+            height: 100%;
+        }
+    }
+    // ion-datetime {
+    //     width: 100%;
+    //     .datetime-text.datetime-placeholder {
+    //         color: #666;
+    //     }
+    // }
+    // calendar.intxt-style {
+    //     my-date-picker {
+    //         box-shadow: unset;
+    //         .mydp {
+    //             border: none;
+    //             height: 67px;
+    //             input {
+    //                 height: 67px !important;
+    //                 text-align: center;
+    //             }
+    //             button {
+    //                 .mydpicon {
+    //                     display: none;
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
+    .mat-datepicker-toggle {
+        color: #666 !important;
+        position: relative !important;
+        button {
+            height: 66px !important;
+            bottom: 35px !important;
+            top: -66px !important;
+            .mat-button-wrapper:before {
+                color: #666 !important;
+            }
+        }
+    }
+    @media (max-width: 479px) {
+        #login_page .boxFormLogin {
+            h1 {
+                font-size: 21px !important;
+            }
+        }
+    }
+    @media (max-width: 767px) {
+        #login_page .boxFormLogin {
+            h1 {
+                font-size: 24px !important;
+            }
+        }
+    }
+    #login_page {
+        .txt1 {
+            font-size: $font-md;
+            color: $color-primary !important;
+            span {
+                color: $color-danger !important;
+            }
+        }
+        .txt2 {
+            font-size: $font-xs !important;
+        }
+    }
+    calendar {
+        h1 {
+            height: 66px !important;
+        }
+        .form-group {
+            border: none;
+        }
+    }
+}

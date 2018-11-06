@@ -1,0 +1,85 @@
+<div class="boxContentPage bgBlue2 zIndex1">
+    <div class="container">
+        <div class="boxSearchPlanInsurance">
+            <div style="max-width: 450px; margin: 0 auto;">
+                <div class="boxSelectPlan">
+                    <a class="areaLeft pdl0">
+                       ชำระเบี้ย
+                    </a>
+                    <div class="boxDropdownPlan nonIcon">
+                        <dropdown [(data)]="payType" (dataChange)="detailBypayType($event)">
+                            <dropdown-option value=0>รายเดือน</dropdown-option>
+                            <dropdown-option value=4>ราย 3 เดือน</dropdown-option>
+                            <dropdown-option value=2>ราย 6 เดือน</dropdown-option>
+                            <dropdown-option value=1>รายปี</dropdown-option>
+                        </dropdown>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div *ngIf="payType !== 99 " id="X3" class="row">
+    <div class="col">
+        <div class="boxContentPage">
+            <div class="container xs-pdlr0">
+                <div class="boxPromisesMore2">
+                    <div class="boxListForm">
+                        <div class="row">
+                            <div class="col">
+                                <div class="col-md-6 col-sm-8">
+                                    <div class="label"><span>เบี้ยประกันภัยหลัก</span></div>
+                                    <div class="onePromise">
+                                        <incrementer [(value)]="value.mainInsurance" (valueChange)="getSum($event ,'mainInsurance')" [step]=100 [min]="value.minMainInsurance" [max]="value.maxMain" [maxAlert]="wording.maxMainAlert" [minAlert]="wording.minMainAlert"></incrementer>
+                                        <span>{{wording.mainInsurance}}</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-8">
+                                    <div class="label"><span>ทุนประกัน</span></div>
+                                    <div class="onePromise">
+                                        <incrementer [(value)]="value.insurance" (valueChange)="getSum($event ,'insurance')" [step]=10000 [min]="value.minInsurance" [max]="value.maxInsurance" [maxAlert]="wording.maxInsuranceAlert" [minAlert]="wording.minInsuranceAlert" [zero]="value.minInsurance"></incrementer>
+                                        <span>{{wording.insurance}}</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-sm-8">
+                                    <div class="label"><span>เบี้ยประกันภัยส่วนออมเพิ่ม (TOP UP)</span></div>
+                                </div>
+                                <div class="col-md-6 col-sm-8">
+                                    <div class="onePromise">
+                                        <div class="boxDropdownPlan nonIcon">
+                                            <dropdown placeholder="กรุณาเลือก" [(data)]="topupType" (dataChange)="topupChange($event)">
+                                                <dropdown-option value="N">ไม่ซื้อ</dropdown-option>
+                                                <dropdown-option value="1">ครั้งเดียวตอนออกกรมธรรม์</dropdown-option>
+                                                <dropdown-option value="Y">ตามงวดการชำระเบี้ยประกันหลัก</dropdown-option>
+                                            </dropdown>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-8">
+                                    <div class="onePromise">
+                                        <incrementer [(value)]="value.insuranceTopup" (valueChange)="getSum($event ,'topup')" [step]=100 [min]="value.minTopup" [max]="value.maxTopup" [maxAlert]="wording.maxTopupAlert" [minAlert]="wording.minTopupAlert"></incrementer>
+                                        <span>{{wording.insuranceTopup}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div>
+    <rider2 [(rider)]="rider" [prospect]="prospect" [sum]="quatationSum" [plan]="choosePlan" [tlplan]="tlplan" [mode]="payType" (premium)="premiumRider($event)"></rider2>
+    <div class="row c-white insurance txt-center">
+        <div class="col-md-4 col-sm-4 col-xs-12">
+            <p>เบี้ยประกันหลัก {{value.mainInsurance|number: '1.0-0'}} บาท</p>
+        </div>
+        <div class="col-md-4 col-sm-4 col-xs-12">
+            <p>เบี้ยสัญญาเพิ่มเติมรวม {{riderInsuranceSum|number: '1.0-0'}} บาท</p>
+        </div>
+        <div class="col-md-4 col-sm-4 col-xs-12">
+            <p>เบี้ยประกันส่วนออมเพิ่ม {{value.insuranceTopup|number: '1.0-0'}} บาท</p>
+        </div>
+    </div>
+</div>

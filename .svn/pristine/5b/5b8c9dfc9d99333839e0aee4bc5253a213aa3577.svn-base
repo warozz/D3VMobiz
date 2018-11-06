@@ -1,0 +1,194 @@
+<div class="boxContentPage bgBlue3 hasBgImg bgImg95">
+    <div class="container">
+        <div class="bgPaperShadow mgt25">
+            <div class="contentPaperShadow pd20">
+                <div>
+                    <h1 class="base-line fs30 mg0 c-blue pdb10">รูปแบบการชำระเงิน</h1>
+                </div>
+                <br>
+                <div id="link2" class="oneJumpContent btnPayment">
+                    <div class="boxListForm pdlr0 pdb10 xs-pdt0">
+
+                        <div class="col-md-6 txt-md-right pdr-md-7">
+                            <div class="txt-vm">
+                                <div>ช่องทาง :</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 pdl-md-7">
+                            <!-- <ion-item class="form-control">
+                                <ion-label></ion-label>
+                                <ion-select id="paymentForm" name="paymentForm" interface="popover" cancelText="ยกเลิก" okText="ตกลง" disabled>
+                                    <ion-option [selected]="isFirst" [value]="item.form" *ngFor="let item of paymentForm; let isFirst = first">{{item.form}} </ion-option>
+                                </ion-select>
+                            </ion-item> -->
+                            <dropdown [(ngModel)]="paymentForm" (ngModelChange)="changeChooseProvide($event)" placeholder="กรุณาเลือก" >
+                                <!-- <dropdown-option value="branch" *ngIf="typeapp === 'ULink'">สาขา,สำหรับธนาคาร,จุดชำระเงิน</dropdown-option> selected="true" -->
+                                <dropdown-option value="form" *ngIf="flagIsCredit && typeapp === 'PER'" >mPos</dropdown-option>
+                                <dropdown-option value="qrcode">QR Code โมบาย แบงค์กิ้ง</dropdown-option>
+                            </dropdown>
+                        </div>
+                        <div class="clearfix"></div>
+
+                        <div *ngIf="typeapp === 'PER' || paymentForm ==='qrcode' || paymentForm ===''">
+                            <div class="col-md-6 txt-md-right pdr-md-7">
+                                <div class="txt-vm">
+                                    <div>วันที่ชำระ :</div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 pdl-md-7">
+                                <div class="txt-vm">
+                                    <div>{{ dateCurrent }}</div>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+
+                            <div class="col-md-6 txt-md-right pdr-md-7">
+                                <div class="txt-vm">
+                                    <div>จำนวนเงิน :</div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 pdl-md-7">
+                                <div class="txt-vm c-red">
+                                    <div><b>{{money | number}}</b></div>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+
+                            <div class="col-md-6 txt-md-right pdr-md-7">
+                                <div class="txt-vm">
+                                    <div>เลขที่ใบรับเงินชั่วคราว :</div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 pdl-md-7">
+                                <div class="txt-vm">
+                                    <div>{{paymentslipno}}</div>
+                                </div>
+                            </div>
+
+                            <div class="clearfix"></div>
+                        </div>
+                        <div *ngIf="typeapp === 'ULink' && paymentForm ==='branch'">
+                            <div class="col-md-6 txt-md-right pdr-md-7">
+                                <div class="txt-vm">
+                                    <div>ท่านต้องชำระเงินภายในวันที่ :</div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 pdl-md-7">
+                                <div class="txt-vm">
+                                    <div>{{ dateCurrent }}</div>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+    
+                            <div class="col-md-6 txt-md-right pdr-md-7">
+                                <div class="txt-vm">
+                                    <div>เหลือเวลาในการชำระเงิน :</div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 pdl-md-7">
+                                <div class="txt-vm c-red">
+                                    <div><b>??</b></div>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+    
+                            <div class="col-md-6 txt-md-right pdr-md-7">
+                                <div class="txt-vm">
+                                    <div>จำนวนเงิน :</div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 pdl-md-7">
+                                <div class="txt-vm">
+                                    <div>{{money | number}}</div>
+                                </div>
+                            </div>
+    
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="col-md-6 txt-md-right pdr-md-7" *ngIf="paymentForm === 'qrcode' ">
+                            <div class="txt-vm">
+                                <div>ประเภท :</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 pdl-md-7" *ngIf="paymentForm === 'qrcode' ">
+                            <!-- <ion-item class="form-control">
+                                <ion-label></ion-label>
+                                <ion-select id="paymentForm" name="paymentForm" interface="popover" cancelText="ยกเลิก" okText="ตกลง" disabled>
+                                    <ion-option [selected]="isFirst" [value]="item.form" *ngFor="let item of paymentForm; let isFirst = first">{{item.form}} </ion-option>
+                                </ion-select>
+                            </ion-item> -->
+                            <dropdown [(ngModel)]="paymentCat"  placeholder="กรุณาเลือก" >
+                                    <dropdown-option value="04" >ตัดเงินผ่านบัญชี</dropdown-option>
+                                    <dropdown-option value="01" >ตัดเงินผ่านบัตรเครดิต</dropdown-option>
+                            </dropdown>
+                        </div>
+						<div class="col-md-6 txt-md-right pdr-md-7" *ngIf="paymentForm === 'form'">
+                            <div class="txt-vm">
+                                <div>บัตรเครดิต :</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 pdl-md-7" *ngIf="paymentForm === 'form'">
+                            
+                            <dropdown [(ngModel)]="bankCode" (ngModelChange)="changeChooseBank($event)" placeholder="กรุณาเลือก" >
+                                <dropdown-option value="กรุงเทพ จำกัด (มหาชน)">กรุงเทพ จำกัด (มหาชน)</dropdown-option>
+                                <dropdown-option value="กรุงไทย จำกัด (มหาชน)">กรุงไทย จำกัด (มหาชน)</dropdown-option>
+                                <dropdown-option value="กรุงศรีอยุธยา จำกัด (มหาชน)">กรุงศรีอยุธยา จำกัด (มหาชน)</dropdown-option>
+                                <dropdown-option value="กสิกรไทย จำกัด (มหาชน)">กสิกรไทย จำกัด (มหาชน)</dropdown-option>
+                                <dropdown-option value="ซีไอเอ็มบี ไทย จำกัด (มหาชน)">ซีไอเอ็มบี ไทย จำกัด (มหาชน)</dropdown-option>
+                                <dropdown-option value="ไทยพาณิชย์ จำกัด (มหาชน)">ไทยพาณิชย์ จำกัด (มหาชน)</dropdown-option>
+                                <dropdown-option value="ธนชาต จำกัด (มหาชน)">ธนชาต จำกัด (มหาชน)</dropdown-option>
+                                <dropdown-option value="ทหารไทย จำกัด (มหาชน)">ทหารไทย จำกัด (มหาชน)</dropdown-option>
+                                <dropdown-option value="ยูโอบี จำกัด (มหาชน)">ยูโอบี จำกัด (มหาชน)</dropdown-option>
+                                <dropdown-option value="สแตนดาร์ดชาร์เตอร์ด (ไทย) จำกัด (มหาชน)">สแตนดาร์ดชาร์เตอร์ด (ไทย) จำกัด (มหาชน)</dropdown-option>
+                                <dropdown-option value="ไอซีบีซี (ไทย) จำกัด (มหาชน)">ไอซีบีซี (ไทย) จำกัด (มหาชน)</dropdown-option>
+                                <dropdown-option value="อิสลามแห่งประเทศไทย">อิสลามแห่งประเทศไทย</dropdown-option>
+                                <dropdown-option value="ออมสิน">ออมสิน</dropdown-option>
+                                <dropdown-option value="ซิตี้แบงก์ ประเทศไทย">ซิตี้แบงก์ ประเทศไทย</dropdown-option>
+                                <dropdown-option value="อิออน ธนสินทรัพย์ (ไทยแลนด์)">อิออน ธนสินทรัพย์ (ไทยแลนด์)</dropdown-option>
+                            </dropdown>
+
+                        </div>
+                        <div class="clearfix"></div>
+
+                        <div class="col-md-6 txt-md-right pdr-md-7" *ngIf="paymentForm === 'qrcode' && ( paymentCat === '04' || paymentCat ==='01' )">
+                            <div class="txt-vm">
+                                <div>ลูกค้าใช้แอปของธนาคาร :</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 pdl-md-7" *ngIf="paymentForm === 'qrcode'">
+                            <dropdown [(ngModel)]="bankCode" (ngModelChange)="changeChooseBank($event)" placeholder="กรุณาเลือก"  *ngIf="paymentCat === '04'">
+                                        <dropdown-option value="BAY">กรุงศรีอยุธยา</dropdown-option>
+                                        <dropdown-option value="OTHER">ธนาคารอื่น</dropdown-option>
+                            </dropdown>
+
+                            <dropdown [(ngModel)]="bankCode" (ngModelChange)="changeChooseBank($event)" placeholder="กรุณาเลือก"  *ngIf="paymentCat === '01'">
+                                    <dropdown-option value="BAY">กรุงศรีอยุธยา</dropdown-option>
+                                    <dropdown-option value="SCB">ไทยพาณิชย์</dropdown-option>
+                                    <dropdown-option value="CITY BANK">CITY BANK</dropdown-option>
+                                    <dropdown-option value="KTC">KTC</dropdown-option>
+                            </dropdown>
+                        </div>
+                        <div class="clearfix"></div>
+
+                        
+						 <div class="pdb10 xs-pdlr15"  *ngIf="paymentForm === 'form'">
+                                <h2 class="c-red">**กรุณาเลือกธนาคารให้ตรงกับบัตรเครดิตที่จะชำระเพราะจะถูกบันทึกลงในใบรับเงินชั่วคราว
+                                        กรณีเปลี่ยนบัตรขณะชำระเงิน ให้กลับมาเลือกธนาคารก่อนชำระเงินใหม่ทุกครั้ง
+                                 </h2>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <br>
+                    <div class="pdb10 xs-pdlr15" [hidden]="!mPosSuccess">
+                        <h2 class="c-red">ชำระเงินเรียบร้อยแล้ว ({{ dateSuccess }})</h2>
+                    </div>
+                    <button id="btnPayment" [hidden]="mPosSuccess" class="btn-style3" type="button" (click)="requestMPOS()" *ngIf="paymentForm === 'form'"><span>ชำระเงิน</span></button>
+                    <button id="btnPayment" [hidden]="mPosSuccess" class="btn-style3" type="button" (click)="viewApplication(item)" *ngIf="paymentForm === 'qrcode' && bankCode !== '' &&  paymentCat !== ''"><span>แสดง QR Code</span></button>
+                    <!-- <button id="btnPayment" [hidden]="mPosSuccess" class="btn-style3" type="button" (click)="checkPaymentQrCode(item)" *ngIf="showChkQrCode"><span>ตรวจสอบการชำเงิน</span></button> -->
+                    <!-- <button id="btnPayment" [hidden]="mPosSuccess" class="btn-style3" type="button" (click)="checkPaymentQrCode(item)" *ngIf="paymentForm === 'branch' "><span><i class="icon-ion-printer"></i>ตรวจสอบการชำเงิน</span></button> -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

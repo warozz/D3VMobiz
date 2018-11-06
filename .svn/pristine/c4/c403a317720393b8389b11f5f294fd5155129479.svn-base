@@ -1,0 +1,71 @@
+<div class="modal">
+
+    <div class="popup popup-style1">
+        <div class="boxNewUpdate">
+            <div class="scrollbar-inner">
+                <div class="row">
+                    <h1 class="col-md-11 col-sm-11 col-xs-11">
+                        ใบเสนอขายเลขที่ {{data.quotationno}}
+                    </h1>
+                    <a class="col-md-1  col-sm-1 col-xs-1" class="fancybox-close" href="javascript:void(0)" (click)="close()"></a>
+
+                </div>
+                <div class="detail-header">
+                    <div class="row">
+                        <div class="col-md-2 col-sm-2 col-xs-6 txt-right pdr0">Ref ID. :</div>
+                        <div class="col-md-3 col-sm-3 col-xs-6 txt-left "> &nbsp;{{data.referenceno}}</div>
+                        <div class="col-md-2 col-sm-2 col-xs-6 txt-right pdr0 pdl0">เลขที่ใบคำขอ :</div>
+                        <div class="col-md-5 col-sm-5 col-xs-6 txt-left "> &nbsp;{{applicationid}}</div>
+                    </div>
+                </div>
+
+
+                <div class="detail pdt15 pdb20">
+                    <div class="row">
+                        <div class="col-md-2 col-sm-2 col-xs-6 txt-right pdr0">ชื่อ-สกุล :</div>
+                        <div class="col-md-3 col-sm-3 col-xs-6 txt-left "> &nbsp;{{data.fname}} {{data.lname}}</div>
+                        <div class="col-md-2 col-sm-2 col-xs-6 txt-right pdr0">แบบประกัน :</div>
+                        <div class="col-md-5 col-sm-5 col-xs-6 txt-left "> &nbsp;{{data.planname}}</div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-2 col-sm-2 col-xs-6 txt-right pdr0">อายุ :</div>
+                        <div class="col-md-3 col-sm-3 col-xs-6 txt-left "> &nbsp;{{data.prospectM.age}}</div>
+                        <div class="col-md-2 col-sm-2 col-xs-6 txt-right pdr0">ทุนประกัน :</div>
+                        <div class="col-md-5 col-sm-5 col-xs-6 txt-left "> &nbsp;{{ data.lifesum | numberFormat }}</div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-2 col-sm-2 col-xs-6 txt-right pdr0">เพศ :</div>
+                        <div class="col-md-2 col-sm-2 col-xs-6 txt-left "> &nbsp;{{gender}}</div>
+                        <div class="col-md-3 col-sm-3 col-xs-6 txt-right pdr0 pdl0">สัญญาเพิ่มเติม :</div>
+                        <div class="col-md-5 col-sm-5 col-xs-6 txt-left "> &nbsp;{{ data.riders }}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2 col-sm-2 col-xs-6 txt-right pdr0">ชั้นอาชีพ :</div>
+                        <div class="col-md-3 col-sm-3 col-xs-6 txt-left "> &nbsp;{{data.occupationtype}}</div>
+                        <div class="col-md-2 col-sm-2 col-xs-6 txt-right pdr0">วันที่บันทึก :</div>
+                        <div class="col-md-5 col-sm-5 col-xs-6 txt-left "> &nbsp;{{datemodify}}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2 col-sm-2 col-xs-6 txt-right pdr0">โทร :</div>
+                        <div class="col-md-3 col-sm-3 col-xs-6 txt-left "> &nbsp;{{data?.prospectM?.mobilephone}}</div>
+                        <div class="col-md-2 col-sm-2 col-xs-6 txt-right pdr0">ผู้บันทึก :</div>
+                        <div class="col-md-5 col-sm-5 col-xs-6 txt-left "> &nbsp;{{data?.mcaapplicationMs[0]?.agentfullname}}</div>
+                    </div>
+
+
+                </div>
+
+                <div class="div-btn">
+                    <!-- <button *ngIf="createApp" class="btn-style3 btn-style-m" type="button"><span><i class="icon-pdf-file"></i> ดูใบเสนอ</span></button> -->
+                    <button *ngIf="createApp && disableEditAppForm == false" class="btn-style3 btn-style-m" type="button" (click)="goToCreateApp()"><span><i class="icon-contact-form"></i> แก้ไขใบคำขอ</span></button>
+                    <button *ngIf="createApp" class="btn-style3 btn-style-m" type="button" (click)="openPdf()"><span><i class="icon-pdf-file"></i> ดูใบคำขอ</span></button>
+                    <button *ngIf="createApp == false" class="btn-style3 btn-style-m" type="button" (click)="goToCreateApp()"><span><i class="icon-file-add"></i> สร้างใบคำขอ</span></button>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
